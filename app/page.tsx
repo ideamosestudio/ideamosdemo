@@ -16,6 +16,7 @@ const projects = [
 ];
 
 const clients = ["WYNN'S", "UBA", "STROMBERG", "SANTILLANA", "RE/MAX", "ONER VFX", "MACBA", "IVESS", "KAPELUSZ", "BGH"];
+const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,7 +42,7 @@ export default function Home() {
     <main>
       <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
         <a className="brand" href="#inicio" aria-label="Ideamos, inicio">
-          <img src="/logos/ideamos-light.webp" alt="Ideamos" />
+          <img src={asset("/logos/ideamos-light.webp")} alt="Ideamos" />
         </a>
         <nav className={menu ? "navlinks navlinks--open" : "navlinks"} aria-label="Navegación principal">
           <a href="#servicios" onClick={() => setMenu(false)}>Servicios</a>
@@ -55,7 +56,7 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <video className="hero-video" autoPlay muted loop playsInline>
-          <source src="/media/hero.mp4" type="video/mp4" />
+          <source src={asset("/media/hero.mp4")} type="video/mp4" />
         </video>
         <div className="hero-shade" />
         <div className="hero-grid" />
@@ -98,7 +99,7 @@ export default function Home() {
         <div className="section-kicker reveal"><span>03</span> Trabajo seleccionado</div>
         <div className="work-title reveal"><h2>Diseñamos para<br /><em>dejar marca.</em></h2><a href="https://ideamos.com.ar/casos-de-exito/">Ver todos los casos ↗</a></div>
         <div className="project-grid">
-          {projects.map((project, index) => <article className={`project reveal project-${index + 1}`} key={project.image}><div className="project-image"><img src={project.image} alt={project.title} /><span>VER CASO ↗</span></div><p>{project.tag}</p><h3>{project.title}</h3></article>)}
+          {projects.map((project, index) => <article className={`project reveal project-${index + 1}`} key={project.image}><div className="project-image"><img src={asset(project.image)} alt={project.title} /><span>VER CASO ↗</span></div><p>{project.tag}</p><h3>{project.title}</h3></article>)}
         </div>
       </section>
 
@@ -116,7 +117,7 @@ export default function Home() {
 
       <footer>
         <div className="footer-main">
-          <div className="footer-brand"><img src="/logos/ideamos-light.webp" alt="Ideamos" /><p>Diseño web & marketing digital</p><h3>Más estrategia.<br /><em>Más resultados.</em></h3><a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar ↗</a></div>
+          <div className="footer-brand"><img src={asset("/logos/ideamos-light.webp")} alt="Ideamos" /><p>Diseño web & marketing digital</p><h3>Más estrategia.<br /><em>Más resultados.</em></h3><a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar ↗</a></div>
           <div><span>Explorá</span><a href="#servicios">Servicios</a><a href="#trabajos">Proyectos</a><a href="#nosotros">Estudio</a><a href="https://ideamos.com.ar/blog/">Blog</a></div>
           <div><span>Conectá</span><a href="https://www.instagram.com/ideamosweb/">Instagram</a><a href="https://www.linkedin.com/company/ideamos/">LinkedIn</a><a href="https://wa.link/wgb5pk">WhatsApp</a></div>
           <div><span>Contacto</span><a href="tel:+5491168758285">+54 9 11 6875-8285</a><p>Buenos Aires<br />Argentina</p></div>
