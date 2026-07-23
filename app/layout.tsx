@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./refinement.css";
+import "./iteration.css";
+import "./final-tuning.css";
 
 export const metadata: Metadata = {
   title: "Ideamos — Diseño web & marketing digital",
