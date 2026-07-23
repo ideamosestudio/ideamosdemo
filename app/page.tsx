@@ -102,7 +102,7 @@ export default function Home() {
       <div className="section-heading" data-reveal><p>ECOMMERCE ESTRATÉGICO</p><h2>¿Necesitás una tienda online para automatizar tus ventas?</h2><span><b>Automatizá tus ventas</b> con una <b>tienda diseñada para convertir</b>: estrategia, procesos simples y <b>tecnología que trabaja por vos.</b> Es escalable, segura y pensada para crecer con tu negocio.</span></div>
       <div className="shop-layout">
         <div className="shop-column">{ecommerceLeft.map(([title, copy]) => <article key={title} data-reveal><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
-        <div className="phone-stage"><img src={asset("/media/phone-sale.png")} alt="Tienda online desarrollada por Ideamos"/></div>
+        <div className="phone-stage" data-reveal><img src={asset("/media/phone-sale.png")} alt="Tienda online desarrollada por Ideamos"/></div>
         <div className="shop-column">{ecommerceRight.map(([title, copy]) => <article key={title} data-reveal><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
       </div>
     </section>
@@ -128,14 +128,14 @@ export default function Home() {
       <video autoPlay muted loop playsInline><source src={asset("/media/human.mp4")} type="video/mp4"/></video>
     </section>
 
-    <section className="cases-section" id="casos"><p data-reveal>POR QUÉ ELEGIRNOS</p><h2 data-reveal>Casos de éxito:<br/>Conocé a las marcas que ya dieron el salto</h2><span data-reveal><b>Diseños que no solo se ven bien: funcionan.</b> Aumentan ventas, mejoran el posicionamiento en Google y generan más contactos calificados. Acá te mostramos ejemplos concretos de empresas que lograron resultados reales con nuestro método.</span><div className="case-rail"><article><img src={asset("/media/mock-007.png")} alt="Águilas de Oro"/><b>ÁGUILAS DE ORO</b></article><article><img src={asset("/media/mock-001.png")} alt="ONER VFX"/><b>ONER VFX</b></article><article><img src={asset("/media/mock-004.png")} alt="Grupo Módulo"/><b>GRUPO MÓDULO</b></article></div></section>
+    <section className="cases-section" id="casos"><p data-reveal>POR QUÉ ELEGIRNOS</p><h2 data-reveal>Casos de éxito:<br/>Conocé a las marcas que ya dieron el salto</h2><span data-reveal><b>Diseños que no solo se ven bien: funcionan.</b> Aumentan ventas, mejoran el posicionamiento en Google y generan más contactos calificados. Acá te mostramos ejemplos concretos de empresas que lograron resultados reales con nuestro método.</span><div className="case-rail"><article><img src={asset("/media/case-cyl.png")} alt="CYL Neumáticos"/><b>CYL NEUMÁTICOS</b></article><article><img src={asset("/media/case-empire.png")} alt="Empire"/><b>EMPIRE</b></article><article><img src={asset("/media/case-garware.png")} alt="Garware Argentina"/><b>GARWARE ARGENTINA</b></article><article><img src={asset("/media/case-aguilas.png")} alt="Águilas de Oro"/><b>ÁGUILAS DE ORO</b></article><article><img src={asset("/media/case-oner.png")} alt="ONER VFX"/><b>ONER VFX</b></article></div></section>
 
     <section className="testimonial"><div data-reveal><p>TESTIMONIOS</p><h2>«Notamos un cambio real: Más consultas, más movimiento y sobretodo, más ventas»</h2><div className="stars">★★★★★ <small>(5.0)</small></div><b>Pablo Avila</b><span>Coordinador de CYL S.A.</span><a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO ↗</a></div><div className="testimonial-media"><video controls playsInline preload="metadata"><source src={asset("/media/testimonial.mp4")} type="video/mp4"/></video></div></section>
 
     <section className="trusted"><p>MÁS DE 10 AÑOS DE EXPERIENCIA</p><h2>Confían en nosotros</h2><div className="trusted-marquee"><LogoTrack /></div></section>
 
     <section className="contact-form" id="contacto">
-      <div className="contact-intro"><p>CONTACTANOS</p><h2>Movemos lo que <em>importa.</em></h2><span>Contanos brevemente sobre tu empresa o proyecto. Nuestro equipo se pondrá en contacto con vos.</span></div>
+      <div className="contact-intro"><p>CONTACTANOS</p><h2>Hablemos de<br/><b>tu proyecto.</b></h2><span>Contanos brevemente sobre tu empresa o proyecto. Nuestro equipo se pondrá en contacto con vos.</span></div>
       <form><p>INICIAR UNA CONVERSACIÓN <b>01 / 04</b></p><label>Nombre y apellido<input type="text" name="nombre" placeholder="Tu nombre"/></label><label>Empresa<input type="text" name="empresa" placeholder="Nombre de la empresa"/></label><div><label>Email<input type="email" name="email" placeholder="nombre@empresa.com"/></label><label>Teléfono<input type="tel" name="telefono" placeholder="+54"/></label></div><label>¿Cómo podemos ayudarte?<textarea name="mensaje" rows={3} placeholder="Proyecto, operación o necesidad técnica"/></label><button type="button">Enviar consulta <b>↗</b></button></form>
     </section>
 
