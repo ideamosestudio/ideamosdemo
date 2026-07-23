@@ -3,6 +3,7 @@ import "./globals.css";
 import "./refinement.css";
 import "./iteration.css";
 import "./final-tuning.css";
+import "./revision.css";
 
 export const metadata: Metadata = {
   title: "Ideamos — Diseño web & marketing digital",
