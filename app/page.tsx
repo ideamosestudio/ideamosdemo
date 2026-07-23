@@ -47,6 +47,10 @@ export default function Home() {
       <div className="hero-overlay" /><div className="hero-aurora" />
       <div className="space-particles"><i/><i/><i/><i/><i/><i/></div>
       <div className="wire-sphere"><span/><span/><span/><span/></div>
+      <div className="tech-frame frame-left"><i/><span>34°36&apos;S</span><b>001</b></div>
+      <div className="tech-frame frame-right"><i/><span>DIGITAL SYSTEMS</span><b>2026</b></div>
+      <div className="crosshair cross-a"><i/><b/></div><div className="crosshair cross-b"><i/><b/></div>
+      <div className="data-line line-a"><span>STRATEGY</span><i/></div><div className="data-line line-b"><span>RESULTS</span><i/></div>
       <div className="hero-center">
         <p className="availability"><i/> Más estrategia, más resultados</p>
         <h1><span>Expertos en crear webs</span><em>que atraen clientes y ventas</em></h1>
@@ -83,6 +87,7 @@ export default function Home() {
         </div>
         <div className="device-stage"><div className="device-glow"/><img className="device one" src={asset("/media/mock-004.png")} alt="Proyecto de diseño web de Ideamos"/><img className="device two" src={asset("/media/mock-007.png")} alt="Proyecto ecommerce de Ideamos"/><img className="device three" src={asset("/media/mock-001.png")} alt="Proyecto digital de Ideamos"/></div>
         <div className="orbit-copy"><span>SCROLL</span><span>IDEAS</span><span>RESULTADOS</span></div>
+        <div className="hud-card hud-one"><span>CONVERSION</span><b>+48%</b><i/></div><div className="hud-card hud-two"><span>PERFORMANCE</span><b>98</b><i/></div>
       </div>
     </section>
 
