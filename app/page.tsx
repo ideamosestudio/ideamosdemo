@@ -29,6 +29,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
   const [screen, setScreen] = useState(0);
+  const [testimonialPlaying, setTestimonialPlaying] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -70,8 +71,10 @@ export default function Home() {
     <section className="hero" id="inicio">
       <video autoPlay muted loop playsInline className="hero-video"><source src={asset("/media/hero.mp4")} type="video/mp4" /></video>
       <div className="hero-overlay" /><div className="hero-aurora" />
+      <div className="space-particles"><i/><i/><i/><i/><i/><i/></div>
       <div className="tech-frame frame-left"><i/><span>34°36&apos;S</span><b>001</b></div>
       <div className="tech-frame frame-right"><i/><span>DIGITAL SYSTEMS</span><b>2026</b></div>
+      <div className="data-line line-a"><span>STRATEGY</span><i/></div><div className="data-line line-b"><span>RESULTS</span><i/></div>
       <div className="hero-center">
         <p className="availability"><i/> Más estrategia, más resultados</p>
         <h1><span>Expertos en crear webs</span><em>que atraen clientes y ventas</em></h1>
@@ -82,6 +85,8 @@ export default function Home() {
         </div>
         <div className="hero-clients"><LogoTrack /></div>
       </div>
+      <div className="hero-caption">DISEÑO WEB & MARKETING DIGITAL</div>
+      <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
     </section>
 
     <section className="statement white-section" id="web">
@@ -130,13 +135,13 @@ export default function Home() {
 
     <section className="cases-section" id="casos"><p data-reveal>POR QUÉ ELEGIRNOS</p><h2 data-reveal>Casos de éxito:<br/>Conocé a las marcas que ya dieron el salto</h2><span data-reveal><b>Diseños que no solo se ven bien: funcionan.</b> Aumentan ventas, mejoran el posicionamiento en Google y generan más contactos calificados. Acá te mostramos ejemplos concretos de empresas que lograron resultados reales con nuestro método.</span><div className="case-rail"><article><img src={asset("/media/case-cyl.png")} alt="CYL Neumáticos"/><b>CYL NEUMÁTICOS</b></article><article><img src={asset("/media/case-empire.png")} alt="Empire"/><b>EMPIRE</b></article><article><img src={asset("/media/case-garware.png")} alt="Garware Argentina"/><b>GARWARE ARGENTINA</b></article><article><img src={asset("/media/case-aguilas.png")} alt="Águilas de Oro"/><b>ÁGUILAS DE ORO</b></article><article><img src={asset("/media/case-oner.png")} alt="ONER VFX"/><b>ONER VFX</b></article></div></section>
 
-    <section className="testimonial"><div data-reveal><p>TESTIMONIOS</p><h2>«Notamos un cambio real: Más consultas, más movimiento y sobretodo, más ventas»</h2><div className="stars">★★★★★ <small>(5.0)</small></div><b>Pablo Avila</b><span>Coordinador de CYL S.A.</span><a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO ↗</a></div><div className="testimonial-media"><video controls playsInline preload="metadata"><source src={asset("/media/testimonial.mp4")} type="video/mp4"/></video></div></section>
+    <section className="testimonial"><div className="testimonial-copy" data-reveal><p>TESTIMONIOS</p><h2>«Notamos un cambio real: Más consultas, más movimiento y sobretodo, más ventas»</h2><div className="stars">★★★★★ <small>(5.0)</small></div><div className="testimonial-person"><span>PA</span><div><b>Pablo Avila</b><small>Coordinador de CYL S.A.</small></div></div><a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO ↗</a></div><div className="testimonial-media">{testimonialPlaying ? <video autoPlay controls playsInline><source src={asset("/media/testimonial.mp4")} type="video/mp4"/></video> : <button className="video-cover" onClick={() => setTestimonialPlaying(true)} aria-label="Reproducir testimonio"><img src={asset("/media/testimonial-cover.webp")} alt="Testimonio de Pablo Avila, CYL S.A."/><i>▶</i><span>VER TESTIMONIO</span></button>}</div></section>
 
     <section className="trusted"><p>MÁS DE 10 AÑOS DE EXPERIENCIA</p><h2>Confían en nosotros</h2><div className="trusted-marquee"><LogoTrack /></div></section>
 
     <section className="contact-form" id="contacto">
-      <div className="contact-intro"><p>CONTACTANOS</p><h2>Hablemos de<br/><b>tu proyecto.</b></h2><span>Contanos brevemente sobre tu empresa o proyecto. Nuestro equipo se pondrá en contacto con vos.</span></div>
-      <form><p>INICIAR UNA CONVERSACIÓN <b>01 / 04</b></p><label>Nombre y apellido<input type="text" name="nombre" placeholder="Tu nombre"/></label><label>Empresa<input type="text" name="empresa" placeholder="Nombre de la empresa"/></label><div><label>Email<input type="email" name="email" placeholder="nombre@empresa.com"/></label><label>Teléfono<input type="tel" name="telefono" placeholder="+54"/></label></div><label>¿Cómo podemos ayudarte?<textarea name="mensaje" rows={3} placeholder="Proyecto, operación o necesidad técnica"/></label><button type="button">Enviar consulta <b>↗</b></button></form>
+      <div className="contact-main"><p><i/> CONTACTO</p><h2>Hablemos de tu proyecto</h2><span>Contanos qué necesitás. Te respondemos con ideas concretas y próximos pasos.</span><form><div><label>Nombre<input type="text" name="nombre" placeholder="Tu nombre"/></label><label>Empresa<input type="text" name="empresa" placeholder="Nombre de tu empresa"/></label></div><div><label>Email<input type="email" name="email" placeholder="nombre@empresa.com"/></label><label>Teléfono<input type="tel" name="telefono" placeholder="+54"/></label></div><label>Mensaje<textarea name="mensaje" rows={4} placeholder="Contanos brevemente sobre tu proyecto"/></label><button type="button">Enviar consulta <b>↗</b></button></form></div>
+      <aside className="contact-card"><span>ESTAMOS PARA AYUDARTE</span><h3>Hola. Conversemos sobre lo que querés lograr.</h3><a href="tel:+5491168758285"><i>☎</i><div><small>Teléfono</small><b>+54 9 11 6875-8285</b></div></a><a href="mailto:hola@ideamos.com.ar"><i>✉</i><div><small>Email</small><b>hola@ideamos.com.ar</b></div></a><div className="contact-social"><span>Seguinos</span><a href="#">IG</a><a href="#">IN</a></div></aside>
     </section>
 
     <footer><div className="footer-top"><div className="footer-brand"><img src={asset("/logos/ideamos-light.webp")} alt="Ideamos"/><h3>Más estrategia.<br/><em>Más resultados.</em></h3><a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar ↗</a></div><div><b>Servicios</b><a href="#web">Diseño Web</a><a href="#tiendas">Tiendas Online</a><a href="#marketing">Marketing Digital</a><a href="#google">Posicionamiento Web</a></div><div><b>Contacto</b><a href="https://wa.link/wgb5pk">+54 9 11 6875-8285</a><a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar</a><p>Buenos Aires, Argentina</p></div></div><div className="footer-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href="#inicio">VOLVER ARRIBA ↑</a></div></footer>

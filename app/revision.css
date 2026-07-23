@@ -106,6 +106,60 @@ footer .footer-bottom{position:static!important;margin-top:60px!important;paddin
 .statement-label:after,.section-heading>p:after,.google-content>p:first-child:after,.cases-section>p:after,.contact-intro>p:after{content:"";display:inline-block;width:54px;height:1px;background:var(--orange);vertical-align:middle;margin-left:18px}
 .section-heading:before,.cases-section:after{content:"+";position:absolute;color:var(--orange);font-size:22px;font-weight:300}
 .section-heading:before{left:-20px;top:42px}.cases-section:after{right:5vw;top:120px}
+
+/* Editorial system outside the hero */
+.statement,.ecommerce,.google-scene,.problems,.human-cta,.cases-section,.testimonial,.trusted,.contact-form{border-top:1px solid rgba(20,20,20,.14)}
+.statement:after,.ecommerce:after,.google-scene:after,.problems:after,.testimonial:after,.trusted:after{content:"";position:absolute;z-index:2;top:38px;left:max(3vw,24px);width:72px;height:9px;border-top:1px solid var(--orange);border-bottom:1px solid rgba(0,0,0,.22)}
+.statement-copyblock:before,.google-content:before,.testimonial-copy:before{content:"01 — IDEAMOS";display:block;margin-bottom:24px;color:#777;font-size:10px;font-weight:700;letter-spacing:.22em}
+.google-content:before{content:"03 — PERFORMANCE"}.testimonial-copy:before{content:"07 — EXPERIENCIAS"}
+.section-heading h2,.google-content h2,.cases-section h2,.testimonial h2,.human-copy h2{letter-spacing:-.035em}
+
+/* Case studies: supplied images are already finished tablet mockups */
+.case-rail article{border:0!important;outline:0!important;background:transparent!important;box-shadow:none!important;padding:0!important}
+.case-rail article img{border:0!important;outline:0!important;background:transparent!important;box-shadow:none!important}
+.case-rail::-webkit-scrollbar{height:5px}.case-rail::-webkit-scrollbar-track{background:#e8e8e8}.case-rail::-webkit-scrollbar-thumb{background:var(--orange);border-radius:10px}
+
+/* Testimonial */
+.testimonial{position:relative;display:grid!important;grid-template-columns:.78fr 1.22fr!important;gap:70px!important;align-items:center!important;background:#fff!important}
+.testimonial-copy>p{color:var(--orange)!important;font-weight:700!important;letter-spacing:.4em!important;font-size:12px!important}
+.testimonial h2{max-width:560px!important;margin:24px 0 18px!important;font-weight:700!important;font-size:clamp(30px,2.8vw,42px)!important}
+.testimonial-person{display:flex;align-items:center;gap:14px;margin:24px 0 28px}
+.testimonial-person>span{display:grid!important;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--orange);color:#fff;font-weight:700}
+.testimonial-person div{display:flex;flex-direction:column}.testimonial-person div b{font-size:18px}.testimonial-person small{color:#666;margin-top:4px}
+.testimonial-media{height:auto!important;aspect-ratio:1.38/1;position:relative;box-shadow:0 26px 55px rgba(0,0,0,.16)}
+.video-cover{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#111;cursor:pointer;overflow:hidden}
+.video-cover img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
+.video-cover:hover img{transform:scale(1.025)}
+.video-cover i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid!important;place-items:center;width:82px;height:82px;border:2px solid #fff;border-radius:50%;background:rgba(0,0,0,.25);color:#fff;font-style:normal;font-size:28px;padding-left:5px}
+.video-cover span{position:absolute;right:20px;bottom:18px;color:#fff;font-size:10px;font-weight:700;letter-spacing:.22em}
+.testimonial-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+
+/* Contact adapted to the Ideamos visual language */
+.contact-form{grid-template-columns:1.35fr .65fr!important;gap:28px!important;align-items:stretch!important;padding:110px max(8vw,50px)!important;background-color:#080808!important;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),radial-gradient(circle at 75% 25%,rgba(255,77,0,.18),transparent 32%)!important;background-size:58px 58px,58px 58px,auto!important;min-height:auto!important}
+.contact-main{padding:42px 46px;border:1px solid #292929;border-radius:28px;background:rgba(8,8,8,.76)}
+.contact-main>p{color:#aaa!important;font-size:11px!important;font-weight:700;letter-spacing:.24em}
+.contact-main>p i{display:inline-block;width:7px;height:7px;background:var(--orange);border-radius:50%;margin-right:8px}
+.contact-main h2{font-size:clamp(36px,3.6vw,54px)!important;line-height:1!important;letter-spacing:-.04em;margin:18px 0!important;max-width:650px!important}
+.contact-main>span{display:block;color:#aaa;font-size:16px!important;margin-bottom:28px}
+.contact-form .contact-main form{border:0!important;background:transparent!important;border-radius:0!important;padding:0!important}
+.contact-main form>div{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.contact-main label{color:#bbb!important;font-size:10px!important}
+.contact-main input,.contact-main textarea{border:1px solid #343434!important;border-radius:14px!important;padding:15px 17px!important;margin-top:8px;background:rgba(255,255,255,.025)!important}
+.contact-main textarea{min-height:105px}
+.contact-main button{background:linear-gradient(100deg,#ff5a00,#b92300)!important;color:#fff!important;box-shadow:0 10px 28px rgba(255,77,0,.2);width:220px!important}
+.contact-card{padding:38px 30px;border-radius:28px;background:#141414;border:1px solid #2b2b2b;display:flex;flex-direction:column}
+.contact-card>span{font-size:10px;color:var(--orange);font-weight:700;letter-spacing:.22em}
+.contact-card h3{font-size:28px;line-height:1.08;margin:20px 0 34px}
+.contact-card>a{display:flex;align-items:center;gap:16px;padding:18px;border-radius:16px;background:#1d1d1d;color:#fff;text-decoration:none;margin-bottom:14px}
+.contact-card>a>i{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:rgba(255,77,0,.12);color:var(--orange);font-style:normal}
+.contact-card>a div{display:flex;flex-direction:column;min-width:0}.contact-card small{color:#888;margin-bottom:5px}.contact-card b{font-size:13px;overflow-wrap:anywhere}
+.contact-social{display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:28px;border-top:1px solid #333}.contact-social>span{margin-right:auto;color:#888;font-size:12px}.contact-social a{color:#fff;text-decoration:none;border:1px solid #444;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-size:10px}
+@media(max-width:900px){
+  .testimonial{grid-template-columns:1fr!important}.contact-form{grid-template-columns:1fr!important}.contact-main{padding:32px 24px}
+}
+@media(max-width:600px){
+  .contact-main form>div{grid-template-columns:1fr}.testimonial{padding:80px 22px!important}.video-cover i{width:62px;height:62px}
+}
 @media(max-width:900px){
   .nav{padding:12px 18px}.nav-contact{display:none}
   .statement,.google-scene,.contact-form{grid-template-columns:1fr!important}
