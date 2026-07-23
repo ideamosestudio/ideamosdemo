@@ -24,6 +24,13 @@ const faqs = [
   ["“Necesitamos una web compleja, con funcionalidades específicas”", "Contamos con programadores, diseñadores, maquetadores y estrategas para proyectos grandes y personalizados."],
   ["“No sé por cómo arrancar, pero sé que necesito hacer algo”", "Ordenamos prioridades, entendemos tu contexto y definimos juntos qué conviene hacer paso a paso."],
 ];
+const cases = [
+  ["case-cyl.png", "CYL NEUMÁTICOS"],
+  ["case-empire.png", "EMPIRE"],
+  ["case-garware.png", "GARWARE ARGENTINA"],
+  ["case-aguilas.png", "ÁGUILAS DE ORO"],
+  ["case-oner.png", "ONER VFX"],
+];
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -133,7 +140,7 @@ export default function Home() {
       <video autoPlay muted loop playsInline><source src={asset("/media/human.mp4")} type="video/mp4"/></video>
     </section>
 
-    <section className="cases-section" id="casos"><p data-reveal>POR QUÉ ELEGIRNOS</p><h2 data-reveal>Casos de éxito:<br/>Conocé a las marcas que ya dieron el salto</h2><span data-reveal><b>Diseños que no solo se ven bien: funcionan.</b> Aumentan ventas, mejoran el posicionamiento en Google y generan más contactos calificados. Acá te mostramos ejemplos concretos de empresas que lograron resultados reales con nuestro método.</span><div className="case-rail"><article><img src={asset("/media/case-cyl.png")} alt="CYL Neumáticos"/><b>CYL NEUMÁTICOS</b></article><article><img src={asset("/media/case-empire.png")} alt="Empire"/><b>EMPIRE</b></article><article><img src={asset("/media/case-garware.png")} alt="Garware Argentina"/><b>GARWARE ARGENTINA</b></article><article><img src={asset("/media/case-aguilas.png")} alt="Águilas de Oro"/><b>ÁGUILAS DE ORO</b></article><article><img src={asset("/media/case-oner.png")} alt="ONER VFX"/><b>ONER VFX</b></article></div></section>
+    <section className="cases-section" id="casos"><p data-reveal>POR QUÉ ELEGIRNOS</p><h2 data-reveal>Casos de éxito:<br/>Conocé a las marcas que ya dieron el salto</h2><span data-reveal><b>Diseños que no solo se ven bien: funcionan.</b> Aumentan ventas, mejoran el posicionamiento en Google y generan más contactos calificados. Acá te mostramos ejemplos concretos de empresas que lograron resultados reales con nuestro método.</span><div className="case-window"><div className="case-rail">{[...cases,...cases].map(([image,label],index)=><article key={`${label}-${index}`}><img src={asset(`/media/${image}`)} alt={label}/><b>{label}</b></article>)}</div></div></section>
 
     <section className="testimonial"><div className="testimonial-copy" data-reveal><p>TESTIMONIOS</p><h2>«Notamos un cambio real: Más consultas, más movimiento y sobretodo, más ventas»</h2><div className="stars">★★★★★ <small>(5.0)</small></div><div className="testimonial-person"><span>PA</span><div><b>Pablo Avila</b><small>Coordinador de CYL S.A.</small></div></div><a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO ↗</a></div><div className="testimonial-media">{testimonialPlaying ? <video autoPlay controls playsInline><source src={asset("/media/testimonial.mp4")} type="video/mp4"/></video> : <button className="video-cover" onClick={() => setTestimonialPlaying(true)} aria-label="Reproducir testimonio"><img src={asset("/media/testimonial-cover.webp")} alt="Testimonio de Pablo Avila, CYL S.A."/><i>▶</i><span>VER TESTIMONIO</span></button>}</div></section>
 
