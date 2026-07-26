@@ -252,3 +252,123 @@ footer .footer-top a:hover{color:#fff!important}
   .faq-list summary{grid-template-columns:34px 1fr 30px;font-size:17px}.faq-list details p{margin-left:34px}
   .contact-form form>div{grid-template-columns:1fr}.contact-intro h2{font-size:60px!important}
 }
+
+/* Typography and spacing consistency pass */
+.statement h2{
+  color:#111!important;
+  font-weight:700!important;
+}
+.statement h3{
+  color:#111!important;
+  font-weight:300!important;
+}
+.statement h3 b,
+.statement .statement-copy b{
+  color:#111!important;
+  font-weight:700!important;
+}
+.statement .statement-copy{
+  color:#262626!important;
+  font-weight:300!important;
+}
+.shop-column h3{
+  color:#111!important;
+  font-weight:700!important;
+}
+.shop-column p{
+  color:#333!important;
+  font-weight:300!important;
+}
+.ecommerce-actions{
+  position:relative;
+  z-index:3;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin:58px auto 0;
+  padding-top:34px;
+}
+.ecommerce-actions:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  width:min(620px,72vw);
+  height:1px;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg,transparent,rgba(0,0,0,.18),transparent);
+}
+.ecommerce-actions .cta-glow{min-width:310px}
+.google-content h2{
+  color:#111!important;
+  font-weight:700!important;
+}
+.google-content h3{
+  color:#111!important;
+  font-weight:300!important;
+}
+.google-content h3 b,
+.google-content .body-copy b{
+  color:#111!important;
+  font-weight:700!important;
+}
+.google-content .body-copy{
+  color:#2c2c2c!important;
+  font-weight:300!important;
+}
+.google-content .orange-cta{margin-top:30px!important}
+.cases-section h2,
+.trusted h2{
+  color:#111!important;
+  font-weight:700!important;
+}
+.cases-section>span{
+  color:#444!important;
+  font-weight:300!important;
+}
+.cases-section>span b{
+  color:#111!important;
+  font-weight:700!important;
+}
+.human-copy h2{
+  color:#111!important;
+  font-weight:700!important;
+}
+.human-copy span{
+  color:#333!important;
+  font-weight:300!important;
+}
+.human-copy span b{
+  color:#111!important;
+  font-weight:700!important;
+}
+.contact-card>a:last-of-type{margin-bottom:24px}
+
+/* Small technical accents link the light sections back to the hero */
+.statement-copyblock:after,
+.google-content:after{
+  content:"";
+  display:block;
+  width:94px;
+  height:8px;
+  margin-top:34px;
+  border-top:1px solid var(--orange);
+  border-bottom:1px solid rgba(0,0,0,.16);
+}
+.shop-column article{
+  position:relative;
+}
+.shop-column article:after{
+  content:attr(data-index);
+  position:absolute;
+  top:-7px;
+  right:8%;
+  color:#aaa;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.18em;
+}
+@media(max-width:700px){
+  .ecommerce-actions{flex-direction:column;padding-inline:20px}
+  .ecommerce-actions .cta-glow{min-width:0;width:100%}
+}

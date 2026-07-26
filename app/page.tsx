@@ -117,6 +117,7 @@ export default function Home() {
         <div className="phone-stage" data-reveal><img src={asset("/media/phone-sale.png")} alt="Tienda online desarrollada por Ideamos"/></div>
         <div className="shop-column">{ecommerceRight.map(([title, copy]) => <article key={title} data-reveal><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
       </div>
+      <div className="ecommerce-actions"><a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una tienda online</span><b>↗</b></a><a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero hablar con un experto</span><b>↗</b></a></div>
     </section>
 
     <section className="google-scene white-section" id="google">
@@ -149,7 +150,7 @@ export default function Home() {
 
     <section className="contact-form" id="contacto">
       <div className="contact-main"><p><i/> CONTACTO</p><h2>Hablemos de tu proyecto</h2><span>Contanos qué necesitás. Te respondemos con ideas concretas y próximos pasos.</span><form><div><label>Nombre<input type="text" name="nombre" placeholder="Tu nombre"/></label><label>Empresa<input type="text" name="empresa" placeholder="Nombre de tu empresa"/></label></div><div><label>Email<input type="email" name="email" placeholder="nombre@empresa.com"/></label><label>Teléfono<input type="tel" name="telefono" placeholder="+54"/></label></div><label>Mensaje<textarea name="mensaje" rows={4} placeholder="Contanos brevemente sobre tu proyecto"/></label><button type="button">Enviar consulta <b>↗</b></button></form></div>
-      <aside className="contact-card"><span>ESTAMOS PARA AYUDARTE</span><h3>Hola. Conversemos sobre lo que querés lograr.</h3><a href="tel:+5491168758285"><i>☎</i><div><small>Teléfono</small><b>+54 9 11 6875-8285</b></div></a><a href="mailto:hola@ideamos.com.ar"><i>✉</i><div><small>Email</small><b>hola@ideamos.com.ar</b></div></a><div className="contact-social"><span>Seguinos</span><a href="#">IG</a><a href="#">IN</a></div></aside>
+      <aside className="contact-card"><span>ESTAMOS PARA AYUDARTE</span><h3>Hola. Conversemos sobre lo que querés lograr.</h3><a href="tel:+5491168758285"><i>☎</i><div><small>Teléfono</small><b>+54 9 11 6875-8285</b></div></a><a href="mailto:hola@ideamos.com.ar"><i>✉</i><div><small>Email</small><b>hola@ideamos.com.ar</b></div></a><a href="https://www.instagram.com/ideamosargentina/" target="_blank" rel="noreferrer"><i>◎</i><div><small>Instagram</small><b>@ideamosargentina</b></div></a><div className="contact-social"><span>Seguinos</span><a href="https://www.instagram.com/ideamosargentina/" target="_blank" rel="noreferrer">IG</a></div></aside>
     </section>
 
     <footer><div className="footer-top"><div className="footer-brand"><img src={asset("/logos/ideamos-light.webp")} alt="Ideamos"/><h3>Más estrategia.<br/><em>Más resultados.</em></h3><a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar ↗</a></div><div><b>Servicios</b><a href="#web">Diseño Web</a><a href="#tiendas">Tiendas Online</a><a href="#marketing">Marketing Digital</a><a href="#google">Posicionamiento Web</a></div><div><b>Contacto</b><a href="https://wa.link/wgb5pk">+54 9 11 6875-8285</a><a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar</a><p>Buenos Aires, Argentina</p></div></div><div className="footer-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href="#inicio">VOLVER ARRIBA ↑</a></div></footer>
