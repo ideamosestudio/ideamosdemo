@@ -3,16 +3,22 @@ import InternalPage, { ServicePage } from "../../components/InternalPage";
 const page: ServicePage = {
   eyebrow: "MÁS ESTRATEGIA, MÁS RESULTADOS",
   title: "Diseño web de alto impacto enfocado en resultados",
-  intro: "Diseñamos sitios que impactan y convierten, ayudándote a atraer más clientes y aumentar tus ventas.",
-  sectionTitle: "Creamos sitios web profesionales que atraen clientes y ventas",
-  sectionCopy: "Creamos sitios web pensados para transmitir autoridad, confianza y generar contactos reales. Desde el diseño a medida hasta el contenido, todo está enfocado en convertir visitas en potenciales clientes.",
-  items: [
-    ["Tu marca proyectando confianza", "Un sitio bien presentado transmite seriedad y profesionalismo, y complementa toda tu comunicación digital."],
-    ["Nuevo canal de ventas", "Tus clientes tienen un lugar siempre abierto para comprarte, consultarte o conocer mejor tu empresa."],
-    ["Más visibilidad", "Vas a estar presente cuando tus clientes busquen en Google las soluciones que ofrecés."],
-    ["Consultas 24 horas", "Mientras vos descansás, tu sitio sigue recibiendo mensajes, pedidos y oportunidades."],
+  intro: "Diseñamos sitios que impactan y convierten, ayudándote a atraer más clientes y aumentar tus ventas. Contactanos y charlemos de tu proyecto.",
+  sections: [
+    { eyebrow: "DISEÑO WEB PROFESIONAL", title: "Creamos sitios webs profesionales que atraen clientes y ventas", lead: "Posicioná tu marca con un desarrollo web efectivo.", paragraphs: ["Creamos sitios web pensados para transmitir autoridad, confianza y generar contactos reales. Desde el diseño a medida hasta el contenido, todo está enfocado en convertir visitas en potenciales clientes. Contactanos y coordinamos una asesoría online sin cargo para conocer tu negocio y sus desafíos, identificar oportunidades y proponerte ideas concretas para que puedas crecer con menos esfuerzo y mejores resultados."] },
+    { eyebrow: "DISEÑO WEB A TU MEDIDA", title: "¿Qué problemas resuelve un sitio web profesional para tu empresa?", lead: "Conocé cómo un sitio web profesional ayuda a resolver los desafíos de tu negocio. Más visibilidad, más confianza y más oportunidades de crecer.", dark: true, items: [
+      { title: "“Pierdo oportunidades por no tener una web seria”", copy: "Tu empresa necesita una buena presencia online, pero no querés algo improvisado. Diseñamos sitios que transmiten confianza, explican claro lo que hacés y te ayudan a captar más clientes desde el primer día." },
+      { title: "“Quiero ser primero en Google pero no sé por dónde empezar”", copy: "SEO, campañas, blog, Google Ads, posicionamiento… Suena complejo. Nosotros lo simplificamos y armamos un plan realista para que empieces a tener visibilidad y resultados." },
+      { title: "“Necesitamos una web compleja, con funcionalidades específicas”", copy: "Contamos con un equipo completo: programadores, diseñadores, maquetadores y estrategas. Abordamos proyectos grandes, complejos y personalizados para empresas que necesitan soluciones en el siguiente nivel." },
+      { title: "“No sé por cómo arrancar, pero sé que necesito hacer algo”", copy: "Muchos clientes llegan con un mix de dudas, urgencias y ganas de mejorar. Tengamos una charla sin compromiso y te ayudamos a ordenar prioridades y entender qué conviene hacer paso a paso." },
+    ]},
+    { eyebrow: "DISEÑO WEB A MEDIDA", title: "Con nuestras páginas web vas a tener:", items: [
+      { title: "Tu marca proyectando confianza", copy: "Un sitio bien presentado transmite seriedad y profesionalismo, y complementa toda tu comunicación digital." },
+      { title: "Nuevo canal de ventas", copy: "Con una web activa, tus clientes tienen un lugar siempre abierto para comprarte, consultarte o conocer mejor tu empresa." },
+      { title: "Más visibilidad", copy: "Cuando alguien busque en Google lo que ofrecés, vas a tener más posibilidades de aparecer y ser elegido." },
+      { title: "Consultas las 24 horas", copy: "Mientras vos descansás, tu sitio sigue trabajando: recibe mensajes, pedidos y nuevas oportunidades." },
+    ]},
+    { eyebrow: "ENVIANOS UN MENSAJE", title: "Contactanos y reservá una asesoría online sin cargo", paragraphs: ["Somos un equipo de profesionales con más de 10 años de experiencia, listos para asesorarte. Contactanos y coordinamos una charla para entender tu negocio, sus desafíos y objetivos. Durante la conversación, te proponemos acciones concretas y armamos una propuesta a medida en menos de 48 horas. Envianos un mensaje y agendamos tu asesoría."], dark: true, contact: true },
   ],
-  darkTitle: "Una web seria, rápida y preparada para crecer",
-  darkCopy: "No es solo una web: es un espacio propio que impulsa ventas, confianza y visibilidad para tu empresa.",
 };
 export default function Page(){ return <InternalPage page={page}/>; }

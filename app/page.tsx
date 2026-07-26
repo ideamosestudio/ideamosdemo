@@ -71,7 +71,7 @@ export default function Home() {
       <nav className={menu ? "nav-links open" : "nav-links"}>
         <a href={asset("/diseno-web-autoadministrable/")}>Diseño Web</a><a href={asset("/tiendas-online/")}>Tiendas Online</a><a href={asset("/marketing-digital/")}>Marketing Digital</a><a href={asset("/posicionamiento-web/")}>Aparecé primero en Google</a><a href={asset("/casos-de-exito/")}>Casos de Éxito</a>
       </nav>
-      <a className="nav-contact" href={asset("/contacto/")}>Contacto <b>→</b></a>
+      <a className="nav-contact" href="#contacto">Contacto <b>→</b></a>
       <button className="menu" onClick={() => setMenu(!menu)} aria-label="Menú">{menu ? "×" : "≡"}</button>
     </header>
 
