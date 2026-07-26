@@ -130,7 +130,17 @@ export default function Home() {
         <p className="body-copy"><b>Traemos a tu web personas que ya buscan lo que ofrecés</b> y las convertimos en consultas. Con Google Ads te mostramos primero cuando te buscan y las llevamos a contactarte. Con posicionamiento en Google hacemos que te encuentren sin pagar cada clic. Medimos llamadas y mensajes para invertir donde rinde más.</p>
         <a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO ESTAR PRIMERO EN GOOGLE <b aria-hidden="true">▶</b></a>
       </div>
-      <div className="google-visual" data-reveal><img src={asset("/media/MOCK-ff.png")} alt="Proyecto web desarrollado por Ideamos"/></div>
+          <div className="google-visual google-swap" aria-label="Proyecto web FroSZ">
+            {[1, 2, 3].map((item, index) => (
+              <img
+                key={item}
+                className={screen === index ? "active" : ""}
+                src={asset(`/media/frosz-screen-${item}.png`)}
+                alt={index === 0 ? "Proyecto web FroSZ desarrollado por Ideamos" : ""}
+                aria-hidden={index !== 0}
+              />
+            ))}
+          </div>
     </section>
 
     <section className="cases-section" id="casos"><p data-reveal>POR QUÉ ELEGIRNOS</p><h2 data-reveal>Casos de éxito:<br/>Conocé a las marcas que ya dieron el salto</h2><span data-reveal><b>Diseños que no solo se ven bien: funcionan.</b> Aumentan ventas, mejoran el posicionamiento en Google y generan más contactos calificados. Acá te mostramos ejemplos concretos de empresas que lograron resultados reales con nuestro método.</span><div className="case-window"><div className="case-rail">{[...cases,...cases].map(([image,label],index)=><article key={`${label}-${index}`}><img src={asset(`/media/${image}`)} alt={label}/><b>{label}</b></article>)}</div></div></section>
