@@ -37,8 +37,8 @@ const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${pat
 
 function Actions() {
   return <div className="hero-actions internal-actions">
-    <a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una asesoría sin cargo</span><b>→</b></a>
-    <a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero contactar un experto</span><b>→</b></a>
+    <a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una asesoría sin cargo</span><b aria-hidden="true">▶</b></a>
+    <a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero contactar un experto</span><b aria-hidden="true">▶</b></a>
   </div>;
 }
 
@@ -60,21 +60,26 @@ export default function InternalPage({ page }: { page: ServicePage }) {
         {nav.map(([label, href]) => <Link onClick={() => setMenu(false)} key={href} href={`../${href}/`}>{label}</Link>)}
         <Link onClick={() => setMenu(false)} className="mobile-contact" href="../#contacto">Contacto</Link>
       </nav>
-      <Link className="nav-contact" href="../#contacto">Contacto <b>→</b></Link>
+      <Link className="nav-contact" href="../#contacto">Contacto <b aria-hidden="true">▶</b></Link>
       <button className="menu" onClick={() => setMenu(!menu)} aria-label={menu ? "Cerrar menú" : "Abrir menú"}>{menu ? "×" : "≡"}</button>
     </header>
 
-    <section className="internal-hero">
-      <video autoPlay muted loop playsInline><source src={asset("/media/hero.mp4")} type="video/mp4" /></video>
-      <div className="internal-shade" />
-      <div className="internal-tech">01 — IDEAMOS <i /></div>
-      <div className="internal-orbit" />
-      <div className="internal-hero-copy">
-        <p>{page.eyebrow}</p>
-        <h1>{page.title}</h1>
-        <span>{page.intro}</span>
+    <section className="hero internal-home-hero">
+      <video autoPlay muted loop playsInline className="hero-video"><source src={asset("/media/hero.mp4")} type="video/mp4" /></video>
+      <div className="hero-overlay" /><div className="hero-aurora" />
+      <div className="space-particles"><i/><i/><i/><i/><i/><i/></div>
+      <div className="tech-frame frame-left"><i/><span>34°36&apos;S</span><b>001</b></div>
+      <div className="tech-frame frame-right"><i/><span>DIGITAL SYSTEMS</span><b>2026</b></div>
+      <div className="data-line line-a"><span>STRATEGY</span><i/></div>
+      <div className="data-line line-b"><span>RESULTS</span><i/></div>
+      <div className="hero-center">
+        <p className="availability"><i/> {page.eyebrow}</p>
+        <h1><span>{page.title}</span></h1>
+        <p className="hero-copy">{page.intro}</p>
         <Actions />
       </div>
+      <div className="hero-caption">DISEÑO WEB &amp; MARKETING DIGITAL</div>
+      <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
     </section>
 
     {sections.map((section, sectionIndex) =>

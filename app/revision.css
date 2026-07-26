@@ -450,3 +450,74 @@ footer .footer-top a:hover{color:#fff!important}
   .service-copy{font-size:16px}.service-items article{padding:34px 28px}
   .service-items article>i{right:24px}.internal-actions{width:100%}.internal-actions .cta-glow{width:100%;justify-content:space-between}
 }
+
+/* Revision 26/07: play CTAs, supplied mockups and consistent internal covers */
+.cta-glow,.orange-cta,.nav-contact,.contact-main button{
+  transform-origin:center;
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease!important;
+}
+.cta-glow:hover,.orange-cta:hover,.nav-contact:hover,.contact-main button:hover{
+  transform:scale(1.045)!important;
+}
+.cta-glow b,.orange-cta b,.nav-contact b,.contact-main button b{
+  display:inline-block;
+  font-size:11px!important;
+  line-height:1;
+  transform:translateX(1px);
+}
+.happy-clients{
+  display:block;
+  width:min(520px,100%);
+  height:auto;
+  margin:0 0 28px;
+  object-fit:contain;
+}
+.phone-stage.phone-swap{
+  position:relative!important;
+  min-height:820px!important;
+  height:820px!important;
+  overflow:visible!important;
+}
+.phone-stage.phone-swap img{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  opacity:0;
+  transform:none!important;
+  transition:none!important;
+  filter:drop-shadow(0 24px 25px rgba(0,0,0,.16));
+  pointer-events:none;
+}
+.phone-stage.phone-swap img.active{opacity:1}
+.google-visual i{display:none!important}
+.google-visual img{background:transparent!important}
+.internal-home-hero{height:100svh;min-height:760px}
+.internal-home-hero .hero-center{padding-bottom:70px}
+.internal-home-hero .hero-copy{max-width:780px}
+.internal-home-hero h1{max-width:1120px}
+.internal-home-hero .internal-actions{justify-content:center}
+.service-section.dark{
+  background:#fff!important;
+  color:#111!important;
+  border-color:#ddd!important;
+}
+.service-section.dark:before{
+  background-image:linear-gradient(rgba(0,0,0,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.035) 1px,transparent 1px)!important;
+}
+.service-section.dark:after{display:none!important}
+.dark .service-copy,.dark .service-heading h3,.dark .service-items p{color:#555!important}
+.dark .service-items{background:#ddd!important;border-color:#ddd!important}
+.dark .service-items article{background:#fff!important}
+.dark .service-items article>i{box-shadow:inset 0 0 0 4px #fff!important}
+
+@media(max-width:850px){
+  .phone-stage.phone-swap{height:690px!important;min-height:690px!important}
+}
+@media(max-width:600px){
+  .internal-home-hero{min-height:720px}
+  .phone-stage.phone-swap{height:570px!important;min-height:570px!important}
+  .happy-clients{width:min(390px,100%)}
+}
