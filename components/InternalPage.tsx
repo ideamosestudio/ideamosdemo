@@ -62,7 +62,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
         {nav.map(([label, href]) => <Link onClick={() => setMenu(false)} key={href} href={`../${href}/`}>{label}</Link>)}
         <Link onClick={() => setMenu(false)} className="mobile-contact" href="../#contacto">Contacto</Link>
       </nav>
-      <Link className="nav-contact" href="../#contacto">Contacto</Link>
+      <Link className="nav-contact" href="../#contacto">Quiero que me asesoren</Link>
       <button className="menu" onClick={() => setMenu(!menu)} aria-label={menu ? "Cerrar menú" : "Abrir menú"}>{menu ? "×" : "≡"}</button>
     </header>
 
