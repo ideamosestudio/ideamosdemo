@@ -879,9 +879,9 @@ h1,h2,h3,
     justify-content:center;
     padding-inline:20px!important;
     color:#fff!important;
-    background:linear-gradient(105deg,#ff6200,#c82400)!important;
-    border:1px solid rgba(255,125,55,.7)!important;
-    box-shadow:0 0 25px rgba(255,78,0,.28)!important;
+    background:transparent!important;
+    border:2px solid var(--orange)!important;
+    box-shadow:none!important;
     text-transform:uppercase;
   }
 
@@ -953,6 +953,10 @@ h1,h2,h3,
     margin-bottom:24px!important;
   }
 
+  .statement-copyblock{
+    top:25px;
+  }
+
   .statement h3,
   .google-content h3,
   .service-heading h3{
@@ -975,12 +979,27 @@ h1,h2,h3,
   .statement h3{
     position:relative;
     top:-3px;
+    font-size:20px!important;
   }
 
   .statement .statement-copy{
     font-family:"Roboto",Arial,sans-serif!important;
     font-size:16px!important;
     font-weight:300!important;
+  }
+
+  .contact-main button{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    vertical-align:middle;
+    padding-top:0!important;
+    padding-bottom:0!important;
+  }
+
+  footer .footer-brand h3{
+    margin:29px 0 35px!important;
   }
 
   /* Image 4: return the problems section to the light system */
