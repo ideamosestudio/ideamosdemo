@@ -39,8 +39,8 @@ const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${pat
 
 function Actions() {
   return <div className="hero-actions internal-actions">
-    <a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una asesoría sin cargo</span><b aria-hidden="true">▶</b></a>
-    <a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero contactar un experto</span><b aria-hidden="true">▶</b></a>
+    <a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una asesoría sin cargo</span></a>
+    <a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero contactar un experto</span></a>
   </div>;
 }
 
@@ -62,7 +62,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
         {nav.map(([label, href]) => <Link onClick={() => setMenu(false)} key={href} href={`../${href}/`}>{label}</Link>)}
         <Link onClick={() => setMenu(false)} className="mobile-contact" href="../#contacto">Contacto</Link>
       </nav>
-      <Link className="nav-contact" href="../#contacto">Contacto <b aria-hidden="true">▶</b></Link>
+      <Link className="nav-contact" href="../#contacto">Contacto</Link>
       <button className="menu" onClick={() => setMenu(!menu)} aria-label={menu ? "Cerrar menú" : "Abrir menú"}>{menu ? "×" : "≡"}</button>
     </header>
 
@@ -91,7 +91,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
             <p>{section.eyebrow}</p>
             <h2>{section.title}</h2>
             {section.paragraphs?.map((copy, index) => <span key={index}>{copy}</span>)}
-            <a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA <b aria-hidden="true">▶</b></a>
+            <a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA</a>
           </div>
           <video autoPlay muted loop playsInline>
             <source src={asset("/media/human.mp4")} type="video/mp4" />

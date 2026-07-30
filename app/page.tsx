@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ManagedBackgroundVideo, {
+  pauseManagedBackgroundVideos,
+} from "./components/ManagedBackgroundVideo";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 const logos = ["wynns", "uba", "stromberg", "santillana", "remax", "oner", "macba", "ivess", "kapelusz", "bgh"];
@@ -71,12 +74,17 @@ export default function Home() {
       <nav className={menu ? "nav-links open" : "nav-links"}>
         <a href={asset("/diseno-web-autoadministrable/")}>Diseño Web</a><a href={asset("/tiendas-online/")}>Tiendas Online</a><a href={asset("/marketing-digital/")}>Marketing Digital</a><a href={asset("/posicionamiento-web/")}>Aparecé primero en Google</a><a href={asset("/casos-de-exito/")}>Casos de Éxito</a>
       </nav>
-      <a className="nav-contact" href="#contacto">Contacto <b aria-hidden="true">▶</b></a>
+      <a className="nav-contact" href="#contacto">Contacto</a>
       <button className="menu" onClick={() => setMenu(!menu)} aria-label="Menú">{menu ? "×" : "≡"}</button>
     </header>
 
     <section className="hero" id="inicio">
-      <video autoPlay muted loop playsInline className="hero-video"><source src={asset("/media/hero.mp4")} type="video/mp4" /></video>
+      <ManagedBackgroundVideo
+        eager
+        className="hero-video"
+        src={asset("/media/hero.mp4")}
+        poster={asset("/media/hero-poster.webp")}
+      />
       <div className="hero-overlay" /><div className="hero-aurora" />
       <div className="space-particles"><i/><i/><i/><i/><i/><i/></div>
       <div className="tech-frame frame-left"><i/><span>34°36&apos;S</span><b>001</b></div>
@@ -87,8 +95,8 @@ export default function Home() {
         <h1><span>Expertos en crear webs</span><em>que atraen clientes y ventas</em></h1>
         <p className="hero-copy"><b>Sitios web, tiendas online y marketing digital</b> para que tu empresa venda más y más fácil.</p>
         <div className="hero-actions">
-          <a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una asesoría sin cargo</span><b aria-hidden="true">▶</b></a>
-          <a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero contactar un experto</span><b aria-hidden="true">▶</b></a>
+          <a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una asesoría sin cargo</span></a>
+          <a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero contactar un experto</span></a>
         </div>
         <div className="hero-clients"><LogoTrack /></div>
       </div>
@@ -102,7 +110,7 @@ export default function Home() {
         <h2><span>Webs de alto impacto</span><em>ideadas para generar <b>confianza y resultados</b></em></h2>
         <h3><b>Posicioná tu marca</b> con una <b>comunicación digital efectiva</b></h3>
         <p className="statement-copy">Creamos <b>sitios web pensados para transmitir autoridad, confianza y generar contactos reales.</b> Desde el diseño a medida hasta el contenido, todo está enfocado en convertir visitas en potenciales clientes. Contactanos y coordinamos una asesoría online sin cargo para conocer tu negocio y sus desafíos, identificar oportunidades y proponerte ideas concretas para crecer con mejores resultados.</p>
-        <a className="orange-cta" href="https://wa.link/wgb5pk">CHARLEMOS DE TU PROYECTO <b aria-hidden="true">▶</b></a>
+        <a className="orange-cta" href="https://wa.link/wgb5pk">CHARLEMOS DE TU PROYECTO</a>
       </div>
       <div className="screen-swap" data-reveal>
         {[1,2,3].map((n, index) => <img key={n} className={screen === index ? "active" : ""} src={asset(`/media/screen-${n}.png`)} alt={`Proyecto web ${n}`} />)}
@@ -119,7 +127,7 @@ export default function Home() {
         </div>
         <div className="shop-column">{ecommerceRight.map(([title, copy]) => <article key={title} data-reveal><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
       </div>
-      <div className="ecommerce-actions"><a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una tienda online</span><b aria-hidden="true">▶</b></a><a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero hablar con un experto</span><b aria-hidden="true">▶</b></a></div>
+      <div className="ecommerce-actions"><a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una tienda online</span></a><a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero hablar con un experto</span></a></div>
     </section>
 
     <section className="google-scene white-section" id="google">
@@ -128,7 +136,7 @@ export default function Home() {
         <h2>Convertimos tu web en una máquina de generar tráfico, leads y ventas</h2>
         <h3><b>Liderá Google</b> con estrategias de <b>SEO y Google Ads</b></h3>
         <p className="body-copy"><b>Traemos a tu web personas que ya buscan lo que ofrecés</b> y las convertimos en consultas. Con Google Ads te mostramos primero cuando te buscan y las llevamos a contactarte. Con posicionamiento en Google hacemos que te encuentren sin pagar cada clic. Medimos llamadas y mensajes para invertir donde rinde más.</p>
-        <a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO ESTAR PRIMERO EN GOOGLE <b aria-hidden="true">▶</b></a>
+        <a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO ESTAR PRIMERO EN GOOGLE</a>
       </div>
           <div className="google-visual google-swap" aria-label="Proyecto web FroSZ">
             {[1, 2, 3].map((item, index) => (
@@ -145,26 +153,29 @@ export default function Home() {
 
     <section className="cases-section" id="casos"><p data-reveal>POR QUÉ ELEGIRNOS</p><h2 data-reveal>Casos de éxito:<br/>Conocé a las marcas que ya dieron el salto</h2><span data-reveal><b>Diseños que no solo se ven bien: funcionan.</b> Aumentan ventas, mejoran el posicionamiento en Google y generan más contactos calificados. Acá te mostramos ejemplos concretos de empresas que lograron resultados reales con nuestro método.</span><div className="case-window"><div className="case-rail">{[...cases,...cases].map(([image,label],index)=><article key={`${label}-${index}`}><img src={asset(`/media/${image}`)} alt={label}/><b>{label}</b></article>)}</div></div></section>
 
-    <section className="testimonial"><div className="testimonial-copy" data-reveal><p>TESTIMONIOS</p><h2>«Notamos un cambio real: Más consultas, más movimiento y sobretodo, más ventas»</h2><div className="stars">★★★★★ <small>(5.0)</small></div><div className="testimonial-person"><span>PA</span><div><b>Pablo Avila</b><small>Coordinador de CYL S.A.</small></div></div><a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO <b aria-hidden="true">▶</b></a></div><div className="testimonial-media">{testimonialPlaying ? <video autoPlay controls playsInline><source src={asset("/media/testimonial.mp4")} type="video/mp4"/></video> : <button className="video-cover" onClick={() => setTestimonialPlaying(true)} aria-label="Reproducir testimonio"><img src={asset("/media/testimonial-cover.webp")} alt="Testimonio de Pablo Avila, CYL S.A."/><i>▶</i><span>VER TESTIMONIO</span></button>}</div></section>
+      <section className="testimonial"><div className="testimonial-copy" data-reveal><p>TESTIMONIOS</p><h2>«Notamos un cambio real: Más consultas, más movimiento y sobretodo, más ventas»</h2><div className="stars">★★★★★ <small>(5.0)</small></div><div className="testimonial-person"><span>PA</span><div><b>Pablo Avila</b><small>Coordinador de CYL S.A.</small></div></div><a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO</a></div><div className="testimonial-media">{testimonialPlaying ? <video autoPlay controls playsInline onPlay={() => pauseManagedBackgroundVideos()}><source src={asset("/media/testimonial.mp4")} type="video/mp4"/></video> : <button className="video-cover" onClick={() => setTestimonialPlaying(true)} aria-label="Reproducir testimonio"><img src={asset("/media/testimonial-cover.webp")} alt="Testimonio de Pablo Avila, CYL S.A."/><i>▶</i><span>VER TESTIMONIO</span></button>}</div></section>
 
     <section className="problems white-section" id="marketing">
       <div className="section-heading" data-reveal><p>SOLUCIONES A TU MEDIDA</p><h2>¿Qué problemas resolvemos para vos y tu empresa?</h2></div>
       <div className="faq-list">{faqs.map(([question, answer], index) => <details key={question} data-reveal open={index === 0}><summary><span>0{index + 1}</span>{question}<b>+</b></summary><p>{answer}</p></details>)}</div>
-      <div className="problem-actions"><a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una asesoría sin cargo</span><b aria-hidden="true">▶</b></a><a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero contactar un experto</span><b aria-hidden="true">▶</b></a></div>
+      <div className="problem-actions"><a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una asesoría sin cargo</span></a><a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero contactar un experto</span></a></div>
     </section>
 
     <section className="human-cta">
-      <div className="human-copy" data-reveal><p>ENVIANOS UN MENSAJE</p><h2>Contactanos y reservá una asesoría online sin cargo</h2><span>Somos un equipo de profesionales con más de 10 años de experiencia, listos para asesorarte. <b>Contactanos y coordinamos una charla para entender tu negocio, sus desafíos y objetivos.</b> Durante la conversación, te proponemos acciones concretas y armamos una propuesta a medida en menos de 48 horas.</span><a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA <b aria-hidden="true">▶</b></a></div>
-      <video autoPlay muted loop playsInline><source src={asset("/media/human.mp4")} type="video/mp4"/></video>
+      <div className="human-copy" data-reveal><p>ENVIANOS UN MENSAJE</p><h2>Contactanos y reservá una asesoría online sin cargo</h2><span>Somos un equipo de profesionales con más de 10 años de experiencia, listos para asesorarte. <b>Contactanos y coordinamos una charla para entender tu negocio, sus desafíos y objetivos.</b> Durante la conversación, te proponemos acciones concretas y armamos una propuesta a medida en menos de 48 horas.</span><a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA</a></div>
+          <ManagedBackgroundVideo
+            src={asset("/media/human.mp4")}
+            poster={asset("/media/human-poster.webp")}
+          />
     </section>
 
     <section className="trusted"><p>MÁS DE 10 AÑOS DE EXPERIENCIA</p><h2>Confían en nosotros</h2><div className="trusted-marquee"><LogoTrack /></div></section>
 
     <section className="contact-form" id="contacto">
-      <div className="contact-main"><p><i/> CONTACTO</p><h2>Hablemos de tu proyecto</h2><span>Contanos qué necesitás. Te respondemos con ideas concretas y próximos pasos.</span><form><div><label>Nombre<input type="text" name="nombre" placeholder="Tu nombre"/></label><label>Empresa<input type="text" name="empresa" placeholder="Nombre de tu empresa"/></label></div><div><label>Email<input type="email" name="email" placeholder="nombre@empresa.com"/></label><label>Teléfono<input type="tel" name="telefono" placeholder="+54"/></label></div><label>Mensaje<textarea name="mensaje" rows={4} placeholder="Contanos brevemente sobre tu proyecto"/></label><button type="button">Enviar consulta <b aria-hidden="true">▶</b></button></form></div>
+      <div className="contact-main"><p><i/> CONTACTO</p><h2>Hablemos de tu proyecto</h2><span>Contanos qué necesitás. Te respondemos con ideas concretas y próximos pasos.</span><form><div><label>Nombre<input type="text" name="nombre" placeholder="Tu nombre"/></label><label>Empresa<input type="text" name="empresa" placeholder="Nombre de tu empresa"/></label></div><div><label>Email<input type="email" name="email" placeholder="nombre@empresa.com"/></label><label>Teléfono<input type="tel" name="telefono" placeholder="+54"/></label></div><label>Mensaje<textarea name="mensaje" rows={4} placeholder="Contanos brevemente sobre tu proyecto"/></label><button type="button">Enviar consulta</button></form></div>
       <aside className="contact-card"><span>ESTAMOS PARA AYUDARTE</span><h3>Hola. Conversemos sobre lo que querés lograr.</h3><a href="tel:+5491168758285"><i>☎</i><div><small>Teléfono</small><b>+54 9 11 6875-8285</b></div></a><a href="mailto:hola@ideamos.com.ar"><i>✉</i><div><small>Email</small><b>hola@ideamos.com.ar</b></div></a><a href="https://www.instagram.com/ideamosargentina/" target="_blank" rel="noreferrer"><i>◎</i><div><small>Instagram</small><b>@ideamosargentina</b></div></a><div className="contact-social"><span>Seguinos</span><a href="https://www.instagram.com/ideamosargentina/" target="_blank" rel="noreferrer">IG</a></div></aside>
     </section>
 
-    <footer><div className="footer-top"><div className="footer-brand"><img src={asset("/logos/ideamos-light.webp")} alt="Ideamos"/><h3>Más estrategia.<br/><em>Más resultados.</em></h3><a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar ▶</a></div><div><b>Servicios</b><a href={asset("/diseno-web-autoadministrable/")}>Diseño Web</a><a href={asset("/tiendas-online/")}>Tiendas Online</a><a href={asset("/marketing-digital/")}>Marketing Digital</a><a href={asset("/posicionamiento-web/")}>Posicionamiento Web</a></div><div><b>Contacto</b><a href="https://wa.link/wgb5pk">+54 9 11 6875-8285</a><a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar</a><p>Buenos Aires, Argentina</p></div></div><div className="footer-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href="#inicio">VOLVER ARRIBA ↑</a></div></footer>
+    <footer><div className="footer-top"><div className="footer-brand"><img src={asset("/logos/ideamos-light.webp")} alt="Ideamos"/><h3>Más estrategia.<br/><em>Más resultados.</em></h3><a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar</a></div><div><b>Servicios</b><a href={asset("/diseno-web-autoadministrable/")}>Diseño Web</a><a href={asset("/tiendas-online/")}>Tiendas Online</a><a href={asset("/marketing-digital/")}>Marketing Digital</a><a href={asset("/posicionamiento-web/")}>Posicionamiento Web</a></div><div><b>Contacto</b><a href="https://wa.link/wgb5pk">+54 9 11 6875-8285</a><a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar</a><p>Buenos Aires, Argentina</p></div></div><div className="footer-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href="#inicio">VOLVER ARRIBA</a></div></footer>
   </main>;
 }
