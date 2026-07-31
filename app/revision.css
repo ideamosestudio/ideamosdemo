@@ -1349,3 +1349,157 @@ h1,h2,h3,
   .client-logo-group{width:calc(100cqw * 10 / 2)}
   .client-logo{padding:18px 22px}
 }
+
+/* Mobile-only corrections requested on 31/07. Desktop remains unchanged. */
+.mobile-only{display:none}
+
+@media(max-width:600px){
+  :root{--mobile-gutter:30px}
+
+  .desktop-only{display:none!important}
+  .mobile-only{display:inline!important}
+
+  /* One centered CTA per requested mobile block. */
+  .hero-center{padding-left:var(--mobile-gutter)!important;padding-right:var(--mobile-gutter)!important}
+  .hero-actions{width:100%!important;align-items:center}
+  .hero-actions .cta-glow{width:100%!important;max-width:360px;margin-inline:auto}
+  .hero-actions .cta-glow.secondary{display:none!important}
+  .ecommerce-actions .cta-glow.primary{display:none!important}
+  .ecommerce-actions{padding-inline:0!important;align-items:center}
+  .ecommerce-actions .cta-glow.secondary{width:100%!important;max-width:360px;margin-inline:auto}
+
+  /* Poppins Regular and one-point-smaller mobile button typography. */
+  .cta-glow,
+  .orange-cta{
+    font-family:"Poppins",Arial,sans-serif!important;
+    font-size:13px!important;
+    font-weight:400!important;
+  }
+  .orange-cta{
+    width:100%!important;
+    max-width:360px!important;
+    padding-left:20px!important;
+    padding-right:20px!important;
+    white-space:normal!important;
+    text-align:center!important;
+  }
+  .contact-main .contact-submit,
+  footer .footer-brand>a{
+    font-family:"Poppins",Arial,sans-serif!important;
+    font-size:10px!important;
+    font-weight:400!important;
+  }
+
+  /* Shared 30px mobile gutters. */
+  .statement,
+  .ecommerce,
+  .google-scene,
+  .testimonial,
+  .contact-form,
+  footer{
+    padding-left:var(--mobile-gutter)!important;
+    padding-right:var(--mobile-gutter)!important;
+  }
+  .statement,
+  .google-scene,
+  .testimonial,
+  .human-cta,
+  .contact-form{
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+  .statement>*,
+  .google-scene>*,
+  .testimonial>*,
+  .human-cta>*,
+  .contact-form>*{
+    min-width:0;
+    max-width:100%;
+  }
+
+  /* Center editorial content and visual assets throughout mobile. */
+  .statement-copyblock,
+  .section-heading,
+  .shop-column article,
+  .google-content,
+  .testimonial-copy,
+  .human-copy,
+  .contact-main,
+  .contact-card,
+  footer .footer-top>div,
+  footer .footer-bottom{
+    text-align:center!important;
+  }
+  .statement-copyblock:after,
+  .google-content:after,
+  .happy-clients,
+  .screen-swap,
+  .phone-stage,
+  .google-visual,
+  .testimonial-media,
+  .human-cta>video,
+  footer .footer-brand img{
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  /* Remove the empty fixed-height phone slot while keeping the mockup visible. */
+  .phone-stage.phone-swap{
+    order:0!important;
+    grid-row:auto!important;
+    width:min(230px,100%)!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:536/1080;
+    margin-top:34px!important;
+    margin-bottom:34px!important;
+  }
+  .phone-stage.phone-swap img.active{
+    display:block!important;
+    opacity:1!important;
+  }
+
+  /* Keep the Google project fully inside the 30px gutters. */
+  .google-visual.google-swap{
+    width:100%!important;
+    max-width:303px!important;
+    margin-top:56px!important;
+    margin-bottom:28px!important;
+  }
+  .google-swap img.active{width:100%!important;max-width:100%!important;height:auto!important}
+  .google-visual:before{left:0!important}
+  .google-visual:after{right:0!important}
+  .google-content .orange-cta{margin-left:auto!important;margin-right:auto!important}
+
+  /* More breathing room above and below the advisory copy. */
+  .human-copy{
+    width:100%;
+    padding:88px var(--mobile-gutter)!important;
+    align-items:center!important;
+  }
+  .human-copy>span{max-width:100%;margin-left:auto;margin-right:auto}
+  .human-cta>video{display:block;width:100%!important;height:auto!important;min-height:0!important}
+
+  /* Center the form action. */
+  .contact-main .contact-submit{
+    display:flex!important;
+    margin:38px auto 0!important;
+  }
+
+  /* Footer links become one centered stack so nothing is clipped. */
+  footer .footer-top{
+    grid-template-columns:1fr!important;
+    gap:46px!important;
+  }
+  footer .footer-top>div{
+    grid-column:auto!important;
+    width:100%;
+    align-items:center!important;
+  }
+  footer .footer-top>div:nth-child(3){display:flex!important}
+  footer .footer-brand h3{margin-left:auto!important;margin-right:auto!important}
+  footer .footer-bottom{
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+  }
+}

@@ -100,7 +100,7 @@ export default function Home() {
         <h1><span>Expertos en crear webs</span><em>que atraen clientes y ventas</em></h1>
         <p className="hero-copy"><b>Sitios web, tiendas online y marketing digital</b> para que tu empresa venda más y más fácil.</p>
         <div className="hero-actions">
-          <a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una asesoría sin cargo</span></a>
+          <a className="cta-glow primary" href="https://wa.link/wgb5pk"><span className="desktop-only">Quiero una asesoría sin cargo</span><span className="mobile-only">Quiero contactarme</span></a>
           <a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero contactar un experto</span></a>
         </div>
         <div className="hero-clients"><LogoTrack /></div>
@@ -132,7 +132,7 @@ export default function Home() {
         </div>
         <div className="shop-column">{ecommerceRight.map(([title, copy]) => <article key={title} data-reveal><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
       </div>
-      <div className="ecommerce-actions"><a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una tienda online</span></a><a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero hablar con un experto</span></a></div>
+      <div className="ecommerce-actions"><a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una tienda online</span></a><a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span className="desktop-only">Quiero hablar con un experto</span><span className="mobile-only">Contacta un experto</span></a></div>
     </section>
 
     <section className="google-scene white-section shared-section-bg" id="google">
@@ -141,7 +141,7 @@ export default function Home() {
         <h2>Convertimos tu web en una máquina de generar tráfico, leads y ventas</h2>
         <h3><b>Liderá Google</b> con estrategias de <b>SEO y Google Ads</b></h3>
         <p className="body-copy"><b>Traemos a tu web personas que ya buscan lo que ofrecés</b> y las convertimos en consultas. Con Google Ads te mostramos primero cuando te buscan y las llevamos a contactarte. Con posicionamiento en Google hacemos que te encuentren sin pagar cada clic. Medimos llamadas y mensajes para invertir donde rinde más.</p>
-        <a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO ESTAR PRIMERO EN GOOGLE</a>
+        <a className="orange-cta" href="https://wa.link/wgb5pk"><span className="desktop-only">QUIERO ESTAR PRIMERO EN GOOGLE</span><span className="mobile-only">CONTACTANOS HOY</span></a>
       </div>
           <div className="google-visual google-swap" aria-label="Proyecto web FroSZ">
             {[1, 2, 3].map((item, index) => (
