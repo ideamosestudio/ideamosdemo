@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 import { HeroLogoTrack, HomeClosingSections } from "./SharedHomeSections";
+import MobileMenu from "./MobileMenu";
 
 type Item = { title: string; copy: string };
 type ContentSection = {
@@ -49,17 +50,11 @@ function Actions() {
 }
 
 export default function InternalPage({ page }: { page: ServicePage }) {
-  const [menu, setMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const sections = page.sections ?? [
     { eyebrow: "ESTRATEGIA + DISEÑO + TECNOLOGÍA", title: page.sectionTitle ?? "", paragraphs: [page.sectionCopy ?? ""], items: page.items?.map(([title, copy]) => ({ title, copy })) },
     { eyebrow: "SOLUCIONES A TU MEDIDA", title: page.darkTitle ?? "", paragraphs: [page.darkCopy ?? ""], dark: true, contact: true },
   ];
-  useEffect(() => {
-    document.body.style.overflow = menu ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
-  }, [menu]);
-
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
@@ -81,12 +76,17 @@ export default function InternalPage({ page }: { page: ServicePage }) {
   return <main className="internal-page">
     <header className={`nav internal-nav ${scrolled ? "nav-black" : ""}`}>
       <Link href="../" className="brand"><img src={asset("/logos/ideamos-light.webp")} alt="Ideamos" /></Link>
-      <nav className={menu ? "nav-links open" : "nav-links"}>
-        {nav.map(([label, href]) => <Link onClick={() => setMenu(false)} key={href} href={`../${href}/`}>{label}</Link>)}
-        <Link onClick={() => setMenu(false)} className="mobile-contact" href="../#contacto">Contacto</Link>
+      <nav className="nav-links desktop-navigation">
+        {nav.map(([label, href]) => <Link key={href} href={`../${href}/`}>{label}</Link>)}
       </nav>
       <a className="nav-contact" href="https://wa.link/wgb5pk">Quiero que me asesoren</a>
-      <button className="menu" onClick={() => setMenu(!menu)} aria-label={menu ? "Cerrar menú" : "Abrir menú"}>{menu ? "×" : "≡"}</button>
+      <MobileMenu
+        logoSrc={asset("/logos/ideamos-light.webp")}
+        items={[
+          ...nav.map(([label, href]) => ({ label, href: `../${href}/` })),
+          { label: "Contacto", href: "../#contacto" },
+        ]}
+      />
     </header>
 
     <section className={`hero internal-home-hero ${page.matchHomeHero ? "matches-home-hero" : ""}`} id="inicio">

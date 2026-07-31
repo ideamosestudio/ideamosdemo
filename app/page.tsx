@@ -5,6 +5,7 @@ import ManagedBackgroundVideo, {
   pauseManagedBackgroundVideos,
 } from "./components/ManagedBackgroundVideo";
 import { HeroLogoTrack, HomeClosingSections } from "../components/SharedHomeSections";
+import MobileMenu from "../components/MobileMenu";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 const ecommerceLeft = [
@@ -22,7 +23,6 @@ const ecommerceRight = [
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
-  const [menu, setMenu] = useState(false);
   const [screen, setScreen] = useState(0);
   const [testimonialPlaying, setTestimonialPlaying] = useState(false);
 
@@ -52,11 +52,20 @@ export default function Home() {
   return <main>
     <header className={`nav ${scrolled ? "nav-black" : ""}`}>
       <a href="#inicio" className="brand"><img src={asset("/logos/ideamos-light.webp")} alt="Ideamos" /></a>
-      <nav className={menu ? "nav-links open" : "nav-links"}>
+      <nav className="nav-links desktop-navigation">
         <a href={asset("/diseno-web-autoadministrable/")}>Diseño Web</a><a href={asset("/tiendas-online/")}>Tiendas Online</a><a href={asset("/marketing-digital/")}>Marketing Digital</a><a href={asset("/posicionamiento-web/")}>Aparecé primero en Google</a><a href={asset("/casos-de-exito/")}>Casos de Éxito</a>
       </nav>
       <a className="nav-contact" href="https://wa.link/wgb5pk">Quiero que me asesoren</a>
-      <button className="menu" onClick={() => setMenu(!menu)} aria-label="Menú">{menu ? "×" : "≡"}</button>
+      <MobileMenu
+        logoSrc={asset("/logos/ideamos-light.webp")}
+        items={[
+          { label: "Diseño Web", href: asset("/diseno-web-autoadministrable/") },
+          { label: "Tiendas Online", href: asset("/tiendas-online/") },
+          { label: "Marketing Digital", href: asset("/marketing-digital/") },
+          { label: "Aparecé primero en Google", href: asset("/posicionamiento-web/") },
+          { label: "Casos de Éxito", href: asset("/casos-de-exito/") },
+        ]}
+      />
     </header>
 
     <section className="hero" id="inicio">
