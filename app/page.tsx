@@ -19,22 +19,6 @@ const ecommerceRight = [
   ["Tomá decisiones informadas", "Mirá ventas, conversión y ticket promedio en un tablero claro. Detectá qué canales rinden y dónde conviene invertir más."],
   ["Mejor atención en menos tiempo", "El cliente puede ver precios, stock, tiempos y medios de pago sin preguntarte nada. Respondés menos mensajes y vendés más."],
 ];
-const faqs = [
-  ["“Pierdo oportunidades por no tener una web profesional”", "Diseñamos sitios que transmiten confianza, explican claro lo que hacés y te ayudan a captar más clientes desde el primer día."],
-  ["“Quiero una tienda online para vender más y automatizar”", "Hacemos tiendas con diseño profesional que inspiran confianza, automatizan tareas y quedan listas para escalar."],
-  ["“Quiero ser primero en Google pero no sé por dónde empezar”", "Simplificamos SEO, campañas y Google Ads en un plan realista para generar visibilidad, consultas y resultados medibles."],
-  ["“Necesito delegar el marketing en una empresa confiable”", "Nos ocupamos de estrategia, diseño, campañas y seguimiento para que vos puedas enfocarte en hacer crecer tu negocio."],
-  ["“Necesitamos una web compleja, con funcionalidades específicas”", "Contamos con programadores, diseñadores, maquetadores y estrategas para proyectos grandes y personalizados."],
-  ["“No sé por cómo arrancar, pero sé que necesito hacer algo”", "Ordenamos prioridades, entendemos tu contexto y definimos juntos qué conviene hacer paso a paso."],
-];
-const cases = [
-  ["case-cyl.png", "CYL NEUMÁTICOS"],
-  ["case-empire.png", "EMPIRE"],
-  ["case-garware.png", "GARWARE ARGENTINA"],
-  ["case-aguilas.png", "ÁGUILAS DE ORO"],
-  ["case-oner.png", "ONER VFX"],
-];
-
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
@@ -104,7 +88,7 @@ export default function Home() {
       <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
     </section>
 
-    <section className="statement white-section" id="web">
+    <section className="statement white-section shared-section-bg" id="web">
       <div className="statement-copyblock" data-reveal>
         <img className="happy-clients" src={asset("/media/happy-clients.png")} alt="Más de 2000 clientes felices" />
         <h2><span>Webs de alto impacto</span><em>ideadas para generar <b>confianza y resultados</b></em></h2>
@@ -118,7 +102,7 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="ecommerce white-section" id="tiendas">
+    <section className="ecommerce white-section shared-section-bg" id="tiendas">
       <div className="section-heading" data-reveal><p>ECOMMERCE ESTRATÉGICO</p><h2>¿Necesitás una tienda online para automatizar tus ventas?</h2><span><b>Automatizá tus ventas</b> con una <b>tienda diseñada para convertir</b>: estrategia, procesos simples y <b>tecnología que trabaja por vos.</b> Es escalable, segura y pensada para crecer con tu negocio.</span></div>
       <div className="shop-layout">
         <div className="shop-column">{ecommerceLeft.map(([title, copy]) => <article key={title} data-reveal><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
@@ -130,13 +114,7 @@ export default function Home() {
       <div className="ecommerce-actions"><a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una tienda online</span></a><a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero hablar con un experto</span></a></div>
     </section>
 
-    <section className="desktop-video-wall" aria-label="Presentación audiovisual de Ideamos">
-      <video autoPlay muted loop playsInline preload="metadata">
-        <source src={asset("/media/video-wall-background-2026.webm")} type="video/webm" />
-      </video>
-    </section>
-
-    <section className="google-scene white-section" id="google">
+    <section className="google-scene white-section shared-section-bg" id="google">
       <div className="google-content" data-reveal>
         <p>POSICIONAMIENTO EN GOOGLE</p>
         <h2>Convertimos tu web en una máquina de generar tráfico, leads y ventas</h2>
@@ -157,15 +135,13 @@ export default function Home() {
           </div>
     </section>
 
-    <section className="cases-section" id="casos"><p data-reveal>POR QUÉ ELEGIRNOS</p><h2 data-reveal>Casos de éxito:<br/>Conocé a las marcas que ya dieron el salto</h2><span data-reveal><b>Diseños que no solo se ven bien: funcionan.</b> Aumentan ventas, mejoran el posicionamiento en Google y generan más contactos calificados. Acá te mostramos ejemplos concretos de empresas que lograron resultados reales con nuestro método.</span><div className="case-window"><div className="case-rail">{[...cases,...cases].map(([image,label],index)=><article key={`${label}-${index}`}><img src={asset(`/media/${image}`)} alt={label}/><b>{label}</b></article>)}</div></div></section>
+    <section className="desktop-video-wall" aria-label="Presentación audiovisual de Ideamos">
+      <video autoPlay muted loop playsInline preload="metadata">
+        <source src={asset("/media/video-wall-background-2026.webm")} type="video/webm" />
+      </video>
+    </section>
 
       <section className="testimonial"><div className="testimonial-copy" data-reveal><p>TESTIMONIOS</p><h2>«Notamos un cambio real: Más consultas, más movimiento y sobretodo, más ventas»</h2><div className="stars">★★★★★ <small>(5.0)</small></div><div className="testimonial-person"><span>PA</span><div><b>Pablo Avila</b><small>Coordinador de CYL S.A.</small></div></div><a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO</a></div><div className="testimonial-media">{testimonialPlaying ? <video autoPlay controls playsInline onPlay={() => pauseManagedBackgroundVideos()}><source src={asset("/media/testimonial.mp4")} type="video/mp4"/></video> : <button className="video-cover" onClick={() => setTestimonialPlaying(true)} aria-label="Reproducir testimonio"><img src={asset("/media/testimonial-cover.webp")} alt="Testimonio de Pablo Avila, CYL S.A."/><i>▶</i><span>VER TESTIMONIO</span></button>}</div></section>
-
-    <section className="problems white-section" id="marketing">
-      <div className="section-heading" data-reveal><p>SOLUCIONES A TU MEDIDA</p><h2>¿Qué problemas resolvemos para vos y tu empresa?</h2></div>
-      <div className="faq-list">{faqs.map(([question, answer], index) => <details key={question} data-reveal open={index === 0}><summary><span>0{index + 1}</span>{question}<b>+</b></summary><p>{answer}</p></details>)}</div>
-      <div className="problem-actions"><a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una asesoría sin cargo</span></a><a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero contactar un experto</span></a></div>
-    </section>
 
     <section className="human-cta">
       <div className="human-copy" data-reveal><p>ENVIANOS UN MENSAJE</p><h2>Contactanos y reservá una asesoría online sin cargo</h2><span>Somos un equipo de profesionales con más de 10 años de experiencia, listos para asesorarte. <b>Contactanos y coordinamos una charla para entender tu negocio, sus desafíos y objetivos.</b> Durante la conversación, te proponemos acciones concretas y armamos una propuesta a medida en menos de 48 horas.</span><a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA</a></div>
@@ -174,8 +150,6 @@ export default function Home() {
             poster={asset("/media/human-poster.webp")}
           />
     </section>
-
-    <section className="trusted"><p>MÁS DE 10 AÑOS DE EXPERIENCIA</p><h2>Confían en nosotros</h2><div className="trusted-marquee"><LogoTrack /></div></section>
 
     <section className="contact-form" id="contacto">
       <div className="contact-main"><p><i/> CONTACTO</p><h2>Hablemos de tu proyecto</h2><span>Contanos qué necesitás. Te respondemos con ideas concretas y próximos pasos.</span><form><div><label>Nombre<input type="text" name="nombre" placeholder="Tu nombre"/></label><label>Empresa<input type="text" name="empresa" placeholder="Nombre de tu empresa"/></label></div><div><label>Email<input type="email" name="email" placeholder="nombre@empresa.com"/></label><label>Teléfono<input type="tel" name="telefono" placeholder="+54"/></label></div><label>Mensaje<textarea name="mensaje" rows={4} placeholder="Contanos brevemente sobre tu proyecto"/></label><a className="contact-submit" href="https://wa.link/wgb5pk">Enviar consulta</a></form></div>

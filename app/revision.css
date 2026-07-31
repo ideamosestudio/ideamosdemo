@@ -1049,6 +1049,19 @@ h1,h2,h3,
   height:auto;
 }
 
+/* Shared background for the three main service sections. */
+.shared-section-bg{
+  background-color:#fff!important;
+  background-image:
+    linear-gradient(rgba(0,0,0,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,0,0,.035) 1px,transparent 1px)!important;
+  background-size:64px 64px!important;
+}
+
+.shared-section-bg:before{
+  background-image:none!important;
+}
+
 .contact-main .contact-submit{
   margin-top:38px;
   width:220px;
