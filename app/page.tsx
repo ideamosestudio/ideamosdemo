@@ -53,9 +53,13 @@ export default function Home() {
   )}</div>;
   const ClientLogoMarquee = () => <section className="client-logo-marquee" aria-label="Marcas que confiaron en Ideamos">
     <div className="client-logo-track">
-      {[...logos, ...logos].map((name, index) =>
-        <div className="client-logo" key={`client-${name}-${index}`} aria-hidden={index >= logos.length}>
-          <img src={asset(`/logos/${name}.webp`)} alt={index < logos.length ? name : ""} />
+      {[0, 1].map((group) =>
+        <div className="client-logo-group" key={`client-group-${group}`} aria-hidden={group === 1}>
+          {logos.map((name) =>
+            <div className="client-logo" key={`client-${group}-${name}`}>
+              <img src={asset(`/logos/${name}.webp`)} alt={group === 0 ? name : ""} />
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -155,12 +159,6 @@ export default function Home() {
     <section className="human-cta">
       <div className="human-design" aria-hidden="true">
         <i className="human-glow human-glow-a"/><i className="human-glow human-glow-b"/>
-        <span className="human-orbit"><b/><b/><b/></span>
-        <span className="human-scanline"/>
-        <span className="human-coordinates">34°36&apos;S / 58°22&apos;W</span>
-        <span className="human-signal">SIGNAL / ACTIVE <i/></span>
-        <span className="human-cross human-cross-a">+</span>
-        <span className="human-cross human-cross-b">+</span>
       </div>
       <div className="human-copy" data-reveal><p>ENVIANOS UN MENSAJE</p><h2>Contactanos y reservá una asesoría online sin cargo</h2><span>Somos un equipo de profesionales con más de 10 años de experiencia, listos para asesorarte. <b>Contactanos y coordinamos una charla para entender tu negocio, sus desafíos y objetivos.</b> Durante la conversación, te proponemos acciones concretas y armamos una propuesta a medida en menos de 48 horas.</span><a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA</a></div>
           <ManagedBackgroundVideo
