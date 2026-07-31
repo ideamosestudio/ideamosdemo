@@ -19,6 +19,25 @@ const ecommerceRight = [
   ["Tomá decisiones informadas", "Mirá ventas, conversión y ticket promedio en un tablero claro. Detectá qué canales rinden y dónde conviene invertir más."],
   ["Mejor atención en menos tiempo", "El cliente puede ver precios, stock, tiempos y medios de pago sin preguntarte nada. Respondés menos mensajes y vendés más."],
 ];
+
+const LogoTrack = () => <div className="logo-track">{[...logos, ...logos].map((name, index) =>
+  <img key={`${name}-${index}`} src={asset(`/logos/${name}.webp`)} alt={name} />
+)}</div>;
+
+const ClientLogoMarquee = () => <section className="client-logo-marquee" aria-label="Marcas que confiaron en Ideamos">
+  <div className="client-logo-track">
+    {[0, 1].map((group) =>
+      <div className="client-logo-group" key={`client-group-${group}`} aria-hidden={group === 1}>
+        {logos.map((name) =>
+          <div className="client-logo" key={`client-${group}-${name}`}>
+            <img src={asset(`/logos/${name}.webp`)} alt={group === 0 ? name : ""} />
+          </div>
+        )}
+      </div>
+    )}
+  </div>
+</section>;
+
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
@@ -47,23 +66,6 @@ export default function Home() {
     document.querySelectorAll("[data-reveal]").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-
-  const LogoTrack = () => <div className="logo-track">{[...logos, ...logos].map((name, index) =>
-    <img key={`${name}-${index}`} src={asset(`/logos/${name}.webp`)} alt={name} />
-  )}</div>;
-  const ClientLogoMarquee = () => <section className="client-logo-marquee" aria-label="Marcas que confiaron en Ideamos">
-    <div className="client-logo-track">
-      {[0, 1].map((group) =>
-        <div className="client-logo-group" key={`client-group-${group}`} aria-hidden={group === 1}>
-          {logos.map((name) =>
-            <div className="client-logo" key={`client-${group}-${name}`}>
-              <img src={asset(`/logos/${name}.webp`)} alt={group === 0 ? name : ""} />
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  </section>;
 
   return <main>
     <header className={`nav ${scrolled ? "nav-black" : ""}`}>
