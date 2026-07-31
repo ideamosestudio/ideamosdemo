@@ -7,6 +7,9 @@ import ManagedBackgroundVideo, {
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 const logos = ["wynns", "uba", "stromberg", "santillana", "remax", "oner", "macba", "ivess", "kapelusz", "bgh"];
+const clientLogos = Array.from({ length: 10 }, (_, index) =>
+  `logo-blanco-${String(index + 1).padStart(3, "0")}.png`
+);
 const ecommerceLeft = [
   ["Cobrás online sin vueltas", "Aceptá tarjetas, transferencias y billeteras en un checkout rápido y seguro. Activamos Mercado Pago y métodos locales para que cobres desde el día uno."],
   ["Envíos más fácil", "Mostrá tarifas y tiempos en vivo con Correo Argentino, Andreani y OCA. Seguimiento para el cliente y retiro en punto o a domicilio, sin complicaciones."],
@@ -28,9 +31,12 @@ const ClientLogoMarquee = () => <section className="client-logo-marquee" aria-la
   <div className="client-logo-track">
     {[0, 1].map((group) =>
       <div className="client-logo-group" key={`client-group-${group}`} aria-hidden={group === 1}>
-        {logos.map((name) =>
+        {clientLogos.map((name, index) =>
           <div className="client-logo" key={`client-${group}-${name}`}>
-            <img src={asset(`/logos/${name}.webp`)} alt={group === 0 ? name : ""} />
+            <img
+              src={asset(`/logos/${name}`)}
+              alt={group === 0 ? `Cliente de Ideamos ${index + 1}` : ""}
+            />
           </div>
         )}
       </div>
@@ -158,6 +164,7 @@ export default function Home() {
 
       <section className="testimonial"><div className="testimonial-copy" data-reveal><p>TESTIMONIOS</p><h2>«Notamos un cambio real: Más consultas, más movimiento y sobretodo, más ventas»</h2><div className="stars">★★★★★ <small>(5.0)</small></div><div className="testimonial-person"><span>PA</span><div><b>Pablo Avila</b><small>Coordinador de CYL S.A.</small></div></div><a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO</a></div><div className="testimonial-media">{testimonialPlaying ? <video autoPlay controls playsInline onPlay={() => pauseManagedBackgroundVideos()}><source src={asset("/media/testimonial.mp4")} type="video/mp4"/></video> : <button className="video-cover" onClick={() => setTestimonialPlaying(true)} aria-label="Reproducir testimonio"><img src={asset("/media/testimonial-cover.webp")} alt="Testimonio de Pablo Avila, CYL S.A."/><i>▶</i><span>VER TESTIMONIO</span></button>}</div></section>
 
+    <ClientLogoMarquee />
     <section className="human-cta">
       <div className="human-design" aria-hidden="true">
         <i className="human-glow human-glow-a"/><i className="human-glow human-glow-b"/>
@@ -168,7 +175,6 @@ export default function Home() {
             poster={asset("/media/human-poster.webp")}
           />
     </section>
-    <ClientLogoMarquee />
 
     <section className="contact-form" id="contacto">
       <div className="contact-main"><p><i/> CONTACTO</p><h2>Hablemos de tu proyecto</h2><span>Contanos qué necesitás. Te respondemos con ideas concretas y próximos pasos.</span><form><div><label>Nombre<input type="text" name="nombre" placeholder="Tu nombre"/></label><label>Empresa<input type="text" name="empresa" placeholder="Nombre de tu empresa"/></label></div><div><label>Email<input type="email" name="email" placeholder="nombre@empresa.com"/></label><label>Teléfono<input type="tel" name="telefono" placeholder="+54"/></label></div><label>Mensaje<textarea name="mensaje" rows={4} placeholder="Contanos brevemente sobre tu proyecto"/></label><a className="contact-submit" href="https://wa.link/wgb5pk">Enviar consulta</a></form></div>

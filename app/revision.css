@@ -1289,3 +1289,63 @@ h1,h2,h3,
 @media(prefers-reduced-motion:reduce){
   .human-cta:before,.human-cta:after,.human-design *,.client-logo-track{animation:none!important}
 }
+
+/* 31/07: client strip above the advisory image, using the supplied white logos. */
+.human-cta{
+  color:#111!important;
+  background:#fff!important;
+  border-top:1px solid #ddd!important;
+}
+
+.human-cta:before{
+  background-image:
+    linear-gradient(rgba(0,0,0,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,0,0,.035) 1px,transparent 1px)!important;
+  background-size:64px 64px!important;
+  background-position:0 0!important;
+  box-shadow:none!important;
+  animation:none!important;
+}
+
+.human-cta:after,
+.human-design{
+  display:none!important;
+}
+
+.human-copy,
+.human-copy h2,
+.human-copy span,
+.human-copy span b{
+  color:#111!important;
+}
+
+.client-logo-marquee{
+  height:80px;
+  max-height:80px;
+  background:#000;
+  border:0;
+}
+
+.client-logo-group{
+  width:calc(100cqw * 10 / 8);
+}
+
+.client-logo{
+  height:80px;
+  padding:16px clamp(14px,1.5vw,28px);
+}
+
+.client-logo img{
+  max-width:150px;
+  max-height:48px;
+}
+
+@media(max-width:850px){
+  .client-logo-group{width:calc(100cqw * 10 / 3)}
+  .client-logo{padding:18px 24px}
+}
+
+@media(max-width:520px){
+  .client-logo-group{width:calc(100cqw * 10 / 2)}
+  .client-logo{padding:18px 22px}
+}
