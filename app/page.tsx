@@ -170,7 +170,7 @@ export default function Home() {
     <section className="human-cta">
       <div className="human-copy" data-reveal><p>ENVIANOS UN MENSAJE</p><h2>Contactanos y reservá una asesoría online sin cargo</h2><span>Somos un equipo de profesionales con más de 10 años de experiencia, listos para asesorarte. <b>Contactanos y coordinamos una charla para entender tu negocio, sus desafíos y objetivos.</b> Durante la conversación, te proponemos acciones concretas y armamos una propuesta a medida en menos de 48 horas.</span><a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA</a></div>
           <ManagedBackgroundVideo
-            src={asset("/media/human.mp4")}
+            src={asset("/media/videollamada-final.webm")}
             poster={asset("/media/human-poster.webp")}
           />
     </section>

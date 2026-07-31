@@ -68,6 +68,9 @@ export default function ManagedBackgroundVideo({
   eager = false,
 }: ManagedBackgroundVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sourceType = src.toLowerCase().split("?")[0].endsWith(".webm")
+    ? "video/webm"
+    : "video/mp4";
 
   useEffect(() => {
     const video = videoRef.current;
@@ -166,7 +169,7 @@ export default function ManagedBackgroundVideo({
       data-managed-background="true"
       aria-hidden="true"
     >
-      <source data-src={src} type="video/mp4" />
+      <source data-src={src} type={sourceType} />
     </video>
   );
 }
