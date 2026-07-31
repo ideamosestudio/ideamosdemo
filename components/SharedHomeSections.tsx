@@ -1,0 +1,107 @@
+import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
+
+const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
+const heroLogos = ["wynns", "uba", "stromberg", "santillana", "remax", "oner", "macba", "ivess", "kapelusz", "bgh"];
+const clientLogos = Array.from({ length: 10 }, (_, index) =>
+  `logo-blanco-${String(index + 1).padStart(3, "0")}.png`
+);
+
+export function HeroLogoTrack() {
+  return <div className="logo-track">{[...heroLogos, ...heroLogos].map((name, index) =>
+    <img key={`${name}-${index}`} src={asset(`/logos/${name}.webp`)} alt={name} />
+  )}</div>;
+}
+
+export function ClientLogoMarquee() {
+  return <section className="client-logo-marquee" aria-label="Marcas que confiaron en Ideamos">
+    <div className="client-logo-track">
+      {[0, 1].map((group) =>
+        <div className="client-logo-group" key={`client-group-${group}`} aria-hidden={group === 1}>
+          {clientLogos.map((name, index) =>
+            <div className="client-logo" key={`client-${group}-${name}`}>
+              <img
+                src={asset(`/logos/${name}`)}
+                alt={group === 0 ? `Cliente de Ideamos ${index + 1}` : ""}
+              />
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  </section>;
+}
+
+export function HomeClosingSections() {
+  return <>
+    <ClientLogoMarquee />
+
+    <section className="human-cta">
+      <div className="human-design" aria-hidden="true">
+        <i className="human-glow human-glow-a"/><i className="human-glow human-glow-b"/>
+      </div>
+      <div className="human-copy" data-reveal>
+        <p>ENVIANOS UN MENSAJE</p>
+        <h2>Contactanos y reservá una asesoría online sin cargo</h2>
+        <span>Somos un equipo de profesionales con más de 10 años de experiencia, listos para asesorarte. <b>Contactanos y coordinamos una charla para entender tu negocio, sus desafíos y objetivos.</b> Durante la conversación, te proponemos acciones concretas y armamos una propuesta a medida en menos de 48 horas.</span>
+        <a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA</a>
+      </div>
+      <ManagedBackgroundVideo
+        src={asset("/media/videollamada-final.webm")}
+        poster={asset("/media/human-poster.webp")}
+      />
+    </section>
+
+    <section className="contact-form" id="contacto">
+      <div className="contact-main">
+        <p><i/> CONTACTO</p>
+        <h2>Hablemos de tu proyecto</h2>
+        <span>Contanos qué necesitás. Te respondemos con ideas concretas y próximos pasos.</span>
+        <form>
+          <div>
+            <label>Nombre<input type="text" name="nombre" placeholder="Tu nombre"/></label>
+            <label>Empresa<input type="text" name="empresa" placeholder="Nombre de tu empresa"/></label>
+          </div>
+          <div>
+            <label>Email<input type="email" name="email" placeholder="nombre@empresa.com"/></label>
+            <label>Teléfono<input type="tel" name="telefono" placeholder="+54"/></label>
+          </div>
+          <label>Mensaje<textarea name="mensaje" rows={4} placeholder="Contanos brevemente sobre tu proyecto"/></label>
+          <a className="contact-submit" href="https://wa.link/wgb5pk">Enviar consulta</a>
+        </form>
+      </div>
+      <aside className="contact-card">
+        <span>ESTAMOS PARA AYUDARTE</span>
+        <h3><span className="contact-greeting">Hola. </span>Conversemos sobre lo que querés lograr.</h3>
+        <a href="tel:+5491168758285"><i>☎</i><div><small>Teléfono</small><b>+54 9 11 6875-8285</b></div></a>
+        <a href="mailto:hola@ideamos.com.ar"><i>✉</i><div><small>Email</small><b>hola@ideamos.com.ar</b></div></a>
+        <a href="https://www.instagram.com/ideamosargentina/" target="_blank" rel="noreferrer"><i>◎</i><div><small>Instagram</small><b>@ideamosargentina</b></div></a>
+        <div className="contact-social"><span>Seguinos</span><a href="https://www.instagram.com/ideamosargentina/" target="_blank" rel="noreferrer">IG</a></div>
+      </aside>
+    </section>
+
+    <footer>
+      <div className="footer-top">
+        <div className="footer-brand">
+          <img src={asset("/logos/ideamos-light.webp")} alt="Ideamos"/>
+          <h3>Más estrategia.<br/><em>Más resultados.</em></h3>
+          <a href="https://wa.link/wgb5pk">Hablemos por WhatsApp</a>
+        </div>
+        <div>
+          <b>Servicios</b>
+          <a href={asset("/diseno-web-autoadministrable/")}>Diseño Web</a>
+          <a href={asset("/tiendas-online/")}>Tiendas Online</a>
+          <a href={asset("/marketing-digital/")}>Marketing Digital</a>
+          <a href={asset("/posicionamiento-web/")}>Posicionamiento Web</a>
+        </div>
+        <div>
+          <b>Contacto</b>
+          <a href="https://wa.link/wgb5pk">+54 9 11 6875-8285</a>
+          <a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar</a>
+          <p>Buenos Aires, Argentina</p>
+        </div>
+      </div>
+      <div className="footer-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href="#inicio">VOLVER ARRIBA</a></div>
+    </footer>
+  </>;
+}

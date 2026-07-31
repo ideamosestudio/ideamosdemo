@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
+import { HeroLogoTrack, HomeClosingSections } from "./SharedHomeSections";
+import MobileMenu from "./MobileMenu";
 
 type Item = { title: string; copy: string };
 type ContentSection = {
@@ -25,6 +28,8 @@ type ServicePage = {
   items?: Array<[string, string]>;
   darkTitle?: string;
   darkCopy?: string;
+  matchHomeHero?: boolean;
+  homeClosing?: boolean;
 };
 
 const nav = [
@@ -45,29 +50,52 @@ function Actions() {
 }
 
 export default function InternalPage({ page }: { page: ServicePage }) {
-  const [menu, setMenu] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const sections = page.sections ?? [
     { eyebrow: "ESTRATEGIA + DISEÑO + TECNOLOGÍA", title: page.sectionTitle ?? "", paragraphs: [page.sectionCopy ?? ""], items: page.items?.map(([title, copy]) => ({ title, copy })) },
     { eyebrow: "SOLUCIONES A TU MEDIDA", title: page.darkTitle ?? "", paragraphs: [page.darkCopy ?? ""], dark: true, contact: true },
   ];
   useEffect(() => {
-    document.body.style.overflow = menu ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
-  }, [menu]);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      document.documentElement.style.setProperty("--scroll", String(window.scrollY));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add("in-view");
+    }), { threshold: .12 });
+    document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
 
   return <main className="internal-page">
-    <header className="nav nav-black internal-nav">
+    <header className={`nav internal-nav ${scrolled ? "nav-black" : ""}`}>
       <Link href="../" className="brand"><img src={asset("/logos/ideamos-light.webp")} alt="Ideamos" /></Link>
-      <nav className={menu ? "nav-links open" : "nav-links"}>
-        {nav.map(([label, href]) => <Link onClick={() => setMenu(false)} key={href} href={`../${href}/`}>{label}</Link>)}
-        <Link onClick={() => setMenu(false)} className="mobile-contact" href="../#contacto">Contacto</Link>
+      <nav className="nav-links desktop-navigation">
+        {nav.map(([label, href]) => <Link key={href} href={`../${href}/`}>{label}</Link>)}
       </nav>
       <a className="nav-contact" href="https://wa.link/wgb5pk">Quiero que me asesoren</a>
-      <button className="menu" onClick={() => setMenu(!menu)} aria-label={menu ? "Cerrar menú" : "Abrir menú"}>{menu ? "×" : "≡"}</button>
+      <MobileMenu
+        logoSrc={asset("/logos/ideamos-light.webp")}
+        items={[
+          ...nav.map(([label, href]) => ({ label, href: `../${href}/` })),
+          { label: "Contacto", href: "../#contacto" },
+        ]}
+      />
     </header>
 
-    <section className="hero internal-home-hero">
-      <video autoPlay muted loop playsInline className="hero-video"><source src={asset("/media/hero.mp4")} type="video/mp4" /></video>
+    <section className={`hero internal-home-hero ${page.matchHomeHero ? "matches-home-hero" : ""}`} id="inicio">
+      <ManagedBackgroundVideo
+        eager
+        className="hero-video"
+        src={asset("/media/hero.mp4")}
+        poster={asset("/media/hero-poster.webp")}
+      />
       <div className="hero-overlay" /><div className="hero-aurora" />
       <div className="space-particles"><i/><i/><i/><i/><i/><i/></div>
       <div className="tech-frame frame-left"><i/><span>34°36&apos;S</span><b>001</b></div>
@@ -79,6 +107,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
         <h1><span>{page.title}</span></h1>
         <p className="hero-copy">{page.intro}</p>
         <Actions />
+        {page.matchHomeHero && <div className="hero-clients"><HeroLogoTrack /></div>}
       </div>
       <div className="hero-caption">DISEÑO WEB &amp; MARKETING DIGITAL</div>
       <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
@@ -160,6 +189,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
           {section.contact && <Actions />}
         </section>;
     })}
+    {page.homeClosing && <HomeClosingSections />}
   </main>;
 }
 
