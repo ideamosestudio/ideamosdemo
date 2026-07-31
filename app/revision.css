@@ -1502,4 +1502,48 @@ h1,h2,h3,
     align-items:center;
     gap:16px;
   }
+
+  /* Mobile typography refinement requested on 31/07. */
+  .hero h1{
+    font-size:40px!important;
+  }
+  .hero-actions{
+    margin-bottom:20px!important;
+  }
+
+  .statement h2{
+    font-size:31px!important;
+  }
+  .section-heading h2{
+    font-size:29px!important;
+  }
+  .google-content h2,
+  .cases-section h2,
+  .human-copy h2{
+    font-size:31px!important;
+  }
+  .testimonial h2{
+    font-size:27px!important;
+  }
+  .trusted h2{
+    font-size:29px!important;
+  }
+  .contact-main h2{
+    font-size:33px!important;
+  }
+
+  .statement h3,
+  .google-content h3{
+    font-family:"Roboto",Arial,sans-serif!important;
+    font-size:20px!important;
+    font-weight:700!important;
+  }
+  .statement h3 b,
+  .google-content h3 b{
+    font-family:"Roboto",Arial,sans-serif!important;
+    font-weight:700!important;
+  }
+  .section-heading>span{
+    font-size:16px!important;
+  }
 }
