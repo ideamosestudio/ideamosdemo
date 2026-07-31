@@ -1351,7 +1351,8 @@ h1,h2,h3,
 }
 
 /* Mobile-only corrections requested on 31/07. Desktop remains unchanged. */
-.mobile-only{display:none}
+.mobile-only,
+.hero-title-mobile{display:none}
 
 @media(max-width:600px){
   :root{--mobile-gutter:30px}
@@ -1368,12 +1369,12 @@ h1,h2,h3,
   .ecommerce-actions{padding-inline:0!important;align-items:center}
   .ecommerce-actions .cta-glow.secondary{width:100%!important;max-width:360px;margin-inline:auto}
 
-  /* Poppins Regular and one-point-smaller mobile button typography. */
+  /* Poppins Bold mobile button typography. */
   .cta-glow,
   .orange-cta{
     font-family:"Poppins",Arial,sans-serif!important;
     font-size:13px!important;
-    font-weight:400!important;
+    font-weight:700!important;
   }
   .orange-cta{
     width:100%!important;
@@ -1387,7 +1388,104 @@ h1,h2,h3,
   footer .footer-brand>a{
     font-family:"Poppins",Arial,sans-serif!important;
     font-size:10px!important;
+    font-weight:700!important;
+  }
+
+  /* Exact hero title lines requested for mobile. */
+  .hero-title-desktop{display:none!important}
+  .hero-title-mobile{
+    display:flex!important;
+    flex-direction:column;
+    width:100%;
+  }
+  .hero-title-mobile>span{
+    display:block;
+    white-space:nowrap;
+  }
+
+  /* The desktop grid leaves this column at 0px on mobile; give the slider a real width. */
+  .statement .screen-swap{
+    width:100%!important;
+    min-width:100%!important;
+    min-height:0!important;
+    height:auto!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    place-items:center!important;
+    opacity:1!important;
+    transform:none!important;
+    margin-top:42px!important;
+  }
+  .statement .screen-swap>img{
+    position:static!important;
+    grid-area:1/1;
+    width:100%!important;
+    max-width:100%!important;
+    height:auto!important;
+    display:none!important;
+    opacity:1!important;
+    object-fit:contain!important;
+  }
+  .statement .screen-swap>img.active{display:block!important}
+  .statement .screen-dots{
+    position:static!important;
+    grid-area:2/1;
+    margin-top:18px;
+  }
+
+  /* 50% larger than the previous 28px menu icon. */
+  .nav .menu{
+    width:48px;
+    height:48px;
+    padding:0;
+    display:grid;
+    place-items:center;
+    font-size:42px!important;
+    line-height:1;
+  }
+
+  /* Mobile cleanup for section labels and testimonial alignment. */
+  .google-content:before,
+  .testimonial-copy:before{
+    display:none!important;
+    content:none!important;
+  }
+  .testimonial{
+    padding-bottom:60px!important;
+  }
+  .testimonial-person{
+    justify-content:center!important;
+    width:100%;
+  }
+  .testimonial-person div{
+    align-items:center;
+    text-align:center!important;
+  }
+
+  /* Form field prompts stay regular on mobile. */
+  .contact-main input,
+  .contact-main textarea,
+  .contact-main input::placeholder,
+  .contact-main textarea::placeholder{
+    font-family:"Roboto",Arial,sans-serif!important;
     font-weight:400!important;
+    letter-spacing:normal!important;
+  }
+
+  /* Stack contact icons above their centered details. */
+  .contact-card>a{
+    flex-direction:column!important;
+    justify-content:center!important;
+    text-align:center!important;
+    gap:12px!important;
+  }
+  .contact-card>a div{
+    align-items:center!important;
+    text-align:center!important;
+  }
+  .contact-greeting,
+  .contact-social{
+    display:none!important;
   }
 
   /* Shared 30px mobile gutters. */
