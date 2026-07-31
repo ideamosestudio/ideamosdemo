@@ -1093,20 +1093,25 @@ h1,h2,h3,
   box-shadow:0 0 36px rgba(255,78,0,.42);
 }
 
-/* Prueba 31/07: fondo oscuro en el bloque de asesoría de la home.
+/* Prueba 31/07: fondo azul noche animado en el bloque de asesoría de la home.
    Mantener aislado para poder revertirlo con un único cambio. */
 .human-cta{
   color:#fff!important;
-  background:#070707!important;
-  border-top-color:#222!important;
+  background:#02040b!important;
+  border-top-color:#101a33!important;
 }
 
 .human-cta:before{
+  inset:0 50% 0 0!important;
   background-image:
-    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
-    radial-gradient(circle at 20% 20%,rgba(255,77,0,.16),transparent 34%)!important;
-  background-size:60px 60px,60px 60px,auto!important;
+    radial-gradient(circle at 15% 22%,rgba(36,91,255,.34),transparent 34%),
+    radial-gradient(circle at 88% 76%,rgba(77,45,255,.25),transparent 38%),
+    radial-gradient(circle at 54% 48%,rgba(18,48,135,.18),transparent 45%),
+    linear-gradient(135deg,#02040b 0%,#040719 52%,#02040b 100%)!important;
+  background-size:140% 140%,150% 150%,130% 130%,100% 100%!important;
+  background-position:0% 0%,100% 100%,50% 50%,0 0!important;
+  box-shadow:inset -80px 0 120px rgba(0,0,0,.42);
+  animation:humanBlueGlowShift 14s ease-in-out infinite alternate;
 }
 
 .human-copy,
@@ -1118,6 +1123,24 @@ h1,h2,h3,
 
 .human-copy span{
   opacity:.72;
+}
+
+@keyframes humanBlueGlowShift{
+  0%{
+    background-position:0% 5%,100% 95%,46% 50%,0 0;
+  }
+  50%{
+    background-position:18% 20%,82% 72%,58% 42%,0 0;
+  }
+  100%{
+    background-position:8% 30%,92% 58%,48% 60%,0 0;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .human-cta:before{
+    animation:none;
+  }
 }
 
 .footer-brand h3,
