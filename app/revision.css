@@ -1645,3 +1645,46 @@ h1,h2,h3,
     font-size:16px!important;
   }
 }
+
+/* Diseño Web uses the exact same cover rhythm as the home. */
+.internal-home-hero.matches-home-hero .hero-center{
+  padding-bottom:80px;
+}
+
+.internal-home-hero.matches-home-hero .hero-copy{
+  max-width:720px;
+}
+
+.internal-home-hero.matches-home-hero .internal-actions{
+  gap:16px!important;
+  margin-top:34px;
+}
+
+.internal-home-hero.matches-home-hero .internal-actions .cta-glow{
+  min-width:0;
+}
+
+@media(min-width:981px){
+  .internal-home-hero.matches-home-hero>.hero-center{
+    transform:translateY(-30px);
+  }
+
+  .internal-home-hero.matches-home-hero .internal-actions .cta-glow{
+    min-height:50px!important;
+    padding:0 51px!important;
+    font-family:"Poppins",Arial,sans-serif!important;
+    font-size:11px!important;
+    font-weight:600!important;
+    letter-spacing:1px!important;
+  }
+}
+
+@media(max-width:600px){
+  .internal-home-hero.matches-home-hero h1{
+    font-size:40px!important;
+  }
+
+  .internal-home-hero.matches-home-hero .hero-clients{
+    width:min(100%,430px);
+  }
+}

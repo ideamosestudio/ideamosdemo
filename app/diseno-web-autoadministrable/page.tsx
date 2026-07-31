@@ -1,6 +1,8 @@
 import InternalPage, { ServicePage } from "../../components/InternalPage";
 
 const page: ServicePage = {
+  matchHomeHero: true,
+  homeClosing: true,
   eyebrow: "MÁS ESTRATEGIA, MÁS RESULTADOS",
   title: "Diseño web de alto impacto enfocado en resultados",
   intro: "Diseñamos sitios que impactan y convierten, ayudándote a atraer más clientes y aumentar tus ventas. Contactanos y charlemos de tu proyecto.",
@@ -18,7 +20,6 @@ const page: ServicePage = {
       { title: "Más visibilidad", copy: "Cuando alguien busque en Google lo que ofrecés, vas a tener más posibilidades de aparecer y ser elegido." },
       { title: "Consultas las 24 horas", copy: "Mientras vos descansás, tu sitio sigue trabajando: recibe mensajes, pedidos y nuevas oportunidades." },
     ]},
-    { eyebrow: "ENVIANOS UN MENSAJE", title: "Contactanos y reservá una asesoría online sin cargo", paragraphs: ["Somos un equipo de profesionales con más de 10 años de experiencia, listos para asesorarte. Contactanos y coordinamos una charla para entender tu negocio, sus desafíos y objetivos. Durante la conversación, te proponemos acciones concretas y armamos una propuesta a medida en menos de 48 horas."], visual: "human" },
   ],
 };
 export default function Page(){ return <InternalPage page={page}/>; }
