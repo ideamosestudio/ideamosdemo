@@ -1093,6 +1093,33 @@ h1,h2,h3,
   box-shadow:0 0 36px rgba(255,78,0,.42);
 }
 
+/* Prueba 31/07: fondo oscuro en el bloque de asesoría de la home.
+   Mantener aislado para poder revertirlo con un único cambio. */
+.human-cta{
+  color:#fff!important;
+  background:#070707!important;
+  border-top-color:#222!important;
+}
+
+.human-cta:before{
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
+    radial-gradient(circle at 20% 20%,rgba(255,77,0,.16),transparent 34%)!important;
+  background-size:60px 60px,60px 60px,auto!important;
+}
+
+.human-copy,
+.human-copy h2,
+.human-copy span,
+.human-copy span b{
+  color:#fff!important;
+}
+
+.human-copy span{
+  opacity:.72;
+}
+
 .footer-brand h3,
 .footer-brand h3 em{
   font-family:"Roboto",Arial,sans-serif!important;
