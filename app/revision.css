@@ -2170,3 +2170,59 @@ h1,h2,h3,
     object-fit:cover;
   }
 }
+
+/* Final pricing review overrides — 01/08 */
+@media(min-width:981px){
+  .prices-page .nav{
+    display:grid;
+    grid-template-columns:minmax(160px,200px) minmax(0,1fr) 260px;
+    gap:clamp(14px,1.5vw,30px);
+  }
+  .prices-page .nav-links{
+    width:100%;
+    min-width:0;
+    gap:clamp(12px,1.3vw,25px);
+    white-space:nowrap;
+  }
+  .prices-page .nav-contact,
+  .prices-page .nav-contact:hover,
+  .prices-page .nav-contact:focus-visible{
+    width:260px;
+    padding-inline:20px!important;
+    letter-spacing:1px!important;
+  }
+}
+
+.prices-page .prices-nav{top:0!important;margin-top:0!important;transform:none}
+.prices-page .pricing-plans{padding-top:172px}
+.prices-page .pricing-heading{margin-bottom:96px}
+.prices-page .pricing-heading h1,
+.prices-page .human-copy h2{
+  font-family:"Gilroy ExtraBold",Arial,sans-serif!important;
+  font-size:clamp(38px,2.8vw,53px)!important;
+  font-weight:800!important;
+  line-height:1.02!important;
+  letter-spacing:-.045em!important;
+}
+.prices-page .price-value strong{
+  font-family:"Gilroy ExtraBold",Arial,sans-serif!important;
+  font-weight:800!important;
+}
+.prices-page .price-description,
+.prices-page .price-card:nth-child(4) .price-description{
+  min-height:0;
+  margin-bottom:28px;
+}
+.prices-page .price-cta{margin-top:0}
+.prices-page .price-cta:before,
+.prices-page .price-cta:after{display:none!important;content:none!important}
+.prices-page .price-features>b{
+  font-family:"Gilroy ExtraBold",Arial,sans-serif!important;
+  font-weight:800!important;
+}
+@media(max-width:650px){
+  .prices-page .pricing-plans{padding-top:118px}
+  .prices-page .pricing-heading{margin-bottom:64px}
+  .prices-page .pricing-heading h1,
+  .prices-page .human-copy h2{font-size:44px!important}
+}
