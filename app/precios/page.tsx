@@ -13,13 +13,14 @@ const navigation = [
   ["Marketing Digital", "marketing-digital"],
   ["Aparecé primero en Google", "posicionamiento-web"],
   ["Casos de Éxito", "casos-de-exito"],
+  ["Precios", "precios"],
 ];
 
 const plans = [
   {
-    name: "Landing Page",
+    name: "Landing page",
     detail: "Microweb / página única",
-    priceLabel: "Por solo",
+    priceLabel: "Desde",
     price: "$ 250.000",
     description: "Micrositio express para mostrar lo esencial. Ideal como presencia inicial de emprendedores low cost.",
     closing: "Ideal para campañas puntuales, lanzamientos o servicios simples. Todo listo para recibir consultas y mostrar profesionalismo, sin necesidad de una web completa.",
@@ -36,9 +37,9 @@ const plans = [
     ],
   },
   {
-    name: "Web Básica",
+    name: "Web básica",
     detail: "Hasta 4 páginas a medida",
-    priceLabel: "Por solo",
+    priceLabel: "Desde",
     price: "$ 400.000",
     description: "Sitio web para marcas personales o servicios profesionales. Transmití confianza desde el inicio.",
     closing: "Una solución para profesionales, freelancers y pequeños equipos que necesitan generar confianza. Te ayudamos a tener presencia digital sólida y a la altura de lo que ofrecés.",
@@ -55,7 +56,7 @@ const plans = [
     ],
   },
   {
-    name: "Tienda Base",
+    name: "Tienda base",
     detail: "Hasta 10 categorías",
     priceLabel: "Desde",
     price: "$ 500.000",
@@ -77,7 +78,7 @@ const plans = [
     ],
   },
   {
-    name: "Tienda Pyme",
+    name: "Tienda pyme",
     detail: "Hasta 40 categorías",
     priceLabel: "Desde",
     price: "$ 700.000",
@@ -148,13 +149,13 @@ export default function PricesPage() {
           <p className="price-detail">{plan.detail}</p>
           <div className="price-value"><small>{plan.priceLabel}</small><strong>{plan.price}</strong><span>FINAL</span></div>
           <p className="price-description">{plan.description}</p>
-          <a className="price-cta" href="https://wa.link/wgb5pk">QUIERO ESTE PLAN <span>↗</span></a>
+          <a className="orange-cta price-cta" href="https://wa.link/wgb5pk">QUIERO ESTE PLAN <span>↗</span></a>
           <div className="price-features">
             <b>EL PLAN INCLUYE:</b>
             <ul>{plan.features.map((feature) => <li key={feature}><i>✓</i><span>{feature}</span></li>)}</ul>
           </div>
           {plan.closing && <p className="price-closing">{plan.closing}</p>}
-          <a className="price-more" href="https://wa.link/wgb5pk">QUIERO MÁS INFO <span>→</span></a>
+          <a className="orange-cta price-more" href="https://wa.link/wgb5pk">QUIERO MÁS INFO <span>→</span></a>
         </article>)}
       </div>
     </section>
