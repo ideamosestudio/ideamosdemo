@@ -38,6 +38,7 @@ const nav = [
   ["Marketing Digital", "marketing-digital"],
   ["Aparecé primero en Google", "posicionamiento-web"],
   ["Casos de Éxito", "casos-de-exito"],
+  ["Precios", "precios"],
 ];
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;

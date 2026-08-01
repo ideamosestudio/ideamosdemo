@@ -32,9 +32,9 @@ export function ClientLogoMarquee() {
   </section>;
 }
 
-export function HomeClosingSections() {
+export function HomeClosingSections({ includeClientLogos = true }: { includeClientLogos?: boolean } = {}) {
   return <>
-    <ClientLogoMarquee />
+    {includeClientLogos && <ClientLogoMarquee />}
 
     <section className="human-cta">
       <div className="human-design" aria-hidden="true">

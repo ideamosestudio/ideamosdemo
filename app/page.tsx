@@ -53,7 +53,7 @@ export default function Home() {
     <header className={`nav ${scrolled ? "nav-black" : ""}`}>
       <a href="#inicio" className="brand"><img src={asset("/logos/ideamos-light.webp")} alt="Ideamos" /></a>
       <nav className="nav-links desktop-navigation">
-        <a href={asset("/diseno-web-autoadministrable/")}>Diseño Web</a><a href={asset("/tiendas-online/")}>Tiendas Online</a><a href={asset("/marketing-digital/")}>Marketing Digital</a><a href={asset("/posicionamiento-web/")}>Aparecé primero en Google</a><a href={asset("/casos-de-exito/")}>Casos de Éxito</a>
+        <a href={asset("/diseno-web-autoadministrable/")}>Diseño Web</a><a href={asset("/tiendas-online/")}>Tiendas Online</a><a href={asset("/marketing-digital/")}>Marketing Digital</a><a href={asset("/posicionamiento-web/")}>Aparecé primero en Google</a><a href={asset("/casos-de-exito/")}>Casos de Éxito</a><a href={asset("/precios/")}>Precios</a>
       </nav>
       <a className="nav-contact" href="https://wa.link/wgb5pk">Quiero que me asesoren</a>
       <MobileMenu
@@ -64,6 +64,7 @@ export default function Home() {
           { label: "Marketing Digital", href: asset("/marketing-digital/") },
           { label: "Aparecé primero en Google", href: asset("/posicionamiento-web/") },
           { label: "Casos de Éxito", href: asset("/casos-de-exito/") },
+          { label: "Precios", href: asset("/precios/") },
         ]}
       />
     </header>
