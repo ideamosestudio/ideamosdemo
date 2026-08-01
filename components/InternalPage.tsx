@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 import { HeroLogoTrack, HomeClosingSections } from "./SharedHomeSections";
 import SiteHeader from "./SiteHeader";
@@ -84,7 +84,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
       <div className="data-line line-b"><span>RESULTS</span><i/></div>
       <div className="hero-center">
         <p className="availability"><i/> {page.eyebrow}</p>
-        <h1><span>{page.title}</span></h1>
+        <h1>{page.title.split("\n").map((line, index) => <span className="hero-title-line" key={`${line}-${index}`}>{line}</span>)}</h1>
         <p className="hero-copy">{page.intro}</p>
         <Actions />
         {page.matchHomeHero && <div className="hero-clients"><HeroLogoTrack /></div>}
@@ -124,7 +124,8 @@ export default function InternalPage({ page }: { page: ServicePage }) {
       }
 
       if (section.visual === "wilde") {
-        return <section key={`${section.title}-${sectionIndex}`} className={`service-section design-problems ${page.sharedSectionBackground ? "shared-section-bg" : ""}`}>
+        return <Fragment key={`${section.title}-${sectionIndex}`}>
+        <section className={`service-section design-problems ${page.sharedSectionBackground ? "shared-section-bg" : ""}`}>
           {!page.hideSectionIndexes && <div className="service-index">0{sectionIndex + 2} — IDEAMOS <i /></div>}
           <header className="service-heading">
             <p>{section.eyebrow}</p>
@@ -149,7 +150,13 @@ export default function InternalPage({ page }: { page: ServicePage }) {
             </div>
           </div>
           {section.actions && <Actions />}
-        </section>;
+        </section>
+        {page.homeVideoWall && <section className="desktop-video-wall internal-video-wall" aria-label="Presentación audiovisual de Ideamos">
+          <video autoPlay muted loop playsInline preload="metadata">
+            <source src={asset("/media/video-wall-background-2026.webm")} type="video/webm" />
+          </video>
+        </section>}
+        </Fragment>;
       }
 
       return <section key={`${section.title}-${sectionIndex}`} className={`service-section ${section.dark ? "dark" : ""} ${section.contact ? "service-contact" : ""} ${page.sharedSectionBackground ? "shared-section-bg" : ""}`}>
@@ -169,11 +176,6 @@ export default function InternalPage({ page }: { page: ServicePage }) {
           {section.contact && <Actions />}
         </section>;
     })}
-    {page.homeVideoWall && <section className="desktop-video-wall internal-video-wall" aria-label="Presentación audiovisual de Ideamos">
-      <video autoPlay muted loop playsInline preload="metadata">
-        <source src={asset("/media/video-wall-background-2026.webm")} type="video/webm" />
-      </video>
-    </section>}
     {page.homeClosing && <HomeClosingSections />}
   </main>;
 }

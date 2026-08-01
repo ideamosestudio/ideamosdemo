@@ -13,9 +13,13 @@
   transform:scaleX(1.08)!important;
 }
 
-.internal-home-hero h1 span,
+.internal-home-hero h1,
 .design-problems .service-heading h2{
   white-space:pre-line;
+}
+
+.internal-home-hero h1 .hero-title-line{
+  display:block;
 }
 
 .internal-page .service-section.shared-section-bg{
@@ -81,11 +85,16 @@
 }
 
 .prices-page .price-card-top small,
-.prices-page .price-card h3,
 .prices-page .price-detail,
 .prices-page .price-value small{
   font-family:"Oswald","Roboto Condensed",Arial,sans-serif!important;
   font-weight:500!important;
+}
+.prices-page .price-card h3{
+  font-family:"Gilroy ExtraBold",Arial,sans-serif!important;
+  font-size:clamp(35px,calc(2.8vw - 3px),50px)!important;
+  font-weight:800!important;
+  letter-spacing:-.045em!important;
 }
 .prices-page .price-value span{
   display:block!important;
@@ -96,6 +105,24 @@
   justify-self:start;
 }
 @media(min-width:981px){
+  .internal-home-hero h1 .hero-title-line{
+    white-space:nowrap;
+  }
+  .design-problems .service-heading h2{
+    white-space:pre-line;
+  }
+  .design-problems .service-heading h3{
+    max-width:720px;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:center;
+  }
+  .design-problems-list article{
+    border-bottom:0!important;
+  }
+  .design-problems-list h3{
+    letter-spacing:-.025em!important;
+  }
   .prices-page .nav{
     display:flex;
     grid-template-columns:none;
@@ -104,5 +131,21 @@
   .prices-page .nav-links{
     width:auto;
     gap:25px;
+  }
+  .prices-page{
+    background:#f4f3f0!important;
+  }
+  .prices-page .human-cta{
+    width:100%!important;
+    min-height:670px!important;
+    height:auto!important;
+    margin:0!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    background:#f4f3f0!important;
+  }
+  .prices-page .human-cta:before{
+    background:#f4f3f0!important;
   }
 }
