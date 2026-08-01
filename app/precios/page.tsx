@@ -23,7 +23,7 @@ const plans = [
     priceLabel: "Desde",
     price: "$ 250.000",
     description: "Micrositio express para mostrar lo esencial. Ideal como presencia inicial de emprendedores low cost.",
-    closing: "Ideal para campañas puntuales, lanzamientos o servicios simples. Todo listo para recibir consultas y mostrar profesionalismo, sin necesidad de una web completa.",
+    closing: "Ideal para campañas, lanzamientos o servicios simples. Todo listo para recibir consultas y mostrar profesionalismo, sin necesidad de una web completa.",
     features: [
       "Una sola página clara y directa.",
       "Templates exclusivas premium.",
@@ -149,7 +149,7 @@ export default function PricesPage() {
           <p className="price-detail">{plan.detail}</p>
           <div className="price-value"><small>{plan.priceLabel}</small><strong>{plan.price}</strong><span>FINAL</span></div>
           <p className="price-description">{plan.description}</p>
-          <a className="orange-cta price-cta" href="https://wa.link/wgb5pk">QUIERO ESTE PLAN <span>↗</span></a>
+          <a className="orange-cta price-cta" href="https://wa.link/wgb5pk">QUIERO ESTE PLAN</a>
           <div className="price-features">
             <b>EL PLAN INCLUYE:</b>
             <ul>{plan.features.map((feature) => <li key={feature}><i>✓</i><span>{feature}</span></li>)}</ul>

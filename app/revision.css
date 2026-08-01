@@ -1915,7 +1915,7 @@ h1,h2,h3,
 
 /* Prices — editorial plan grid, built from the visual language of the home. */
 .prices-page{background:#fff;color:#111}
-.prices-nav{top:10px!important;background:#050505f2!important;border-color:#272727!important;box-shadow:0 16px 55px #0004}
+.prices-nav{top:0!important;background:#050505f2!important;border-color:#272727!important;box-shadow:0 16px 55px #0004}
 .pricing-intro{position:relative;min-height:610px;padding:190px max(8vw,42px) 100px;display:flex;align-items:center;overflow:hidden;background:#f5f4f1;border-bottom:1px solid #d7d5d0}
 .pricing-intro:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
 .pricing-intro-copy{position:relative;z-index:2;width:min(860px,70vw)}
@@ -1988,8 +1988,8 @@ h1,h2,h3,
 }
 
 /* Prices correction: no cover, just four straightforward pricing tables. */
-.prices-page .pricing-plans{padding:155px max(3.2vw,28px) 120px;background:#f4f3f0}
-.prices-page .pricing-heading{display:block;max-width:820px;margin:0 auto 55px;text-align:center}
+.prices-page .pricing-plans{padding:185px max(3.2vw,28px) 120px;background:#f4f3f0}
+.prices-page .pricing-heading{display:block;max-width:820px;margin:0 auto 82px;text-align:center}
 .prices-page .pricing-heading>p{display:block;margin-bottom:22px;color:#ff5a00;font-size:10px;font-weight:800;letter-spacing:.26em}
 .prices-page .pricing-heading h1{margin:0;font-size:clamp(42px,5vw,76px);line-height:.94;letter-spacing:-.06em;font-weight:800}
 .prices-page .pricing-heading>span{display:block;max-width:650px;margin:24px auto 0;color:#5e5e5e;font-size:16px;line-height:1.65}
@@ -2035,11 +2035,11 @@ h1,h2,h3,
 
 /* Pricing legibility and navigation refinements requested from the live review. */
 .prices-page .pricing-heading h1{
-  font-family:"Roboto",Arial,sans-serif;
-  font-size:clamp(44px,5vw,78px);
+  font-family:"Gilroy ExtraBold",Arial,sans-serif;
+  font-size:clamp(38px,2.8vw,53px);
   line-height:1.02;
   letter-spacing:-.045em;
-  font-weight:700;
+  font-weight:800;
 }
 .prices-page .price-card-top small{font-size:14px;font-weight:800;letter-spacing:.16em}
 .prices-page .price-card h3{
@@ -2056,15 +2056,15 @@ h1,h2,h3,
   letter-spacing:.1em;
 }
 .prices-page .price-value strong{
-  font-family:"Roboto Condensed","Arial Narrow",Arial,sans-serif;
+  font-family:"Gilroy ExtraBold",Arial,sans-serif;
   font-size:clamp(44px,3.2vw,58px);
-  font-weight:400;
+  font-weight:800;
   line-height:.92;
   letter-spacing:-.035em;
 }
 .prices-page .price-description,
 .prices-page .price-card:nth-child(4) .price-description{
-  min-height:142px;
+  min-height:94px;
   color:#3f3f3f;
   font-size:16px;
   line-height:1.58;
@@ -2088,9 +2088,16 @@ h1,h2,h3,
   letter-spacing:.07em;
   box-shadow:0 0 25px #ff5a0035;
 }
+.prices-page .orange-cta.price-cta{justify-content:center}
 .prices-page .orange-cta.price-cta:hover,
 .prices-page .orange-cta.price-more:hover{transform:translateY(-4px);box-shadow:0 0 35px #ff5a0060}
-.prices-page .price-features>b{font-size:14px;line-height:1.3;letter-spacing:.12em}
+.prices-page .price-features>b{
+  font-family:"Gilroy ExtraBold",Arial,sans-serif;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.3;
+  letter-spacing:.12em;
+}
 .prices-page .price-features li,
 .prices-page .price-card:nth-child(4) .price-features li{
   padding:10px 0;
@@ -2116,6 +2123,17 @@ h1,h2,h3,
 
 /* Prices: desktop advisory block framed like the supplied layout. */
 @media(min-width:981px){
+  .nav .nav-contact{
+    flex:0 0 260px;
+    width:260px;
+  }
+  .nav .nav-contact:hover,
+  .nav .nav-contact:focus-visible{
+    padding-left:20px!important;
+    padding-right:20px!important;
+    letter-spacing:1px!important;
+  }
+
   .prices-page .human-cta{
     width:min(1520px,80vw);
     height:clamp(520px,32vw,620px);
