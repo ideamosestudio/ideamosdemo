@@ -16,6 +16,7 @@ type ContentSection = {
   contact?: boolean;
   visual?: "xtreme" | "wilde" | "human";
   actions?: boolean;
+  hideItemNumbers?: boolean;
 };
 type ServicePage = {
   eyebrow: string;
@@ -29,6 +30,9 @@ type ServicePage = {
   darkCopy?: string;
   matchHomeHero?: boolean;
   homeClosing?: boolean;
+  hideSectionIndexes?: boolean;
+  sharedSectionBackground?: boolean;
+  homeVideoWall?: boolean;
 };
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -105,8 +109,8 @@ export default function InternalPage({ page }: { page: ServicePage }) {
       }
 
       if (section.visual === "xtreme") {
-        return <section key={`${section.title}-${sectionIndex}`} className="service-section service-visual service-xtreme">
-          <div className="service-index">0{sectionIndex + 2} — IDEAMOS <i /></div>
+        return <section key={`${section.title}-${sectionIndex}`} className={`service-section service-visual service-xtreme ${page.sharedSectionBackground ? "shared-section-bg" : ""}`}>
+          {!page.hideSectionIndexes && <div className="service-index">0{sectionIndex + 2} — IDEAMOS <i /></div>}
           <header className="service-heading">
             <p>{section.eyebrow}</p>
             <h2>{section.title}</h2>
@@ -120,8 +124,8 @@ export default function InternalPage({ page }: { page: ServicePage }) {
       }
 
       if (section.visual === "wilde") {
-        return <section key={`${section.title}-${sectionIndex}`} className="service-section design-problems">
-          <div className="service-index">0{sectionIndex + 2} — IDEAMOS <i /></div>
+        return <section key={`${section.title}-${sectionIndex}`} className={`service-section design-problems ${page.sharedSectionBackground ? "shared-section-bg" : ""}`}>
+          {!page.hideSectionIndexes && <div className="service-index">0{sectionIndex + 2} — IDEAMOS <i /></div>}
           <header className="service-heading">
             <p>{section.eyebrow}</p>
             <h2>{section.title}</h2>
@@ -132,7 +136,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
               {section.items.map((item, index) => <article key={item.title}>
                 <i />
                 <div>
-                  <small>{String(index + 1).padStart(2, "0")}</small>
+                  {!section.hideItemNumbers && <small>{String(index + 1).padStart(2, "0")}</small>}
                   <h3>{item.title}</h3>
                   <p>{item.copy}</p>
                 </div>
@@ -148,8 +152,8 @@ export default function InternalPage({ page }: { page: ServicePage }) {
         </section>;
       }
 
-      return <section key={`${section.title}-${sectionIndex}`} className={`service-section ${section.dark ? "dark" : ""} ${section.contact ? "service-contact" : ""}`}>
-          <div className="service-index">0{sectionIndex + 2} — {section.dark ? "STRATEGY" : "IDEAMOS"} <i /></div>
+      return <section key={`${section.title}-${sectionIndex}`} className={`service-section ${section.dark ? "dark" : ""} ${section.contact ? "service-contact" : ""} ${page.sharedSectionBackground ? "shared-section-bg" : ""}`}>
+          {!page.hideSectionIndexes && <div className="service-index">0{sectionIndex + 2} — {section.dark ? "STRATEGY" : "IDEAMOS"} <i /></div>}
           <header className="service-heading">
             <p>{section.eyebrow}</p>
             <h2>{section.title}</h2>
@@ -158,13 +162,18 @@ export default function InternalPage({ page }: { page: ServicePage }) {
           </header>
           {section.items && <div className="service-items">
             {section.items.map((item, index) => <article key={item.title}>
-              <small>{String(index + 1).padStart(2, "0")}</small><i />
+              {!section.hideItemNumbers && <small>{String(index + 1).padStart(2, "0")}</small>}<i />
               <h3>{item.title}</h3><p>{item.copy}</p>
             </article>)}
           </div>}
           {section.contact && <Actions />}
         </section>;
     })}
+    {page.homeVideoWall && <section className="desktop-video-wall internal-video-wall" aria-label="Presentación audiovisual de Ideamos">
+      <video autoPlay muted loop playsInline preload="metadata">
+        <source src={asset("/media/video-wall-background-2026.webm")} type="video/webm" />
+      </video>
+    </section>}
     {page.homeClosing && <HomeClosingSections />}
   </main>;
 }

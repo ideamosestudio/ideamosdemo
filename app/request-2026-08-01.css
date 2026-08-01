@@ -10,6 +10,20 @@
 .nav .nav-contact:hover,
 .nav .nav-contact:focus-visible{
   letter-spacing:3px!important;
+  transform:scaleX(1.08)!important;
+}
+
+.internal-home-hero h1 span,
+.design-problems .service-heading h2{
+  white-space:pre-line;
+}
+
+.internal-page .service-section.shared-section-bg{
+  background-color:#fff!important;
+}
+
+.internal-page .service-section.shared-section-bg:before{
+  background-image:none!important;
 }
 
 /* Requested testimonial and video-call treatment. */
