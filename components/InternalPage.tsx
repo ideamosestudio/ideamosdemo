@@ -109,7 +109,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
       }
 
       if (section.visual === "xtreme") {
-        return <section key={`${section.title}-${sectionIndex}`} className={`service-section service-visual service-xtreme ${page.sharedSectionBackground ? "shared-section-bg" : ""}`}>
+        return <section key={`${section.title}-${sectionIndex}`} className={`service-section service-visual service-xtreme ${page.hideSectionIndexes ? "without-service-index" : ""} ${page.sharedSectionBackground ? "shared-section-bg" : ""}`}>
           {!page.hideSectionIndexes && <div className="service-index">0{sectionIndex + 2} — IDEAMOS <i /></div>}
           <header className="service-heading">
             <p>{section.eyebrow}</p>

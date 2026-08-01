@@ -30,6 +30,12 @@
   background-image:none!important;
 }
 
+/* Keep the visual aligned with its copy when the section index row is hidden. */
+.service-xtreme.without-service-index .service-heading,
+.service-xtreme.without-service-index .service-visual-media{
+  grid-row:1;
+}
+
 /* Requested testimonial and video-call treatment. */
 .testimonial{
   background-color:#fafafa!important;
