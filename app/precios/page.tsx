@@ -1,20 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import MobileMenu from "../../components/MobileMenu";
+import { useEffect } from "react";
 import { HomeClosingSections } from "../../components/SharedHomeSections";
-
-const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
-
-const navigation = [
-  ["Diseño Web", "diseno-web-autoadministrable"],
-  ["Tiendas Online", "tiendas-online"],
-  ["Marketing Digital", "marketing-digital"],
-  ["Aparecé primero en Google", "posicionamiento-web"],
-  ["Casos de Éxito", "casos-de-exito"],
-  ["Precios", "precios"],
-];
+import SiteHeader from "../../components/SiteHeader";
 
 const plans = [
   {
@@ -102,15 +90,6 @@ const plans = [
 ];
 
 export default function PricesPage() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
       if (entry.isIntersecting) entry.target.classList.add("in-view");
@@ -120,20 +99,7 @@ export default function PricesPage() {
   }, []);
 
   return <main className="prices-page">
-    <header className={`nav internal-nav prices-nav nav-black ${scrolled ? "is-scrolled" : ""}`}>
-      <Link href="../" className="brand"><img src={asset("/logos/ideamos-light.webp")} alt="Ideamos" /></Link>
-      <nav className="nav-links desktop-navigation">
-        {navigation.map(([label, href]) => <Link key={href} href={`../${href}/`}>{label}</Link>)}
-      </nav>
-      <a className="nav-contact" href="https://wa.link/wgb5pk">Quiero que me asesoren</a>
-      <MobileMenu
-        logoSrc={asset("/logos/ideamos-light.webp")}
-        items={[
-          ...navigation.map(([label, href]) => ({ label, href: `../${href}/` })),
-          { label: "Contacto", href: "#contacto" },
-        ]}
-      />
-    </header>
+    <SiteHeader solid />
 
     <section className="pricing-plans" id="inicio" aria-label="Planes y precios de Ideamos">
       <header className="pricing-heading" data-reveal>

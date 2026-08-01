@@ -1,10 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 import { HeroLogoTrack, HomeClosingSections } from "./SharedHomeSections";
-import MobileMenu from "./MobileMenu";
+import SiteHeader from "./SiteHeader";
 
 type Item = { title: string; copy: string };
 type ContentSection = {
@@ -32,15 +31,6 @@ type ServicePage = {
   homeClosing?: boolean;
 };
 
-const nav = [
-  ["Diseño Web", "diseno-web-autoadministrable"],
-  ["Tiendas Online", "tiendas-online"],
-  ["Marketing Digital", "marketing-digital"],
-  ["Aparecé primero en Google", "posicionamiento-web"],
-  ["Casos de Éxito", "casos-de-exito"],
-  ["Precios", "precios"],
-];
-
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
 function Actions() {
@@ -51,14 +41,12 @@ function Actions() {
 }
 
 export default function InternalPage({ page }: { page: ServicePage }) {
-  const [scrolled, setScrolled] = useState(false);
   const sections = page.sections ?? [
     { eyebrow: "ESTRATEGIA + DISEÑO + TECNOLOGÍA", title: page.sectionTitle ?? "", paragraphs: [page.sectionCopy ?? ""], items: page.items?.map(([title, copy]) => ({ title, copy })) },
     { eyebrow: "SOLUCIONES A TU MEDIDA", title: page.darkTitle ?? "", paragraphs: [page.darkCopy ?? ""], dark: true, contact: true },
   ];
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 24);
       document.documentElement.style.setProperty("--scroll", String(window.scrollY));
     };
     onScroll();
@@ -75,20 +63,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
   }, []);
 
   return <main className="internal-page">
-    <header className={`nav internal-nav ${scrolled ? "nav-black" : ""}`}>
-      <Link href="../" className="brand"><img src={asset("/logos/ideamos-light.webp")} alt="Ideamos" /></Link>
-      <nav className="nav-links desktop-navigation">
-        {nav.map(([label, href]) => <Link key={href} href={`../${href}/`}>{label}</Link>)}
-      </nav>
-      <a className="nav-contact" href="https://wa.link/wgb5pk">Quiero que me asesoren</a>
-      <MobileMenu
-        logoSrc={asset("/logos/ideamos-light.webp")}
-        items={[
-          ...nav.map(([label, href]) => ({ label, href: `../${href}/` })),
-          { label: "Contacto", href: "../#contacto" },
-        ]}
-      />
-    </header>
+    <SiteHeader />
 
     <section className={`hero internal-home-hero ${page.matchHomeHero ? "matches-home-hero" : ""}`} id="inicio">
       <ManagedBackgroundVideo

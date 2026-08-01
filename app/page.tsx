@@ -5,7 +5,7 @@ import ManagedBackgroundVideo, {
   pauseManagedBackgroundVideos,
 } from "./components/ManagedBackgroundVideo";
 import { HeroLogoTrack, HomeClosingSections } from "../components/SharedHomeSections";
-import MobileMenu from "../components/MobileMenu";
+import SiteHeader from "../components/SiteHeader";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 const ecommerceLeft = [
@@ -22,15 +22,11 @@ const ecommerceRight = [
 ];
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false);
   const [screen, setScreen] = useState(0);
   const [testimonialPlaying, setTestimonialPlaying] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 24);
-      document.documentElement.style.setProperty("--scroll", String(window.scrollY));
-    };
+    const onScroll = () => document.documentElement.style.setProperty("--scroll", String(window.scrollY));
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -50,24 +46,7 @@ export default function Home() {
   }, []);
 
   return <main>
-    <header className={`nav ${scrolled ? "nav-black" : ""}`}>
-      <a href="#inicio" className="brand"><img src={asset("/logos/ideamos-light.webp")} alt="Ideamos" /></a>
-      <nav className="nav-links desktop-navigation">
-        <a href={asset("/diseno-web-autoadministrable/")}>Diseño Web</a><a href={asset("/tiendas-online/")}>Tiendas Online</a><a href={asset("/marketing-digital/")}>Marketing Digital</a><a href={asset("/posicionamiento-web/")}>Aparecé primero en Google</a><a href={asset("/casos-de-exito/")}>Casos de Éxito</a><a href={asset("/precios/")}>Precios</a>
-      </nav>
-      <a className="nav-contact" href="https://wa.link/wgb5pk">Quiero que me asesoren</a>
-      <MobileMenu
-        logoSrc={asset("/logos/ideamos-light.webp")}
-        items={[
-          { label: "Diseño Web", href: asset("/diseno-web-autoadministrable/") },
-          { label: "Tiendas Online", href: asset("/tiendas-online/") },
-          { label: "Marketing Digital", href: asset("/marketing-digital/") },
-          { label: "Aparecé primero en Google", href: asset("/posicionamiento-web/") },
-          { label: "Casos de Éxito", href: asset("/casos-de-exito/") },
-          { label: "Precios", href: asset("/precios/") },
-        ]}
-      />
-    </header>
+    <SiteHeader />
 
     <section className="hero" id="inicio">
       <ManagedBackgroundVideo
