@@ -126,6 +126,6 @@ export default function PricesPage() {
       </div>
     </section>
 
-    <HomeClosingSections includeClientLogos={false} />
+    <HomeClosingSections />
   </main>;
 }

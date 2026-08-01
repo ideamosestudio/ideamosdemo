@@ -3,40 +3,15 @@ import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
 const heroLogos = ["wynns", "uba", "stromberg", "santillana", "remax", "oner", "macba", "ivess", "kapelusz", "bgh"];
-const clientLogos = Array.from({ length: 10 }, (_, index) =>
-  `logo-blanco-${String(index + 1).padStart(3, "0")}.png`
-);
-
 export function HeroLogoTrack() {
   return <div className="logo-track">{[...heroLogos, ...heroLogos].map((name, index) =>
     <img key={`${name}-${index}`} src={asset(`/logos/${name}.webp`)} alt={name} />
   )}</div>;
 }
 
-export function ClientLogoMarquee() {
-  return <section className="client-logo-marquee" aria-label="Marcas que confiaron en Ideamos">
-    <div className="client-logo-track">
-      {[0, 1].map((group) =>
-        <div className="client-logo-group" key={`client-group-${group}`} aria-hidden={group === 1}>
-          {clientLogos.map((name, index) =>
-            <div className="client-logo" key={`client-${group}-${name}`}>
-              <img
-                src={asset(`/logos/${name}`)}
-                alt={group === 0 ? `Cliente de Ideamos ${index + 1}` : ""}
-              />
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  </section>;
-}
-
-export function HomeClosingSections({ includeClientLogos = true }: { includeClientLogos?: boolean } = {}) {
+export function HomeClosingSections() {
   return <>
-    {includeClientLogos && <ClientLogoMarquee />}
-
-    <section className="human-cta">
+    <section className="human-cta shared-section-bg">
       <div className="human-design" aria-hidden="true">
         <i className="human-glow human-glow-a"/><i className="human-glow human-glow-b"/>
       </div>
