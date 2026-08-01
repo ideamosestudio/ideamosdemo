@@ -134,28 +134,16 @@ export default function PricesPage() {
       />
     </header>
 
-    <section className="pricing-intro" id="inicio">
-      <div className="pricing-orbit" aria-hidden="true"><i/><i/><i/></div>
-      <div className="pricing-intro-copy" data-reveal>
-        <p><i/> PLANES IDEAMOS</p>
-        <h1>Una web profesional.<br/><em>Un plan claro.</em></h1>
-        <span>Elegí la solución que mejor acompaña el momento de tu negocio. Diseño profesional, foco en resultados y todo listo para empezar.</span>
-      </div>
-      <div className="pricing-index" aria-hidden="true"><span>04 PLANES</span><i/><span>2026</span></div>
-    </section>
-
-    <section className="pricing-plans" aria-label="Planes y precios de Ideamos">
+    <section className="pricing-plans" id="inicio" aria-label="Planes y precios de Ideamos">
       <header className="pricing-heading" data-reveal>
-        <p>PRECIOS DE SITIOS WEB Y TIENDAS ONLINE</p>
-        <h2>Encontrá el plan<br/>ideal para tu negocio</h2>
+        <p>PLANES IDEAMOS</p>
+        <h1>Precios simples.<br/>Cuatro formas de empezar.</h1>
+        <span>Elegí el plan que mejor se adapta a tu proyecto. Todos incluyen diseño profesional, adaptación mobile y acompañamiento de nuestro equipo.</span>
       </header>
 
       <div className="pricing-grid">
         {plans.map((plan, index) => <article className="price-card" key={plan.name} data-reveal>
-          <div className="price-card-top">
-            <small>{String(index + 1).padStart(2, "0")} — PLAN</small>
-            <span className="price-card-mark" aria-hidden="true" />
-          </div>
+          <div className="price-card-top"><small>PLAN {String(index + 1).padStart(2, "0")}</small></div>
           <h3>{plan.name}</h3>
           <p className="price-detail">{plan.detail}</p>
           <div className="price-value"><small>{plan.priceLabel}</small><strong>{plan.price}</strong><span>FINAL</span></div>

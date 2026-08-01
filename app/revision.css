@@ -1986,3 +1986,49 @@ h1,h2,h3,
   .price-card{padding:32px 24px;border-radius:18px}.price-card h3{font-size:12vw;margin-top:34px}
   .price-value strong{font-size:13vw}.price-features ul{grid-template-columns:1fr}.price-description{min-height:0}
 }
+
+/* Prices correction: no cover, just four straightforward pricing tables. */
+.prices-page .pricing-plans{padding:155px max(3.2vw,28px) 120px;background:#f4f3f0}
+.prices-page .pricing-heading{display:block;max-width:820px;margin:0 auto 55px;text-align:center}
+.prices-page .pricing-heading>p{display:block;margin-bottom:22px;color:#ff5a00;font-size:10px;font-weight:800;letter-spacing:.26em}
+.prices-page .pricing-heading h1{margin:0;font-size:clamp(42px,5vw,76px);line-height:.94;letter-spacing:-.06em;font-weight:800}
+.prices-page .pricing-heading>span{display:block;max-width:650px;margin:24px auto 0;color:#5e5e5e;font-size:16px;line-height:1.65}
+.prices-page .pricing-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:stretch}
+.prices-page .price-card,
+.prices-page .price-card:nth-child(4){min-height:0;padding:28px 25px 30px;border:1px solid #d6d3cd;border-radius:12px;background:#fff;color:#111;box-shadow:none}
+.prices-page .price-card:before,
+.prices-page .price-card:nth-child(4):before{display:none}
+.prices-page .price-card:hover{transform:translateY(-5px);border-color:#ff5a00;box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.prices-page .price-card-top,
+.prices-page .price-card:nth-child(4) .price-card-top{padding:0 0 20px;border-bottom:2px solid #ff5a00}
+.prices-page .price-card-top small{color:#ff5a00;font-size:9px;letter-spacing:.2em}
+.prices-page .price-card h3{min-height:72px;margin:28px 0 8px;font-size:clamp(29px,2.6vw,42px);line-height:.93}
+.prices-page .price-detail{min-height:32px;font-size:9px;line-height:1.4}
+.prices-page .price-value,
+.prices-page .price-card:nth-child(4) .price-value{display:block;margin:28px 0 22px;padding-bottom:23px;border-bottom:1px solid #ddd}
+.prices-page .price-value small{display:block;margin-bottom:6px}.prices-page .price-value strong{display:block;font-size:clamp(31px,2.8vw,46px);white-space:nowrap}
+.prices-page .price-value span{display:block;margin-top:5px;padding:0;font-size:8px}
+.prices-page .price-description,
+.prices-page .price-card:nth-child(4) .price-description{min-height:118px;margin-bottom:22px;color:#555;font-size:13px;line-height:1.55}
+.prices-page .price-cta{padding:15px 16px;font-size:9px;border-radius:7px}
+.prices-page .price-features{margin-top:30px}
+.prices-page .price-features>b{font-size:9px}
+.prices-page .price-features ul{display:block;margin-top:15px}
+.prices-page .price-features li,
+.prices-page .price-card:nth-child(4) .price-features li{min-height:0;padding:8px 0;border-color:#e5e3de;color:#4b4b4b;font-size:12px;line-height:1.35}
+.prices-page .price-closing,
+.prices-page .price-card:nth-child(4) .price-closing{margin-top:24px;color:#555;font-size:12px;line-height:1.55}
+.prices-page .price-more,
+.prices-page .price-card:nth-child(4) .price-more{margin-top:auto;padding-top:24px;border-color:#ddd;font-size:9px}
+
+@media(max-width:1200px){
+  .prices-page .pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .prices-page .price-card h3{min-height:0}.prices-page .price-detail{min-height:0}.prices-page .price-description{min-height:76px}
+}
+
+@media(max-width:650px){
+  .prices-page .pricing-plans{padding:130px 30px 85px}
+  .prices-page .pricing-heading h1{font-size:13vw}.prices-page .pricing-heading>span{font-size:14px}
+  .prices-page .pricing-grid{grid-template-columns:1fr}.prices-page .price-card{padding:28px 24px}
+  .prices-page .price-card h3{font-size:42px}.prices-page .price-value strong{font-size:46px}.prices-page .price-description{min-height:0}
+}
