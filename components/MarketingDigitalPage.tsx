@@ -107,12 +107,7 @@ export default function MarketingDigitalPage() {
       </div>
     </section>
 
-    <section className="md-section md-centered-intro">
-      <header data-reveal>
-        <p>TIENDAS ONLINE Y SITIOS INSTITUCIONALES</p>
-        <h2>Diseño web profesional y tiendas online<br/>listas para crecer</h2>
-        <span>Te ayudamos a construir una <b>presencia digital sólida, ordenada y preparada para escalar.</b></span>
-      </header>
+    <section className="md-section md-web-design">
       <div className="md-split">
         <div className="md-copy" data-reveal>
           <p>DISEÑO WEB</p>
@@ -165,17 +160,6 @@ export default function MarketingDigitalPage() {
         <Action>Quiero hacer crecer mis redes</Action>
       </div>
       <DeviceMedia src="/media/marketing-garware.png" alt="Campaña para redes sociales de Garware Argentina" contain />
-    </section>
-
-    <section className="md-section md-split md-advice">
-      <div className="md-copy" data-reveal>
-        <p>ENVIANOS UN MENSAJE</p>
-        <h3>Contactanos y reservá una asesoría online sin cargo</h3>
-        <h4>Un equipo con más de 10 años de experiencia, listo para asesorarte.</h4>
-        <div>Coordinamos una charla para entender tu negocio, sus desafíos y objetivos. Durante la conversación, te proponemos acciones concretas y armamos una propuesta a medida en menos de 48 horas.</div>
-        <Action>Quiero que me asesoren</Action>
-      </div>
-      <DeviceMedia src="/media/marketing-aguilas.png" alt="Proyecto digital Águilas de Oro" contain />
     </section>
 
     <section className="md-section md-centered-intro md-method">
