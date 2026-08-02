@@ -26,7 +26,6 @@ function DeviceMedia({
   className?: string;
 }) {
   return <div className={`md-device ${contain ? "is-contained" : ""} ${className}`}>
-    <i className="md-orb" aria-hidden="true" />
     {video ? <video autoPlay muted loop playsInline preload="metadata" aria-label={alt}>
       <source src={asset(src)} type="video/webm" />
     </video> : <img src={asset(src)} alt={alt} />}
