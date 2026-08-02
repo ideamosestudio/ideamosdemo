@@ -1,6 +1,8 @@
 .marketing-page{--md-red:#ff190b;background:#fff;color:#101010}
 .marketing-page .md-hero h1{max-width:1500px;font-size:clamp(58px,5.8vw,104px)}
-.marketing-page .md-hero h1 span{white-space:nowrap}
+.marketing-page .md-hero .hero-center{transform:translateY(-55px)}
+.marketing-page .md-hero h1{line-height:1.1!important}
+.marketing-page .md-hero h1 span{white-space:nowrap;padding-bottom:.08em}
 .marketing-page .md-hero .hero-copy{font-size:18px;max-width:820px}
 .md-section{position:relative;overflow:hidden;padding:78px max(6vw,70px);background:#fff;border-top:0}
 .md-section header{position:relative;z-index:2;text-align:center;max-width:1200px;margin:0 auto 68px}
