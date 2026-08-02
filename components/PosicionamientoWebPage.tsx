@@ -54,7 +54,7 @@ export default function PosicionamientoWebPage() {
   return <main className="internal-page posicionamiento-page">
     <SiteHeader />
 
-    <section className="hero internal-home-hero pw-hero" id="inicio">
+    <section className="hero internal-home-hero matches-home-hero pw-hero" id="inicio">
       <ManagedBackgroundVideo eager className="hero-video" src={asset("/media/hero.mp4")} poster={asset("/media/hero-poster.webp")} />
       <div className="hero-overlay" /><div className="hero-aurora" />
       <div className="space-particles"><i/><i/><i/><i/><i/><i/></div>
