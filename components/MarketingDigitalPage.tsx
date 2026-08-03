@@ -103,7 +103,7 @@ export default function MarketingDigitalPage() {
           <div>En Ideamos <b>ayudamos a PYMES y empresas a crecer con campañas publicitarias que venden</b>, SEO y Google Ads para aparecer primero en Google, redes sociales que generan leads calificados y sitios web pensados para convertir. <b>Analizamos tu negocio, definimos los canales más rentables y diseñamos un plan a medida.</b></div>
           <Action>Charlemos de tu proyecto</Action>
         </div>
-        <DeviceMedia video src="/media/marketing-wilde.webm" alt="Proyecto Wilde desarrollado por Ideamos" className="md-device-landscape" />
+        <DeviceMedia src="/media/marketing-img-002.webp" alt="Proyecto Xtreme D10 desarrollado por Ideamos" contain />
       </div>
     </section>
 
@@ -128,7 +128,7 @@ export default function MarketingDigitalPage() {
       </header>
       <div className="md-ecommerce-layout">
         <div>{ecommerceBenefits.slice(0, 4).map(([title, copy]) => <article key={title}><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
-        <div className="md-ecommerce-visual"><img src={asset("/media/marketing-img-002.webp")} alt="Proyecto Xtreme D10 desarrollado por Ideamos" /></div>
+        <div className="md-ecommerce-visual"><video autoPlay muted loop playsInline preload="metadata" aria-label="Proyecto Wilde desarrollado por Ideamos"><source src={asset("/media/marketing-wilde.webm")} type="video/webm" /></video></div>
         <div>{ecommerceBenefits.slice(4).map(([title, copy]) => <article key={title}><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
       </div>
     </section>
