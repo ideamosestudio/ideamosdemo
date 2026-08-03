@@ -131,6 +131,7 @@ export default function MarketingDigitalPage() {
         <div className="md-ecommerce-visual"><video autoPlay muted loop playsInline preload="metadata" aria-label="Proyecto Wilde desarrollado por Ideamos"><source src={asset("/media/marketing-wilde.webm")} type="video/webm" /></video></div>
         <div>{ecommerceBenefits.slice(4).map(([title, copy]) => <article key={title}><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
       </div>
+      <div className="md-double-actions md-ecommerce-actions"><Action>Quiero una tienda online</Action><Action>Quiero hablar con un experto</Action></div>
     </section>
 
     <section className="desktop-video-wall" aria-label="Presentación audiovisual de Ideamos">
