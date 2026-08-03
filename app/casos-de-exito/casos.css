@@ -1,0 +1,50 @@
+.cases-page{background:#fff}
+.cases-intro{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(520px,1.1fr);gap:clamp(55px,7vw,130px);align-items:center;min-height:900px;padding:120px max(6vw,70px);overflow:hidden;background-color:#f8f8f6;background-image:linear-gradient(rgba(15,15,15,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(15,15,15,.055) 1px,transparent 1px);background-size:80px 80px}
+.cases-intro-copy{position:relative;z-index:2;max-width:690px}
+.cases-kicker{display:flex;align-items:center;gap:12px;margin:0 0 34px;font-size:10px;font-weight:800;letter-spacing:.23em;color:#161616}
+.cases-kicker i{width:9px;height:9px;border-radius:50%;background:#ff5a00;box-shadow:0 0 0 6px rgba(255,90,0,.12)}
+.cases-intro h2{max-width:720px;margin:0;font-size:clamp(50px,4.5vw,78px);line-height:.96;letter-spacing:-.06em;color:#111}
+.cases-intro h3{margin:42px 0 24px;padding-top:28px;border-top:1px solid #d4d4d0;font-size:clamp(19px,1.4vw,25px);line-height:1.35;font-weight:400;color:#222}
+.cases-intro h3 b{font-weight:800}
+.cases-intro-copy>p:last-of-type{max-width:660px;margin:0;color:#555;font-size:16px;line-height:1.75}
+.cases-action{display:inline-flex;align-items:center;justify-content:space-between;gap:42px;min-width:330px;margin-top:38px;padding:20px 27px;border-radius:999px;background:linear-gradient(110deg,#ff6600,#c92a00);color:#fff;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 18px 38px rgba(223,65,0,.22);transition:transform .3s ease,box-shadow .3s ease}
+.cases-action:hover{transform:translateY(-4px);box-shadow:0 23px 48px rgba(223,65,0,.34)}
+.cases-action span{font-size:18px}
+.cases-featured-work{position:relative;z-index:1;min-height:610px;display:grid;place-items:center}
+.cases-featured-shape{position:absolute;width:72%;aspect-ratio:1;left:11%;top:4%;border-radius:50%;background:#ff5a00;box-shadow:clamp(70px,8vw,145px) 110px 0 -50px #ff5a00}
+.cases-featured-device{position:relative;width:100%;padding:17px;border-radius:34px;background:linear-gradient(145deg,#191919,#030303);box-shadow:0 35px 75px rgba(0,0,0,.32),inset 0 0 0 1px rgba(255,255,255,.22);transform:perspective(1200px) rotateY(-3deg) rotateX(1.5deg)}
+.cases-featured-device:before{content:"";position:absolute;z-index:2;top:7px;left:50%;width:7px;height:7px;border-radius:50%;background:#343434;transform:translateX(-50%)}
+.cases-featured-device img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:21px}
+.cases-featured-work>p{position:absolute;right:3%;bottom:-6px;display:flex;flex-direction:column;gap:5px;margin:0;padding:16px 21px;border:1px solid rgba(255,255,255,.24);border-radius:15px;background:rgba(7,7,7,.82);color:#fff;backdrop-filter:blur(12px)}
+.cases-featured-work>p span{font-size:7px;letter-spacing:.22em;color:#aaa}.cases-featured-work>p b{font-size:16px}
+
+.cases-work{padding:130px 0 145px;background:#060606;color:#fff;overflow:hidden}
+.cases-work-heading{display:grid;grid-template-columns:.55fr 1.25fr .75fr;gap:45px;align-items:end;margin:0 max(6vw,70px) 80px;padding-top:22px;border-top:1px solid #2c2c2c}
+.cases-work-heading>p{align-self:start;margin:0;font-size:9px;font-weight:800;letter-spacing:.23em;color:#ff6a1a}
+.cases-work-heading h2{margin:0;font-size:clamp(54px,6vw,98px);line-height:.88;letter-spacing:-.065em}
+.cases-work-heading>span{max-width:390px;color:#8d8d8d;font-size:14px;line-height:1.65}
+.cases-marquee-stage{display:flex;flex-direction:column;gap:18px}
+.cases-marquee{width:100%;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.cases-marquee-track{display:flex;width:max-content;gap:18px;animation:casesScroll 58s linear infinite;will-change:transform}
+.cases-marquee.is-reverse .cases-marquee-track{animation-name:casesScrollReverse;animation-duration:64s}
+.cases-marquee-group{display:flex;gap:18px}
+.case-card{position:relative;flex:none;height:390px;border-radius:28px;overflow:hidden;background:#171717;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+.case-card.is-wide{width:520px}.case-card.is-phone{width:255px}
+.case-card img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.16,1,.3,1),filter .5s ease}
+.case-card:hover img{transform:scale(1.035);filter:brightness(1.08)}
+.cases-marquee-stage:hover .cases-marquee-track{animation-play-state:paused}
+@keyframes casesScroll{to{transform:translateX(calc(-50% - 9px))}}
+@keyframes casesScrollReverse{from{transform:translateX(calc(-50% - 9px))}to{transform:translateX(0)}}
+
+@media(max-width:1050px){
+  .cases-intro{grid-template-columns:1fr;gap:70px;padding:110px 50px}.cases-intro-copy{max-width:760px}.cases-featured-work{width:min(850px,100%);margin:auto;min-height:560px}
+  .cases-work-heading{grid-template-columns:1fr 1.5fr}.cases-work-heading>span{grid-column:2}.cases-work-heading h2{grid-row:1/3;grid-column:2}.cases-work-heading>span{align-self:start;margin-top:22px}
+}
+@media(max-width:700px){
+  .cases-intro{min-height:auto;padding:88px 22px;gap:45px;background-size:48px 48px}.cases-kicker{font-size:8px;letter-spacing:.17em}.cases-intro h2{font-size:13vw}.cases-intro h3{margin-top:30px}.cases-intro-copy>p:last-of-type{font-size:14px}.cases-action{min-width:0;width:100%}
+  .cases-featured-work{min-height:330px}.cases-featured-shape{width:75%;left:7%;top:0;box-shadow:55px 55px 0 -25px #ff5a00}.cases-featured-device{padding:9px;border-radius:19px;transform:none}.cases-featured-device img{border-radius:12px}.cases-featured-work>p{right:0;bottom:-8px;padding:11px 14px}
+  .cases-work{padding:90px 0 105px}.cases-work-heading{display:block;margin:0 22px 50px}.cases-work-heading h2{margin:24px 0 25px;font-size:14vw}.cases-work-heading>span{font-size:13px}
+  .cases-marquee-stage{gap:12px}.cases-marquee-track,.cases-marquee-group{gap:12px}.cases-marquee-track{animation-duration:45s}.cases-marquee.is-reverse .cases-marquee-track{animation-duration:50s}.case-card{height:250px;border-radius:18px}.case-card.is-wide{width:333px}.case-card.is-phone{width:165px}
+  @keyframes casesScroll{to{transform:translateX(calc(-50% - 6px))}}@keyframes casesScrollReverse{from{transform:translateX(calc(-50% - 6px))}to{transform:translateX(0)}}
+}
+@media(prefers-reduced-motion:reduce){.cases-marquee{overflow-x:auto;mask-image:none;scrollbar-width:none}.cases-marquee::-webkit-scrollbar{display:none}.cases-marquee-track{animation:none!important}.cases-action,.case-card img{transition:none}}
