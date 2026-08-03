@@ -9,9 +9,9 @@ export function HeroLogoTrack() {
   )}</div>;
 }
 
-export function HomeClosingSections() {
+export function HomeClosingSections({ showAdvisory = true }: { showAdvisory?: boolean } = {}) {
   return <>
-    <section className="human-cta shared-section-bg">
+    {showAdvisory && <section className="human-cta shared-section-bg">
       <div className="human-design" aria-hidden="true">
         <i className="human-glow human-glow-a"/><i className="human-glow human-glow-b"/>
       </div>
@@ -25,7 +25,7 @@ export function HomeClosingSections() {
         src={asset("/media/videollamada-final.webm")}
         poster={asset("/media/human-poster.webp")}
       />
-    </section>
+    </section>}
 
     <section className="contact-form" id="contacto">
       <div className="contact-main">
