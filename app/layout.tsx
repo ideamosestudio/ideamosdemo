@@ -11,6 +11,7 @@ import "./footer-premium-mobile.css";
 import "./footer-premium-mobile-v2.css";
 import "./footer-premium-mobile-v3.css";
 import "./footer-premium-mobile-v4.css";
+import "./footer-premium-icon.css";
 
 export const metadata: Metadata = {
   title: "Ideamos — Diseño web & marketing digital",

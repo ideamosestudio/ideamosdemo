@@ -1,0 +1,39 @@
+.ideamos-footer__orbit-mark{
+  position:relative;
+  display:grid;
+  place-items:center;
+}
+
+.ideamos-footer__orbit-mark i{
+  display:none;
+}
+
+.ideamos-footer__orbit-mark::before{
+  width:35px;
+  height:26px;
+  border:2px solid #08090b;
+  border-radius:4px;
+  background:
+    radial-gradient(circle at 6px 6px,#08090b 0 1.4px,transparent 1.7px),
+    radial-gradient(circle at 11px 6px,#08090b 0 1.4px,transparent 1.7px),
+    linear-gradient(#08090b,#08090b) 0 11px/100% 2px no-repeat;
+  content:"";
+}
+
+.ideamos-footer__orbit-mark::after{
+  position:absolute;
+  top:35px;
+  left:38px;
+  width:16px;
+  height:20px;
+  background:#08090b;
+  clip-path:polygon(0 0,100% 63%,59% 69%,79% 100%,63% 100%,43% 72%,0 100%);
+  content:"";
+  filter:drop-shadow(1px 1px 0 rgba(255,255,255,.28));
+  transform:rotate(-7deg);
+  transform-origin:top left;
+}
+
+.ideamos-footer__orbit:hover .ideamos-footer__orbit-mark{
+  transform:translateY(-2px) scale(1.08);
+}
