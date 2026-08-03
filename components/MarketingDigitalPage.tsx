@@ -140,7 +140,7 @@ export default function MarketingDigitalPage() {
       </video>
     </section>
 
-    <section className="md-section md-centered-intro">
+    <section className="md-section md-centered-intro md-positioning">
       <header data-reveal>
         <p>MARKETING DIGITAL, SEO Y GOOGLE ADS</p>
         <h2>Te posicionamos en Google y manejamos tus<br/>redes, campañas y contenidos</h2>
