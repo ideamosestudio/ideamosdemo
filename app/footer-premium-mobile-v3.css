@@ -1,0 +1,3 @@
+@media(max-width:720px){
+  .ideamos-footer__cta h2{font-size:clamp(31px,8.2vw,36px)}
+}

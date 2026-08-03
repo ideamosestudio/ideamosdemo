@@ -1,0 +1,10 @@
+@media(max-width:720px){
+  .ideamos-footer__cta h2{
+    max-width:330px;
+    margin-inline:auto;
+    font-size:30px;
+    letter-spacing:-.04em;
+    line-height:1;
+    overflow-wrap:anywhere;
+  }
+}

@@ -6,21 +6,19 @@ import "./final-tuning.css";
 import "./revision.css";
 import "./request-2026-08-01.css";
 import "./mobile-site-rules.css";
+import "./footer-premium.css";
+import "./footer-premium-mobile.css";
+import "./footer-premium-mobile-v2.css";
+import "./footer-premium-mobile-v3.css";
+import "./footer-premium-mobile-v4.css";
 
 export const metadata: Metadata = {
   title: "Ideamos — Diseño web & marketing digital",
   description: "Creamos experiencias digitales que atraen clientes, generan confianza y hacen crecer negocios.",
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-  },
+  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
       <head>
