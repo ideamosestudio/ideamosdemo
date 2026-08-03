@@ -103,7 +103,7 @@ export default function MarketingDigitalPage() {
           <div>En Ideamos <b>ayudamos a PYMES y empresas a crecer con campañas publicitarias que venden</b>, SEO y Google Ads para aparecer primero en Google, redes sociales que generan leads calificados y sitios web pensados para convertir. <b>Analizamos tu negocio, definimos los canales más rentables y diseñamos un plan a medida.</b></div>
           <Action>Charlemos de tu proyecto</Action>
         </div>
-        <DeviceMedia video src="/media/marketing-ads.webm" alt="Campaña digital producida por Ideamos" className="md-device-landscape" />
+        <DeviceMedia video src="/media/marketing-wilde.webm" alt="Proyecto Wilde desarrollado por Ideamos" className="md-device-landscape" />
       </div>
     </section>
 
@@ -116,7 +116,7 @@ export default function MarketingDigitalPage() {
           <div><b>Creamos sitios web pensados para transmitir autoridad, confianza y generar contactos reales.</b> Desde el diseño a medida hasta el contenido, todo está enfocado en convertir visitas en potenciales clientes. Coordinamos una asesoría online sin cargo para conocer tu negocio y proponerte ideas concretas.</div>
           <Action>Charlemos de tu proyecto</Action>
         </div>
-        <DeviceMedia src="/media/marketing-airpods.png" alt="Diseño web de producto desarrollado por Ideamos" contain />
+        <DeviceMedia src="/media/marketing-img-001.webp" alt="Proyecto Maqmax desarrollado por Ideamos" contain />
       </div>
     </section>
 
@@ -128,9 +128,15 @@ export default function MarketingDigitalPage() {
       </header>
       <div className="md-ecommerce-layout">
         <div>{ecommerceBenefits.slice(0, 4).map(([title, copy]) => <article key={title}><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
-        <div className="md-phone-video"><video autoPlay muted loop playsInline preload="metadata"><source src={asset("/media/wilde-phone.webm")} type="video/webm" /></video></div>
+        <div className="md-ecommerce-visual"><img src={asset("/media/marketing-img-002.webp")} alt="Proyecto Xtreme D10 desarrollado por Ideamos" /></div>
         <div>{ecommerceBenefits.slice(4).map(([title, copy]) => <article key={title}><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
       </div>
+    </section>
+
+    <section className="desktop-video-wall" aria-label="Presentación audiovisual de Ideamos">
+      <video autoPlay muted loop playsInline preload="metadata">
+        <source src={asset("/media/video-wall-background-2026.webm")} type="video/webm" />
+      </video>
     </section>
 
     <section className="md-section md-centered-intro">
