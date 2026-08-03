@@ -31,7 +31,7 @@ const mapsServices = [
 ];
 
 function Action({ children }: { children: React.ReactNode }) {
-  return <a className="pw-action" href={whatsapp}>{children}<span aria-hidden="true">›</span></a>;
+  return <a className="orange-cta pw-action" href={whatsapp}>{children}<span aria-hidden="true">›</span></a>;
 }
 
 function Intro({ eyebrow, title, children }: { eyebrow: string; title: React.ReactNode; children: React.ReactNode }) {

@@ -85,7 +85,7 @@ export default function ShopPage() {
           <h3>Vendé las 24 horas del día, los<br/>7 días de la semana</h3>
           <h4><b>Diseño Web y Marketing Digital</b> de alto impacto</h4>
           <p>Tener una tienda online ofrece numerosas ventajas que pueden transformar su negocio. Permite llegar a una audiencia global, superando las limitaciones geográficas de un local físico, y le permite vender sus productos o servicios las 24 horas del día, los 7 días de la semana.</p>
-          <a className="shops-red-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA <span>›</span></a>
+          <a className="orange-cta shops-red-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA <span>›</span></a>
         </div>
         <div className="shops-laptop-video">
           <video autoPlay muted loop playsInline preload="metadata"><source src={asset("/media/sunglasses-003.webm")} type="video/webm" /></video>
@@ -104,7 +104,7 @@ export default function ShopPage() {
         <div className="shops-phone"><video autoPlay muted loop playsInline preload="metadata"><source src={asset("/media/wilde.webm")} type="video/webm" /></video></div>
         <div className="shops-feature-column">{advantagesRight.map(([title, copy]) => <Feature key={title} title={title} copy={copy} />)}</div>
       </div>
-      <a className="shops-red-cta shops-center-cta" href="https://wa.link/wgb5pk">QUIERO UNA ASESORÍA SIN CARGO <span>›</span></a>
+      <a className="orange-cta shops-red-cta shops-center-cta" href="https://wa.link/wgb5pk">QUIERO UNA ASESORÍA SIN CARGO <span>›</span></a>
     </section>
 
     <section className="shops-problems shops-grid-bg">

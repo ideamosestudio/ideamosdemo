@@ -1,0 +1,136 @@
+/* Site-wide mobile content rules requested on 03/08/2026.
+   Footer, contact form and videos are intentionally outside this layer. */
+@media(max-width:700px){
+  :root{--mobile-content-gutter:30px}
+
+  /* Text is centered and can never get closer than 30px to the viewport edge. */
+  main>section:not(.contact-form):not(.desktop-video-wall):not(.pw-wide-video)
+  :where(h1,h2,h3,h4,p,.service-copy,.body-copy,.md-copy>div,.pw-copy>div,
+  .shops-heading>span,.section-heading>span,.human-copy>span){
+    box-sizing:border-box;
+    max-width:calc(100vw - (var(--mobile-content-gutter) * 2))!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:center!important;
+  }
+
+  main>section:not(.contact-form):not(.desktop-video-wall):not(.pw-wide-video)
+  :where(h1,h2,h3,h4,p,span,small,li,a,.service-index,.service-copy,.body-copy){
+    text-align:center!important;
+  }
+
+  main>section:not(.contact-form):not(.desktop-video-wall):not(.pw-wide-video)
+  :where(.statement-copyblock,.section-heading,.shop-column article,.google-content,
+  .testimonial-copy,.human-copy,.service-heading,.service-items article,
+  .design-problems-list article,.shops-heading,.shops-intro-copy,.shops-feature,
+  .md-section header,.md-copy,.md-ecommerce-layout article,.md-method-list article,
+  .md-problems-layout article,.pw-intro,.pw-copy,.pw-benefits-copy,
+  .pw-benefit-list article,.pw-seo-summary,.pw-maps-grid article,.price-card){
+    text-align:center!important;
+  }
+
+  /* Images follow the same 30px safe area. Video elements retain their own layout. */
+  main>section:not(.contact-form):not(.desktop-video-wall):not(.pw-wide-video) img{
+    box-sizing:border-box;
+    max-width:calc(100vw - (var(--mobile-content-gutter) * 2))!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  /* Remove legacy 22/24/40px mobile gutters from text-and-image sections. */
+  .statement,
+  .ecommerce,
+  .google-scene,
+  .service-section,
+  .shops-intro,
+  .shops-advantages,
+  .shops-problems,
+  .md-section,
+  .pw-section,
+  .pricing-plans{
+    padding-left:var(--mobile-content-gutter)!important;
+    padding-right:var(--mobile-content-gutter)!important;
+  }
+
+  /* Mixed media blocks keep video full-width while their copy uses the safe area. */
+  .testimonial{padding-left:0!important;padding-right:0!important}
+  .testimonial-copy{
+    box-sizing:border-box;
+    width:100%;
+    padding-left:var(--mobile-content-gutter)!important;
+    padding-right:var(--mobile-content-gutter)!important;
+  }
+  .human-copy{
+    box-sizing:border-box;
+    padding-left:var(--mobile-content-gutter)!important;
+    padding-right:var(--mobile-content-gutter)!important;
+  }
+
+  /* Desktop side bullets become centered markers above their copy. */
+  :where(.shop-column article,.service-items article,.design-problems-list article,
+  .shops-problems-grid .shops-feature,.md-method-list article,.md-problems-layout article,
+  .pw-benefit-list article){
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    justify-items:center!important;
+  }
+  :where(.shop-column article,.service-items article,.design-problems-list article,
+  .shops-problems-grid .shops-feature,.md-problems-layout article,
+  .pw-benefit-list article)>i{
+    position:static!important;
+    grid-column:1!important;
+    grid-row:auto!important;
+    margin:0 auto 18px!important;
+  }
+  :where(.shop-column article,.service-items article,.design-problems-list article,
+  .shops-problems-grid .shops-feature,.md-method-list article,.md-problems-layout article,
+  .pw-benefit-list article)>:not(i){
+    grid-column:1!important;
+    text-align:center!important;
+  }
+  .md-method-list article>small{
+    display:block;
+    margin:0 auto 12px!important;
+    text-align:center!important;
+  }
+  .price-features li{
+    display:block!important;
+    text-align:center!important;
+  }
+  .price-features li i{
+    display:block;
+    width:max-content;
+    margin:0 auto 8px!important;
+  }
+
+  /* All calls to action use the Home pill treatment and mobile one-action logic. */
+  :where(.orange-cta,.cta-glow,.md-action,.pw-action,.shops-red-cta,.price-cta,.price-more){
+    box-sizing:border-box;
+    width:100%!important;
+    max-width:360px!important;
+    min-width:0!important;
+    min-height:54px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding:0 20px!important;
+    border:1px solid rgba(255,125,55,.7)!important;
+    border-radius:999px!important;
+    background:linear-gradient(105deg,#ff6200,#c82400)!important;
+    color:#fff!important;
+    box-shadow:0 0 25px rgba(255,78,0,.28)!important;
+    font-family:"Poppins",Arial,sans-serif!important;
+    font-size:13px!important;
+    font-weight:700!important;
+    line-height:1.25!important;
+    letter-spacing:.04em!important;
+    text-align:center!important;
+    justify-content:center!important;
+    white-space:normal!important;
+  }
+  :where(.md-action,.pw-action,.shops-red-cta,.price-more)>span{display:none!important}
+  .md-double-actions>:nth-child(n+2){display:none!important}
+  :where(.md-double-actions,.pw-center-action,.shops-center-cta){
+    width:100%!important;
+    justify-content:center!important;
+  }
+}

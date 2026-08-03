@@ -5,6 +5,7 @@ import "./iteration.css";
 import "./final-tuning.css";
 import "./revision.css";
 import "./request-2026-08-01.css";
+import "./mobile-site-rules.css";
 
 export const metadata: Metadata = {
   title: "Ideamos — Diseño web & marketing digital",
