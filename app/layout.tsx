@@ -7,13 +7,6 @@ import "./final-tuning.css";
 import "./revision.css";
 import "./request-2026-08-01.css";
 import "./mobile-site-rules.css";
-import "./footer-premium.css";
-import "./footer-premium-mobile.css";
-import "./footer-premium-mobile-v2.css";
-import "./footer-premium-mobile-v3.css";
-import "./footer-premium-mobile-v4.css";
-import "./footer-premium-icon.css";
-import "./footer-premium-brand-icon.css";
 import "./floating-whatsapp.css";
 
 export const metadata: Metadata = {

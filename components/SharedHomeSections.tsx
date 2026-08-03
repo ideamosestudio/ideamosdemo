@@ -1,5 +1,4 @@
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
-import PremiumFooter from "./PremiumFooter";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -22,7 +21,10 @@ export function HomeClosingSections() {
         <span>Somos un equipo de profesionales con más de 10 años de experiencia, listos para asesorarte. <b>Contactanos y coordinamos una charla para entender tu negocio, sus desafíos y objetivos.</b> Durante la conversación, te proponemos acciones concretas y armamos una propuesta a medida en menos de 48 horas.</span>
         <a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA</a>
       </div>
-      <ManagedBackgroundVideo src={asset("/media/videollamada-final.webm")} poster={asset("/media/human-poster.webp")} />
+      <ManagedBackgroundVideo
+        src={asset("/media/videollamada-final.webm")}
+        poster={asset("/media/human-poster.webp")}
+      />
     </section>
 
     <section className="contact-form" id="contacto">
@@ -53,6 +55,28 @@ export function HomeClosingSections() {
       </aside>
     </section>
 
-    <PremiumFooter />
+    <footer>
+      <div className="footer-top">
+        <div className="footer-brand">
+          <img src={asset("/logos/ideamos-light.webp")} alt="Ideamos"/>
+          <h3>Más estrategia.<br/><em>Más resultados.</em></h3>
+          <a href="https://wa.link/wgb5pk">Hablemos por WhatsApp</a>
+        </div>
+        <div>
+          <b>Servicios</b>
+          <a href={asset("/diseno-web-autoadministrable/")}>Diseño Web</a>
+          <a href={asset("/tiendas-online/")}>Tiendas Online</a>
+          <a href={asset("/marketing-digital/")}>Marketing Digital</a>
+          <a href={asset("/posicionamiento-web/")}>Posicionamiento Web</a>
+        </div>
+        <div>
+          <b>Contacto</b>
+          <a href="https://wa.link/wgb5pk">+54 9 11 6875-8285</a>
+          <a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar</a>
+          <p>Buenos Aires, Argentina</p>
+        </div>
+      </div>
+      <div className="footer-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href="#inicio">VOLVER ARRIBA</a></div>
+    </footer>
   </>;
 }
