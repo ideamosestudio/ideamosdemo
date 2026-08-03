@@ -116,6 +116,6 @@ export default function Page() {
       </div>
     </section>
 
-    <HomeClosingSections showAdvisory={false} />
+    <HomeClosingSections />
   </main>;
 }
