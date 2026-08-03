@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const image = "https://ideamosestudio.github.io/ideamosdemo/og-precios.png";
+const image = "https://ideamos.com.ar/og-precios.png";
 
 export const metadata: Metadata = {
   title: "Precios — Sitios web y tiendas online | Ideamos",
