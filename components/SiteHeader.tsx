@@ -10,7 +10,6 @@ const navigation = [
   ["Tiendas Online", "/tiendas-online/"],
   ["Marketing Digital", "/marketing-digital/"],
   ["Aparecé primero en Google", "/posicionamiento-web/"],
-  ["Casos de Éxito", "/casos-de-exito/"],
   ["Precios", "/precios/"],
 ] as const;
 
