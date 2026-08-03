@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 
-const image = "https://ideamos.com.ar/og-precios.png";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const siteUrl = basePath
+  ? `https://ideamosestudio.github.io${basePath}`
+  : "https://ideamos.com.ar";
+const image = `${siteUrl}/og-precios.png`;
 
 export const metadata: Metadata = {
   title: "Precios — Sitios web y tiendas online | Ideamos",

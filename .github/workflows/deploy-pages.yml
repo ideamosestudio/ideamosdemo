@@ -24,9 +24,21 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Detect Pages base path
+        id: pages-path
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cname="$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '.cname // ""')"
+          if [[ "$cname" == "ideamos.com.ar" ]]; then
+            echo "base_path=" >> "$GITHUB_OUTPUT"
+          else
+            echo "base_path=/${GITHUB_REPOSITORY#*/}" >> "$GITHUB_OUTPUT"
+          fi
       - run: npm run build:pages
         env:
-          NEXT_PUBLIC_BASE_PATH: ""
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages-path.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
