@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import ManagedBackgroundVideo from "../components/ManagedBackgroundVideo";
 import { HomeClosingSections } from "../../components/SharedHomeSections";
 import SiteHeader from "../../components/SiteHeader";
+import CasesGallery, { type GalleryWork } from "./CasesGallery";
 import "./casos.css";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
-type Work = { src: string; alt: string; format: "wide" | "phone" };
-
-const firstRow: Work[] = [
+const firstRow: GalleryWork[] = [
   { src: "/media/casos-exito/desk-001.jpg", alt: "Sitio web Águilas de Oro", format: "wide" },
   { src: "/media/casos-exito/desk-002.jpg", alt: "Sitio web Garware Argentina", format: "wide" },
   { src: "/media/casos-exito/phone-001.jpg", alt: "Experiencia mobile para ONER VFX", format: "phone" },
@@ -19,7 +18,7 @@ const firstRow: Work[] = [
   { src: "/media/casos-exito/desk-006.jpg", alt: "Sitio web ONER VFX", format: "wide" },
 ];
 
-const secondRow: Work[] = [
+const secondRow: GalleryWork[] = [
   { src: "/media/casos-exito/phone-003.jpg", alt: "Experiencia mobile Empire Funds", format: "phone" },
   { src: "/media/casos-exito/desk-007.jpg", alt: "Tienda online Trébol Café", format: "wide" },
   { src: "/media/casos-exito/desk-008.jpg", alt: "Portfolio de trabajos ONER VFX", format: "wide" },
@@ -28,23 +27,6 @@ const secondRow: Work[] = [
   { src: "/media/casos-exito/desk-010.jpg", alt: "Concepto digital AirPods Pro", format: "wide" },
   { src: "/media/casos-exito/desk-011.jpg", alt: "Presentación de proyecto ONER VFX en tablet", format: "wide" },
 ];
-
-function WorkGroup({ works, duplicate = false }: { works: Work[]; duplicate?: boolean }) {
-  return <div className="cases-marquee-group" aria-hidden={duplicate || undefined}>
-    {works.map((work) => <article className={`case-card is-${work.format}`} key={work.src}>
-      <img src={asset(work.src)} alt={work.alt} loading="lazy" />
-    </article>)}
-  </div>;
-}
-
-function WorkRow({ works, reverse = false }: { works: Work[]; reverse?: boolean }) {
-  return <div className={`cases-marquee ${reverse ? "is-reverse" : ""}`}>
-    <div className="cases-marquee-track">
-      <WorkGroup works={works} />
-      <WorkGroup works={works} duplicate />
-    </div>
-  </div>;
-}
 
 export const metadata: Metadata = {
   title: "Casos de éxito — Ideamos",
@@ -110,10 +92,7 @@ export default function Page() {
         <h2 id="selected-work-title">Proyectos que<br/>hablan por nosotros.</h2>
         <span>Una selección de experiencias digitales creadas para marcas de distintas industrias.</span>
       </header>
-      <div className="cases-marquee-stage">
-        <WorkRow works={firstRow} />
-        <WorkRow works={secondRow} reverse />
-      </div>
+      <CasesGallery firstRow={firstRow} secondRow={secondRow} />
     </section>
 
     <HomeClosingSections />
