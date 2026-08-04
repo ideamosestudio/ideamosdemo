@@ -6,6 +6,8 @@ import ManagedBackgroundVideo, {
 } from "./components/ManagedBackgroundVideo";
 import { HeroLogoTrack, HomeClosingSections } from "../components/SharedHomeSections";
 import SiteHeader from "../components/SiteHeader";
+import PortfolioSection from "../components/PortfolioSection";
+import "./casos-de-exito/casos.css";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 const ecommerceLeft = [
@@ -130,13 +132,9 @@ export default function Home() {
           </div>
     </section>
 
-    <section className="desktop-video-wall" aria-label="Presentación audiovisual de Ideamos">
-      <video autoPlay muted loop playsInline preload="metadata">
-        <source src={asset("/media/video-wall-background-2026.webm")} type="video/webm" />
-      </video>
-    </section>
+    <PortfolioSection />
 
-      <section className="testimonial shared-section-bg"><div className="testimonial-copy" data-reveal><p>TESTIMONIOS</p><h2>&quot;Notamos un cambio real: Más consultas, más movimiento y sobretodo, más ventas&quot;</h2><div className="stars">★★★★★ <small>(5.0)</small></div><div className="testimonial-person"><img src={asset("/media/pablo-avila.png")} alt="Pablo Avila"/><div><b>Pablo Avila</b><small>Coordinador de CYL S.A.</small></div></div><a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO</a></div><div className="testimonial-media">{testimonialPlaying ? <video autoPlay controls playsInline onPlay={() => pauseManagedBackgroundVideos()}><source src={asset("/media/testimonial.mp4")} type="video/mp4"/></video> : <button className="video-cover" onClick={() => setTestimonialPlaying(true)} aria-label="Reproducir testimonio"><img src={asset("/media/testimonial-cover.webp")} alt="Testimonio de Pablo Avila, CYL S.A."/><i>▶</i><span>VER TESTIMONIO</span></button>}</div></section>
+      <section className="testimonial shared-section-bg"><div className="testimonial-copy" data-reveal><p>TESTIMONIOS</p><h2>&quot;Notamos un cambio real: Más consultas, más movimiento y sobretodo, más ventas&quot;</h2><div className="stars">★★★★★ <small>(5.0)</small></div><div className="testimonial-person"><img src={asset("/media/pablo-avila.png")} alt="Pablo Avila"/><div><b>Pablo Avila</b><small>Coordinador de CYL S.A.</small></div></div><a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO</a></div><div className="testimonial-media">{testimonialPlaying ? <video autoPlay controls playsInline onPlay={() => pauseManagedBackgroundVideos()}><source src={asset("/media/testimonial.mp4")} type="video/mp4"/></video> : <button className="video-cover" onClick={() => setTestimonialPlaying(true)} aria-label="Reproducir testimonio"><img src={asset("/media/testimonial-cover.webp")} alt="Testimonio de Pablo Avila, CYL S.A."/><i>▶</i></button>}</div></section>
 
     <HomeClosingSections />
   </main>;
