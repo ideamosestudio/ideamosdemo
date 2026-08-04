@@ -1,9 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ManagedBackgroundVideo, {
-  pauseManagedBackgroundVideos,
-} from "./components/ManagedBackgroundVideo";
+import ManagedBackgroundVideo from "./components/ManagedBackgroundVideo";
 import { HeroLogoTrack, HomeClosingSections } from "../components/SharedHomeSections";
 import SiteHeader from "../components/SiteHeader";
 import PortfolioSection from "../components/PortfolioSection";
@@ -24,8 +22,9 @@ const ecommerceRight = [
 ];
 
 export default function Home() {
-  const [screen, setScreen] = useState(0);
-  const [testimonialPlaying, setTestimonialPlaying] = useState(false);
+  const [webScreen, setWebScreen] = useState(0);
+  const [shopScreen, setShopScreen] = useState(0);
+  const [googleScreen, setGoogleScreen] = useState(0);
 
   useEffect(() => {
     const onScroll = () => document.documentElement.style.setProperty("--scroll", String(window.scrollY));
@@ -35,7 +34,11 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const timer = window.setInterval(() => setScreen((value) => (value + 1) % 3), 2200);
+    const timer = window.setInterval(() => {
+      setWebScreen((value) => (value + 1) % 3);
+      setShopScreen((value) => (value + 1) % 3);
+      setGoogleScreen((value) => (value + 1) % 3);
+    }, 2200);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -47,7 +50,7 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  return <main>
+  return <main className="home-page">
     <SiteHeader />
 
     <section className="hero" id="inicio">
@@ -94,8 +97,8 @@ export default function Home() {
         <a className="orange-cta" href="https://wa.link/wgb5pk">CHARLEMOS DE TU PROYECTO</a>
       </div>
       <div className="screen-swap" data-reveal>
-        {[1,2,3].map((n, index) => <img key={n} className={screen === index ? "active" : ""} src={asset(`/media/screen-${n}.png`)} alt={`Proyecto web ${n}`} />)}
-        <div className="screen-dots">{[0,1,2].map((n) => <button key={n} className={screen === n ? "active" : ""} onClick={() => setScreen(n)} aria-label={`Ver pantalla ${n + 1}`} />)}</div>
+        {[1,2,3].map((n, index) => <img key={n} className={webScreen === index ? "active" : ""} src={asset(`/media/screen-${n}.png`)} alt={`Proyecto web ${n}`} />)}
+        <div className="screen-dots">{[0,1,2].map((n) => <button key={n} className={webScreen === n ? "active" : ""} onClick={() => setWebScreen(n)} aria-label={`Ver pantalla ${n + 1} de diseño web`} />)}</div>
       </div>
     </section>
 
@@ -104,7 +107,8 @@ export default function Home() {
       <div className="shop-layout">
         <div className="shop-column">{ecommerceLeft.map(([title, copy]) => <article key={title} data-reveal><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
         <div className="phone-stage phone-swap">
-          {[1,2,3].map((number, index) => <img key={number} className={screen === index ? "active" : ""} src={asset(`/media/shop-screen-${number}.png`)} alt={`Pantalla ${number} de tienda online desarrollada por Ideamos`}/>)}
+          {[1,2,3].map((number, index) => <img key={number} className={shopScreen === index ? "active" : ""} src={asset(`/media/shop-screen-${number}.png`)} alt={`Pantalla ${number} de tienda online desarrollada por Ideamos`}/>)}
+          <div className="screen-dots">{[0,1,2].map((n) => <button key={n} className={shopScreen === n ? "active" : ""} onClick={() => setShopScreen(n)} aria-label={`Ver pantalla ${n + 1} de tienda online`} />)}</div>
         </div>
         <div className="shop-column">{ecommerceRight.map(([title, copy]) => <article key={title} data-reveal><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
       </div>
@@ -123,18 +127,17 @@ export default function Home() {
             {[1, 2, 3].map((item, index) => (
               <img
                 key={item}
-                className={screen === index ? "active" : ""}
+                className={googleScreen === index ? "active" : ""}
                 src={asset(`/media/frosz-screen-${item}.png`)}
                 alt={index === 0 ? "Proyecto web FroSZ desarrollado por Ideamos" : ""}
                 aria-hidden={index !== 0}
               />
             ))}
+            <div className="screen-dots">{[0,1,2].map((n) => <button key={n} className={googleScreen === n ? "active" : ""} onClick={() => setGoogleScreen(n)} aria-label={`Ver pantalla ${n + 1} de posicionamiento`} />)}</div>
           </div>
     </section>
 
     <PortfolioSection />
-
-      <section className="testimonial shared-section-bg"><div className="testimonial-copy" data-reveal><p>TESTIMONIOS</p><h2>&quot;Notamos un cambio real: Más consultas, más movimiento y sobretodo, más ventas&quot;</h2><div className="stars">★★★★★ <small>(5.0)</small></div><div className="testimonial-person"><img src={asset("/media/pablo-avila.png")} alt="Pablo Avila"/><div><b>Pablo Avila</b><small>Coordinador de CYL S.A.</small></div></div><a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO</a></div><div className="testimonial-media">{testimonialPlaying ? <video autoPlay controls playsInline onPlay={() => pauseManagedBackgroundVideos()}><source src={asset("/media/testimonial.mp4")} type="video/mp4"/></video> : <button className="video-cover" onClick={() => setTestimonialPlaying(true)} aria-label="Reproducir testimonio"><img src={asset("/media/testimonial-cover.webp")} alt="Testimonio de Pablo Avila, CYL S.A."/><i>▶</i></button>}</div></section>
 
     <HomeClosingSections />
   </main>;

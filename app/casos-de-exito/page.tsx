@@ -3,6 +3,7 @@ import ManagedBackgroundVideo from "../components/ManagedBackgroundVideo";
 import { HomeClosingSections } from "../../components/SharedHomeSections";
 import SiteHeader from "../../components/SiteHeader";
 import PortfolioSection from "../../components/PortfolioSection";
+import TestimonialSection from "../../components/TestimonialSection";
 import "./casos.css";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -66,6 +67,8 @@ export default function Page() {
     </section>
 
     <PortfolioSection />
+
+    <TestimonialSection />
 
     <HomeClosingSections />
   </main>;

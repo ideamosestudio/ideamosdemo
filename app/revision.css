@@ -2224,5 +2224,45 @@ h1,h2,h3,
   .prices-page .pricing-plans{padding-top:118px}
   .prices-page .pricing-heading{margin-bottom:64px}
   .prices-page .pricing-heading h1,
-  .prices-page .human-copy h2{font-size:44px!important}
+.prices-page .human-copy h2{font-size:44px!important}
+}
+
+/* Home review — shared backgrounds, slider controls and closing modules. */
+.home-page .statement,
+.home-page .ecommerce,
+.home-page .google-scene{
+  background-color:#f4f3f0!important;
+  border-top:0!important;
+}
+
+.home-page .statement:after,
+.home-page .ecommerce:after,
+.home-page .google-scene:after,
+.home-page .section-heading>p:after,
+.home-page .google-content>p:first-child:after{
+  display:none!important;
+  content:none!important;
+}
+
+.phone-swap>.screen-dots,
+.google-swap>.screen-dots{
+  z-index:5;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.phone-swap>.screen-dots{bottom:6px}
+.google-swap>.screen-dots{bottom:-32px}
+
+@media(min-width:981px){
+  .home-page .human-cta,
+  .cases-page .human-cta{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    border-left:0!important;
+    border-right:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+  }
 }
