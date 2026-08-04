@@ -19,7 +19,7 @@
 .cases-featured-work>p span{font-size:7px;letter-spacing:.22em;color:#aaa}.cases-featured-work>p b{font-size:16px}
 
 .cases-work{padding:105px 0 115px;background:#060606;color:#fff;overflow:hidden}
-.cases-work-heading{display:grid;grid-template-columns:.55fr 1.25fr .75fr;gap:45px;align-items:end;width:min(1260px,calc(100% - 18vw));margin:0 auto 62px;padding-top:22px;border-top:1px solid #2c2c2c}
+.cases-work-heading{display:grid;grid-template-columns:.55fr 1.25fr .75fr;gap:45px;align-items:end;width:min(1260px,calc(100% - 18vw));margin:0 auto 112px;padding-top:22px;border-top:1px solid #2c2c2c}
 .cases-work-heading>p{align-self:start;margin:0;font-size:9px;font-weight:800;letter-spacing:.23em;color:#ff6a1a}
 .cases-work-heading h2{margin:0;font-size:clamp(42px,4vw,72px);line-height:.92;letter-spacing:-.055em}
 .cases-work-heading>span{max-width:390px;color:#8d8d8d;font-size:14px;line-height:1.65}
