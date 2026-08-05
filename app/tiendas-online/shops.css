@@ -3,6 +3,7 @@
 .shop-hero h1{font-size:clamp(52px,4.45vw,84px);line-height:.98;margin:34px 0 28px}
 .shop-hero h1 span{display:block;white-space:nowrap}
 .shops-intro,.shops-advantages,.shops-problems{padding:140px max(5vw,48px);overflow:hidden}
+.shops-intro{background:#fff;background-image:none}
 .shops-heading{position:relative;z-index:2;text-align:center;margin:0 auto 100px}
 .shops-heading>p{margin:0 0 22px;color:var(--orange);font-size:12px;font-weight:800;letter-spacing:.42em}
 .shops-heading h2{max-width:1160px;margin:0 auto;font-family:"Gilroy ExtraBold",Arial,sans-serif;font-size:clamp(38px,3.15vw,58px);font-weight:800;line-height:.98;letter-spacing:-.05em}
