@@ -1,4 +1,5 @@
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
+import ContactLeadForm from "./ContactLeadForm";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -32,18 +33,7 @@ export function HomeClosingSections({ showAdvisory = true }: { showAdvisory?: bo
         <p><i/> CONTACTO</p>
         <h2>Hablemos de tu proyecto</h2>
         <span>Contanos qué necesitás. Te respondemos con ideas concretas y próximos pasos.</span>
-        <form>
-          <div>
-            <label>Nombre<input type="text" name="nombre" placeholder="Tu nombre"/></label>
-            <label>Empresa<input type="text" name="empresa" placeholder="Nombre de tu empresa"/></label>
-          </div>
-          <div>
-            <label>Email<input type="email" name="email" placeholder="nombre@empresa.com"/></label>
-            <label>Teléfono<input type="tel" name="telefono" placeholder="+54"/></label>
-          </div>
-          <label>Mensaje<textarea name="mensaje" rows={4} placeholder="Contanos brevemente sobre tu proyecto"/></label>
-          <a className="contact-submit" href="https://wa.link/wgb5pk">Enviar consulta</a>
-        </form>
+        <ContactLeadForm />
       </div>
       <aside className="contact-card">
         <span>ESTAMOS PARA AYUDARTE</span>
