@@ -28,7 +28,7 @@ const secondRow: GalleryWork[] = [
 ];
 
 export default function PortfolioSection() {
-  return <section className="cases-work" aria-labelledby="portfolio-title">
+  return <section className="cases-work" id="portfolio" aria-labelledby="portfolio-title">
     <header className="cases-work-heading">
       <p>TRABAJOS REALIZADOS</p>
       <h2 id="portfolio-title">Proyectos que<br/>hablan por nosotros.</h2>
