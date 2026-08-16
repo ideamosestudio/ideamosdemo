@@ -59,7 +59,6 @@ export default function HomeTestimonials() {
   };
 
   return <section className="home-testimonials" aria-labelledby="home-testimonials-title">
-    <div className="home-testimonials__accent" aria-hidden="true"><i/><i/></div>
     <div className="home-testimonials__slide" key={testimonial.name} aria-live="polite">
       <div className="home-testimonials__copy">
         <p>TESTIMONIOS</p>
