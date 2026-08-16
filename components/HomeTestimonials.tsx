@@ -8,6 +8,7 @@ const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${pat
 const testimonials = [
   {
     quote: "Notamos un cambio real: Más consultas, más movimiento y sobretodo, más ventas",
+    desktopLines: ["Notamos un cambio real:", "Más consultas, más movimiento", "y sobretodo, más ventas"],
     name: "Pablo Avila",
     role: "Coordinador de CYL S.A.",
     image: "/media/testimonials/cylsa-image.png",
@@ -17,7 +18,8 @@ const testimonials = [
     alt: "Pablo Avila en las oficinas de CYL S.A.",
   },
   {
-    quote: "Desde el primer momento entendieron que estaba buscando",
+    quote: "En Estudio Ideamos desde el primer momento entendieron que estaba buscando",
+    desktopLines: ["En Estudio Ideamos desde el", "primer momento entendieron", "que estaba buscando"],
     name: "Rodolfo Merino",
     role: "Gerente de MR Ingeniería",
     image: "/media/testimonials/mr-image.jpg",
@@ -62,7 +64,12 @@ export default function HomeTestimonials() {
     <div className="home-testimonials__slide" key={testimonial.name} aria-live="polite">
       <div className="home-testimonials__copy">
         <p>TESTIMONIOS</p>
-        <h2 id="home-testimonials-title">“{testimonial.quote}”</h2>
+        <h2 id="home-testimonials-title" aria-label={`“${testimonial.quote}”`}>
+          <span className="home-testimonials__title-desktop" aria-hidden="true">
+            {testimonial.desktopLines.map((line, index) => <span key={line}>{index === 0 ? "“" : ""}{line}{index === testimonial.desktopLines.length - 1 ? "”" : ""}</span>)}
+          </span>
+          <span className="home-testimonials__title-mobile" aria-hidden="true">“{testimonial.quote}”</span>
+        </h2>
         <div className="home-testimonials__rating" aria-label="5 de 5 estrellas">★★★★★ <small>(5.0)</small></div>
         <div className="home-testimonials__person">
           <img src={asset(testimonial.avatar)} alt="" />
