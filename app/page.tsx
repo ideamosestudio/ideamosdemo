@@ -95,8 +95,9 @@ export default function Home() {
       <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
     </section>
 
-    <section className="statement white-section shared-section-bg" id="web">
+    <div className="home-services-grid">
       <SectionGridDetail />
+    <section className="statement white-section shared-section-bg" id="web">
       <div className="statement-copyblock" data-reveal>
         <img className="happy-clients" src={asset("/media/happy-clients.png")} alt="Más de 2000 clientes felices" />
         <h2><span>Webs de alto impacto</span><em>ideadas para generar <b>confianza y resultados</b></em></h2>
@@ -111,7 +112,6 @@ export default function Home() {
     </section>
 
     <section className="ecommerce white-section shared-section-bg" id="tiendas">
-      <SectionGridDetail />
       <div className="section-heading" data-reveal><p>ECOMMERCE ESTRATÉGICO</p><h2>¿Necesitás una tienda online para automatizar tus ventas?</h2><span><b>Automatizá tus ventas</b> con una <b>tienda diseñada para convertir</b>: estrategia, procesos simples y <b>tecnología que trabaja por vos.</b> Es escalable, segura y pensada para crecer con tu negocio.</span></div>
       <div className="shop-layout">
         <div className="shop-column">{ecommerceLeft.map(([title, copy]) => <article key={title} data-reveal><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
@@ -125,7 +125,6 @@ export default function Home() {
     </section>
 
     <section className="google-scene white-section shared-section-bg" id="google">
-      <SectionGridDetail />
       <div className="google-content" data-reveal>
         <p>POSICIONAMIENTO EN GOOGLE</p>
         <h2>Convertimos tu web en una máquina de generar tráfico, leads y ventas</h2>
@@ -146,6 +145,7 @@ export default function Home() {
             <div className="screen-dots">{[0,1,2].map((n) => <button key={n} className={googleScreen === n ? "active" : ""} onClick={() => setGoogleScreen(n)} aria-label={`Ver pantalla ${n + 1} de posicionamiento`} />)}</div>
           </div>
     </section>
+    </div>
 
     <PortfolioSection />
 

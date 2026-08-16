@@ -2288,43 +2288,47 @@ h1,h2,h3,
   }
 }
 
-/* Home light-section blueprint — reference treatment, 16/08. */
-.home-page .statement,
-.home-page .ecommerce,
-.home-page .google-scene{
+/* Home services are one continuous framed composition. */
+.home-services-grid{
+  position:relative;
   isolation:isolate;
-  background-color:#f2f4fc!important;
+  background-color:#f2f4fc;
   background-image:
     linear-gradient(rgba(71,82,122,.055) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(71,82,122,.055) 1px,transparent 1px)!important;
-  background-size:64px 64px!important;
+    linear-gradient(90deg,rgba(71,82,122,.055) 1px,transparent 1px);
+  background-size:64px 64px;
+}
+
+.home-services-grid>.statement,
+.home-services-grid>.ecommerce,
+.home-services-grid>.google-scene{
+  position:relative;
+  z-index:1;
+  background-color:transparent!important;
+  background-image:none!important;
+}
+
+.home-services-grid>.statement{padding-inline:max(10vw,72px)!important}
+.home-services-grid>.ecommerce{padding-inline:max(10vw,72px)!important}
+.home-services-grid>.google-scene{padding-inline:max(10vw,72px)!important}
+
+.home-services-grid>.shared-section-bg:before{
+  background-image:none!important;
 }
 
 .section-grid-detail{
   position:absolute;
   z-index:0;
-  inset:0 max(6vw,40px);
-  border-right:1px solid rgba(71,82,122,.16);
-  border-left:1px solid rgba(71,82,122,.16);
+  inset:24px max(6vw,40px);
+  border:1px solid rgba(71,82,122,.16);
   pointer-events:none;
 }
 
-.home-page .ecommerce>.section-grid-detail{inset-inline:max(5vw,36px)}
-.home-page .google-scene>.section-grid-detail{inset-inline:max(6vw,42px)}
-
-.section-grid-detail:before{
-  content:"";
-  position:absolute;
-  top:clamp(88px,13.5%,150px);
-  right:0;
-  left:0;
-  height:1px;
-  background:rgba(71,82,122,.16);
-}
+.section-grid-detail:before{display:none;content:none}
 
 .grid-node{
   position:absolute;
-  top:calc(clamp(88px,13.5%,150px) - 4px);
+  top:-4px;
   width:7px;
   height:7px;
   border:1px solid rgba(71,82,122,.26);
@@ -2364,10 +2368,9 @@ h1,h2,h3,
 .home-page .google-visual{z-index:1}
 
 @media(max-width:700px){
-  .section-grid-detail,
-  .home-page .ecommerce>.section-grid-detail,
-  .home-page .google-scene>.section-grid-detail{inset:0 var(--mobile-gutter,30px)}
-  .section-grid-detail:before{top:70px}
-  .grid-node{top:66px}
+  .section-grid-detail{inset:14px}
+  .home-services-grid>.statement,
+  .home-services-grid>.ecommerce,
+  .home-services-grid>.google-scene{padding-inline:calc(var(--mobile-gutter,30px) + 12px)!important}
   .home-page .statement .screen-frame{border-radius:16px}
 }
