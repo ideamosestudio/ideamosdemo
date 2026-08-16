@@ -21,9 +21,8 @@ const ecommerceRight = [
   ["Mejor atención en menos tiempo", "El cliente puede ver precios, stock, tiempos y medios de pago sin preguntarte nada. Respondés menos mensajes y vendés más."],
 ];
 
-function SectionGridDetail({ label }: { label: string }) {
+function SectionGridDetail() {
   return <div className="section-grid-detail" aria-hidden="true">
-    <span className="section-grid-label">{label}</span>
     <i className="grid-node grid-node-left" />
     <i className="grid-node grid-node-right" />
   </div>;
@@ -97,7 +96,7 @@ export default function Home() {
     </section>
 
     <section className="statement white-section shared-section-bg" id="web">
-      <SectionGridDetail label="01 — DISEÑO WEB" />
+      <SectionGridDetail />
       <div className="statement-copyblock" data-reveal>
         <img className="happy-clients" src={asset("/media/happy-clients.png")} alt="Más de 2000 clientes felices" />
         <h2><span>Webs de alto impacto</span><em>ideadas para generar <b>confianza y resultados</b></em></h2>
@@ -106,13 +105,13 @@ export default function Home() {
         <a className="orange-cta" href="https://wa.link/wgb5pk">CHARLEMOS DE TU PROYECTO</a>
       </div>
       <div className="screen-swap" data-reveal>
-        {[1,2,3].map((n, index) => <img key={n} className={webScreen === index ? "active" : ""} src={asset(`/media/screen-${n}.png`)} alt={`Proyecto web ${n}`} />)}
+        {[1,2,3].map((n, index) => <div key={n} className={`screen-frame ${webScreen === index ? "active" : ""}`}><img src={asset(`/media/screen-${n}.png`)} alt={`Proyecto web ${n}`} /></div>)}
         <div className="screen-dots">{[0,1,2].map((n) => <button key={n} className={webScreen === n ? "active" : ""} onClick={() => setWebScreen(n)} aria-label={`Ver pantalla ${n + 1} de diseño web`} />)}</div>
       </div>
     </section>
 
     <section className="ecommerce white-section shared-section-bg" id="tiendas">
-      <SectionGridDetail label="02 — TIENDAS ONLINE" />
+      <SectionGridDetail />
       <div className="section-heading" data-reveal><p>ECOMMERCE ESTRATÉGICO</p><h2>¿Necesitás una tienda online para automatizar tus ventas?</h2><span><b>Automatizá tus ventas</b> con una <b>tienda diseñada para convertir</b>: estrategia, procesos simples y <b>tecnología que trabaja por vos.</b> Es escalable, segura y pensada para crecer con tu negocio.</span></div>
       <div className="shop-layout">
         <div className="shop-column">{ecommerceLeft.map(([title, copy]) => <article key={title} data-reveal><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
@@ -126,7 +125,7 @@ export default function Home() {
     </section>
 
     <section className="google-scene white-section shared-section-bg" id="google">
-      <SectionGridDetail label="03 — CRECIMIENTO DIGITAL" />
+      <SectionGridDetail />
       <div className="google-content" data-reveal>
         <p>POSICIONAMIENTO EN GOOGLE</p>
         <h2>Convertimos tu web en una máquina de generar tráfico, leads y ventas</h2>
