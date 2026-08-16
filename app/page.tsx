@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import ManagedBackgroundVideo from "./components/ManagedBackgroundVideo";
-import { HeroLogoTrack, HomeClosingSections } from "../components/SharedHomeSections";
+import { HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "../components/SharedHomeSections";
 import SiteHeader from "../components/SiteHeader";
 import PortfolioSection from "../components/PortfolioSection";
 import LightGridFrame from "../components/LightGridFrame";
+import HomeTestimonials from "../components/HomeTestimonials";
 import "./casos-de-exito/casos.css";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -142,6 +143,11 @@ export default function Home() {
 
     <PortfolioSection />
 
-    <HomeClosingSections />
+    <LightGridFrame className="home-closing-light-grid">
+      <HomeTestimonials />
+      <HomeAdvisorySection />
+    </LightGridFrame>
+
+    <HomeClosingSections showAdvisory={false} />
   </main>;
 }
