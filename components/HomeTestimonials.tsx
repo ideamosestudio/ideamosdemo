@@ -75,16 +75,17 @@ export default function HomeTestimonials() {
         </div>
       </div>
 
-      <button className="home-testimonials__media" type="button" onClick={() => setOpenVideo(active)} aria-label={`Ver video testimonial de ${testimonial.name}`}>
-        <img src={asset(testimonial.image)} alt={testimonial.alt} />
-        <span className="home-testimonials__play" aria-hidden="true">▶</span>
-      </button>
-    </div>
-
-    <div className="home-testimonials__controls" aria-label="Cambiar testimonio">
-      <button type="button" onClick={() => changeSlide(-1)} aria-label="Testimonio anterior">←</button>
-      <div>{testimonials.map((item, index) => <button key={item.name} className={active === index ? "is-active" : ""} type="button" onClick={() => setActive(index)} aria-label={`Ver testimonio de ${item.name}`} />)}</div>
-      <button type="button" onClick={() => changeSlide(1)} aria-label="Siguiente testimonio">→</button>
+      <div className="home-testimonials__visual">
+        <button className="home-testimonials__media" type="button" onClick={() => setOpenVideo(active)} aria-label={`Ver video testimonial de ${testimonial.name}`}>
+          <img src={asset(testimonial.image)} alt={testimonial.alt} />
+          <span className="home-testimonials__play" aria-hidden="true">▶</span>
+        </button>
+        <div className="home-testimonials__controls" aria-label="Cambiar testimonio">
+          <button type="button" onClick={() => changeSlide(-1)} aria-label="Testimonio anterior">←</button>
+          <div>{testimonials.map((item, index) => <button key={item.name} className={active === index ? "is-active" : ""} type="button" onClick={() => setActive(index)} aria-label={`Ver testimonio de ${item.name}`} />)}</div>
+          <button type="button" onClick={() => changeSlide(1)} aria-label="Siguiente testimonio">→</button>
+        </div>
+      </div>
     </div>
 
     {openVideo !== null && <div className="home-testimonials__modal" role="dialog" aria-modal="true" aria-label={`Video testimonial de ${testimonials[openVideo].name}`} onMouseDown={(event) => {
