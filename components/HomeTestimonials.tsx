@@ -17,7 +17,7 @@ const testimonials = [
     alt: "Pablo Avila en las oficinas de CYL S.A.",
   },
   {
-    quote: "Trabajar con Ideamos fue genial, desde el primer momento entendieron que estaba buscando",
+    quote: "Desde el primer momento entendieron que estaba buscando",
     name: "Rodolfo Merino",
     role: "Gerente de MR Ingeniería",
     image: "/media/testimonials/mr-image.jpg",
