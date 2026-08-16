@@ -2378,12 +2378,15 @@ h1,h2,h3,
 /* Home testimonials slider */
 .home-testimonials{
   position:relative;
+  display:flex;
   min-height:720px;
+  align-items:center;
   padding-block:90px 90px;
   overflow:hidden;
 }
 .home-testimonials__slide{
   display:grid;
+  width:100%;
   grid-template-columns:minmax(0,1.08fr) minmax(550px,.92fr);
   gap:40px;
   align-items:center;
