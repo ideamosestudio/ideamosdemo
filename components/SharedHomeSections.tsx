@@ -1,5 +1,6 @@
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 import ContactLeadForm from "./ContactLeadForm";
+import LightGridFrame from "./LightGridFrame";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -10,9 +11,8 @@ export function HeroLogoTrack() {
   )}</div>;
 }
 
-export function HomeClosingSections({ showAdvisory = true }: { showAdvisory?: boolean } = {}) {
-  return <>
-    {showAdvisory && <section className="human-cta shared-section-bg">
+export function HomeAdvisorySection() {
+  return <section className="human-cta shared-section-bg">
       <div className="human-design" aria-hidden="true">
         <i className="human-glow human-glow-a"/><i className="human-glow human-glow-b"/>
       </div>
@@ -26,7 +26,12 @@ export function HomeClosingSections({ showAdvisory = true }: { showAdvisory?: bo
         src={asset("/media/videollamada-final.webm")}
         poster={asset("/media/human-poster.webp")}
       />
-    </section>}
+    </section>;
+}
+
+export function HomeClosingSections({ showAdvisory = true }: { showAdvisory?: boolean } = {}) {
+  return <>
+    {showAdvisory && <LightGridFrame className="closing-light-grid"><HomeAdvisorySection /></LightGridFrame>}
 
     <section className="contact-form" id="contacto">
       <div className="contact-main">

@@ -4,6 +4,7 @@ import { Fragment, useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 import { HeroLogoTrack, HomeClosingSections } from "./SharedHomeSections";
 import SiteHeader from "./SiteHeader";
+import LightGridFrame from "./LightGridFrame";
 
 type Item = { title: string; copy: string };
 type ContentSection = {
@@ -93,6 +94,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
       <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
     </section>
 
+    <LightGridFrame className="internal-light-grid">
     {sections.map((section, sectionIndex) => {
       if (section.visual === "human") {
         return <section key={`${section.title}-${sectionIndex}`} className="human-cta internal-human-cta">
@@ -176,6 +178,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
           {section.contact && <Actions />}
         </section>;
     })}
+    </LightGridFrame>
     {page.homeClosing && <HomeClosingSections />}
   </main>;
 }

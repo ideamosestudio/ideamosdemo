@@ -5,6 +5,7 @@ import ManagedBackgroundVideo from "./components/ManagedBackgroundVideo";
 import { HeroLogoTrack, HomeClosingSections } from "../components/SharedHomeSections";
 import SiteHeader from "../components/SiteHeader";
 import PortfolioSection from "../components/PortfolioSection";
+import LightGridFrame from "../components/LightGridFrame";
 import "./casos-de-exito/casos.css";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -20,13 +21,6 @@ const ecommerceRight = [
   ["Tomá decisiones informadas", "Mirá ventas, conversión y ticket promedio en un tablero claro. Detectá qué canales rinden y dónde conviene invertir más."],
   ["Mejor atención en menos tiempo", "El cliente puede ver precios, stock, tiempos y medios de pago sin preguntarte nada. Respondés menos mensajes y vendés más."],
 ];
-
-function SectionGridDetail() {
-  return <div className="section-grid-detail" aria-hidden="true">
-    <i className="grid-node grid-node-left" />
-    <i className="grid-node grid-node-right" />
-  </div>;
-}
 
 export default function Home() {
   const [webScreen, setWebScreen] = useState(0);
@@ -95,8 +89,7 @@ export default function Home() {
       <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
     </section>
 
-    <div className="home-services-grid">
-      <SectionGridDetail />
+    <LightGridFrame className="home-services-grid">
     <section className="statement white-section shared-section-bg" id="web">
       <div className="statement-copyblock" data-reveal>
         <img className="happy-clients" src={asset("/media/happy-clients.png")} alt="Más de 2000 clientes felices" />
@@ -145,7 +138,7 @@ export default function Home() {
             <div className="screen-dots">{[0,1,2].map((n) => <button key={n} className={googleScreen === n ? "active" : ""} onClick={() => setGoogleScreen(n)} aria-label={`Ver pantalla ${n + 1} de posicionamiento`} />)}</div>
           </div>
     </section>
-    </div>
+    </LightGridFrame>
 
     <PortfolioSection />
 

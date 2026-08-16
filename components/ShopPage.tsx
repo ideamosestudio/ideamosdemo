@@ -2,7 +2,8 @@
 
 import { useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
-import { HeroLogoTrack, HomeClosingSections } from "./SharedHomeSections";
+import { HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
+import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -73,6 +74,7 @@ export default function ShopPage() {
       <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
     </section>
 
+    <LightGridFrame className="shops-light-grid">
     <section className="shops-intro shops-grid-bg">
       <header className="shops-heading">
         <p>ECOMMERCE PROFESIONAL</p>
@@ -119,6 +121,9 @@ export default function ShopPage() {
       <Actions />
     </section>
 
-    <HomeClosingSections />
+    <HomeAdvisorySection />
+    </LightGridFrame>
+
+    <HomeClosingSections showAdvisory={false} />
   </main>;
 }

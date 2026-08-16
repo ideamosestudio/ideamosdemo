@@ -2,7 +2,8 @@
 
 import { useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
-import { HomeClosingSections } from "./SharedHomeSections";
+import { HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
+import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -89,6 +90,7 @@ export default function MarketingDigitalPage() {
       <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
     </section>
 
+    <LightGridFrame className="marketing-light-grid">
     <section className="md-section md-growth md-centered-intro">
       <header data-reveal>
         <p>MÁS DE 2000 CLIENTES FELICES</p>
@@ -134,12 +136,15 @@ export default function MarketingDigitalPage() {
       <div className="md-double-actions md-ecommerce-actions"><Action>Quiero una tienda online</Action><Action>Quiero hablar con un experto</Action></div>
     </section>
 
+    </LightGridFrame>
+
     <section className="desktop-video-wall" aria-label="Presentación audiovisual de Ideamos">
       <video autoPlay muted loop playsInline preload="metadata">
         <source src={asset("/media/video-wall-background-2026.webm")} type="video/webm" />
       </video>
     </section>
 
+    <LightGridFrame className="marketing-light-grid">
     <section className="md-section md-centered-intro md-positioning">
       <header data-reveal>
         <p>MARKETING DIGITAL, SEO Y GOOGLE ADS</p>
@@ -195,6 +200,9 @@ export default function MarketingDigitalPage() {
       <div className="md-double-actions"><Action>Quiero una asesoría sin cargo</Action><Action>Quiero contactar un experto</Action></div>
     </section>
 
-    <HomeClosingSections />
+    <HomeAdvisorySection />
+    </LightGridFrame>
+
+    <HomeClosingSections showAdvisory={false} />
   </main>;
 }

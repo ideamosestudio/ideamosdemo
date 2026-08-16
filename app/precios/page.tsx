@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import { HomeClosingSections } from "../../components/SharedHomeSections";
+import { HomeAdvisorySection, HomeClosingSections } from "../../components/SharedHomeSections";
+import LightGridFrame from "../../components/LightGridFrame";
 import SiteHeader from "../../components/SiteHeader";
 
 const plans = [
@@ -101,6 +102,7 @@ export default function PricesPage() {
   return <main className="prices-page">
     <SiteHeader solid />
 
+    <LightGridFrame className="prices-light-grid">
     <section className="pricing-plans" id="inicio" aria-label="Planes y precios de Ideamos">
       <header className="pricing-heading" data-reveal>
         <p>PLANES IDEAMOS</p>
@@ -126,6 +128,9 @@ export default function PricesPage() {
       </div>
     </section>
 
-    <HomeClosingSections />
+    <HomeAdvisorySection />
+    </LightGridFrame>
+
+    <HomeClosingSections showAdvisory={false} />
   </main>;
 }

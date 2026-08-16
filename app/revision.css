@@ -2374,3 +2374,72 @@ h1,h2,h3,
   .home-services-grid>.google-scene{padding-inline:calc(var(--mobile-gutter,30px) + 12px)!important}
   .home-page .statement .screen-frame{border-radius:16px}
 }
+
+/* Sistema unificado para todos los lienzos claros del sitio. */
+.light-grid-frame{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background-color:#f2f4fc;
+  background-image:
+    linear-gradient(rgba(71,82,122,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(71,82,122,.055) 1px,transparent 1px);
+  background-size:64px 64px;
+}
+.light-grid-frame__border{
+  position:absolute;
+  z-index:0;
+  inset:24px max(6vw,40px);
+  border:1px solid rgba(71,82,122,.16);
+  pointer-events:none;
+}
+.light-grid-frame__node{
+  position:absolute;
+  top:-4px;
+  width:7px;
+  height:7px;
+  border:1px solid rgba(71,82,122,.26);
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 0 0 2px rgba(242,244,252,.9);
+}
+.light-grid-frame__node--left{left:-4px}
+.light-grid-frame__node--right{right:-4px}
+.light-grid-frame>section:not(.desktop-video-wall):not(.internal-video-wall):not(.pw-wide-video):not(.dark):not(.contact-form){
+  position:relative;
+  z-index:1;
+  padding-inline:max(10vw,72px)!important;
+  background-color:transparent!important;
+  background-image:none!important;
+}
+.light-grid-frame>section:not(.dark):not(.contact-form):before{
+  background-image:none!important;
+}
+.light-grid-frame>.desktop-video-wall,
+.light-grid-frame>.internal-video-wall,
+.light-grid-frame>.pw-wide-video,
+.light-grid-frame>.service-section.dark{
+  position:relative;
+  z-index:2;
+}
+.light-grid-frame>.human-cta{border-top:0!important}
+
+.home-page .google-content>p:first-child{
+  font-size:13px!important;
+  font-weight:700!important;
+  line-height:1.4;
+  letter-spacing:.32em!important;
+}
+.case-rail:hover,
+.cases-marquee-stage:hover .cases-marquee-track,
+.cases-marquee-stage:focus-within .cases-marquee-track{
+  animation-play-state:running!important;
+}
+
+@media(max-width:700px){
+  .light-grid-frame__border{inset:14px}
+  .light-grid-frame>section:not(.desktop-video-wall):not(.internal-video-wall):not(.pw-wide-video):not(.dark):not(.contact-form){
+    padding-inline:calc(var(--mobile-gutter,30px) + 12px)!important;
+  }
+  .home-page .google-content>p:first-child{font-size:11px!important;letter-spacing:.24em!important}
+}

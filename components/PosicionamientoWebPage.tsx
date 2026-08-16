@@ -2,7 +2,8 @@
 
 import { useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
-import { HomeClosingSections } from "./SharedHomeSections";
+import { HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
+import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -71,6 +72,7 @@ export default function PosicionamientoWebPage() {
       <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
     </section>
 
+    <LightGridFrame className="positioning-light-grid">
     <section className="pw-section pw-strategy">
       <Intro eyebrow="POSICIONAMIENTO EN GOOGLE" title={<>Elegí la estrategia adecuada:<br/>¿Google Ads, SEO o ambas?</>}>
         En Ideamos somos expertos en las dos estrategias clave para posicionar tu web en Google y obtener los mayores resultados.
@@ -111,10 +113,13 @@ export default function PosicionamientoWebPage() {
       <div className="pw-phone" data-reveal><img src={asset("/media/posicionamiento-phone.png")} alt="Panel de rendimiento de campañas de Google Ads en un teléfono" /></div>
     </section>
 
+    </LightGridFrame>
+
     <section className="pw-wide-video" aria-label="Estrategia de posicionamiento SEO">
       <video autoPlay muted loop playsInline preload="metadata"><source src={asset("/media/posicionamiento-seo.mp4")} type="video/mp4" /></video>
     </section>
 
+    <LightGridFrame className="positioning-light-grid">
     <section className="pw-section pw-seo">
       <Intro eyebrow="POSICIONAMIENTO EN GOOGLE" title={<>Posicionamiento SEO:<br/>dominá los resultados de búsqueda</>}>
         Construí visibilidad duradera, atraé tráfico de calidad y convertí tu sitio en un activo que trabaja todos los días.
@@ -143,6 +148,9 @@ export default function PosicionamientoWebPage() {
       <div className="pw-center-action"><Action>Chateá con un experto</Action></div>
     </section>
 
-    <HomeClosingSections />
+    <HomeAdvisorySection />
+    </LightGridFrame>
+
+    <HomeClosingSections showAdvisory={false} />
   </main>;
 }

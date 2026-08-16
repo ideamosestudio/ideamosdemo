@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ManagedBackgroundVideo from "../components/ManagedBackgroundVideo";
-import { HomeClosingSections } from "../../components/SharedHomeSections";
+import { HomeAdvisorySection, HomeClosingSections } from "../../components/SharedHomeSections";
+import LightGridFrame from "../../components/LightGridFrame";
 import SiteHeader from "../../components/SiteHeader";
 import PortfolioSection from "../../components/PortfolioSection";
 import TestimonialSection from "../../components/TestimonialSection";
@@ -49,6 +50,7 @@ export default function Page() {
       <div className="scroll-line"><span>CONVERSEMOS</span><i/></div>
     </section>
 
+    <LightGridFrame className="cases-light-grid">
     <section className="cases-intro" aria-labelledby="cases-intro-title">
       <div className="cases-intro-copy">
         <p className="cases-kicker"><i/> MÁS DE 2000 CLIENTES FELICES</p>
@@ -65,11 +67,15 @@ export default function Page() {
         <p><span>PROYECTO DESTACADO</span><b>Trébol Café</b></p>
       </div>
     </section>
+    </LightGridFrame>
 
     <PortfolioSection />
 
-    <TestimonialSection />
+    <LightGridFrame className="cases-light-grid">
+      <TestimonialSection />
+      <HomeAdvisorySection />
+    </LightGridFrame>
 
-    <HomeClosingSections />
+    <HomeClosingSections showAdvisory={false} />
   </main>;
 }
