@@ -77,7 +77,7 @@ export default function HomeTestimonials() {
         </div>
         <div className="home-testimonials__actions">
           <a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO</a>
-          <a className="home-testimonials__site" href={testimonial.site} target="_blank" rel="noreferrer">VER SITIO WEB <span aria-hidden="true">↗</span></a>
+          <a className="home-testimonials__site" href={testimonial.site} target="_blank" rel="noreferrer">VER SITIO WEB</a>
         </div>
       </div>
 

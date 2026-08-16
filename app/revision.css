@@ -2433,6 +2433,8 @@ h1,h2,h3,
 .home-testimonials__actions .orange-cta,
 .home-testimonials__site{
   display:inline-flex;
+  width:285px;
+  min-width:0;
   min-height:52px;
   align-items:center;
   justify-content:center;
@@ -2443,8 +2445,8 @@ h1,h2,h3,
   letter-spacing:.08em;
   text-align:center;
 }
-.home-testimonials__actions .orange-cta{min-width:285px;margin:0!important}
-.home-testimonials__site{min-width:176px;gap:16px;border:1px solid #171717;background:#fff;color:#111;white-space:nowrap;transition:background .25s,color .25s,transform .25s}
+.home-testimonials__actions .orange-cta{margin:0!important}
+.home-testimonials__site{border:1px solid #171717;background:#fff;color:#111;white-space:nowrap;transition:background .25s,color .25s,transform .25s}
 .home-testimonials__site:hover{background:#111;color:#fff;transform:translateY(-3px)}
 .home-testimonials__media{
   position:relative;
