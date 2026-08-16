@@ -45,8 +45,8 @@
 .cases-marquee-stage:hover .cases-marquee-track,.cases-marquee-stage:focus-within .cases-marquee-track{animation-play-state:paused}
 @keyframes casesScroll{to{transform:translateX(calc(-50% - 6.5px))}}
 @keyframes casesScrollReverse{from{transform:translateX(calc(-50% - 6.5px))}to{transform:translateX(0)}}
-@keyframes casesAmbientGlow{0%{opacity:.62;transform:translate3d(-7%,-4%,0) scale(.94) rotate(-1deg)}45%{opacity:.96;transform:translate3d(5%,4%,0) scale(1.12) rotate(1deg)}100%{opacity:.7;transform:translate3d(-1%,8%,0) scale(1.02) rotate(-.5deg)}}
-@keyframes casesElectricDrift{0%{opacity:.34;transform:translate3d(-10%,-7%,0) scale(.82)}55%{opacity:.78;transform:translate3d(8%,5%,0) scale(1.2)}100%{opacity:.48;transform:translate3d(-2%,11%,0) scale(.96)}}
+@keyframes casesAmbientGlow{0%{opacity:.18;transform:translate3d(-1%,-2%,0) scale(.92)}45%{opacity:.29;transform:translate3d(1%,1%,0) scale(1.01)}100%{opacity:.21;transform:translate3d(0,3%,0) scale(.96)}}
+@keyframes casesElectricDrift{0%{opacity:.1;transform:translate3d(-2%,-3%,0) scale(.88)}55%{opacity:.23;transform:translate3d(2%,2%,0) scale(1.04)}100%{opacity:.14;transform:translate3d(0,4%,0) scale(.94)}}
 .cases-page .human-copy[data-reveal]{opacity:1!important;transform:none!important}
 .case-lightbox{position:fixed;z-index:1000;inset:0;display:grid;place-items:center;padding:38px;background:rgba(0,0,0,.9);backdrop-filter:blur(16px);animation:caseLightboxIn .25s ease}
 .case-lightbox-content{position:relative;display:grid;place-items:center;max-width:92vw;max-height:92vh}
