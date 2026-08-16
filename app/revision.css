@@ -2290,3 +2290,85 @@ h1,h2,h3,
     box-shadow:none!important;
   }
 }
+
+/* Home light-section blueprint — reference treatment, 16/08. */
+.home-page .statement,
+.home-page .ecommerce,
+.home-page .google-scene{
+  isolation:isolate;
+  background-color:#f2f4fc!important;
+  background-image:
+    linear-gradient(rgba(71,82,122,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(71,82,122,.055) 1px,transparent 1px)!important;
+  background-size:64px 64px!important;
+}
+
+.section-grid-detail{
+  position:absolute;
+  z-index:0;
+  inset:0 clamp(30px,12.4vw,238px);
+  border-right:1px solid rgba(71,82,122,.16);
+  border-left:1px solid rgba(71,82,122,.16);
+  pointer-events:none;
+}
+
+.section-grid-detail:before{
+  content:"";
+  position:absolute;
+  top:clamp(88px,13.5%,150px);
+  right:0;
+  left:0;
+  height:1px;
+  background:rgba(71,82,122,.16);
+}
+
+.section-grid-label{
+  position:absolute;
+  top:calc(clamp(88px,13.5%,150px) - 5px);
+  left:clamp(28px,6.5vw,125px);
+  padding:0 14px;
+  background:#f2f4fc;
+  color:#586078;
+  font:600 10px/1 "Roboto Condensed",Arial,sans-serif;
+  letter-spacing:.08em;
+}
+
+.section-grid-label:before,
+.section-grid-label:after{
+  content:"";
+  position:absolute;
+  top:4px;
+  width:8px;
+  height:1px;
+  background:rgba(71,82,122,.3);
+}
+.section-grid-label:before{right:100%}
+.section-grid-label:after{left:100%}
+
+.grid-node{
+  position:absolute;
+  top:calc(clamp(88px,13.5%,150px) - 4px);
+  width:7px;
+  height:7px;
+  border:1px solid rgba(71,82,122,.26);
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 0 0 2px rgba(242,244,252,.9);
+}
+.grid-node-left{left:-4px}
+.grid-node-right{right:-4px}
+
+.home-page .statement-copyblock,
+.home-page .screen-swap,
+.home-page .section-heading,
+.home-page .shop-layout,
+.home-page .ecommerce-actions,
+.home-page .google-content,
+.home-page .google-visual{z-index:1}
+
+@media(max-width:700px){
+  .section-grid-detail{inset:0 18px}
+  .section-grid-detail:before{top:70px}
+  .section-grid-label{top:65px;left:18px;font-size:8px}
+  .grid-node{top:66px}
+}
