@@ -2521,6 +2521,40 @@ h1,h2,h3,
 .home-testimonials__close{position:absolute;z-index:3;top:14px;right:14px;display:grid;width:48px;height:48px;place-items:center;padding:0;border:1px solid rgba(255,255,255,.65);border-radius:50%;background:rgba(8,8,8,.9);box-shadow:0 8px 28px rgba(0,0,0,.35);color:#fff;font-size:30px;line-height:1;cursor:pointer}
 @keyframes testimonialFade{from{opacity:.25}to{opacity:1}}
 
+.home-logo-marquee{
+  position:relative;
+  z-index:2;
+  display:flex;
+  width:100%;
+  height:34px;
+  align-items:center;
+  overflow:hidden;
+  background:#050505;
+  border-block:1px solid rgba(255,255,255,.08);
+}
+.home-logo-marquee:before,
+.home-logo-marquee:after{
+  position:absolute;
+  z-index:3;
+  top:0;
+  bottom:0;
+  width:min(12vw,150px);
+  pointer-events:none;
+  content:"";
+}
+.home-logo-marquee:before{left:0;background:linear-gradient(90deg,#050505,transparent)}
+.home-logo-marquee:after{right:0;background:linear-gradient(270deg,#050505,transparent)}
+.home-logo-marquee .logo-track{position:relative;z-index:1;gap:64px;animation-duration:32s}
+.home-logo-marquee img{
+  display:block;
+  flex:0 0 auto;
+  width:86px;
+  height:18px;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+  opacity:.76;
+}
+
 @media(max-width:980px){
   .home-testimonials{min-height:0;padding-block:95px 105px}
   .home-testimonials__slide{grid-template-columns:1fr;gap:54px}
@@ -2535,6 +2569,9 @@ h1,h2,h3,
 }
 
 @media(max-width:700px){
+  .home-logo-marquee{height:30px}
+  .home-logo-marquee .logo-track{gap:42px}
+  .home-logo-marquee img{width:70px;height:15px}
   .home-testimonials{padding-block:86px 100px!important}
   .home-testimonials__slide{gap:42px}
   .home-testimonials__copy>p{margin-bottom:24px;font-size:10px}
