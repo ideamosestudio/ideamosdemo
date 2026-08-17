@@ -2526,7 +2526,7 @@ h1,h2,h3,
   z-index:2;
   display:flex;
   width:100%;
-  height:34px;
+  height:102px;
   align-items:center;
   overflow:hidden;
   background:#050505;
@@ -2544,12 +2544,12 @@ h1,h2,h3,
 }
 .home-logo-marquee:before{left:0;background:linear-gradient(90deg,#050505,transparent)}
 .home-logo-marquee:after{right:0;background:linear-gradient(270deg,#050505,transparent)}
-.home-logo-marquee .logo-track{position:relative;z-index:1;gap:64px;animation-duration:32s}
+.home-logo-marquee .logo-track{position:relative;z-index:1;gap:72px;animation-duration:32s}
 .home-logo-marquee img{
   display:block;
   flex:0 0 auto;
-  width:86px;
-  height:18px;
+  width:120px;
+  height:42px;
   object-fit:contain;
   filter:brightness(0) invert(1);
   opacity:.76;
@@ -2569,9 +2569,9 @@ h1,h2,h3,
 }
 
 @media(max-width:700px){
-  .home-logo-marquee{height:30px}
-  .home-logo-marquee .logo-track{gap:42px}
-  .home-logo-marquee img{width:70px;height:15px}
+  .home-logo-marquee{height:90px}
+  .home-logo-marquee .logo-track{gap:48px}
+  .home-logo-marquee img{width:96px;height:30px}
   .home-testimonials{padding-block:86px 100px!important}
   .home-testimonials__slide{gap:42px}
   .home-testimonials__copy>p{margin-bottom:24px;font-size:10px}
