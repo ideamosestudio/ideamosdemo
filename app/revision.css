@@ -2763,3 +2763,15 @@ h1,h2,h3,
   }
   .home-page .google-content>p:first-child{font-size:11px!important;letter-spacing:.24em!important}
 }
+
+/* Portfolio de la home: las dos filas recorren todo el viewport y su bloque
+   completo, incluyendo el espacio entre ambas, nunca supera los 900 px. */
+@media(min-width:701px){
+  .home-page .cases-marquee-stage{
+    width:100%;
+    max-width:none;
+    max-height:900px;
+    margin-inline:0;
+    overflow:hidden;
+  }
+}
