@@ -27,12 +27,15 @@
   .shops-intro-copy>p,
   .service-section:not(.dark) .service-copy,
   .md-section header>span,
+  .md-copy>div,
   .pw-intro>span,
+  .pw-copy>div,
   .cases-intro-copy>p:last-of-type,
   .pricing-intro-copy>span
 ){
-  color:#333!important;
-  font-size:15px!important;
+  color:#000!important;
+  font-size:13pt!important;
+  font-weight:400!important;
 }
 
 #site-root :is(
@@ -40,17 +43,30 @@
   .shops-feature>p,
   .service-section:not(.dark) .service-items p,
   .design-problems-list p,
-  .md-feature p,
-  .pw-feature p,
-  .price-description
+  .md-ecommerce-layout article p,
+  .md-method-list p,
+  .md-problems-layout p,
+  .pw-benefit-list p,
+  .pw-seo-summary p,
+  .pw-maps-grid p,
+  .price-description,
+  .price-closing
 ){
-  color:#333!important;
-  font-size:13px!important;
+  color:#000!important;
+  font-size:13pt!important;
+  font-weight:400!important;
 }
 
-#site-root .human-copy>span{
-  color:#333!important;
-  font-size:13px!important;
+#site-root .home-advisory .human-copy>span{
+  color:#000!important;
+  font-size:13pt!important;
+  font-weight:400!important;
+  opacity:1!important;
+}
+
+#site-root .home-advisory .human-copy>span b{
+  color:#000!important;
+  font-weight:700!important;
 }
 
 /* The shared video-call section is edge-to-edge on every service page, as on Home. */
