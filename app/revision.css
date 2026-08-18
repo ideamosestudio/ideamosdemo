@@ -2446,8 +2446,7 @@ h1,h2,h3,
   text-align:center;
 }
 .home-testimonials__actions .orange-cta{margin:0!important}
-.home-testimonials__site{border:1px solid #171717;background:#fff;color:#111;white-space:nowrap;transition:background .25s,color .25s,transform .25s}
-.home-testimonials__site:hover{background:#111;color:#fff;transform:translateY(-3px)}
+.home-testimonials__site{margin:0!important;white-space:nowrap}
 .home-testimonials__media{
   position:relative;
   display:block;
@@ -2649,13 +2648,13 @@ h1,h2,h3,
 }
 .home-page .contact-form>:not(.dark-grid-background){position:relative;z-index:1}
 
-.home-page .human-cta{background:#0b0b0b!important}
+.home-page .human-cta{background:transparent!important}
 .home-page .human-cta:before{display:none!important;content:none!important}
 .home-page .human-design{display:none!important}
 .home-page .human-copy,
 .home-page .human-copy h2,
 .home-page .human-copy>span,
-.home-page .human-copy>span b{color:#fff!important}
+.home-page .human-copy>span b{color:#111!important}
 
 .home-page footer>.footer-top,
 .home-page footer>.footer-bottom{

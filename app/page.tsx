@@ -150,7 +150,7 @@ export default function Home() {
         <DarkGridBackground />
         <HeroLogoTrack />
       </div>
-      <HomeAdvisorySection darkGrid />
+      <HomeAdvisorySection />
     </LightGridFrame>
 
     <HomeClosingSections showAdvisory={false} darkGrid />
