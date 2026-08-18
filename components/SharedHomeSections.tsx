@@ -27,7 +27,7 @@ export function HomeLogoMarquee() {
 export function HomeAdvisorySection({ darkGrid = false }: { darkGrid?: boolean } = {}) {
   return <>
     <HomeLogoMarquee />
-    <section className="human-cta shared-section-bg">
+    <section className="human-cta home-advisory shared-section-bg">
       {darkGrid && <DarkGridBackground half />}
       <div className="human-design" aria-hidden="true">
         <i className="human-glow human-glow-a"/><i className="human-glow human-glow-b"/>

@@ -53,6 +53,18 @@
   font-size:13px!important;
 }
 
+/* The shared video-call section is edge-to-edge on every service page, as on Home. */
+@media(min-width:981px){
+  #site-root .home-advisory{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+  }
+}
+
 @media(max-width:700px){
   #site-root :is(
     .hero-actions,
