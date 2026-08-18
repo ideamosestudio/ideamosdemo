@@ -8,6 +8,7 @@ import "./revision.css";
 import "./request-2026-08-01.css";
 import "./mobile-site-rules.css";
 import "./floating-whatsapp.css";
+import "./button-spacing.css";
 
 export const metadata: Metadata = {
   title: "Ideamos — Diseño web & marketing digital",
@@ -23,7 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Poppins:wght@400;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
       </head>
-      <body>
+      <body id="site-root">
         {children}
         <FloatingWhatsApp />
       </body>

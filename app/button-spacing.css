@@ -1,0 +1,32 @@
+/* Keep every text CTA proportional to its label across desktop and mobile. */
+#site-root :is(
+  .nav-contact,
+  .cta-glow,
+  .orange-cta,
+  .cases-action,
+  .shops-red-cta,
+  .md-action,
+  .pw-action,
+  .price-cta,
+  .contact-submit,
+  .ideamos-footer__whatsapp
+){
+  width:fit-content!important;
+  min-width:0!important;
+  max-width:100%;
+  padding-left:35px!important;
+  padding-right:35px!important;
+}
+
+@media(max-width:700px){
+  #site-root :is(
+    .hero-actions,
+    .ecommerce-actions,
+    .internal-actions,
+    .problem-actions,
+    .home-testimonials__actions,
+    .md-double-actions
+  ){
+    align-items:center;
+  }
+}
