@@ -2312,6 +2312,10 @@ h1,h2,h3,
 .home-services-grid>.ecommerce{padding-inline:max(10vw,72px)!important}
 .home-services-grid>.google-scene{padding-inline:max(10vw,72px)!important}
 
+@media(min-width:701px){
+  .home-services-grid>.ecommerce{padding-bottom:50px!important}
+}
+
 .home-services-grid>.shared-section-bg:before{
   background-image:none!important;
 }

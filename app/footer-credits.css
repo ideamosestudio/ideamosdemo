@@ -7,7 +7,7 @@
   position:relative;
   isolation:isolate;
   overflow:hidden;
-  padding:80px max(6vw,40px);
+  padding:0 max(6vw,40px) 110px;
   background:#0b0b0b;
 }
 
@@ -18,6 +18,7 @@
 #site-root footer .footer-top{
   position:relative;
   z-index:1;
+  background:transparent!important;
 }
 
 #site-root footer .footer-bottom{
@@ -32,7 +33,7 @@
 
 @media(max-width:700px){
   #site-root footer .footer-main{
-    padding:64px 30px;
+    padding:0 30px 80px;
   }
 
   #site-root footer .footer-bottom{
