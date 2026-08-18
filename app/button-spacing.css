@@ -33,9 +33,9 @@
   .cases-intro-copy>p:last-of-type,
   .pricing-intro-copy>span
 ){
-  color:#3a3a3a!important;
+  color:#333!important;
   font-family:"Roboto",Arial,sans-serif!important;
-  font-size:11.5pt!important;
+  font-size:12pt!important;
   font-weight:300!important;
 }
 
@@ -53,16 +53,16 @@
   .price-description,
   .price-closing
 ){
-  color:#3a3a3a!important;
+  color:#333!important;
   font-family:"Roboto",Arial,sans-serif!important;
-  font-size:11.5pt!important;
+  font-size:12pt!important;
   font-weight:300!important;
 }
 
 #site-root .home-advisory .human-copy>span{
-  color:#3a3a3a!important;
+  color:#333!important;
   font-family:"Roboto",Arial,sans-serif!important;
-  font-size:11.5pt!important;
+  font-size:12pt!important;
   font-weight:300!important;
   opacity:1!important;
 }
