@@ -2772,6 +2772,20 @@ h1,h2,h3,
     max-width:none;
     max-height:900px;
     margin-inline:0;
+    gap:18px;
     overflow:hidden;
   }
+  .home-page .cases-marquee-track,
+  .home-page .cases-marquee-group{gap:18px}
+  .home-page .case-card{height:345px}
+  .home-page .case-card.is-wide{width:460px}
+  .home-page .case-card.is-phone{width:225px}
+  .home-page .cases-marquee.is-reverse .case-card{height:240px}
+  .home-page .cases-marquee.is-reverse .case-card.is-wide{width:320px}
+  .home-page .cases-marquee.is-reverse .case-card.is-phone{width:157px}
+  .home-page .cases-marquee-track{animation-name:homeCasesScroll}
+  .home-page .cases-marquee.is-reverse .cases-marquee-track{animation-name:homeCasesScrollReverse}
 }
+
+@keyframes homeCasesScroll{to{transform:translateX(calc(-50% - 9px))}}
+@keyframes homeCasesScrollReverse{from{transform:translateX(calc(-50% - 9px))}to{transform:translateX(0)}}
