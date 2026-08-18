@@ -32,7 +32,7 @@ export function HomeAdvisorySection({ darkGrid = false }: { darkGrid?: boolean }
       <div className="human-design" aria-hidden="true">
         <i className="human-glow human-glow-a"/><i className="human-glow human-glow-b"/>
       </div>
-      <div className="human-copy" data-reveal>
+      <div className="human-copy">
         <p>ENVIANOS UN MENSAJE</p>
         <h2>Contactanos y agendá una asesoría sin cargo</h2>
         <span>Somos un equipo de profesionales con más de 10 años de experiencia, listos para asesorarte. <b>Contactanos y coordinamos una charla para entender tu negocio, sus desafíos y objetivos.</b> Durante la conversación, te proponemos acciones concretas y armamos una propuesta a medida en menos de 48 horas.</span>
