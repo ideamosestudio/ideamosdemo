@@ -11,8 +11,15 @@ export function HeroLogoTrack() {
   )}</div>;
 }
 
-export function HomeAdvisorySection() {
+export function DarkGridBackground({ half = false }: { half?: boolean } = {}) {
+  return <div className={`dark-grid-background${half ? " dark-grid-background--half" : ""}`} aria-hidden="true">
+    {[0, 1, 2, 3, 4, 5].map((line) => <i key={line} />)}
+  </div>;
+}
+
+export function HomeAdvisorySection({ darkGrid = false }: { darkGrid?: boolean } = {}) {
   return <section className="human-cta shared-section-bg">
+      {darkGrid && <DarkGridBackground half />}
       <div className="human-design" aria-hidden="true">
         <i className="human-glow human-glow-a"/><i className="human-glow human-glow-b"/>
       </div>
@@ -29,11 +36,12 @@ export function HomeAdvisorySection() {
     </section>;
 }
 
-export function HomeClosingSections({ showAdvisory = true }: { showAdvisory?: boolean } = {}) {
+export function HomeClosingSections({ showAdvisory = true, darkGrid = false }: { showAdvisory?: boolean; darkGrid?: boolean } = {}) {
   return <>
-    {showAdvisory && <LightGridFrame className="closing-light-grid"><HomeAdvisorySection /></LightGridFrame>}
+    {showAdvisory && <LightGridFrame className="closing-light-grid"><HomeAdvisorySection darkGrid={darkGrid} /></LightGridFrame>}
 
     <section className="contact-form" id="contacto">
+      {darkGrid && <DarkGridBackground />}
       <div className="contact-main">
         <p><i/> CONTACTO</p>
         <h2>Hablemos de tu proyecto</h2>
@@ -51,6 +59,7 @@ export function HomeClosingSections({ showAdvisory = true }: { showAdvisory?: bo
     </section>
 
     <footer>
+      {darkGrid && <DarkGridBackground />}
       <div className="footer-top">
         <div className="footer-brand">
           <img src={asset("/logos/ideamos-light.webp")} alt="Ideamos"/>

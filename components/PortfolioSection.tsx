@@ -1,6 +1,7 @@
 "use client";
 
 import CasesGallery, { type GalleryWork } from "../app/casos-de-exito/CasesGallery";
+import { DarkGridBackground } from "./SharedHomeSections";
 
 const firstRow: GalleryWork[] = [
   { src: "/media/casos-exito/desk-001.jpg", alt: "Sitio web Águilas de Oro", format: "wide" },
@@ -27,8 +28,9 @@ const secondRow: GalleryWork[] = [
   { src: "/media/casos-exito/desk-011.jpg", alt: "Presentación de proyecto ONER VFX en tablet", format: "wide" },
 ];
 
-export default function PortfolioSection() {
+export default function PortfolioSection({ darkGrid = false }: { darkGrid?: boolean } = {}) {
   return <section className="cases-work" id="portfolio" aria-labelledby="portfolio-title">
+    {darkGrid && <DarkGridBackground />}
     <header className="cases-work-heading">
       <p>TRABAJOS REALIZADOS</p>
       <h2 id="portfolio-title">Proyectos que<br/>hablan por nosotros.</h2>

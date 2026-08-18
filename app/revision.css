@@ -2588,6 +2588,92 @@ h1,h2,h3,
   .home-testimonials__close{top:10px;right:10px;width:44px;height:44px}
 }
 
+/* Fondo oscuro inspirado en la trama vertical de Attio: líneas de 1 px cada
+   8 px y seis destellos independientes que recorren columnas aisladas. */
+.home-page .dark-grid-background{
+  position:absolute;
+  z-index:0;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  background-image:repeating-linear-gradient(
+    to right,
+    rgba(255,255,255,.034) 0,
+    rgba(255,255,255,.034) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
+.home-page .dark-grid-background--half{right:50%}
+.home-page .dark-grid-background>i{
+  position:absolute;
+  top:-360px;
+  display:block;
+  width:2px;
+  height:360px;
+  background:linear-gradient(transparent,rgba(255,255,255,.44) 50%,transparent);
+  opacity:0;
+  animation:darkGridTrace 13s linear infinite;
+  will-change:top,opacity;
+}
+.home-page .dark-grid-background>i:nth-child(1){left:10%;animation-delay:-2.4s;animation-duration:14.5s}
+.home-page .dark-grid-background>i:nth-child(2){left:27%;animation-delay:-10.1s;animation-duration:16.8s}
+.home-page .dark-grid-background>i:nth-child(3){left:43%;animation-delay:-6.7s;animation-duration:12.4s}
+.home-page .dark-grid-background>i:nth-child(4){left:61%;animation-delay:-13.2s;animation-duration:17.6s}
+.home-page .dark-grid-background>i:nth-child(5){left:78%;animation-delay:-4.6s;animation-duration:15.2s}
+.home-page .dark-grid-background>i:nth-child(6){left:92%;animation-delay:-8.8s;animation-duration:18.4s}
+
+@keyframes darkGridTrace{
+  0%,8%{top:-360px;opacity:0}
+  15%{opacity:.24}
+  37%{opacity:.13}
+  50%,100%{top:calc(100% + 24px);opacity:0}
+}
+
+.home-page .hero>.dark-grid-background{z-index:2}
+.home-page .cases-work>.dark-grid-background{z-index:0}
+.home-page .home-logo-marquee>.dark-grid-background{z-index:0}
+.home-page .human-cta>.dark-grid-background{z-index:1}
+
+.home-page .cases-work,
+.home-page .contact-form,
+.home-page footer{
+  isolation:isolate;
+  background-color:#0b0b0b!important;
+}
+
+.home-page .contact-form{
+  position:relative;
+  background-image:none!important;
+}
+.home-page .contact-form>:not(.dark-grid-background){position:relative;z-index:1}
+
+.home-page .human-cta{background:#0b0b0b!important}
+.home-page .human-cta:before{display:none!important;content:none!important}
+.home-page .human-design{display:none!important}
+.home-page .human-copy,
+.home-page .human-copy h2,
+.home-page .human-copy>span,
+.home-page .human-copy>span b{color:#fff!important}
+
+.home-page footer>.footer-top,
+.home-page footer>.footer-bottom{
+  background:transparent!important;
+}
+
+.home-page .home-logo-marquee{background:#0b0b0b}
+.home-page .home-logo-marquee:before{background:linear-gradient(90deg,#0b0b0b,transparent)}
+.home-page .home-logo-marquee:after{background:linear-gradient(270deg,#0b0b0b,transparent)}
+
+@media(max-width:850px){
+  .home-page .dark-grid-background--half{inset:0 0 50%}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .home-page .dark-grid-background>i{display:none}
+}
+
 /* Sistema unificado para todos los lienzos claros del sitio. */
 .light-grid-frame{
   position:relative;
