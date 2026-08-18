@@ -11,6 +11,17 @@ export function HeroLogoTrack() {
   )}</div>;
 }
 
+export function HeroChrome() {
+  return <>
+    <div className="tech-frame frame-left"><i/><span>34°36&apos;S</span><b>001</b></div>
+    <div className="tech-frame frame-right"><i/><span>DIGITAL SYSTEMS</span><b>2026</b></div>
+    <div className="data-line line-a"><span>STRATEGY</span><i/></div>
+    <div className="data-line line-b"><span>RESULTS</span><i/></div>
+    <div className="hero-caption">DISEÑO WEB &amp; MARKETING DIGITAL</div>
+    <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
+  </>;
+}
+
 export function DarkGridBackground({ half = false }: { half?: boolean } = {}) {
   return <div className={`dark-grid-background${half ? " dark-grid-background--half" : ""}`} aria-hidden="true">
     {[0, 1, 2, 3, 4, 5].map((line) => <i key={line} />)}

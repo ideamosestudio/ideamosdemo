@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
-import { HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
+import { HeroChrome, HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
 import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
 
@@ -58,7 +58,7 @@ export default function PosicionamientoWebPage() {
     <section className="hero internal-home-hero matches-home-hero pw-hero" id="inicio">
       <ManagedBackgroundVideo eager className="hero-video" src={asset("/media/hero.mp4")} poster={asset("/media/hero-poster.webp")} />
       <div className="hero-overlay" /><div className="hero-aurora" />
-      <div className="space-particles"><i/><i/><i/><i/><i/><i/></div>
+      <HeroChrome />
       <div className="hero-center">
         <p className="availability"><i/> POSICIONAMIENTO EN GOOGLE</p>
         <h1><span>Escalá en Google</span><span>y potenciá tus ventas hoy</span></h1>
@@ -67,9 +67,8 @@ export default function PosicionamientoWebPage() {
           <a className="cta-glow primary" href={whatsapp}><span>Quiero una asesoría sin cargo</span></a>
           <a className="cta-glow secondary" href={whatsapp}><span>Quiero aparecer primero en Google</span></a>
         </div>
+        <div className="hero-clients"><HeroLogoTrack /></div>
       </div>
-      <div className="hero-caption">DISEÑO WEB &amp; MARKETING DIGITAL</div>
-      <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
     </section>
 
     <LightGridFrame className="positioning-light-grid">

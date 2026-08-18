@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
-import { HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
+import { HeroChrome, HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
 import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
 
@@ -74,9 +74,7 @@ export default function MarketingDigitalPage() {
     <section className="hero internal-home-hero matches-home-hero md-hero" id="inicio">
       <ManagedBackgroundVideo eager className="hero-video" src={asset("/media/hero.mp4")} poster={asset("/media/hero-poster.webp")} />
       <div className="hero-overlay" /><div className="hero-aurora" />
-      <div className="space-particles"><i/><i/><i/><i/><i/><i/></div>
-      <div className="tech-frame frame-left"><i/><span>34°36&apos;S</span><b>001</b></div>
-      <div className="tech-frame frame-right"><i/><span>DIGITAL SYSTEMS</span><b>2026</b></div>
+      <HeroChrome />
       <div className="hero-center">
         <p className="availability"><i/> HOLA, SOMOS IDEAMOS</p>
         <h1><span>Estrategias digitales</span><span>que potencian leads y ventas</span></h1>
@@ -85,9 +83,8 @@ export default function MarketingDigitalPage() {
           <a className="cta-glow primary" href={whatsapp}><span>Quiero una asesoría sin cargo</span></a>
           <a className="cta-glow secondary" href={whatsapp}><span>Quiero contactar un experto</span></a>
         </div>
+        <div className="hero-clients"><HeroLogoTrack /></div>
       </div>
-      <div className="hero-caption">DISEÑO WEB &amp; MARKETING DIGITAL</div>
-      <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
     </section>
 
     <LightGridFrame className="marketing-light-grid">

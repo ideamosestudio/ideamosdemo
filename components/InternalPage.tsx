@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
-import { HeroLogoTrack, HomeClosingSections } from "./SharedHomeSections";
+import { HeroChrome, HeroLogoTrack, HomeClosingSections } from "./SharedHomeSections";
 import SiteHeader from "./SiteHeader";
 import LightGridFrame from "./LightGridFrame";
 
@@ -70,7 +70,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
   return <main className="internal-page">
     <SiteHeader />
 
-    <section className={`hero internal-home-hero ${page.matchHomeHero ? "matches-home-hero" : ""}`} id="inicio">
+    <section className="hero internal-home-hero matches-home-hero" id="inicio">
       <ManagedBackgroundVideo
         eager
         className="hero-video"
@@ -78,20 +78,14 @@ export default function InternalPage({ page }: { page: ServicePage }) {
         poster={asset("/media/hero-poster.webp")}
       />
       <div className="hero-overlay" /><div className="hero-aurora" />
-      <div className="space-particles"><i/><i/><i/><i/><i/><i/></div>
-      <div className="tech-frame frame-left"><i/><span>34°36&apos;S</span><b>001</b></div>
-      <div className="tech-frame frame-right"><i/><span>DIGITAL SYSTEMS</span><b>2026</b></div>
-      <div className="data-line line-a"><span>STRATEGY</span><i/></div>
-      <div className="data-line line-b"><span>RESULTS</span><i/></div>
+      <HeroChrome />
       <div className="hero-center">
         <p className="availability"><i/> {page.eyebrow}</p>
         <h1>{page.title.split("\n").map((line, index) => <span className="hero-title-line" key={`${line}-${index}`}>{line}</span>)}</h1>
         <p className="hero-copy">{page.intro}</p>
         <Actions />
-        {page.matchHomeHero && <div className="hero-clients"><HeroLogoTrack /></div>}
+        <div className="hero-clients"><HeroLogoTrack /></div>
       </div>
-      <div className="hero-caption">DISEÑO WEB &amp; MARKETING DIGITAL</div>
-      <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
     </section>
 
     <LightGridFrame className="internal-light-grid">

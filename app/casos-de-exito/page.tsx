@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ManagedBackgroundVideo from "../components/ManagedBackgroundVideo";
-import { HomeAdvisorySection, HomeClosingSections } from "../../components/SharedHomeSections";
+import { HeroChrome, HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "../../components/SharedHomeSections";
 import LightGridFrame from "../../components/LightGridFrame";
 import SiteHeader from "../../components/SiteHeader";
 import PortfolioSection from "../../components/PortfolioSection";
@@ -27,11 +27,7 @@ export default function Page() {
       />
       <div className="hero-overlay" />
       <div className="hero-aurora" />
-      <div className="space-particles"><i/><i/><i/><i/><i/><i/></div>
-      <div className="tech-frame frame-left"><i/><span>34°36&apos;S</span><b>001</b></div>
-      <div className="tech-frame frame-right"><i/><span>CASOS REALES</span><b>2026</b></div>
-      <div className="data-line line-a"><span>ESTRATEGIA</span><i/></div>
-      <div className="data-line line-b"><span>RESULTADOS</span><i/></div>
+      <HeroChrome />
 
       <div className="hero-center">
         <p className="availability"><i/> CASOS DE ÉXITO</p>
@@ -44,10 +40,8 @@ export default function Page() {
           <a className="cta-glow primary" href="#contacto"><span>Quiero lograr resultados</span></a>
           <a className="cta-glow secondary" href="#contacto"><span>Contanos tu proyecto</span></a>
         </div>
+        <div className="hero-clients"><HeroLogoTrack /></div>
       </div>
-
-      <div className="hero-caption">ESTRATEGIA, DISEÑO &amp; RESULTADOS</div>
-      <div className="scroll-line"><span>CONVERSEMOS</span><i/></div>
     </section>
 
     <LightGridFrame className="cases-light-grid">

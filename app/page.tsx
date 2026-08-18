@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ManagedBackgroundVideo from "./components/ManagedBackgroundVideo";
-import { HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "../components/SharedHomeSections";
+import { HeroChrome, HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "../components/SharedHomeSections";
 import SiteHeader from "../components/SiteHeader";
 import PortfolioSection from "../components/PortfolioSection";
 import LightGridFrame from "../components/LightGridFrame";
@@ -63,10 +63,7 @@ export default function Home() {
         poster={asset("/media/hero-poster.webp")}
       />
       <div className="hero-overlay" /><div className="hero-aurora" />
-      <div className="space-particles"><i/><i/><i/><i/><i/><i/></div>
-      <div className="tech-frame frame-left"><i/><span>34°36&apos;S</span><b>001</b></div>
-      <div className="tech-frame frame-right"><i/><span>DIGITAL SYSTEMS</span><b>2026</b></div>
-      <div className="data-line line-a"><span>STRATEGY</span><i/></div><div className="data-line line-b"><span>RESULTS</span><i/></div>
+      <HeroChrome />
       <div className="hero-center">
         <p className="availability"><i/> Más estrategia, más resultados</p>
         <h1>
@@ -86,8 +83,6 @@ export default function Home() {
         </div>
         <div className="hero-clients"><HeroLogoTrack /></div>
       </div>
-      <div className="hero-caption">DISEÑO WEB & MARKETING DIGITAL</div>
-      <div className="scroll-line"><span>DESCUBRÍ MÁS</span><i/></div>
     </section>
 
     <LightGridFrame className="home-services-grid">
