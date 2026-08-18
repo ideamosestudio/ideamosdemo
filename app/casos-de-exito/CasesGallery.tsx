@@ -29,7 +29,7 @@ function WorkGroup({
       onClick={() => onOpen(work)}
     >
       <img src={asset(work.src)} alt={work.alt} loading="lazy" />
-      <span className="case-card-zoom" aria-hidden="true">Ampliar <b>↗</b></span>
+      <span className="case-card-zoom" aria-hidden="true">Ampliar</span>
     </button>)}
   </div>;
 }

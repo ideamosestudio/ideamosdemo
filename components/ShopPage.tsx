@@ -84,13 +84,13 @@ export default function ShopPage() {
       <div className="shops-intro-layout">
         <div className="shops-intro-copy">
           <div className="shops-happy"><img src={asset("/media/happy-clients.png")} alt="Más de 2000 clientes felices"/></div>
-          <h3>Vendé las 24 horas del día, los<br/>7 días de la semana</h3>
+          <h3><span>Vendé las 24 horas del día,</span><span>los 7 días de la semana</span></h3>
           <h4><b>Diseño Web y Marketing Digital</b> de alto impacto</h4>
           <p>Tener una tienda online ofrece numerosas ventajas que pueden transformar su negocio. Permite llegar a una audiencia global, superando las limitaciones geográficas de un local físico, y le permite vender sus productos o servicios las 24 horas del día, los 7 días de la semana.</p>
-          <a className="orange-cta shops-red-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA <span>›</span></a>
+          <a className="orange-cta shops-red-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA</a>
         </div>
-        <div className="shops-laptop-video">
-          <video autoPlay muted loop playsInline preload="metadata"><source src={asset("/media/sunglasses-003.webm")} type="video/webm" /></video>
+        <div className="shops-laptop-visual">
+          <img src={asset("/media/sunglasses.png")} alt="Tienda online de anteojos desarrollada por Ideamos" />
         </div>
       </div>
     </section>
@@ -103,10 +103,12 @@ export default function ShopPage() {
       </header>
       <div className="shops-advantages-layout">
         <div className="shops-feature-column">{advantagesLeft.map(([title, copy]) => <Feature key={title} title={title} copy={copy} />)}</div>
-        <div className="shops-phone"><video autoPlay muted loop playsInline preload="metadata"><source src={asset("/media/wilde.webm")} type="video/webm" /></video></div>
+        <div className="shops-phone" aria-label="Ejemplo animado de una tienda online en celular">
+          {[1, 2, 3].map((number) => <img key={number} src={asset(`/media/wilde-phone-${number}.png`)} alt={number === 1 ? "Tienda online Wilde vista desde un celular" : ""} aria-hidden={number !== 1} />)}
+        </div>
         <div className="shops-feature-column">{advantagesRight.map(([title, copy]) => <Feature key={title} title={title} copy={copy} />)}</div>
       </div>
-      <a className="orange-cta shops-red-cta shops-center-cta" href="https://wa.link/wgb5pk">QUIERO UNA ASESORÍA SIN CARGO <span>›</span></a>
+      <Actions />
     </section>
 
     <section className="shops-problems shops-grid-bg">

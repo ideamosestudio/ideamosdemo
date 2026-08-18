@@ -123,7 +123,7 @@ export default function PricesPage() {
             <ul>{plan.features.map((feature) => <li key={feature}><i>✓</i><span>{feature}</span></li>)}</ul>
           </div>
           {plan.closing && <p className="price-closing">{plan.closing}</p>}
-          <a className="orange-cta price-more" href="https://wa.link/wgb5pk">QUIERO MÁS INFO <span>→</span></a>
+          <a className="orange-cta price-more" href="https://wa.link/wgb5pk">QUIERO MÁS INFO</a>
         </article>)}
       </div>
     </section>

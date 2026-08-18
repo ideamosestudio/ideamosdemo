@@ -155,7 +155,6 @@ export default function MobileMenu({ items, logoSrc }: MobileMenuProps) {
             <a href={item.href} onClick={(event) => navigateAfterClose(event, item.href)}>
               <small>{String(index + 1).padStart(2, "0")}</small>
               <span>{item.label}</span>
-              <i aria-hidden="true">↗</i>
             </a>
           </li>)}
         </ol>

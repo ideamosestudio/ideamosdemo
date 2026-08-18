@@ -77,7 +77,7 @@ export default function PremiumFooter() {
         <div className="ideamos-footer__contact">
           <p className="ideamos-footer__contact-label">Asesoría estratégica</p>
           <h3>¿Pensamos tu próximo paso digital?</h3>
-          <a className="ideamos-footer__whatsapp" href="https://wa.link/wgb5pk"><span>Hablar por WhatsApp</span><i aria-hidden="true">↗</i></a>
+          <a className="ideamos-footer__whatsapp" href="https://wa.link/wgb5pk"><span>Hablar por WhatsApp</span></a>
           <p><a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar</a></p>
           <p><a href="tel:+5491168758285">+54 9 11 6875-8285</a></p>
           <p>Buenos Aires · Argentina</p>

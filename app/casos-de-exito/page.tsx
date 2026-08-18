@@ -57,7 +57,7 @@ export default function Page() {
         <h2 id="cases-intro-title">Diseñamos experiencias que generan confianza y resultados.</h2>
         <h3><b>Potenciamos tu marca</b> con una comunicación digital efectiva.</h3>
         <p>Creamos sitios web pensados para transmitir autoridad, diferenciarte y generar contactos reales. Cada proyecto combina estrategia, diseño y tecnología para convertir una idea en una experiencia que impulsa tu negocio.</p>
-        <a className="cases-action" href="#contacto">Charlemos de tu proyecto <span aria-hidden="true">↗</span></a>
+        <a className="cases-action" href="#contacto">Charlemos de tu proyecto</a>
       </div>
       <div className="cases-featured-work" aria-label="Proyecto destacado Trébol Café">
         <i className="cases-featured-shape" aria-hidden="true" />

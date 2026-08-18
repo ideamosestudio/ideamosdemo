@@ -146,10 +146,6 @@ export default function Home() {
 
     <LightGridFrame className="home-closing-light-grid">
       <HomeTestimonials />
-      <div className="home-logo-marquee" aria-hidden="true">
-        <DarkGridBackground />
-        <HeroLogoTrack />
-      </div>
       <HomeAdvisorySection />
     </LightGridFrame>
 

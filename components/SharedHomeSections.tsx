@@ -17,8 +17,17 @@ export function DarkGridBackground({ half = false }: { half?: boolean } = {}) {
   </div>;
 }
 
+export function HomeLogoMarquee() {
+  return <div className="home-logo-marquee" aria-hidden="true">
+    <DarkGridBackground />
+    <HeroLogoTrack />
+  </div>;
+}
+
 export function HomeAdvisorySection({ darkGrid = false }: { darkGrid?: boolean } = {}) {
-  return <section className="human-cta shared-section-bg">
+  return <>
+    <HomeLogoMarquee />
+    <section className="human-cta shared-section-bg">
       {darkGrid && <DarkGridBackground half />}
       <div className="human-design" aria-hidden="true">
         <i className="human-glow human-glow-a"/><i className="human-glow human-glow-b"/>
@@ -33,7 +42,8 @@ export function HomeAdvisorySection({ darkGrid = false }: { darkGrid?: boolean }
         src={asset("/media/videollamada-final.webm")}
         poster={asset("/media/human-poster.webp")}
       />
-    </section>;
+    </section>
+  </>;
 }
 
 export function HomeClosingSections({ showAdvisory = true, darkGrid = false }: { showAdvisory?: boolean; darkGrid?: boolean } = {}) {

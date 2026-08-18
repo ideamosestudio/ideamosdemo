@@ -18,6 +18,41 @@
   padding-right:35px!important;
 }
 
+/* Descriptive copy follows one quieter, darker hierarchy across light sections. */
+#site-root :is(
+  .statement-copy,
+  .section-heading>span,
+  .body-copy,
+  .shops-heading>span,
+  .shops-intro-copy>p,
+  .service-section:not(.dark) .service-copy,
+  .md-section header>span,
+  .pw-intro>span,
+  .cases-intro-copy>p:last-of-type,
+  .pricing-intro-copy>span
+){
+  color:#333!important;
+  font-size:15px!important;
+}
+
+#site-root :is(
+  .shop-column p,
+  .shops-feature>p,
+  .service-section:not(.dark) .service-items p,
+  .design-problems-list p,
+  .md-feature p,
+  .pw-feature p,
+  .price-description
+){
+  color:#333!important;
+  font-size:13px!important;
+}
+
+#site-root .human-copy>span{
+  color:#333!important;
+  font-size:13px!important;
+}
+
 @media(max-width:700px){
   #site-root :is(
     .hero-actions,

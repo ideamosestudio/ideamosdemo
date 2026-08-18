@@ -10,7 +10,7 @@ const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${pat
 const whatsapp = "https://wa.link/wgb5pk";
 
 function Action({ children }: { children: React.ReactNode }) {
-  return <a className="orange-cta md-action" href={whatsapp}>{children}<span aria-hidden="true">›</span></a>;
+  return <a className="orange-cta md-action" href={whatsapp}>{children}</a>;
 }
 
 function DeviceMedia({
