@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
-import { HeroChrome, HeroLogoTrack, HomeClosingSections } from "./SharedHomeSections";
+import { HeroChrome, HomeClosingSections } from "./SharedHomeSections";
 import SiteHeader from "./SiteHeader";
 import LightGridFrame from "./LightGridFrame";
 
@@ -18,6 +18,8 @@ type ContentSection = {
   visual?: "xtreme" | "wilde" | "human";
   actions?: boolean;
   hideItemNumbers?: boolean;
+  afterVideo?: string;
+  variant?: "benefits";
 };
 type ServicePage = {
   eyebrow: string;
@@ -33,7 +35,6 @@ type ServicePage = {
   homeClosing?: boolean;
   hideSectionIndexes?: boolean;
   sharedSectionBackground?: boolean;
-  homeVideoWall?: boolean;
 };
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -84,7 +85,6 @@ export default function InternalPage({ page }: { page: ServicePage }) {
         <h1>{page.title.split("\n").map((line, index) => <span className="hero-title-line" key={`${line}-${index}`}>{line}</span>)}</h1>
         <p className="hero-copy">{page.intro}</p>
         <Actions />
-        <div className="hero-clients"><HeroLogoTrack /></div>
       </div>
     </section>
 
@@ -105,7 +105,8 @@ export default function InternalPage({ page }: { page: ServicePage }) {
       }
 
       if (section.visual === "xtreme") {
-        return <section key={`${section.title}-${sectionIndex}`} className={`service-section service-visual service-xtreme ${page.hideSectionIndexes ? "without-service-index" : ""} ${page.sharedSectionBackground ? "shared-section-bg" : ""}`}>
+        return <Fragment key={`${section.title}-${sectionIndex}`}>
+        <section className={`service-section service-visual service-xtreme ${page.hideSectionIndexes ? "without-service-index" : ""} ${page.sharedSectionBackground ? "shared-section-bg" : ""}`}>
           {!page.hideSectionIndexes && <div className="service-index">0{sectionIndex + 2} — IDEAMOS <i /></div>}
           <header className="service-heading">
             <p>{section.eyebrow}</p>
@@ -117,7 +118,13 @@ export default function InternalPage({ page }: { page: ServicePage }) {
           <div className="service-visual-media">
             <img src={asset("/media/xtreme-service.png")} alt="Sitio web Xtreme desarrollado por Ideamos" />
           </div>
-        </section>;
+        </section>
+        {section.afterVideo && <section className="service-showcase-video" aria-label="Proyecto web desarrollado por Ideamos">
+          <video autoPlay muted loop playsInline preload="metadata">
+            <source src={asset(section.afterVideo)} type="video/mp4" />
+          </video>
+        </section>}
+        </Fragment>;
       }
 
       if (section.visual === "wilde") {
@@ -148,15 +155,10 @@ export default function InternalPage({ page }: { page: ServicePage }) {
           </div>
           {section.actions && <Actions />}
         </section>
-        {page.homeVideoWall && <section className="desktop-video-wall internal-video-wall" aria-label="Presentación audiovisual de Ideamos">
-          <video autoPlay muted loop playsInline preload="metadata">
-            <source src={asset("/media/video-wall-background-2026.webm")} type="video/webm" />
-          </video>
-        </section>}
         </Fragment>;
       }
 
-      return <section key={`${section.title}-${sectionIndex}`} className={`service-section ${section.dark ? "dark" : ""} ${section.contact ? "service-contact" : ""} ${page.sharedSectionBackground ? "shared-section-bg" : ""}`}>
+      return <section key={`${section.title}-${sectionIndex}`} className={`service-section ${section.dark ? "dark" : ""} ${section.contact ? "service-contact" : ""} ${section.variant === "benefits" ? "service-benefits" : ""} ${page.sharedSectionBackground ? "shared-section-bg" : ""}`}>
           {!page.hideSectionIndexes && <div className="service-index">0{sectionIndex + 2} — {section.dark ? "STRATEGY" : "IDEAMOS"} <i /></div>}
           <header className="service-heading">
             <p>{section.eyebrow}</p>
@@ -164,7 +166,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
             {section.lead && <h3>{section.lead}</h3>}
             {section.paragraphs?.map((copy, index) => <div className="service-copy" key={index}>{copy}</div>)}
           </header>
-          {section.items && <div className="service-items">
+          {section.items && <div className={`service-items ${section.variant === "benefits" ? "service-benefits-grid" : ""}`}>
             {section.items.map((item, index) => <article key={item.title}>
               {!section.hideItemNumbers && <small>{String(index + 1).padStart(2, "0")}</small>}<i />
               <h3>{item.title}</h3><p>{item.copy}</p>

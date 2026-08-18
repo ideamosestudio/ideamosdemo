@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ManagedBackgroundVideo from "../components/ManagedBackgroundVideo";
-import { HeroChrome, HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "../../components/SharedHomeSections";
+import { HeroChrome, HomeAdvisorySection, HomeClosingSections } from "../../components/SharedHomeSections";
 import LightGridFrame from "../../components/LightGridFrame";
 import SiteHeader from "../../components/SiteHeader";
 import PortfolioSection from "../../components/PortfolioSection";
@@ -40,7 +40,6 @@ export default function Page() {
           <a className="cta-glow primary" href="#contacto"><span>Quiero lograr resultados</span></a>
           <a className="cta-glow secondary" href="#contacto"><span>Contanos tu proyecto</span></a>
         </div>
-        <div className="hero-clients"><HeroLogoTrack /></div>
       </div>
     </section>
 

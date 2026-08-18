@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
-import { HeroChrome, HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
+import { HeroChrome, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
 import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
 
@@ -64,7 +64,6 @@ export default function ShopPage() {
         <h1><span>Vendé con tu tienda online.</span><span>Fácil, profesional y sin comisiones</span></h1>
         <p className="hero-copy">Creamos tiendas online pensadas para vender más: fáciles de usar, rápidas y listas para crecer con tu negocio.</p>
         <Actions />
-        <div className="hero-clients"><HeroLogoTrack /></div>
       </div>
     </section>
 

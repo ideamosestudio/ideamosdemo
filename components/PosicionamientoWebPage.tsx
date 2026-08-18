@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
-import { HeroChrome, HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
+import { HeroChrome, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
 import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
 
@@ -67,7 +67,6 @@ export default function PosicionamientoWebPage() {
           <a className="cta-glow primary" href={whatsapp}><span>Quiero una asesoría sin cargo</span></a>
           <a className="cta-glow secondary" href={whatsapp}><span>Quiero aparecer primero en Google</span></a>
         </div>
-        <div className="hero-clients"><HeroLogoTrack /></div>
       </div>
     </section>
 
