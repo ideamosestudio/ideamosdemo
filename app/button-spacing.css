@@ -37,6 +37,7 @@
   font-family:"Roboto",Arial,sans-serif!important;
   font-size:12pt!important;
   font-weight:300!important;
+  opacity:1!important;
 }
 
 #site-root :is(
@@ -57,6 +58,7 @@
   font-family:"Roboto",Arial,sans-serif!important;
   font-size:12pt!important;
   font-weight:300!important;
+  opacity:1!important;
 }
 
 #site-root .home-advisory .human-copy>span{
@@ -72,6 +74,70 @@
   font-weight:700!important;
 }
 
+/* Every internal cover follows the exact typography and spacing rhythm of Home. */
+#site-root .internal-home-hero{
+  height:100svh!important;
+  min-height:760px!important;
+}
+
+#site-root .internal-home-hero>.hero-center{
+  padding:120px 20px 80px!important;
+}
+
+#site-root .internal-home-hero .availability{
+  margin:0!important;
+  color:#aab0bc!important;
+  font-size:11px!important;
+  font-weight:400!important;
+  letter-spacing:.16em!important;
+}
+
+#site-root .internal-home-hero h1{
+  width:auto!important;
+  max-width:1120px!important;
+  margin:26px 0 24px!important;
+  font-family:"Gilroy ExtraBold",Arial,sans-serif!important;
+  font-size:clamp(44px,5vw,78px)!important;
+  font-weight:800!important;
+  line-height:1.02!important;
+  letter-spacing:-.045em!important;
+}
+
+#site-root .internal-home-hero h1 .hero-title-line,
+#site-root .internal-home-hero h1>span{
+  padding-bottom:0!important;
+  white-space:normal!important;
+}
+
+#site-root .internal-home-hero .hero-copy{
+  max-width:720px!important;
+  margin:0!important;
+  color:#aeb0b9!important;
+  font-family:"Roboto",Arial,sans-serif!important;
+  font-size:16px!important;
+  font-weight:300!important;
+  line-height:1.55!important;
+}
+
+#site-root .internal-home-hero .internal-actions{
+  justify-content:center!important;
+  gap:16px!important;
+  margin-top:34px!important;
+}
+
+@media(min-width:981px){
+  #site-root .internal-home-hero>.hero-center{
+    transform:translateY(-30px)!important;
+  }
+}
+
+@media(min-width:1200px){
+  #site-root .internal-home-hero h1{
+    font-size:64.8px!important;
+    line-height:.98!important;
+  }
+}
+
 /* The shared video-call section is edge-to-edge on every service page, as on Home. */
 @media(min-width:981px){
   #site-root .home-advisory{
@@ -85,6 +151,18 @@
 }
 
 @media(max-width:700px){
+  #site-root .internal-home-hero{
+    min-height:720px!important;
+  }
+
+  #site-root .internal-home-hero>.hero-center{
+    padding:150px 22px 70px!important;
+  }
+
+  #site-root .internal-home-hero h1{
+    font-size:40px!important;
+  }
+
   #site-root :is(
     .hero-actions,
     .ecommerce-actions,

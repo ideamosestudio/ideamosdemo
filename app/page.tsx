@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ManagedBackgroundVideo from "./components/ManagedBackgroundVideo";
-import { DarkGridBackground, HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "../components/SharedHomeSections";
+import { HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "../components/SharedHomeSections";
 import SiteHeader from "../components/SiteHeader";
 import PortfolioSection from "../components/PortfolioSection";
 import LightGridFrame from "../components/LightGridFrame";
@@ -63,7 +63,6 @@ export default function Home() {
         poster={asset("/media/hero-poster.webp")}
       />
       <div className="hero-overlay" /><div className="hero-aurora" />
-      <DarkGridBackground />
       <div className="space-particles"><i/><i/><i/><i/><i/><i/></div>
       <div className="tech-frame frame-left"><i/><span>34°36&apos;S</span><b>001</b></div>
       <div className="tech-frame frame-right"><i/><span>DIGITAL SYSTEMS</span><b>2026</b></div>

@@ -118,6 +118,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
             <h2>{section.title}</h2>
             {section.lead && <h3>{section.lead}</h3>}
             {section.paragraphs?.map((copy, index) => <div className="service-copy" key={index}>{copy}</div>)}
+            {section.actions && <Actions />}
           </header>
           <div className="service-visual-media">
             <img src={asset("/media/xtreme-service.png")} alt="Sitio web Xtreme desarrollado por Ideamos" />
