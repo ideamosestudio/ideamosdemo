@@ -29,11 +29,11 @@ const testimonials = [
     alt: "Rodolfo Merino de MR Ingeniería",
   },
   {
-    quote: "Nos acompañaron todo el proceso y nos hicieron una web muy profesional. Les recomiendo Estudio Ideamos",
+    quote: "Nos acompañaron e hicieron un trabajo muy profesional. Les recomiendo a Ideamos",
     desktopLines: [
-      "Nos acompañaron todo el proceso",
-      "y nos hicieron una web muy profesional.",
-      "Les recomiendo Estudio Ideamos",
+      "Nos acompañaron e hicieron",
+      "un trabajo muy profesional.",
+      "Les recomiendo a Ideamos",
     ],
     name: "Berenice Cura",
     role: "Presidente Comunidad Sorda e Hipoacúsica Tandilense",
