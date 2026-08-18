@@ -1,0 +1,41 @@
+/* Separate the footer content from the plain-black credits strip. */
+#site-root footer{
+  padding:0!important;
+}
+
+#site-root footer .footer-main{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:80px max(6vw,40px);
+  background:#0b0b0b;
+}
+
+#site-root footer .footer-main>.dark-grid-background{
+  z-index:0;
+}
+
+#site-root footer .footer-top{
+  position:relative;
+  z-index:1;
+}
+
+#site-root footer .footer-bottom{
+  position:relative!important;
+  z-index:1;
+  inset:auto!important;
+  margin:0!important;
+  padding:28px max(6vw,40px)!important;
+  border-top:1px solid rgba(255,255,255,.22)!important;
+  background:#000!important;
+}
+
+@media(max-width:700px){
+  #site-root footer .footer-main{
+    padding:64px 30px;
+  }
+
+  #site-root footer .footer-bottom{
+    padding:26px 30px 30px!important;
+  }
+}

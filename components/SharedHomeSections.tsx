@@ -59,25 +59,26 @@ export function HomeClosingSections({ showAdvisory = true, darkGrid = false }: {
     </section>
 
     <footer>
-      {darkGrid && <DarkGridBackground />}
-      <div className="footer-top">
-        <div className="footer-brand">
-          <img src={asset("/logos/ideamos-light.webp")} alt="Ideamos"/>
-          <h3>Más estrategia.<br/><em>Más resultados.</em></h3>
-          <a href="https://wa.link/wgb5pk">Hablemos por WhatsApp</a>
-        </div>
-        <div>
-          <b>Servicios</b>
-          <a href={asset("/diseno-web-autoadministrable/")}>Diseño Web</a>
-          <a href={asset("/tiendas-online/")}>Tiendas Online</a>
-          <a href={asset("/marketing-digital/")}>Marketing Digital</a>
-          <a href={asset("/posicionamiento-web/")}>Posicionamiento Web</a>
-        </div>
-        <div>
-          <b>Contacto</b>
-          <a href="https://wa.link/wgb5pk">+54 9 11 6875-8285</a>
-          <a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar</a>
-          <p>Buenos Aires, Argentina</p>
+      <div className="footer-main">
+        {darkGrid && <DarkGridBackground />}
+        <div className="footer-top">
+          <div className="footer-brand">
+            <img src={asset("/logos/ideamos-light.webp")} alt="Ideamos"/>
+            <h3>Más estrategia.<br/><em>Más resultados.</em></h3>
+          </div>
+          <div>
+            <b>Servicios</b>
+            <a href={asset("/diseno-web-autoadministrable/")}>Diseño Web</a>
+            <a href={asset("/tiendas-online/")}>Tiendas Online</a>
+            <a href={asset("/marketing-digital/")}>Marketing Digital</a>
+            <a href={asset("/posicionamiento-web/")}>Posicionamiento Web</a>
+          </div>
+          <div>
+            <b>Contacto</b>
+            <a href="https://wa.link/wgb5pk">+54 9 11 6875-8285</a>
+            <a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar</a>
+            <p>Buenos Aires, Argentina</p>
+          </div>
         </div>
       </div>
       <div className="footer-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href="#inicio">VOLVER ARRIBA</a></div>

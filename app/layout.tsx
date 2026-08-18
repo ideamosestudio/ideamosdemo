@@ -9,6 +9,7 @@ import "./request-2026-08-01.css";
 import "./mobile-site-rules.css";
 import "./floating-whatsapp.css";
 import "./button-spacing.css";
+import "./footer-credits.css";
 
 export const metadata: Metadata = {
   title: "Ideamos — Diseño web & marketing digital",
