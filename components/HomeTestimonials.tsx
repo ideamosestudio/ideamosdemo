@@ -28,6 +28,17 @@ const testimonials = [
     site: "https://estudioideamos.github.io/mr-ingenieria-estructural/",
     alt: "Rodolfo Merino de MR Ingeniería",
   },
+  {
+    quote: "5 estrellas",
+    desktopLines: ["5 estrellas"],
+    name: "Berenice Cura",
+    role: "Presidente Comunidad Sorda e Hipoacúsica Tandilense",
+    image: "/media/testimonials/berenice-cura-image.jpg",
+    avatar: "/media/testimonials/berenice-cura-avatar.png",
+    video: "/media/testimonials/berenice-cura.mp4",
+    site: null,
+    alt: "Berenice Cura, Presidente de la Comunidad Sorda e Hipoacúsica Tandilense",
+  },
 ];
 
 export default function HomeTestimonials() {
@@ -36,10 +47,9 @@ export default function HomeTestimonials() {
   const testimonial = testimonials[active];
 
   useEffect(() => {
-    if (openVideo !== null) return;
-    const timer = window.setInterval(() => setActive((current) => (current + 1) % testimonials.length), 8000);
+    const timer = window.setInterval(() => setActive((current) => (current + 1) % testimonials.length), 3000);
     return () => window.clearInterval(timer);
-  }, [openVideo]);
+  }, []);
 
   useEffect(() => {
     if (openVideo === null) return;
@@ -77,7 +87,7 @@ export default function HomeTestimonials() {
         </div>
         <div className="home-testimonials__actions">
           <a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO</a>
-          <a className="orange-cta home-testimonials__site" href={testimonial.site} target="_blank" rel="noreferrer">VER SITIO WEB</a>
+          {testimonial.site && <a className="orange-cta home-testimonials__site" href={testimonial.site} target="_blank" rel="noreferrer">VER SITIO WEB</a>}
         </div>
       </div>
 
