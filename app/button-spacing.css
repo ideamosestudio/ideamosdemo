@@ -34,7 +34,7 @@
   .pricing-intro-copy>span
 ){
   color:#000!important;
-  font-size:13pt!important;
+  font-size:12pt!important;
   font-weight:400!important;
 }
 
@@ -53,13 +53,13 @@
   .price-closing
 ){
   color:#000!important;
-  font-size:13pt!important;
+  font-size:12pt!important;
   font-weight:400!important;
 }
 
 #site-root .home-advisory .human-copy>span{
   color:#000!important;
-  font-size:13pt!important;
+  font-size:12pt!important;
   font-weight:400!important;
   opacity:1!important;
 }
