@@ -29,14 +29,18 @@ const testimonials = [
     alt: "Rodolfo Merino de MR Ingeniería",
   },
   {
-    quote: "5 estrellas",
-    desktopLines: ["5 estrellas"],
+    quote: "Nos acompañaron todo el proceso y nos hicieron una web muy profesional. Les recomiendo Estudio Ideamos",
+    desktopLines: [
+      "Nos acompañaron todo el proceso",
+      "y nos hicieron una web muy profesional.",
+      "Les recomiendo Estudio Ideamos",
+    ],
     name: "Berenice Cura",
     role: "Presidente Comunidad Sorda e Hipoacúsica Tandilense",
     image: "/media/testimonials/berenice-cura-image.jpg",
     avatar: "/media/testimonials/berenice-cura-avatar.png",
     video: "/media/testimonials/berenice-cura.mp4",
-    site: null,
+    site: "https://estudioideamos.github.io/berenice-cura/",
     alt: "Berenice Cura, Presidente de la Comunidad Sorda e Hipoacúsica Tandilense",
   },
 ];
