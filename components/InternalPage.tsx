@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
-import { HeroChrome, HomeClosingSections } from "./SharedHomeSections";
+import { DarkGridBackground, HeroChrome, HomeClosingSections } from "./SharedHomeSections";
 import SiteHeader from "./SiteHeader";
 import LightGridFrame from "./LightGridFrame";
 
@@ -158,6 +158,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
       }
 
       return <section key={`${section.title}-${sectionIndex}`} className={`service-section ${section.dark ? "dark" : ""} ${section.contact ? "service-contact" : ""} ${section.variant === "benefits" ? "service-benefits" : ""} ${page.sharedSectionBackground ? "shared-section-bg" : ""}`}>
+          {section.variant === "benefits" && <DarkGridBackground />}
           {!page.hideSectionIndexes && <div className="service-index">0{sectionIndex + 2} — {section.dark ? "STRATEGY" : "IDEAMOS"} <i /></div>}
           <header className="service-heading">
             <p>{section.eyebrow}</p>
@@ -174,7 +175,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
               <h3>{item.title}</h3><p>{item.copy}</p>
             </article>)}
           </div>}
-          {section.contact && <Actions />}
+          {(section.contact || section.actions) && <Actions />}
         </section>;
     })}
     </LightGridFrame>

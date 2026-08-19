@@ -15,7 +15,7 @@ const page: ServicePage = {
       { title: "“Necesitamos una web compleja, con funcionalidades específicas”", copy: "Contamos con un equipo completo: programadores, diseñadores, maquetadores y estrategas. Abordamos proyectos grandes, complejos y personalizados para empresas que necesitan soluciones en el siguiente nivel." },
       { title: "“No sé por cómo arrancar, pero sé que necesito hacer algo”", copy: "Muchos clientes llegan con un mix de dudas, urgencias y ganas de mejorar. Tengamos una charla sin compromiso y te ayudamos a ordenar prioridades y entender qué conviene hacer paso a paso." },
     ]},
-    { eyebrow: "DISEÑO WEB A MEDIDA", title: "Con nuestras páginas web vas a tener:", variant: "benefits", items: [
+    { eyebrow: "DISEÑO WEB A MEDIDA", title: "Con nuestras páginas web vas a tener:", variant: "benefits", actions: true, items: [
       { title: "Tu marca proyectando confianza", copy: "Un sitio bien presentado transmite seriedad y profesionalismo, y complementa toda tu comunicación digital." },
       { title: "Nuevo canal de ventas", copy: "Con una web activa, tus clientes tienen un lugar siempre abierto para comprarte, consultarte o conocer mejor tu empresa." },
       { title: "Más visibilidad", copy: "Cuando alguien busque en Google lo que ofrecés, vas a tener más posibilidades de aparecer y ser elegido." },
