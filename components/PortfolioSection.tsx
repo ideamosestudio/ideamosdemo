@@ -33,7 +33,7 @@ export default function PortfolioSection({ darkGrid = false }: { darkGrid?: bool
     {darkGrid && <DarkGridBackground />}
     <header className="cases-work-heading">
       <p>TRABAJOS REALIZADOS</p>
-      <h2 id="portfolio-title">Proyectos que<br/>hablan por nosotros.</h2>
+      <h2 id="portfolio-title">Proyectos que<br/>hablan por nosotros</h2>
       <span>Una selección de experiencias digitales creadas para marcas de distintas industrias.</span>
     </header>
     <CasesGallery firstRow={firstRow} secondRow={secondRow} />

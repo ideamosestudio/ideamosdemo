@@ -10,11 +10,12 @@ import "./mobile-site-rules.css";
 import "./floating-whatsapp.css";
 import "./button-spacing.css";
 import "./footer-credits.css";
+import "./mobile-home-request-2026-08-19.css";
 
 export const metadata: Metadata = {
   title: "Ideamos — Diseño web & marketing digital",
   description: "Creamos experiencias digitales que atraen clientes, generan confianza y hacen crecer negocios.",
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  icons: { icon: "/favicon.jpg", shortcut: "/favicon.jpg", apple: "/favicon.jpg" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -1,0 +1,158 @@
+/* Mobile Home refinements requested on 19/08/2026. Loaded last on purpose. */
+
+/* The shared form action is one point larger and gains one point of tracking. */
+#site-root .contact-main .contact-submit{
+  font-size:12px!important;
+  letter-spacing:2px!important;
+}
+
+#site-root .contact-main .contact-submit:disabled{
+  letter-spacing:2px!important;
+}
+
+@media(max-width:700px){
+  /* Compact the first mockup block and remove the decorative rules after its CTA. */
+  #site-root .home-page .statement{
+    min-height:0!important;
+    padding-top:72px!important;
+    padding-bottom:28px!important;
+  }
+
+  #site-root .home-page .statement-copyblock:after,
+  #site-root .home-page .google-content:after{
+    display:none!important;
+    content:none!important;
+  }
+
+  #site-root .home-page .statement .screen-swap{
+    margin-top:10px!important;
+    margin-bottom:0!important;
+  }
+
+  /* Keep the phone slider controls clear of the following feature marker. */
+  #site-root .home-page .phone-stage.phone-swap{
+    margin-bottom:86px!important;
+  }
+
+  /* Avoid stacked section padding after both service CTAs. */
+  #site-root .home-page .ecommerce{
+    padding-top:48px!important;
+    padding-bottom:32px!important;
+  }
+
+  #site-root .home-page .ecommerce-actions{
+    margin-top:38px!important;
+    padding-top:20px!important;
+  }
+
+  #site-root .home-page .google-scene{
+    min-height:0!important;
+    padding-top:50px!important;
+    padding-bottom:64px!important;
+  }
+
+  #site-root .home-page .google-visual.google-swap{
+    margin-top:26px!important;
+    margin-bottom:20px!important;
+  }
+
+  /* Portfolio heading: centered, white and without muted supporting copy. */
+  #site-root .cases-work-heading{
+    display:flex!important;
+    width:calc(100% - 60px)!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    margin-bottom:42px!important;
+    text-align:center!important;
+  }
+
+  #site-root .cases-work-heading>p,
+  #site-root .cases-work-heading h2,
+  #site-root .cases-work-heading>span{
+    width:100%!important;
+    max-width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    color:#fff!important;
+    text-align:center!important;
+  }
+
+  #site-root .cases-work-heading h2{
+    margin-top:24px!important;
+    margin-bottom:22px!important;
+  }
+
+  /* Testimonial order: label/quote, video, rating, person and stacked actions. */
+  #site-root .home-testimonials{
+    padding-top:72px!important;
+    padding-bottom:76px!important;
+  }
+
+  #site-root .home-testimonials__slide{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:0!important;
+  }
+
+  #site-root .home-testimonials__copy,
+  #site-root .home-testimonials__visual{
+    display:contents!important;
+  }
+
+  #site-root .home-testimonials__copy>p{order:1}
+
+  #site-root .home-testimonials__copy h2{
+    order:2;
+    max-width:315px!important;
+    margin:0 auto!important;
+    font-size:22px!important;
+    line-height:1.12!important;
+  }
+
+  #site-root .home-testimonials__media{
+    order:3;
+    width:100%!important;
+    max-width:550px!important;
+    margin:30px auto 0!important;
+  }
+
+  #site-root .home-testimonials__rating{
+    order:4;
+    margin-top:28px!important;
+    text-align:center!important;
+  }
+
+  #site-root .home-testimonials__person{
+    order:5;
+    justify-content:center!important;
+    margin-top:24px!important;
+    text-align:left!important;
+  }
+
+  #site-root .home-testimonials__actions{
+    order:6;
+    display:flex!important;
+    width:100%;
+    flex-direction:column!important;
+    align-items:center!important;
+    gap:12px!important;
+    margin-top:30px!important;
+  }
+
+  #site-root .home-testimonials__actions .orange-cta,
+  #site-root .home-testimonials__site{
+    display:inline-flex!important;
+    width:100%!important;
+    max-width:360px!important;
+    margin:0 auto!important;
+  }
+
+  #site-root .home-testimonials__controls{
+    display:none!important;
+  }
+
+  /* The shared footer phrase is exactly 4pt smaller on mobile. */
+  #site-root footer .footer-brand h3{
+    font-size:30.667px!important;
+  }
+}
