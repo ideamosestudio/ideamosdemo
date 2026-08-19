@@ -1093,6 +1093,13 @@ h1,h2,h3,
   box-shadow:0 0 36px rgba(255,78,0,.42);
 }
 
+.design-phone-sequence img{
+  display:block;
+  width:min(100%,430px);
+  max-height:780px;
+  object-fit:contain;
+}
+
 .contact-main .contact-submit:disabled{
   cursor:wait;
   opacity:.72;

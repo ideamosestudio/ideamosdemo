@@ -1,10 +1,11 @@
 "use client";
 
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 import { DarkGridBackground, HeroChrome, HomeClosingSections } from "./SharedHomeSections";
 import SiteHeader from "./SiteHeader";
 import LightGridFrame from "./LightGridFrame";
+import HomeTestimonials from "./HomeTestimonials";
 
 type Item = { title: string; copy: string };
 type ContentSection = {
@@ -34,9 +35,15 @@ type ServicePage = {
   matchHomeHero?: boolean;
   hideSectionIndexes?: boolean;
   sharedSectionBackground?: boolean;
+  homeTestimonials?: boolean;
 };
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+const wildeFrames = [
+  "/media/wilde-cell-002.png",
+  "/media/wilde-cell-003.png",
+  "/media/wilde-cell-001.png",
+];
 
 function Actions() {
   return <div className="hero-actions internal-actions">
@@ -46,10 +53,20 @@ function Actions() {
 }
 
 export default function InternalPage({ page }: { page: ServicePage }) {
+  const [wildeFrame, setWildeFrame] = useState(0);
   const sections = page.sections ?? [
     { eyebrow: "ESTRATEGIA + DISEÑO + TECNOLOGÍA", title: page.sectionTitle ?? "", paragraphs: [page.sectionCopy ?? ""], items: page.items?.map(([title, copy]) => ({ title, copy })) },
     { eyebrow: "SOLUCIONES A TU MEDIDA", title: page.darkTitle ?? "", paragraphs: [page.darkCopy ?? ""], dark: true, contact: true },
   ];
+  const hasWildeSequence = sections.some((section) => section.visual === "wilde");
+
+  useEffect(() => {
+    if (!hasWildeSequence) return;
+    const timer = window.setInterval(() => {
+      setWildeFrame((current) => (current + 1) % wildeFrames.length);
+    }, 2000);
+    return () => window.clearInterval(timer);
+  }, [hasWildeSequence]);
   useEffect(() => {
     const onScroll = () => {
       document.documentElement.style.setProperty("--scroll", String(window.scrollY));
@@ -120,7 +137,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
         </section>
         {section.afterVideo && <section className="service-showcase-video" aria-label="Proyecto web desarrollado por Ideamos">
           <video autoPlay muted loop playsInline preload="metadata">
-            <source src={asset(section.afterVideo)} type="video/mp4" />
+            <source src={asset(section.afterVideo)} type={section.afterVideo.endsWith(".webm") ? "video/webm" : "video/mp4"} />
           </video>
         </section>}
         </Fragment>;
@@ -146,10 +163,8 @@ export default function InternalPage({ page }: { page: ServicePage }) {
                 </div>
               </article>)}
             </div>}
-            <div className="design-phone-video">
-              <video autoPlay muted loop playsInline>
-                <source src={asset("/media/wilde-phone.webm")} type="video/webm" />
-              </video>
+            <div className="design-phone-video design-phone-sequence">
+              <img src={asset(wildeFrames[wildeFrame])} alt="Tienda online Wilde visualizada en un teléfono" />
             </div>
           </div>
           {section.actions && <Actions />}
@@ -178,6 +193,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
           {(section.contact || section.actions) && <Actions />}
         </section>;
     })}
+    {page.homeTestimonials && <HomeTestimonials />}
     </LightGridFrame>
     <HomeClosingSections darkGrid />
   </main>;

@@ -132,18 +132,18 @@ export default function PosicionamientoWebPage() {
         <div className="pw-tablet"><img src={asset("/media/posicionamiento-tablet.png")} alt="Tablet con panel de posicionamiento SEO en Google" /></div>
       </div>
       <div className="pw-seo-benefits">
-        <div className="pw-seo-summary" data-reveal><h2>Ventajas del<br/>posicionamiento SEO:</h2><p>Dominá los resultados de búsqueda, aumentá la visibilidad de tu negocio y generá más oportunidades sin depender de pagar por cada visita.</p></div>
+        <div className="pw-seo-summary" data-reveal><h2>Ventajas del<br/>posicionamiento SEO:</h2><p>Dominá los resultados de búsqueda, aumentá la visibilidad de tu negocio y generá más oportunidades sin depender de pagar por cada visita.</p><Action>Quiero asesoramiento</Action></div>
         <div className="pw-benefit-list">{seoBenefits.map(([title, copy]) => <article key={title}><i/><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
       </div>
     </section>
 
     <section className="pw-section pw-maps">
       <div className="pw-maps-lead">
-        <div className="pw-copy" data-reveal><p>BÚSQUEDAS LOCALES</p><h2>Google «Mi Negocio»:<br/><span>Aparecé en los mapas de Google y vendé más</span></h2><div>Google Mi Negocio te permite administrar y mejorar tu presencia en Google Maps y en las búsquedas locales. Te ayudamos a aprovechar la plataforma y destacarte frente a tu competencia.</div></div>
+        <div className="pw-copy" data-reveal><p>BÚSQUEDAS LOCALES</p><h2>Google Mi Negocio:<br/><span>Aparecé en los mapas de Google y vendé más</span></h2><div>Google Mi Negocio te permite administrar y mejorar tu presencia en Google Maps y en las búsquedas locales. Te ayudamos a aprovechar la plataforma y destacarte frente a tu competencia.</div></div>
         <div className="pw-maps-image"><img src={asset("/media/posicionamiento-maps.png")} alt="Teléfono con mapa de Google y marcador de ubicación" /></div>
       </div>
       <div className="pw-maps-grid">{mapsServices.map(([title, copy]) => <article key={title}><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
-      <div className="pw-center-action"><Action>Chateá con un experto</Action></div>
+      <div className="pw-center-action"><Action>Chateá con un experto</Action><Action>Quiero que me asesoren</Action></div>
     </section>
 
     <HomeAdvisorySection />
