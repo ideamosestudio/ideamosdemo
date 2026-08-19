@@ -456,6 +456,33 @@
   margin-top:54px!important;
 }
 
+/* Harmonize the problem list with the full height of its phone mockup. */
+@media(min-width:901px){
+  #site-root .design-problems-layout{
+    align-items:stretch;
+  }
+
+  #site-root .design-problems-list{
+    height:100%;
+  }
+
+  #site-root .design-problems-list article{
+    padding-block:20.4px;
+  }
+
+  #site-root .design-phone-video{
+    min-height:0;
+    align-items:stretch;
+  }
+
+  #site-root .design-phone-sequence img{
+    width:min(100%,430px);
+    height:100%;
+    max-height:none;
+    object-fit:contain;
+  }
+}
+
 @media(max-width:1200px){
   #site-root .service-benefits .service-benefits-grid{
     grid-template-columns:repeat(2,minmax(0,1fr));

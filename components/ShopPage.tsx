@@ -2,7 +2,8 @@
 
 import { useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
-import { HeroChrome, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
+import { DarkGridBackground, HeroChrome, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
+import HomeTestimonials from "./HomeTestimonials";
 import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
 
@@ -104,17 +105,24 @@ export default function ShopPage() {
       <Actions />
     </section>
 
-    <section className="shops-problems shops-grid-bg">
-      <header className="shops-heading">
+    <section className="service-section service-benefits shops-problems">
+      <DarkGridBackground />
+      <header className="service-heading">
         <p>SOLUCIONES A TU MEDIDA</p>
         <h2>¿Qué problemas resolvemos con tu tienda<br/>online?</h2>
-        <span>Cada negocio es distinto, pero los desafíos se repiten: <b>vender más, simplificar procesos y dejar de perder tiempo.</b><br/>En Ideamos escuchamos tus necesidades y las transformamos en soluciones prácticas: <b>tiendas que funcionan solas, que<br/>atraen clientes y convierten visitas en ventas reales.</b></span>
+        <div className="shops-benefits-lead">Cada negocio es distinto, pero los desafíos se repiten: vender más, simplificar procesos y dejar de perder tiempo. Transformamos esas necesidades en tiendas que funcionan solas, atraen clientes y convierten visitas en ventas reales.</div>
       </header>
-      <div className="shops-problems-grid">
-        {problems.map(([title, copy]) => <Feature key={title} title={title} copy={copy} />)}
+      <div className="service-items service-benefits-grid">
+        {problems.map(([title, copy], index) => <article key={title}>
+          <span className={`benefit-motion benefit-motion-${index + 1}`} aria-hidden="true"><i/><i/><i/><i/></span>
+          <h3>{title}</h3>
+          <p>{copy}</p>
+        </article>)}
       </div>
       <Actions />
     </section>
+
+    <HomeTestimonials />
 
     <HomeAdvisorySection />
     </LightGridFrame>
