@@ -119,6 +119,6 @@ export default function ShopPage() {
     <HomeAdvisorySection />
     </LightGridFrame>
 
-    <HomeClosingSections showAdvisory={false} />
+    <HomeClosingSections showAdvisory={false} darkGrid />
   </main>;
 }

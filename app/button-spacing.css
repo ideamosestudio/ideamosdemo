@@ -197,26 +197,26 @@
   letter-spacing:1px!important;
 }
 
-/* The supplied case-study video becomes a calm, full-width transition. */
+/* The supplied case-study video is a true edge-to-edge transition. */
 #site-root .service-showcase-video{
   position:relative;
   z-index:2;
-  padding:72px max(5vw,36px);
+  width:100%!important;
+  max-width:none!important;
+  padding:0!important;
   overflow:hidden;
-  background:
-    radial-gradient(circle at 50% 115%,rgba(255,76,0,.24),transparent 40%),
-    #070707;
+  background:#070707!important;
 }
 
 #site-root .service-showcase-video video{
   display:block;
-  width:min(1440px,100%);
-  max-height:82svh;
-  margin:auto;
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:26px;
-  object-fit:contain;
-  box-shadow:0 34px 80px rgba(0,0,0,.48),0 0 60px rgba(255,76,0,.08);
+  width:100%;
+  height:auto;
+  margin:0;
+  border:0;
+  border-radius:0;
+  object-fit:cover;
+  box-shadow:none;
 }
 
 /* Diseño Web: editorial benefits panel instead of the generic four-cell table. */
@@ -258,8 +258,8 @@
   position:relative;
   z-index:2;
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:18px;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
   margin-top:64px;
   border:0;
   background:transparent!important;
@@ -267,8 +267,8 @@
 
 #site-root .service-benefits .service-benefits-grid article{
   position:relative;
-  min-height:250px;
-  padding:42px 44px;
+  min-height:340px;
+  padding:30px 28px;
   overflow:hidden;
   border:1px solid rgba(255,255,255,.12);
   border-radius:24px;
@@ -301,50 +301,149 @@
   letter-spacing:.24em;
 }
 
-#site-root .service-benefits .service-benefits-grid article>i{
-  width:34px;
+#site-root .service-benefits .benefit-motion{
+  position:absolute;
+  top:27px;
+  right:25px;
+  width:56px;
+  height:56px;
+  color:var(--orange);
+}
+
+#site-root .service-benefits .benefit-motion i{
+  position:absolute;
+  display:block;
+  margin:0;
+  box-shadow:none;
+}
+
+/* 01 — orbital trust mark. */
+#site-root .service-benefits .benefit-motion-1{
+  border:1px solid rgba(255,90,0,.38);
+  border-radius:50%;
+  animation:benefitOrbitShell 5.8s linear infinite;
+}
+#site-root .service-benefits .benefit-motion-1 i:nth-child(1),
+#site-root .service-benefits .benefit-motion-1 i:nth-child(2){
+  inset:8px;
+  border:1px solid currentColor;
+  border-radius:50%;
+}
+#site-root .service-benefits .benefit-motion-1 i:nth-child(2){inset:18px;background:currentColor}
+#site-root .service-benefits .benefit-motion-1 i:nth-child(3){
+  width:8px;height:8px;left:24px;top:-4px;border-radius:50%;background:currentColor;
+}
+#site-root .service-benefits .benefit-motion-1 i:nth-child(4){display:none}
+
+/* 02 — a living sales signal. */
+#site-root .service-benefits .benefit-motion-2{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:5px;
+  padding:8px;
+  border-bottom:1px solid rgba(255,90,0,.45);
+}
+#site-root .service-benefits .benefit-motion-2 i{
+  position:relative;
+  width:6px;
   height:34px;
-  right:38px;
-  top:36px;
-  border:7px solid var(--orange);
-  box-shadow:inset 0 0 0 4px #111!important;
+  border-radius:8px 8px 2px 2px;
+  background:linear-gradient(180deg,#ff8a4b,var(--orange));
+  transform-origin:bottom;
+  animation:benefitBars 1.45s ease-in-out infinite alternate;
+}
+#site-root .service-benefits .benefit-motion-2 i:nth-child(2){animation-delay:-.35s}
+#site-root .service-benefits .benefit-motion-2 i:nth-child(3){animation-delay:-.7s}
+#site-root .service-benefits .benefit-motion-2 i:nth-child(4){animation-delay:-1.05s}
+
+/* 03 — visibility radar. */
+#site-root .service-benefits .benefit-motion-3{
+  overflow:hidden;
+  border:1px solid rgba(255,90,0,.48);
+  border-radius:50%;
+  background:radial-gradient(circle,currentColor 0 2px,transparent 3px);
+}
+#site-root .service-benefits .benefit-motion-3:before,
+#site-root .service-benefits .benefit-motion-3:after{
+  content:"";
+  position:absolute;
+  background:rgba(255,90,0,.25);
+}
+#site-root .service-benefits .benefit-motion-3:before{left:50%;top:0;width:1px;height:100%}
+#site-root .service-benefits .benefit-motion-3:after{top:50%;left:0;width:100%;height:1px}
+#site-root .service-benefits .benefit-motion-3 i:nth-child(1){
+  left:50%;top:50%;width:24px;height:1px;background:currentColor;transform-origin:left center;
+  animation:benefitRadar 2.4s linear infinite;
+}
+#site-root .service-benefits .benefit-motion-3 i:nth-child(2){
+  width:6px;height:6px;right:11px;top:13px;border-radius:50%;background:currentColor;
+  animation:benefitPulse 1.5s ease-in-out infinite;
+}
+#site-root .service-benefits .benefit-motion-3 i:nth-child(n+3){display:none}
+
+/* 04 — always-on network. */
+#site-root .service-benefits .benefit-motion-4{
+  border:1px solid rgba(255,90,0,.28);
+  border-radius:13px;
+  animation:benefitNetwork 3.2s ease-in-out infinite;
+}
+#site-root .service-benefits .benefit-motion-4:before,
+#site-root .service-benefits .benefit-motion-4:after{
+  content:"";position:absolute;left:13px;right:13px;top:50%;height:1px;background:rgba(255,90,0,.32);
+}
+#site-root .service-benefits .benefit-motion-4:after{transform:rotate(90deg)}
+#site-root .service-benefits .benefit-motion-4 i{
+  width:8px;height:8px;border-radius:50%;background:currentColor;
+  animation:benefitPulse 1.8s ease-in-out infinite;
+}
+#site-root .service-benefits .benefit-motion-4 i:nth-child(1){left:9px;top:9px}
+#site-root .service-benefits .benefit-motion-4 i:nth-child(2){right:9px;top:9px;animation-delay:-.45s}
+#site-root .service-benefits .benefit-motion-4 i:nth-child(3){right:9px;bottom:9px;animation-delay:-.9s}
+#site-root .service-benefits .benefit-motion-4 i:nth-child(4){left:9px;bottom:9px;animation-delay:-1.35s}
+
+@keyframes benefitOrbitShell{to{transform:rotate(360deg)}}
+@keyframes benefitBars{from{transform:scaleY(.3);opacity:.55}to{transform:scaleY(1);opacity:1}}
+@keyframes benefitRadar{to{transform:rotate(360deg)}}
+@keyframes benefitPulse{50%{transform:scale(1.7);filter:brightness(1.6);box-shadow:0 0 16px rgba(255,90,0,.72)}}
+@keyframes benefitNetwork{50%{border-color:rgba(255,90,0,.72);box-shadow:0 0 24px rgba(255,90,0,.12)}}
+
+@media(prefers-reduced-motion:reduce){
+  #site-root .service-benefits .benefit-motion,
+  #site-root .service-benefits .benefit-motion i{
+    animation:none!important;
+  }
 }
 
 #site-root .service-benefits .service-benefits-grid h3{
-  max-width:470px;
-  margin:54px 0 16px;
+  max-width:250px;
+  margin:94px 0 16px;
   color:#fff!important;
+  font-size:21px!important;
 }
 
 #site-root .service-benefits .service-benefits-grid p{
-  max-width:540px;
-  color:#c3c3c3!important;
+  max-width:300px;
+  color:#fff!important;
   font-family:"Roboto",Arial,sans-serif!important;
   font-size:11pt!important;
   font-weight:300!important;
   line-height:1.7!important;
 }
 
-@media(max-width:980px){
+@media(max-width:1200px){
   #site-root .service-benefits .service-benefits-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
 
 @media(max-width:700px){
-  #site-root .service-showcase-video{
-    padding:42px 18px;
-  }
-
-  #site-root .service-showcase-video video{
-    border-radius:16px;
-  }
-
   #site-root .service-section.service-benefits{
     padding:86px 22px!important;
   }
 
   #site-root .service-benefits .service-benefits-grid{
+    grid-template-columns:1fr;
     margin-top:44px;
   }
 
@@ -353,9 +452,9 @@
     padding:34px 28px;
   }
 
-  #site-root .service-benefits .service-benefits-grid article>i{
-    right:26px;
-    top:28px;
+  #site-root .service-benefits .benefit-motion{
+    right:24px;
+    top:24px;
   }
 
   #site-root .service-xtreme .internal-actions{

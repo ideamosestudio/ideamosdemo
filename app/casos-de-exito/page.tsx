@@ -69,6 +69,6 @@ export default function Page() {
       <HomeAdvisorySection />
     </LightGridFrame>
 
-    <HomeClosingSections showAdvisory={false} />
+    <HomeClosingSections showAdvisory={false} darkGrid />
   </main>;
 }

@@ -131,6 +131,6 @@ export default function PricesPage() {
     <HomeAdvisorySection />
     </LightGridFrame>
 
-    <HomeClosingSections showAdvisory={false} />
+    <HomeClosingSections showAdvisory={false} darkGrid />
   </main>;
 }

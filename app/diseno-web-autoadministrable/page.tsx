@@ -2,7 +2,6 @@ import InternalPage, { ServicePage } from "../../components/InternalPage";
 
 const page: ServicePage = {
   matchHomeHero: true,
-  homeClosing: true,
   hideSectionIndexes: true,
   sharedSectionBackground: true,
   eyebrow: "MÁS ESTRATEGIA, MÁS RESULTADOS",

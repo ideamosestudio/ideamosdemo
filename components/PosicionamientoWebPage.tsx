@@ -149,6 +149,6 @@ export default function PosicionamientoWebPage() {
     <HomeAdvisorySection />
     </LightGridFrame>
 
-    <HomeClosingSections showAdvisory={false} />
+    <HomeClosingSections showAdvisory={false} darkGrid />
   </main>;
 }

@@ -61,7 +61,7 @@ export function HomeClosingSections({ showAdvisory = true, darkGrid = false }: {
   return <>
     {showAdvisory && <LightGridFrame className="closing-light-grid"><HomeAdvisorySection darkGrid={darkGrid} /></LightGridFrame>}
 
-    <section className="contact-form" id="contacto">
+    <section className={`contact-form${darkGrid ? " shared-dark-contact" : ""}`} id="contacto">
       {darkGrid && <DarkGridBackground />}
       <div className="contact-main">
         <p><i/> CONTACTO</p>
@@ -79,7 +79,7 @@ export function HomeClosingSections({ showAdvisory = true, darkGrid = false }: {
       </aside>
     </section>
 
-    <footer>
+    <footer className={darkGrid ? "shared-dark-footer" : undefined}>
       <div className="footer-main">
         {darkGrid && <DarkGridBackground />}
         <div className="footer-top">

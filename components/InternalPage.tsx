@@ -32,7 +32,6 @@ type ServicePage = {
   darkTitle?: string;
   darkCopy?: string;
   matchHomeHero?: boolean;
-  homeClosing?: boolean;
   hideSectionIndexes?: boolean;
   sharedSectionBackground?: boolean;
 };
@@ -168,7 +167,10 @@ export default function InternalPage({ page }: { page: ServicePage }) {
           </header>
           {section.items && <div className={`service-items ${section.variant === "benefits" ? "service-benefits-grid" : ""}`}>
             {section.items.map((item, index) => <article key={item.title}>
-              {!section.hideItemNumbers && <small>{String(index + 1).padStart(2, "0")}</small>}<i />
+              {!section.hideItemNumbers && <small>{String(index + 1).padStart(2, "0")}</small>}
+              {section.variant === "benefits"
+                ? <span className={`benefit-motion benefit-motion-${index + 1}`} aria-hidden="true"><i/><i/><i/><i/></span>
+                : <i />}
               <h3>{item.title}</h3><p>{item.copy}</p>
             </article>)}
           </div>}
@@ -176,7 +178,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
         </section>;
     })}
     </LightGridFrame>
-    {page.homeClosing && <HomeClosingSections />}
+    <HomeClosingSections darkGrid />
   </main>;
 }
 

@@ -199,6 +199,6 @@ export default function MarketingDigitalPage() {
     <HomeAdvisorySection />
     </LightGridFrame>
 
-    <HomeClosingSections showAdvisory={false} />
+    <HomeClosingSections showAdvisory={false} darkGrid />
   </main>;
 }

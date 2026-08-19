@@ -2593,7 +2593,7 @@ h1,h2,h3,
 
 /* Fondo oscuro inspirado en la trama vertical de Attio: líneas de 1 px cada
    8 px y seis destellos independientes que recorren columnas aisladas. */
-.home-page .dark-grid-background{
+.dark-grid-background{
   position:absolute;
   z-index:0;
   inset:0;
@@ -2608,8 +2608,8 @@ h1,h2,h3,
   );
 }
 
-.home-page .dark-grid-background--half{right:50%}
-.home-page .dark-grid-background>i{
+.dark-grid-background--half{right:50%}
+.dark-grid-background>i{
   position:absolute;
   top:-360px;
   display:block;
@@ -2620,12 +2620,12 @@ h1,h2,h3,
   animation:darkGridTrace 13s linear infinite;
   will-change:top,opacity;
 }
-.home-page .dark-grid-background>i:nth-child(1){left:10%;animation-delay:-2.4s;animation-duration:14.5s}
-.home-page .dark-grid-background>i:nth-child(2){left:27%;animation-delay:-10.1s;animation-duration:16.8s}
-.home-page .dark-grid-background>i:nth-child(3){left:43%;animation-delay:-6.7s;animation-duration:12.4s}
-.home-page .dark-grid-background>i:nth-child(4){left:61%;animation-delay:-13.2s;animation-duration:17.6s}
-.home-page .dark-grid-background>i:nth-child(5){left:78%;animation-delay:-4.6s;animation-duration:15.2s}
-.home-page .dark-grid-background>i:nth-child(6){left:92%;animation-delay:-8.8s;animation-duration:18.4s}
+.dark-grid-background>i:nth-child(1){left:10%;animation-delay:-2.4s;animation-duration:14.5s}
+.dark-grid-background>i:nth-child(2){left:27%;animation-delay:-10.1s;animation-duration:16.8s}
+.dark-grid-background>i:nth-child(3){left:43%;animation-delay:-6.7s;animation-duration:12.4s}
+.dark-grid-background>i:nth-child(4){left:61%;animation-delay:-13.2s;animation-duration:17.6s}
+.dark-grid-background>i:nth-child(5){left:78%;animation-delay:-4.6s;animation-duration:15.2s}
+.dark-grid-background>i:nth-child(6){left:92%;animation-delay:-8.8s;animation-duration:18.4s}
 
 @keyframes darkGridTrace{
   0%,8%{top:-360px;opacity:0}
@@ -2641,16 +2641,20 @@ h1,h2,h3,
 
 .home-page .cases-work,
 .home-page .contact-form,
-.home-page footer{
+.home-page footer,
+.shared-dark-contact,
+.shared-dark-footer{
   isolation:isolate;
   background-color:#0b0b0b!important;
 }
 
-.home-page .contact-form{
+.home-page .contact-form,
+.shared-dark-contact{
   position:relative;
   background-image:none!important;
 }
-.home-page .contact-form>:not(.dark-grid-background){position:relative;z-index:1}
+.home-page .contact-form>:not(.dark-grid-background),
+.shared-dark-contact>:not(.dark-grid-background){position:relative;z-index:1}
 
 .home-page .human-cta{background:transparent!important}
 .home-page .human-cta:before{display:none!important;content:none!important}
@@ -2670,11 +2674,11 @@ h1,h2,h3,
 .home-page .home-logo-marquee:after{background:linear-gradient(270deg,#0b0b0b,transparent)}
 
 @media(max-width:850px){
-  .home-page .dark-grid-background--half{inset:0 0 50%}
+  .dark-grid-background--half{inset:0 0 50%}
 }
 
 @media(prefers-reduced-motion:reduce){
-  .home-page .dark-grid-background>i{display:none}
+  .dark-grid-background>i{display:none}
 }
 
 /* Sistema unificado para todos los lienzos claros del sitio. */
@@ -2707,7 +2711,7 @@ h1,h2,h3,
 }
 .light-grid-frame__node--left{left:-4px}
 .light-grid-frame__node--right{right:-4px}
-.light-grid-frame>section:not(.desktop-video-wall):not(.internal-video-wall):not(.pw-wide-video):not(.dark):not(.contact-form):not(.human-cta){
+.light-grid-frame>section:not(.desktop-video-wall):not(.internal-video-wall):not(.pw-wide-video):not(.service-showcase-video):not(.dark):not(.contact-form):not(.human-cta){
   position:relative;
   z-index:1;
   padding-inline:max(10vw,72px)!important;
@@ -2720,6 +2724,7 @@ h1,h2,h3,
 .light-grid-frame>.desktop-video-wall,
 .light-grid-frame>.internal-video-wall,
 .light-grid-frame>.pw-wide-video,
+.light-grid-frame>.service-showcase-video,
 .light-grid-frame>.service-section.dark{
   position:relative;
   z-index:2;
@@ -2762,7 +2767,7 @@ h1,h2,h3,
 
 @media(max-width:700px){
   .light-grid-frame__border{inset:14px}
-  .light-grid-frame>section:not(.desktop-video-wall):not(.internal-video-wall):not(.pw-wide-video):not(.dark):not(.contact-form):not(.human-cta){
+  .light-grid-frame>section:not(.desktop-video-wall):not(.internal-video-wall):not(.pw-wide-video):not(.service-showcase-video):not(.dark):not(.contact-form):not(.human-cta){
     padding-inline:calc(var(--mobile-gutter,30px) + 12px)!important;
   }
   .home-page .google-content>p:first-child{font-size:11px!important;letter-spacing:.24em!important}
