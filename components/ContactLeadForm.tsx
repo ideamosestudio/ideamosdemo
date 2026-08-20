@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 
-const FORM_ENDPOINT = "https://formspree.io/f/mgawwjwv";
+const FORM_ENDPOINT = "https://mailer.ideamos.com.ar/send.php";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
