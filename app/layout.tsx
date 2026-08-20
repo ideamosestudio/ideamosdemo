@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
+import WhatsAppTracking from "../components/WhatsAppTracking";
+import { GA_MEASUREMENT_ID } from "../lib/whatsapp";
 import "./globals.css";
 import "./refinement.css";
 import "./iteration.css";
@@ -25,10 +27,17 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Poppins:wght@400;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}');`,
+          }}
+        />
       </head>
       <body id="site-root">
         {children}
         <FloatingWhatsApp />
+        <WhatsAppTracking />
       </body>
     </html>
   );
