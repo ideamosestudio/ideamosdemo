@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import InternalPage, { ServicePage } from "../../components/InternalPage";
+
+export const metadata: Metadata = {
+  title: "Contacto — Hablemos de tu proyecto | Ideamos",
+  description: "Contanos qué necesitás. Te respondemos con ideas concretas y próximos pasos.",
+};
+
 const page: ServicePage = {
   eyebrow:"CONTACTO", title:"Hablemos de tu proyecto",
   intro:"Contanos qué necesitás. Te respondemos con ideas concretas y próximos pasos.",

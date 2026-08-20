@@ -1,0 +1,15 @@
+/* Normalizes section vertical rhythm to a single 120px value on desktop.
+   These sections previously had ad-hoc, mismatched top/bottom padding
+   inherited from older patch files (64px, 90-172px asymmetric). */
+@media (min-width: 901px) {
+  .statement,
+  .ecommerce,
+  .home-services-grid > .ecommerce,
+  .google-scene,
+  .pricing-plans,
+  .service-section,
+  #site-root .service-section.service-benefits {
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
+  }
+}

@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import InternalPage, { ServicePage } from "../../components/InternalPage";
+
+export const metadata: Metadata = {
+  title: "Diseño Web de alto impacto — Sitios que convierten | Ideamos",
+  description: "Diseñamos sitios que impactan y convierten, ayudándote a atraer más clientes y aumentar tus ventas.",
+};
 
 const page: ServicePage = {
   matchHomeHero: true,
