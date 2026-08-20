@@ -5,9 +5,9 @@ import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 import { HeroChrome, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
 import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
+import { WHATSAPP_URL as whatsapp } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
-const whatsapp = "https://wa.link/wgb5pk";
 
 const adsBenefits = [
   ["Llegá a tu público objetivo", "Google Ads te permite segmentar tus anuncios de forma precisa y mostrar tus productos o servicios a las personas adecuadas en el momento oportuno."],

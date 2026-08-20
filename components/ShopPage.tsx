@@ -6,6 +6,7 @@ import { DarkGridBackground, HeroChrome, HomeAdvisorySection, HomeClosingSection
 import HomeTestimonials from "./HomeTestimonials";
 import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
+import { WHATSAPP_URL } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -32,8 +33,8 @@ const problems = [
 
 function Actions() {
   return <div className="hero-actions internal-actions">
-    <a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una asesoría sin cargo</span></a>
-    <a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero contactar un experto</span></a>
+    <a className="cta-glow primary" href={WHATSAPP_URL}><span>Quiero una asesoría sin cargo</span></a>
+    <a className="cta-glow secondary" href={WHATSAPP_URL}><span>Quiero contactar un experto</span></a>
   </div>;
 }
 
@@ -81,7 +82,7 @@ export default function ShopPage() {
           <h3><span>Vendé las 24 horas del día,</span><span>los 7 días de la semana</span></h3>
           <h4><b>Diseño Web y Marketing Digital</b> de alto impacto</h4>
           <p>Tener una tienda online ofrece numerosas ventajas que pueden transformar su negocio. Permite llegar a una audiencia global, superando las limitaciones geográficas de un local físico, y le permite vender sus productos o servicios las 24 horas del día, los 7 días de la semana.</p>
-          <a className="orange-cta shops-red-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA</a>
+          <a className="orange-cta shops-red-cta" href={WHATSAPP_URL}>QUIERO AGENDAR UNA ASESORÍA</a>
         </div>
         <div className="shops-laptop-visual">
           <img src={asset("/media/sunglasses.png")} alt="Tienda online de anteojos desarrollada por Ideamos" />

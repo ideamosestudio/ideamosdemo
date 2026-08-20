@@ -5,9 +5,9 @@ import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 import { HeroChrome, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
 import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
+import { WHATSAPP_URL as whatsapp } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
-const whatsapp = "https://wa.link/wgb5pk";
 
 function Action({ children }: { children: React.ReactNode }) {
   return <a className="orange-cta md-action" href={whatsapp}>{children}</a>;

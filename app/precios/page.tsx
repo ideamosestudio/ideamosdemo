@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { HomeAdvisorySection, HomeClosingSections } from "../../components/SharedHomeSections";
 import LightGridFrame from "../../components/LightGridFrame";
 import SiteHeader from "../../components/SiteHeader";
+import { WHATSAPP_URL } from "../../lib/whatsapp";
 
 const plans = [
   {
@@ -117,13 +118,13 @@ export default function PricesPage() {
           <p className="price-detail">{plan.detail}</p>
           <div className="price-value"><small>{plan.priceLabel}</small><strong>{plan.price}</strong><span>FINAL</span></div>
           <p className="price-description">{plan.description}</p>
-          <a className="orange-cta price-cta" href="https://wa.link/wgb5pk">QUIERO ESTE PLAN</a>
+          <a className="orange-cta price-cta" href={WHATSAPP_URL}>QUIERO ESTE PLAN</a>
           <div className="price-features">
             <b>EL PLAN INCLUYE:</b>
             <ul>{plan.features.map((feature) => <li key={feature}><i>✓</i><span>{feature}</span></li>)}</ul>
           </div>
           {plan.closing && <p className="price-closing">{plan.closing}</p>}
-          <a className="orange-cta price-more" href="https://wa.link/wgb5pk">QUIERO MÁS INFO</a>
+          <a className="orange-cta price-more" href={WHATSAPP_URL}>QUIERO MÁS INFO</a>
         </article>)}
       </div>
     </section>

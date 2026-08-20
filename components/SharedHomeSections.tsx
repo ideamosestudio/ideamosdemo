@@ -1,6 +1,7 @@
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 import ContactLeadForm from "./ContactLeadForm";
 import LightGridFrame from "./LightGridFrame";
+import { WHATSAPP_URL } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -47,7 +48,7 @@ export function HomeAdvisorySection({ darkGrid = false }: { darkGrid?: boolean }
         <p>ENVIANOS UN MENSAJE</p>
         <h2>Contactanos y agendá una asesoría sin cargo</h2>
         <span>Somos un equipo de profesionales con más de 10 años de experiencia, listos para asesorarte. <b>Contactanos y coordinamos una charla para entender tu negocio, sus desafíos y objetivos.</b> Durante la conversación, te proponemos acciones concretas y armamos una propuesta a medida en menos de 48 horas.</span>
-        <a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA</a>
+        <a className="orange-cta" href={WHATSAPP_URL}>QUIERO AGENDAR UNA ASESORÍA</a>
       </div>
       <ManagedBackgroundVideo
         src={asset("/media/videollamada-final.webm")}
@@ -96,7 +97,7 @@ export function HomeClosingSections({ showAdvisory = true, darkGrid = false }: {
           </div>
           <div>
             <b>Contacto</b>
-            <a href="https://wa.link/wgb5pk">+54 9 11 6875-8285</a>
+            <a href={WHATSAPP_URL}>+54 9 11 6875-8285</a>
             <a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar</a>
             <p>Buenos Aires, Argentina</p>
           </div>

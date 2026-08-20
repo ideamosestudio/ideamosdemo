@@ -8,6 +8,7 @@ import PortfolioSection from "../components/PortfolioSection";
 import LightGridFrame from "../components/LightGridFrame";
 import HomeTestimonials from "../components/HomeTestimonials";
 import "./casos-de-exito/casos.css";
+import { WHATSAPP_URL } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 const ecommerceLeft = [
@@ -78,8 +79,8 @@ export default function Home() {
         </h1>
         <p className="hero-copy"><b>Sitios web, tiendas online y marketing digital</b> para que tu empresa venda más y más fácil.</p>
         <div className="hero-actions">
-          <a className="cta-glow primary" href="https://wa.link/wgb5pk"><span className="desktop-only">Quiero una asesoría sin cargo</span><span className="mobile-only">Quiero contactarme</span></a>
-          <a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero contactar un experto</span></a>
+          <a className="cta-glow primary" href={WHATSAPP_URL}><span className="desktop-only">Quiero una asesoría sin cargo</span><span className="mobile-only">Quiero contactarme</span></a>
+          <a className="cta-glow secondary" href={WHATSAPP_URL}><span>Quiero contactar un experto</span></a>
         </div>
         <div className="hero-clients"><HeroLogoTrack /></div>
       </div>
@@ -92,7 +93,7 @@ export default function Home() {
         <h2><span>Webs de alto impacto</span><em>ideadas para generar <b>confianza y resultados</b></em></h2>
         <h3><b>Posicioná tu marca</b> con una <b>comunicación digital efectiva</b></h3>
         <p className="statement-copy">Creamos <b>sitios web pensados para transmitir autoridad, confianza y generar contactos reales.</b> Desde el diseño a medida hasta el contenido, todo está enfocado en convertir visitas en potenciales clientes. Contactanos y coordinamos una asesoría online sin cargo para conocer tu negocio y sus desafíos, identificar oportunidades y proponerte ideas concretas para crecer con mejores resultados.</p>
-        <a className="orange-cta" href="https://wa.link/wgb5pk">CHARLEMOS DE TU PROYECTO</a>
+        <a className="orange-cta" href={WHATSAPP_URL}>CHARLEMOS DE TU PROYECTO</a>
       </div>
       <div className="screen-swap" data-reveal>
         {[1,2,3].map((n, index) => <div key={n} className={`screen-frame ${webScreen === index ? "active" : ""}`}><img src={asset(`/media/screen-${n}.png`)} alt={`Proyecto web ${n}`} /></div>)}
@@ -110,7 +111,7 @@ export default function Home() {
         </div>
         <div className="shop-column">{ecommerceRight.map(([title, copy]) => <article key={title} data-reveal><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
       </div>
-      <div className="ecommerce-actions"><a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una tienda online</span></a><a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span className="desktop-only">Quiero hablar con un experto</span><span className="mobile-only">Contacta un experto</span></a></div>
+      <div className="ecommerce-actions"><a className="cta-glow primary" href={WHATSAPP_URL}><span>Quiero una tienda online</span></a><a className="cta-glow secondary" href={WHATSAPP_URL}><span className="desktop-only">Quiero hablar con un experto</span><span className="mobile-only">Contacta un experto</span></a></div>
     </section>
 
     <section className="google-scene white-section shared-section-bg" id="google">
@@ -119,7 +120,7 @@ export default function Home() {
         <h2>Convertimos tu web en una máquina de generar tráfico, leads y ventas</h2>
         <h3><b>Liderá Google</b> con estrategias de <b>SEO y Google Ads</b></h3>
         <p className="body-copy"><b>Traemos a tu web personas que ya buscan lo que ofrecés</b> y las convertimos en consultas. Con Google Ads te mostramos primero cuando te buscan y las llevamos a contactarte. Con posicionamiento en Google hacemos que te encuentren sin pagar cada clic. Medimos llamadas y mensajes para invertir donde rinde más.</p>
-        <a className="orange-cta" href="https://wa.link/wgb5pk"><span className="desktop-only">QUIERO ESTAR PRIMERO EN GOOGLE</span><span className="mobile-only">CONTACTANOS HOY</span></a>
+        <a className="orange-cta" href={WHATSAPP_URL}><span className="desktop-only">QUIERO ESTAR PRIMERO EN GOOGLE</span><span className="mobile-only">CONTACTANOS HOY</span></a>
       </div>
           <div className="google-visual google-swap" aria-label="Proyecto web FroSZ">
             {[1, 2, 3].map((item, index) => (

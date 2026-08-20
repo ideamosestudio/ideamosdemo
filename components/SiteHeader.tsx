@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import MobileMenu from "./MobileMenu";
+import { WHATSAPP_URL } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -28,7 +29,7 @@ export default function SiteHeader({ solid = false }: { solid?: boolean }) {
     <nav className="nav-links desktop-navigation" aria-label="Navegación principal">
       {navigation.map(([label, href]) => <a key={href} href={asset(href)}>{label}</a>)}
     </nav>
-    <a className="nav-contact" href="https://wa.link/wgb5pk">Quiero que me asesoren</a>
+    <a className="nav-contact" href={WHATSAPP_URL}>Quiero que me asesoren</a>
     <MobileMenu
       logoSrc={asset("/logos/ideamos-light.webp")}
       items={navigation.map(([label, href]) => ({ label, href: asset(href) }))}

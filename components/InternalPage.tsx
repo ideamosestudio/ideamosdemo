@@ -6,6 +6,7 @@ import { DarkGridBackground, HeroChrome, HomeClosingSections } from "./SharedHom
 import SiteHeader from "./SiteHeader";
 import LightGridFrame from "./LightGridFrame";
 import HomeTestimonials from "./HomeTestimonials";
+import { WHATSAPP_URL } from "../lib/whatsapp";
 
 type Item = { title: string; copy: string };
 type ContentSection = {
@@ -47,8 +48,8 @@ const wildeFrames = [
 
 function Actions() {
   return <div className="hero-actions internal-actions">
-    <a className="cta-glow primary" href="https://wa.link/wgb5pk"><span>Quiero una asesoría sin cargo</span></a>
-    <a className="cta-glow secondary" href="https://wa.link/wgb5pk"><span>Quiero contactar un experto</span></a>
+    <a className="cta-glow primary" href={WHATSAPP_URL}><span>Quiero una asesoría sin cargo</span></a>
+    <a className="cta-glow secondary" href={WHATSAPP_URL}><span>Quiero contactar un experto</span></a>
   </div>;
 }
 
@@ -112,7 +113,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
             <p>{section.eyebrow}</p>
             <h2>{section.title}</h2>
             {section.paragraphs?.map((copy, index) => <span key={index}>{copy}</span>)}
-            <a className="orange-cta" href="https://wa.link/wgb5pk">QUIERO AGENDAR UNA ASESORÍA</a>
+            <a className="orange-cta" href={WHATSAPP_URL}>QUIERO AGENDAR UNA ASESORÍA</a>
           </div>
           <video autoPlay muted loop playsInline>
             <source src={asset("/media/human.mp4")} type="video/mp4" />

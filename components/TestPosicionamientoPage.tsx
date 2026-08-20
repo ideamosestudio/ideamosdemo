@@ -5,9 +5,9 @@ import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 import { HeroChrome, HomeAdvisorySection, HomeClosingSections, HeroLogoTrack } from "./SharedHomeSections";
 import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
+import { WHATSAPP_URL as whatsapp } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
-const whatsapp = "https://wa.link/wgb5pk";
 
 const stats: [string, string][] = [
   ["72%", "de los clics se los llevan los primeros 3 resultados de Google"],

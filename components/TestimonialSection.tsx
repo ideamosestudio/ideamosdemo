@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { pauseManagedBackgroundVideos } from "../app/components/ManagedBackgroundVideo";
+import { WHATSAPP_URL } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -17,7 +18,7 @@ export default function TestimonialSection() {
         <img src={asset("/media/pablo-avila.png")} alt="Pablo Avila"/>
         <div><b>Pablo Avila</b><small>Coordinador de CYL S.A.</small></div>
       </div>
-      <a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO</a>
+      <a className="orange-cta" href={WHATSAPP_URL}>CHATEÁ CON UN EXPERTO</a>
     </div>
     <div className="testimonial-media">
       {playing

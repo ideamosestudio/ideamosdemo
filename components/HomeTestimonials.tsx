@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { pauseManagedBackgroundVideos } from "../app/components/ManagedBackgroundVideo";
+import { WHATSAPP_URL } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -90,7 +91,7 @@ export default function HomeTestimonials() {
           <div><strong>{testimonial.name}</strong><span>{testimonial.role}</span></div>
         </div>
         <div className="home-testimonials__actions">
-          <a className="orange-cta" href="https://wa.link/wgb5pk">CHATEÁ CON UN EXPERTO</a>
+          <a className="orange-cta" href={WHATSAPP_URL}>CHATEÁ CON UN EXPERTO</a>
           {testimonial.site && <a className="orange-cta home-testimonials__site" href={testimonial.site} target="_blank" rel="noreferrer">VER SITIO WEB</a>}
         </div>
       </div>
