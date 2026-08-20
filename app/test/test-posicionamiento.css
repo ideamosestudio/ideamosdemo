@@ -14,7 +14,7 @@
 .tpw-vs{position:relative;z-index:1;padding:130px 0 20px!important;max-width:1180px;margin:0 auto}
 .tpw-vs-intro{max-width:640px;margin:0 0 56px;opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .tpw-vs-intro.in-view{opacity:1;transform:none}
-.tpw-vs-intro>p{margin:0 0 18px;color:#8e93a0;font:700 11px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.tpw-vs-intro>p{margin:0 0 18px;color:var(--orange);font:700 11px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
 .tpw-vs-intro h2{margin:0 0 20px;font-family:"Roboto",Arial,sans-serif;font-weight:700;letter-spacing:-.04em;font-size:clamp(36px,4.4vw,58px);line-height:1.02;color:#0a0a0a}
 .tpw-vs-intro h2 em{font-style:normal;color:#9aa0ad}
 .tpw-vs-intro>span{display:block;color:#5a5f6b;font-size:16px;line-height:1.6;font-weight:300}
@@ -27,7 +27,7 @@
 .tpw-vs-card.is-seo{background:#f0f1f4;color:#0a0a0a}
 .tpw-vs-tag{margin:0 0 16px;font:700 10px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase}
 .tpw-vs-card.is-ads .tpw-vs-tag{color:#ff8a4d}
-.tpw-vs-card.is-seo .tpw-vs-tag{color:#7a7f8c}
+.tpw-vs-card.is-seo .tpw-vs-tag{color:#c2410c}
 .tpw-vs-card h3{margin:0 0 26px;font-family:"Roboto",Arial,sans-serif;font-weight:700;letter-spacing:-.03em;font-size:clamp(26px,2.4vw,32px)}
 .tpw-vs-card ul{list-style:none;margin:0 0 32px;padding:0;display:grid;gap:16px}
 .tpw-vs-card li{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.5;font-weight:300}
@@ -47,19 +47,19 @@
 .tpw-process{position:relative;z-index:1;padding:130px 0!important;max-width:1180px;margin:0 auto;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .tpw-process.in-view{opacity:1;transform:none}
 .tpw-process-intro{max-width:620px;margin:0 0 60px}
-.tpw-process-intro>p{margin:0 0 18px;color:#8e93a0;font:700 11px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.tpw-process-intro>p{margin:0 0 18px;color:var(--orange);font:700 11px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
 .tpw-process-intro h2{margin:0;font-family:"Roboto",Arial,sans-serif;font-weight:700;letter-spacing:-.04em;font-size:clamp(32px,3.6vw,46px);line-height:1.05;color:#0a0a0a}
 .tpw-process-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(10,10,12,.12)}
 .tpw-process-list li{padding:32px 26px 0;border-left:1px solid rgba(10,10,12,.12)}
 .tpw-process-list li:first-child{border-left:0}
-.tpw-process-list b{display:block;margin-bottom:22px;font-family:"Poppins",Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;color:#c7cad2}
+.tpw-process-list b{display:block;margin-bottom:22px;font-family:"Poppins",Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;color:var(--orange)}
 .tpw-process-list h3{margin:0 0 12px;font-family:"Roboto",Arial,sans-serif;font-weight:700;font-size:19px;letter-spacing:-.02em;color:#0a0a0a}
 .tpw-process-list p{margin:0;color:#5a5f6b;font-size:14px;line-height:1.55;font-weight:300}
 
 /* ---------- Proof / logos ---------- */
 .tpw-proof{position:relative;z-index:1;padding:0 0 130px!important;max-width:1180px;margin:0 auto;text-align:center;opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .tpw-proof.in-view{opacity:1;transform:none}
-.tpw-proof-label{margin:0 0 30px;color:#9aa0ad;font:700 11px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.tpw-proof-label{margin:0 0 30px;color:var(--orange);font:700 11px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
 .tpw-proof-logos{overflow:hidden;height:56px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
 .tpw-proof-logos .logo-track{align-items:center;height:56px}
 .tpw-proof-logos .logo-track img{width:130px;height:56px;object-fit:contain;filter:brightness(0);opacity:.55}
@@ -67,12 +67,57 @@
 /* ---------- Local / Maps ---------- */
 .tpw-local{position:relative;z-index:1;display:grid;grid-template-columns:1fr .8fr;align-items:center;gap:60px;padding:0 0 130px!important;max-width:1180px;margin:0 auto;opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .tpw-local.in-view{opacity:1;transform:none}
-.tpw-local-copy>p{margin:0 0 18px;color:#8e93a0;font:700 11px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.tpw-local-copy>p{margin:0 0 18px;color:var(--orange);font:700 11px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
 .tpw-local-copy h2{margin:0 0 20px;font-family:"Roboto",Arial,sans-serif;font-weight:700;letter-spacing:-.035em;font-size:clamp(28px,3vw,40px);line-height:1.08;color:#0a0a0a}
 .tpw-local-copy>span{display:block;margin:0 0 30px;color:#5a5f6b;font-size:15px;line-height:1.6;font-weight:300;max-width:440px}
 .tpw-local-image img{display:block;width:100%;height:auto;border-radius:24px}
 
+/* ---------- Qué incluye (bento icons) ---------- */
+.tpw-includes{position:relative;z-index:1;padding:20px 0 130px!important;max-width:1180px;margin:0 auto;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.tpw-includes.in-view{opacity:1;transform:none}
+.tpw-includes-intro{max-width:620px;margin:0 0 52px}
+.tpw-includes-intro>p{margin:0 0 18px;color:var(--orange);font:700 11px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.tpw-includes-intro h2{margin:0;font-family:"Roboto",Arial,sans-serif;font-weight:700;letter-spacing:-.04em;font-size:clamp(30px,3.4vw,44px);line-height:1.05;color:#0a0a0a}
+.tpw-includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tpw-includes-card{padding:32px 28px;border-radius:20px;background:#fff;box-shadow:0 1px 0 rgba(10,10,12,.06),0 18px 40px rgba(10,10,12,.05);transition:transform .3s ease,box-shadow .3s ease}
+.tpw-includes-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(10,10,12,.1)}
+.tpw-icon-badge{display:grid;place-items:center;width:48px;height:48px;margin:0 0 20px;border-radius:14px;background:#fff1e8;color:var(--orange)}
+.tpw-includes-card h3{margin:0 0 10px;font-family:"Roboto",Arial,sans-serif;font-weight:700;font-size:17px;letter-spacing:-.02em;color:#0a0a0a}
+.tpw-includes-card p{margin:0;color:#5a5f6b;font-size:14px;line-height:1.55;font-weight:300}
+
+/* ---------- Diferenciales ---------- */
+.tpw-diff{position:relative;z-index:1;padding:0 0 130px!important;max-width:1180px;margin:0 auto;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.tpw-diff.in-view{opacity:1;transform:none}
+.tpw-diff-intro{max-width:620px;margin:0 0 52px}
+.tpw-diff-intro>p{margin:0 0 18px;color:var(--orange);font:700 11px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.tpw-diff-intro h2{margin:0;font-family:"Roboto",Arial,sans-serif;font-weight:700;letter-spacing:-.04em;font-size:clamp(30px,3.4vw,44px);line-height:1.05;color:#0a0a0a}
+.tpw-diff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(10,10,12,.1);border:1px solid rgba(10,10,12,.1);border-radius:22px;overflow:hidden}
+.tpw-diff-card{padding:34px 26px;background:var(--paper);color:var(--orange)}
+.tpw-diff-card h3{margin:16px 0 10px;font-family:"Roboto",Arial,sans-serif;font-weight:700;font-size:16px;letter-spacing:-.02em;color:#0a0a0a}
+.tpw-diff-card p{margin:0;color:#5a5f6b;font-size:13.5px;line-height:1.55;font-weight:300}
+
+/* ---------- FAQ ---------- */
+.tpw-faq{position:relative;z-index:1;padding:0 0 130px!important;max-width:880px;margin:0 auto;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.tpw-faq.in-view{opacity:1;transform:none}
+.tpw-faq-intro{margin:0 0 44px}
+.tpw-faq-intro>p{margin:0 0 18px;color:var(--orange);font:700 11px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.tpw-faq-intro h2{margin:0;font-family:"Roboto",Arial,sans-serif;font-weight:700;letter-spacing:-.04em;font-size:clamp(28px,3vw,38px);line-height:1.08;color:#0a0a0a}
+.tpw-faq-list{border-top:1px solid rgba(10,10,12,.12)}
+.tpw-faq-item{border-bottom:1px solid rgba(10,10,12,.12)}
+.tpw-faq-q{display:flex;width:100%;align-items:center;justify-content:space-between;gap:20px;padding:26px 4px;border:0;background:none;cursor:pointer;text-align:left;font-family:"Roboto",Arial,sans-serif;font-weight:700;font-size:17px;letter-spacing:-.015em;color:#0a0a0a}
+.tpw-faq-toggle{position:relative;flex:0 0 auto;width:20px;height:20px}
+.tpw-faq-toggle:before,.tpw-faq-toggle:after{content:"";position:absolute;top:50%;left:50%;background:var(--orange);transition:transform .3s ease}
+.tpw-faq-toggle:before{width:14px;height:2px;transform:translate(-50%,-50%)}
+.tpw-faq-toggle:after{width:2px;height:14px;transform:translate(-50%,-50%)}
+.tpw-faq-item.is-open .tpw-faq-toggle:after{transform:translate(-50%,-50%) rotate(90deg) scale(0)}
+.tpw-faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.tpw-faq-item.is-open .tpw-faq-a{max-height:200px}
+.tpw-faq-a>p{margin:0 0 26px;padding-right:40px;color:#5a5f6b;font-size:15px;line-height:1.6;font-weight:300}
+
 @media(max-width:900px){
+  .tpw-includes-grid{grid-template-columns:1fr}
+  .tpw-diff-grid{grid-template-columns:1fr 1fr}
+  .tpw-faq-q{font-size:15px}
   .tpw-stats{grid-template-columns:1fr;border-radius:18px}
   .tpw-vs-grid{grid-template-columns:1fr;gap:18px}
   .tpw-process-list{grid-template-columns:1fr;border-top:0}
@@ -83,5 +128,5 @@
 }
 
 @media(prefers-reduced-motion:reduce){
-  .tpw-stat,.tpw-vs-intro,.tpw-vs-card,.tpw-process,.tpw-proof,.tpw-local{opacity:1!important;transform:none!important;transition:none!important}
+  .tpw-stat,.tpw-vs-intro,.tpw-vs-card,.tpw-process,.tpw-proof,.tpw-local,.tpw-includes,.tpw-diff,.tpw-faq{opacity:1!important;transform:none!important;transition:none!important}
 }
