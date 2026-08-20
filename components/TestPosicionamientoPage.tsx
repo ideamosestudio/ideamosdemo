@@ -59,7 +59,7 @@ export default function TestPosicionamientoPage() {
       <div className="hero-center">
         <p className="availability"><i/> POSICIONAMIENTO EN GOOGLE</p>
         <h1><span>Si no aparecés,</span><span>no existís.</span></h1>
-        <p className="hero-copy"><b>Te ponemos en el lugar exacto donde tu cliente ya te está buscando.</b><br/>Combinamos Google Ads y SEO en una sola estrategia de visibilidad, pensada para negocios que quieren resultados, no promesas.</p>
+        <p className="hero-copy"><span><b>Te ponemos en el lugar exacto donde tu cliente ya te está buscando.</b><br/>Combinamos Google Ads y SEO en una sola estrategia de visibilidad, pensada para negocios que quieren resultados, no promesas.</span></p>
         <div className="hero-actions internal-actions">
           <a className="cta-glow primary" href={whatsapp}><span>Quiero una auditoría sin cargo</span></a>
           <a className="cta-glow secondary" href="#estrategia"><span>Ver cómo trabajamos</span></a>

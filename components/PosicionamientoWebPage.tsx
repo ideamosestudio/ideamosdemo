@@ -62,7 +62,7 @@ export default function PosicionamientoWebPage() {
       <div className="hero-center">
         <p className="availability"><i/> POSICIONAMIENTO EN GOOGLE</p>
         <h1><span>Escalá en Google</span><span>y potenciá tus ventas hoy</span></h1>
-        <p className="hero-copy"><b>Sé la primera opción cuando tus clientes buscan las soluciones que ofrecés.</b><br/>Ponemos a tu empresa en los primeros puestos y hacemos crecer tus ventas.</p>
+        <p className="hero-copy"><span><b>Sé la primera opción cuando tus clientes buscan las soluciones que ofrecés.</b><br/>Ponemos a tu empresa en los primeros puestos y hacemos crecer tus ventas.</span></p>
         <div className="hero-actions internal-actions">
           <a className="cta-glow primary" href={whatsapp}><span>Quiero una asesoría sin cargo</span></a>
           <a className="cta-glow secondary" href={whatsapp}><span>Quiero aparecer primero en Google</span></a>
