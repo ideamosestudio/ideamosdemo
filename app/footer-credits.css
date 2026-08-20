@@ -40,3 +40,33 @@
     padding:26px 30px 30px!important;
   }
 }
+
+/* Letra chica del footer: mismo diseño, más legible sobre fondo oscuro. */
+#site-root footer .footer-brand>p{
+  font-size:14px!important;
+  color:#a8adb5!important;
+}
+
+#site-root footer .footer-top>div:not(:first-child){
+  font-size:15px!important;
+}
+
+#site-root footer .footer-top>div>b{
+  font-size:13px!important;
+  color:#9aa0aa!important;
+  letter-spacing:.04em;
+}
+
+#site-root footer .footer-top a,
+#site-root footer .footer-top p{
+  color:#c7cad0!important;
+}
+
+#site-root footer .footer-bottom{
+  font-size:12px!important;
+  color:#8a8f98!important;
+}
+
+#site-root footer .footer-bottom a{
+  color:#c7cad0!important;
+}
