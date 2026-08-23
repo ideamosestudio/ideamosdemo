@@ -115,9 +115,7 @@
 .tpw-faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
 .tpw-faq-item.is-open .tpw-faq-a{max-height:200px}
 .tpw-faq-a>p{margin:0 0 26px;padding-right:40px;color:#a8abb5;font-size:15px;line-height:1.6;font-weight:300}
-.tpw-faq-actions{display:flex;justify-content:center;gap:12px;margin-top:48px}
-.tpw-faq-actions .cta-glow{flex:1 1 0;width:auto;justify-content:center;padding-left:12px;padding-right:12px}
-@media(max-width:520px){.tpw-faq-actions{flex-wrap:wrap}.tpw-faq-actions .cta-glow{flex:1 1 100%}}
+.tpw-faq-actions{margin-top:44px}
 @media(max-width:700px){.tpw-faq-card{padding:48px 26px}}
 
 @media(max-width:900px){

@@ -224,11 +224,11 @@ export default function TestPosicionamientoPage() {
           <div className="tpw-faq-list">
             {faqs.map(([q, a], index) => <FaqItem key={q} q={q} a={a} open={openFaq === index} onToggle={() => setOpenFaq(openFaq === index ? -1 : index)} />)}
           </div>
-          <div className="tpw-faq-actions">
-            <a className="cta-glow primary" href={whatsapp}><span>Solicitá asesoramiento</span></a>
-            <a className="cta-glow secondary" href={whatsapp}><span>Quiero contactarme</span></a>
-          </div>
         </GlowCard>
+        <div className="tpw-faq-actions hero-actions internal-actions">
+          <a className="cta-glow primary" href={whatsapp}><span>Solicitá asesoramiento</span></a>
+          <a className="cta-glow secondary" href={whatsapp}><span>Quiero contactarme</span></a>
+        </div>
       </section>
 
       <HomeAdvisorySection />
