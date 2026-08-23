@@ -216,7 +216,7 @@ export default function DriftWall({
 
   const renderTile = (item: DriftWallItem, id: string, colIndex: number) => {
     const inner = <span className="drift-wall__inner">
-      <img src={item.image} alt={item.title ?? ""} loading="lazy" decoding="async" draggable={false} />
+      <img src={item.image} alt={item.title ?? ""} loading="eager" decoding="async" draggable={false} />
       <span className="drift-wall__overlay" aria-hidden="true" />
     </span>;
     const tileStyle: React.CSSProperties = { height: (item.height ?? tileHeight) + gap };
