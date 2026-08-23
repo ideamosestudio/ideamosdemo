@@ -50,7 +50,7 @@ export default function PortfolioDriftWall() {
       <div className="drift-wall-vignette" aria-hidden="true" />
       <DriftWall
         items={items}
-        columns={5}
+        columns={8}
         tileWidth={220}
         tileHeight={150}
         gap={18}
@@ -61,7 +61,7 @@ export default function PortfolioDriftWall() {
         speed={34}
         direction="up"
         variance={0.4}
-        parallax={0.6}
+        parallax={0}
         fade={0.4}
         dim={0.9}
         overlayColor="#0a0a0f"

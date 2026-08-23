@@ -1,6 +1,6 @@
 .drift-wall-stage{position:relative;width:100%;height:min(76vh,720px);min-height:460px;overflow:hidden;background:transparent}
-.drift-wall-vignette{position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(ellipse 78% 74% at 50% 50%,transparent 42%,#000 100%)}
-.pdw-section{background:#000}
+.drift-wall-vignette{position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(ellipse 78% 74% at 50% 50%,transparent 42%,#0b0b0b 100%)}
+.pdw-section{background:#0b0b0b}
 .pdw-section:before,.pdw-section:after{display:none!important}
 .drift-wall{position:relative;width:100%;height:100%;overflow:hidden;perspective:var(--dw-perspective,1200px);perspective-origin:50% 50%;--dw-tile-w:200px;--dw-tile-h:132px;--dw-gap:18px;--dw-radius:14px;--dw-lift:64px;--dw-dim:.55;--dw-gray:0;--dw-overlay:#060010;--dw-edge:38%;-webkit-mask-image:radial-gradient(ellipse 82% 86% at 50% 46%,#000 var(--dw-edge),transparent 100%),linear-gradient(to top,#000 var(--dw-edge),transparent 100%);-webkit-mask-composite:source-in;mask-image:radial-gradient(ellipse 82% 86% at 50% 46%,#000 var(--dw-edge),transparent 100%),linear-gradient(to top,#000 var(--dw-edge),transparent 100%);mask-composite:intersect}
 .drift-wall{display:flex;align-items:center;justify-content:center}
