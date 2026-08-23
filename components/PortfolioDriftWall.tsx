@@ -36,11 +36,10 @@ export default function PortfolioDriftWall({ darkGrid = false }: { darkGrid?: bo
 
   return <section className="cases-work pdw-section" id="portfolio" aria-labelledby="portfolio-title">
     {darkGrid && <DarkGridBackground />}
-    <header className="pdw-heading">
+    <header className="section-heading pdw-heading">
       <p>TRABAJOS REALIZADOS</p>
       <h2 id="portfolio-title">Proyectos que hablan por nosotros</h2>
-      <h3><b>Resultados reales</b>, para marcas de distintos rubros</h3>
-      <p className="pdw-copy">Una selección de experiencias digitales creadas para marcas de distintas industrias: diseño, estrategia y ejecución pensados para vender más.</p>
+      <span><b>Resultados reales</b> para marcas de distintos rubros: una selección de experiencias digitales creadas para vender más.</span>
       <a className="orange-cta" href={asset("/casos-de-exito/")}>VER TODOS LOS CASOS DE ÉXITO</a>
     </header>
     <div className="drift-wall-stage">
@@ -59,8 +58,8 @@ export default function PortfolioDriftWall({ darkGrid = false }: { darkGrid?: bo
         variance={0.4}
         parallax={0.55}
         lift={56}
-        fade={0.55}
-        dim={0.6}
+        fade={0.4}
+        dim={0.9}
         overlayColor="#0a0a0f"
         onItemClick={setLightbox}
       />

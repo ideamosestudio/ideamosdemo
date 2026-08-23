@@ -1,5 +1,5 @@
 .drift-wall-stage{position:relative;width:100%;height:min(76vh,720px);min-height:460px;overflow:hidden;background:transparent}
-.drift-wall{position:relative;width:100%;height:100%;overflow:hidden;perspective:var(--dw-perspective,1200px);perspective-origin:50% 50%;--dw-tile-w:200px;--dw-tile-h:132px;--dw-gap:18px;--dw-radius:14px;--dw-lift:64px;--dw-dim:.55;--dw-gray:0;--dw-overlay:#060010;--dw-edge:18%;-webkit-mask-image:radial-gradient(ellipse 70% 68% at 50% 46%,#000 var(--dw-edge),transparent 92%),linear-gradient(to top,#000 var(--dw-edge),transparent 88%),linear-gradient(to bottom,#000 var(--dw-edge),transparent 88%),linear-gradient(to right,#000 var(--dw-edge),transparent 88%),linear-gradient(to left,#000 var(--dw-edge),transparent 88%);-webkit-mask-composite:source-in,source-in,source-in,source-in;mask-image:radial-gradient(ellipse 70% 68% at 50% 46%,#000 var(--dw-edge),transparent 92%),linear-gradient(to top,#000 var(--dw-edge),transparent 88%),linear-gradient(to bottom,#000 var(--dw-edge),transparent 88%),linear-gradient(to right,#000 var(--dw-edge),transparent 88%),linear-gradient(to left,#000 var(--dw-edge),transparent 88%);mask-composite:intersect}
+.drift-wall{position:relative;width:100%;height:100%;overflow:hidden;perspective:var(--dw-perspective,1200px);perspective-origin:50% 50%;--dw-tile-w:200px;--dw-tile-h:132px;--dw-gap:18px;--dw-radius:14px;--dw-lift:64px;--dw-dim:.55;--dw-gray:0;--dw-overlay:#060010;--dw-edge:38%;-webkit-mask-image:radial-gradient(ellipse 82% 86% at 50% 46%,#000 var(--dw-edge),transparent 100%),linear-gradient(to top,#000 var(--dw-edge),transparent 100%);-webkit-mask-composite:source-in;mask-image:radial-gradient(ellipse 82% 86% at 50% 46%,#000 var(--dw-edge),transparent 100%),linear-gradient(to top,#000 var(--dw-edge),transparent 100%);mask-composite:intersect}
 .drift-wall__plane{position:absolute;top:50%;left:50%;display:flex;flex-direction:row;transform-style:preserve-3d;cursor:pointer;transform-origin:50% 50%;will-change:transform}
 .drift-wall__col{position:relative;width:calc(var(--dw-tile-w) + var(--dw-gap));transform-style:preserve-3d}
 .drift-wall__track{display:flex;flex-direction:column;will-change:transform;transform-style:preserve-3d}
@@ -14,13 +14,12 @@
 @media(prefers-reduced-motion:reduce){.drift-wall__plane,.drift-wall__track{will-change:auto}}
 @media(max-width:700px){.drift-wall-stage{height:60vh;min-height:380px}}
 
-/* ---------- Heading (matches the home's dark-section intro pattern) ---------- */
-.pdw-heading{position:relative;z-index:1;text-align:center;max-width:820px;margin:0 auto 70px}
-.pdw-heading>p{margin:0 0 18px;color:var(--orange);font:700 11px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase}
-.pdw-heading h2{margin:0 0 20px;font-family:"Roboto",Arial,sans-serif;font-weight:700;letter-spacing:-.045em;font-size:clamp(34px,4.4vw,56px);line-height:.98;color:#fff}
-.pdw-heading h3{margin:0 0 22px;font-family:"Roboto",Arial,sans-serif;font-weight:400;font-size:18px;line-height:1.4;color:#c7cad2}
-.pdw-heading h3 b{font-weight:700;color:#fff}
-.pdw-heading>p.pdw-copy{margin:0 0 32px;max-width:620px;margin-left:auto;margin-right:auto;color:#9a9daa;font-size:15px;line-height:1.7;font-weight:300}
+/* ---------- Heading: reuses .section-heading (same block as Ecommerce/etc.), just recolored for a dark section ---------- */
+.pdw-heading{position:relative;z-index:1}
+#site-root .pdw-heading h2{color:#fff}
+#site-root .pdw-heading.pdw-heading.pdw-heading.pdw-heading.pdw-heading>span{color:#c7cad2!important}
+#site-root .pdw-heading>span b{color:#fff}
+.pdw-heading .orange-cta{display:inline-block;margin-top:34px}
 
 /* ---------- Lightbox ---------- */
 .pdw-lightbox{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:5vh 5vw;background:rgba(2,3,7,.92);backdrop-filter:blur(6px);cursor:zoom-out;animation:pdwFadeIn .25s ease}
