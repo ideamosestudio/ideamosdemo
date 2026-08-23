@@ -7,10 +7,12 @@ import { WHATSAPP_URL } from "../lib/whatsapp";
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
 // Real aspect ratios: "desk" screenshots are 1324x1000 (1.324), "phone" are 582x1000 (0.582).
-// At tileWidth=220 that's 166px tall for desk and 378px for phone — matching these exactly
-// means object-fit:contain never needs to shrink the image, so there's no dead space.
-const WIDE_H = 166;
-const PHONE_H = 378;
+// Tiles are wide (320px) so 5 columns comfortably outrun any viewport width even after the
+// rotateY tilt foreshortens one side — matching the ratio exactly keeps object-fit:contain
+// from ever needing to shrink the image, so there's still no dead space inside a tile.
+const TILE_W = 360;
+const WIDE_H = Math.round(TILE_W / 1.324);
+const PHONE_H = Math.round(TILE_W / 0.582);
 
 const items: DriftWallItem[] = [
   { image: asset("/media/casos-exito/desk-001.jpg"), title: "Águilas de Oro", height: WIDE_H },
@@ -51,8 +53,8 @@ export default function PortfolioDriftWall() {
       <DriftWall
         items={items}
         columns={5}
-        tileWidth={220}
-        tileHeight={150}
+        tileWidth={TILE_W}
+        tileHeight={WIDE_H}
         gap={18}
         tilt={16}
         turn={-14}
