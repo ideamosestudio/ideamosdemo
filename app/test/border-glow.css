@@ -1,4 +1,4 @@
-.glow-card{--edge-proximity:0;--cursor-angle:45deg;--edge-sensitivity:30;--color-sensitivity:calc(var(--edge-sensitivity) + 20);--border-radius:20px;--glow-padding:30px;--cone-spread:25;position:relative;border-radius:var(--border-radius);isolation:isolate;transform:translate3d(0,0,0.01px);display:block;overflow:visible}
+.glow-card{--edge-proximity:0;--cursor-angle:45deg;--edge-sensitivity:30;--color-sensitivity:calc(var(--edge-sensitivity) + 20);--border-radius:20px;--glow-padding:30px;--cone-spread:25;position:relative;border-radius:var(--border-radius);isolation:isolate;transform:translate3d(0,0,0.01px);display:block;width:100%;overflow:visible;background:var(--card-bg)}
 .glow-card::before,.glow-card::after,.glow-card>.edge-light{content:"";position:absolute;inset:0;border-radius:inherit;transition:opacity .25s ease-out;z-index:-1;pointer-events:none}
 .glow-card:not(:hover)::before,.glow-card:not(:hover)::after,.glow-card:not(:hover)>.edge-light{opacity:0;transition:opacity .75s ease-in-out}
 
