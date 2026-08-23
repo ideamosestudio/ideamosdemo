@@ -51,6 +51,9 @@ function buildGradientVars(colors: [string, string, string]) {
   return vars;
 }
 
+const IDLE_EDGE = 88;
+const AUTO_SPEED = 24; // degrees per second while idle
+
 export default function GlowCard({
   children,
   className = "",
@@ -67,33 +70,78 @@ export default function GlowCard({
   reveal = false,
 }: GlowCardProps) {
   const cardRef = useRef<HTMLDivElement | null>(null);
-  const offsetRef = useRef(Math.random() * 360);
+  const hoveringRef = useRef(false);
+  const pointerAngleRef = useRef(0);
+  const pointerEdgeRef = useRef(0);
+  const angleRef = useRef(Math.random() * 360);
+  const edgeRef = useRef(IDLE_EDGE);
 
   useEffect(() => {
     const card = cardRef.current;
     if (!card) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) {
-      card.style.setProperty("--cursor-angle", `${offsetRef.current}deg`);
+      card.style.setProperty("--cursor-angle", `${angleRef.current}deg`);
+      card.style.setProperty("--edge-proximity", `${IDLE_EDGE}`);
       return;
     }
     let raf = 0;
-    const speed = 24; // degrees per second
-    const start = performance.now();
+    let last = performance.now();
     const tick = (now: number) => {
-      const elapsed = (now - start) / 1000;
-      const angle = (offsetRef.current + elapsed * speed) % 360;
-      card.style.setProperty("--cursor-angle", `${angle.toFixed(2)}deg`);
+      const dt = Math.min(0.05, (now - last) / 1000);
+      last = now;
+      if (hoveringRef.current) {
+        const diff = ((pointerAngleRef.current - angleRef.current + 540) % 360) - 180;
+        angleRef.current = (angleRef.current + diff * Math.min(1, dt * 8) + 360) % 360;
+        edgeRef.current += (pointerEdgeRef.current - edgeRef.current) * Math.min(1, dt * 8);
+      } else {
+        angleRef.current = (angleRef.current + AUTO_SPEED * dt) % 360;
+        edgeRef.current += (IDLE_EDGE - edgeRef.current) * Math.min(1, dt * 4);
+      }
+      card.style.setProperty("--cursor-angle", `${angleRef.current.toFixed(2)}deg`);
+      card.style.setProperty("--edge-proximity", `${edgeRef.current.toFixed(2)}`);
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, []);
 
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    const card = cardRef.current;
+    if (!card) return;
+    hoveringRef.current = true;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+    const dx = x - cx;
+    const dy = y - cy;
+    let kx = Infinity;
+    let ky = Infinity;
+    if (dx !== 0) kx = cx / Math.abs(dx);
+    if (dy !== 0) ky = cy / Math.abs(dy);
+    const edge = Math.min(Math.max(1 / Math.min(kx, ky), 0), 1);
+    let angle = 0;
+    if (dx !== 0 || dy !== 0) {
+      const radians = Math.atan2(dy, dx);
+      angle = radians * (180 / Math.PI) + 90;
+      if (angle < 0) angle += 360;
+    }
+    pointerAngleRef.current = angle;
+    pointerEdgeRef.current = edge * 100;
+  };
+
+  const handlePointerLeave = () => {
+    hoveringRef.current = false;
+  };
+
   const glowVars = buildGlowVars(glowColor, glowIntensity);
 
   return <div
     ref={cardRef}
+    onPointerMove={handlePointerMove}
+    onPointerLeave={handlePointerLeave}
     data-reveal={reveal ? "" : undefined}
     className={`glow-card ${className}`}
     style={{
