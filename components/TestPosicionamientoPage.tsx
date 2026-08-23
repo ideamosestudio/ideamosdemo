@@ -216,13 +216,19 @@ export default function TestPosicionamientoPage() {
       </section>
 
       <section className="tpw-faq" data-reveal>
-        <header className="tpw-faq-intro">
-          <p>PREGUNTAS FRECUENTES</p>
-          <h2>Lo que todos preguntan antes de arrancar</h2>
-        </header>
-        <div className="tpw-faq-list">
-          {faqs.map(([q, a], index) => <FaqItem key={q} q={q} a={a} open={openFaq === index} onToggle={() => setOpenFaq(openFaq === index ? -1 : index)} />)}
-        </div>
+        <GlowCard className="tpw-faq-card" backgroundColor="#0b0b0b" borderRadius={28}>
+          <header className="tpw-faq-intro">
+            <p>PREGUNTAS FRECUENTES</p>
+            <h2>Lo que todos preguntan antes de arrancar</h2>
+          </header>
+          <div className="tpw-faq-list">
+            {faqs.map(([q, a], index) => <FaqItem key={q} q={q} a={a} open={openFaq === index} onToggle={() => setOpenFaq(openFaq === index ? -1 : index)} />)}
+          </div>
+          <div className="tpw-faq-actions">
+            <a className="cta-glow primary" href={whatsapp}><span>Solicitá asesoramiento</span></a>
+            <a className="cta-glow secondary" href={whatsapp}><span>Quiero contactarme</span></a>
+          </div>
+        </GlowCard>
       </section>
 
       <HomeAdvisorySection />
