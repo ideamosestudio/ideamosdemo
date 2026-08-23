@@ -28,6 +28,7 @@ type DriftWallProps = {
   grayscale?: boolean;
   overlayColor?: string;
   className?: string;
+  onItemClick?: (item: DriftWallItem) => void;
 };
 
 const prefersReducedMotion = () =>
@@ -61,6 +62,7 @@ export default function DriftWall({
   grayscale = false,
   overlayColor = "#060010",
   className = "",
+  onItemClick,
 }: DriftWallProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const planeRef = useRef<HTMLDivElement | null>(null);
@@ -249,6 +251,15 @@ export default function DriftWall({
       <span className="drift-wall__overlay" aria-hidden="true" />
     </span>;
     const isActive = activeId === id;
+    if (onItemClick) {
+      return <button key={id} type="button" aria-label={item.title ?? "Ver imagen ampliada"}
+        className={`drift-wall__tile${isActive ? " is-active" : ""}`}
+        data-tile-id={id} data-col={colIndex}
+        onFocus={() => activate(id, colIndex)} onBlur={release}
+        onClick={() => onItemClick(item)}>
+        {inner}
+      </button>;
+    }
     if (item.href) {
       return <a key={id} href={item.href} className={`drift-wall__tile${isActive ? " is-active" : ""}`}
         data-tile-id={id} data-col={colIndex}
