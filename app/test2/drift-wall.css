@@ -1,5 +1,5 @@
 .drift-wall-stage{position:relative;width:100%;height:100vh;overflow:hidden;background:transparent}
-.drift-wall-vignette{position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(ellipse 78% 74% at 50% 50%,transparent 42%,#0b0b0b 100%)}
+.drift-wall-vignette{position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(ellipse 82% 78% at 50% 50%,transparent 52%,#0b0b0b 100%)}
 .pdw-section{background:#0b0b0b}
 .pdw-section:before,.pdw-section:after{display:none!important}
 .drift-wall{position:relative;width:100%;height:100%;overflow:hidden;perspective:var(--dw-perspective,1200px);perspective-origin:50% 50%;--dw-tile-w:200px;--dw-tile-h:132px;--dw-gap:18px;--dw-radius:14px;--dw-lift:64px;--dw-dim:.55;--dw-gray:0;--dw-overlay:#060010;--dw-edge:38%;-webkit-mask-image:radial-gradient(ellipse 82% 86% at 50% 46%,#000 var(--dw-edge),transparent 100%),linear-gradient(to bottom,transparent 0%,#000 20%,#000 80%,transparent 100%);-webkit-mask-composite:source-in;mask-image:radial-gradient(ellipse 82% 86% at 50% 46%,#000 var(--dw-edge),transparent 100%),linear-gradient(to bottom,transparent 0%,#000 20%,#000 80%,transparent 100%);mask-composite:intersect}
@@ -10,7 +10,7 @@
 .drift-wall__tile{position:relative;display:block;width:100%;height:calc(var(--dw-tile-h) + var(--dw-gap));flex:0 0 auto;outline:none;transform-style:preserve-3d;padding:0;border:0;background:none;font:inherit;text-align:inherit;cursor:pointer}
 .drift-wall__inner{position:absolute;inset:calc(var(--dw-gap) / 2);display:block;border-radius:var(--dw-radius);overflow:hidden;background:#0b0b12;opacity:var(--dw-dim);transform:translateZ(0);pointer-events:none;transition:transform .42s cubic-bezier(.22,1,.36,1),opacity .42s cubic-bezier(.22,1,.36,1),box-shadow .42s cubic-bezier(.22,1,.36,1),width .42s cubic-bezier(.22,1,.36,1),height .42s cubic-bezier(.22,1,.36,1)}
 .drift-wall__tile img{width:100%;height:100%;object-fit:contain;display:block;filter:grayscale(var(--dw-gray)) saturate(.92);transition:filter .42s cubic-bezier(.22,1,.36,1);user-select:none;-webkit-user-drag:none}
-.drift-wall__overlay{position:absolute;inset:0;background:var(--dw-overlay);opacity:.42;pointer-events:none;transition:opacity .42s cubic-bezier(.22,1,.36,1)}
+.drift-wall__overlay{position:absolute;inset:0;background:var(--dw-overlay);opacity:.1;pointer-events:none;transition:opacity .42s cubic-bezier(.22,1,.36,1)}
 .drift-wall__tile:focus-visible .drift-wall__inner{opacity:1;box-shadow:0 0 0 2px rgba(255,255,255,.9)}
 @media(prefers-reduced-motion:reduce){.drift-wall__plane,.drift-wall__track{will-change:auto}}
 @media(max-width:700px){.drift-wall-stage{height:100vh}}
