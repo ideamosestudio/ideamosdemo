@@ -136,7 +136,7 @@ export default function HomePageTest2() {
     </section>
     </LightGridFrame>
 
-    <PortfolioDriftWall darkGrid />
+    <PortfolioDriftWall />
 
     <LightGridFrame className="home-closing-light-grid">
       <HomeTestimonials />

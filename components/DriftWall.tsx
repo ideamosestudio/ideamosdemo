@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import "../app/test2/drift-wall.css";
 
-export type DriftWallItem = { image: string; title?: string; href?: string };
+export type DriftWallItem = { image: string; title?: string; href?: string; height?: number };
 
 type DriftWallProps = {
   items: DriftWallItem[];
@@ -21,7 +21,6 @@ type DriftWallProps = {
   direction?: "up" | "down";
   variance?: number;
   parallax?: number;
-  pauseOnHover?: boolean;
   lift?: number;
   fade?: number;
   dim?: number;
@@ -55,7 +54,6 @@ export default function DriftWall({
   direction = "up",
   variance = 0.45,
   parallax = 0.6,
-  pauseOnHover = false,
   lift = 64,
   fade = 0.6,
   dim = 0.55,
@@ -71,15 +69,11 @@ export default function DriftWall({
 
   const offsetsRef = useRef<number[]>([]);
   const velocitiesRef = useRef<number[]>([]);
-  const hoveredColRef = useRef(-1);
-  const wallHoveredRef = useRef(false);
   const pointerRef = useRef({ x: 0, y: 0 });
   const pointerDampedRef = useRef({ x: 0, y: 0 });
   const lastTsRef = useRef<number | null>(null);
 
   const [containerHeight, setContainerHeight] = useState(600);
-  const [activeId, setActiveId] = useState<string | null>(null);
-  const activeIdRef = useRef<string | null>(null);
   const [reduced, setReduced] = useState(false);
 
   useEffect(() => {
@@ -97,9 +91,9 @@ export default function DriftWall({
   }, [items, columns]);
 
   const columnMeta = useMemo(() => {
-    const unit = tileHeight + gap;
     return columnItems.map((col) => {
-      const copyHeight = Math.max(unit, col.length * unit);
+      const colHeight = col.reduce((sum, item) => sum + (item.height ?? tileHeight) + gap, 0);
+      const copyHeight = Math.max(tileHeight + gap, colHeight);
       const copies = Math.max(2, Math.ceil((containerHeight * 1.6) / copyHeight) + 1);
       return { copyHeight, copies };
     });
@@ -157,9 +151,7 @@ export default function DriftWall({
         for (let c = 0; c < trackRefs.current.length; c++) {
           const meta = columnMeta[c];
           if (!meta) continue;
-          const paused = wallHoveredRef.current && pauseOnHover;
-          const factor = paused || hoveredColRef.current === c ? 0 : 1;
-          const target = baseVelocities[c] * factor;
+          const target = baseVelocities[c];
 
           const ease = 1 - Math.exp(-dt / (target === 0 ? 0.16 : 0.28));
           velocitiesRef.current[c] += (target - velocitiesRef.current[c]) * ease;
@@ -187,46 +179,23 @@ export default function DriftWall({
       rafRef.current = null;
       lastTsRef.current = null;
     };
-  }, [baseVelocities, columnMeta, pauseOnHover, parallax, reduced, applyPlaneTransform]);
-
-  const activate = useCallback((id: string, index: number) => {
-    activeIdRef.current = id;
-    hoveredColRef.current = index;
-    setActiveId(id);
-  }, []);
-  const release = useCallback(() => {
-    activeIdRef.current = null;
-    hoveredColRef.current = -1;
-    setActiveId(null);
-  }, []);
+  }, [baseVelocities, columnMeta, parallax, reduced, applyPlaneTransform]);
 
   const handlePointerMove = useCallback(
     (e: React.PointerEvent<HTMLDivElement>) => {
       const rect = containerRef.current?.getBoundingClientRect();
-      if (!rect) return;
-      if (parallax > 0 && !reduced) {
-        pointerRef.current = {
-          x: (e.clientX - rect.left) / rect.width - 0.5,
-          y: (e.clientY - rect.top) / rect.height - 0.5,
-        };
-      }
-      const hit = document.elementFromPoint(e.clientX, e.clientY);
-      const tile = hit && hit instanceof Element ? hit.closest<HTMLElement>("[data-tile-id]") : null;
-      if (!tile) return;
-      const id = tile.dataset.tileId;
-      if (!id || id === activeIdRef.current) return;
-      activeIdRef.current = id;
-      hoveredColRef.current = Number(tile.dataset.col);
-      setActiveId(id);
+      if (!rect || parallax <= 0 || reduced) return;
+      pointerRef.current = {
+        x: (e.clientX - rect.left) / rect.width - 0.5,
+        y: (e.clientY - rect.top) / rect.height - 0.5,
+      };
     },
     [parallax, reduced]
   );
 
   const handlePointerLeaveWall = useCallback(() => {
-    wallHoveredRef.current = false;
     pointerRef.current = { x: 0, y: 0 };
-    release();
-  }, [release]);
+  }, []);
 
   const cssVars = useMemo(
     () =>
@@ -250,27 +219,20 @@ export default function DriftWall({
       <img src={item.image} alt={item.title ?? ""} loading="lazy" decoding="async" draggable={false} />
       <span className="drift-wall__overlay" aria-hidden="true" />
     </span>;
-    const isActive = activeId === id;
+    const tileStyle: React.CSSProperties = { height: (item.height ?? tileHeight) + gap };
     if (onItemClick) {
       return <button key={id} type="button" aria-label={item.title ?? "Ver imagen ampliada"}
-        className={`drift-wall__tile${isActive ? " is-active" : ""}`}
-        data-tile-id={id} data-col={colIndex}
-        onFocus={() => activate(id, colIndex)} onBlur={release}
+        className="drift-wall__tile" style={tileStyle} data-col={colIndex}
         onClick={() => onItemClick(item)}>
         {inner}
       </button>;
     }
     if (item.href) {
-      return <a key={id} href={item.href} className={`drift-wall__tile${isActive ? " is-active" : ""}`}
-        data-tile-id={id} data-col={colIndex}
-        onFocus={() => activate(id, colIndex)} onBlur={release}>
+      return <a key={id} href={item.href} className="drift-wall__tile" style={tileStyle} data-col={colIndex}>
         {inner}
       </a>;
     }
-    return <div key={id} tabIndex={0} role="button" aria-label={item.title ?? "tile"}
-      className={`drift-wall__tile${isActive ? " is-active" : ""}`}
-      data-tile-id={id} data-col={colIndex}
-      onFocus={() => activate(id, colIndex)} onBlur={release}>
+    return <div key={id} className="drift-wall__tile" style={tileStyle} data-col={colIndex}>
       {inner}
     </div>;
   };
@@ -282,7 +244,6 @@ export default function DriftWall({
     className={rootClass}
     style={cssVars}
     onPointerMove={handlePointerMove}
-    onPointerEnter={() => { wallHoveredRef.current = true; }}
     onPointerLeave={handlePointerLeaveWall}
     role="group"
     aria-label="Muro de proyectos en movimiento"
