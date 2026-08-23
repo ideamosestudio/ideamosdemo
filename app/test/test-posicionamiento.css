@@ -97,7 +97,8 @@
 .tpw-diff-card p{margin:0;color:#5a5f6b;font-size:13.5px;line-height:1.55;font-weight:300}
 
 /* ---------- FAQ ---------- */
-.tpw-faq{position:relative;z-index:1;padding:0 0 130px!important;max-width:880px;margin:0 auto;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.tpw-faq{position:relative;z-index:1;padding:90px max(6vw,24px)!important;max-width:none;width:100%;margin:0 auto;background:#0b0b0b;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.tpw-faq-card{max-width:880px;margin:0 auto}
 .tpw-faq.in-view{opacity:1;transform:none}
 .tpw-faq-intro{margin:0 0 44px}
 .tpw-faq-intro>p{margin:0 0 18px;color:var(--orange);font:700 11px/1 "Roboto Condensed",Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}

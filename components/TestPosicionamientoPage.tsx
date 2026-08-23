@@ -215,7 +215,7 @@ export default function TestPosicionamientoPage() {
         <div className="tpw-local-image"><img src={asset("/media/posicionamiento-maps.png")} alt="Teléfono con mapa de Google y marcador de ubicación" /></div>
       </section>
 
-      <section className="tpw-faq" data-reveal>
+      <section className="tpw-faq dark" data-reveal>
         <GlowCard className="tpw-faq-card" backgroundColor="#0b0b0b" borderRadius={28}>
           <header className="tpw-faq-intro">
             <p>PREGUNTAS FRECUENTES</p>
