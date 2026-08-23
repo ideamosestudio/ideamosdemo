@@ -2,7 +2,7 @@
 .drift-wall-vignette{position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(ellipse 78% 74% at 50% 50%,transparent 42%,#0b0b0b 100%)}
 .pdw-section{background:#0b0b0b}
 .pdw-section:before,.pdw-section:after{display:none!important}
-.drift-wall{position:relative;width:100%;height:100%;overflow:hidden;perspective:var(--dw-perspective,1200px);perspective-origin:50% 50%;--dw-tile-w:200px;--dw-tile-h:132px;--dw-gap:18px;--dw-radius:14px;--dw-lift:64px;--dw-dim:.55;--dw-gray:0;--dw-overlay:#060010;--dw-edge:38%;-webkit-mask-image:radial-gradient(ellipse 82% 86% at 50% 46%,#000 var(--dw-edge),transparent 100%),linear-gradient(to top,#000 var(--dw-edge),transparent 100%);-webkit-mask-composite:source-in;mask-image:radial-gradient(ellipse 82% 86% at 50% 46%,#000 var(--dw-edge),transparent 100%),linear-gradient(to top,#000 var(--dw-edge),transparent 100%);mask-composite:intersect}
+.drift-wall{position:relative;width:100%;height:100%;overflow:hidden;perspective:var(--dw-perspective,1200px);perspective-origin:50% 50%;--dw-tile-w:200px;--dw-tile-h:132px;--dw-gap:18px;--dw-radius:14px;--dw-lift:64px;--dw-dim:.55;--dw-gray:0;--dw-overlay:#060010;--dw-edge:38%;-webkit-mask-image:radial-gradient(ellipse 82% 86% at 50% 46%,#000 var(--dw-edge),transparent 100%),linear-gradient(to bottom,transparent 0%,#000 20%,#000 80%,transparent 100%);-webkit-mask-composite:source-in;mask-image:radial-gradient(ellipse 82% 86% at 50% 46%,#000 var(--dw-edge),transparent 100%),linear-gradient(to bottom,transparent 0%,#000 20%,#000 80%,transparent 100%);mask-composite:intersect}
 .drift-wall{display:flex;align-items:center;justify-content:center}
 .drift-wall__plane{position:relative;display:flex;flex-direction:row;transform-style:preserve-3d;cursor:pointer;transform-origin:50% 50%;will-change:transform}
 .drift-wall__col{position:relative;width:calc(var(--dw-tile-w) + var(--dw-gap));transform-style:preserve-3d}
@@ -19,7 +19,7 @@
 .pdw-heading{position:relative;z-index:1}
 #site-root .pdw-heading h2{color:#fff}
 #site-root .pdw-heading.pdw-heading.pdw-heading.pdw-heading.pdw-heading>span{color:#c7cad2!important}
-.pdw-actions{position:relative;z-index:1;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:52px}
+.pdw-actions{position:relative;z-index:1;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:90px}
 #site-root .pdw-heading>span b{color:#fff}
 .pdw-heading .orange-cta{display:inline-block;margin-top:34px}
 
