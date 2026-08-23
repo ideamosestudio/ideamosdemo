@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import DriftWall, { type DriftWallItem } from "./DriftWall";
 import { DarkGridBackground } from "./SharedHomeSections";
+import { WHATSAPP_URL } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -40,17 +41,17 @@ export default function PortfolioDriftWall({ darkGrid = false }: { darkGrid?: bo
       <p>TRABAJOS REALIZADOS</p>
       <h2 id="portfolio-title">Proyectos que hablan por nosotros</h2>
       <span><b>Resultados reales</b> para marcas de distintos rubros: una selección de experiencias digitales creadas para vender más.</span>
-      <a className="orange-cta" href={asset("/casos-de-exito/")}>VER TODOS LOS CASOS DE ÉXITO</a>
     </header>
     <div className="drift-wall-stage">
+      <div className="drift-wall-vignette" aria-hidden="true" />
       <DriftWall
         items={items}
         columns={5}
         tileWidth={220}
         tileHeight={150}
         gap={18}
-        tilt={14}
-        turn={-12}
+        tilt={8}
+        turn={0}
         perspective={1300}
         depth={100}
         speed={34}
@@ -63,6 +64,10 @@ export default function PortfolioDriftWall({ darkGrid = false }: { darkGrid?: bo
         overlayColor="#0a0a0f"
         onItemClick={setLightbox}
       />
+    </div>
+    <div className="pdw-actions">
+      <a className="cta-glow primary" href={WHATSAPP_URL}><span>Solicitá asesoramiento</span></a>
+      <a className="cta-glow secondary" href={WHATSAPP_URL}><span>Quiero contactarme</span></a>
     </div>
 
     {lightbox && <div className="pdw-lightbox" role="dialog" aria-modal="true" aria-label={lightbox.title ?? "Imagen ampliada"} onClick={() => setLightbox(null)}>
