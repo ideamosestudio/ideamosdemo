@@ -5,6 +5,7 @@ import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 import { HeroChrome, HomeAdvisorySection, HomeClosingSections, HeroLogoTrack } from "./SharedHomeSections";
 import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
+import GlowCard from "./GlowCard";
 import { WHATSAPP_URL as whatsapp } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -134,7 +135,7 @@ export default function TestPosicionamientoPage() {
 
     <LightGridFrame className="tpw-light">
       <section className="tpw-stats" data-reveal>
-        {stats.map(([number, copy]) => <div className="tpw-stat" key={number}><b>{number}</b><p>{copy}</p></div>)}
+        {stats.map(([number, copy]) => <GlowCard className="tpw-stat" key={number} backgroundColor="var(--paper)" borderRadius={20}><b>{number}</b><p>{copy}</p></GlowCard>)}
       </section>
 
       <section className="tpw-vs" id="estrategia">
@@ -144,18 +145,18 @@ export default function TestPosicionamientoPage() {
           <span>Google Ads y SEO no compiten entre sí: se complementan. Uno te llena la agenda esta semana, el otro construye el negocio de los próximos años.</span>
         </header>
         <div className="tpw-vs-grid">
-          <article className="tpw-vs-card is-ads" data-reveal>
+          <GlowCard className="tpw-vs-card is-ads" reveal backgroundColor="#0a0a0c" borderRadius={26}>
             <p className="tpw-vs-tag">GOOGLE ADS</p>
             <h3>Resultados en días</h3>
             <ul>{adsPoints.map((point) => <li key={point}><Check />{point}</li>)}</ul>
             <a className="tpw-vs-cta" href={whatsapp}>Quiero aparecer ya <span>→</span></a>
-          </article>
-          <article className="tpw-vs-card is-seo" data-reveal>
+          </GlowCard>
+          <GlowCard className="tpw-vs-card is-seo" reveal backgroundColor="#f0f1f4" borderRadius={26}>
             <p className="tpw-vs-tag">SEO</p>
             <h3>Resultados que se acumulan</h3>
             <ul>{seoPoints.map((point) => <li key={point}><Check />{point}</li>)}</ul>
             <a className="tpw-vs-cta" href={whatsapp}>Quiero crecer orgánico <span>→</span></a>
-          </article>
+          </GlowCard>
         </div>
       </section>
 
@@ -165,11 +166,11 @@ export default function TestPosicionamientoPage() {
           <h2>Todo lo que hace falta, nada de relleno</h2>
         </header>
         <div className="tpw-includes-grid">
-          {includes.map(([icon, title, copy]) => <article key={title} className="tpw-includes-card">
+          {includes.map(([icon, title, copy]) => <GlowCard key={title} className="tpw-includes-card" backgroundColor="#fff" borderRadius={20}>
             <span className="tpw-icon-badge"><Icon name={icon} /></span>
             <h3>{title}</h3>
             <p>{copy}</p>
-          </article>)}
+          </GlowCard>)}
         </div>
       </section>
 

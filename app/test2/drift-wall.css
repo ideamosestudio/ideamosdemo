@@ -1,4 +1,4 @@
-.drift-wall-stage{position:relative;width:100%;height:min(76vh,720px);min-height:460px;overflow:hidden;background:transparent}
+.drift-wall-stage{position:relative;width:100%;height:100vh;overflow:hidden;background:transparent}
 .drift-wall-vignette{position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(ellipse 78% 74% at 50% 50%,transparent 42%,#0b0b0b 100%)}
 .pdw-section{background:#0b0b0b}
 .pdw-section:before,.pdw-section:after{display:none!important}
@@ -13,7 +13,7 @@
 .drift-wall__overlay{position:absolute;inset:0;background:var(--dw-overlay);opacity:.42;pointer-events:none;transition:opacity .42s cubic-bezier(.22,1,.36,1)}
 .drift-wall__tile:focus-visible .drift-wall__inner{opacity:1;box-shadow:0 0 0 2px rgba(255,255,255,.9)}
 @media(prefers-reduced-motion:reduce){.drift-wall__plane,.drift-wall__track{will-change:auto}}
-@media(max-width:700px){.drift-wall-stage{height:60vh;min-height:380px}}
+@media(max-width:700px){.drift-wall-stage{height:100vh}}
 
 /* ---------- Heading: reuses .section-heading (same block as Ecommerce/etc.), just recolored for a dark section ---------- */
 .pdw-heading{position:relative;z-index:1}
