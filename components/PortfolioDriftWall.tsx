@@ -2,9 +2,36 @@
 
 import { useEffect, useState } from "react";
 import DriftWall, { type DriftWallItem } from "./DriftWall";
+import CasesGallery, { type GalleryWork } from "../app/casos-de-exito/CasesGallery";
 import { WHATSAPP_URL } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
+// Same grid used on the home page, kept for mobile: the drift-wall animation is desktop-only.
+const mobileFirstRow: GalleryWork[] = [
+  { src: "/media/casos-exito/desk-001.jpg", alt: "Sitio web Águilas de Oro", format: "wide" },
+  { src: "/media/casos-exito/desk-003.jpg", alt: "Sitio web Maqmax", format: "wide" },
+  { src: "/media/casos-exito/desk-002.jpg", alt: "Sitio web Garware Argentina", format: "wide" },
+  { src: "/media/casos-exito/phone-002.jpg", alt: "Experiencia mobile para ecommerce de moda", format: "phone" },
+  { src: "/media/casos-exito/desk-005.jpg", alt: "Sitio institucional Empire Funds", format: "wide" },
+  { src: "/media/casos-exito/desk-007.jpg", alt: "Tienda online Trébol Café", format: "wide" },
+  { src: "/media/casos-exito/desk-006.jpg", alt: "Sitio web ONER VFX", format: "wide" },
+  { src: "/media/casos-exito/phone-005.jpg", alt: "Experiencia mobile para Wilde", format: "phone" },
+  { src: "/media/casos-exito/desk-014.jpg", alt: "Sitio web industrial para KRK", format: "wide" },
+  { src: "/media/casos-exito/desk-013.jpg", alt: "Tienda online Mirtatulaj", format: "wide" },
+];
+
+const mobileSecondRow: GalleryWork[] = [
+  { src: "/media/casos-exito/phone-001.jpg", alt: "Experiencia mobile para ONER VFX", format: "phone" },
+  { src: "/media/casos-exito/desk-012.jpg", alt: "Tienda online Raisa Joya", format: "wide" },
+  { src: "/media/casos-exito/desk-009.jpg", alt: "Sitio web Equinox Training", format: "wide" },
+  { src: "/media/casos-exito/desk-008.jpg", alt: "Portfolio de trabajos ONER VFX", format: "wide" },
+  { src: "/media/casos-exito/phone-003.jpg", alt: "Experiencia mobile Empire Funds", format: "phone" },
+  { src: "/media/casos-exito/desk-010.jpg", alt: "Concepto digital AirPods Pro", format: "wide" },
+  { src: "/media/casos-exito/desk-004.jpg", alt: "Sitio web Xtreme D10", format: "wide" },
+  { src: "/media/casos-exito/phone-004.jpg", alt: "Experiencia mobile Mixxerport", format: "phone" },
+  { src: "/media/casos-exito/desk-011.jpg", alt: "Presentación de proyecto ONER VFX en tablet", format: "wide" },
+];
 
 // Real aspect ratios: "desk" screenshots are 1324x1000 (1.324), "phone" are 582x1000 (0.582).
 // Tiles are wide (320px) so 5 columns comfortably outrun any viewport width even after the
@@ -51,7 +78,7 @@ export default function PortfolioDriftWall() {
       <h2 id="portfolio-title">Proyectos que hablan por nosotros</h2>
       <span><b>Resultados reales</b> para marcas de distintos rubros: una selección de experiencias digitales creadas para vender más.</span>
     </header>
-    <div className="drift-wall-stage">
+    <div className="drift-wall-stage pdw-desktop-only">
       <div className="drift-wall-vignette" aria-hidden="true" />
       <DriftWall
         items={items}
@@ -72,6 +99,9 @@ export default function PortfolioDriftWall() {
         overlayColor="#0a0a0f"
         onItemClick={setLightbox}
       />
+    </div>
+    <div className="pdw-mobile-only">
+      <CasesGallery firstRow={mobileFirstRow} secondRow={mobileSecondRow} />
     </div>
     <div className="pdw-actions">
       <a className="cta-glow primary" href={WHATSAPP_URL}><span>Solicitá asesoramiento</span></a>
