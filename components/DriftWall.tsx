@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "../app/test2/drift-wall.css";
 
 export type DriftWallItem = { image: string; fullImage?: string; title?: string; href?: string; height?: number };
@@ -73,7 +73,6 @@ export default function DriftWall({
   const pointerDampedRef = useRef({ x: 0, y: 0 });
   const lastTsRef = useRef<number | null>(null);
 
-  const [containerHeight, setContainerHeight] = useState(600);
   const [reduced, setReduced] = useState(false);
 
   useEffect(() => {
@@ -90,23 +89,16 @@ export default function DriftWall({
     return cols.map((col) => (col.length ? col : items.slice(0, 1)));
   }, [items, columns]);
 
+  // A fixed copy count (not tied to measured container height) so the tile list never
+  // recomputes after mount — recomputing it would remount every <img>, which is what
+  // caused tiles that were already loaded to flash blank and "reload" mid-animation.
   const columnMeta = useMemo(() => {
     return columnItems.map((col) => {
       const colHeight = col.reduce((sum, item) => sum + (item.height ?? tileHeight) + gap, 0);
       const copyHeight = Math.max(tileHeight + gap, colHeight);
-      const copies = Math.max(2, Math.ceil((containerHeight * 1.6) / copyHeight) + 1);
-      return { copyHeight, copies };
+      return { copyHeight, copies: 5 };
     });
-  }, [columnItems, tileHeight, gap, containerHeight]);
-
-  useLayoutEffect(() => {
-    if (!containerRef.current) return;
-    const ro = new ResizeObserver(([entry]) => {
-      setContainerHeight(entry.contentRect.height || 600);
-    });
-    ro.observe(containerRef.current);
-    return () => ro.disconnect();
-  }, []);
+  }, [columnItems, tileHeight, gap]);
 
   const baseVelocities = useMemo(() => {
     const dirSign = direction === "up" ? 1 : -1;
