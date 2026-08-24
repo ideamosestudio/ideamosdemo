@@ -14,22 +14,25 @@ const TILE_W = 360;
 const WIDE_H = Math.round(TILE_W / 1.324);
 const PHONE_H = Math.round(TILE_W / 0.582);
 
+const drift = (name: string) => asset(`/media/casos-exito/drift/${name}`);
+const full = (name: string) => asset(`/media/casos-exito/${name}`);
+
 const items: DriftWallItem[] = [
-  { image: asset("/media/casos-exito/desk-001.jpg"), title: "Águilas de Oro", height: WIDE_H },
-  { image: asset("/media/casos-exito/desk-003.jpg"), title: "Maqmax", height: WIDE_H },
-  { image: asset("/media/casos-exito/desk-002.jpg"), title: "Garware Argentina", height: WIDE_H },
-  { image: asset("/media/casos-exito/phone-002.jpg"), title: "Ecommerce de moda", height: PHONE_H },
-  { image: asset("/media/casos-exito/desk-005.jpg"), title: "Empire Funds", height: WIDE_H },
-  { image: asset("/media/casos-exito/desk-007.jpg"), title: "Trébol Café", height: WIDE_H },
-  { image: asset("/media/casos-exito/desk-006.jpg"), title: "ONER VFX", height: WIDE_H },
-  { image: asset("/media/casos-exito/phone-005.jpg"), title: "Wilde", height: PHONE_H },
-  { image: asset("/media/casos-exito/desk-014.jpg"), title: "KRK Latinoamericana", height: WIDE_H },
-  { image: asset("/media/casos-exito/desk-013.jpg"), title: "Mirtatulaj", height: WIDE_H },
-  { image: asset("/media/casos-exito/phone-001.jpg"), title: "ONER VFX mobile", height: PHONE_H },
-  { image: asset("/media/casos-exito/desk-012.jpg"), title: "Raisa Joya", height: WIDE_H },
-  { image: asset("/media/casos-exito/desk-009.jpg"), title: "Equinox Training", height: WIDE_H },
-  { image: asset("/media/casos-exito/desk-010.jpg"), title: "AirPods Pro", height: WIDE_H },
-  { image: asset("/media/casos-exito/desk-004.jpg"), title: "Xtreme D10", height: WIDE_H },
+  { image: drift("desk-001.jpg"), fullImage: full("desk-001.jpg"), title: "Águilas de Oro", height: WIDE_H },
+  { image: drift("desk-003.jpg"), fullImage: full("desk-003.jpg"), title: "Maqmax", height: WIDE_H },
+  { image: drift("desk-002.jpg"), fullImage: full("desk-002.jpg"), title: "Garware Argentina", height: WIDE_H },
+  { image: drift("phone-002.jpg"), fullImage: full("phone-002.jpg"), title: "Ecommerce de moda", height: PHONE_H },
+  { image: drift("desk-005.jpg"), fullImage: full("desk-005.jpg"), title: "Empire Funds", height: WIDE_H },
+  { image: drift("desk-007.jpg"), fullImage: full("desk-007.jpg"), title: "Trébol Café", height: WIDE_H },
+  { image: drift("desk-006.jpg"), fullImage: full("desk-006.jpg"), title: "ONER VFX", height: WIDE_H },
+  { image: drift("phone-005.jpg"), fullImage: full("phone-005.jpg"), title: "Wilde", height: PHONE_H },
+  { image: drift("desk-014.jpg"), fullImage: full("desk-014.jpg"), title: "KRK Latinoamericana", height: WIDE_H },
+  { image: drift("desk-013.jpg"), fullImage: full("desk-013.jpg"), title: "Mirtatulaj", height: WIDE_H },
+  { image: drift("phone-001.jpg"), fullImage: full("phone-001.jpg"), title: "ONER VFX mobile", height: PHONE_H },
+  { image: drift("desk-012.jpg"), fullImage: full("desk-012.jpg"), title: "Raisa Joya", height: WIDE_H },
+  { image: drift("desk-009.jpg"), fullImage: full("desk-009.jpg"), title: "Equinox Training", height: WIDE_H },
+  { image: drift("desk-010.jpg"), fullImage: full("desk-010.jpg"), title: "AirPods Pro", height: WIDE_H },
+  { image: drift("desk-004.jpg"), fullImage: full("desk-004.jpg"), title: "Xtreme D10", height: WIDE_H },
 ];
 
 export default function PortfolioDriftWall() {
@@ -77,7 +80,7 @@ export default function PortfolioDriftWall() {
 
     {lightbox && <div className="pdw-lightbox" role="dialog" aria-modal="true" aria-label={lightbox.title ?? "Imagen ampliada"} onClick={() => setLightbox(null)}>
       <button type="button" className="pdw-lightbox-close" aria-label="Cerrar" onClick={() => setLightbox(null)}>×</button>
-      <img src={lightbox.image} alt={lightbox.title ?? ""} onClick={(e) => e.stopPropagation()} />
+      <img src={lightbox.fullImage ?? lightbox.image} alt={lightbox.title ?? ""} onClick={(e) => e.stopPropagation()} />
     </div>}
   </section>;
 }

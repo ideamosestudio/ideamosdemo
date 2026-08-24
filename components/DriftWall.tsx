@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import "../app/test2/drift-wall.css";
 
-export type DriftWallItem = { image: string; title?: string; href?: string; height?: number };
+export type DriftWallItem = { image: string; fullImage?: string; title?: string; href?: string; height?: number };
 
 type DriftWallProps = {
   items: DriftWallItem[];
