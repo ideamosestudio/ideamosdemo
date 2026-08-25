@@ -85,7 +85,7 @@ export default function PortfolioDriftWall() {
       <div className="drift-wall-vignette" aria-hidden="true" />
       <DriftWall
         items={items}
-        columns={7}
+        columns={5}
         tileWidth={TILE_W}
         tileHeight={WIDE_H}
         gap={18}
