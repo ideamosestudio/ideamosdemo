@@ -106,7 +106,7 @@ export default function MobileMenu({ items, logoSrc }: MobileMenuProps) {
   }, [isOpen]);
 
   useEffect(() => {
-    const desktop = window.matchMedia("(min-width: 1081px)");
+    const desktop = window.matchMedia("(min-width: 1401px)");
     const resetOnDesktop = () => {
       if (!desktop.matches) return;
       if (closeTimerRef.current !== null) window.clearTimeout(closeTimerRef.current);
