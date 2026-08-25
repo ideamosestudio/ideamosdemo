@@ -21,7 +21,7 @@
 #site-root .pdw-heading.pdw-heading.pdw-heading.pdw-heading.pdw-heading>span{color:#c7cad2!important}
 .pdw-actions{position:relative;z-index:1;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:90px}
 .pdw-mobile-only{display:none}
-@media(max-width:700px){.pdw-desktop-only{display:none}.pdw-mobile-only{display:block}}
+@media(max-width:1080px){.pdw-desktop-only{display:none}.pdw-mobile-only{display:block}}
 #site-root .pdw-heading>span b{color:#fff}
 .pdw-heading .orange-cta{display:inline-block;margin-top:34px}
 
