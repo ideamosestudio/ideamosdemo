@@ -78,7 +78,7 @@
   color:#111!important;
 }
 
-@media(min-width:981px){
+@media(min-width:1081px){
   .human-cta{
     width:min(1520px,80vw)!important;
     min-height:clamp(520px,32vw,620px)!important;
@@ -110,7 +110,7 @@
   text-align:left;
   justify-self:start;
 }
-@media(min-width:981px){
+@media(min-width:1081px){
   .internal-home-hero h1 .hero-title-line{
     white-space:nowrap;
   }

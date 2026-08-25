@@ -135,7 +135,7 @@
   margin-top:34px!important;
 }
 
-@media(min-width:981px){
+@media(min-width:1081px){
   #site-root .internal-home-hero>.hero-center{
     /* Compensate for the removed 88px logo rail, then balance the two edge gaps. */
     transform:translateY(-62px)!important;
@@ -516,7 +516,7 @@
 }
 
 /* The shared video-call section is edge-to-edge on every service page, as on Home. */
-@media(min-width:981px){
+@media(min-width:1081px){
   #site-root .home-advisory{
     width:100%!important;
     max-width:none!important;
