@@ -2398,6 +2398,8 @@ h1,h2,h3,
 .home-testimonials__slide{
   display:grid;
   width:100%;
+  max-width:1500px;
+  margin:0 auto;
   grid-template-columns:minmax(0,1.08fr) minmax(550px,.92fr);
   gap:40px;
   align-items:center;

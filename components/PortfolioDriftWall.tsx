@@ -37,7 +37,10 @@ const mobileSecondRow: GalleryWork[] = [
 // Tiles are wide (320px) so 5 columns comfortably outrun any viewport width even after the
 // rotateY tilt foreshortens one side — matching the ratio exactly keeps object-fit:contain
 // from ever needing to shrink the image, so there's still no dead space inside a tile.
-const TILE_W = 360;
+// Sized so columns*(width+gap) comfortably outruns very wide monitors (2560px+),
+// not just common 1920px screens — otherwise the wall reads as "too narrow" with
+// visible empty space on the sides once the 3D tilt is applied.
+const TILE_W = 460;
 const WIDE_H = Math.round(TILE_W / 1.324);
 const PHONE_H = Math.round(TILE_W / 0.582);
 
@@ -82,7 +85,7 @@ export default function PortfolioDriftWall() {
       <div className="drift-wall-vignette" aria-hidden="true" />
       <DriftWall
         items={items}
-        columns={5}
+        columns={7}
         tileWidth={TILE_W}
         tileHeight={WIDE_H}
         gap={18}
