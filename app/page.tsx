@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import ManagedBackgroundVideo from "./components/ManagedBackgroundVideo";
 import { HeroChrome, HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "../components/SharedHomeSections";
 import SiteHeader from "../components/SiteHeader";
-import PortfolioDriftWall from "../components/PortfolioDriftWall";
+import PortfolioSection from "../components/PortfolioSection";
 import LightGridFrame from "../components/LightGridFrame";
 import HomeTestimonials from "../components/HomeTestimonials";
 import "./casos-de-exito/casos.css";
@@ -137,7 +137,7 @@ export default function Home() {
     </section>
     </LightGridFrame>
 
-    <PortfolioDriftWall />
+    <PortfolioSection darkGrid />
 
     <LightGridFrame className="home-closing-light-grid">
       <HomeTestimonials />
