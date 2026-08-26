@@ -40,7 +40,7 @@ const mobileSecondRow: GalleryWork[] = [
 // Sized so columns*(width+gap) comfortably outruns very wide monitors (2560px+),
 // not just common 1920px screens — otherwise the wall reads as "too narrow" with
 // visible empty space on the sides once the 3D tilt is applied.
-const TILE_W = 460;
+const TILE_W = 340;
 const WIDE_H = Math.round(TILE_W / 1.324);
 const PHONE_H = Math.round(TILE_W / 0.582);
 
@@ -85,7 +85,7 @@ export default function PortfolioDriftWall() {
       <div className="drift-wall-vignette" aria-hidden="true" />
       <DriftWall
         items={items}
-        columns={6}
+        columns={5}
         tileWidth={TILE_W}
         tileHeight={WIDE_H}
         gap={18}
