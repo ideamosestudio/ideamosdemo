@@ -21,6 +21,54 @@
     font-size:clamp(32px,4.2vw,52px)!important;
     line-height:1.05!important;
   }
+
+  /* Same collapse-to-1fr rule also hit the Google section and the shop layout. */
+  #site-root .home-page .google-scene{
+    grid-template-columns:minmax(0,.9fr) minmax(320px,1.1fr)!important;
+    gap:40px!important;
+  }
+
+  #site-root .home-page .google-content h2{
+    font-size:clamp(28px,4vw,46px)!important;
+    line-height:1.05!important;
+  }
+
+  #site-root .home-page .google-content h3{
+    font-size:16px!important;
+  }
+
+  #site-root .home-page .shop-layout{
+    grid-template-columns:minmax(160px,1fr) minmax(260px,.9fr) minmax(160px,1fr)!important;
+    gap:24px!important;
+  }
+
+  #site-root .home-page .shop-column h3{
+    font-size:19px!important;
+  }
+
+  #site-root .home-page .shop-layout>.shop-column:first-child{
+    grid-column:1!important;
+    order:1!important;
+  }
+
+  #site-root .home-page .phone-stage{
+    grid-column:2!important;
+    order:2!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:280px!important;
+    height:420px!important;
+    min-height:0!important;
+    margin:0 auto!important;
+  }
+
+  #site-root .home-page .shop-layout>.shop-column:last-child{
+    grid-column:3!important;
+    order:3!important;
+  }
 }
 
 @media(max-width:700px){
