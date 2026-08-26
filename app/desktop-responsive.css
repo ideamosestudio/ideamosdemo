@@ -14,7 +14,17 @@
   }
   #site-root .nav .desktop-navigation{
     display:flex!important;
+    position:static;
+    inset:auto;
+    width:auto;
+    height:auto;
     min-width:0;
+    padding:0;
+    border-radius:0;
+    background:transparent;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
     gap:clamp(12px,1.55vw,25px);
     white-space:nowrap;
     font-size:clamp(9px,.75vw,11px);
