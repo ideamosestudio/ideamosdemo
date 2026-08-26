@@ -1,10 +1,13 @@
 /*
  * Fluid desktop/tablet pass.
  * The 1920px composition and the existing mobile experience are intentionally
- * outside this range. Shared portfolio, testimonial, advisory, contact and
- * footer sections are also intentionally not targeted here.
+ * outside this range. Portfolio, advisory and footer sections are also
+ * intentionally not targeted here; Home testimonial/contact keep their
+ * 1920px compositions at compact desktop widths.
  */
 @media (min-width:981px) and (max-width:1919px){
+  :root{--compact-section-space:clamp(64px,5.8vw,92px)}
+
   /* Keep the desktop navigation available on compact desktop screens. */
   #site-root .nav{
     display:grid;
@@ -34,10 +37,20 @@
     display:flex;
     width:auto;
     min-width:0;
-    padding-inline:clamp(14px,1.5vw,22px)!important;
+    min-height:50px;
+    padding-inline:clamp(18px,1.5vw,22px)!important;
+    border:2px solid var(--orange)!important;
+    border-radius:999px;
+    background:transparent!important;
+    color:#fff!important;
     justify-content:center;
     white-space:nowrap;
+    font-family:"Poppins",Arial,sans-serif!important;
     font-size:clamp(9px,.72vw,11px);
+    font-weight:600!important;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    box-shadow:none!important;
   }
   #site-root .nav .mobile-menu-toggle{display:none!important}
 
@@ -46,14 +59,23 @@
   #site-root .home-services-grid>.ecommerce,
   #site-root .home-services-grid>.google-scene{
     padding-inline:clamp(52px,6vw,115px)!important;
+    padding-block:var(--compact-section-space)!important;
   }
   #site-root .home-page .statement{
     grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;
     gap:clamp(32px,5vw,90px)!important;
     min-height:clamp(760px,57vw,920px);
-    padding-block:clamp(86px,7vw,120px)!important;
+    padding-block:var(--compact-section-space)!important;
   }
   #site-root .home-page .statement-copyblock{min-width:0}
+  #site-root .home-page .statement .happy-clients{
+    width:min(430px,72%)!important;
+  }
+  #site-root .home-page .statement-copyblock:after,
+  #site-root .home-page .section-heading:before{
+    display:none!important;
+    content:none!important;
+  }
   #site-root .home-page .statement h2{
     font-size:clamp(34px,3.45vw,66px)!important;
   }
@@ -61,7 +83,7 @@
   #site-root .home-page .statement .statement-copy{font-size:clamp(14px,1.05vw,17px)!important}
   #site-root .home-page .statement .screen-swap{min-width:0;min-height:clamp(390px,36vw,610px)}
 
-  #site-root .home-page .ecommerce{padding-block:clamp(90px,7vw,130px)!important}
+  #site-root .home-page .ecommerce{padding-block:var(--compact-section-space)!important}
   #site-root .home-page .section-heading{max-width:min(1050px,86vw);margin-inline:auto}
   #site-root .home-page .section-heading h2{font-size:clamp(34px,3.25vw,58px)!important}
   #site-root .home-page .shop-layout{
@@ -76,8 +98,9 @@
   #site-root .home-page .phone-stage{
     grid-row:auto!important;
     width:100%;
-    height:auto!important;
-    min-height:clamp(460px,43vw,620px);
+    max-width:none!important;
+    height:clamp(500px,46vw,690px)!important;
+    min-height:clamp(500px,46vw,690px)!important;
     margin:0;
   }
 
@@ -86,12 +109,36 @@
     grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;
     gap:clamp(34px,5vw,90px);
     min-height:clamp(760px,55vw,980px);
-    padding-block:clamp(95px,8vw,150px)!important;
+    padding-block:var(--compact-section-space)!important;
   }
   #site-root .home-page .google-content,
   #site-root .home-page .google-visual{min-width:0}
   #site-root .home-page .google-content h2{font-size:clamp(35px,3.55vw,68px)!important}
   #site-root .home-page .google-visual{width:100%;max-width:none}
+
+  /* Keep the testimonial and contact compositions aligned with 1920px. */
+  #site-root .home-page .home-testimonials__slide{
+    grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr)!important;
+    gap:clamp(28px,3vw,40px)!important;
+  }
+  #site-root .home-page .home-testimonials__copy{
+    display:flex;
+    min-height:0;
+    text-align:left;
+  }
+  #site-root .home-page .home-testimonials__title-desktop{display:block}
+  #site-root .home-page .home-testimonials__title-mobile{display:none}
+  #site-root .home-page .home-testimonials__person,
+  #site-root .home-page .home-testimonials__actions{justify-content:flex-start}
+  #site-root .home-page .home-testimonials__actions{margin-top:22px}
+  #site-root .home-page .home-testimonials__visual{max-width:550px;margin:0;justify-self:end}
+  #site-root .home-page .home-testimonials__controls{position:absolute}
+
+  #site-root .home-page .contact-form{
+    grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr)!important;
+    gap:28px!important;
+    padding:clamp(80px,5.8vw,110px) clamp(48px,8vw,154px)!important;
+  }
 
   /* Diseño web pages. */
   #site-root .internal-page .service-section{
@@ -117,6 +164,7 @@
     padding-inline:clamp(16px,1.6vw,28px)!important;
     font-size:clamp(9px,.72vw,12px)!important;
   }
+  #site-root .service-xtreme .internal-actions>*:nth-child(2){display:none!important}
   #site-root .design-problems-layout{
     grid-template-columns:minmax(0,1.08fr) minmax(250px,.72fr)!important;
     gap:clamp(38px,6vw,110px)!important;
@@ -125,6 +173,16 @@
   #site-root .design-phone-video{min-height:clamp(520px,48vw,680px)}
   #site-root .design-problems-list h3{font-size:clamp(18px,1.55vw,28px)}
   #site-root .design-problems-list p{font-size:clamp(13px,.95vw,16px)}
+  #site-root .design-problems .service-heading h3{
+    max-width:980px;
+    margin:26px auto 0;
+    color:#333;
+    font-family:"Roboto",Arial,sans-serif!important;
+    font-size:11.5pt!important;
+    font-weight:300!important;
+    line-height:1.7!important;
+    letter-spacing:normal!important;
+  }
   #site-root .service-items{grid-template-columns:repeat(2,minmax(0,1fr))!important}
   #site-root .service-items article{padding:clamp(30px,3vw,46px);min-height:clamp(210px,18vw,260px)}
 
@@ -133,18 +191,22 @@
   #site-root .shops-advantages,
   #site-root .shops-problems{padding:clamp(85px,7vw,140px) clamp(48px,5.5vw,105px)!important}
   #site-root .shops-heading{margin-bottom:clamp(64px,6vw,100px)}
+  #site-root .shops-heading h2{max-width:clamp(680px,57vw,1080px)}
+  #site-root .shops-heading>span{max-width:clamp(720px,62vw,1180px)}
   #site-root .shops-intro-layout{
     grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;
     gap:clamp(28px,4vw,76px)!important;
   }
   #site-root .shops-intro-copy{min-width:0;padding-left:0}
+  #site-root .shops-happy img{width:min(258px,60%)!important}
   #site-root .shops-intro-copy h3{font-size:clamp(29px,2.45vw,48px)}
   #site-root .shops-intro-copy h3 span{white-space:normal}
   #site-root .shops-advantages-layout{
-    grid-template-columns:minmax(0,1fr) minmax(210px,.72fr) minmax(0,1fr)!important;
-    gap:clamp(20px,2.8vw,48px)!important;
+    grid-template-columns:minmax(0,.75fr) minmax(280px,1fr) minmax(0,.75fr)!important;
+    gap:clamp(18px,2.4vw,40px)!important;
+    align-items:center;
   }
-  #site-root .shops-phone{grid-row:auto!important;min-width:0;margin:0 auto}
+  #site-root .shops-phone{grid-row:auto!important;width:100%;max-width:none;min-width:0;margin:0 auto}
   #site-root .shops-feature-column{gap:clamp(24px,2.5vw,36px)}
   #site-root .shops-feature h3{font-size:clamp(17px,1.35vw,25px)}
   #site-root .shops-feature p{font-size:clamp(12px,.86vw,14px)}
@@ -239,7 +301,7 @@
   #site-root .service-xtreme .internal-actions .cta-glow{width:min(100%,320px)!important}
 
   #site-root .shops-heading h2 br,
-  #site-root .shops-heading>span br,
+  #site-root .shops-heading>span br{display:block}
   #site-root .pw-intro h2 br{display:none}
   #site-root .shops-red-cta{min-width:0;width:min(100%,330px)}
 
