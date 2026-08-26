@@ -29,6 +29,22 @@
   }
 }
 
+/* Mobile buttons had no consistent treatment: a legacy rule set them to
+   13px/700 weight but never touched min-height, so they kept the 62px-tall
+   desktop box — and in the 601-700px gap that legacy rule didn't even reach,
+   buttons fell back to 14px/800 weight. One smaller, lighter, consistent
+   button for the whole mobile range. */
+@media(max-width:700px){
+  #site-root .cta-glow,
+  #site-root .orange-cta{
+    min-height:46px!important;
+    font-size:11px!important;
+    font-weight:600!important;
+    letter-spacing:.04em!important;
+    padding:0 28px!important;
+  }
+}
+
 /* The desktop-only/mobile-only text swap only kicked in at max-width:600px,
    leaving a 601-700px gap where the rest of the site already treats content
    as mobile but button labels still showed the desktop text. Extend the
@@ -123,7 +139,7 @@
      Text-align:center above doesn't center a block-level img, hence it also
      sat flush-left while the h2 next to it was centered. */
   #site-root .home-page .statement .happy-clients{
-    width:min(220px,55%)!important;
+    width:min(260px,55%)!important;
     margin:0 auto 20px!important;
   }
 
@@ -167,14 +183,16 @@
      what read as "no relation between the sides" — top-aligning both to the
      same edge is the standard fix for pairing mismatched-height blocks. */
   #site-root .home-page .statement{
-    grid-template-columns:minmax(0,.9fr) minmax(380px,1.1fr)!important;
-    align-items:start!important;
+    grid-template-columns:minmax(0,.9fr) minmax(420px,1.15fr)!important;
+    align-items:center!important;
   }
 
   /* Same gap as the stacked band below: no override existed here either,
-     so this badge rendered at its 520px base width, competing with the title. */
+     so this badge rendered at its 520px base width, competing with the title.
+     200px made it hard to actually read — 260px keeps it clearly subordinate
+     to the title while staying legible. */
   #site-root .home-page .statement .happy-clients{
-    width:min(200px,45%)!important;
+    width:min(260px,55%)!important;
     margin-bottom:20px!important;
   }
 
@@ -182,7 +200,6 @@
     min-height:0!important;
     aspect-ratio:1.46/1!important;
     width:100%!important;
-    margin-top:8px!important;
   }
 
   #site-root .home-page .statement .statement-copy{
@@ -195,13 +212,9 @@
 
   /* Same collapse-to-1fr rule also hit the Google section and the shop layout. */
   #site-root .home-page .google-scene{
-    grid-template-columns:minmax(0,.9fr) minmax(340px,1.1fr)!important;
+    grid-template-columns:minmax(0,.9fr) minmax(380px,1.15fr)!important;
     gap:40px!important;
-    align-items:start!important;
-  }
-
-  #site-root .home-page .google-visual{
-    margin-top:8px!important;
+    align-items:center!important;
   }
 
   #site-root .home-page .google-content h3{
