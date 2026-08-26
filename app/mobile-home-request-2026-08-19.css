@@ -13,8 +13,13 @@
 /* Tablet/small-laptop band (701-1400px): keep the two-column layout instead of
    stacking, and scale the heading down so it fits its now-narrower column. */
 @media(min-width:701px) and (max-width:1400px){
+  /* The image is a fixed-aspect landscape screenshot: it will always be shorter
+     than a full paragraph of copy. Centering a short box next to a tall one is
+     what read as "no relation between the sides" — top-aligning both to the
+     same edge is the standard fix for pairing mismatched-height blocks. */
   #site-root .home-page .statement{
-    grid-template-columns:minmax(0,.85fr) minmax(380px,1.15fr)!important;
+    grid-template-columns:minmax(0,.9fr) minmax(380px,1.1fr)!important;
+    align-items:start!important;
   }
 
   #site-root .home-page .statement h2{
@@ -22,13 +27,11 @@
     line-height:1.05!important;
   }
 
-  /* A legacy rule shrank this image container to 360px while the text column next
-     to it runs 600px+ tall — that mismatch is what read as "no relation between
-     the two sides". Give the image room to match the text's weight. */
   #site-root .home-page .statement .screen-swap{
     min-height:0!important;
     aspect-ratio:1.46/1!important;
     width:100%!important;
+    margin-top:8px!important;
   }
 
   #site-root .home-page .statement .statement-copy{
@@ -43,9 +46,13 @@
 
   /* Same collapse-to-1fr rule also hit the Google section and the shop layout. */
   #site-root .home-page .google-scene{
-    grid-template-columns:minmax(0,.72fr) minmax(340px,1.28fr)!important;
+    grid-template-columns:minmax(0,.9fr) minmax(340px,1.1fr)!important;
     gap:40px!important;
-    align-items:center!important;
+    align-items:start!important;
+  }
+
+  #site-root .home-page .google-visual{
+    margin-top:8px!important;
   }
 
   #site-root .home-page .google-content h2{
