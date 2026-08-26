@@ -10,6 +10,19 @@
   letter-spacing:2px!important;
 }
 
+/* Tablet/small-laptop band (701-1400px): keep the two-column layout instead of
+   stacking, and scale the heading down so it fits its now-narrower column. */
+@media(min-width:701px) and (max-width:1400px){
+  #site-root .home-page .statement{
+    grid-template-columns:minmax(0,.85fr) minmax(380px,1.15fr)!important;
+  }
+
+  #site-root .home-page .statement h2{
+    font-size:clamp(32px,4.2vw,52px)!important;
+    line-height:1.05!important;
+  }
+}
+
 @media(max-width:700px){
   /* Compact the first mockup block and remove the decorative rules after its CTA. */
   #site-root .home-page .statement{
@@ -25,7 +38,7 @@
   }
 
   #site-root .home-page .statement .screen-swap{
-    margin-top:10px!important;
+    margin-top:34px!important;
     margin-bottom:0!important;
   }
 
