@@ -257,3 +257,13 @@
     margin-top:0!important;
   }
 }
+
+/* 25/08/2026: section titles were oversized at every breakpoint from years of
+   layered overrides (up to 54-124px depending on width). One unconditional rule,
+   placed last, wins over all of them regardless of viewport. */
+#site-root .home-page .statement h2,
+#site-root .home-page .google-content h2,
+#site-root .pdw-heading h2{
+  font-size:clamp(26px,3vw,38px)!important;
+  line-height:1.14!important;
+}
