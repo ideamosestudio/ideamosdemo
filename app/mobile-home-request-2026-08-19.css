@@ -29,6 +29,76 @@
   }
 }
 
+/* The desktop-only/mobile-only text swap only kicked in at max-width:600px,
+   leaving a 601-700px gap where the rest of the site already treats content
+   as mobile but button labels still showed the desktop text. Extend the
+   swap to the full mobile range so it's consistent. */
+@media(min-width:601px) and (max-width:700px){
+  #site-root .desktop-only{display:none!important}
+  #site-root .mobile-only{display:inline!important}
+}
+
+/* A pair of CTAs side by side only makes sense where there's room for both
+   (desktop). Below 1401px, keep the first of any pair and drop the second
+   instead of stacking both — one clear action beats two competing ones. */
+@media(max-width:1400px){
+  #site-root .home-page .hero-actions>*:nth-child(2),
+  #site-root .home-page .ecommerce-actions>*:nth-child(2),
+  #site-root .home-page .pdw-actions>*:nth-child(2),
+  #site-root .home-page .home-testimonials__actions>*:nth-child(2){
+    display:none!important;
+  }
+
+  #site-root .home-page .hero-actions,
+  #site-root .home-page .ecommerce-actions,
+  #site-root .home-page .pdw-actions,
+  #site-root .home-page .home-testimonials__actions{
+    justify-content:center!important;
+  }
+
+  /* A leftover mobile rule kept the SECOND ecommerce button and hid the
+     first — the opposite of "always the first". Flip it back. */
+  #site-root .home-page .ecommerce-actions .cta-glow.primary{
+    display:inline-flex!important;
+    width:100%!important;
+    max-width:360px!important;
+    margin-inline:auto!important;
+  }
+  #site-root .home-page .ecommerce-actions .cta-glow.secondary{
+    display:none!important;
+  }
+}
+
+/* Mobile: everything centered — text, images, the single remaining button. */
+@media(max-width:700px){
+  #site-root .home-page .statement-copyblock,
+  #site-root .home-page .google-content,
+  #site-root .home-page .human-copy{
+    text-align:center!important;
+  }
+
+  #site-root .home-page .statement-copyblock>*,
+  #site-root .home-page .google-content>*,
+  #site-root .home-page .human-copy>*{
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  #site-root .home-page .statement .happy-clients,
+  #site-root .home-page .statement .orange-cta,
+  #site-root .home-page .google-content .orange-cta,
+  #site-root .home-page .human-copy .orange-cta{
+    display:table!important;
+  }
+
+  #site-root .home-page .hero-actions,
+  #site-root .home-page .ecommerce-actions,
+  #site-root .home-page .pdw-actions,
+  #site-root .home-page .home-testimonials__actions{
+    align-items:center!important;
+  }
+}
+
 /* 701-999px: a two-column split can't fit a real headline column next to an
    image with a sane minimum width in this range (the math doesn't close —
    verified live: forcing two columns here squeezed the text column down to
@@ -40,12 +110,6 @@
     grid-template-columns:1fr!important;
     align-items:center!important;
     text-align:center!important;
-  }
-
-  #site-root .home-page .statement h2,
-  #site-root .home-page .google-content h2{
-    font-size:clamp(30px,6vw,44px)!important;
-    line-height:1.08!important;
   }
 
   #site-root .home-page .statement-copyblock,
@@ -71,7 +135,6 @@
   }
 
   #site-root .home-page .google-content h3{
-    font-size:17px!important;
     margin:10px 0!important;
   }
 
@@ -108,11 +171,6 @@
     align-items:start!important;
   }
 
-  #site-root .home-page .statement h2{
-    font-size:clamp(32px,4.2vw,52px)!important;
-    line-height:1.05!important;
-  }
-
   /* Same gap as the stacked band below: no override existed here either,
      so this badge rendered at its 520px base width, competing with the title. */
   #site-root .home-page .statement .happy-clients{
@@ -128,8 +186,6 @@
   }
 
   #site-root .home-page .statement .statement-copy{
-    font-size:14.5px!important;
-    line-height:1.45!important;
     margin-bottom:20px!important;
   }
 
@@ -148,19 +204,8 @@
     margin-top:8px!important;
   }
 
-  #site-root .home-page .google-content h2{
-    font-size:clamp(28px,4vw,46px)!important;
-    line-height:1.05!important;
-  }
-
   #site-root .home-page .google-content h3{
-    font-size:16px!important;
     margin:8px 0!important;
-  }
-
-  #site-root .home-page .google-content .body-copy{
-    font-size:14.5px!important;
-    line-height:1.45!important;
   }
 
   #site-root .home-page .shop-layout{
@@ -307,8 +352,6 @@
     order:2;
     max-width:330px!important;
     margin:0 auto!important;
-    font-size:27.5px!important;
-    line-height:1.12!important;
   }
 
   #site-root .home-testimonials__media{
@@ -394,12 +437,115 @@
   }
 }
 
-/* 25/08/2026: section titles were oversized at every breakpoint from years of
-   layered overrides (up to 54-124px depending on width). One unconditional rule,
-   placed last, wins over all of them regardless of viewport. */
+/* ============================================================
+   TYPE SCALE — approved manual (25/08/2026), applied to every
+   home-page section title/subtitle/body/eyebrow the same way,
+   at all three breakpoints, replacing the scattered per-section
+   sizes above. One criterion instead of one-off patches. */
+
 #site-root .home-page .statement h2,
 #site-root .home-page .google-content h2,
-#site-root .pdw-heading h2{
-  font-size:clamp(26px,3vw,38px)!important;
-  line-height:1.14!important;
+#site-root .home-page .section-heading h2,
+#site-root .home-page .human-copy h2,
+#site-root .home-page .home-testimonials__copy h2{
+  font-weight:800!important;
+}
+
+#site-root .home-page .statement>p,
+#site-root .home-page .section-heading>p,
+#site-root .home-page .google-content>p:first-child,
+#site-root .home-page .human-copy>p{
+  font-weight:700!important;
+}
+
+/* Desktop ≥1401px — title 46 / subtitle 20 / body 16 / eyebrow 13 (2.3x ratio) */
+@media(min-width:1401px){
+  #site-root .home-page .statement h2,
+  #site-root .home-page .google-content h2,
+  #site-root .home-page .section-heading h2,
+  #site-root .home-page .human-copy h2,
+  #site-root .home-page .home-testimonials__copy h2{
+    font-size:46px!important;
+    line-height:1.08!important;
+  }
+  #site-root .home-page .statement h3,
+  #site-root .home-page .google-content h3{
+    font-size:20px!important;
+    line-height:1.55!important;
+  }
+  #site-root .home-page.home-page.home-page .statement-copy,
+  #site-root .home-page.home-page.home-page .google-content .body-copy,
+  #site-root .home-page.home-page.home-page .section-heading>span,
+  #site-root .home-page.home-page.home-page .human-copy>span{
+    font-size:16px!important;
+    line-height:1.65!important;
+  }
+  #site-root .home-page .section-heading>p,
+  #site-root .home-page .google-content>p:first-child,
+  #site-root .home-page .human-copy>p{
+    font-size:13px!important;
+  }
+  #site-root .home-page .cta-glow,
+  #site-root .home-page .orange-cta{
+    font-size:12px!important;
+    min-height:52px!important;
+  }
+}
+
+/* Tablet 701-1400px — title 32 / subtitle 16 / body 14.5 / eyebrow 12 (2x ratio) */
+@media(min-width:701px) and (max-width:1400px){
+  #site-root .home-page .statement h2,
+  #site-root .home-page .google-content h2,
+  #site-root .home-page .section-heading h2,
+  #site-root .home-page .human-copy h2,
+  #site-root .home-page .home-testimonials__copy h2{
+    font-size:32px!important;
+    line-height:1.16!important;
+  }
+  #site-root .home-page .statement h3,
+  #site-root .home-page .google-content h3{
+    font-size:16px!important;
+    line-height:1.5!important;
+  }
+  #site-root .home-page.home-page.home-page .statement-copy,
+  #site-root .home-page.home-page.home-page .google-content .body-copy,
+  #site-root .home-page.home-page.home-page .section-heading>span,
+  #site-root .home-page.home-page.home-page .human-copy>span{
+    font-size:14.5px!important;
+    line-height:1.55!important;
+  }
+  #site-root .home-page .section-heading>p,
+  #site-root .home-page .google-content>p:first-child,
+  #site-root .home-page .human-copy>p{
+    font-size:12px!important;
+  }
+}
+
+/* Mobile ≤700px — title 27 / subtitle 14 / body 13.5 / eyebrow 11 (1.9x ratio) */
+@media(max-width:700px){
+  #site-root .home-page .statement h2,
+  #site-root .home-page .google-content h2,
+  #site-root .home-page .section-heading h2,
+  #site-root .home-page .human-copy h2,
+  #site-root .home-page .home-testimonials__copy h2{
+    font-size:27px!important;
+    line-height:1.22!important;
+  }
+  #site-root .home-page .statement h3,
+  #site-root .home-page .google-content h3{
+    font-size:14px!important;
+    line-height:1.5!important;
+  }
+  #site-root .home-page.home-page.home-page .statement-copy,
+  #site-root .home-page.home-page.home-page .google-content .body-copy,
+  #site-root .home-page.home-page.home-page .section-heading>span,
+  #site-root .home-page.home-page.home-page .human-copy>span{
+    font-size:13.5px!important;
+    line-height:1.55!important;
+  }
+  #site-root .home-page .section-heading>p,
+  #site-root .home-page .google-content>p:first-child,
+  #site-root .home-page .human-copy>p{
+    font-size:11px!important;
+  }
 }

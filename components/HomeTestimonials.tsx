@@ -91,7 +91,7 @@ export default function HomeTestimonials() {
           <div><strong>{testimonial.name}</strong><span>{testimonial.role}</span></div>
         </div>
         <div className="home-testimonials__actions">
-          <a className="orange-cta" href={WHATSAPP_URL}>CHATEÁ CON UN EXPERTO</a>
+          <a className="orange-cta" href={WHATSAPP_URL}><span className="desktop-only">CHATEÁ CON UN EXPERTO</span><span className="mobile-only">Contactanos</span></a>
           {testimonial.site && <a className="orange-cta home-testimonials__site" href={testimonial.site} target="_blank" rel="noreferrer">VER SITIO WEB</a>}
         </div>
       </div>

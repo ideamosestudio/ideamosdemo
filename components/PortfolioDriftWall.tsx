@@ -107,7 +107,7 @@ export default function PortfolioDriftWall() {
       <CasesGallery firstRow={mobileFirstRow} secondRow={mobileSecondRow} />
     </div>
     <div className="pdw-actions">
-      <a className="cta-glow primary" href={WHATSAPP_URL}><span>Solicitá asesoramiento</span></a>
+      <a className="cta-glow primary" href={WHATSAPP_URL}><span className="desktop-only">Solicitá asesoramiento</span><span className="mobile-only">Contactanos</span></a>
       <a className="cta-glow secondary" href={WHATSAPP_URL}><span>Quiero contactarme</span></a>
     </div>
 
