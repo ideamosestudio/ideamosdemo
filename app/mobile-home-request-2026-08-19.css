@@ -10,9 +10,67 @@
   letter-spacing:2px!important;
 }
 
-/* Tablet/small-laptop band (701-1400px): keep the two-column layout instead of
-   stacking, and scale the heading down so it fits its now-narrower column. */
-@media(min-width:701px) and (max-width:1400px){
+/* 701-999px: a two-column split can't fit a real headline column next to an
+   image with a sane minimum width in this range (the math doesn't close —
+   verified live: forcing two columns here squeezed the text column down to
+   ~200px, wrapping "confianza" one word per line). Stack instead, same as
+   the sub-700px treatment but sized for a tablet, not a phone. */
+@media(min-width:701px) and (max-width:999px){
+  #site-root .home-page .statement,
+  #site-root .home-page .google-scene{
+    grid-template-columns:1fr!important;
+    align-items:center!important;
+    text-align:center!important;
+  }
+
+  #site-root .home-page .statement h2,
+  #site-root .home-page .google-content h2{
+    font-size:clamp(30px,6vw,44px)!important;
+    line-height:1.08!important;
+  }
+
+  #site-root .home-page .statement-copyblock,
+  #site-root .home-page .google-content{
+    max-width:560px!important;
+    margin-inline:auto!important;
+  }
+
+  #site-root .home-page .statement .screen-swap,
+  #site-root .home-page .google-visual{
+    max-width:480px!important;
+    width:100%!important;
+    margin:32px auto 0!important;
+  }
+
+  #site-root .home-page .google-content h3{
+    font-size:17px!important;
+    margin:10px 0!important;
+  }
+
+  #site-root .home-page .shop-layout{
+    grid-template-columns:1fr!important;
+    gap:36px!important;
+  }
+
+  #site-root .home-page .shop-column{
+    grid-template-columns:1fr 1fr!important;
+    gap:28px 24px!important;
+    text-align:left!important;
+  }
+
+  #site-root .home-page .phone-stage{
+    grid-row:auto!important;
+    order:2!important;
+    width:100%!important;
+    max-width:320px!important;
+    height:460px!important;
+    margin:0 auto!important;
+  }
+}
+
+/* Tablet/small-laptop band (1000-1400px): two columns fit comfortably here,
+   scale the heading down so it fits its narrower column. */
+@media(min-width:1000px) and (max-width:1400px){
   /* The image is a fixed-aspect landscape screenshot: it will always be shorter
      than a full paragraph of copy. Centering a short box next to a tall one is
      what read as "no relation between the sides" — top-aligning both to the
@@ -74,10 +132,13 @@
     grid-template-columns:minmax(160px,1fr) minmax(260px,.9fr) minmax(160px,1fr)!important;
     gap:24px!important;
   }
+}
 
-  /* The legacy 1400px rule split each shop-column's 4 articles into a 2x2 grid,
-     which turned the intended 3-column layout (text / phone / text) into what
-     looked like 5 columns. Force each side back to a single stacked column. */
+/* Both sub-bands share the shop-column/phone-stage placement fix: the legacy
+   1400px rule split each shop-column's 4 articles into a 2x2 grid, which
+   turned the intended 3-column layout (text / phone / text) into what looked
+   like 5 columns. Force each side back to a single stacked column. */
+@media(min-width:1000px) and (max-width:1400px){
   #site-root .home-page .shop-column{
     grid-template-columns:1fr!important;
   }
