@@ -54,6 +54,15 @@
     margin-inline:auto!important;
   }
 
+  /* This badge has no override at all between 600px and 1401px, so it fell
+     back to its 520px base width — nearly as wide as the title itself.
+     Text-align:center above doesn't center a block-level img, hence it also
+     sat flush-left while the h2 next to it was centered. */
+  #site-root .home-page .statement .happy-clients{
+    width:min(220px,55%)!important;
+    margin:0 auto 20px!important;
+  }
+
   #site-root .home-page .statement .screen-swap,
   #site-root .home-page .google-visual{
     max-width:480px!important;
@@ -102,6 +111,13 @@
   #site-root .home-page .statement h2{
     font-size:clamp(32px,4.2vw,52px)!important;
     line-height:1.05!important;
+  }
+
+  /* Same gap as the stacked band below: no override existed here either,
+     so this badge rendered at its 520px base width, competing with the title. */
+  #site-root .home-page .statement .happy-clients{
+    width:min(200px,45%)!important;
+    margin-bottom:20px!important;
   }
 
   #site-root .home-page .statement .screen-swap{
