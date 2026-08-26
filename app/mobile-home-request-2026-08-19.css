@@ -446,8 +446,7 @@
 #site-root .home-page .statement h2,
 #site-root .home-page .google-content h2,
 #site-root .home-page .section-heading h2,
-#site-root .home-page .human-copy h2,
-#site-root .home-page .home-testimonials__copy h2{
+#site-root .home-page .human-copy h2{
   font-weight:800!important;
 }
 
@@ -463,8 +462,7 @@
   #site-root .home-page .statement h2,
   #site-root .home-page .google-content h2,
   #site-root .home-page .section-heading h2,
-  #site-root .home-page .human-copy h2,
-  #site-root .home-page .home-testimonials__copy h2{
+  #site-root .home-page .human-copy h2{
     font-size:46px!important;
     line-height:1.08!important;
   }
@@ -497,8 +495,7 @@
   #site-root .home-page .statement h2,
   #site-root .home-page .google-content h2,
   #site-root .home-page .section-heading h2,
-  #site-root .home-page .human-copy h2,
-  #site-root .home-page .home-testimonials__copy h2{
+  #site-root .home-page .human-copy h2{
     font-size:32px!important;
     line-height:1.16!important;
   }
@@ -526,8 +523,7 @@
   #site-root .home-page .statement h2,
   #site-root .home-page .google-content h2,
   #site-root .home-page .section-heading h2,
-  #site-root .home-page .human-copy h2,
-  #site-root .home-page .home-testimonials__copy h2{
+  #site-root .home-page .human-copy h2{
     font-size:27px!important;
     line-height:1.22!important;
   }
