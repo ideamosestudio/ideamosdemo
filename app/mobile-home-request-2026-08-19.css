@@ -10,6 +10,25 @@
   letter-spacing:2px!important;
 }
 
+/* The compact button style (11px text, 50px tall) only kicked in at 1401px+;
+   below that, every CTA fell back to the old default (14px text, 62px tall) —
+   so buttons were literally bigger on a laptop than on a 1920px desktop.
+   Extend the compact, desktop-matching style down through the whole
+   701-1400px band so button weight doesn't jump around by viewport. */
+@media(min-width:701px) and (max-width:1400px){
+  #site-root .cta-glow,
+  #site-root .orange-cta,
+  #site-root .contact-main button{
+    min-height:50px!important;
+    padding:0 40px!important;
+    font-family:"Poppins",Arial,sans-serif!important;
+    font-size:11px!important;
+    font-weight:600!important;
+    line-height:1!important;
+    letter-spacing:1px!important;
+  }
+}
+
 /* 701-999px: a two-column split can't fit a real headline column next to an
    image with a sane minimum width in this range (the math doesn't close —
    verified live: forcing two columns here squeezed the text column down to
