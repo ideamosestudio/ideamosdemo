@@ -22,10 +22,30 @@
     line-height:1.05!important;
   }
 
+  /* A legacy rule shrank this image container to 360px while the text column next
+     to it runs 600px+ tall — that mismatch is what read as "no relation between
+     the two sides". Give the image room to match the text's weight. */
+  #site-root .home-page .statement .screen-swap{
+    min-height:0!important;
+    aspect-ratio:1.46/1!important;
+    width:100%!important;
+  }
+
+  #site-root .home-page .statement .statement-copy{
+    font-size:14.5px!important;
+    line-height:1.45!important;
+    margin-bottom:20px!important;
+  }
+
+  #site-root .home-page .statement h3{
+    margin-bottom:12px!important;
+  }
+
   /* Same collapse-to-1fr rule also hit the Google section and the shop layout. */
   #site-root .home-page .google-scene{
-    grid-template-columns:minmax(0,.9fr) minmax(320px,1.1fr)!important;
+    grid-template-columns:minmax(0,.72fr) minmax(340px,1.28fr)!important;
     gap:40px!important;
+    align-items:center!important;
   }
 
   #site-root .home-page .google-content h2{
@@ -35,11 +55,24 @@
 
   #site-root .home-page .google-content h3{
     font-size:16px!important;
+    margin:8px 0!important;
+  }
+
+  #site-root .home-page .google-content .body-copy{
+    font-size:14.5px!important;
+    line-height:1.45!important;
   }
 
   #site-root .home-page .shop-layout{
     grid-template-columns:minmax(160px,1fr) minmax(260px,.9fr) minmax(160px,1fr)!important;
     gap:24px!important;
+  }
+
+  /* The legacy 1400px rule split each shop-column's 4 articles into a 2x2 grid,
+     which turned the intended 3-column layout (text / phone / text) into what
+     looked like 5 columns. Force each side back to a single stacked column. */
+  #site-root .home-page .shop-column{
+    grid-template-columns:1fr!important;
   }
 
   #site-root .home-page .shop-column h3{
