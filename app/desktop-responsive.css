@@ -202,11 +202,20 @@
   #site-root .shops-intro-copy h3{font-size:clamp(29px,2.45vw,48px)}
   #site-root .shops-intro-copy h3 span{white-space:normal}
   #site-root .shops-advantages-layout{
-    grid-template-columns:minmax(0,.75fr) minmax(280px,1fr) minmax(0,.75fr)!important;
+    grid-template-columns:minmax(0,.7fr) minmax(280px,1fr) minmax(0,.7fr)!important;
     gap:clamp(18px,2.4vw,40px)!important;
     align-items:center;
   }
-  #site-root .shops-phone{grid-row:auto!important;width:100%;max-width:none;min-width:0;margin:0 auto}
+  #site-root .shops-phone{
+    z-index:3;
+    grid-row:auto!important;
+    width:100%;
+    max-width:none;
+    min-width:0;
+    margin:0 auto;
+    transform:scale(clamp(1,calc(1.515 - .029vw),1.22));
+    transform-origin:center;
+  }
   #site-root .shops-feature-column{gap:clamp(24px,2.5vw,36px)}
   #site-root .shops-feature h3{font-size:clamp(17px,1.35vw,25px)}
   #site-root .shops-feature p{font-size:clamp(12px,.86vw,14px)}
