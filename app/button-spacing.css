@@ -18,6 +18,32 @@
   padding-right:35px!important;
 }
 
+/* On phones, CTAs share one stable tap target instead of shrinking to the
+   label. This intentionally follows the fit-content rule above so every
+   mobile section resolves to the same available width. */
+@media(max-width:700px){
+  #site-root :is(
+    .nav-contact,
+    .cta-glow,
+    .orange-cta,
+    .cases-action,
+    .shops-red-cta,
+    .md-action,
+    .pw-action,
+    .price-cta,
+    .contact-submit,
+    .ideamos-footer__whatsapp
+  ){
+    width:min(100%,360px)!important;
+    min-height:46px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    align-items:center;
+    justify-content:center;
+    text-align:center!important;
+  }
+}
+
 /* Descriptive copy follows one quieter, darker hierarchy across light sections. */
 #site-root :is(
   .statement-copy,
