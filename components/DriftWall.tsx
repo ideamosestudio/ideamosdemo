@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useSyncExternalStore } from "react";
-import "./DriftWall.css";
 
 export type DriftWallItem = { image: string; fullImage?: string; title?: string; href?: string; height?: number };
 

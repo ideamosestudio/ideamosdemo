@@ -53,3 +53,19 @@ test("robots y archivos para agentes están publicados", async () => {
   await access(new URL("security.txt", out));
   await access(new URL("public/googlecac1ad33023af32c.html", root));
 });
+
+test("la portada conserva las optimizaciones críticas de rendimiento", async () => {
+  const html = await readFile(new URL("index.html", out), "utf8");
+  const stylesheets = html.match(/<link rel="stylesheet"/g) ?? [];
+
+  assert.ok(!html.includes("fonts.googleapis.com"));
+  assert.ok(!html.includes('<script src="https://www.googletagmanager.com/gtag'));
+  for (const prefix of ["", "shop-", "frosz-"]) {
+    for (const number of [1, 2, 3]) {
+      assert.ok(!html.includes(`/media/${prefix}screen-${number}.png`));
+    }
+  }
+  assert.ok(html.includes("/media/screen-1.webp"));
+  assert.ok(html.includes('rel="preload" href="/fonts/Gilroy-ExtraBold.otf"'));
+  assert.ok(stylesheets.length <= 2, `La portada carga ${stylesheets.length} hojas de estilo`);
+});

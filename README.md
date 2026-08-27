@@ -29,7 +29,7 @@ npm run lint
 npm test
 ```
 
-`npm test` genera el sitio estático y valida títulos, URLs canónicas, sitemap, robots y archivos para asistentes de IA.
+`npm test` genera el sitio estático y valida títulos, URLs canónicas, sitemap, robots, archivos para asistentes de IA y las optimizaciones críticas de carga.
 
 ## Estructura principal
 
@@ -50,6 +50,13 @@ Las rutas públicas de prueba no deben agregarse a `app/`. Para experimentar, us
 - Contacto de seguridad: `https://ideamos.com.ar/security.txt`
 
 Los títulos, descripciones, datos sociales y URLs canónicas se generan desde `lib/seo.ts`. Toda página pública nueva debe usar `createPageMetadata` y agregarse a `app/sitemap.ts`.
+
+## Rendimiento
+
+- Las capturas del sitio se publican en WebP y con dimensiones explícitas.
+- El video decorativo principal se reserva para escritorio; en móvil se prioriza el contenido.
+- Google Analytics se carga tras la primera interacción o cuando la página queda inactiva.
+- Las fuentes externas no deben agregarse a la ruta crítica.
 
 ## Publicación
 

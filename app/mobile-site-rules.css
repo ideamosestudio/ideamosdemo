@@ -134,3 +134,6 @@
     justify-content:center!important;
   }
 }
+@media(max-width:767px){
+  #site-root .hero-video{display:none!important}
+}

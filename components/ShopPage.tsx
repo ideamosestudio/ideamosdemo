@@ -78,7 +78,7 @@ export default function ShopPage() {
       </header>
       <div className="shops-intro-layout">
         <div className="shops-intro-copy">
-          <div className="shops-happy"><img src={asset("/media/happy-clients.png")} alt="Más de 2000 clientes felices"/></div>
+          <div className="shops-happy"><img src={asset("/media/happy-clients.webp")} alt="Más de 2000 clientes felices" width="693" height="54"/></div>
           <h3><span>Vendé las 24 horas del día,</span><span>los 7 días de la semana</span></h3>
           <h4><b>Diseño Web y Marketing Digital</b> de alto impacto</h4>
           <p>Tener una tienda online ofrece numerosas ventajas que pueden transformar su negocio. Permite llegar a una audiencia global, superando las limitaciones geográficas de un local físico, y le permite vender sus productos o servicios las 24 horas del día, los 7 días de la semana.</p>

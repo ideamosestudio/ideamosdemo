@@ -52,12 +52,14 @@ function shouldUsePosterOnly() {
   const constrainedMobileConnection =
     window.matchMedia("(max-width: 767px)").matches &&
     effectiveType === "3g";
+  const mobileViewport = window.matchMedia("(max-width: 767px)").matches;
 
   return Boolean(
     reducedMotion ||
       connection?.saveData ||
       verySlowConnection ||
-      constrainedMobileConnection,
+      constrainedMobileConnection ||
+      mobileViewport,
   );
 }
 

@@ -145,7 +145,7 @@ export default function MobileMenu({ items, logoSrc }: MobileMenuProps) {
       <div className="mobile-menu-grid" aria-hidden="true" />
       <div className="mobile-menu-orbit" aria-hidden="true"><i /><i /></div>
       <div className="mobile-menu-top">
-        <img src={logoSrc} alt="Ideamos" />
+        <img src={logoSrc} alt="Ideamos" width="870" height="213" />
         <span>MENÚ</span>
       </div>
 

@@ -8,7 +8,7 @@ const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${pat
 const heroLogos = ["wynns", "uba", "stromberg", "santillana", "remax", "oner", "macba", "ivess", "kapelusz", "bgh"];
 export function HeroLogoTrack() {
   return <div className="logo-track">{[...heroLogos, ...heroLogos].map((name, index) =>
-    <img key={`${name}-${index}`} src={asset(`/logos/${name}.webp`)} alt={name} loading="lazy" decoding="async" fetchPriority="low" />
+    <img key={`${name}-${index}`} src={asset(`/logos/${name}.webp`)} alt={name} width="1644" height="528" loading="lazy" decoding="async" fetchPriority="low" />
   )}</div>;
 }
 
@@ -85,7 +85,7 @@ export function HomeClosingSections({ showAdvisory = true, darkGrid = false }: {
         {darkGrid && <DarkGridBackground />}
         <div className="footer-top">
           <div className="footer-brand">
-            <img src={asset("/logos/ideamos-light.webp")} alt="Ideamos" loading="lazy" decoding="async" />
+            <img src={asset("/logos/ideamos-light.webp")} alt="Ideamos" width="870" height="213" loading="lazy" decoding="async" />
             <h3>Más estrategia.<br/><em>Más resultados.</em></h3>
           </div>
           <div>

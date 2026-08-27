@@ -5,7 +5,6 @@ import SiteHeader from "../../components/SiteHeader";
 import PortfolioSection from "../../components/PortfolioSection";
 import TestimonialSection from "../../components/TestimonialSection";
 import { createPageMetadata } from "../../lib/seo";
-import "./casos.css";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 

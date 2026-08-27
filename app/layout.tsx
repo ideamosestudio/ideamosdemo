@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
+import DeferredAnalytics from "../components/DeferredAnalytics";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import WhatsAppTracking from "../components/WhatsAppTracking";
 import { GA_MEASUREMENT_ID } from "../lib/whatsapp";
@@ -18,6 +18,8 @@ import "./mobile-home-request-2026-08-19.css";
 import "./spacing-consistency.css";
 import "./desktop-responsive.css";
 import "./mobile-button-fix.css";
+import "./casos-de-exito/casos.css";
+import "../components/DriftWall.css";
 
 const homeMetadata = createPageMetadata({
   title: "Diseño web y marketing digital | Ideamos",
@@ -113,9 +115,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Poppins:wght@400;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+        <link rel="preload" href="/fonts/Gilroy-ExtraBold.otf" as="font" type="font/otf" crossOrigin="anonymous" />
         <link rel="describedby" href="/llms.txt" />
         <script
           type="application/ld+json"
@@ -128,10 +128,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <FloatingWhatsApp />
         <WhatsAppTracking />
-        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}',{anonymize_ip:true});`}
-        </Script>
+        <DeferredAnalytics measurementId={GA_MEASUREMENT_ID} />
       </body>
     </html>
   );
