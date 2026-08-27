@@ -15,6 +15,7 @@ import "./footer-credits.css";
 import "./mobile-home-request-2026-08-19.css";
 import "./spacing-consistency.css";
 import "./desktop-responsive.css";
+import "./mobile-button-fix.css";
 
 export const metadata: Metadata = {
   title: "Ideamos — Diseño web & marketing digital",

@@ -1,0 +1,49 @@
+/* Final mobile CTA contract. Keep this stylesheet last in the import order. */
+@media(max-width:700px){
+  #site-root#site-root#site-root :is(
+    .cta-glow,
+    .orange-cta,
+    .cases-action,
+    .shops-red-cta,
+    .md-action,
+    .pw-action,
+    .price-cta,
+    .contact-submit,
+    .ideamos-footer__whatsapp
+  ){
+    box-sizing:border-box!important;
+    width:fit-content!important;
+    min-width:0!important;
+    min-height:0!important;
+    max-width:calc(100vw - 40px)!important;
+    height:auto!important;
+    padding:15px 20px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    flex:0 0 auto!important;
+    align-self:center!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:0!important;
+    line-height:1!important;
+    text-align:center!important;
+    white-space:normal!important;
+  }
+
+  #site-root#site-root#site-root :is(
+    .cta-glow,
+    .orange-cta,
+    .cases-action,
+    .shops-red-cta,
+    .md-action,
+    .pw-action,
+    .price-cta,
+    .contact-submit,
+    .ideamos-footer__whatsapp
+  ) > *{
+    margin-left:0!important;
+    margin-right:0!important;
+    text-align:center!important;
+    transform:none!important;
+  }
+}
