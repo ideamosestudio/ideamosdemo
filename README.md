@@ -47,7 +47,7 @@ Las rutas públicas de prueba no deben agregarse a `app/`. Para experimentar, us
 - Robots: `https://ideamos.com.ar/robots.txt`
 - Resumen para agentes: `https://ideamos.com.ar/llms.txt`
 - Información ampliada: `https://ideamos.com.ar/llms-full.txt`
-- Contacto de seguridad: `https://ideamos.com.ar/.well-known/security.txt`
+- Contacto de seguridad: `https://ideamos.com.ar/security.txt`
 
 Los títulos, descripciones, datos sociales y URLs canónicas se generan desde `lib/seo.ts`. Toda página pública nueva debe usar `createPageMetadata` y agregarse a `app/sitemap.ts`.
 

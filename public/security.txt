@@ -1,4 +1,4 @@
 Contact: mailto:hola@ideamos.com.ar
-Canonical: https://ideamos.com.ar/.well-known/security.txt
+Canonical: https://ideamos.com.ar/security.txt
 Preferred-Languages: es, en
 Expires: 2027-08-27T23:59:59.000Z
