@@ -68,10 +68,10 @@ export default function Home() {
         <h1>
           <span className="hero-title-desktop">Expertos en crear webs</span>
           <em className="hero-title-desktop">que atraen clientes y ventas</em>
-          <span className="hero-title-mobile" aria-label="Expertos en crear webs que atraer clientes y ventas">
+          <span className="hero-title-mobile" aria-label="Expertos en crear webs que atraen clientes y ventas">
             <span>Expertos en</span>
             <span>Crear webs</span>
-            <span>Que atraer</span>
+            <span>Que atraen</span>
             <span>Clientes y ventas</span>
           </span>
         </h1>
