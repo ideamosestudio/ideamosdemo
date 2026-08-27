@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "../../lib/seo";
 import "./shops.css";
 
-export const metadata: Metadata = {
-  title: "Tiendas Online — Ecommerce profesional | Ideamos",
-  description: "Tiendas online profesionales, sin comisiones y preparadas para vender y crecer.",
-};
+export const metadata = createPageMetadata({
+  title: "Tiendas online profesionales sin comisiones | Ideamos",
+  description: "Creamos tiendas online profesionales, administrables, con pagos y envíos integrados, sin comisiones de Ideamos por cada venta.",
+  path: "/tiendas-online/",
+});
 
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   return children;

@@ -1,6 +1,0 @@
-@media(max-width:720px){
-  .ideamos-footer__cta-copy{width:100%;min-width:0}
-  .ideamos-footer__cta h2{width:100%;max-width:100%;font-size:clamp(39px,10.6vw,48px);letter-spacing:-.06em;line-height:.96}
-  .ideamos-footer__contact{width:100%;max-width:100%}
-  .ideamos-footer__contact h3{width:100%;max-width:300px;font-size:27px!important;text-align:center}
-}

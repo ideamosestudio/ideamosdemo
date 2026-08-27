@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
 import InternalPage, { ServicePage } from "../../components/InternalPage";
+import { createPageMetadata } from "../../lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Contacto — Hablemos de tu proyecto | Ideamos",
-  description: "Contanos qué necesitás. Te respondemos con ideas concretas y próximos pasos.",
-};
+  description: "Contanos qué necesita tu negocio. Coordiná una asesoría online sin cargo con Ideamos y recibí ideas concretas y próximos pasos.",
+  path: "/contacto/",
+});
 
 const page: ServicePage = {
   eyebrow:"CONTACTO", title:"Hablemos de tu proyecto",

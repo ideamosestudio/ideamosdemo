@@ -82,7 +82,7 @@ export default function PosicionamientoWebPage() {
           <div>El posicionamiento web puede lograrse de dos formas principales: Google Ads y SEO. Ambas estrategias aumentan la visibilidad de tu sitio en los motores de búsqueda, pero utilizan enfoques diferentes.</div>
           <Action>Quiero agendar una asesoría</Action>
         </div>
-        <div className="pw-media pw-landscape"><video autoPlay muted loop playsInline preload="metadata"><source src={asset("/media/posicionamiento-video-ads.mp4")} type="video/mp4" /></video></div>
+        <div className="pw-media pw-landscape"><ManagedBackgroundVideo src={asset("/media/posicionamiento-video-ads.mp4")} /></div>
       </div>
     </section>
 
@@ -97,7 +97,7 @@ export default function PosicionamientoWebPage() {
           <div>Google Ads es una forma rápida de mostrar tu web en las primeras búsquedas. Segmentamos por ubicación, intereses e intención para llegar a tu público objetivo de manera precisa. Solo pagás cuando alguien hace clic.</div>
           <Action>Quiero agendar una asesoría</Action>
         </div>
-        <div className="pw-media pw-landscape"><video autoPlay muted loop playsInline preload="metadata"><source src={asset("/media/posicionamiento-google.webm")} type="video/webm" /></video></div>
+        <div className="pw-media pw-landscape"><ManagedBackgroundVideo src={asset("/media/posicionamiento-google.webm")} /></div>
       </div>
     </section>
 
@@ -114,7 +114,7 @@ export default function PosicionamientoWebPage() {
     </LightGridFrame>
 
     <section className="pw-wide-video" aria-label="Estrategia de posicionamiento SEO">
-      <video autoPlay muted loop playsInline preload="metadata"><source src={asset("/media/posicionamiento-seo.mp4")} type="video/mp4" /></video>
+      <ManagedBackgroundVideo src={asset("/media/posicionamiento-seo.mp4")} />
     </section>
 
     <LightGridFrame className="positioning-light-grid">

@@ -1,18 +1,19 @@
-import type { Metadata } from "next";
 import ManagedBackgroundVideo from "../components/ManagedBackgroundVideo";
 import { HeroChrome, HomeAdvisorySection, HomeClosingSections } from "../../components/SharedHomeSections";
 import LightGridFrame from "../../components/LightGridFrame";
 import SiteHeader from "../../components/SiteHeader";
 import PortfolioSection from "../../components/PortfolioSection";
 import TestimonialSection from "../../components/TestimonialSection";
+import { createPageMetadata } from "../../lib/seo";
 import "./casos.css";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
-export const metadata: Metadata = {
-  title: "Casos de éxito — Ideamos",
-  description: "Conocé proyectos, estrategias y resultados reales logrados junto a nuestros clientes.",
-};
+export const metadata = createPageMetadata({
+  title: "Casos de éxito en diseño web | Ideamos",
+  description: "Conocé proyectos reales de diseño web, ecommerce y marketing digital creados por Ideamos para marcas y empresas de distintos rubros.",
+  path: "/casos-de-exito/",
+});
 
 export default function Page() {
   return <main className="internal-page cases-page">

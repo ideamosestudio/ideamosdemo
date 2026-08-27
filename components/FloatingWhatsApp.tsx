@@ -12,7 +12,7 @@ export default function FloatingWhatsApp() {
       aria-label="Contactar a Ideamos por WhatsApp"
     >
       <span className="floating-whatsapp__label" aria-hidden="true">¿Hablamos?</span>
-      <img src={asset("/icons/whatsapp-floating.svg")} alt="" aria-hidden="true" />
+      <img src={asset("/icons/whatsapp-floating.svg")} alt="" aria-hidden="true" decoding="async" />
     </a>
   );
 }

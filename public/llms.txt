@@ -1,0 +1,25 @@
+# Ideamos
+
+> Ideamos es un estudio digital de Buenos Aires especializado en diseño web, tiendas online, marketing digital, SEO y Google Ads. Ayuda a empresas y marcas a generar confianza, consultas y ventas mediante estrategia, diseño y tecnología.
+
+Información oficial del estudio. Idioma principal: español de Argentina. Sitio canónico: https://ideamos.com.ar/. Para una descripción ampliada y estructurada, consultar llms-full.txt.
+
+## Información principal
+
+- [Resumen completo para agentes](https://ideamos.com.ar/llms-full.txt): Servicios, propuesta de valor, cobertura y datos de contacto verificables.
+- [Inicio](https://ideamos.com.ar/): Presentación del estudio, experiencia, servicios y proyectos.
+- [Diseño web](https://ideamos.com.ar/diseno-web-autoadministrable/): Sitios web profesionales orientados a confianza, consultas y ventas.
+- [Tiendas online](https://ideamos.com.ar/tiendas-online/): Ecommerce profesional, administrable y sin comisiones de Ideamos por venta.
+- [Marketing digital](https://ideamos.com.ar/marketing-digital/): Estrategias digitales para generar leads y ventas.
+- [Posicionamiento en Google](https://ideamos.com.ar/posicionamiento-web/): Servicios de SEO, Google Ads y visibilidad local.
+- [Casos de éxito](https://ideamos.com.ar/casos-de-exito/): Selección de trabajos y resultados para clientes.
+
+## Contacto
+
+- [Contacto](https://ideamos.com.ar/contacto/): Formulario y canales oficiales.
+- [Planes y precios](https://ideamos.com.ar/precios/): Alternativas de contratación publicadas por Ideamos.
+
+## Optional
+
+- [Instagram](https://www.instagram.com/ideamosargentina/): Perfil social oficial.
+- [Sitemap](https://ideamos.com.ar/sitemap.xml): Inventario de páginas indexables.

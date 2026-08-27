@@ -115,9 +115,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
             {section.paragraphs?.map((copy, index) => <span key={index}>{copy}</span>)}
             <a className="orange-cta" href={WHATSAPP_URL}>QUIERO AGENDAR UNA ASESORÍA</a>
           </div>
-          <video autoPlay muted loop playsInline>
-            <source src={asset("/media/human.mp4")} type="video/mp4" />
-          </video>
+          <ManagedBackgroundVideo src={asset("/media/human.mp4")} />
         </section>;
       }
 
@@ -133,13 +131,11 @@ export default function InternalPage({ page }: { page: ServicePage }) {
             {section.actions && <Actions />}
           </header>
           <div className="service-visual-media">
-            <img src={asset("/media/xtreme-service.png")} alt="Sitio web Xtreme desarrollado por Ideamos" />
+            <img src={asset("/media/xtreme-service.webp")} alt="Sitio web Xtreme desarrollado por Ideamos" loading="lazy" decoding="async" />
           </div>
         </section>
         {section.afterVideo && <section className="service-showcase-video" aria-label="Proyecto web desarrollado por Ideamos">
-          <video autoPlay muted loop playsInline preload="metadata">
-            <source src={asset(section.afterVideo)} type={section.afterVideo.endsWith(".webm") ? "video/webm" : "video/mp4"} />
-          </video>
+          <ManagedBackgroundVideo src={asset(section.afterVideo)} />
         </section>}
         </Fragment>;
       }

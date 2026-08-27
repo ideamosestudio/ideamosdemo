@@ -1,7 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import "../app/test2/drift-wall.css";
+import { useCallback, useEffect, useMemo, useRef, useSyncExternalStore } from "react";
+import "./DriftWall.css";
 
 export type DriftWallItem = { image: string; fullImage?: string; title?: string; href?: string; height?: number };
 
@@ -32,6 +32,12 @@ type DriftWallProps = {
 
 const prefersReducedMotion = () =>
   typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const subscribeReducedMotion = (onStoreChange: () => void) => {
+  const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+  media.addEventListener("change", onStoreChange);
+  return () => media.removeEventListener("change", onStoreChange);
+};
 
 const columnFactor = (index: number, variance: number) => {
   const pseudo = ((index * 0.6180339887 + 0.35) % 1) * 2 - 1;
@@ -73,15 +79,7 @@ export default function DriftWall({
   const pointerDampedRef = useRef({ x: 0, y: 0 });
   const lastTsRef = useRef<number | null>(null);
 
-  const [reduced, setReduced] = useState(false);
-
-  useEffect(() => {
-    setReduced(prefersReducedMotion());
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const onChange = (e: MediaQueryListEvent) => setReduced(e.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
+  const reduced = useSyncExternalStore(subscribeReducedMotion, prefersReducedMotion, () => false);
 
   const columnItems = useMemo(() => {
     const cols: DriftWallItem[][] = Array.from({ length: columns }, () => []);
@@ -208,7 +206,7 @@ export default function DriftWall({
 
   const renderTile = (item: DriftWallItem, id: string, colIndex: number) => {
     const inner = <span className="drift-wall__inner">
-      <img src={item.image} alt={item.title ?? ""} loading="eager" decoding="async" draggable={false} />
+      <img src={item.image} alt={item.title ?? ""} loading="lazy" decoding="async" fetchPriority="low" draggable={false} />
       <span className="drift-wall__overlay" aria-hidden="true" />
     </span>;
     const tileStyle: React.CSSProperties = { height: (item.height ?? tileHeight) + gap };

@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
 import MarketingDigitalPage from "../../components/MarketingDigitalPage";
+import { createPageMetadata } from "../../lib/seo";
 import "./marketing.css";
 
-export const metadata: Metadata = {
-  title: "Marketing Digital — Estrategias que potencian ventas | Ideamos",
-  description: "Sitios web, tiendas online y marketing digital para que tu empresa venda más y más fácil.",
-};
+export const metadata = createPageMetadata({
+  title: "Marketing digital para generar ventas | Ideamos",
+  description: "Estrategias de marketing digital, contenidos y campañas para atraer leads calificados, optimizar resultados y hacer crecer tus ventas.",
+  path: "/marketing-digital/",
+});
 
 export default function Page() {
   return <MarketingDigitalPage />;

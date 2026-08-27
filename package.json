@@ -1,42 +1,36 @@
 {
-  "name": "site-creator-vinext-starter",
-  "version": "0.1.0",
+  "name": "ideamos-web",
+  "version": "1.0.0",
   "private": true,
+  "description": "Sitio institucional de Ideamos, publicado con Next.js y GitHub Pages.",
+  "homepage": "https://ideamos.com.ar",
+  "author": { "name": "Ideamos", "url": "https://ideamos.com.ar" },
   "engines": {
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "vinext dev",
-    "build": "vinext build",
+    "dev": "next dev",
+    "build": "next build",
     "build:pages": "next build",
-    "start": "vinext start",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
-    "db:generate": "drizzle-kit generate"
+    "start": "next start",
+    "test": "npm run build:pages && node --test tests/seo-output.test.mjs",
+    "lint": "eslint . --ignore-pattern .next --ignore-pattern out",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "drizzle-orm": "0.45.2",
-    "next": "16.2.6",
-    "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "next": "16.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "1.37.1",
-    "@tailwindcss/postcss": "4.2.1",
+    "@tailwindcss/postcss": "4.3.3",
     "@types/node": "22.19.19",
-    "@types/react": "19.2.14",
-    "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "6.0.2",
-    "@vitejs/plugin-rsc": "0.5.26",
-    "drizzle-kit": "0.31.10",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5",
     "eslint": "9.39.4",
-    "eslint-config-next": "16.2.6",
-    "react-server-dom-webpack": "19.2.6",
-    "tailwindcss": "4.2.1",
-    "typescript": "5.9.3",
-    "vinext": "0.0.50",
-    "vite": "8.0.13",
-    "wrangler": "4.92.0"
+    "eslint-config-next": "16.3.3",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3"
   },
   "type": "module"
 }

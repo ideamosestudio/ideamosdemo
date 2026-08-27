@@ -15,7 +15,7 @@ type NavigatorWithConnection = Navigator & {
 
 type ManagedBackgroundVideoProps = {
   src: string;
-  poster: string;
+  poster?: string;
   className?: string;
   eager?: boolean;
 };
@@ -63,7 +63,6 @@ function shouldUsePosterOnly() {
 
 export default function ManagedBackgroundVideo({
   src,
-  poster,
   className,
   eager = false,
 }: ManagedBackgroundVideoProps) {
@@ -164,7 +163,6 @@ export default function ManagedBackgroundVideo({
       muted
       loop
       playsInline
-      poster={poster}
       preload={eager ? "metadata" : "none"}
       data-managed-background="true"
       aria-hidden="true"

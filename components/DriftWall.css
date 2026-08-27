@@ -2,8 +2,7 @@
 .drift-wall-vignette{position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(ellipse 82% 78% at 50% 50%,transparent 52%,#0b0b0b 100%)}
 .pdw-section{background:#0b0b0b}
 .pdw-section:before,.pdw-section:after{display:none!important}
-.drift-wall{position:relative;width:100%;height:100%;overflow:hidden;perspective:var(--dw-perspective,1200px);perspective-origin:50% 50%;--dw-tile-w:200px;--dw-tile-h:132px;--dw-gap:18px;--dw-radius:14px;--dw-lift:64px;--dw-dim:.55;--dw-gray:0;--dw-overlay:#060010;--dw-edge:38%}
-.drift-wall{display:flex;align-items:center;justify-content:center}
+.drift-wall{position:relative;width:100%;height:100%;overflow:hidden;perspective:var(--dw-perspective,1200px);perspective-origin:50% 50%;--dw-tile-w:200px;--dw-tile-h:132px;--dw-gap:18px;--dw-radius:14px;--dw-lift:64px;--dw-dim:.55;--dw-gray:0;--dw-overlay:#060010;--dw-edge:38%;display:flex;align-items:center;justify-content:center}
 .drift-wall__plane{position:relative;display:flex;flex-direction:row;transform-style:preserve-3d;cursor:pointer;transform-origin:50% 50%;will-change:transform}
 .drift-wall__col{position:relative;width:calc(var(--dw-tile-w) + var(--dw-gap));transform-style:preserve-3d}
 .drift-wall__track{display:flex;flex-direction:column;will-change:transform;transform-style:preserve-3d}
@@ -14,8 +13,6 @@
 .drift-wall__tile:focus-visible .drift-wall__inner{opacity:1;box-shadow:0 0 0 2px rgba(255,255,255,.9)}
 @media(prefers-reduced-motion:reduce){.drift-wall__plane,.drift-wall__track{will-change:auto}}
 @media(max-width:700px){.drift-wall-stage{height:100vh}}
-
-/* ---------- Heading: reuses .section-heading (same block as Ecommerce/etc.), just recolored for a dark section ---------- */
 .pdw-heading{position:relative;z-index:1}
 #site-root .pdw-heading h2{color:#fff}
 #site-root .pdw-heading.pdw-heading.pdw-heading.pdw-heading.pdw-heading>span{color:#c7cad2!important}
@@ -24,8 +21,6 @@
 @media(max-width:700px){.pdw-desktop-only{display:none}.pdw-mobile-only{display:block}}
 #site-root .pdw-heading>span b{color:#fff}
 .pdw-heading .orange-cta{display:inline-block;margin-top:34px}
-
-/* ---------- Lightbox ---------- */
 .pdw-lightbox{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:5vh 5vw;background:rgba(2,3,7,.92);backdrop-filter:blur(6px);cursor:zoom-out;animation:pdwFadeIn .25s ease}
 .pdw-lightbox img{max-width:100%;max-height:100%;border-radius:12px;box-shadow:0 40px 90px rgba(0,0,0,.6);cursor:default}
 .pdw-lightbox-close{position:absolute;top:26px;right:28px;width:44px;height:44px;border-radius:50%;border:1px solid #ffffff2e;background:#ffffff12;color:#fff;font-size:20px;display:grid;place-items:center;cursor:pointer}

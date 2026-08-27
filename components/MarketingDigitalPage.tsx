@@ -27,9 +27,9 @@ function DeviceMedia({
   className?: string;
 }) {
   return <div className={`md-device ${contain ? "is-contained" : ""} ${className}`}>
-    {video ? <video autoPlay muted loop playsInline preload="metadata" aria-label={alt}>
-      <source src={asset(src)} type="video/webm" />
-    </video> : <img src={asset(src)} alt={alt} />}
+    {video
+      ? <ManagedBackgroundVideo src={asset(src)} />
+      : <img src={asset(src)} alt={alt} loading="lazy" decoding="async" />}
   </div>;
 }
 
@@ -126,7 +126,7 @@ export default function MarketingDigitalPage() {
       </header>
       <div className="md-ecommerce-layout">
         <div>{ecommerceBenefits.slice(0, 4).map(([title, copy]) => <article key={title}><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
-        <div className="md-ecommerce-visual"><video autoPlay muted loop playsInline preload="metadata" aria-label="Proyecto Wilde desarrollado por Ideamos"><source src={asset("/media/marketing-wilde.webm")} type="video/webm" /></video></div>
+        <div className="md-ecommerce-visual"><ManagedBackgroundVideo src={asset("/media/marketing-wilde.webm")} /></div>
         <div>{ecommerceBenefits.slice(4).map(([title, copy]) => <article key={title}><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
       </div>
       <div className="md-double-actions md-ecommerce-actions"><Action>Quiero una tienda online</Action><Action>Quiero hablar con un experto</Action></div>
@@ -135,9 +135,7 @@ export default function MarketingDigitalPage() {
     </LightGridFrame>
 
     <section className="desktop-video-wall" aria-label="Presentación audiovisual de Ideamos">
-      <video autoPlay muted loop playsInline preload="metadata">
-        <source src={asset("/media/video-wall-background-2026.webm")} type="video/webm" />
-      </video>
+      <ManagedBackgroundVideo src={asset("/media/video-wall-background-2026.webm")} />
     </section>
 
     <LightGridFrame className="marketing-light-grid">
@@ -177,7 +175,7 @@ export default function MarketingDigitalPage() {
         <span>Un método simple y enfocado en resultados: entendemos tu negocio, diseñamos la estrategia justa y la ejecutamos con precisión.</span>
       </header>
       <div className="md-method-layout">
-        <DeviceMedia src="/media/marketing-modulo.png" alt="Sitio institucional de Grupo Módulo" contain />
+        <DeviceMedia src="/media/marketing-modulo.webp" alt="Sitio institucional de Grupo Módulo" contain />
         <div className="md-method-list">{method.map(([title, copy], index) => <article key={title}><small>0{index + 1}</small><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
       </div>
       <div className="md-double-actions"><Action>Quiero una asesoría sin cargo</Action><Action>Quiero contactar un experto</Action></div>
@@ -191,7 +189,7 @@ export default function MarketingDigitalPage() {
       </header>
       <div className="md-problems-layout">
         <div>{problems.map(([title, copy]) => <article key={title}><i/><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
-        <div className="md-red-phone"><img src={asset("/media/marketing-tienda-roja.png")} alt="Tienda online de indumentaria en dispositivo móvil" /></div>
+        <div className="md-red-phone"><img src={asset("/media/marketing-tienda-roja.webp")} alt="Tienda online de indumentaria en dispositivo móvil" loading="lazy" decoding="async" /></div>
       </div>
       <div className="md-double-actions"><Action>Quiero una asesoría sin cargo</Action><Action>Quiero contactar un experto</Action></div>
     </section>

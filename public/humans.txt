@@ -1,0 +1,5 @@
+Ideamos
+Diseño, estrategia y desarrollo: https://ideamos.com.ar
+Buenos Aires, Argentina
+
+Tecnología: Next.js, React y GitHub Pages.

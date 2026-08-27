@@ -12,7 +12,7 @@ const testimonials = [
     desktopLines: ["Notamos un cambio real:", "Más consultas, más movimiento", "y sobretodo, más ventas"],
     name: "Pablo Avila",
     role: "Coordinador de CYL S.A.",
-    image: "/media/testimonials/cylsa-image.png",
+    image: "/media/testimonials/cylsa-image.webp",
     avatar: "/media/testimonials/cylsa-avatar.png",
     video: "/media/testimonials/cylsa.mp4",
     site: "https://www.cylneumaticos.com.ar/",
@@ -87,7 +87,7 @@ export default function HomeTestimonials() {
         </h2>
         <div className="home-testimonials__rating" aria-label="5 de 5 estrellas">★★★★★ <small>(5.0)</small></div>
         <div className="home-testimonials__person">
-          <img src={asset(testimonial.avatar)} alt="" />
+          <img src={asset(testimonial.avatar)} alt="" loading="lazy" decoding="async" />
           <div><strong>{testimonial.name}</strong><span>{testimonial.role}</span></div>
         </div>
         <div className="home-testimonials__actions">
@@ -98,7 +98,7 @@ export default function HomeTestimonials() {
 
       <div className="home-testimonials__visual">
         <button className="home-testimonials__media" type="button" onClick={() => setOpenVideo(active)} aria-label={`Ver video testimonial de ${testimonial.name}`}>
-          <img src={asset(testimonial.image)} alt={testimonial.alt} />
+          <img src={asset(testimonial.image)} alt={testimonial.alt} loading="lazy" decoding="async" />
           <span className="home-testimonials__play" aria-hidden="true">▶</span>
         </button>
         <div className="home-testimonials__controls" aria-label="Cambiar testimonio">

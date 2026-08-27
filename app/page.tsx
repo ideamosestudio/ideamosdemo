@@ -89,14 +89,14 @@ export default function Home() {
     <LightGridFrame className="home-services-grid">
     <section className="statement white-section shared-section-bg" id="web">
       <div className="statement-copyblock" data-reveal>
-        <img className="happy-clients" src={asset("/media/happy-clients.png")} alt="Más de 2000 clientes felices" />
+        <img className="happy-clients" src={asset("/media/happy-clients.png")} alt="Más de 2000 clientes felices" loading="lazy" decoding="async" />
         <h2><span>Webs de alto impacto</span><em>ideadas para generar <b>confianza y resultados</b></em></h2>
         <h3><b>Posicioná tu marca</b> con una <b>comunicación digital efectiva</b></h3>
         <p className="statement-copy">Creamos <b>sitios web pensados para transmitir autoridad, confianza y generar contactos reales.</b> Desde el diseño a medida hasta el contenido, todo está enfocado en convertir visitas en potenciales clientes. Contactanos y coordinamos una asesoría online sin cargo para conocer tu negocio y sus desafíos, identificar oportunidades y proponerte ideas concretas para crecer con mejores resultados.</p>
         <a className="orange-cta" href={WHATSAPP_URL}><span className="desktop-only">CHARLEMOS DE TU PROYECTO</span><span className="mobile-only">Contactanos</span></a>
       </div>
       <div className="screen-swap" data-reveal>
-        {[1,2,3].map((n, index) => <div key={n} className={`screen-frame ${webScreen === index ? "active" : ""}`}><img src={asset(`/media/screen-${n}.png`)} alt={`Proyecto web ${n}`} /></div>)}
+        {[1,2,3].map((n, index) => <div key={n} className={`screen-frame ${webScreen === index ? "active" : ""}`}><img src={asset(`/media/screen-${n}.png`)} alt={`Proyecto web ${n}`} loading="lazy" decoding="async" /></div>)}
         <div className="screen-dots">{[0,1,2].map((n) => <button key={n} className={webScreen === n ? "active" : ""} onClick={() => setWebScreen(n)} aria-label={`Ver pantalla ${n + 1} de diseño web`} />)}</div>
       </div>
     </section>
@@ -106,7 +106,7 @@ export default function Home() {
       <div className="shop-layout">
         <div className="shop-column">{ecommerceLeft.map(([title, copy]) => <article key={title} data-reveal><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
         <div className="phone-stage phone-swap">
-          {[1,2,3].map((number, index) => <img key={number} className={shopScreen === index ? "active" : ""} src={asset(`/media/shop-screen-${number}.png`)} alt={`Pantalla ${number} de tienda online desarrollada por Ideamos`}/>)}
+          {[1,2,3].map((number, index) => <img key={number} className={shopScreen === index ? "active" : ""} src={asset(`/media/shop-screen-${number}.png`)} alt={`Pantalla ${number} de tienda online desarrollada por Ideamos`} loading="lazy" decoding="async"/>)}
           <div className="screen-dots">{[0,1,2].map((n) => <button key={n} className={shopScreen === n ? "active" : ""} onClick={() => setShopScreen(n)} aria-label={`Ver pantalla ${n + 1} de tienda online`} />)}</div>
         </div>
         <div className="shop-column">{ecommerceRight.map(([title, copy]) => <article key={title} data-reveal><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
@@ -130,6 +130,8 @@ export default function Home() {
                 src={asset(`/media/frosz-screen-${item}.png`)}
                 alt={index === 0 ? "Proyecto web FroSZ desarrollado por Ideamos" : ""}
                 aria-hidden={index !== 0}
+                loading="lazy"
+                decoding="async"
               />
             ))}
             <div className="screen-dots">{[0,1,2].map((n) => <button key={n} className={googleScreen === n ? "active" : ""} onClick={() => setGoogleScreen(n)} aria-label={`Ver pantalla ${n + 1} de posicionamiento`} />)}</div>
