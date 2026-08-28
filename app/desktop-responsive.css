@@ -2,8 +2,8 @@
  * Fluid desktop/tablet pass.
  * The 1920px composition and the existing mobile experience are intentionally
  * outside this range. Portfolio, advisory and footer sections are also
- * intentionally not targeted here; Home testimonial/contact keep their
- * 1920px compositions at compact desktop widths.
+ * intentionally not targeted here; shared testimonial/contact sections keep
+ * their desktop compositions at compact notebook widths.
  */
 @media (min-width:981px) and (max-width:1919px){
   :root{--compact-section-space:clamp(64px,5.8vw,92px)}
@@ -117,22 +117,22 @@
   #site-root .home-page .google-visual{width:100%;max-width:none}
 
   /* Keep the testimonial and contact compositions aligned with 1920px. */
-  #site-root .home-page .home-testimonials__slide{
+  #site-root .home-testimonials__slide{
     grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr)!important;
     gap:clamp(28px,3vw,40px)!important;
   }
-  #site-root .home-page .home-testimonials__copy{
+  #site-root .home-testimonials__copy{
     display:flex;
     min-height:0;
     text-align:left;
   }
-  #site-root .home-page .home-testimonials__title-desktop{display:block}
-  #site-root .home-page .home-testimonials__title-mobile{display:none}
-  #site-root .home-page .home-testimonials__person,
-  #site-root .home-page .home-testimonials__actions{justify-content:flex-start}
-  #site-root .home-page .home-testimonials__actions{margin-top:22px}
-  #site-root .home-page .home-testimonials__visual{max-width:550px;margin:0;justify-self:end}
-  #site-root .home-page .home-testimonials__controls{position:absolute}
+  #site-root .home-testimonials__title-desktop{display:block}
+  #site-root .home-testimonials__title-mobile{display:none}
+  #site-root .home-testimonials__person,
+  #site-root .home-testimonials__actions{justify-content:flex-start}
+  #site-root .home-testimonials__actions{margin-top:22px}
+  #site-root .home-testimonials__visual{max-width:550px;margin:0;justify-self:end}
+  #site-root .home-testimonials__controls{position:absolute}
 
   #site-root .contact-form{
     grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr)!important;
@@ -356,7 +356,7 @@
     font-weight:700!important;
   }
 
-  #site-root .home-page .home-testimonials__actions{
+  #site-root .home-testimonials__actions{
     width:100%;
     align-self:flex-start;
     justify-content:flex-start!important;
