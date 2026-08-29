@@ -31,6 +31,10 @@
     line-height:1.65!important;
   }
 
+  #site-root .home-page .google-content .body-copy b{
+    font-size:14px!important;
+  }
+
   #site-root .home-page .google-content .orange-cta{
     margin-top:32px!important;
   }
