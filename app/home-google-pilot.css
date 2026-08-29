@@ -1,0 +1,34 @@
+/*
+ * Home / Google pilot: mirror the Prices heading on desktop and keep the
+ * supporting copy on an 8px-based vertical rhythm. Mobile keeps its existing
+ * approved scale.
+ */
+@media (min-width:981px){
+  #site-root .home-page .google-content>p:first-child{
+    margin:0 0 24px!important;
+  }
+
+  #site-root .home-page .google-content h2{
+    margin:0 0 24px!important;
+    font-family:"Gilroy ExtraBold",Arial,sans-serif!important;
+    font-size:clamp(38px,2.8vw,53px)!important;
+    font-weight:800!important;
+    line-height:1.02!important;
+    letter-spacing:-.045em!important;
+  }
+
+  #site-root .home-page .google-content h3{
+    margin:0 0 12px!important;
+    font-size:21px!important;
+    line-height:1.5!important;
+  }
+
+  #site-root .home-page .google-content .body-copy{
+    margin:0!important;
+    line-height:1.65!important;
+  }
+
+  #site-root .home-page .google-content .orange-cta{
+    margin-top:32px!important;
+  }
+}
