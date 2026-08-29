@@ -1,11 +1,3 @@
-@font-face{
-  font-family:"Roboto Thin Pilot";
-  src:url("/fonts/roboto-thin-latin.woff2") format("woff2");
-  font-style:normal;
-  font-weight:100;
-  font-display:swap;
-}
-
 /*
  * Home / Google pilot: mirror the Prices heading on desktop and keep the
  * supporting copy on an 8px-based vertical rhythm. Mobile keeps its existing
@@ -35,11 +27,12 @@
   #site-root .home-page .google-content .body-copy{
     max-width:650px!important;
     margin:0!important;
-    color:#111!important;
-    font-family:"Roboto Thin Pilot","Roboto",Arial,sans-serif!important;
-    font-size:15px!important;
-    font-weight:100!important;
+    color:#333!important;
+    font-family:"Roboto",Arial,sans-serif!important;
+    font-size:16px!important;
+    font-weight:300!important;
     line-height:1.65!important;
+    opacity:1!important;
   }
 
   #site-root .home-page .google-content .orange-cta{
