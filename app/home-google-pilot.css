@@ -9,7 +9,7 @@
   }
 
   #site-root .home-page .google-content h2{
-    margin:0 0 24px!important;
+    margin:0 0 20px!important;
     font-family:"Gilroy ExtraBold",Arial,sans-serif!important;
     font-size:clamp(38px,2.8vw,53px)!important;
     font-weight:800!important;
@@ -18,17 +18,25 @@
   }
 
   #site-root .home-page .google-content h3{
-    margin:0 0 12px!important;
+    margin:0 0 16px!important;
     font-size:21px!important;
-    line-height:1.5!important;
+    font-weight:400!important;
+    line-height:1.45!important;
   }
 
   #site-root .home-page .google-content .body-copy{
+    max-width:650px!important;
     margin:0!important;
+    font-weight:400!important;
     line-height:1.65!important;
   }
 
   #site-root .home-page .google-content .orange-cta{
     margin-top:32px!important;
+  }
+
+  #site-root .home-page .google-content:after{
+    display:none!important;
+    content:none!important;
   }
 }
