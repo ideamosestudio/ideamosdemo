@@ -99,4 +99,163 @@
     display:none!important;
     content:none!important;
   }
+
+  /* Los encabezados centrados conservan el auto horizontal del contenedor. */
+  #site-root .home-page .ecommerce .section-heading h2,
+  #site-root .home-page .pdw-section .pdw-heading h2{
+    margin:0 auto 20px!important;
+  }
+
+  #site-root .home-page .ecommerce .section-heading>span,
+  #site-root .home-page .pdw-section .pdw-heading>span{
+    margin:0 auto!important;
+    text-align:center!important;
+  }
+
+  #site-root .home-page .pdw-section .pdw-heading{
+    width:min(1050px,86vw)!important;
+    margin-right:auto!important;
+    margin-left:auto!important;
+    text-align:center!important;
+  }
+
+  /*
+   * EXTENSION AL RESTO DEL SITIO
+   * Solo modulos de contenido. No alcanza heroes/portadas, testimonios,
+   * formularios ni footer porque ninguno forma parte de estos selectores.
+   */
+
+  /* Eyebrows de modulo. */
+  #site-root .internal-page .service-heading>p,
+  #site-root .internal-page .human-copy>p,
+  #site-root .marketing-page .md-section>header>p,
+  #site-root .marketing-page .md-copy>p,
+  #site-root .posicionamiento-page .pw-intro>p,
+  #site-root .posicionamiento-page .pw-copy>p,
+  #site-root .posicionamiento-page .pw-benefits-copy>p,
+  #site-root .shops-page .shops-heading>p,
+  #site-root .cases-page .cases-kicker,
+  #site-root .cases-page .cases-work-heading>p,
+  #site-root .prices-page .home-advisory .human-copy>p{
+    margin:0 0 24px!important;
+  }
+
+  #site-root .shops-page .shops-happy{
+    margin-bottom:24px!important;
+  }
+
+  /* Titulos principales de cada modulo de contenido. */
+  #site-root .internal-page .service-heading h2,
+  #site-root .internal-page .human-copy h2,
+  #site-root .marketing-page .md-section>header h2,
+  #site-root .marketing-page .md-copy h3,
+  #site-root .posicionamiento-page .pw-intro h2,
+  #site-root .posicionamiento-page .pw-copy>h2,
+  #site-root .posicionamiento-page .pw-copy>h3,
+  #site-root .posicionamiento-page .pw-benefits-copy>h2,
+  #site-root .posicionamiento-page .pw-seo-summary>h2,
+  #site-root .shops-page .shops-heading h2,
+  #site-root .shops-page .shops-intro-copy>h3,
+  #site-root .cases-page .cases-intro-copy>h2,
+  #site-root .cases-page .cases-work-heading>h2,
+  #site-root .prices-page .home-advisory .human-copy h2{
+    margin:0 0 20px!important;
+    font-family:"Gilroy ExtraBold",Arial,sans-serif!important;
+    font-size:clamp(38px,2.8vw,53px)!important;
+    font-weight:800!important;
+    line-height:1.02!important;
+    letter-spacing:-.045em!important;
+  }
+
+  /* Titulos de encabezados centrados. */
+  #site-root .marketing-page .md-section>header h2,
+  #site-root .posicionamiento-page .pw-intro h2,
+  #site-root .shops-page .shops-heading h2{
+    margin-right:auto!important;
+    margin-left:auto!important;
+    text-align:center!important;
+  }
+
+  /* Bajadas editoriales entre titulo y parrafo. */
+  #site-root .internal-page .service-heading>h3,
+  #site-root .marketing-page .md-copy>h4,
+  #site-root .shops-page .shops-intro-copy>h4,
+  #site-root .cases-page .cases-intro-copy>h3{
+    margin:0 0 16px!important;
+    font-family:"Roboto",Arial,sans-serif!important;
+    font-size:21px!important;
+    font-weight:400!important;
+    line-height:1.45!important;
+  }
+
+  #site-root .internal-page .service-heading>h3 b,
+  #site-root .marketing-page .md-copy>h4 b,
+  #site-root .shops-page .shops-intro-copy>h4 b,
+  #site-root .cases-page .cases-intro-copy>h3 b{
+    font-weight:700!important;
+  }
+
+  #site-root .cases-page .cases-intro-copy>h3{
+    padding-top:0!important;
+    border-top:0!important;
+  }
+
+  /* Texto corrido de modulo. */
+  #site-root .internal-page .service-copy,
+  #site-root .internal-page .human-copy>span,
+  #site-root .marketing-page .md-section>header>span,
+  #site-root .marketing-page .md-copy>div,
+  #site-root .posicionamiento-page .pw-intro>span,
+  #site-root .posicionamiento-page .pw-copy>div,
+  #site-root .posicionamiento-page .pw-seo-summary>p,
+  #site-root .shops-page .shops-heading>span,
+  #site-root .shops-page .shops-intro-copy>p,
+  #site-root .shops-page .shops-benefits-lead,
+  #site-root .cases-page .cases-intro-copy>p:last-of-type,
+  #site-root .cases-page .cases-work-heading>span,
+  #site-root .prices-page .home-advisory .human-copy>span{
+    margin:0!important;
+    font-family:"Roboto",Arial,sans-serif!important;
+    font-size:16px!important;
+    font-weight:300!important;
+    line-height:1.65!important;
+    opacity:1!important;
+  }
+
+  /* Las introducciones centradas mantienen su eje visual. */
+  #site-root .marketing-page .md-section>header>span,
+  #site-root .posicionamiento-page .pw-intro>span,
+  #site-root .shops-page .shops-heading>span{
+    margin-right:auto!important;
+    margin-left:auto!important;
+    text-align:center!important;
+  }
+
+  /* Peso de lectura para destacados dentro del texto corrido. */
+  #site-root .internal-page .service-copy b,
+  #site-root .internal-page .human-copy>span b,
+  #site-root .marketing-page .md-section>header>span b,
+  #site-root .marketing-page .md-copy>div b,
+  #site-root .posicionamiento-page .pw-intro>span b,
+  #site-root .posicionamiento-page .pw-copy>div b,
+  #site-root .shops-page .shops-heading>span b,
+  #site-root .shops-page .shops-intro-copy>p b,
+  #site-root .cases-page .cases-intro-copy>p:last-of-type b,
+  #site-root .prices-page .home-advisory .human-copy>span b{
+    font-weight:700!important;
+  }
+
+  /* Separacion del texto al CTA sin modificar el boton. */
+  #site-root .internal-page .service-heading+.internal-actions,
+  #site-root .internal-page .service-copy+.internal-actions,
+  #site-root .internal-page .human-copy>.orange-cta,
+  #site-root .marketing-page .md-copy>.md-action,
+  #site-root .posicionamiento-page .pw-copy>.pw-action,
+  #site-root .posicionamiento-page .pw-benefits-copy>.pw-action,
+  #site-root .posicionamiento-page .pw-seo-summary>.pw-action,
+  #site-root .shops-page .shops-intro-copy>.orange-cta,
+  #site-root .cases-page .cases-intro-copy>.cases-action,
+  #site-root .prices-page .home-advisory .human-copy>.orange-cta{
+    margin-top:32px!important;
+  }
 }
