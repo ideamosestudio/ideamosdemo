@@ -1,0 +1,102 @@
+/*
+ * MANUAL TIPOGRAFICO MODULOS DESKTOP
+ *
+ * Patron aprobado a partir del modulo Google de la Home. Se aplica solamente
+ * a Webs, Ecommerce, Google, Proyectos y Videollamada desde 981px.
+ * Testimonios queda explicitamente fuera del sistema.
+ */
+@media (min-width:981px){
+  /* Ritmo entre eyebrow y titulo. */
+  #site-root .home-page .ecommerce .section-heading>p,
+  #site-root .home-page .google-content>p:first-child,
+  #site-root .home-page .pdw-section .pdw-heading>p,
+  #site-root .home-page .home-advisory .human-copy>p{
+    margin:0 0 24px!important;
+  }
+
+  #site-root .home-page .statement .happy-clients{
+    margin-bottom:24px!important;
+  }
+
+  /* Titulos principales de modulo. */
+  #site-root .home-page .statement h2,
+  #site-root .home-page .ecommerce .section-heading h2,
+  #site-root .home-page .google-content h2,
+  #site-root .home-page .pdw-section .pdw-heading h2,
+  #site-root .home-page .home-advisory .human-copy h2{
+    margin:0 0 20px!important;
+    font-family:"Gilroy ExtraBold",Arial,sans-serif!important;
+    font-size:clamp(38px,2.8vw,53px)!important;
+    font-weight:800!important;
+    line-height:1.02!important;
+    letter-spacing:-.045em!important;
+  }
+
+  /* Bajadas que funcionan como subtitulo. */
+  #site-root .home-page .statement h3,
+  #site-root .home-page .google-content h3{
+    margin:0 0 16px!important;
+    font-size:21px!important;
+    font-weight:400!important;
+    line-height:1.45!important;
+  }
+
+  #site-root .home-page .statement h3 b,
+  #site-root .home-page .google-content h3 b{
+    font-weight:700!important;
+  }
+
+  /* Texto corrido: misma lectura que el parrafo aprobado de Videollamada. */
+  #site-root .home-page .statement .statement-copy,
+  #site-root .home-page .ecommerce .section-heading>span,
+  #site-root .home-page .google-content .body-copy,
+  #site-root .home-page .pdw-section .pdw-heading>span,
+  #site-root .home-page .home-advisory .human-copy>span{
+    margin:0!important;
+    font-family:"Roboto",Arial,sans-serif!important;
+    font-size:16px!important;
+    font-weight:300!important;
+    line-height:1.65!important;
+    opacity:1!important;
+  }
+
+  #site-root .home-page .statement .statement-copy,
+  #site-root .home-page .ecommerce .section-heading>span,
+  #site-root .home-page .google-content .body-copy,
+  #site-root .home-page .home-advisory .human-copy>span{
+    color:#333!important;
+  }
+
+  #site-root .home-page .statement .statement-copy b,
+  #site-root .home-page .ecommerce .section-heading>span b,
+  #site-root .home-page .google-content .body-copy b,
+  #site-root .home-page .home-advisory .human-copy>span b{
+    color:#111!important;
+    font-weight:700!important;
+  }
+
+  #site-root .home-page .pdw-section .pdw-heading>span{
+    color:#c7cad2!important;
+  }
+
+  #site-root .home-page .pdw-section .pdw-heading>span b{
+    color:#fff!important;
+    font-weight:700!important;
+  }
+
+  /* Separacion consistente entre el bloque tipografico y su CTA. */
+  #site-root .home-page .statement .orange-cta,
+  #site-root .home-page .google-content .orange-cta,
+  #site-root .home-page .home-advisory .human-copy .orange-cta{
+    margin-top:32px!important;
+  }
+
+  #site-root .home-page .google-content .body-copy{
+    max-width:650px!important;
+  }
+
+  #site-root .home-page .google-content:after{
+    display:none!important;
+    content:none!important;
+  }
+}
