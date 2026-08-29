@@ -258,4 +258,52 @@
   #site-root .prices-page .home-advisory .human-copy>.orange-cta{
     margin-top:32px!important;
   }
+
+  /*
+   * REGLA PARA MODULOS CENTRADOS
+   * El texto inferior ocupa aproximadamente la mitad del viewport y comparte
+   * exactamente el mismo eje horizontal que el titulo.
+   */
+  #site-root .home-page .ecommerce .section-heading,
+  #site-root .home-page .pdw-section .pdw-heading,
+  #site-root .internal-page .design-problems .service-heading,
+  #site-root .marketing-page .md-section>header,
+  #site-root .posicionamiento-page .pw-intro,
+  #site-root .shops-page .shops-heading,
+  #site-root .shops-page .shops-problems .service-heading{
+    margin-right:auto!important;
+    margin-left:auto!important;
+    text-align:center!important;
+  }
+
+  #site-root .home-page .ecommerce .section-heading h2,
+  #site-root .home-page .pdw-section .pdw-heading h2,
+  #site-root .internal-page .design-problems .service-heading h2,
+  #site-root .marketing-page .md-section>header h2,
+  #site-root .posicionamiento-page .pw-intro h2,
+  #site-root .shops-page .shops-heading h2,
+  #site-root .shops-page .shops-problems .service-heading h2{
+    margin-right:auto!important;
+    margin-left:auto!important;
+    text-align:center!important;
+  }
+
+  #site-root .home-page .ecommerce .section-heading>span,
+  #site-root .home-page .pdw-section .pdw-heading>span,
+  #site-root .internal-page .design-problems .service-heading>h3,
+  #site-root .marketing-page .md-section>header>span,
+  #site-root .posicionamiento-page .pw-intro>span,
+  #site-root .shops-page .shops-heading>span,
+  #site-root .shops-page .shops-problems .service-heading>.shops-benefits-lead{
+    display:block!important;
+    width:min(50vw,900px)!important;
+    max-width:none!important;
+    margin:0 auto!important;
+    text-align:center!important;
+    font-family:"Roboto",Arial,sans-serif!important;
+    font-size:16px!important;
+    font-weight:300!important;
+    line-height:1.65!important;
+    opacity:1!important;
+  }
 }
