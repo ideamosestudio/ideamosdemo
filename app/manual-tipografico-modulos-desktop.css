@@ -458,10 +458,25 @@
     grid-template-columns:minmax(0,600px) minmax(0,1fr)!important;
     gap:clamp(120px,7vw,150px)!important;
   }
+
+  #site-root .home-page .statement .statement-copy-line{
+    display:block;
+    white-space:nowrap;
+  }
+
+  #site-root .home-page .statement .screen-frame{
+    width:42vw!important;
+    max-width:none!important;
+  }
 }
 
 @media (max-width:980px){
   #site-root .home-page .statement-title-desktop-break{display:none}
+}
+
+@media (max-width:1400px){
+  #site-root .home-page .statement-copy-line{display:inline}
+  #site-root .home-page .statement-copy-line:not(:last-child)::after{content:" "}
 }
 
 @keyframes happyClientArrival{

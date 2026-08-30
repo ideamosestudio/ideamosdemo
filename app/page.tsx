@@ -106,7 +106,13 @@ export default function Home() {
         </div>
         <h2><span>Webs de alto impacto</span><em>ideadas para generar<br className="statement-title-desktop-break"/><b>confianza y resultados</b></em></h2>
         <h3><b>Más confianza. Más consultas. Más ventas.</b></h3>
-        <p className="statement-copy"><b>Creamos sitios web diseñados para transmitir autoridad, generar confianza y convertir visitas en consultas reales.</b> Cada decisión, desde el diseño hasta el contenido, está orientada a potenciar tu negocio. <b>Charlemos:</b> te asesoramos sin cargo, conocemos tus objetivos y te proponemos mejoras concretas para generar mejores resultados.</p>
+        <p className="statement-copy">
+          <span className="statement-copy-line"><b>Creamos sitios web diseñados para transmitir autoridad, generar</b></span>
+          <span className="statement-copy-line"><b>confianza y convertir visitas en consultas reales.</b> Cada decisión,</span>
+          <span className="statement-copy-line">desde el diseño hasta el contenido, está orientada a potenciar tu</span>
+          <span className="statement-copy-line">negocio. <b>Charlemos:</b> te asesoramos sin cargo, conocemos tus objetivos</span>
+          <span className="statement-copy-line">y te proponemos mejoras concretas para generar mejores resultados.</span>
+        </p>
         <a className="orange-cta" href={WHATSAPP_URL}><span className="desktop-only">CHARLEMOS DE TU PROYECTO</span><span className="mobile-only">Contactanos</span></a>
       </div>
       <div className="screen-swap" data-reveal>
