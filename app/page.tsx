@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import ManagedBackgroundVideo from "./components/ManagedBackgroundVideo";
 import { HeroChrome, HeroLogoTrack, HomeAdvisorySection, HomeClosingSections } from "../components/SharedHomeSections";
 import SiteHeader from "../components/SiteHeader";
@@ -87,10 +87,26 @@ export default function Home() {
     <LightGridFrame className="home-services-grid">
     <section className="statement white-section shared-section-bg" id="web">
       <div className="statement-copyblock" data-reveal>
-        <img className="happy-clients" src={asset("/media/happy-clients.webp")} alt="Más de 2000 clientes felices" width="693" height="54" loading="lazy" decoding="async" />
+        <div className="happy-clients" aria-label="Más de 2000 clientes felices">
+          <span className="happy-clients-avatars" aria-hidden="true">
+            {["003", "002", "001"].map((name, index) => (
+              <img
+                key={name}
+                src={asset(`/media/client-${name}.png`)}
+                alt=""
+                width="326"
+                height="322"
+                loading="lazy"
+                decoding="async"
+                style={{ "--avatar-index": index } as CSSProperties}
+              />
+            ))}
+          </span>
+          <span className="happy-clients-label">MÁS DE 2000 CLIENTES FELICES</span>
+        </div>
         <h2><span>Webs de alto impacto</span><em>ideadas para generar <b>confianza y resultados</b></em></h2>
-        <h3><b>Posicioná tu marca</b> con una <b>comunicación digital efectiva</b></h3>
-        <p className="statement-copy">Creamos <b>sitios web pensados para transmitir autoridad, confianza y generar contactos reales.</b> Desde el diseño a medida hasta el contenido, todo está enfocado en convertir visitas en potenciales clientes. Contactanos y coordinamos una asesoría online sin cargo para conocer tu negocio y sus desafíos, identificar oportunidades y proponerte ideas concretas para crecer con mejores resultados.</p>
+        <h3><b>Más confianza. Más consultas. Más ventas.</b></h3>
+        <p className="statement-copy"><b>Creamos sitios web diseñados para transmitir autoridad, generar confianza y convertir visitas en consultas reales.</b> Cada decisión, desde el diseño hasta el contenido, está orientada a potenciar tu negocio. <b>Charlemos:</b> te asesoramos sin cargo, conocemos tus objetivos y te proponemos mejoras concretas para generar mejores resultados.</p>
         <a className="orange-cta" href={WHATSAPP_URL}><span className="desktop-only">CHARLEMOS DE TU PROYECTO</span><span className="mobile-only">Contactanos</span></a>
       </div>
       <div className="screen-swap" data-reveal>

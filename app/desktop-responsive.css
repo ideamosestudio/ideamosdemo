@@ -213,7 +213,7 @@
     max-width:none;
     min-width:0;
     margin:0 auto;
-    transform:scale(clamp(1,calc(1.515 - .029vw),1.22));
+    transform:scale(1);
     transform-origin:center;
   }
   #site-root .shops-feature-column{gap:clamp(24px,2.5vw,36px)}
@@ -313,6 +313,7 @@
   #site-root .shops-heading>span br{display:block}
   #site-root .pw-intro h2 br{display:none}
   #site-root .shops-red-cta{min-width:0;width:min(100%,330px)}
+  #site-root .shops-phone{transform:scale(1.18)}
 
   #site-root .md-method-list article{grid-template-columns:36px 1fr;gap:16px}
   #site-root .md-method-list h3,
@@ -386,4 +387,12 @@
     grid-row:1!important;
     display:flex!important;
   }
+}
+
+@media (min-width:1200px) and (max-width:1499px){
+  #site-root .shops-phone{transform:scale(1.1)}
+}
+
+@media (min-width:1500px) and (max-width:1699px){
+  #site-root .shops-phone{transform:scale(1.04)}
 }

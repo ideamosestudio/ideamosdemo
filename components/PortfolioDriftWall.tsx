@@ -79,7 +79,7 @@ export default function PortfolioDriftWall() {
     <header className="section-heading pdw-heading">
       <p>TRABAJOS REALIZADOS</p>
       <h2 id="portfolio-title">Proyectos que hablan por nosotros</h2>
-      <span><b>Resultados reales</b> para marcas de distintos rubros: una selección de experiencias digitales creadas para vender más.</span>
+      <span><b>Resultados reales</b> para marcas de distintos rubros:<br/>una selección de experiencias digitales creadas para vender más.</span>
     </header>
     <div className="drift-wall-stage pdw-desktop-only">
       <div className="drift-wall-vignette" aria-hidden="true" />
