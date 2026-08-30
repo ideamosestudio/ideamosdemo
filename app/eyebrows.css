@@ -34,11 +34,5 @@
 #site-root .pricing-heading>p:first-child,
 #site-root .testimonial-copy>p:first-child{
   font-family:"Poppins",Arial,sans-serif!important;
-  color:#111!important;
-}
-
-/* En módulos oscuros, el eyebrow acompaña al título claro. */
-#site-root .pdw-section .section-heading>p:first-child,
-#site-root .service-benefits .service-heading>p:first-child{
-  color:#fff!important;
+  color:#e64a00!important;
 }

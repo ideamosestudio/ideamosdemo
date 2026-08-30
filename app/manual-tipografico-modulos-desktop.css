@@ -326,9 +326,9 @@
 
 #site-root .home-page .happy-clients-avatars img{
   position:relative;
-  width:38px;
-  height:38px;
-  margin-left:-9px;
+  width:34px;
+  height:34px;
+  margin-left:-8px;
   border:2px solid #f7f7f5;
   border-radius:50%;
   object-fit:cover;
@@ -382,9 +382,9 @@
 
   #site-root .home-page .happy-clients-avatars img{
     position:relative;
-    width:42px;
-    height:42px;
-    margin-left:-10px;
+    width:38px;
+    height:38px;
+    margin-left:-9px;
     border:2px solid #f7f7f5;
     border-radius:50%;
     object-fit:cover;
@@ -434,7 +434,16 @@
   }
 
   #site-root .home-page .shop-column article i{
-    margin-bottom:14px;
+    flex:0 0 28px;
+    width:28px!important;
+    min-width:28px;
+    height:28px!important;
+    min-height:28px;
+    margin:0 auto 18px!important;
+    border:5px solid #e64a00!important;
+    border-radius:50%!important;
+    background:transparent!important;
+    box-shadow:none!important;
   }
 
   #site-root .home-page .shop-column h3{
@@ -465,8 +474,22 @@
   }
 
   #site-root .home-page .statement .screen-frame{
-    width:42vw!important;
+    top:50%;
+    left:50%;
+    width:35.7vw!important;
     max-width:none!important;
+    aspect-ratio:700/512!important;
+    overflow:visible!important;
+    border-radius:0!important;
+    transform:translate(-50%,-45%);
+  }
+
+  #site-root .home-page .statement .screen-frame>img{
+    inset:0!important;
+    width:100%!important;
+    max-width:none!important;
+    height:100%!important;
+    object-fit:contain!important;
   }
 }
 
