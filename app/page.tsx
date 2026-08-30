@@ -104,7 +104,7 @@ export default function Home() {
           </span>
           <span className="happy-clients-label">MÁS DE 2000 CLIENTES FELICES</span>
         </div>
-        <h2><span>Webs de alto impacto</span><em>ideadas para generar <b>confianza y resultados</b></em></h2>
+        <h2><span>Webs de alto impacto</span><em>ideadas para generar<br className="statement-title-desktop-break"/><b>confianza y resultados</b></em></h2>
         <h3><b>Más confianza. Más consultas. Más ventas.</b></h3>
         <p className="statement-copy"><b>Creamos sitios web diseñados para transmitir autoridad, generar confianza y convertir visitas en consultas reales.</b> Cada decisión, desde el diseño hasta el contenido, está orientada a potenciar tu negocio. <b>Charlemos:</b> te asesoramos sin cargo, conocemos tus objetivos y te proponemos mejoras concretas para generar mejores resultados.</p>
         <a className="orange-cta" href={WHATSAPP_URL}><span className="desktop-only">CHARLEMOS DE TU PROYECTO</span><span className="mobile-only">Contactanos</span></a>
