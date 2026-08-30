@@ -1,0 +1,32 @@
+@font-face{
+  font-family:"Montserrat";
+  src:url("/fonts/Montserrat-Variable.woff2") format("woff2");
+  font-style:normal;
+  font-weight:400 800;
+  font-display:swap;
+}
+
+/* Una sola familia para todos los rótulos editoriales del sitio. */
+#site-root .availability,
+#site-root .happy-clients-label,
+#site-root .section-heading>p:first-child,
+#site-root .google-content>p:first-child,
+#site-root .home-testimonials__copy>p:first-child,
+#site-root .human-copy>p:first-child,
+#site-root .contact-main>p:first-child,
+#site-root .contact-card>span:first-child,
+#site-root .contact-intro>p:first-child,
+#site-root .service-heading>p:first-child,
+#site-root .md-section>header>p:first-child,
+#site-root .md-copy>p:first-child,
+#site-root .pw-intro>p:first-child,
+#site-root .pw-copy>p:first-child,
+#site-root .pw-benefits-copy>p:first-child,
+#site-root .shops-heading>p:first-child,
+#site-root .cases-kicker,
+#site-root .cases-work-heading>p:first-child,
+#site-root .pricing-intro-copy>p:first-child,
+#site-root .pricing-heading>p:first-child,
+#site-root .testimonial-copy>p:first-child{
+  font-family:"Montserrat",Arial,sans-serif!important;
+}
