@@ -337,10 +337,11 @@
 #site-root .home-page .happy-clients-avatars img:first-child{margin-left:0}
 
 #site-root .home-page .happy-clients-label{
-  font-family:"Poppins",Arial,sans-serif;
-  font-size:10px;
+  color:var(--orange);
+  font-family:"Roboto",Arial,sans-serif;
+  font-size:11px;
   font-weight:700;
-  line-height:1.25;
+  line-height:1.4;
   letter-spacing:.24em;
 }
 
@@ -397,11 +398,12 @@
   }
 
   #site-root .home-page .happy-clients-label{
-    font-family:"Poppins",Arial,sans-serif;
-    font-size:12px;
+    color:var(--orange);
+    font-family:"Roboto",Arial,sans-serif;
+    font-size:13px;
     font-weight:700;
-    line-height:1;
-    letter-spacing:.34em;
+    line-height:1.4;
+    letter-spacing:.32em;
     white-space:nowrap;
   }
 
