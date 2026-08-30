@@ -6,8 +6,7 @@
   font-display:swap;
 }
 
-/* Una sola familia para todos los rótulos editoriales del sitio. */
-#site-root .availability,
+/* Montserrat solo en módulos de contenido. Las portadas quedan excluidas. */
 #site-root .happy-clients-label,
 #site-root .section-heading>p:first-child,
 #site-root .google-content>p:first-child,
