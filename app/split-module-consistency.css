@@ -1,0 +1,129 @@
+/*
+ * Sistema compartido para módulos editoriales de texto + mockup.
+ * Toma como patrón la composición aprobada del módulo Web de la Home.
+ * Portadas, testimonios, formularios, footer y módulos de bullets quedan fuera.
+ */
+@media (min-width:1101px){
+  #site-root :is(
+    .home-page .statement,
+    .home-page .google-scene,
+    .marketing-page .md-split,
+    .marketing-page .md-split-wide,
+    .posicionamiento-page .pw-split,
+    .internal-page .service-xtreme,
+    .shops-page .shops-intro-layout,
+    .cases-page .cases-intro
+  ){
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:clamp(72px,6vw,120px)!important;
+    align-items:center!important;
+  }
+
+  #site-root :is(
+    .marketing-page .md-split,
+    .marketing-page .md-split-wide,
+    .posicionamiento-page .pw-split,
+    .shops-page .shops-intro-layout
+  ){
+    width:100%!important;
+    max-width:1675px!important;
+    margin-right:auto!important;
+    margin-left:auto!important;
+  }
+
+  #site-root .home-page :is(.statement,.google-scene){
+    min-height:920px!important;
+    padding:120px max(6vw,72px)!important;
+  }
+
+  #site-root :is(
+    .home-page .statement-copyblock,
+    .home-page .google-content,
+    .marketing-page .md-copy,
+    .posicionamiento-page .pw-copy,
+    .internal-page .service-xtreme .service-heading,
+    .shops-page .shops-intro-copy,
+    .cases-page .cases-intro-copy
+  ){
+    width:100%!important;
+    max-width:600px!important;
+    min-width:0!important;
+    margin-right:0!important;
+    margin-left:0!important;
+    justify-self:start!important;
+  }
+
+  /* Una sola caja visual: mismo ancho, proporción, alineación y ausencia de padding. */
+  #site-root :is(
+    .home-page .screen-swap,
+    .home-page .google-visual,
+    .marketing-page .md-split>.md-device,
+    .posicionamiento-page .pw-split>.pw-media,
+    .internal-page .service-xtreme .service-visual-media,
+    .shops-page .shops-laptop-visual,
+    .cases-page .cases-featured-work
+  ){
+    position:relative!important;
+    display:grid!important;
+    width:100%!important;
+    max-width:none!important;
+    min-width:0!important;
+    min-height:0!important;
+    height:auto!important;
+    aspect-ratio:700/531!important;
+    margin:0!important;
+    padding:0!important;
+    place-items:center!important;
+    align-self:center!important;
+    justify-self:stretch!important;
+    overflow:visible!important;
+  }
+
+  #site-root .home-page .statement .screen-frame{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    aspect-ratio:auto!important;
+    border-radius:0!important;
+    transform:none!important;
+  }
+
+  #site-root .home-page :is(.statement .screen-frame>img,.google-visual>img),
+  #site-root .marketing-page .md-split>.md-device :is(img,video),
+  #site-root .posicionamiento-page .pw-split>.pw-media :is(img,video),
+  #site-root .internal-page .service-xtreme .service-visual-media>img,
+  #site-root .shops-page .shops-laptop-visual>img{
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    height:100%!important;
+    max-height:none!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    object-fit:contain!important;
+    box-shadow:none!important;
+  }
+
+  #site-root .home-page .google-visual>img{
+    position:absolute!important;
+    inset:0!important;
+  }
+
+  #site-root .home-page :is(.statement .screen-dots,.google-visual .screen-dots){
+    bottom:-34px!important;
+  }
+}
+
+@media (min-width:1101px) and (max-width:1400px){
+  #site-root .home-page :is(.statement,.google-scene){
+    min-height:780px!important;
+    padding:90px clamp(52px,6vw,84px)!important;
+  }
+}

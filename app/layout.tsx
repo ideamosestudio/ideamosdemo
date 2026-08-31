@@ -22,6 +22,7 @@ import "./casos-de-exito/casos.css";
 import "../components/DriftWall.css";
 import "./manual-tipografico-modulos-desktop.css";
 import "./eyebrows.css";
+import "./split-module-consistency.css";
 
 const homeMetadata = createPageMetadata({
   title: "Diseño web y marketing digital | Ideamos",

@@ -19,6 +19,21 @@ const testimonials = [
     alt: "Pablo Avila en las oficinas de CYL S.A.",
   },
   {
+    quote: "Entienden tu negocio y lo transforman en una web que te ayuda a potenciarte",
+    desktopLines: [
+      "Entienden tu negocio y lo",
+      "transforman en una web que te",
+      "ayuda a potenciarte",
+    ],
+    name: "Helvio Frieiro",
+    role: "Fundador de STROMA",
+    image: "/media/testimonials/helvio-frieiro-image.jpg",
+    avatar: "/media/testimonials/helvio-frieiro-avatar.png",
+    video: "/media/testimonials/helvio-frieiro.mp4",
+    site: "https://stromaservices.com/",
+    alt: "Helvio Frieiro, fundador de STROMA",
+  },
+  {
     quote: "En Estudio Ideamos desde el primer momento entendieron que estaba buscando",
     desktopLines: ["En Estudio Ideamos desde el", "primer momento entendieron", "que estaba buscando"],
     name: "Rodolfo Merino",
