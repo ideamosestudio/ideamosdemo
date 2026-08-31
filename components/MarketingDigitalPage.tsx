@@ -122,7 +122,7 @@ export default function MarketingDigitalPage() {
       <header data-reveal>
         <p>ECOMMERCE ESTRATÉGICO</p>
         <h2>¿Necesitás una tienda online para<br/>automatizar tus ventas?</h2>
-        <span><b>Automatizá tus ventas</b> con una tienda diseñada para convertir: estrategia, procesos simples y tecnología que trabaja por vos.</span>
+        <span className="md-ecommerce-lead"><b>Automatizá tus ventas</b> con una tienda diseñada para convertir:<br/>estrategia, procesos simples y tecnología que trabaja por vos.</span>
       </header>
       <div className="md-ecommerce-layout">
         <div>{ecommerceBenefits.slice(0, 4).map(([title, copy]) => <article key={title}><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>

@@ -1,0 +1,168 @@
+/* Ajustes desktop solicitados el 31/08/2026. Mobile conserva su composición. */
+@media (min-width:1101px){
+  /* Diseño web: módulo de problemas contenido y alineado con el patrón de la Home. */
+  #site-root .internal-page .design-problems-layout{
+    width:min(1320px,86vw)!important;
+    max-width:none!important;
+    grid-template-columns:minmax(0,1fr) minmax(300px,430px)!important;
+    gap:clamp(54px,5vw,92px)!important;
+    align-items:stretch!important;
+  }
+
+  #site-root .internal-page .design-problems-list{
+    display:grid!important;
+    grid-template-rows:repeat(4,minmax(0,1fr));
+    height:clamp(610px,42vw,760px)!important;
+  }
+
+  #site-root .internal-page .design-problems-list article{
+    display:grid!important;
+    grid-template-columns:24px 1fr!important;
+    align-content:center;
+    min-height:0!important;
+    padding:clamp(18px,1.45vw,25px) 0!important;
+  }
+
+  #site-root .internal-page .design-problems-list article>div{gap:9px!important}
+
+  #site-root .internal-page .design-phone-video{
+    width:100%!important;
+    height:clamp(500px,32vw,590px)!important;
+    min-height:0!important;
+    margin-top:38px!important;
+    align-self:start!important;
+    justify-content:flex-end!important;
+  }
+
+  #site-root .internal-page .design-phone-sequence img{
+    width:auto!important;
+    max-width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:right center!important;
+  }
+
+  /* Diseño web: las cuatro tarjetas ocupan una única fila. */
+  #site-root .internal-page .service-benefits .service-benefits-grid,
+  #site-root .shops-page .shops-problems .service-benefits-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  }
+
+  #site-root .internal-page .service-benefits .service-benefits-grid article,
+  #site-root .shops-page .shops-problems .service-benefits-grid article{
+    min-height:clamp(330px,25vw,410px)!important;
+    padding:clamp(26px,2.2vw,40px)!important;
+  }
+
+  /* Tienda online: saltos de texto, sello de clientes y mockup contra los bullets. */
+  #site-root .shops-page .shop-hero-copy{max-width:960px!important}
+
+  #site-root .shops-page .shops-happy{
+    display:flex!important;
+    width:max-content!important;
+    max-width:100%;
+    align-items:center;
+    gap:18px;
+    margin:0 0 24px!important;
+  }
+
+  #site-root .shops-page .shops-happy-avatars{display:flex;align-items:center;padding-left:2px}
+  #site-root .shops-page .shops-happy-avatars img{
+    width:30.4px!important;
+    height:30.4px!important;
+    margin-left:-7.2px;
+    border:2px solid #f7f7f5;
+    border-radius:50%;
+    object-fit:cover;
+  }
+  #site-root .shops-page .shops-happy-avatars img:first-child{margin-left:0}
+  #site-root .shops-page .shops-happy-label{
+    color:var(--orange);
+    font-family:"Roboto",Arial,sans-serif;
+    font-size:13px;
+    font-weight:700;
+    line-height:1.4;
+    letter-spacing:.32em;
+    white-space:nowrap;
+  }
+
+  #site-root .shops-page .shops-advantages-layout{
+    grid-template-columns:minmax(0,1fr) minmax(300px,430px) minmax(0,1fr)!important;
+    gap:clamp(46px,4vw,76px)!important;
+    align-items:stretch!important;
+    max-width:1400px!important;
+  }
+
+  #site-root .shops-page .shops-feature-column{
+    display:grid!important;
+    grid-template-rows:repeat(4,minmax(0,1fr));
+    height:clamp(620px,42vw,760px)!important;
+    gap:0!important;
+  }
+
+  #site-root .shops-page .shops-feature{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    min-height:0;
+    padding:clamp(14px,1.2vw,20px) 0;
+  }
+
+  #site-root .shops-page .shops-feature>i{
+    flex:0 0 30px;
+    width:30px!important;
+    min-width:30px;
+    height:30px!important;
+    min-height:30px;
+  }
+
+  #site-root .shops-page .shops-phone{
+    width:100%!important;
+    height:clamp(500px,32vw,590px)!important;
+    aspect-ratio:auto!important;
+    margin-top:20px!important;
+    align-self:start;
+  }
+
+  #site-root .shops-page .shops-phone img{object-position:center}
+
+  /* Marketing: ritmo editorial compacto entre los dos primeros módulos. */
+  #site-root .marketing-page .md-growth{padding-bottom:50px!important}
+  #site-root .marketing-page .md-web-design{padding-top:50px!important}
+  #site-root .marketing-page .md-growth>header{margin-bottom:72px!important}
+
+  #site-root .marketing-page .md-ecommerce-lead{
+    width:min(980px,70vw)!important;
+  }
+
+  /* Marketing: área de bullets 20% más angosta y mockup con la misma altura útil. */
+  #site-root .marketing-page .md-problems-layout{
+    width:80%!important;
+    max-width:1120px!important;
+    min-height:0!important;
+    grid-template-columns:minmax(0,1fr) minmax(300px,.82fr)!important;
+    gap:clamp(44px,4vw,72px)!important;
+    align-items:stretch!important;
+  }
+
+  #site-root .marketing-page .md-problems-layout>div:first-child,
+  #site-root .marketing-page .md-red-phone{
+    height:clamp(660px,46vw,780px)!important;
+    min-height:0!important;
+  }
+
+  #site-root .marketing-page .md-problems-layout article{padding:12px 0!important}
+  #site-root .marketing-page .md-red-phone img{
+    top:16px!important;
+    left:50%!important;
+    width:auto!important;
+    height:calc(100% - 116px)!important;
+    max-height:none!important;
+    transform:translateX(-50%)!important;
+  }
+}
+
+@media (max-width:1100px){
+  #site-root .shops-page .shop-hero-copy br,
+  #site-root .marketing-page .md-ecommerce-lead br{display:none}
+}

@@ -22,8 +22,8 @@ const testimonials = [
     quote: "Entienden tu negocio y lo transforman en una web que te ayuda a potenciarte",
     desktopLines: [
       "Entienden tu negocio y lo",
-      "transforman en una web que te",
-      "ayuda a potenciarte",
+      "transforman en una web",
+      "que te ayuda a potenciarte",
     ],
     name: "Helvio Frieiro",
     role: "Fundador de STROMA",

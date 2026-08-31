@@ -64,7 +64,7 @@ export default function ShopPage() {
       <div className="hero-center">
         <p className="availability"><i/> ECOMMERCE PROFESIONAL</p>
         <h1><span>Vendé con tu tienda online.</span><span>Fácil, profesional y sin comisiones</span></h1>
-        <p className="hero-copy">Creamos tiendas online pensadas para vender más: fáciles de usar, rápidas y listas para crecer con tu negocio.</p>
+        <p className="hero-copy shop-hero-copy">Creamos tiendas online pensadas para vender más:<br/>fáciles de usar, rápidas y listas para crecer con tu negocio.</p>
         <Actions />
       </div>
     </section>
@@ -78,7 +78,12 @@ export default function ShopPage() {
       </header>
       <div className="shops-intro-layout">
         <div className="shops-intro-copy">
-          <div className="shops-happy"><img src={asset("/media/happy-clients.webp")} alt="Más de 2000 clientes felices" width="693" height="54"/></div>
+          <div className="shops-happy" aria-label="Más de 2000 clientes felices">
+            <span className="shops-happy-avatars" aria-hidden="true">
+              {["003", "002", "001"].map((name) => <img key={name} src={asset(`/media/client-${name}.png`)} alt="" width="326" height="322" loading="lazy" decoding="async" />)}
+            </span>
+            <span className="shops-happy-label">MÁS DE 2000 CLIENTES FELICES</span>
+          </div>
           <h3><span>Vendé las 24 horas del día,</span><span>los 7 días de la semana</span></h3>
           <h4><b>Diseño Web y Marketing Digital</b> de alto impacto</h4>
           <p>Tener una tienda online ofrece numerosas ventajas que pueden transformar su negocio. Permite llegar a una audiencia global, superando las limitaciones geográficas de un local físico, y le permite vender sus productos o servicios las 24 horas del día, los 7 días de la semana.</p>
