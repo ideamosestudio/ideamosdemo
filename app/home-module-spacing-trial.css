@@ -1,11 +1,11 @@
 /*
  * Prueba de ritmo vertical exclusiva de la Home.
  * La distancia se mide desde los elementos visibles, no desde cajas internas.
- * La referencia aprobatoria es ~240px por borde de módulo en desktop.
+ * Ritmo editorial compacto: ~112px por borde de módulo en desktop.
  */
 @media (min-width:1101px){
   #site-root .home-page{
-    --home-module-visible-space:clamp(210px,12.5vw,240px);
+    --home-module-visible-space:clamp(96px,6vw,112px);
   }
 
   #site-root .home-page .home-services-grid>.statement,
