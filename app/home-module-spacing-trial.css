@@ -1,21 +1,35 @@
 /*
- * Prueba de ritmo vertical exclusiva de la Home.
+ * Ritmo vertical editorial aprobado para todo el sitio.
  * La distancia se mide desde los elementos visibles, no desde cajas internas.
- * Ritmo editorial compacto: ~112px por borde de módulo en desktop.
+ * Portadas, videos a pantalla completa, formularios y footer conservan
+ * sus composiciones propias. Mobile tampoco participa de esta regla.
  */
 @media (min-width:1101px){
-  #site-root .home-page{
-    --home-module-visible-space:clamp(96px,6vw,112px);
+  #site-root{
+    --module-visible-space:clamp(96px,6vw,112px);
   }
 
+  /* Home */
   #site-root .home-page .home-services-grid>.statement,
   #site-root .home-page .home-services-grid>.ecommerce,
   #site-root .home-page .home-services-grid>.google-scene,
   #site-root .home-page>.pdw-section,
-  #site-root .home-page .home-testimonials{
+  /* Páginas de servicios */
+  #site-root .internal-page .service-section,
+  #site-root .marketing-page .md-section,
+  #site-root .posicionamiento-page .pw-section,
+  #site-root .shops-page .shops-intro,
+  #site-root .shops-page .shops-advantages,
+  /* Casos de éxito y precios */
+  #site-root .cases-page .cases-intro,
+  #site-root .cases-page .cases-work,
+  #site-root .cases-page .testimonial,
+  #site-root .prices-page .pricing-plans,
+  /* Testimonios reutilizados en Home y páginas internas */
+  #site-root .home-testimonials{
     min-height:0!important;
-    padding-top:var(--home-module-visible-space)!important;
-    padding-bottom:var(--home-module-visible-space)!important;
+    padding-top:var(--module-visible-space)!important;
+    padding-bottom:var(--module-visible-space)!important;
   }
 
   /* En los módulos a dos columnas, el espacio se calcula contra la caja visual. */
@@ -25,7 +39,7 @@
   }
 
   /* Evita que antiguas alturas mínimas vuelvan a sumar aire invisible. */
-  #site-root .home-page .home-testimonials__slide{
+  #site-root .home-testimonials__slide{
     min-height:0!important;
   }
 }
