@@ -1,0 +1,31 @@
+/*
+ * Prueba de ritmo vertical exclusiva de la Home.
+ * La distancia se mide desde los elementos visibles, no desde cajas internas.
+ * La referencia aprobatoria es ~240px por borde de módulo en desktop.
+ */
+@media (min-width:1101px){
+  #site-root .home-page{
+    --home-module-visible-space:clamp(210px,12.5vw,240px);
+  }
+
+  #site-root .home-page .home-services-grid>.statement,
+  #site-root .home-page .home-services-grid>.ecommerce,
+  #site-root .home-page .home-services-grid>.google-scene,
+  #site-root .home-page>.pdw-section,
+  #site-root .home-page .home-testimonials{
+    min-height:0!important;
+    padding-top:var(--home-module-visible-space)!important;
+    padding-bottom:var(--home-module-visible-space)!important;
+  }
+
+  /* En los módulos a dos columnas, el espacio se calcula contra la caja visual. */
+  #site-root .home-page .home-services-grid>.statement,
+  #site-root .home-page .home-services-grid>.google-scene{
+    align-items:center!important;
+  }
+
+  /* Evita que antiguas alturas mínimas vuelvan a sumar aire invisible. */
+  #site-root .home-page .home-testimonials__slide{
+    min-height:0!important;
+  }
+}
