@@ -35,10 +35,10 @@
   }
 
   #site-root .internal-page .design-phone-sequence img{
-    width:auto!important;
-    max-width:100%!important;
+    width:100%!important;
+    max-width:none!important;
     height:100%!important;
-    object-fit:contain!important;
+    object-fit:fill!important;
     object-position:right center!important;
   }
 
@@ -50,16 +50,16 @@
 
   #site-root .internal-page .service-benefits .service-benefits-grid article,
   #site-root .shops-page .shops-problems .service-benefits-grid article{
-    min-height:clamp(330px,25vw,410px)!important;
+    min-height:clamp(390px,25vw,480px)!important;
     padding:clamp(26px,2.2vw,40px)!important;
   }
 
   #site-root .internal-page .service-benefits .benefit-motion{
-    top:70px!important;
+    top:110px!important;
   }
 
   #site-root .internal-page .service-benefits .service-benefits-grid h3{
-    margin-top:130px!important;
+    margin-top:175px!important;
   }
 
   #site-root .internal-page .service-section.service-benefits{
@@ -99,10 +99,10 @@
   }
 
   #site-root .shops-page .shops-advantages-layout{
-    width:min(1354px,86vw)!important;
+    width:min(1675px,88vw)!important;
     grid-template-columns:minmax(0,1fr) minmax(300px,430px) minmax(0,1fr)!important;
     justify-content:center!important;
-    gap:clamp(54px,4.3vw,82px)!important;
+    gap:clamp(72px,7.55vw,145px)!important;
     align-items:stretch!important;
     max-width:none!important;
   }
@@ -145,37 +145,32 @@
   #site-root .marketing-page .md-web-design{padding-top:50px!important}
   #site-root .marketing-page .md-growth>header{margin-bottom:72px!important}
 
-  /* Los cuatro módulos texto + mockup replican la grilla aprobada de la Home. */
+  /* Los cuatro módulos texto + mockup usan la grilla exacta de la Home. */
   #site-root .marketing-page :is(
     .md-growth>.md-split,
     .md-web-design>.md-split,
     .md-positioning>.md-split
   ){
-    width:min(1675px,88vw)!important;
-    max-width:none!important;
-    grid-template-columns:minmax(0,600px) minmax(0,700px)!important;
-    justify-content:space-between!important;
-    gap:0!important;
+    width:100%!important;
+    max-width:1675px!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:clamp(72px,6vw,120px)!important;
     align-items:center!important;
     margin-right:auto!important;
     margin-left:auto!important;
-    position:relative!important;
-    left:50%!important;
-    transform:translateX(-50%)!important;
     min-height:0!important;
   }
 
   #site-root .marketing-page .md-social{
-    width:min(1675px,88vw)!important;
+    width:100%!important;
     max-width:none!important;
-    grid-template-columns:minmax(0,600px) minmax(0,700px)!important;
-    justify-content:space-between!important;
-    gap:0!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:clamp(72px,6vw,120px)!important;
     align-items:center!important;
     margin-right:auto!important;
     margin-left:auto!important;
-    padding-right:0!important;
-    padding-left:0!important;
+    padding-right:max(6vw,70px)!important;
+    padding-left:max(6vw,70px)!important;
     min-height:0!important;
   }
 
@@ -196,8 +191,8 @@
     .md-positioning>.md-split,
     .md-social
   )>.md-device{
-    width:700px!important;
-    max-width:100%!important;
+    width:100%!important;
+    max-width:none!important;
     height:auto!important;
     min-height:0!important;
     aspect-ratio:700/531!important;
@@ -222,10 +217,25 @@
     width:min(980px,70vw)!important;
   }
 
-  /* Marketing: área de bullets 20% más angosta y mockup con la misma altura útil. */
-  #site-root .marketing-page .md-problems-layout{
+  /* El módulo ecommerce era el que debía reducirse 20%, no el módulo final. */
+  #site-root .marketing-page .md-ecommerce-layout{
     width:80%!important;
-    max-width:1120px!important;
+    max-width:1200px!important;
+    grid-template-columns:minmax(0,1fr) minmax(300px,390px) minmax(0,1fr)!important;
+    gap:clamp(38px,3vw,58px)!important;
+    align-items:stretch!important;
+  }
+
+  #site-root .marketing-page .md-ecommerce-layout>div:first-child,
+  #site-root .marketing-page .md-ecommerce-layout>div:last-child,
+  #site-root .marketing-page .md-ecommerce-visual{
+    height:760px!important;
+  }
+
+  /* Marketing: el módulo final conserva su ancho y alinea el teléfono con sus bullets. */
+  #site-root .marketing-page .md-problems-layout{
+    width:100%!important;
+    max-width:1400px!important;
     min-height:0!important;
     grid-template-columns:minmax(0,1fr) minmax(300px,.82fr)!important;
     gap:clamp(44px,4vw,72px)!important;
@@ -240,10 +250,10 @@
 
   #site-root .marketing-page .md-problems-layout article{padding:12px 0!important}
   #site-root .marketing-page .md-red-phone img{
-    top:16px!important;
+    top:0!important;
     left:50%!important;
     width:auto!important;
-    height:calc(100% - 116px)!important;
+    height:100%!important;
     max-height:none!important;
     transform:translateX(-50%)!important;
   }
