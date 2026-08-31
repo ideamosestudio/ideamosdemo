@@ -326,9 +326,9 @@
 
 #site-root .home-page .happy-clients-avatars img{
   position:relative;
-  width:34px;
-  height:34px;
-  margin-left:-8px;
+  width:27.2px;
+  height:27.2px;
+  margin-left:-6.4px;
   border:2px solid #f7f7f5;
   border-radius:50%;
   object-fit:cover;
@@ -382,9 +382,9 @@
 
   #site-root .home-page .happy-clients-avatars img{
     position:relative;
-    width:38px;
-    height:38px;
-    margin-left:-9px;
+    width:30.4px;
+    height:30.4px;
+    margin-left:-7.2px;
     border:2px solid #f7f7f5;
     border-radius:50%;
     object-fit:cover;
@@ -476,7 +476,7 @@
   #site-root .home-page .statement .screen-frame{
     top:50%;
     left:50%;
-    width:35.7vw!important;
+    width:45.4vw!important;
     max-width:none!important;
     aspect-ratio:700/512!important;
     overflow:visible!important;
@@ -491,6 +491,10 @@
     height:100%!important;
     object-fit:contain!important;
   }
+}
+
+@media (min-width:1920px){
+  #site-root .home-page .statement .screen-frame{width:41.56vw!important}
 }
 
 @media (max-width:980px){

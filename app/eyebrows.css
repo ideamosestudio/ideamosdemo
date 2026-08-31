@@ -36,3 +36,57 @@
   font-family:"Poppins",Arial,sans-serif!important;
   color:#e64a00!important;
 }
+
+/* Una sola voz tipográfica para todos los botones y CTAs del sitio. */
+#site-root :is(
+  button,
+  .nav-contact,
+  .cta-glow,
+  .orange-cta,
+  .cases-action,
+  .shops-red-cta,
+  .md-action,
+  .pw-action,
+  .price-cta,
+  .price-more,
+  .contact-submit,
+  .ideamos-footer__whatsapp,
+  footer .footer-brand>a
+),
+#site-root :is(
+  button,
+  .nav-contact,
+  .cta-glow,
+  .orange-cta,
+  .cases-action,
+  .shops-red-cta,
+  .md-action,
+  .pw-action,
+  .price-cta,
+  .price-more,
+  .contact-submit,
+  .ideamos-footer__whatsapp,
+  footer .footer-brand>a
+) :is(span,b,strong){
+  font-family:"Poppins",Arial,sans-serif!important;
+  font-weight:700!important;
+}
+
+@media (min-width:981px){
+  #site-root .nav{padding-top:9px!important;padding-bottom:9px!important}
+
+  #site-root .nav .nav-contact{
+    align-self:center!important;
+    height:50px!important;
+    min-height:50px!important;
+    margin-block:0!important;
+    padding-top:0!important;
+    padding-bottom:0!important;
+    border:2px solid #e64a00!important;
+    background:transparent!important;
+    box-sizing:border-box;
+    font-family:"Poppins",Arial,sans-serif!important;
+    font-weight:700!important;
+    line-height:1!important;
+  }
+}
