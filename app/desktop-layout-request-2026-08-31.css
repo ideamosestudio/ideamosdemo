@@ -159,6 +159,9 @@
     align-items:center!important;
     margin-right:auto!important;
     margin-left:auto!important;
+    position:relative!important;
+    left:50%!important;
+    transform:translateX(-50%)!important;
     min-height:0!important;
   }
 
