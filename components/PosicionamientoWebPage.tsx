@@ -111,13 +111,6 @@ export default function PosicionamientoWebPage() {
       <div className="pw-phone" data-reveal><img src={asset("/media/posicionamiento-phone.png")} alt="Panel de rendimiento de campañas de Google Ads en un teléfono" /></div>
     </section>
 
-    </LightGridFrame>
-
-    <section className="pw-wide-video" aria-label="Estrategia de posicionamiento SEO">
-      <ManagedBackgroundVideo src={asset("/media/posicionamiento-seo.mp4")} />
-    </section>
-
-    <LightGridFrame className="positioning-light-grid">
     <section className="pw-section pw-seo">
       <Intro eyebrow="POSICIONAMIENTO EN GOOGLE" title={<>Posicionamiento SEO:<br/>dominá los resultados de búsqueda</>}>
         Construí visibilidad duradera, atraé tráfico de calidad y convertí tu sitio en un activo que trabaja todos los días.

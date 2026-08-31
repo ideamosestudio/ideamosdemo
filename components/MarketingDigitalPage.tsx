@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
-import { HeroChrome, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
+import { DarkGridBackground, HeroChrome, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
 import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
 import { WHATSAPP_URL as whatsapp } from "../lib/whatsapp";
@@ -42,10 +42,9 @@ const method = [
 
 const problems = [
   ["“Necesito delegar el marketing en una empresa confiable”", "Nos ocupamos de estrategia, diseño, campañas y seguimiento. Vos te enfocás en hacer crecer el negocio."],
-  ["“Pierdo oportunidades por no tener una web profesional”", "Diseñamos sitios que transmiten confianza, explican claro lo que ofrecés y captan clientes desde el primer día."],
-  ["“Quiero una tienda online para vender más y automatizar”", "Creamos tiendas profesionales, fáciles de usar y listas para vender, medir y escalar."],
-  ["“Quiero ser primero en Google pero no sé por dónde empezar”", "Simplificamos SEO y Google Ads en un plan realista para empezar a ganar visibilidad y resultados."],
-  ["“No sé por cómo arrancar, pero sé que necesito hacer algo”", "Ordenamos prioridades y te mostramos qué conviene hacer paso a paso, sin compromiso."],
+  ["“Pierdo oportunidades por no tener una estrategia digital clara”", "Ordenamos tu presencia digital, mejoramos tu web y activamos campañas para convertir más oportunidades en clientes."],
+  ["“Quiero generar más consultas y ventas”", "Creamos campañas, contenidos y activos digitales pensados para atraer, convertir y escalar."],
+  ["“Quiero aparecer primero en Google”", "Simplificamos SEO y Google Ads en un plan realista para ganar visibilidad y resultados."],
 ];
 
 export default function MarketingDigitalPage() {
@@ -143,18 +142,18 @@ export default function MarketingDigitalPage() {
       <div className="md-double-actions"><Action>Quiero una asesoría sin cargo</Action><Action>Quiero contactar un experto</Action></div>
     </section>
 
-    <section className="md-section md-centered-intro md-problems">
-      <header data-reveal>
+    <section className="service-section service-benefits md-problems">
+      <DarkGridBackground />
+      <header className="service-heading" data-reveal>
         <p>SOLUCIONES A TU MEDIDA</p>
         <h2>¿Qué problemas resolvemos para vos y tu empresa?</h2>
-        <span>Descubrí cómo <b>nuestras soluciones digitales ayudan a aumentar ventas</b>, atraer clientes y posicionar negocios como líderes.</span>
+        <div className="md-problems-lead">Descubrí cómo nuestras soluciones digitales ayudan a aumentar ventas, atraer clientes y posicionar negocios como líderes.</div>
       </header>
-      <div className="md-problems-layout">
-        <div className="md-red-phone"><img src={asset("/media/marketing-tienda-roja.webp")} alt="Tienda online de indumentaria en dispositivo móvil" loading="lazy" decoding="async" /></div>
-        <div className="md-problems-grid">{problems.map(([title, copy], index) => <article key={title}>
-          <div className="md-problem-index"><i/><small>0{index + 1}</small></div>
+      <div className="service-items service-benefits-grid">
+        {problems.map(([title, copy], index) => <article key={title}>
+          <span className={`benefit-motion benefit-motion-${index + 1}`} aria-hidden="true"><i/><i/><i/><i/></span>
           <h3>{title}</h3><p>{copy}</p>
-        </article>)}</div>
+        </article>)}
       </div>
       <div className="md-double-actions"><Action>Quiero una asesoría sin cargo</Action><Action>Quiero contactar un experto</Action></div>
     </section>

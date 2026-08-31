@@ -153,7 +153,7 @@
   #site-root .shops-page .shops-phone img{object-position:center}
 
   /* Marketing: ritmo editorial compacto entre los dos primeros módulos. */
-  #site-root .marketing-page .md-growth{padding-bottom:50px!important}
+  #site-root .marketing-page .md-growth{padding-bottom:120px!important}
   #site-root .marketing-page .md-web-design{padding-top:50px!important}
   #site-root .marketing-page .md-growth>header{margin-bottom:72px!important}
 
@@ -250,45 +250,32 @@
   /* Marketing: ritmo vertical del bloque principal y método más compacto. */
   #site-root .marketing-page .md-positioning>header{margin-bottom:100px!important}
 
-  #site-root .marketing-page .md-method-layout{
-    width:min(1675px,88vw)!important;
+  #site-root .marketing-page .md-positioning{padding-bottom:30px!important}
+  #site-root .marketing-page .md-social{padding-top:23px!important;padding-bottom:59px!important}
+  #site-root .marketing-page .md-method{padding:58px 6.7vw 108px!important}
+  #site-root .marketing-page :is(.md-positioning,.md-method) header>span{
+    width:min(1200px,80vw)!important;
     max-width:none!important;
-    grid-template-columns:minmax(0,1fr) minmax(340px,405px)!important;
-    gap:clamp(70px,5vw,100px)!important;
+    white-space:nowrap!important;
+  }
+
+  #site-root .marketing-page .md-method-layout{
+    width:min(1535px,80vw)!important;
+    max-width:none!important;
+    grid-template-columns:minmax(0,1fr) minmax(340px,490px)!important;
+    gap:clamp(70px,5.2vw,100px)!important;
+    margin-left:0!important;
+    margin-right:auto!important;
   }
 
   #site-root .marketing-page .md-method-list small{font-size:27px!important}
 
-  /* Marketing: cierre editorial con visual contenido y matriz escaneable. */
-  #site-root .marketing-page .md-problems-layout{
-    width:min(1405px,86vw)!important;
-    max-width:none!important;
-    min-height:0!important;
-    grid-template-columns:minmax(360px,430px) minmax(0,1fr)!important;
-    gap:clamp(70px,6vw,115px)!important;
-    align-items:center!important;
-  }
-
-  #site-root .marketing-page .md-red-phone{
-    height:690px!important;
-    min-height:0!important;
-  }
-
-  #site-root .marketing-page .md-problems-layout article{padding:30px 4px 32px!important}
-  #site-root .marketing-page .md-problems-layout article:nth-child(5){padding-right:4px!important}
-  #site-root .marketing-page .md-red-phone img{
-    position:relative!important;
-    top:auto!important;
-    left:auto!important;
-    width:auto!important;
-    height:620px!important;
-    max-width:92%!important;
-    max-height:none!important;
-    transform:scale(1.45)!important;
-  }
 }
 
 @media (max-width:1100px){
   #site-root .shops-page .shop-hero-copy br,
   #site-root .marketing-page .md-ecommerce-lead br{display:none}
 }
+
+/* Posicionamiento: un único espacio entre Ads y SEO después de retirar el video. */
+#site-root .posicionamiento-page .pw-ads-benefits{padding-bottom:0!important}
