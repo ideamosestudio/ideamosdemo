@@ -50,16 +50,23 @@
 
   #site-root .internal-page .service-benefits .service-benefits-grid article,
   #site-root .shops-page .shops-problems .service-benefits-grid article{
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:center!important;
     min-height:clamp(390px,25vw,480px)!important;
     padding:clamp(26px,2.2vw,40px)!important;
   }
 
   #site-root .internal-page .service-benefits .benefit-motion{
-    top:110px!important;
+    position:relative!important;
+    top:auto!important;
+    left:auto!important;
+    flex:0 0 56px!important;
+    margin:0 auto 48px!important;
   }
 
   #site-root .internal-page .service-benefits .service-benefits-grid h3{
-    margin-top:175px!important;
+    margin-top:0!important;
   }
 
   #site-root .internal-page .service-section.service-benefits{
@@ -105,6 +112,9 @@
     gap:clamp(72px,7.55vw,145px)!important;
     align-items:stretch!important;
     max-width:none!important;
+    position:relative!important;
+    left:50%!important;
+    transform:translateX(-50%)!important;
   }
 
   #site-root .shops-page .shops-feature-column{
@@ -151,13 +161,16 @@
     .md-web-design>.md-split,
     .md-positioning>.md-split
   ){
-    width:100%!important;
-    max-width:1675px!important;
+    width:min(1675px,88vw)!important;
+    max-width:none!important;
     grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
     gap:clamp(72px,6vw,120px)!important;
     align-items:center!important;
     margin-right:auto!important;
     margin-left:auto!important;
+    position:relative!important;
+    left:50%!important;
+    transform:translateX(-50%)!important;
     min-height:0!important;
   }
 
