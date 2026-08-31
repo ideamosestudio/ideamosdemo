@@ -12,6 +12,7 @@ const pagePaths = [
   ["marketing-digital/index.html", "https://ideamos.com.ar/marketing-digital/"],
   ["posicionamiento-web/index.html", "https://ideamos.com.ar/posicionamiento-web/"],
   ["casos-de-exito/index.html", "https://ideamos.com.ar/casos-de-exito/"],
+  ["testimonios/index.html", "https://ideamos.com.ar/testimonios/"],
   ["precios/index.html", "https://ideamos.com.ar/precios/"],
   ["contacto/index.html", "https://ideamos.com.ar/contacto/"],
 ];

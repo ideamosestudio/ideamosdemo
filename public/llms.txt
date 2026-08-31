@@ -13,6 +13,7 @@ Información oficial del estudio. Idioma principal: español de Argentina. Sitio
 - [Marketing digital](https://ideamos.com.ar/marketing-digital/): Estrategias digitales para generar leads y ventas.
 - [Posicionamiento en Google](https://ideamos.com.ar/posicionamiento-web/): Servicios de SEO, Google Ads y visibilidad local.
 - [Casos de éxito](https://ideamos.com.ar/casos-de-exito/): Selección de trabajos y resultados para clientes.
+- [Testimonios](https://ideamos.com.ar/testimonios/): Experiencias reales de clientes que trabajaron con Ideamos.
 
 ## Contacto
 
