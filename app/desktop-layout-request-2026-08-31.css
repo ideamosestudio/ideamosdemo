@@ -12,7 +12,7 @@
   #site-root .internal-page .design-problems-list{
     display:grid!important;
     grid-template-rows:repeat(4,minmax(0,1fr));
-    height:clamp(680px,44vw,840px)!important;
+    height:auto!important;
   }
 
   #site-root .internal-page .design-problems-list article{
@@ -27,18 +27,20 @@
 
   #site-root .internal-page .design-phone-video{
     width:100%!important;
-    height:clamp(680px,44vw,840px)!important;
+    height:auto!important;
     min-height:0!important;
     margin-top:0!important;
-    align-self:start!important;
+    align-self:stretch!important;
+    align-items:stretch!important;
     justify-content:flex-end!important;
   }
 
   #site-root .internal-page .design-phone-sequence img{
     width:100%!important;
-    max-width:none!important;
-    height:100%!important;
-    object-fit:fill!important;
+    max-width:525px!important;
+    height:auto!important;
+    aspect-ratio:525/1080;
+    object-fit:contain!important;
     object-position:right center!important;
   }
 
