@@ -10,18 +10,15 @@ import { WHATSAPP_URL } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
-const advantagesLeft = [
-  ["Cobrás online sin vueltas", "Aceptá tarjetas, transferencias y billeteras en un checkout rápido y seguro. Activamos Mercado Pago y métodos locales para que cobres desde el día uno."],
-  ["Envíos más fácil", "Mostrá tarifas y tiempos en vivo con Correo Argentino, Andreani y OCA. Seguimiento para el cliente y retiro en punto o a domicilio, sin complicaciones."],
-  ["No nos pagas comisiones", "Tu tienda es 100% tuya: dominio, hosting y acceso administrador desde el día uno. Ideamos no te cobra por venta ni alquiler mensual. Es un activo de tu marca, no una cuenta prestada."],
-  ["Transmití confianza", "Una web profesional con dominio propio, pagos seguros y envíos integrados transmite seriedad. Le da a tu marca el respaldo que un perfil de redes no puede ofrecer."],
-];
-
-const advantagesRight = [
-  ["Gestión de catálogo y stock", "Cargá productos, variantes y precios en minutos, sin planillas eternas. Sincronizá inventario y alertas para no vender lo que no hay."],
-  ["Diseño estratégico a medida", "Cada elemento cumple una función: guiar al usuario, simplificar la compra y aumentar la conversión. Nada está puesto al azar. Lo estético sigue a lo estratégico."],
-  ["Tomá decisiones informadas", "Mirá ventas, conversión y ticket promedio en un tablero claro. Detectá qué canales rinden y dónde conviene invertir más."],
-  ["Mejor atención en menos tiempo", "El cliente puede ver precios, stock, tiempos y medios de pago sin preguntarte nada. Respondés menos mensajes y vendés más igual."],
+const ecommerceBenefits = [
+  ["Cobrás online sin vueltas", "Aceptá tarjetas, transferencias y billeteras en un checkout rápido y seguro."],
+  ["Envíos más fácil", "Mostrá tarifas y tiempos en vivo. Seguimiento para el cliente, sin complicaciones."],
+  ["No nos pagás comisiones", "Tu tienda es 100% tuya: dominio, hosting y acceso administrador desde el día uno."],
+  ["Transmití confianza", "Pagos seguros y envíos integrados le dan a tu marca el respaldo que necesita."],
+  ["Gestión de catálogo y stock", "Cargá productos, variantes y precios en minutos. Sincronizá inventario y alertas."],
+  ["Diseño estratégico a medida", "Cada elemento guía al usuario, simplifica la compra y aumenta la conversión."],
+  ["Tomá decisiones informadas", "Mirá ventas, conversión y ticket promedio para invertir donde más rinde."],
+  ["Mejor atención en menos tiempo", "Tus clientes ven precios, stock, tiempos y medios de pago sin preguntarte nada."],
 ];
 
 const problems = [
@@ -36,14 +33,6 @@ function Actions() {
     <a className="cta-glow primary" href={WHATSAPP_URL}><span>Quiero una asesoría sin cargo</span></a>
     <a className="cta-glow secondary" href={WHATSAPP_URL}><span>Quiero contactar un experto</span></a>
   </div>;
-}
-
-function Feature({ title, copy }: { title: string; copy: string }) {
-  return <article className="shops-feature">
-    <i aria-hidden="true" />
-    <h3>{title}</h3>
-    <p>{copy}</p>
-  </article>;
 }
 
 export default function ShopPage() {
@@ -95,20 +84,21 @@ export default function ShopPage() {
       </div>
     </section>
 
-    <section className="shops-advantages shops-grid-bg">
-      <header className="shops-heading">
-        <p>ESCALÁ TU NEGOCIO CON IDEAMOS</p>
-        <h2>¿Qué ventajas tiene hacer tu tienda con<br/>Ideamos?</h2>
-        <span>Cobrás, despachás y gestionás todo desde un solo lugar. Sin vueltas, sin fricción y con más<br/>tiempo para hacer crecer tu marca.</span>
+    <section className="shops-ecommerce shops-grid-bg">
+      <header className="shops-heading shops-ecommerce-heading">
+        <p>ECOMMERCE ESTRATÉGICO</p>
+        <h2>¿Necesitás una tienda online para<br/>automatizar tus ventas?</h2>
+        <span><b>Automatizá tus ventas</b> con una tienda diseñada para convertir:<br/>estrategia, procesos simples y tecnología que trabaja por vos.</span>
       </header>
-      <div className="shops-advantages-layout">
-        <div className="shops-feature-column">{advantagesLeft.map(([title, copy]) => <Feature key={title} title={title} copy={copy} />)}</div>
-        <div className="shops-phone" aria-label="Ejemplo animado de una tienda online en celular">
-          {[1, 2, 3].map((number) => <img key={number} src={asset(`/media/wilde-phone-${number}.png`)} alt={number === 1 ? "Tienda online Wilde vista desde un celular" : ""} aria-hidden={number !== 1} />)}
-        </div>
-        <div className="shops-feature-column">{advantagesRight.map(([title, copy]) => <Feature key={title} title={title} copy={copy} />)}</div>
+      <div className="shops-ecommerce-layout">
+        <div>{ecommerceBenefits.slice(0, 4).map(([title, copy]) => <article key={title}><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
+        <div className="shops-ecommerce-visual"><ManagedBackgroundVideo src={asset("/media/marketing-wilde.webm")} /></div>
+        <div>{ecommerceBenefits.slice(4).map(([title, copy]) => <article key={title}><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
       </div>
-      <Actions />
+      <div className="shops-ecommerce-actions">
+        <a className="orange-cta" href={WHATSAPP_URL}>QUIERO UNA TIENDA ONLINE</a>
+        <a className="orange-cta" href={WHATSAPP_URL}>QUIERO HABLAR CON UN EXPERTO</a>
+      </div>
     </section>
 
     <section className="service-section service-benefits shops-problems">

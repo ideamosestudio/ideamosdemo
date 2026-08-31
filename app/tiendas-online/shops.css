@@ -2,9 +2,9 @@
 .shops-grid-bg{position:relative;background-color:#fff;background-image:linear-gradient(rgba(0,0,0,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.035) 1px,transparent 1px);background-size:64px 64px}
 .shop-hero h1{font-size:clamp(52px,4.45vw,84px);line-height:.98;margin:34px 0 28px}
 .shop-hero h1 span{display:block;white-space:nowrap}
-.shops-intro,.shops-advantages,.shops-problems{padding:140px max(5vw,48px);overflow:hidden}
+.shops-intro,.shops-ecommerce,.shops-problems{padding:140px max(5vw,48px);overflow:hidden}
 .shops-intro{background:#fff;background-image:none}
-.shops-advantages,.shops-problems{padding-top:115px}
+.shops-ecommerce,.shops-problems{padding-top:115px}
 .shops-heading{position:relative;z-index:2;text-align:center;margin:0 auto 100px}
 .shops-heading>p{margin:0 0 22px;color:var(--orange);font-size:12px;font-weight:800;letter-spacing:.42em}
 .shops-heading h2{max-width:1160px;margin:0 auto;font-family:"Gilroy ExtraBold",Arial,sans-serif;font-size:clamp(38px,3.15vw,58px);font-weight:800;line-height:.98;letter-spacing:-.05em}
@@ -21,20 +21,20 @@
 .shops-laptop-visual img{display:block;width:100%;max-width:900px;height:auto;filter:drop-shadow(0 28px 26px rgba(0,0,0,.28))}
 .shops-red-cta{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-width:330px;padding:20px 30px;color:#fff;background:linear-gradient(100deg,#ff1000,#9d0000);border-radius:999px;box-shadow:0 18px 30px rgba(175,0,0,.25);font-size:12px;font-weight:800;letter-spacing:.05em;transition:transform .25s ease,letter-spacing .25s ease}
 .shops-red-cta:hover,.shops-red-cta:focus-visible{transform:translateY(-4px);letter-spacing:.1em}
-.shops-advantages{padding-bottom:120px}
-.shops-advantages-layout{position:relative;z-index:2;display:grid;grid-template-columns:minmax(300px,1fr) minmax(420px,.9fr) minmax(300px,1fr);gap:clamp(36px,5vw,90px);align-items:center;max-width:1540px;margin:0 auto}
-.shops-feature-column{display:grid;gap:36px}
-.shops-feature{text-align:center}
-.shops-feature>i{display:block;width:30px;height:30px;margin:0 auto 20px;border:7px solid var(--orange);border-radius:50%;box-shadow:inset 0 0 0 3px #fff}
-.shops-feature h3{margin:0 0 12px;font-size:clamp(20px,1.7vw,27px);line-height:1.15;letter-spacing:-.035em}
-.shops-feature p{margin:0 auto;max-width:430px;color:#2f2f2f;font-size:13px;line-height:1.55}
-.shops-phone{position:relative;width:100%;max-width:520px;aspect-ratio:526/1084;margin-inline:auto}
-.shops-phone img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;opacity:0;filter:drop-shadow(0 32px 28px rgba(0,0,0,.2));animation:shopsPhoneSwap 9s ease-in-out infinite}
-.shops-phone img:nth-child(2){animation-delay:-6s}
-.shops-phone img:nth-child(3){animation-delay:-3s}
-@keyframes shopsPhoneSwap{0%,28%{opacity:1;transform:translateY(0) scale(1)}33%,95%{opacity:0;transform:translateY(10px) scale(.985)}100%{opacity:1;transform:translateY(0) scale(1)}}
-.shops-advantages>.internal-actions{position:relative;z-index:2;justify-content:center;margin:64px auto 0}
-.shops-advantages>.internal-actions .cta-glow.secondary{display:flex!important}
+.shops-ecommerce{padding-bottom:120px}
+.shops-ecommerce-heading{margin-bottom:82px}
+.shops-ecommerce-heading>span{max-width:900px}
+.shops-ecommerce-heading>span b{color:#111}
+.shops-ecommerce-layout{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,460px) minmax(0,1fr);gap:clamp(50px,3.65vw,70px);align-items:stretch;width:min(1280px,80vw);margin:0 auto}
+.shops-ecommerce-layout>div:first-child,.shops-ecommerce-layout>div:last-child{display:grid;grid-template-rows:repeat(4,minmax(0,1fr));height:760px;text-align:center}
+.shops-ecommerce-layout article{display:flex;min-height:0;padding:10px 0 26px;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.shops-ecommerce-layout article i{display:block;width:23px;height:23px;margin:0 auto 20px;border:7px solid var(--orange);border-radius:50%}
+.shops-ecommerce-layout h3{margin:0 0 12px;font-size:20px;line-height:1.2;letter-spacing:-.025em}
+.shops-ecommerce-layout p{max-width:330px;margin:0 auto;color:#555;font-size:14px;line-height:1.6}
+.shops-ecommerce-visual{position:relative;height:760px;min-height:0;overflow:hidden}
+.shops-ecommerce-visual img,.shops-ecommerce-visual video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
+.shops-ecommerce-actions{position:relative;z-index:2;display:flex;justify-content:center;gap:18px;margin-top:75px}
+.shops-ecommerce-actions .orange-cta{display:inline-flex;align-items:center;justify-content:center;margin:0;padding:20px 30px;border-radius:999px;background:linear-gradient(120deg,#ff1708,#a91408);box-shadow:0 18px 35px rgba(188,22,7,.24);color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em}
 .shops-problems{padding-bottom:130px}
 .shops-problems .shops-heading{margin-bottom:80px}
 .shops-problems-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:54px 110px;max-width:1320px;margin:0 auto}
@@ -47,26 +47,28 @@
 
 @media(max-width:1100px){
   .shops-intro-layout{grid-template-columns:1fr 1.1fr}
-  .shops-advantages-layout{grid-template-columns:1fr minmax(330px,.8fr) 1fr;gap:28px}
+  .shops-ecommerce-layout{grid-template-columns:1fr;width:min(720px,100%);gap:30px}
+  .shops-ecommerce-visual{height:720px;order:-1}
+  .shops-ecommerce-layout>div:first-child,.shops-ecommerce-layout>div:last-child{height:auto}
+  .shops-ecommerce-layout article{min-height:160px}
 }
 
 @media(max-width:900px){
   .shop-hero h1 span{white-space:normal}
-  .shops-intro,.shops-advantages,.shops-problems{padding:90px 24px}
+  .shops-intro,.shops-ecommerce,.shops-problems{padding:90px 24px}
   .shops-heading{margin-bottom:65px}
   .shops-heading h2 br,.shops-heading>span br,.shops-intro-copy h3 br{display:none}
   .shops-intro-copy h3 span{white-space:normal}
-  .shops-intro-layout,.shops-advantages-layout,.shops-problems-grid{grid-template-columns:1fr}
+  .shops-intro-layout,.shops-problems-grid{grid-template-columns:1fr}
   .shops-intro-copy{padding-left:0}
   .shops-laptop-visual{margin-top:30px}
-  .shops-phone{grid-row:1;margin-bottom:20px}
-  .shops-feature-column{gap:42px}
   .shops-problems-grid{gap:42px}
-  .shops-advantages>.internal-actions,.shops-problems>.internal-actions{flex-direction:column;align-items:center}
+  .shops-ecommerce-actions,.shops-problems>.internal-actions{flex-direction:column;align-items:center}
+  .shops-ecommerce-actions .orange-cta{width:100%}
   .shops-red-cta{width:100%;min-width:0}
 }
 
-@media(prefers-reduced-motion:reduce){
-  .shops-phone img{animation:none}
-  .shops-phone img:first-child{opacity:1}
+@media(max-width:600px){
+  .shops-ecommerce-visual{height:590px}
+  .shops-ecommerce-layout article{min-height:145px}
 }

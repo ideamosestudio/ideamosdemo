@@ -247,30 +247,44 @@
     height:760px!important;
   }
 
-  /* Marketing: el módulo final conserva su ancho y alinea el teléfono con sus bullets. */
+  /* Marketing: ritmo vertical del bloque principal y método más compacto. */
+  #site-root .marketing-page .md-positioning>header{margin-bottom:100px!important}
+
+  #site-root .marketing-page .md-method-layout{
+    width:min(1675px,88vw)!important;
+    max-width:none!important;
+    grid-template-columns:minmax(0,1fr) minmax(340px,405px)!important;
+    gap:clamp(70px,5vw,100px)!important;
+  }
+
+  #site-root .marketing-page .md-method-list small{font-size:27px!important}
+
+  /* Marketing: cierre editorial con visual contenido y matriz escaneable. */
   #site-root .marketing-page .md-problems-layout{
-    width:100%!important;
-    max-width:1400px!important;
+    width:min(1405px,86vw)!important;
+    max-width:none!important;
     min-height:0!important;
-    grid-template-columns:minmax(0,1fr) minmax(300px,.82fr)!important;
-    gap:clamp(44px,4vw,72px)!important;
-    align-items:stretch!important;
+    grid-template-columns:minmax(360px,430px) minmax(0,1fr)!important;
+    gap:clamp(70px,6vw,115px)!important;
+    align-items:center!important;
   }
 
-  #site-root .marketing-page .md-problems-layout>div:first-child,
   #site-root .marketing-page .md-red-phone{
-    height:clamp(660px,46vw,780px)!important;
+    height:690px!important;
     min-height:0!important;
   }
 
-  #site-root .marketing-page .md-problems-layout article{padding:12px 0!important}
+  #site-root .marketing-page .md-problems-layout article{padding:30px 4px 32px!important}
+  #site-root .marketing-page .md-problems-layout article:nth-child(5){padding-right:4px!important}
   #site-root .marketing-page .md-red-phone img{
-    top:0!important;
-    left:50%!important;
+    position:relative!important;
+    top:auto!important;
+    left:auto!important;
     width:auto!important;
-    height:100%!important;
+    height:620px!important;
+    max-width:92%!important;
     max-height:none!important;
-    transform:translateX(-50%)!important;
+    transform:scale(1.45)!important;
   }
 }
 

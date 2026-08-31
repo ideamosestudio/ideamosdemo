@@ -33,17 +33,6 @@ function DeviceMedia({
   </div>;
 }
 
-const ecommerceBenefits = [
-  ["Cobrás online sin vueltas", "Aceptá tarjetas, transferencias y billeteras en un checkout rápido y seguro."],
-  ["Envíos más fácil", "Mostrá tarifas y tiempos en vivo. Seguimiento para el cliente, sin complicaciones."],
-  ["No nos pagás comisiones", "Tu tienda es 100% tuya: dominio, hosting y acceso administrador desde el día uno."],
-  ["Transmití confianza", "Pagos seguros y envíos integrados le dan a tu marca el respaldo que necesita."],
-  ["Gestión de catálogo y stock", "Cargá productos, variantes y precios en minutos. Sincronizá inventario y alertas."],
-  ["Diseño estratégico a medida", "Cada elemento guía al usuario, simplifica la compra y aumenta la conversión."],
-  ["Tomá decisiones informadas", "Mirá ventas, conversión y ticket promedio para invertir donde más rinde."],
-  ["Mejor atención en menos tiempo", "Tus clientes ven precios, stock, tiempos y medios de pago sin preguntarte nada."],
-];
-
 const method = [
   ["Diagnóstico profundo", "Entendemos tu empresa, su rentabilidad y su embudo de ventas para detectar las oportunidades reales."],
   ["Estrategia", "Elegimos los canales más rentables, priorizamos resultados rápidos y construimos bases sólidas para crecer."],
@@ -105,33 +94,6 @@ export default function MarketingDigitalPage() {
       </div>
     </section>
 
-    <section className="md-section md-web-design">
-      <div className="md-split">
-        <div className="md-copy" data-reveal>
-          <p>DISEÑO WEB</p>
-          <h3>Webs de alto impacto ideadas para generar confianza y resultados</h3>
-          <h4><b>Posicioná tu marca</b> con un sitio web profesional y efectivo</h4>
-          <div><b>Creamos sitios web pensados para transmitir autoridad, confianza y generar contactos reales.</b> Desde el diseño a medida hasta el contenido, todo está enfocado en convertir visitas en potenciales clientes. Coordinamos una asesoría online sin cargo para conocer tu negocio y proponerte ideas concretas.</div>
-          <Action>Charlemos de tu proyecto</Action>
-        </div>
-        <DeviceMedia src="/media/marketing-img-001.webp" alt="Proyecto Maqmax desarrollado por Ideamos" contain />
-      </div>
-    </section>
-
-    <section className="md-section md-ecommerce md-centered-intro">
-      <header data-reveal>
-        <p>ECOMMERCE ESTRATÉGICO</p>
-        <h2>¿Necesitás una tienda online para<br/>automatizar tus ventas?</h2>
-        <span className="md-ecommerce-lead"><b>Automatizá tus ventas</b> con una tienda diseñada para convertir:<br/>estrategia, procesos simples y tecnología que trabaja por vos.</span>
-      </header>
-      <div className="md-ecommerce-layout">
-        <div>{ecommerceBenefits.slice(0, 4).map(([title, copy]) => <article key={title}><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
-        <div className="md-ecommerce-visual"><ManagedBackgroundVideo src={asset("/media/marketing-wilde.webm")} /></div>
-        <div>{ecommerceBenefits.slice(4).map(([title, copy]) => <article key={title}><i/><h3>{title}</h3><p>{copy}</p></article>)}</div>
-      </div>
-      <div className="md-double-actions md-ecommerce-actions"><Action>Quiero una tienda online</Action><Action>Quiero hablar con un experto</Action></div>
-    </section>
-
     </LightGridFrame>
 
     <section className="desktop-video-wall" aria-label="Presentación audiovisual de Ideamos">
@@ -142,8 +104,8 @@ export default function MarketingDigitalPage() {
     <section className="md-section md-centered-intro md-positioning">
       <header data-reveal>
         <p>MARKETING DIGITAL, SEO Y GOOGLE ADS</p>
-        <h2>Te posicionamos en Google y manejamos tus<br/>redes, campañas y contenidos</h2>
-        <span><b>Posicionamos tu marca en buscadores, gestionamos redes, producimos contenido y ejecutamos campañas pagas.</b></span>
+        <h2>Te posicionamos en Google,<br/>manejamos tus redes, campañas y contenidos</h2>
+        <span>Posicionamos tu marca en buscadores, gestionamos redes, producimos contenido y ejecutamos campañas pagas.</span>
       </header>
       <div className="md-split">
         <div className="md-copy" data-reveal>
@@ -188,8 +150,11 @@ export default function MarketingDigitalPage() {
         <span>Descubrí cómo <b>nuestras soluciones digitales ayudan a aumentar ventas</b>, atraer clientes y posicionar negocios como líderes.</span>
       </header>
       <div className="md-problems-layout">
-        <div>{problems.map(([title, copy]) => <article key={title}><i/><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
         <div className="md-red-phone"><img src={asset("/media/marketing-tienda-roja.webp")} alt="Tienda online de indumentaria en dispositivo móvil" loading="lazy" decoding="async" /></div>
+        <div className="md-problems-grid">{problems.map(([title, copy], index) => <article key={title}>
+          <div className="md-problem-index"><i/><small>0{index + 1}</small></div>
+          <h3>{title}</h3><p>{copy}</p>
+        </article>)}</div>
       </div>
       <div className="md-double-actions"><Action>Quiero una asesoría sin cargo</Action><Action>Quiero contactar un experto</Action></div>
     </section>
