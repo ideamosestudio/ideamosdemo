@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import ManagedBackgroundVideo, { pauseManagedBackgroundVideos } from "../app/components/ManagedBackgroundVideo";
 import { testimonials } from "../lib/testimonials";
-import { WHATSAPP_URL } from "../lib/whatsapp";
 import { HeroChrome, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
 import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
+import TestimonialCard from "./TestimonialCard";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -47,40 +47,13 @@ export default function TestimonialsPage() {
       </div>
     </section>
 
-    <LightGridFrame className="testimonials-light-grid">
-      <section className="testimonials-list" id="testimonios" aria-labelledby="testimonials-title">
-        <header className="testimonials-list__intro">
-          <p>EXPERIENCIAS REALES</p>
-          <h2 id="testimonials-title">Lo que dicen quienes<br/>trabajaron con nosotros</h2>
-          <span>Cuatro empresas, cuatro desafíos distintos y una misma forma de trabajar: escuchar, entender y convertir objetivos en resultados concretos.</span>
-        </header>
-
-        <div className="testimonials-stack">
-          {testimonials.map((testimonial, index) => <article className="testimonials-story" key={testimonial.name}>
-            <div className="testimonials-story__copy">
-              <small>0{index + 1} — TESTIMONIO</small>
-              <blockquote>“{testimonial.quote}”</blockquote>
-              <div className="testimonials-story__rating" aria-label="5 de 5 estrellas">★★★★★ <span>(5.0)</span></div>
-              <div className="testimonials-story__person">
-                <img src={asset(testimonial.avatar)} alt="" loading="lazy" decoding="async" />
-                <div><strong>{testimonial.name}</strong><span>{testimonial.role}</span></div>
-              </div>
-              <div className="testimonials-story__actions">
-                <a className="orange-cta" href={WHATSAPP_URL}>CHATEÁ CON UN EXPERTO</a>
-                <a className="testimonials-story__site" href={testimonial.site} target="_blank" rel="noreferrer">VER SITIO WEB ↗</a>
-              </div>
-            </div>
-
-            <button className="testimonials-story__media" type="button" onClick={() => setOpenVideo(index)} aria-label={`Ver video testimonial de ${testimonial.name}`}>
-              <img src={asset(testimonial.image)} alt={testimonial.alt} loading="lazy" decoding="async" />
-              <span aria-hidden="true">▶</span>
-            </button>
-          </article>)}
-        </div>
-      </section>
-
-      <HomeAdvisorySection showMarquee={false} />
+    <LightGridFrame className="home-closing-light-grid testimonials-page-stack">
+      {testimonials.map((testimonial, index) => <section id={index === 0 ? "testimonios" : undefined} className="home-testimonials testimonials-page-testimonial" aria-labelledby={`testimonials-page-title-${index}`} key={testimonial.name}>
+        <TestimonialCard testimonial={testimonial} headingId={`testimonials-page-title-${index}`} onPlay={() => setOpenVideo(index)} />
+      </section>)}
     </LightGridFrame>
+
+    <HomeAdvisorySection showMarquee={false} />
 
     <HomeClosingSections showAdvisory={false} darkGrid />
 
