@@ -70,3 +70,14 @@ test("la portada conserva las optimizaciones críticas de rendimiento", async ()
   assert.ok(html.includes('rel="preload" href="/fonts/Gilroy-ExtraBold.otf"'));
   assert.ok(stylesheets.length <= 2, `La portada carga ${stylesheets.length} hojas de estilo`);
 });
+
+test("el formulario conserva las defensas antispam", async () => {
+  const source = await readFile(new URL("components/ContactLeadForm.tsx", root), "utf8");
+
+  assert.match(source, /name="_gotcha"/);
+  assert.match(source, /MIN_COMPLETION_TIME_MS/);
+  assert.match(source, /SUBMISSION_COOLDOWN_MS/);
+  assert.match(source, /DUPLICATE_WINDOW_MS/);
+  assert.match(source, /AbortController/);
+  assert.match(source, /maxLength=\{2000\}/);
+});
