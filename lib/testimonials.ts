@@ -29,7 +29,7 @@ export const testimonials = [
     image: "/media/testimonials/mr-image.jpg",
     avatar: "/media/testimonials/mr-avatar.png",
     video: "/media/testimonials/mr.mp4",
-    site: "https://estudioideamos.github.io/mr-ingenieria-estructural/",
+    site: "https://mringenieriaestructural.com.ar/",
     alt: "Rodolfo Merino de MR Ingeniería",
   },
   {

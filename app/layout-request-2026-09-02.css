@@ -3,6 +3,9 @@
   /* Home: 15 px adicionales entre cada bullet y mockup a la misma altura. */
   #site-root .home-page .shop-layout{
     --home-shop-height:clamp(665px,calc(42vw + 45px),805px);
+    grid-template-columns:minmax(0,380px) minmax(300px,430px) minmax(0,380px)!important;
+    justify-content:center!important;
+    column-gap:clamp(84px,5.2vw,100px)!important;
     align-items:stretch!important;
   }
 
@@ -18,11 +21,20 @@
   }
 
   /* Diseño web: franja central compacta, textos más cortos y ritmo de bullets consistente. */
+  #site-root .internal-page .design-problems{
+    padding-top:145px!important;
+  }
+
+  #site-root .internal-page .design-problems .service-heading{
+    margin-bottom:85px!important;
+  }
+
   #site-root .internal-page .design-problems-layout{
     --design-problems-height:clamp(700px,42vw,805px);
     width:min(1130px,72vw)!important;
     grid-template-columns:minmax(0,500px) minmax(300px,430px)!important;
     gap:clamp(70px,5.2vw,100px)!important;
+    justify-content:center!important;
     align-items:stretch!important;
   }
 
