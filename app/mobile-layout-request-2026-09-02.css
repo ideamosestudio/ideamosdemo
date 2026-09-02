@@ -75,8 +75,61 @@
     .contact-submit,
     .ideamos-footer__whatsapp
   ){
-    padding:17.25px 23px!important;
+    padding:18px 24px!important;
     font-family:"Poppins",Arial,sans-serif!important;
+  }
+
+  /* Si desktop presenta un par de CTAs, mobile conserva siempre el primero. */
+  #site-root :is(
+    .hero-actions,
+    .ecommerce-actions,
+    .pdw-actions,
+    .problem-actions,
+    .home-testimonials__actions,
+    .md-double-actions,
+    .shops-ecommerce-actions,
+    .pw-center-action
+  )>:nth-child(n+2){
+    display:none!important;
+  }
+
+  /* Un punto adicional para los párrafos y textos descriptivos mobile. */
+  #site-root#site-root#site-root :is(
+    .hero-copy,
+    .statement-copy,
+    .section-heading>span,
+    .body-copy,
+    .human-copy>span,
+    .service-copy,
+    .shops-heading>span,
+    .shops-intro-copy>p,
+    .md-section header>span,
+    .md-copy>div,
+    .pw-intro>span,
+    .pw-copy>div,
+    .cases-intro-copy>p:last-of-type,
+    .pricing-intro-copy>span
+  ){
+    font-size:14.5px!important;
+  }
+
+  #site-root#site-root#site-root :is(
+    .feature-grid p,
+    .problem-list p,
+    .shop-column p,
+    .shops-feature>p,
+    .service-items p,
+    .design-problems-list p,
+    .md-ecommerce-layout article p,
+    .md-method-list p,
+    .md-problems-layout p,
+    .pw-benefit-list p,
+    .pw-seo-summary p,
+    .pw-maps-grid p,
+    .price-description,
+    .price-closing
+  ){
+    font-size:calc(11pt + 1px)!important;
   }
 
   /* Testimonios: la quote comparte la escala del título editorial de Home. */
@@ -89,6 +142,7 @@
   /* Asesoría: el aire debajo del botón replica el aire sobre el eyebrow. */
   #site-root .light-grid-frame>.home-advisory,
   #site-root .home-advisory{
+    display:block!important;
     min-height:0!important;
     height:auto!important;
   }
@@ -97,6 +151,14 @@
     min-height:0!important;
     padding-top:80px!important;
     padding-bottom:80px!important;
+  }
+
+  #site-root .home-advisory>video{
+    display:none!important;
+    width:0!important;
+    height:0!important;
+    min-height:0!important;
+    margin:0!important;
   }
 
   /* Sistema editorial mobile compartido por todas las páginas internas. */
@@ -170,7 +232,7 @@
     .cases-page .cases-intro-copy>p,
     .prices-page .pricing-intro-copy>span
   ){
-    font-size:13.5px!important;
+    font-size:14.5px!important;
     line-height:1.55!important;
   }
 
