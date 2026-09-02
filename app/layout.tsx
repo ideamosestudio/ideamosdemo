@@ -26,6 +26,7 @@ import "./split-module-consistency.css";
 import "./home-module-spacing-trial.css";
 import "./desktop-layout-request-2026-08-31.css";
 import "./layout-request-2026-09-02.css";
+import "./mobile-layout-request-2026-09-02.css";
 
 const homeMetadata = createPageMetadata({
   title: "Diseño web y marketing digital | Ideamos",

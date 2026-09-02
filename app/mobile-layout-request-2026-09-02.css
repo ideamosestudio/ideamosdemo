@@ -1,0 +1,209 @@
+/* Ajustes exclusivamente mobile solicitados el 02/09/2026. */
+@media (max-width:700px){
+  /* Portadas: una pantalla completa y contenido centrado en el espacio bajo el header. */
+  #site-root main>section.hero{
+    width:100%!important;
+    height:100svh!important;
+    min-height:100svh!important;
+  }
+
+  #site-root main>section.hero>.hero-center{
+    height:100%!important;
+    padding:104px 30px 36px!important;
+    justify-content:center!important;
+    transform:none!important;
+  }
+
+  #site-root main>section.hero .availability{
+    margin:0!important;
+  }
+
+  #site-root main>section.hero h1,
+  #site-root main>section.hero.internal-home-hero h1{
+    margin:26px auto 22px!important;
+    font-size:40px!important;
+    line-height:1.02!important;
+  }
+
+  #site-root main>section.hero .hero-copy{
+    max-width:360px!important;
+    margin:0 auto!important;
+    font-size:15px!important;
+    line-height:1.55!important;
+    text-align:center!important;
+  }
+
+  #site-root main>section.hero .hero-actions{
+    margin-top:28px!important;
+    margin-bottom:0!important;
+  }
+
+  /* La marquesina de clientes no forma parte de la portada mobile. */
+  #site-root .home-page .hero-clients{
+    display:none!important;
+  }
+
+  /* Home: conservar el texto del sello y retirar solamente los avatares. */
+  #site-root .home-page .happy-clients-avatars{
+    display:none!important;
+  }
+
+  #site-root .home-page .statement .happy-clients{
+    width:100%!important;
+    justify-content:center!important;
+  }
+
+  #site-root .home-page .happy-clients-label{
+    white-space:normal!important;
+    text-align:center!important;
+  }
+
+  /* Títulos de bullets de Home: un punto menos. */
+  #site-root .home-page .shop-column h3{
+    font-size:21px!important;
+  }
+
+  /* Todos los CTAs mobile usan Poppins y 15% más de padding en ambos ejes. */
+  #site-root#site-root#site-root :is(
+    .cta-glow,
+    .orange-cta,
+    .cases-action,
+    .shops-red-cta,
+    .md-action,
+    .pw-action,
+    .price-cta,
+    .contact-submit,
+    .ideamos-footer__whatsapp
+  ){
+    padding:17.25px 23px!important;
+    font-family:"Poppins",Arial,sans-serif!important;
+  }
+
+  /* Testimonios: la quote comparte la escala del título editorial de Home. */
+  #site-root .home-testimonials__copy h2{
+    max-width:330px!important;
+    font-size:27px!important;
+    line-height:1.22!important;
+  }
+
+  /* Asesoría: el aire debajo del botón replica el aire sobre el eyebrow. */
+  #site-root .light-grid-frame>.home-advisory,
+  #site-root .home-advisory{
+    min-height:0!important;
+    height:auto!important;
+  }
+
+  #site-root .home-advisory>.human-copy{
+    min-height:0!important;
+    padding-top:80px!important;
+    padding-bottom:80px!important;
+  }
+
+  /* Sistema editorial mobile compartido por todas las páginas internas. */
+  #site-root :is(
+    .internal-page .service-heading,
+    .shops-page .shops-heading,
+    .shops-page .shops-intro-copy,
+    .shops-page .shops-feature,
+    .marketing-page .md-section>header,
+    .marketing-page .md-copy,
+    .posicionamiento-page .pw-intro,
+    .posicionamiento-page .pw-copy,
+    .cases-page .cases-intro-copy,
+    .prices-page .pricing-intro-copy
+  ){
+    width:100%!important;
+    max-width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:center!important;
+  }
+
+  #site-root :is(
+    .internal-page .service-heading,
+    .shops-page .shops-heading,
+    .shops-page .shops-intro-copy,
+    .marketing-page .md-section>header,
+    .marketing-page .md-copy,
+    .posicionamiento-page .pw-intro,
+    .posicionamiento-page .pw-copy,
+    .cases-page .cases-intro-copy,
+    .prices-page .pricing-intro-copy
+  ) :is(h2,h3,h4,p,span,.service-copy,div){
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:center!important;
+  }
+
+  #site-root :is(
+    .internal-page .service-heading h2,
+    .shops-page .shops-heading h2,
+    .shops-page .shops-intro-copy h3,
+    .marketing-page .md-section>header h2,
+    .marketing-page .md-copy h3,
+    .posicionamiento-page .pw-intro h2,
+    .posicionamiento-page .pw-copy h3,
+    .cases-page .cases-intro-copy h2,
+    .prices-page .pricing-intro-copy h2
+  ){
+    font-size:27px!important;
+    line-height:1.22!important;
+  }
+
+  #site-root :is(
+    .internal-page .service-heading>h3,
+    .shops-page .shops-intro-copy h4,
+    .marketing-page .md-copy h4
+  ){
+    font-size:14px!important;
+    line-height:1.5!important;
+  }
+
+  #site-root :is(
+    .internal-page .service-copy,
+    .shops-page .shops-heading>span,
+    .shops-page .shops-intro-copy>p,
+    .marketing-page .md-section>header>span,
+    .marketing-page .md-copy>div,
+    .posicionamiento-page .pw-intro>span,
+    .posicionamiento-page .pw-copy>div,
+    .cases-page .cases-intro-copy>p,
+    .prices-page .pricing-intro-copy>span
+  ){
+    font-size:13.5px!important;
+    line-height:1.55!important;
+  }
+
+  #site-root :is(
+    .internal-page .service-section,
+    .shops-page .shops-intro,
+    .shops-page .shops-advantages,
+    .shops-page .shops-problems,
+    .marketing-page .md-section,
+    .posicionamiento-page .pw-section
+  ){
+    padding-top:86px!important;
+    padding-bottom:86px!important;
+  }
+
+  #site-root .internal-page .service-heading>p{
+    margin:0 auto 22px!important;
+  }
+
+  #site-root .internal-page .service-heading h2{
+    margin:0 auto 18px!important;
+  }
+
+  #site-root .internal-page .service-heading>h3{
+    margin:0 auto 18px!important;
+  }
+
+  #site-root .internal-page .service-heading .service-copy{
+    margin-top:0!important;
+  }
+
+  #site-root .internal-page .service-heading .internal-actions{
+    justify-content:center!important;
+    margin-top:28px!important;
+  }
+}

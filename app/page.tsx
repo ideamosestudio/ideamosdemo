@@ -70,9 +70,9 @@ export default function Home() {
           <em className="hero-title-desktop">que atraen clientes y ventas</em>
           <span className="hero-title-mobile" aria-label="Expertos en crear webs que atraen clientes y ventas">
             <span>Expertos en</span>
-            <span>Crear webs</span>
-            <span>Que atraen</span>
-            <span>Clientes y ventas</span>
+            <span>crear webs</span>
+            <span>que atraen</span>
+            <span>clientes y ventas</span>
           </span>
         </h1>
         <p className="hero-copy"><b>Sitios web, tiendas online y marketing digital</b> para que tu empresa venda más y más fácil.</p>
