@@ -1,0 +1,60 @@
+/* Ajustes desktop solicitados el 02/09/2026. */
+@media (min-width:1101px){
+  /* Home: 15 px adicionales entre cada bullet y mockup a la misma altura. */
+  #site-root .home-page .shop-layout{
+    --home-shop-height:clamp(665px,calc(42vw + 45px),805px);
+    align-items:stretch!important;
+  }
+
+  #site-root .home-page .shop-column{
+    grid-template-rows:repeat(4,minmax(0,1fr))!important;
+    row-gap:15px!important;
+    height:var(--home-shop-height)!important;
+  }
+
+  #site-root .home-page .phone-stage.phone-swap{
+    height:var(--home-shop-height)!important;
+    min-height:var(--home-shop-height)!important;
+  }
+
+  /* Diseño web: franja central compacta, textos más cortos y ritmo de bullets consistente. */
+  #site-root .internal-page .design-problems-layout{
+    --design-problems-height:clamp(700px,42vw,805px);
+    width:min(1130px,72vw)!important;
+    grid-template-columns:minmax(0,500px) minmax(300px,430px)!important;
+    gap:clamp(70px,5.2vw,100px)!important;
+    align-items:stretch!important;
+  }
+
+  #site-root .internal-page .design-problems-list{
+    grid-template-rows:repeat(4,minmax(0,1fr))!important;
+    row-gap:15px!important;
+    width:100%!important;
+    height:var(--design-problems-height)!important;
+  }
+
+  #site-root .internal-page .design-problems-list article{
+    width:100%!important;
+    padding:18px 0!important;
+  }
+
+  #site-root .internal-page .design-problems-list article>div{
+    width:100%!important;
+    max-width:460px!important;
+  }
+
+  #site-root .internal-page .design-phone-video{
+    width:100%!important;
+    height:var(--design-problems-height)!important;
+    min-height:var(--design-problems-height)!important;
+  }
+
+  #site-root .internal-page .design-phone-sequence img{
+    width:100%!important;
+    max-width:430px!important;
+    height:100%!important;
+    aspect-ratio:auto!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+}
