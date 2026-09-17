@@ -75,7 +75,7 @@ export default function ContactLeadForm() {
       form.reset();
       startedAt.current = now;
       setStatus("success");
-      setFeedback("¡Gracias! Recibimos tu consulta y te responderemos a la brevedad.");
+      setFeedback("Recibimos tu mensaje y te responderemos a la brevedad.");
       return;
     }
 
@@ -126,7 +126,7 @@ export default function ContactLeadForm() {
       form.reset();
       startedAt.current = Date.now();
       setStatus("success");
-      setFeedback("¡Gracias! Recibimos tu consulta y te responderemos a la brevedad.");
+      setFeedback("Recibimos tu mensaje y te responderemos a la brevedad.");
       window.gtag?.("event", "generate_lead", {
         event_category: "engagement",
         event_label: "contact_form",
@@ -162,8 +162,18 @@ export default function ContactLeadForm() {
     <button className="contact-submit" type="submit" disabled={status === "sending"}>
       {status === "sending" ? "Enviando..." : "Enviar consulta"}
     </button>
-    <div className={`contact-form-status is-${status}`} role="status" aria-live="polite">
-      {feedback}
-    </div>
+    <section className={`contact-form-status is-${status}`} role="status" aria-live="polite" aria-atomic="true">
+      {status === "success" ? <div className="contact-confirmation-success">
+        <span className="contact-confirmation-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" focusable="false">
+            <path d="m5 12 4 4L19 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+        <div className="contact-confirmation-copy">
+          <h3 className="contact-confirmation-title">¡Gracias por tu consulta!</h3>
+          <p className="contact-confirmation-message">{feedback}</p>
+        </div>
+      </div> : feedback}
+    </section>
   </form>;
 }

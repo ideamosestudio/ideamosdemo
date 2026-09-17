@@ -2809,3 +2809,69 @@ h1,h2,h3,
 
 @keyframes homeCasesScroll{to{transform:translateX(calc(-50% - 9px))}}
 @keyframes homeCasesScrollReverse{from{transform:translateX(calc(-50% - 9px))}to{transform:translateX(0)}}
+
+/* Contact form success confirmation. */
+.contact-confirmation-success {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 26px;
+  border: 1px solid #885034;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #2b1a13, #171717 75%);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 16%);
+  animation: confirmation-enter 320ms ease-out both;
+}
+
+.contact-confirmation-success .contact-confirmation-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #ad623c;
+  border-radius: 50%;
+  background: #462616;
+  color: #ffc49e;
+}
+
+.contact-confirmation-copy { min-width: 0; }
+
+.contact-confirmation-success .contact-confirmation-title {
+  margin: 0 0 8px;
+  color: #fff7f1;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -.025em;
+  text-transform: none;
+}
+
+.contact-confirmation-success .contact-confirmation-message {
+  margin: 0;
+  color: #dfd1c8;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: normal;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+
+@keyframes confirmation-enter {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .contact-confirmation-success {
+    flex-direction: column;
+    gap: 14px;
+    padding: 22px 20px;
+    border-radius: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-confirmation-success { animation: none; }
+}
