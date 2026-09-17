@@ -40,6 +40,13 @@ function saveRecentSubmission(submission: RecentSubmission) {
   }
 }
 
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export default function ContactLeadForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [feedback, setFeedback] = useState("");
@@ -120,6 +127,10 @@ export default function ContactLeadForm() {
       startedAt.current = Date.now();
       setStatus("success");
       setFeedback("¡Gracias! Recibimos tu consulta y te responderemos a la brevedad.");
+      window.gtag?.("event", "generate_lead", {
+        event_category: "engagement",
+        event_label: "contact_form",
+      });
     } catch {
       setStatus("error");
       setFeedback("No pudimos enviar la consulta. Intentá nuevamente o escribinos por WhatsApp.");
