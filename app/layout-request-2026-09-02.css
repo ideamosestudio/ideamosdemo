@@ -1,6 +1,6 @@
 /* Ajustes desktop solicitados el 02/09/2026. */
 @media (min-width:1101px){
-  /* Home: 15 px adicionales entre cada bullet y mockup a la misma altura. */
+  /* Home: las columnas crecen con el texto y mantienen aire entre beneficios. */
   #site-root .home-page .shop-layout{
     --home-shop-height:clamp(665px,calc(42vw + 45px),805px);
     grid-template-columns:minmax(0,380px) minmax(300px,430px) minmax(0,380px)!important;
@@ -10,12 +10,18 @@
   }
 
   #site-root .home-page .shop-column{
-    grid-template-rows:repeat(4,minmax(0,1fr))!important;
-    row-gap:15px!important;
-    height:var(--home-shop-height)!important;
+    grid-template-rows:repeat(4,auto)!important;
+    row-gap:32px!important;
+    height:auto!important;
+    min-height:var(--home-shop-height)!important;
+  }
+
+  #site-root .home-page .shop-column article{
+    padding:0!important;
   }
 
   #site-root .home-page .phone-stage.phone-swap{
+    align-self:center;
     height:var(--home-shop-height)!important;
     min-height:var(--home-shop-height)!important;
   }
