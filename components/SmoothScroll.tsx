@@ -20,8 +20,8 @@ export default function SmoothScroll() {
       lenis = new Lenis({
         autoRaf: true,
         smoothWheel: true,
-        wheelMultiplier: 0.65,
-        lerp: 0.075,
+        wheelMultiplier: 0.4,
+        lerp: 0.06,
         syncTouch: false,
         anchors: true,
         allowNestedScroll: true,
