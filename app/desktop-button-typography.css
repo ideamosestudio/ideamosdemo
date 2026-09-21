@@ -65,6 +65,10 @@
     cursor:pointer;
   }
 
+  /* Reset the single-button tablet margins when both desktop CTAs are visible. */
+  #site-root#site-root .home-page .ecommerce-actions > .cta-glow{
+    margin-inline:0!important;
+  }
   /* The header CTA is the only outlined variant. */
   #site-root#site-root .nav .nav-contact{
     border:2px solid #ff5a00!important;
