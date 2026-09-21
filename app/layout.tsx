@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import DeferredAnalytics from "../components/DeferredAnalytics";
+import SmoothScroll from "../components/SmoothScroll";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import WhatsAppTracking from "../components/WhatsAppTracking";
 import { GA_MEASUREMENT_ID } from "../lib/whatsapp";
@@ -141,6 +142,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body id="site-root">
         {children}
+        <SmoothScroll />
         <FloatingWhatsApp />
         <WhatsAppTracking />
         <DeferredAnalytics measurementId={GA_MEASUREMENT_ID} />
