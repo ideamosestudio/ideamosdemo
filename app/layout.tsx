@@ -2,8 +2,7 @@ import type { Metadata, Viewport } from "next";
 import DeferredAnalytics from "../components/DeferredAnalytics";
 import SmoothScroll from "../components/SmoothScroll";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
-import WhatsAppTracking from "../components/WhatsAppTracking";
-import { GA_MEASUREMENT_ID } from "../lib/whatsapp";
+import { GTM_CONTAINER_ID } from "../lib/analytics";
 import { createPageMetadata, SITE_URL } from "../lib/seo";
 import "./globals.css";
 import "./refinement.css";
@@ -141,11 +140,19 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
       </head>
       <body id="site-root">
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_CONTAINER_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         {children}
         <SmoothScroll />
         <FloatingWhatsApp />
-        <WhatsAppTracking />
-        <DeferredAnalytics measurementId={GA_MEASUREMENT_ID} />
+        <DeferredAnalytics containerId={GTM_CONTAINER_ID} />
       </body>
     </html>
   );

@@ -2,40 +2,45 @@
 
 import { useEffect } from "react";
 
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+  }
+}
+
 type DeferredAnalyticsProps = {
-  measurementId: string;
+  containerId: string;
 };
 
 const INTERACTION_EVENTS = ["pointerdown", "keydown", "touchstart"] as const;
 
-export default function DeferredAnalytics({ measurementId }: DeferredAnalyticsProps) {
+export default function DeferredAnalytics({ containerId }: DeferredAnalyticsProps) {
   useEffect(() => {
     window.dataLayer = window.dataLayer ?? [];
-    window.gtag = window.gtag ?? ((...args: unknown[]) => window.dataLayer?.push(args));
 
     let loaded = false;
-    const loadAnalytics = () => {
+    const loadGTM = () => {
       if (loaded) return;
       loaded = true;
 
+      window.dataLayer?.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+
       const script = document.createElement("script");
       script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+      script.src = `https://www.googletagmanager.com/gtm.js?id=${containerId}`;
       document.head.appendChild(script);
 
-      window.gtag?.("js", new Date());
-      window.gtag?.("config", measurementId, { anonymize_ip: true });
-      INTERACTION_EVENTS.forEach((eventName) => window.removeEventListener(eventName, loadAnalytics));
+      INTERACTION_EVENTS.forEach((eventName) => window.removeEventListener(eventName, loadGTM));
     };
 
-    INTERACTION_EVENTS.forEach((eventName) => window.addEventListener(eventName, loadAnalytics, { once: true, passive: true }));
-    const fallbackTimer = window.setTimeout(loadAnalytics, 15000);
+    INTERACTION_EVENTS.forEach((eventName) => window.addEventListener(eventName, loadGTM, { once: true, passive: true }));
+    const fallbackTimer = window.setTimeout(loadGTM, 15000);
 
     return () => {
       window.clearTimeout(fallbackTimer);
-      INTERACTION_EVENTS.forEach((eventName) => window.removeEventListener(eventName, loadAnalytics));
+      INTERACTION_EVENTS.forEach((eventName) => window.removeEventListener(eventName, loadGTM));
     };
-  }, [measurementId]);
+  }, [containerId]);
 
   return null;
 }

@@ -43,7 +43,6 @@ function saveRecentSubmission(submission: RecentSubmission) {
 declare global {
   interface Window {
     dataLayer?: unknown[];
-    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -127,7 +126,8 @@ export default function ContactLeadForm() {
       startedAt.current = Date.now();
       setStatus("success");
       setFeedback("Recibimos tu mensaje y te responderemos a la brevedad.");
-      window.gtag?.("event", "generate_lead", {
+      window.dataLayer?.push({
+        event: "generate_lead",
         event_category: "engagement",
         event_label: "contact_form",
       });
