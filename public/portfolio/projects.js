@@ -1,5 +1,43 @@
 window.PROJECTS = [
   {
+    "id": "gmc-modulo-arquitectura",
+    "name": "Módulo Arquitectura · GMC",
+    "category": "corporativos",
+    "sector": "Arquitectura técnica & construcción",
+    "description": "Sitio corporativo de una empresa de arquitectura técnica en Uruguay. Presenta su experiencia en cubiertas, envolventes y fachadas, reúne proyectos arquitectónicos y publicaciones, y facilita el contacto para nuevas obras.",
+    "features": [
+      "Portfolio de obras",
+      "Cubiertas y fachadas",
+      "Novedades y publicaciones",
+      "Contacto comercial"
+    ],
+    "technologies": [
+      "WordPress",
+      "Elementor",
+      "GSAP",
+      "CSS3",
+      "JavaScript"
+    ],
+    "theme": "slate",
+    "url": "https://moduloarquitectura.uy/",
+    "isNew": true,
+    "image": "assets/gmc-modulo-arquitectura.webp",
+    "imageWidth": 2880,
+    "imageHeight": 2000,
+    "mobileWidth": 780,
+    "mobileHeight": 1688,
+    "cover": "assets/cover-gmc-modulo-arquitectura.webp",
+    "thumb": "assets/thumb-gmc-modulo-arquitectura.webp",
+    "thumbWidth": 480,
+    "thumbLarge": "assets/thumbLarge-gmc-modulo-arquitectura.webp",
+    "thumbLargeWidth": 1200,
+    "mobile": "assets/mobile-gmc-modulo-arquitectura.webp",
+    "phoneThumb": "assets/phoneThumb-gmc-modulo-arquitectura.webp",
+    "phoneThumbWidth": 180,
+    "phoneThumbLarge": "assets/phoneThumbLarge-gmc-modulo-arquitectura.webp",
+    "phoneThumbLargeWidth": 390
+  },
+  {
     "id": "el-pampa-hogar",
     "name": "El Pampa Hogar",
     "category": "tiendas",
