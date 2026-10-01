@@ -1418,7 +1418,7 @@ window.PROJECTS = [
   },
   {
     "id": "raisa-joya",
-    "name": "Raisa Joya",
+    "name": "Raisa Joyas",
     "category": "tiendas",
     "sector": "Joyería & accesorios",
     "description": "Tienda online de joyería y accesorios. El diseño pone las piezas en primer plano y organiza la colección para facilitar el descubrimiento de productos y la navegación del catálogo.",
