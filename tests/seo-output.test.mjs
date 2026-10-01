@@ -14,6 +14,7 @@ const pagePaths = [
   ["casos-de-exito/index.html", "https://ideamos.com.ar/casos-de-exito/"],
   ["testimonios/index.html", "https://ideamos.com.ar/testimonios/"],
   ["precios/index.html", "https://ideamos.com.ar/precios/"],
+  ["portfolio/index.html", "https://ideamos.com.ar/portfolio/"],
   ["contacto/index.html", "https://ideamos.com.ar/contacto/"],
 ];
 
