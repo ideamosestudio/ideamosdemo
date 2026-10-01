@@ -31,7 +31,6 @@ const MAIN_LINKS: Array<[string, string]> = [
 ];
 
 export default function NotFound() {
-  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     const path = window.location.pathname;
@@ -40,10 +39,8 @@ export default function NotFound() {
       window.location.replace(target);
       return;
     }
-    setChecked(true);
   }, []);
 
-  if (!checked) return null;
 
   return (
     <main className="not-found-page">
