@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ideamos.com.ar/portfolio/sitemap.xml
