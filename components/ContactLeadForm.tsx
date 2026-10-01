@@ -106,7 +106,7 @@ export default function ContactLeadForm() {
 
     formData.set("_form_started_at", String(startedAt.current));
     formData.set("_form_elapsed_ms", String(elapsed));
-    formData.set("_page_url", window.location.href);
+    formData.set("_page_url", window.location.origin + window.location.pathname);
     setStatus("sending");
     setFeedback("");
     const controller = new AbortController();
@@ -120,7 +120,13 @@ export default function ContactLeadForm() {
         signal: controller.signal,
       });
 
-      if (!response.ok) throw new Error("Form submission failed");
+      if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) {
+        throw new Error("Form submission failed");
+      }
+      const result: unknown = await response.json();
+      if (!result || typeof result !== "object" || !("ok" in result) || result.ok !== true) {
+        throw new Error("Form submission not confirmed");
+      }
       saveRecentSubmission({ fingerprint: payloadFingerprint, submittedAt: Date.now() });
       form.reset();
       startedAt.current = Date.now();

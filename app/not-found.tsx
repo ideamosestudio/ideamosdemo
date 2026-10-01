@@ -31,7 +31,6 @@ const MAIN_LINKS: Array<[string, string]> = [
 ];
 
 export default function NotFound() {
-
   useEffect(() => {
     const path = window.location.pathname;
     const target = OLD_URL_REDIRECTS[path] ?? (path.startsWith("/blog") ? "/" : null);
@@ -40,7 +39,6 @@ export default function NotFound() {
       return;
     }
   }, []);
-
 
   return (
     <main className="not-found-page">

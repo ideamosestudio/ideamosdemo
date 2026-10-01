@@ -16,7 +16,7 @@
     "build": "next build",
     "build:pages": "next build",
     "start": "next start",
-    "test": "npm run build:pages && node --test tests/seo-output.test.mjs",
+    "test": "npm run build:pages && node --test tests/*.test.mjs",
     "lint": "eslint . --ignore-pattern .next --ignore-pattern out",
     "typecheck": "tsc --noEmit"
   },

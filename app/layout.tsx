@@ -129,7 +129,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es-AR">
       <head>
-        <link rel="preload" href={asset("/fonts/Gilroy-ExtraBold.otf")} as="font" type="font/otf" crossOrigin="anonymous" />
+        <meta httpEquiv="Content-Security-Policy" content="base-uri 'self'; object-src 'none'; form-action 'self' https://mailer.ideamos.com.ar; upgrade-insecure-requests" />
+        <link rel="preload" href={asset("/fonts/Gilroy-ExtraBold.woff2")} as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href={asset("/media/hero-poster.webp")} as="image" type="image/webp" fetchPriority="high" />
         <link rel="describedby" href={asset("/llms.txt")} />
         <script

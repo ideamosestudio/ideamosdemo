@@ -82,7 +82,7 @@ test("la portada conserva las optimizaciones críticas de rendimiento", async ()
     }
   }
   assert.ok(html.includes("/media/screen-1.webp"));
-  assert.ok(html.includes('rel="preload" href="/fonts/Gilroy-ExtraBold.otf"'));
+  assert.ok(html.includes('rel="preload" href="/fonts/Gilroy-ExtraBold.woff2"'));
   assert.ok(html.includes('rel="preload" href="/media/hero-poster.webp"'));
   assert.ok(html.includes('poster="/media/hero-poster.webp"'));
   assert.ok(html.includes("/media/client-001.webp"));
