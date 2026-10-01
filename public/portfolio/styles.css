@@ -149,3 +149,7 @@
 @media(max-width:600px){.project-navigation{gap:7px}.project-navigation button{padding:10px;width:44px}.project-navigation button span{display:none}#project-dialog .dialog-footer{gap:8px;padding:12px}.dialog-footer .contact{padding:10px 14px;gap:12px;font-size:11px}#project-position{font-size:10px;min-width:36px}}
 
 [hidden],.project[hidden]{display:none!important}.project-summary{font-size:12px;line-height:1.65;color:#a8a8ae;margin:14px 0 0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}.project-title{display:inline-block}.contact-alternative{display:inline-block;margin-top:8px;font-size:12px;text-decoration:underline;text-underline-offset:4px}.dialog-actions{display:flex;gap:12px;align-items:center}.project-consult{background:#ff620014}.noscript-note{color:var(--muted);font-size:13px;margin-top:30px}@media(max-width:760px){.dialog-footer{flex-wrap:wrap}.dialog-actions{width:100%;justify-content:space-between}.dialog-actions .contact{font-size:11px;gap:8px;padding:10px 12px}.project-navigation{margin-inline:auto}}
+
+/* Keep supporting copy clear of the closing call to action. */
+.cta > .contact + p{margin:24px 0 16px;line-height:1.6}
+.cta > .contact-alternative{display:block;width:fit-content;max-width:100%;margin:0 auto;line-height:1.6}
