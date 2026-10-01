@@ -21,4 +21,7 @@
       transport_type: 'beacon'
     });
   });
+  document.addEventListener('portfolio:testimonial-play', event => {
+    gtag('event', 'testimonial_video_play', {project_id: event.detail.project_id, testimonial_person: event.detail.person, transport_type: 'beacon'});
+  });
 })();
