@@ -2911,3 +2911,7 @@ html.lenis {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto !important; }
 }
+
+.contact-recaptcha-notice{font-size:12px;line-height:1.6;margin:16px 0;color:#b5b5bd;max-width:60ch;text-align:left}.contact-recaptcha-notice a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+
+.grecaptcha-badge{left:12px!important;right:auto!important}

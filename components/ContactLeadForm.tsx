@@ -1,5 +1,7 @@
 "use client";
 
+import { getRecaptchaToken, loadRecaptcha } from "../lib/recaptcha";
+
 import { FormEvent, useEffect, useRef, useState } from "react";
 
 const FORM_ENDPOINT = "https://mailer.ideamos.com.ar/send.php";
@@ -110,9 +112,11 @@ export default function ContactLeadForm() {
     setStatus("sending");
     setFeedback("");
     const controller = new AbortController();
-    const timeout = window.setTimeout(() => controller.abort(), 15_000);
+    let timeout: number | undefined;
 
     try {
+      formData.set("g-recaptcha-response", await getRecaptchaToken());
+      timeout = window.setTimeout(() => controller.abort(), 15_000);
       const response = await fetch(FORM_ENDPOINT, {
         method: "POST",
         body: formData,
@@ -149,6 +153,7 @@ export default function ContactLeadForm() {
     action={FORM_ENDPOINT}
     method="POST"
     onSubmit={handleSubmit}
+    onFocus={() => { void loadRecaptcha().catch(() => {}); }}
     aria-busy={status === "sending"}
   >
     <input type="hidden" name="origen" value="Sitio web Ideamos" />
@@ -168,6 +173,7 @@ export default function ContactLeadForm() {
     <button className="contact-submit" type="submit" disabled={status === "sending"}>
       {status === "sending" ? "Enviando..." : "Enviar consulta"}
     </button>
+    <p className="contact-recaptcha-notice">Este sitio está protegido por reCAPTCHA. Se aplican la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad</a> y los <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Términos del Servicio</a> de Google.</p>
     <section className={`contact-form-status is-${status}`} role="status" aria-live="polite" aria-atomic="true">
       {status === "success" ? <div className="contact-confirmation-success">
         <span className="contact-confirmation-icon" aria-hidden="true">
