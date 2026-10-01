@@ -1,7 +1,7 @@
 const projects = window.PROJECTS;
 const grid = document.querySelector('#projects');
 const dialog = document.querySelector('#project-dialog');
-const {cover, card, escape, labels} = window.PortfolioUI;
+const {cover, card, escape} = window.PortfolioUI;
 let active = 'todos';
 let search = '';
 let lastFocus;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import SiteHeader from "../components/SiteHeader";
 import "./not-found.css";
 
