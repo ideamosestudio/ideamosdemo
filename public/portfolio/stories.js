@@ -2,11 +2,6 @@
 (() => {
   const section = document.querySelector('.client-stories');
   if (!section) return;
-  const mobile = window.matchMedia('(max-width: 760px)');
-  const caseDetails = [...section.querySelectorAll('.story-case-details')];
-  const adaptDetails = () => caseDetails.forEach(detail => { detail.open = !mobile.matches; });
-  adaptDetails();
-  mobile.addEventListener('change', adaptDetails);
   const tabs = [...section.querySelectorAll('[data-story-tab]')];
   const panels = [...section.querySelectorAll('[data-story]')];
   section.querySelector('.story-tabs').setAttribute('role', 'tablist');
