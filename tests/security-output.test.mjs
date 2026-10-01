@@ -15,7 +15,9 @@ test('all application pages constrain base URLs, embedded objects and form desti
   assert.match(html, /http-equiv="Content-Security-Policy"/i, file.pathname);
   assert.match(html, /base-uri (?:'|&#x27;)self(?:'|&#x27;)/, file.pathname);
   assert.match(html, /object-src (?:'|&#x27;)none(?:'|&#x27;)/, file.pathname);
-  assert.match(html, /form-action (?:'|&#x27;)self(?:'|&#x27;) https:\/\/mailer\.ideamos\.com\.ar/, file.pathname);
+  if (file.pathname.includes('/portfolio/')) {
+   assert.match(html, /form-action (?:'|&#x27;)none(?:'|&#x27;)/);
+  } else assert.match(html, /form-action (?:'|&#x27;)self(?:'|&#x27;) https:\/\/mailer\.ideamos\.com\.ar/, file.pathname);
   checked++;
  }
  assert.ok(checked>=9);
