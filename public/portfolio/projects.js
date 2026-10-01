@@ -4,7 +4,7 @@ window.PROJECTS = [
     "name": "Módulo Arquitectura · GMC",
     "category": "corporativos",
     "sector": "Arquitectura técnica & construcción",
-    "description": "Sitio corporativo de Módulo Arquitectura, al que actualmente redirige el dominio de GMC. Presenta su experiencia en cubiertas, envolventes y fachadas, reúne proyectos arquitectónicos y publicaciones, y facilita el contacto para nuevas obras.",
+    "description": "Sitio corporativo de una empresa de arquitectura técnica en Uruguay. Presenta su experiencia en cubiertas, envolventes y fachadas, reúne proyectos arquitectónicos y publicaciones, y facilita el contacto para nuevas obras.",
     "features": [
       "Portfolio de obras",
       "Cubiertas y fachadas",
