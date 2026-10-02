@@ -11,6 +11,17 @@ export const testimonials = [
     alt: "Pablo Avila en las oficinas de CYL S.A.",
   },
   {
+    quote: "Entendieron que quería transmitir e hicieron un trabajo excepcional y súper rápido. 100% recomendados",
+    desktopLines: ["Entendieron que quería transmitir", "e hicieron un trabajo excepcional", "y súper rápido. 100% recomendados"],
+    name: "Vanesa Vila",
+    role: "Fundadora de Sphere Design",
+    image: "/media/testimonials/sphere-design-image.jpg",
+    avatar: "/media/testimonials/sphere-design-avatar.png",
+    video: "/media/testimonials/sphere-design.mp4",
+    site: null,
+    alt: "Vanesa Vila, fundadora de Sphere Design",
+  },
+  {
     quote: "Entienden tu negocio y lo transforman en una web que te ayuda a potenciarte",
     desktopLines: ["Entienden tu negocio y lo", "transforman en una web", "que te ayuda a potenciarte"],
     name: "Helvio Frieiro",
