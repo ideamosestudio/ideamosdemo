@@ -357,7 +357,9 @@
     font-weight:700!important;
   }
 
-  #site-root .home-testimonials__actions{
+  #site-root .home-testimonials__actions,
+  #site-root .home-page .home-testimonials__actions,
+  #site-root .testimonials-page .home-testimonials__actions{
     width:100%;
     align-self:flex-start;
     justify-content:flex-start!important;

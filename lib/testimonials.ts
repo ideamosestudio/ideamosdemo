@@ -18,7 +18,7 @@ export const testimonials = [
     image: "/media/testimonials/sphere-design-image.jpg",
     avatar: "/media/testimonials/sphere-design-avatar.png",
     video: "/media/testimonials/sphere-design.mp4",
-    site: null,
+    site: "https://studiospheredesign.com/",
     alt: "Vanesa Vila, fundadora de Sphere Design",
   },
   {
