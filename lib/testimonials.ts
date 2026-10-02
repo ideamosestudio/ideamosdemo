@@ -11,8 +11,8 @@ export const testimonials = [
     alt: "Pablo Avila en las oficinas de CYL S.A.",
   },
   {
-    quote: "Entendieron que quería transmitir e hicieron un trabajo excepcional y súper rápido. 100% recomendados",
-    desktopLines: ["Entendieron que quería transmitir", "e hicieron un trabajo excepcional", "y súper rápido. 100% recomendados"],
+    quote: "Hicieron un trabajo excepcional y súper rápido. 100% recomendados",
+    desktopLines: ["Hicieron un trabajo", "excepcional y súper rápido.", "100% recomendados"],
     name: "Vanesa Vila",
     role: "Fundadora de Sphere Design",
     image: "/media/testimonials/sphere-design-image.jpg",
