@@ -2,31 +2,28 @@
 (() => {
   const section = document.querySelector('.client-stories');
   if (!section) return;
-  const tabs = [...section.querySelectorAll('[data-story-tab]')];
+  const track = section.querySelector('.story-track');
   const panels = [...section.querySelectorAll('[data-story]')];
-  section.querySelector('.story-tabs').setAttribute('role', 'tablist');
-  tabs.forEach(tab => {tab.setAttribute('role', 'tab');tab.setAttribute('aria-controls', 'caso-' + tab.dataset.storyTab);});
-  panels.forEach(panel => {panel.setAttribute('role', 'tabpanel');panel.setAttribute('aria-labelledby', 'story-tab-' + panel.dataset.story);panel.tabIndex = 0;});
-  function select(id, focus = false) {
-    tabs.forEach(tab => {const active = tab.dataset.storyTab === id;tab.setAttribute('aria-selected', String(active));tab.tabIndex = active ? 0 : -1;if (active && focus) tab.focus();});
-    panels.forEach(panel => {panel.hidden = panel.dataset.story !== id;});
+  const dots = [...section.querySelectorAll('[data-story-index]')];
+  let active = 0;
+  function update() {
+    active = panels.reduce((best,p,i) => Math.abs(p.getBoundingClientRect().left-track.getBoundingClientRect().left) < Math.abs(panels[best].getBoundingClientRect().left-track.getBoundingClientRect().left) ? i : best, 0);
+    dots.forEach((dot,i) => {if(i===active)dot.setAttribute('aria-current','true');else dot.removeAttribute('aria-current')});
+    section.querySelector('.story-position').textContent = String(active+1).padStart(2,'0')+' / '+String(panels.length).padStart(2,'0');
+    panels.forEach((panel,i) => {panel.inert = i!==active});
   }
-  const requested = location.hash.replace('#caso-', '');
-  select(panels.some(p => p.dataset.story === requested) ? requested : panels[0].dataset.story);
-  section.classList.add('stories-ready');
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', event => {event.preventDefault();select(tab.dataset.storyTab);});
-    tab.addEventListener('keydown', event => {
-      let target;
-      if (event.key === 'ArrowRight') target = (index + 1) % tabs.length;
-      if (event.key === 'ArrowLeft') target = (index - 1 + tabs.length) % tabs.length;
-      if (event.key === 'Home') target = 0;
-      if (event.key === 'End') target = tabs.length - 1;
-      if (event.key === ' ') {event.preventDefault();select(tab.dataset.storyTab);return;}
-      if (target !== undefined) {event.preventDefault();select(tabs[target].dataset.storyTab, true);}
-    });
-  });
-  window.addEventListener('hashchange', () => {const id = location.hash.replace('#caso-', '');if (panels.some(p => p.dataset.story === id)) select(id);});
+  function select(index) {
+    index = (index+panels.length)%panels.length;
+    track.scrollTo({left:panels[index].offsetLeft-panels[0].offsetLeft,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  }
+  section.querySelectorAll('[data-story-step]').forEach(button=>button.addEventListener('click',()=>select(active+Number(button.dataset.storyStep))));
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>select(i)));
+  track.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();select(event.key==='Home'?0:event.key==='End'?panels.length-1:active+(event.key==='ArrowRight'?1:-1));});
+  let frame;
+  track.addEventListener('scroll',()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(update)},{passive:true});
+  const observer = new ResizeObserver(()=>{track.scrollTo({left:panels[active].offsetLeft-panels[0].offsetLeft,behavior:'instant'});update()});
+  observer.observe(track);
+  update();
   const dialog = document.querySelector('#story-video-dialog');
   const video = dialog.querySelector('video');
   const error = dialog.querySelector('.story-video-error');
