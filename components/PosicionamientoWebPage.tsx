@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import ServiceGuide from "./ServiceGuide";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 import { HeroChrome, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
 import LightGridFrame from "./LightGridFrame";
@@ -142,6 +143,7 @@ export default function PosicionamientoWebPage() {
     <HomeAdvisorySection />
     </LightGridFrame>
 
+    <ServiceGuide service="seo" />
     <HomeClosingSections showAdvisory={false} darkGrid />
   </main>;
 }

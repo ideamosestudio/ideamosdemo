@@ -4,8 +4,8 @@ import { createPageMetadata } from "../../lib/seo";
 import "./marketing.css";
 
 export const metadata = createPageMetadata({
-  title: "Marketing digital para generar ventas | Ideamos",
-  description: "Estrategias de marketing digital, contenidos y campañas para atraer leads calificados, optimizar resultados y hacer crecer tus ventas.",
+  title: "Marketing digital para empresas en Argentina | Ideamos",
+  description: "Estrategias de marketing digital para empresas: contenido, campañas y medición de consultas. Conocé cómo trabajamos y pedí una asesoría con Ideamos.",
   path: "/marketing-digital/",
 });
 

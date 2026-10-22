@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import ServiceGuide from "./ServiceGuide";
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
 import { DarkGridBackground, HeroChrome, HomeAdvisorySection, HomeClosingSections } from "./SharedHomeSections";
 import HomeTestimonials from "./HomeTestimonials";
@@ -123,6 +124,7 @@ export default function ShopPage() {
     <HomeAdvisorySection />
     </LightGridFrame>
 
+    <ServiceGuide service="shop" />
     <HomeClosingSections showAdvisory={false} darkGrid />
   </main>;
 }

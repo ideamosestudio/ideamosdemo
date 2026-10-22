@@ -3,19 +3,20 @@ import PageStructuredData from "../../components/PageStructuredData";
 import { createPageMetadata } from "../../lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Diseño web profesional que convierte | Ideamos",
-  description: "Diseñamos sitios web profesionales, administrables y orientados a resultados para atraer clientes, generar confianza y aumentar ventas.",
+  title: "Diseño web profesional para empresas | Ideamos",
+  description: "Diseño y desarrollo web para empresas: sitios a medida, adaptados a celulares y con administración según tu proyecto. Consultá tu presupuesto con Ideamos.",
   path: "/diseno-web-autoadministrable/",
 });
 
 const page: ServicePage = {
+  guide: "web",
   matchHomeHero: true,
   hideSectionIndexes: true,
   sharedSectionBackground: true,
   homeTestimonials: true,
   eyebrow: "MÁS ESTRATEGIA, MÁS RESULTADOS",
-  title: "Diseño web de alto impacto\nenfocado en resultados",
-  intro: "Diseñamos sitios que impactan y convierten, ayudándote a atraer más clientes y aumentar tus ventas. Contactanos y charlemos de tu proyecto.",
+  title: "Diseño web para empresas\nenfocado en resultados",
+  intro: "Diseño y desarrollo web profesional para empresas de Argentina. Creamos sitios a medida que presentan tu negocio y facilitan las consultas. Charlemos de tu proyecto.",
   sections: [
     { eyebrow: "DISEÑO WEB PROFESIONAL", title: "Creamos sitios webs profesionales que atraen clientes y ventas", lead: "Posicioná tu marca con un desarrollo web efectivo.", paragraphs: ["Creamos sitios web pensados para transmitir autoridad, confianza y generar contactos reales. Desde el diseño a medida hasta el contenido, todo está enfocado en convertir visitas en potenciales clientes. Contactanos y coordinamos una asesoría online sin cargo para conocer tu negocio y sus desafíos, identificar oportunidades y proponerte ideas concretas para que puedas crecer con menos esfuerzo y mejores resultados."], visual: "xtreme", actions: true, afterVideo: "/media/tablet-animated-final.webm" },
     { eyebrow: "DISEÑO WEB A TU MEDIDA", title: "¿Qué problemas resuelve\nun sitio web para tu empresa?", lead: "Conocé cómo un sitio web profesional ayuda a resolver los desafíos de tu negocio. Más visibilidad, más confianza y más oportunidades de crecer.", visual: "wilde", actions: true, hideItemNumbers: true, items: [

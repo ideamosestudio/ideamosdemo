@@ -7,6 +7,8 @@ import SiteHeader from "./SiteHeader";
 import LightGridFrame from "./LightGridFrame";
 import HomeTestimonials from "./HomeTestimonials";
 import { WHATSAPP_URL } from "../lib/whatsapp";
+import ServiceGuide from "./ServiceGuide";
+import type { ServiceGuideKey } from "../lib/service-guides";
 
 type Item = { title: string; copy: string };
 type ContentSection = {
@@ -24,6 +26,7 @@ type ContentSection = {
   variant?: "benefits";
 };
 type ServicePage = {
+  guide?: ServiceGuideKey;
   eyebrow: string;
   title: string;
   intro: string;
@@ -192,6 +195,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
     })}
     {page.homeTestimonials && <HomeTestimonials />}
     </LightGridFrame>
+    {page.guide && <ServiceGuide service={page.guide} />}
     <HomeClosingSections darkGrid />
   </main>;
 }

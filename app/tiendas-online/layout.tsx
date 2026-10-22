@@ -2,8 +2,8 @@ import { createPageMetadata } from "../../lib/seo";
 import "./shops.css";
 
 export const metadata = createPageMetadata({
-  title: "Tiendas online profesionales sin comisiones | Ideamos",
-  description: "Creamos tiendas online profesionales, administrables, con pagos y envíos integrados, sin comisiones de Ideamos por cada venta.",
+  title: "Diseño y desarrollo de tiendas online | Ideamos",
+  description: "Tiendas online para empresas con catálogo, pagos y envíos según tu proyecto. Sin comisiones de Ideamos por venta. Consultá el desarrollo de tu ecommerce.",
   path: "/tiendas-online/",
 });
 

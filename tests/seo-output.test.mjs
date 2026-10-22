@@ -47,6 +47,41 @@ test("sitemap profesional: solo páginas públicas y prioridades válidas", asyn
   assert.equal((xml.match(/<url>/g) ?? []).length, pagePaths.length);
 });
 
+test("las guías comerciales son HTML indexable y enlazan recursos reales", async () => {
+  const titles = new Set();
+  for (const [file] of pagePaths.slice(0, 5)) {
+    const html = await readFile(new URL(file, out), "utf8");
+    const title = html.match(/<title>(.*?)<\/title>/)?.[1];
+    assert.ok(title && !titles.has(title), `Título único: ${file}`);
+    titles.add(title);
+    assert.equal((html.match(/<h1(?:\s|>)/g) ?? []).length, 1, file);
+    assert.match(html, /aria-label="(?:Servicios y recursos relacionados|Explorar servicios de Ideamos)"/, file);
+    if (file !== "index.html") {
+      assert.equal((html.match(/<details>/g) ?? []).length, 4, file);
+      const schemas = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].map((match) => JSON.parse(match[1]));
+      const faq = schemas.find((schema) => schema["@type"] === "FAQPage");
+      assert.equal(faq?.mainEntity.length, 4, file);
+      for (const question of faq.mainEntity) {
+        assert.ok(html.includes(`<summary>${question.name}</summary>`), file);
+        assert.ok(html.includes(`<p>${question.acceptedAnswer.text}</p>`), file);
+      }
+      assert.match(html, /href="[^"]*\/casos-de-exito\/"/, file);
+      assert.match(html, /href="[^"]*\/testimonios\/"/, file);
+      assert.match(html, /href="[^"]*\/contacto\/"/, file);
+    }
+  }
+});
+
+test("el sitemap enlaza archivos publicados y usa fechas de contenido", async () => {
+  const xml = await readFile(new URL("sitemap.xml", out), "utf8");
+  for (const [, url] of xml.matchAll(/<loc>(.*?)<\/loc>/g)) {
+    const path = new URL(url).pathname.replace(/^\//, "");
+    await access(new URL(`${path}index.html`, out));
+  }
+  assert.equal((xml.match(/<lastmod>/g) ?? []).length, 5);
+  assert.doesNotMatch(xml, /2026-10-01|portfoliotest/);
+});
+
 test("robots y archivos para agentes están publicados", async () => {
   const robots = await readFile(new URL("robots.txt", out), "utf8");
   const llms = await readFile(new URL("llms.txt", out), "utf8");

@@ -3,7 +3,15 @@ import { SITE_URL } from "../lib/seo";
 
 export const dynamic = "force-static";
 
-const updated = "2026-10-01";
+// Dates describe substantive page edits, not each deployment or build.
+// Unknown dates are omitted rather than assigning every URL the same date.
+const lastModified: Record<string, string> = {
+  "/": "2026-10-22",
+  "/diseno-web-autoadministrable/": "2026-10-22",
+  "/tiendas-online/": "2026-10-22",
+  "/marketing-digital/": "2026-10-22",
+  "/posicionamiento-web/": "2026-10-22",
+};
 const pages: Array<{ path: string; priority: number; changeFrequency: NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]> }> = [
   { path: "/", priority: 1, changeFrequency: "weekly" },
   { path: "/diseno-web-autoadministrable/", priority: 0.95, changeFrequency: "monthly" },
@@ -20,7 +28,7 @@ const pages: Array<{ path: string; priority: number; changeFrequency: NonNullabl
 export default function sitemap(): MetadataRoute.Sitemap {
   return pages.map(({ path, priority, changeFrequency }) => ({
     url: `${SITE_URL}${path}`,
-    lastModified: updated,
+    ...(lastModified[path] ? { lastModified: lastModified[path] } : {}),
     changeFrequency,
     priority,
   }));

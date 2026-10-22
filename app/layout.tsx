@@ -28,10 +28,11 @@ import "./desktop-layout-request-2026-08-31.css";
 import "./layout-request-2026-09-02.css";
 import "./mobile-layout-request-2026-09-02.css";
 import "./desktop-button-typography.css";
+import "./service-guide.css";
 
 const homeMetadata = createPageMetadata({
-  title: "Diseño web y marketing digital | Ideamos",
-  description: "Diseñamos sitios web, tiendas online y estrategias de marketing digital para atraer clientes, generar confianza y aumentar tus ventas.",
+  title: "Diseño web para empresas en Argentina | Ideamos",
+  description: "Diseño web profesional, tiendas online y marketing digital para empresas en Argentina. Conocé nuestros proyectos y consultá por una asesoría sin cargo.",
   path: "/",
 });
 

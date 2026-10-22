@@ -118,6 +118,23 @@ export default function Home() {
     </section>
     </LightGridFrame>
 
+    <section className="service-guide" aria-labelledby="explorar-servicios">
+      <div className="service-guide-inner">
+        <header>
+          <p className="service-guide-eyebrow">CONOCÉ CÓMO PODEMOS AYUDARTE</p>
+          <h2 id="explorar-servicios">Diseño web y marketing digital para tu empresa</h2>
+          <p>Desde Buenos Aires, acompañamos a empresas de Argentina en sus proyectos digitales. Explorá cada servicio para conocer qué conviene definir, cómo preparar tu consulta y qué opciones se adaptan a tu negocio.</p>
+        </header>
+        <nav className="service-guide-links" aria-label="Explorar servicios de Ideamos">
+          <a href={asset("/diseno-web-autoadministrable/")}>Diseño web profesional para empresas</a>
+          <a href={asset("/tiendas-online/")}>Diseño y desarrollo de tiendas online</a>
+          <a href={asset("/posicionamiento-web/")}>Posicionamiento web SEO y Google Ads</a>
+          <a href={asset("/marketing-digital/")}>Estrategia de marketing digital</a>
+          <a href={asset("/casos-de-exito/")}>Casos de éxito de nuestros clientes</a>
+        </nav>
+      </div>
+    </section>
+
     <PortfolioDriftWall />
 
     <LightGridFrame className="home-closing-light-grid">
