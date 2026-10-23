@@ -19,14 +19,14 @@ const mobileFirstRow: GalleryWork[] = [
   { src: "/media/casos-exito/desk-006.jpg", alt: "Sitio web ONER VFX", format: "wide" },
   { src: "/media/casos-exito/phone-005.jpg", alt: "Experiencia mobile para Wilde", format: "phone" },
   { src: "/media/casos-exito/desk-014.jpg", alt: "Sitio web industrial para KRK", format: "wide" },
-  { src: "/media/casos-exito/cylsa-mockup.jpg", alt: "Sitio web de CYL Neumáticos", format: "wide" },
+  { src: "/media/casos-exito/desk-009.jpg", alt: "Sitio web Equinox Training", format: "wide" },
   { src: "/media/casos-exito/desk-013.jpg", alt: "Tienda online Mirtatulaj", format: "wide" },
 ];
 
 const mobileSecondRow: GalleryWork[] = [
   { src: "/media/casos-exito/phone-001.jpg", alt: "Experiencia mobile para ONER VFX", format: "phone" },
   { src: "/media/casos-exito/desk-012.jpg", alt: "Tienda online Raisa Joya", format: "wide" },
-  { src: "/media/casos-exito/desk-009.jpg", alt: "Sitio web Equinox Training", format: "wide" },
+  { src: "/media/casos-exito/cylsa-mockup.jpg", alt: "Sitio web de CYL Neumáticos", format: "wide" },
   { src: "/media/casos-exito/desk-008.jpg", alt: "Portfolio de trabajos ONER VFX", format: "wide" },
   { src: "/media/casos-exito/phone-003.jpg", alt: "Experiencia mobile Empire Funds", format: "phone" },
   { src: "/media/casos-exito/desk-010.jpg", alt: "Concepto digital AirPods Pro", format: "wide" },
@@ -60,11 +60,11 @@ const items: DriftWallItem[] = [
   { image: drift("desk-006.jpg"), fullImage: full("desk-006.jpg"), title: "ONER VFX", height: WIDE_H },
   { image: drift("phone-005.jpg"), fullImage: full("phone-005.jpg"), title: "Wilde", height: PHONE_H },
   { image: drift("desk-014.jpg"), fullImage: full("desk-014.jpg"), title: "KRK Latinoamericana", height: WIDE_H },
-  { image: drift("cylsa-mockup.jpg"), fullImage: full("cylsa-mockup.jpg"), title: "CYL Neumáticos", height: CYLSA_H },
+  { image: drift("desk-009.jpg"), fullImage: full("desk-009.jpg"), title: "Equinox Training", height: WIDE_H },
   { image: drift("desk-013.jpg"), fullImage: full("desk-013.jpg"), title: "Mirtatulaj", height: WIDE_H },
   { image: drift("phone-001.jpg"), fullImage: full("phone-001.jpg"), title: "ONER VFX mobile", height: PHONE_H },
   { image: drift("desk-012.jpg"), fullImage: full("desk-012.jpg"), title: "Raisa Joya", height: WIDE_H },
-  { image: drift("desk-009.jpg"), fullImage: full("desk-009.jpg"), title: "Equinox Training", height: WIDE_H },
+  { image: drift("cylsa-mockup.jpg"), fullImage: full("cylsa-mockup.jpg"), title: "CYL Neumáticos", height: CYLSA_H },
   { image: drift("desk-010.jpg"), fullImage: full("desk-010.jpg"), title: "AirPods Pro", height: WIDE_H },
   { image: drift("desk-004.jpg"), fullImage: full("desk-004.jpg"), title: "Xtreme D10", height: WIDE_H },
 ];
