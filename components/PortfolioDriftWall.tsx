@@ -46,7 +46,7 @@ const mobileSecondRow: GalleryWork[] = [
 const TILE_W = 340;
 const WIDE_H = Math.round(TILE_W / 1.324);
 const PHONE_H = Math.round(TILE_W / 0.582);
-const CYLSA_H = Math.round(TILE_W / (1493 / 941));
+const CYLSA_H = Math.round(TILE_W / (1672 / 941));
 const SPHERE_H = Math.round(TILE_W / (1672 / 941));
 
 const drift = (name: string) => asset(`/media/casos-exito/drift/${name}`);
