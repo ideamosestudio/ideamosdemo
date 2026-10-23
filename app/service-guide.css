@@ -16,8 +16,8 @@
 
 /* Home service directory: a designed navigation module, separate from the FAQs. */
 #site-root .service-directory {
-  background: #0b0b0b;
-  border-block: 1px solid #242424;
+  background: #242424;
+  border-block: 1px solid #3d3d3d;
   padding: clamp(64px, 7vw, 104px) 0;
 }
 .service-directory__inner {
@@ -73,14 +73,14 @@
   transition: color .2s, border-color .2s;
 }
 #site-root .service-directory__cases span { color: #ff7830; font-size: 21px; }
-#site-root .service-directory__services { border-top: 1px solid #333; }
+#site-root .service-directory__services { border-top: 1px solid #494949; }
 #site-root .service-directory__item {
   display: grid;
   grid-template-columns: 25px minmax(0, 1fr) 42px;
   align-items: center;
   gap: 20px;
   padding: 26px 4px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #494949;
   text-decoration: none;
   color: #f4f4f4;
 }
@@ -110,7 +110,7 @@
   place-items: center;
   width: 42px;
   height: 42px;
-  border: 1px solid #444;
+  border: 1px solid #626262;
   border-radius: 50%;
   font-size: 23px;
   transition: color .2s, background .2s, border-color .2s, transform .2s;
