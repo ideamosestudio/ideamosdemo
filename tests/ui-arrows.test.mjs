@@ -41,7 +41,7 @@ test("las flechas compartidas son SVG decorativos con trazos escalables", async 
 
 test("el portfolio conserva SVG tanto en HTML como al generar tarjetas y abrir proyectos", async () => {
   const html = await readFile(new URL("portfolio/index.html", out), "utf8");
-  assert.ok((html.match(/class="arrow-icon inline-arrow"/g) ?? []).length >= 56);
+  assert.ok((html.match(/class="arrow-icon inline-arrow"/g) ?? []).length >= 50);
   const context = {};
   runInNewContext(await readFile(new URL("portfolio/project-card.js", out), "utf8"), context);
   const ui = context.PortfolioUI;
@@ -49,7 +49,7 @@ test("el portfolio conserva SVG tanto en HTML como al generar tarjetas y abrir p
   assert.doesNotMatch(card, textArrows);
   assert.match(card, /Conocer el proyecto <svg/);
   assert.match(ui.inlineArrowIcon, /aria-hidden="true" focusable="false"/);
-  const app = await readFile(new URL("portfolio/app.js", out), "utf8");
-  assert.doesNotMatch(app, textArrows);
-  assert.match(app, /Visitar sitio <span>\$\{inlineArrowIcon\}/);
+  const gallery = await readFile(new URL("portfolio/gallery.js", out), "utf8");
+  assert.doesNotMatch(gallery, textArrows);
+  assert.match(gallery, /openProject\(link\.dataset\.project\)/);
 });

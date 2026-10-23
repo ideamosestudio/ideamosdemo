@@ -1,0 +1,29 @@
+/* The portfolio catalogue keeps its existing card system; every shared site
+   module (header, cover, testimonials, advisory, contact and footer) is the
+   actual Home component and therefore uses the global design system. */
+.portfolio-page .client-stories,
+.portfolio-page .cta{display:none!important}
+
+.portfolio-page .work,
+.portfolio-page #project-dialog{
+  --bg:#08090b;
+  --panel:#111215;
+  --ink:#f4f4f3;
+  --muted:#959598;
+  --line:#ffffff20;
+  --orange:#ff6200;
+}
+
+/* Neutralize obsolete catalogue rules outside the catalogue itself. */
+.portfolio-page .internal-home-hero{padding:76px 0 0}
+.portfolio-page .internal-home-hero>.hero-center{padding:120px 20px 80px}
+.portfolio-page .internal-home-hero h1{margin:26px 0 24px}
+
+@media(min-width:1401px){
+  .portfolio-page .internal-home-hero>.hero-center{transform:translateY(-62px)}
+}
+
+@media(max-width:980px){
+  .portfolio-page .internal-home-hero{padding:76px 0 0}
+  .portfolio-page .internal-home-hero>.hero-center{padding:104px 30px 36px;transform:none}
+}
