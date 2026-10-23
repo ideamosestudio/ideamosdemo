@@ -85,6 +85,32 @@ test("el directorio de servicios conserva enlaces y contenido en HTML sin script
   assert.doesNotMatch(section, /<script|<img|<video/);
 });
 
+test("las FAQ compactas mantienen contenido temático y contacto contextual", async () => {
+  const topics = {
+    "diseno-web-autoadministrable/index.html": /diseño web para empresas/,
+    "tiendas-online/index.html": /tiendas online/,
+    "marketing-digital/index.html": /marketing digital/,
+    "posicionamiento-web/index.html": /posicionamiento web/,
+  };
+  const headings = new Set();
+  for (const [file, topic] of Object.entries(topics)) {
+    const html = await readFile(new URL(file, out), "utf8");
+    const section = html.match(/<section class="service-guide service-faq"[\s\S]*?<\/section>/)?.[0];
+    assert.ok(section, file);
+    const heading = section.match(/<h2[^>]*>([^<]+)<\/h2>/)?.[1];
+    const intro = section.match(/<p class="service-faq__description">([^<]+)<\/p>/)?.[1];
+    assert.ok(heading && heading.length <= 40 && !headings.has(heading), file);
+    headings.add(heading);
+    assert.ok(intro && intro.length <= 160, file);
+    assert.match(intro, topic, file);
+    assert.doesNotMatch(section, /service-faq__number|aria-hidden="true">[^<]*\?/, file);
+    assert.match(section, /¿Tenés otra pregunta\?/, file);
+    assert.match(section, /class="service-faq__contact"[^>]*>Hablemos /, file);
+    assert.equal((section.match(/<script\b/g) ?? []).length, 1, file);
+    assert.match(section, /<script type="application\/ld\+json">/, file);
+  }
+});
+
 test("el sitemap enlaza archivos publicados y usa fechas de contenido", async () => {
   const xml = await readFile(new URL("sitemap.xml", out), "utf8");
   for (const [, url] of xml.matchAll(/<loc>(.*?)<\/loc>/g)) {
@@ -215,4 +241,20 @@ test("el formulario conserva las defensas antispam", async () => {
   assert.match(source, /DUPLICATE_WINDOW_MS/);
   assert.match(source, /AbortController/);
   assert.match(source, /maxLength=\{2000\}/);
+  assert.match(source, /formData\.set\("g-recaptcha-response", await getRecaptchaToken\(\)\)/);
+});
+
+test("reCAPTCHA no superpone el badge y conserva su aviso visible y protección", async () => {
+  const css = await readFile(new URL("app/revision.css", root), "utf8");
+  assert.match(css, /\.grecaptcha-badge\s*\{\s*visibility:\s*hidden\s*!important\s*\}/);
+  assert.doesNotMatch(css, /\.grecaptcha-badge[^}]*display:\s*none/);
+  const captcha = await readFile(new URL("lib/recaptcha.ts", root), "utf8");
+  assert.match(captcha, /captcha\.execute\(SITE_KEY, \{ action: "contact_submit" \}\)/);
+  for (const [file] of pagePaths) {
+    const html = await readFile(new URL(file, out), "utf8");
+    if (!html.includes('action="https://mailer.ideamos.com.ar/send.php"')) continue;
+    assert.match(html, /class="contact-recaptcha-notice">Este sitio está protegido por reCAPTCHA\./, file);
+    assert.match(html, /href="https:\/\/policies.google.com\/privacy"/, file);
+    assert.match(html, /href="https:\/\/policies.google.com\/terms"/, file);
+  }
 });

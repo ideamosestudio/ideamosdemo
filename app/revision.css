@@ -2915,4 +2915,6 @@ html.lenis {
 
 .contact-form form>p.contact-recaptcha-notice{display:block;letter-spacing:normal;font-weight:400;font-size:12px;line-height:1.6;margin:16px 0;color:#b5b5bd;max-width:60ch;text-align:left}.contact-recaptcha-notice a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 
-.grecaptcha-badge{left:12px!important;right:auto!important}
+/* Google permits hiding this badge when attribution stays visible in the form.
+   Keep visibility (not display:none) and preserve token generation/verification. */
+.grecaptcha-badge{visibility:hidden!important}

@@ -25,12 +25,14 @@ export default function ServiceGuide({ service }: { service: ServiceGuideKey }) 
           <p className="service-faq__eyebrow">PREGUNTAS FRECUENTES</p>
           <h2 id={`guide-${service}`}>{guide.title}</h2>
           <p className="service-faq__description">{guide.intro}</p>
-          <a className="service-faq__contact" href={href("/contacto/")}>Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
+          <div className="service-faq__help">
+            <p>¿Tenés otra pregunta?</p>
+            <a className="service-faq__contact" href={href("/contacto/")}>Hablemos <span aria-hidden="true">↗</span></a>
+          </div>
         </header>
         <div className="service-faq__questions" id="preguntas-frecuentes">
           {guide.questions.map(([question, answer], index) => <details className="service-faq__item" name={`faq-${service}`} open={index === 0} key={question}>
             <summary>
-              <span className="service-faq__number" aria-hidden="true">0{index + 1}</span>
               <span className="service-faq__question">{question}</span>
               <span className="service-faq__toggle" aria-hidden="true" />
             </summary>
