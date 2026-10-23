@@ -301,3 +301,51 @@
     margin-right:20px;
   }
 }
+
+/* Distinct device motion: the desktop shifts with weight while the phone
+   lifts and floats independently over the composition. */
+.portfolio-page .work .preview .cover-desktop{
+  transform:none;
+  transform-origin:48% 70%;
+  transition:transform .72s cubic-bezier(.16,1,.3,1),filter .72s ease;
+  will-change:transform;
+}
+
+.portfolio-page .work .preview .cover-phone{
+  transform:none;
+  transform-origin:50% 78%;
+  transition:transform .58s cubic-bezier(.16,1,.3,1),box-shadow .58s ease;
+  will-change:transform;
+}
+
+.portfolio-page .work .preview:is(:hover,:focus-visible) .cover-desktop{
+  transform:translate3d(-7px,-6px,0) scale(.992);
+  filter:brightness(.94);
+}
+
+.portfolio-page .work .preview:is(:hover,:focus-visible) .cover-phone{
+  z-index:6;
+  animation:portfolio-phone-float 1.8s ease-in-out infinite;
+  box-shadow:0 26px 42px rgba(0,0,0,.46);
+}
+
+@keyframes portfolio-phone-float{
+  0%,100%{transform:translate3d(0,-13px,0) rotate(-1.5deg) scale(1.045)}
+  50%{transform:translate3d(5px,-25px,0) rotate(2deg) scale(1.075)}
+}
+
+@media(hover:none){
+  .portfolio-page .work .preview:is(:hover,:focus-visible) .cover-desktop,
+  .portfolio-page .work .preview:is(:hover,:focus-visible) .cover-phone{
+    transform:none;
+    animation:none;
+    filter:none;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .portfolio-page .work .preview:is(:hover,:focus-visible) .cover-phone{
+    transform:translate3d(0,-10px,0);
+    animation:none;
+  }
+}
