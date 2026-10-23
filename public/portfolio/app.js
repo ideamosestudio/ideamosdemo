@@ -8,14 +8,37 @@ let lastFocus;
 let visibleProjects = [];
 let currentProjectId;
 
-const siteNav = document.querySelector('.site-nav');
+const siteNav = document.querySelector('.nav');
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const mobileMenu = document.querySelector('.mobile-menu-overlay');
 function updateCoverScroll() {
   const scrollY = window.scrollY;
-  document.documentElement.style.setProperty('--portfolio-scroll', String(scrollY));
-  siteNav?.classList.toggle('site-nav-scrolled', scrollY > 24);
+  document.documentElement.style.setProperty('--scroll', String(scrollY));
+  document.documentElement.style.setProperty('--scroll-vh', String(scrollY / window.innerHeight));
+  siteNav?.classList.toggle('nav-scrolled', scrollY > 24);
 }
 updateCoverScroll();
 window.addEventListener('scroll', updateCoverScroll, {passive: true});
+
+function setMobileMenu(open) {
+  if (!mobileMenuToggle || !mobileMenu) return;
+  mobileMenuToggle.classList.toggle('is-open', open);
+  mobileMenuToggle.setAttribute('aria-expanded', String(open));
+  mobileMenuToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  mobileMenu.classList.toggle('is-open', open);
+  mobileMenu.classList.toggle('is-closed', !open);
+  mobileMenu.setAttribute('aria-hidden', String(!open));
+  document.documentElement.classList.toggle('mobile-menu-locked', open);
+  if (open) mobileMenu.focus({preventScroll: true});
+}
+mobileMenuToggle?.addEventListener('click', () => setMobileMenu(!mobileMenu.classList.contains('is-open')));
+mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMobileMenu(false)));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && mobileMenu?.classList.contains('is-open')) {
+    setMobileMenu(false);
+    mobileMenuToggle.focus();
+  }
+});
 
 
 const searchIndex = new Map();
