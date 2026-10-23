@@ -1,4 +1,5 @@
 const projects = window.PROJECTS;
+document.querySelector('.client-stories')?.remove();
 const grid = document.querySelector('#projects');
 const dialog = document.querySelector('#project-dialog');
 const {cover, card, escape, inlineArrowIcon} = window.PortfolioUI;
