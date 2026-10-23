@@ -1,0 +1,2 @@
+/* Vector arrows inherit the existing control's size and color, never its font glyph. */
+.site-arrow, .site-play-icon { display: inline-block; vertical-align: middle; flex-shrink: 0; pointer-events: none; }

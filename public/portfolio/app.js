@@ -1,7 +1,7 @@
 const projects = window.PROJECTS;
 const grid = document.querySelector('#projects');
 const dialog = document.querySelector('#project-dialog');
-const {cover, card, escape} = window.PortfolioUI;
+const {cover, card, escape, inlineArrowIcon} = window.PortfolioUI;
 let active = 'todos';
 let search = '';
 let lastFocus;
@@ -42,7 +42,7 @@ function openProject(id) {
   contact.dataset.projectName = project.name;
   const link = document.querySelector('#dialog-link');
   link.hidden = !project.url;
-  link.innerHTML = `Visitar sitio <span>↗</span>`;
+  link.innerHTML = `Visitar sitio <span>${inlineArrowIcon}</span>`;
   if (project.url) link.href = project.url; else link.removeAttribute('href');
   document.body.classList.add('modal-open');
   const index = visibleProjects.findIndex(p => p.id === id);

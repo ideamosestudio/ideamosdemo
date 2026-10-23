@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { WHATSAPP_URL } from "../lib/whatsapp";
 import { testimonials } from "../lib/testimonials";
+import PlayIcon from "./PlayIcon";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -42,7 +43,7 @@ export default function TestimonialCard({
     <div className="home-testimonials__visual">
       <button className="home-testimonials__media" type="button" onClick={onPlay} aria-label={`Ver video testimonial de ${testimonial.name}`}>
         <img src={asset(testimonial.image)} alt={testimonial.alt} width="960" height="720" loading="lazy" decoding="async" />
-        <span className="home-testimonials__play" aria-hidden="true">▶</span>
+        <span className="home-testimonials__play" aria-hidden="true"><PlayIcon /></span>
       </button>
       {controls}
     </div>

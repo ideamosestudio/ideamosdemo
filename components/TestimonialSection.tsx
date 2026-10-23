@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { pauseManagedBackgroundVideos } from "../app/components/ManagedBackgroundVideo";
 import { WHATSAPP_URL } from "../lib/whatsapp";
+import PlayIcon from "./PlayIcon";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -23,7 +24,7 @@ export default function TestimonialSection() {
     <div className="testimonial-media">
       {playing
         ? <video autoPlay controls playsInline onPlay={() => pauseManagedBackgroundVideos()}><source src={asset("/media/testimonial.mp4")} type="video/mp4"/></video>
-        : <button className="video-cover" onClick={() => setPlaying(true)} aria-label="Reproducir testimonio"><img src={asset("/media/testimonial-cover.webp")} alt="Testimonio de Pablo Avila, CYL S.A." width="960" height="720" loading="lazy" decoding="async"/><i>▶</i></button>}
+        : <button className="video-cover" onClick={() => setPlaying(true)} aria-label="Reproducir testimonio"><img src={asset("/media/testimonial-cover.webp")} alt="Testimonio de Pablo Avila, CYL S.A." width="960" height="720" loading="lazy" decoding="async"/><i aria-hidden="true"><PlayIcon /></i></button>}
     </div>
   </section>;
 }

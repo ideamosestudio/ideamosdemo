@@ -12,6 +12,7 @@ import {
   WebScreenRotator,
 } from "../components/HomeClientEnhancements";
 import { WHATSAPP_URL } from "../lib/whatsapp";
+import ArrowIcon from "../components/ArrowIcon";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 const ecommerceLeft = [
@@ -124,7 +125,7 @@ export default function Home() {
           <p className="service-directory__eyebrow">SOLUCIONES DIGITALES</p>
           <h2 id="explorar-servicios">Diseño web y marketing digital para <span>tu empresa.</span></h2>
           <p className="service-directory__description">Desde Buenos Aires, acompañamos a empresas de Argentina con diseño, estrategia y tecnología. Encontrá la solución para el próximo paso de tu negocio.</p>
-          <a className="service-directory__cases" href={asset("/casos-de-exito/")}>Conocé nuestros casos de éxito <span aria-hidden="true">↗</span></a>
+          <a className="service-directory__cases" href={asset("/casos-de-exito/")}>Conocé nuestros casos de éxito <span aria-hidden="true"><ArrowIcon /></span></a>
         </div>
         <nav className="service-directory__services" aria-label="Explorar servicios de Ideamos">
           {[
@@ -139,7 +140,7 @@ export default function Home() {
                 <span className="service-directory__title">{service.title}</span>
                 <span className="service-directory__detail">{service.description}</span>
               </span>
-              <span className="service-directory__arrow" aria-hidden="true">↗</span>
+              <span className="service-directory__arrow" aria-hidden="true"><ArrowIcon /></span>
             </a>
           ))}
         </nav>

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { pauseManagedBackgroundVideos } from "../app/components/ManagedBackgroundVideo";
 import { testimonials } from "../lib/testimonials";
 import TestimonialCard from "./TestimonialCard";
+import ArrowIcon from "./ArrowIcon";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -44,9 +45,9 @@ export default function HomeTestimonials() {
       onPlay={() => setOpenVideo(active)}
       announce
       controls={<div className="home-testimonials__controls" aria-label="Cambiar testimonio">
-          <button type="button" onClick={() => changeSlide(-1)} aria-label="Testimonio anterior">←</button>
+          <button type="button" onClick={() => changeSlide(-1)} aria-label="Testimonio anterior"><ArrowIcon direction="left" /></button>
           <div>{testimonials.map((item, index) => <button key={item.name} className={active === index ? "is-active" : ""} type="button" onClick={() => setActive(index)} aria-label={`Ver testimonio de ${item.name}`} />)}</div>
-          <button type="button" onClick={() => changeSlide(1)} aria-label="Siguiente testimonio">→</button>
+          <button type="button" onClick={() => changeSlide(1)} aria-label="Siguiente testimonio"><ArrowIcon direction="right" /></button>
         </div>}
     />
 

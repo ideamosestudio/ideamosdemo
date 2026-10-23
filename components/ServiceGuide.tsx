@@ -1,5 +1,6 @@
 import { serviceGuides, serviceLinks, type ServiceGuideKey } from "../lib/service-guides";
 import { SITE_URL } from "../lib/seo";
+import ArrowIcon from "./ArrowIcon";
 
 const href = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -27,7 +28,7 @@ export default function ServiceGuide({ service }: { service: ServiceGuideKey }) 
           <p className="service-faq__description">{guide.intro}</p>
           <div className="service-faq__help">
             <p>¿Tenés otra pregunta?</p>
-            <a className="service-faq__contact" href={href("/contacto/")}>Hablemos <span aria-hidden="true">↗</span></a>
+            <a className="service-faq__contact" href={href("/contacto/")}>Hablemos <span aria-hidden="true"><ArrowIcon /></span></a>
           </div>
         </header>
         <div className="service-faq__questions" id="preguntas-frecuentes">
@@ -43,9 +44,9 @@ export default function ServiceGuide({ service }: { service: ServiceGuideKey }) 
       <nav className="service-faq__related" aria-label="Servicios y recursos relacionados">
         <p>SEGUÍ EXPLORANDO</p>
         <div>
-          {guide.related.map((key) => <a key={key} href={href(serviceLinks[key].href)}>{serviceLinks[key].label}<span aria-hidden="true">↗</span></a>)}
-          <a href={href("/casos-de-exito/")}>Casos de éxito<span aria-hidden="true">↗</span></a>
-          <a href={href("/testimonios/")}>Testimonios de clientes<span aria-hidden="true">↗</span></a>
+          {guide.related.map((key) => <a key={key} href={href(serviceLinks[key].href)}>{serviceLinks[key].label}<span aria-hidden="true"><ArrowIcon /></span></a>)}
+          <a href={href("/casos-de-exito/")}>Casos de éxito<span aria-hidden="true"><ArrowIcon /></span></a>
+          <a href={href("/testimonios/")}>Testimonios de clientes<span aria-hidden="true"><ArrowIcon /></span></a>
         </div>
       </nav>
     </div>
