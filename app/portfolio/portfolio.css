@@ -320,10 +320,14 @@
   }
 }
 
-/* Clean depth cue: the desktop stays fixed and the phone only zooms 10%. */
+/* Two controlled depth planes: the desktop advances slightly and the phone
+   keeps the more noticeable 10% zoom. */
 .portfolio-page .work .preview .cover-desktop{
   transform:none;
+  transform-origin:50% 50%;
+  transition:transform .5s cubic-bezier(.2,.75,.25,1);
   filter:none;
+  will-change:transform;
 }
 
 .portfolio-page .work .preview .cover-phone{
@@ -334,7 +338,7 @@
 }
 
 .portfolio-page .work .preview:is(:hover,:focus-visible) .cover-desktop{
-  transform:none;
+  transform:translateY(-4px) scale(1.025);
   filter:none;
 }
 
