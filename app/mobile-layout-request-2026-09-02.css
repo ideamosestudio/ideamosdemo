@@ -79,11 +79,10 @@
     font-family:"Poppins",Arial,sans-serif!important;
   }
 
-  /* Si desktop presenta un par de CTAs, mobile conserva siempre el primero. */
+  /* Los pares de contacto conservan el primero; el portfolio no es un duplicado. */
   #site-root :is(
     .hero-actions,
     .ecommerce-actions,
-    .pdw-actions,
     .problem-actions,
     .home-testimonials__actions,
     .md-double-actions,

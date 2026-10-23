@@ -8,6 +8,7 @@ import LightGridFrame from "./LightGridFrame";
 import HomeTestimonials from "./HomeTestimonials";
 import { WHATSAPP_URL } from "../lib/whatsapp";
 import ServiceGuide from "./ServiceGuide";
+import PortfolioLink from "./PortfolioLink";
 import type { ServiceGuideKey } from "../lib/service-guides";
 
 type Item = { title: string; copy: string };
@@ -132,6 +133,7 @@ export default function InternalPage({ page }: { page: ServicePage }) {
             {section.lead && <h3>{section.lead}</h3>}
             {section.paragraphs?.map((copy, index) => <div className="service-copy" key={index}>{copy}</div>)}
             {section.actions && <Actions />}
+            {page.guide === "web" && <PortfolioLink>Ver proyectos de diseño web</PortfolioLink>}
           </header>
           <div className="service-visual-media">
             <img src={asset("/media/xtreme-service.webp")} alt="Sitio web Xtreme desarrollado por Ideamos" width="1300" height="987" loading="lazy" decoding="async" />

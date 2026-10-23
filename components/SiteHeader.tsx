@@ -11,6 +11,7 @@ const navigation = [
   ["Tiendas Online", "/tiendas-online/"],
   ["Marketing Digital", "/marketing-digital/"],
   ["Aparecé primero en Google", "/posicionamiento-web/"],
+  ["Trabajos", "/portfolio/"],
 ] as const;
 
 export default function SiteHeader({ solid = false }: { solid?: boolean }) {

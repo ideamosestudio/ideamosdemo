@@ -7,6 +7,7 @@ import { DarkGridBackground, HeroChrome, HomeAdvisorySection, HomeClosingSection
 import HomeTestimonials from "./HomeTestimonials";
 import LightGridFrame from "./LightGridFrame";
 import SiteHeader from "./SiteHeader";
+import PortfolioLink from "./PortfolioLink";
 import { WHATSAPP_URL } from "../lib/whatsapp";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -78,6 +79,7 @@ export default function ShopPage() {
           <h4><b>Diseño Web y Marketing Digital</b> de alto impacto</h4>
           <p>Tener una tienda online ofrece numerosas ventajas que pueden transformar su negocio. Permite llegar a una audiencia global, superando las limitaciones geográficas de un local físico, y le permite vender sus productos o servicios las 24 horas del día, los 7 días de la semana.</p>
           <a className="orange-cta shops-red-cta" href={WHATSAPP_URL}>QUIERO AGENDAR UNA ASESORÍA</a>
+          <PortfolioLink>Ver proyectos de tiendas online</PortfolioLink>
         </div>
         <div className="shops-laptop-visual">
           <img src={asset("/media/sunglasses.webp")} alt="Tienda online de anteojos desarrollada por Ideamos" width="1200" height="920" loading="lazy" decoding="async" />

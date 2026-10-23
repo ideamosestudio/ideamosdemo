@@ -54,13 +54,11 @@
   #site-root .mobile-only{display:inline!important}
 }
 
-/* A pair of CTAs side by side only makes sense where there's room for both
-   (desktop). Below 1401px, keep the first of any pair and drop the second
-   instead of stacking both — one clear action beats two competing ones. */
+/* Below 1401px, keep one contact action where a pair repeats that intent.
+   The portfolio link serves a different purpose and remains available. */
 @media(max-width:1400px){
   #site-root .home-page .hero-actions>*:nth-child(2),
   #site-root .home-page .ecommerce-actions>*:nth-child(2),
-  #site-root .home-page .pdw-actions>*:nth-child(2),
   #site-root .home-page .home-testimonials__actions>*:nth-child(2){
     display:none!important;
   }

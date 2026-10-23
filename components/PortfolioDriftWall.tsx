@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import DriftWall, { type DriftWallItem } from "./DriftWall";
 import CasesGallery, { type GalleryWork } from "../app/casos-de-exito/CasesGallery";
 import { WHATSAPP_URL } from "../lib/whatsapp";
+import PortfolioLink from "./PortfolioLink";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
@@ -108,7 +109,7 @@ export default function PortfolioDriftWall() {
     </div>
     <div className="pdw-actions">
       <a className="cta-glow primary" href={WHATSAPP_URL}><span className="desktop-only">Solicitá asesoramiento</span><span className="mobile-only">Contactanos</span></a>
-      <a className="cta-glow secondary" href={WHATSAPP_URL}><span>Quiero contactarme</span></a>
+      <PortfolioLink button>Ver portfolio completo</PortfolioLink>
     </div>
 
     {lightbox && <div className="pdw-lightbox" role="dialog" aria-modal="true" aria-label={lightbox.title ?? "Imagen ampliada"} onClick={() => setLightbox(null)}>

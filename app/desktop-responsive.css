@@ -32,7 +32,6 @@
     white-space:nowrap;
     font-size:clamp(9px,.75vw,11px);
   }
-  #site-root .nav .desktop-navigation a:nth-child(5){display:none}
   #site-root .nav .nav-contact{
     display:flex;
     width:auto;
