@@ -110,6 +110,24 @@
   border-bottom:1px solid rgba(24,27,35,.15);
 }
 
+.portfolio-page .work .filters button{
+  color:#3f424a;
+  font-size:14px;
+}
+
+.portfolio-page .work .filters button:is(:hover,:focus-visible){
+  color:#111217;
+  border-color:rgba(17,18,23,.14);
+  background:rgba(17,18,23,.055);
+}
+
+.portfolio-page .work .filters button.active,
+.portfolio-page .work .filters button.active:is(:hover,:focus-visible){
+  color:#111217;
+  border-color:rgba(17,18,23,.08);
+  background:#f1f0eb;
+}
+
 .portfolio-page .work>.result-count,
 .portfolio-page .work>.projects,
 .portfolio-page .work>.empty{
