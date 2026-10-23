@@ -326,12 +326,12 @@
 .portfolio-page .work .preview:is(:hover,:focus-visible) .cover-phone{
   z-index:6;
   animation:portfolio-phone-float 1.8s ease-in-out infinite;
-  box-shadow:0 26px 42px rgba(0,0,0,.46);
+  box-shadow:0 32px 52px rgba(0,0,0,.5);
 }
 
 @keyframes portfolio-phone-float{
-  0%,100%{transform:translate3d(0,-13px,0) rotate(-1.5deg) scale(1.045)}
-  50%{transform:translate3d(5px,-25px,0) rotate(2deg) scale(1.075)}
+  0%,100%{transform:translate3d(0,-13px,0) rotate(-1.5deg) scale(1.085)}
+  50%{transform:translate3d(5px,-25px,0) rotate(2deg) scale(1.12)}
 }
 
 @media(hover:none){
