@@ -57,12 +57,14 @@ test("las guías comerciales son HTML indexable y enlazan recursos reales", asyn
     assert.equal((html.match(/<h1(?:\s|>)/g) ?? []).length, 1, file);
     assert.match(html, /aria-label="(?:Servicios y recursos relacionados|Explorar servicios de Ideamos)"/, file);
     if (file !== "index.html") {
-      assert.equal((html.match(/<details>/g) ?? []).length, 4, file);
+      assert.equal((html.match(/<details\b/g) ?? []).length, 4, file);
+      assert.equal((html.match(/<details\b[^>]*\bopen=""/g) ?? []).length, 1, file);
+      assert.equal((html.match(/name="faq-(?:web|shop|seo|marketing)"/g) ?? []).length, 4, file);
       const schemas = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].map((match) => JSON.parse(match[1]));
       const faq = schemas.find((schema) => schema["@type"] === "FAQPage");
       assert.equal(faq?.mainEntity.length, 4, file);
       for (const question of faq.mainEntity) {
-        assert.ok(html.includes(`<summary>${question.name}</summary>`), file);
+        assert.ok(html.includes(`<span class="service-faq__question">${question.name}</span>`), file);
         assert.ok(html.includes(`<p>${question.acceptedAnswer.text}</p>`), file);
       }
       assert.match(html, /href="[^"]*\/casos-de-exito\/"/, file);

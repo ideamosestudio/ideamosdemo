@@ -17,25 +17,34 @@ export default function ServiceGuide({ service }: { service: ServiceGuideKey }) 
       acceptedAnswer: { "@type": "Answer", text: answer },
     })),
   };
-  return <section className="service-guide" aria-labelledby={`guide-${service}`}>
+  return <section className="service-guide service-faq" aria-labelledby={`guide-${service}`}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq).replace(/</g, "\\u003c") }} />
-    <div className="service-guide-inner">
-      <header>
-        <p className="service-guide-eyebrow">ANTES DE EMPEZAR</p>
-        <h2 id={`guide-${service}`}>{guide.title}</h2>
-        <p>{guide.intro}</p>
-      </header>
-      <div className="service-guide-questions" id="preguntas-frecuentes">
-        {guide.questions.map(([question, answer]) => <details key={question}>
-          <summary>{question}</summary>
-          <p>{answer}</p>
-        </details>)}
+    <div className="service-faq__inner">
+      <div className="service-faq__layout">
+        <header className="service-faq__intro">
+          <p className="service-faq__eyebrow">PREGUNTAS FRECUENTES</p>
+          <h2 id={`guide-${service}`}>{guide.title}</h2>
+          <p className="service-faq__description">{guide.intro}</p>
+          <a className="service-faq__contact" href={href("/contacto/")}>Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
+        </header>
+        <div className="service-faq__questions" id="preguntas-frecuentes">
+          {guide.questions.map(([question, answer], index) => <details className="service-faq__item" name={`faq-${service}`} open={index === 0} key={question}>
+            <summary>
+              <span className="service-faq__number" aria-hidden="true">0{index + 1}</span>
+              <span className="service-faq__question">{question}</span>
+              <span className="service-faq__toggle" aria-hidden="true" />
+            </summary>
+            <div className="service-faq__answer"><p>{answer}</p></div>
+          </details>)}
+        </div>
       </div>
-      <nav className="service-guide-links" aria-label="Servicios y recursos relacionados">
-        {guide.related.map((key) => <a key={key} href={href(serviceLinks[key].href)}>{serviceLinks[key].label}</a>)}
-        <a href={href("/casos-de-exito/")}>Conocé nuestros casos de éxito</a>
-        <a href={href("/testimonios/")}>Opiniones de nuestros clientes</a>
-        <a href={href("/contacto/")}>Contanos tu proyecto</a>
+      <nav className="service-faq__related" aria-label="Servicios y recursos relacionados">
+        <p>SEGUÍ EXPLORANDO</p>
+        <div>
+          {guide.related.map((key) => <a key={key} href={href(serviceLinks[key].href)}>{serviceLinks[key].label}<span aria-hidden="true">↗</span></a>)}
+          <a href={href("/casos-de-exito/")}>Casos de éxito<span aria-hidden="true">↗</span></a>
+          <a href={href("/testimonios/")}>Testimonios de clientes<span aria-hidden="true">↗</span></a>
+        </div>
       </nav>
     </div>
   </section>;
