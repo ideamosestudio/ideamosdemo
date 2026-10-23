@@ -19,6 +19,7 @@ const mobileFirstRow: GalleryWork[] = [
   { src: "/media/casos-exito/desk-006.jpg", alt: "Sitio web ONER VFX", format: "wide" },
   { src: "/media/casos-exito/phone-005.jpg", alt: "Experiencia mobile para Wilde", format: "phone" },
   { src: "/media/casos-exito/desk-014.jpg", alt: "Sitio web industrial para KRK", format: "wide" },
+  { src: "/media/casos-exito/cylsa-mockup.jpg", alt: "Sitio web de CYL Neumáticos", format: "wide" },
   { src: "/media/casos-exito/desk-013.jpg", alt: "Tienda online Mirtatulaj", format: "wide" },
 ];
 
@@ -44,6 +45,7 @@ const mobileSecondRow: GalleryWork[] = [
 const TILE_W = 340;
 const WIDE_H = Math.round(TILE_W / 1.324);
 const PHONE_H = Math.round(TILE_W / 0.582);
+const CYLSA_H = Math.round(TILE_W / (1493 / 941));
 
 const drift = (name: string) => asset(`/media/casos-exito/drift/${name}`);
 const full = (name: string) => asset(`/media/casos-exito/${name}`);
@@ -58,6 +60,7 @@ const items: DriftWallItem[] = [
   { image: drift("desk-006.jpg"), fullImage: full("desk-006.jpg"), title: "ONER VFX", height: WIDE_H },
   { image: drift("phone-005.jpg"), fullImage: full("phone-005.jpg"), title: "Wilde", height: PHONE_H },
   { image: drift("desk-014.jpg"), fullImage: full("desk-014.jpg"), title: "KRK Latinoamericana", height: WIDE_H },
+  { image: drift("cylsa-mockup.jpg"), fullImage: full("cylsa-mockup.jpg"), title: "CYL Neumáticos", height: CYLSA_H },
   { image: drift("desk-013.jpg"), fullImage: full("desk-013.jpg"), title: "Mirtatulaj", height: WIDE_H },
   { image: drift("phone-001.jpg"), fullImage: full("phone-001.jpg"), title: "ONER VFX mobile", height: PHONE_H },
   { image: drift("desk-012.jpg"), fullImage: full("desk-012.jpg"), title: "Raisa Joya", height: WIDE_H },
