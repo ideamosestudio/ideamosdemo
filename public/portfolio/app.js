@@ -8,6 +8,15 @@ let lastFocus;
 let visibleProjects = [];
 let currentProjectId;
 
+const siteNav = document.querySelector('.site-nav');
+function updateCoverScroll() {
+  const scrollY = window.scrollY;
+  document.documentElement.style.setProperty('--portfolio-scroll', String(scrollY));
+  siteNav?.classList.toggle('site-nav-scrolled', scrollY > 24);
+}
+updateCoverScroll();
+window.addEventListener('scroll', updateCoverScroll, {passive: true});
+
 
 const searchIndex = new Map();
 const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
