@@ -1,4 +1,32 @@
 .cases-page{background:#fff}
+/* Keep testimonial copy and video together at notebook widths. */
+#site-root .cases-page .testimonial {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr) !important;
+  gap: clamp(28px, 4vw, 64px) !important;
+  padding: clamp(72px, 7vw, 110px) 10vw !important;
+}
+#site-root .cases-page .testimonial-copy { min-width: 0; }
+#site-root .cases-page .testimonial h2 {
+  font-size: clamp(28px, 3vw, 40px) !important;
+}
+#site-root .cases-page .testimonial-media {
+  width: 100%;
+  max-width: 550px;
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  justify-self: end;
+}
+#site-root .cases-page .testimonial-media :is(img, video) { display: block; }
+#site-root .cases-page .video-cover i { translate: none; }
+@media (max-width: 980px) {
+  #site-root .cases-page .testimonial {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 36px !important;
+    padding: 72px 30px !important;
+  }
+  #site-root .cases-page .testimonial-copy { padding-inline: 0 !important; }
+  #site-root .cases-page .testimonial-media { justify-self: center; }
+}
 .cases-intro{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(520px,1.1fr);gap:clamp(55px,7vw,130px);align-items:center;min-height:900px;padding:120px max(6vw,70px);overflow:hidden;background-color:#f8f8f6;background-image:linear-gradient(rgba(15,15,15,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(15,15,15,.055) 1px,transparent 1px);background-size:80px 80px}
 .cases-intro-copy{position:relative;z-index:2;max-width:690px}
 .cases-kicker{display:flex;align-items:center;gap:12px;margin:0 0 34px;font-size:10px;font-weight:800;letter-spacing:.23em;color:#161616}
