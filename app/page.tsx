@@ -118,19 +118,30 @@ export default function Home() {
     </section>
     </LightGridFrame>
 
-    <section className="service-guide" aria-labelledby="explorar-servicios">
-      <div className="service-guide-inner">
-        <header>
-          <p className="service-guide-eyebrow">CONOCÉ CÓMO PODEMOS AYUDARTE</p>
-          <h2 id="explorar-servicios">Diseño web y marketing digital para tu empresa</h2>
-          <p>Desde Buenos Aires, acompañamos a empresas de Argentina en sus proyectos digitales. Explorá cada servicio para conocer qué conviene definir, cómo preparar tu consulta y qué opciones se adaptan a tu negocio.</p>
-        </header>
-        <nav className="service-guide-links" aria-label="Explorar servicios de Ideamos">
-          <a href={asset("/diseno-web-autoadministrable/")}>Diseño web profesional para empresas</a>
-          <a href={asset("/tiendas-online/")}>Diseño y desarrollo de tiendas online</a>
-          <a href={asset("/posicionamiento-web/")}>Posicionamiento web SEO y Google Ads</a>
-          <a href={asset("/marketing-digital/")}>Estrategia de marketing digital</a>
-          <a href={asset("/casos-de-exito/")}>Casos de éxito de nuestros clientes</a>
+    <section className="service-guide service-directory" aria-labelledby="explorar-servicios">
+      <div className="service-directory__inner">
+        <div className="service-directory__intro">
+          <p className="service-directory__eyebrow">SOLUCIONES DIGITALES</p>
+          <h2 id="explorar-servicios">Diseño web y marketing digital para <span>tu empresa.</span></h2>
+          <p className="service-directory__description">Desde Buenos Aires, acompañamos a empresas de Argentina con diseño, estrategia y tecnología. Encontrá la solución para el próximo paso de tu negocio.</p>
+          <a className="service-directory__cases" href={asset("/casos-de-exito/")}>Conocé nuestros casos de éxito <span aria-hidden="true">↗</span></a>
+        </div>
+        <nav className="service-directory__services" aria-label="Explorar servicios de Ideamos">
+          {[
+            { path: "/diseno-web-autoadministrable/", title: "Diseño web", description: "Sitios profesionales que presentan tu empresa y facilitan las consultas." },
+            { path: "/tiendas-online/", title: "Tiendas online", description: "Diseño y desarrollo de ecommerce para llevar tu negocio más lejos." },
+            { path: "/posicionamiento-web/", title: "SEO y Google Ads", description: "Posicionamiento web para conectar con quienes buscan lo que ofrecés." },
+            { path: "/marketing-digital/", title: "Marketing digital", description: "Estrategia, contenido y campañas con objetivos claros." },
+          ].map((service, index) => (
+            <a className="service-directory__item" href={asset(service.path)} key={service.path}>
+              <span className="service-directory__number" aria-hidden="true">0{index + 1}</span>
+              <span className="service-directory__copy">
+                <span className="service-directory__title">{service.title}</span>
+                <span className="service-directory__detail">{service.description}</span>
+              </span>
+              <span className="service-directory__arrow" aria-hidden="true">↗</span>
+            </a>
+          ))}
         </nav>
       </div>
     </section>

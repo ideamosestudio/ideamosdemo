@@ -72,6 +72,17 @@ test("las guías comerciales son HTML indexable y enlazan recursos reales", asyn
   }
 });
 
+test("el directorio de servicios conserva enlaces y contenido en HTML sin scripts adicionales", async () => {
+  const html = await readFile(new URL("index.html", out), "utf8");
+  const section = html.match(/<section class="service-guide service-directory"[\s\S]*?<\/section>/)?.[0];
+  assert.ok(section);
+  assert.equal((section.match(/class="service-directory__item"/g) ?? []).length, 4);
+  for (const path of ["diseno-web-autoadministrable", "tiendas-online", "posicionamiento-web", "marketing-digital", "casos-de-exito"]) {
+    assert.ok(section.includes(`/${path}/`), path);
+  }
+  assert.doesNotMatch(section, /<script|<img|<video/);
+});
+
 test("el sitemap enlaza archivos publicados y usa fechas de contenido", async () => {
   const xml = await readFile(new URL("sitemap.xml", out), "utf8");
   for (const [, url] of xml.matchAll(/<loc>(.*?)<\/loc>/g)) {
