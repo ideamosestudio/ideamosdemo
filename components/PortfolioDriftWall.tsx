@@ -29,6 +29,7 @@ const mobileSecondRow: GalleryWork[] = [
   { src: "/media/casos-exito/desk-012.jpg", alt: "Tienda online Raisa Joya", format: "wide" },
   { src: "/media/casos-exito/desk-008.jpg", alt: "Portfolio de trabajos ONER VFX", format: "wide" },
   { src: "/media/casos-exito/phone-003.jpg", alt: "Experiencia mobile Empire Funds", format: "phone" },
+  { src: "/media/casos-exito/sphere-design.jpg", alt: "Sitio web Sphere Design", format: "wide" },
   { src: "/media/casos-exito/desk-010.jpg", alt: "Concepto digital AirPods Pro", format: "wide" },
   { src: "/media/casos-exito/desk-004.jpg", alt: "Sitio web Xtreme D10", format: "wide" },
   { src: "/media/casos-exito/phone-004.jpg", alt: "Experiencia mobile Mixxerport", format: "phone" },
@@ -46,6 +47,7 @@ const TILE_W = 340;
 const WIDE_H = Math.round(TILE_W / 1.324);
 const PHONE_H = Math.round(TILE_W / 0.582);
 const CYLSA_H = Math.round(TILE_W / (1493 / 941));
+const SPHERE_H = Math.round(TILE_W / (1672 / 941));
 
 const drift = (name: string) => asset(`/media/casos-exito/drift/${name}`);
 const full = (name: string) => asset(`/media/casos-exito/${name}`);
@@ -67,6 +69,7 @@ const items: DriftWallItem[] = [
   { image: drift("desk-012.jpg"), fullImage: full("desk-012.jpg"), title: "Raisa Joya", height: WIDE_H },
   { image: drift("desk-010.jpg"), fullImage: full("desk-010.jpg"), title: "AirPods Pro", height: WIDE_H },
   { image: drift("desk-004.jpg"), fullImage: full("desk-004.jpg"), title: "Xtreme D10", height: WIDE_H },
+  { image: drift("sphere-design.jpg"), fullImage: full("sphere-design.jpg"), title: "Sphere Design", height: SPHERE_H },
 ];
 
 export default function PortfolioDriftWall() {
