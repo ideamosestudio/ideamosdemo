@@ -124,6 +124,15 @@
   }
   #site-root .service-directory__cases:hover { color: #ff853d; border-color: #ff853d; }
 }
+/* Native sticky stays within this section; no scroll handlers or fixed overlays. */
+@media (min-width: 901px) and (min-height: 560px) {
+  .service-directory__intro {
+    position: sticky;
+    top: 108px;
+    align-self: start;
+  }
+  #site-root .service-directory__item { min-height: 156px; }
+}
 @media (max-width: 900px) {
   .service-directory__inner { grid-template-columns: 1fr; gap: 40px; width: min(640px, calc(100% - 60px)); }
   #site-root .service-directory :is(h2, p, span, a) { text-align: left !important; }
