@@ -5,13 +5,13 @@ import test from "node:test";
 const out = new URL("../out/", import.meta.url);
 const readPage = (slug = "") => readFile(new URL(`${slug ? `${slug}/` : ""}index.html`, out), "utf8");
 
-test("Trabajos aparece como enlace rastreable en los menús de escritorio y móvil", async () => {
+test("Portfolio aparece como enlace rastreable en los menús de escritorio y móvil", async () => {
   for (const slug of ["", "diseno-web-autoadministrable", "tiendas-online", "marketing-digital", "posicionamiento-web", "casos-de-exito"]) {
     const html = await readPage(slug);
     for (const className of ["nav-links desktop-navigation", "mobile-menu-nav"]) {
       const nav = html.match(new RegExp(`<nav class="${className}"[^>]*>([\\s\\S]*?)<\\/nav>`))?.[1];
       assert.ok(nav, `${slug}: ${className}`);
-      assert.match(nav, /<a href="(?:\/[^"\s]+)?\/portfolio\/"[^>]*>(?:<small>05<\/small><span>)?Trabajos/);
+      assert.match(nav, /<a href="(?:\/[^"\s]+)?\/portfolio\/"[^>]*>(?:<small>05<\/small><span>)?Portfolio/);
       assert.equal((nav.match(/<a /g) ?? []).length, 5);
     }
   }
