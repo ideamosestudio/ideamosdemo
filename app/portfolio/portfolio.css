@@ -539,7 +539,7 @@
 }
 
 #project-dialog .project-navigation button{
-  border-width:3px;
+  border-width:2px;
 }
 
 @media(max-width:800px){
