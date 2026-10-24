@@ -369,15 +369,17 @@
    sizing the preview from the usable viewport, so no empty lower band remains. */
 @media(min-width:1200px){
   #project-dialog[data-project="almat"]{
-    width:min(1500px,calc(100vw - 48px));
-    height:auto;
-    max-height:calc(100dvh - 32px);
+    --almat-preview-height:clamp(260px,43dvh,420px);
+    width:96vw;
+    max-width:none;
+    height:calc(var(--almat-preview-height) + clamp(164px,20dvh,184px));
+    max-height:96dvh;
     overflow:hidden;
   }
 
   #project-dialog[data-project="almat"] .dialog-top{
     flex:0 0 auto;
-    padding:12px 30px;
+    padding:clamp(10px,1.5dvh,16px) 2vw;
   }
 
   #project-dialog[data-project="almat"] .dialog-top h2{
@@ -391,20 +393,20 @@
   }
 
   #project-dialog[data-project="almat"] .project-detail-layout{
-    grid-template-columns:minmax(0,1.55fr) minmax(350px,.75fr);
+    grid-template-columns:minmax(0,62fr) minmax(320px,38fr);
     align-items:center;
-    gap:clamp(34px,3vw,56px);
+    gap:3vw;
     height:auto;
     min-height:0;
-    padding:14px 32px;
+    padding:clamp(10px,1.5dvh,16px) 2vw;
   }
 
   #project-dialog[data-project="almat"] #dialog-image.detail-mockup{
     justify-self:center;
     width:auto;
     max-width:100%;
-    height:clamp(280px,45dvh,420px);
-    max-height:calc(100dvh - 250px);
+    height:var(--almat-preview-height);
+    max-height:none;
     min-height:0;
     aspect-ratio:1.45;
     overflow:visible;
@@ -435,6 +437,7 @@
 
   #project-dialog[data-project="almat"] .dialog-footer{
     flex:0 0 auto;
-    padding:10px 30px;
+    min-height:0;
+    padding:clamp(8px,1.25dvh,12px) 2vw;
   }
 }
