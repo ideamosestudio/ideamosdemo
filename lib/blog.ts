@@ -4,10 +4,11 @@ export const blogCategories = [
   { slug: "tiendas-online", title: "Guías para crear una tienda online", description: "Prepará tu proyecto de ecommerce: elegí la plataforma, organizá tu catálogo y definí cómo cobrar, entregar y atender pedidos.", service: "/tiendas-online/" },
 ];
 type Section = { title: string; paragraphs: string[]; checklist?: string[] };
-export type BlogPost = { slug: string; category: string; title: string; description: string; intro: string; sections: Section[]; source?: { label: string; url: string } };
+export type BlogPost = { slug: string; category: string; image: `/media/blog/${string}.webp`; imageAlt: string; title: string; description: string; intro: string; sections: Section[]; source?: { label: string; url: string } };
 export const blogPosts: BlogPost[] = [
   {
     slug: "diseno-web-profesional/diseno-web-profesional", category: "diseno-web-profesional",
+    image: "/media/blog/diseno-web-profesional.webp", imageAlt: "Ilustración de una web profesional organizada en pantallas de escritorio, tablet y celular",
     title: "Qué incluye un diseño web profesional para empresas",
     description: "Conocé qué definir al contratar una web para tu empresa: páginas, contenidos, diseño, formularios y mantenimiento. Prepará una consulta con alcance claro.",
     intro: "Una web profesional tiene que ayudar a una persona a entender qué hacés, por qué elegirte y cómo dar el próximo paso. Antes de comparar presupuestos, conviene acordar qué necesita resolver el sitio y qué incluye realmente cada propuesta.",
@@ -21,6 +22,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "seo/renovacion-de-sitio-web-2026-seo-conversiones", category: "diseno-web-profesional",
+    image: "/media/blog/renovar-sitio-web.webp", imageAlt: "Ilustración de la transformación de una web antigua en una estructura renovada",
     title: "Cómo renovar tu sitio web sin perder contenido útil",
     description: "Qué revisar antes de rediseñar la web de tu empresa: páginas actuales, enlaces, contenido, medición y pruebas para conservar lo que ya funciona.",
     intro: "Renovar una web no es solamente cambiar colores y tipografías. También es una oportunidad para ordenar la oferta, facilitar las consultas y corregir problemas técnicos. El primer paso es identificar qué conviene conservar antes de reemplazar el sitio.",
@@ -34,6 +36,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "diseno-web-profesional/mejorar-velocidad-sitio-web", category: "diseno-web-profesional",
+    image: "/media/blog/velocidad-web.webp", imageAlt: "Ilustración de una ventana web con trazos de velocidad y un indicador de rendimiento",
     title: "Cómo mejorar la velocidad de la web de tu empresa",
     description: "Una guía para detectar qué demora tu web y priorizar mejoras en imágenes, videos, scripts y formularios sin sacrificar diseño ni funcionalidad.",
     intro: "Una web lenta hace más difícil explorar servicios, ver trabajos y completar una consulta. Para mejorarla, conviene identificar el problema concreto antes de cambiar de alojamiento o instalar herramientas que prometen acelerar todo.",
@@ -47,6 +50,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "tiendas-online/tienda-online-a-medida-o-plataforma", category: "tiendas-online",
+    image: "/media/blog/plataforma-tienda-online.webp", imageAlt: "Ilustración de dos estructuras de ecommerce, modular y personalizada, para comparar alternativas",
     title: "Tienda online a medida o plataforma: cómo elegir",
     description: "Compará alternativas para tu tienda online según catálogo, operación, integraciones y mantenimiento. Elegí por necesidades reales, no solo por apariencia.",
     intro: "No existe una única tecnología conveniente para todos los comercios. La elección depende de cómo vendés, qué necesitás integrar y quién va a administrar la tienda. Antes de comparar diseños, conviene describir la operación cotidiana.",
@@ -60,6 +64,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "tiendas-online/que-necesitas-para-lanzar-tienda-online", category: "tiendas-online",
+    image: "/media/blog/lanzar-tienda-online.webp", imageAlt: "Ilustración de una tienda online con catálogo móvil, productos y cajas de envío",
     title: "Qué necesitás para lanzar una tienda online",
     description: "Prepará catálogo, fotos, pagos, envíos y atención antes de lanzar tu ecommerce. Una lista práctica para organizar el proyecto y evitar faltantes.",
     intro: "Crear una tienda online implica más que publicar productos. Para recibir pedidos sin improvisar, necesitás organizar la información del catálogo y decidir cómo vas a cobrar, entregar y responder consultas. Esta guía te ayuda a preparar el proyecto.",

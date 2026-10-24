@@ -7,6 +7,7 @@ test("el blog es discreto, estático, indexable y enlaza artículos válidos", a
   const urls = [...xml.matchAll(/<loc>(https:\/\/ideamos\.com\.ar\/blog\/.*?)<\/loc>/g)].map(m => m[1]);
   assert.equal(urls.length, 8);
   const titles = new Set();
+  const images = new Set();
   let articles = 0;
   for (const url of urls) {
     const html = await readFile(new URL(new URL(url).pathname.slice(1) + "index.html", out), "utf8");
@@ -22,6 +23,18 @@ test("el blog es discreto, estático, indexable y enlaza artículos válidos", a
     const article = graph.find(s => s["@type"] === "BlogPosting");
     if (article) {
       articles++;
+      assert.ok(!images.has(article.image), "Cada artículo debe tener una imagen propia");
+      images.add(article.image);
+      const imagePath = new URL(article.image).pathname;
+      assert.match(imagePath, /^\/media\/blog\/.+\.webp$/);
+      assert.ok(html.includes('property="og:image" content="' + article.image + '"'));
+      assert.ok(html.includes('name="twitter:image" content="' + article.image + '"'));
+      assert.ok(html.includes('src="' + imagePath + '"'));
+      assert.ok(html.includes('width="1200" height="686"'));
+      for (const file of [imagePath, imagePath.replace(".webp", "-640.webp")]) {
+        const bytes = await readFile(new URL(file.slice(1), out));
+        assert.ok(bytes.length < 100000, "Las imágenes deben estar optimizadas");
+      }
       assert.equal(article.mainEntityOfPage, url);
       assert.equal(article.author.name, "Ideamos");
       assert.match(html, /href="[^"]*\/contacto\/"/);
@@ -33,6 +46,7 @@ test("el blog es discreto, estático, indexable y enlaza artículos válidos", a
     assert.doesNotMatch(html, /href="[^"\s]*\/precios\//);
   }
   assert.equal(articles, 5);
+  assert.equal(images.size, 5);
   const home = await readFile(new URL("index.html", out), "utf8");
   assert.match(home, /<footer[\s\S]*href="\/blog\/"/);
   const header = await readFile(new URL("../components/SiteHeader.tsx", import.meta.url), "utf8");
