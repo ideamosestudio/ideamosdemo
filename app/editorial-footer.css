@@ -23,7 +23,18 @@
 #site-root .editorial-footer .ef-socials a:is(:hover,:focus-visible){border-color:#ff914d;color:#ff914d}
 .ef-socials svg{width:17px;height:17px}
 #site-root .editorial-footer .ef-signature{width:100%;max-width:1440px;padding:0 max(6vw,24px);margin:8px auto 8px;opacity:.85;pointer-events:none}
-.ef-signature img{display:block;width:88%;height:auto;margin-inline:auto}
+.ef-wordmark{position:relative;display:block;width:88%;height:auto;margin-inline:auto;pointer-events:auto}
+.ef-signature img{display:block;width:100%;height:auto}
+.ef-signature .ef-wordmark-fill{position:absolute;inset:0;clip-path:inset(0 100% 0 0);opacity:0}
+@media(hover:hover) and (pointer:fine){
+  .ef-wordmark{transition:filter .45s ease}
+  .ef-signature .ef-wordmark-fill{transition:clip-path .85s cubic-bezier(.22,1,.36,1),opacity .2s ease}
+  .ef-wordmark:hover{filter:drop-shadow(0 0 5px #ff650045) drop-shadow(0 0 15px #ff650022)}
+  .ef-wordmark:hover .ef-wordmark-fill{clip-path:inset(0);opacity:1}
+}
+@media(prefers-reduced-motion:reduce){
+  .ef-wordmark,.ef-signature .ef-wordmark-fill{transition:none!important}
+}
 #site-root .editorial-footer .ef-bottom{position:relative;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px max(6vw,24px);background:#101010;color:#aaa;font:400 11px/1.5 Arial,sans-serif;letter-spacing:.06em}
 .ef-bottom a{display:inline-flex;align-items:center;gap:14px;margin-right:0;text-transform:uppercase}
 #site-root .editorial-footer a:focus-visible{outline:2px solid #ff914d;outline-offset:6px}

@@ -21,7 +21,10 @@ export default function EditorialFooter({ socials }: { socials: ReactNode }) {
     </div>
     {/* Vector paths traced from the original logo, never a substitute font. */}
     <div className="ef-signature" aria-hidden="true">
-      <img src={asset("/logos/ideamos-wordmark-outline.svg")} width="660" height="121" alt="" loading="lazy" decoding="async" />
+      <span className="ef-wordmark">
+        <img src={asset("/logos/ideamos-wordmark-outline.svg")} width="660" height="121" alt="" loading="lazy" decoding="async" />
+        <img className="ef-wordmark-fill" src={asset("/logos/ideamos-wordmark-fill.svg")} width="660" height="121" alt="" loading="lazy" decoding="async" />
+      </span>
     </div>
     <div className="ef-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href="#inicio">Volver arriba <ArrowIcon direction="up" /></a></div>
   </footer>;

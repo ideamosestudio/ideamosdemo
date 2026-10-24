@@ -9,8 +9,13 @@ test("footer preserves a static WhatsApp alternative and balanced vector signatu
   assert.match(footer, /Diseño web y tiendas online para impulsar tu negocio\./);
   assert.match(footer, /aria-label="Contactar a Ideamos por WhatsApp"/);
   assert.match(footer, /ideamos-wordmark-outline.svg/);
+  assert.match(footer, /ideamos-wordmark-fill.svg/);
   const css = await readFile(new URL("../app/editorial-footer.css", import.meta.url), "utf8");
   assert.match(css, /width:88%;height:auto;margin-inline:auto/);
+  assert.match(css, /@media\(hover:hover\) and \(pointer:fine\)/);
+  assert.match(css, /@media\(prefers-reduced-motion:reduce\)/);
+  const fill = await readFile(new URL("../public/logos/ideamos-wordmark-fill.svg", import.meta.url), "utf8");
+  assert.match(fill, /fill-rule="evenodd"/);
   assert.match(css, /border-left:1px solid #ffffff12/);
   assert.match(css, /\.ef-bottom a\{[^}]*text-transform:uppercase/);
   assert.match(css, /text-decoration-color:#ff914d/);
