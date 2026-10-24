@@ -15,8 +15,8 @@
 #site-root .editorial-footer .ef-brand p{font:400 13px/1.7 Arial,sans-serif;color:#aaa;margin:22px 0 0;max-width:230px;text-wrap:pretty}
 #site-root .editorial-footer h3{font:600 12px/1.5 Arial,sans-serif!important;text-transform:uppercase;letter-spacing:.18em;color:#c4c4c4;margin:0 0 12px!important}
 #site-root .editorial-footer .ef-grid a,#site-root .editorial-footer .ef-contact p{font:400 15px/1.5 Arial,sans-serif;color:#e0e0e0;margin:0}
-#site-root .editorial-footer .ef-grid>nav a,#site-root .editorial-footer .ef-contact>a,#site-root .editorial-footer .ef-bottom a{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:5px}
-#site-root .editorial-footer .ef-grid>nav a:is(:hover,:focus-visible),#site-root .editorial-footer .ef-contact>a:is(:hover,:focus-visible),#site-root .editorial-footer .ef-bottom a:is(:hover,:focus-visible){color:#ff914d;text-decoration-color:#ff914d}
+#site-root .editorial-footer .ef-grid>nav a,#site-root .editorial-footer .ef-contact .ef-column-content>a,#site-root .editorial-footer .ef-bottom a{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:5px}
+#site-root .editorial-footer .ef-grid>nav a:is(:hover,:focus-visible),#site-root .editorial-footer .ef-contact .ef-column-content>a:is(:hover,:focus-visible),#site-root .editorial-footer .ef-bottom a:is(:hover,:focus-visible){color:#ff914d;text-decoration-color:#ff914d}
 #site-root .editorial-footer .ef-grid .footer-blog-link{color:#aaa;font-size:13px}
 #site-root .editorial-footer .ef-socials{display:flex;gap:10px;margin-top:8px}
 #site-root .editorial-footer .ef-socials a{display:grid;place-items:center;width:44px;height:44px;border:1px solid #ffffff30;border-radius:50%}
@@ -40,3 +40,26 @@
 #site-root .editorial-footer a:focus-visible{outline:2px solid #ff914d;outline-offset:6px}
 @media(max-width:1000px){#site-root .editorial-footer .ef-intro{align-items:flex-start;flex-direction:column}#site-root .editorial-footer .ef-grid{grid-template-columns:1fr 1fr;gap:32px}#site-root .editorial-footer .ef-grid>nav,#site-root .editorial-footer .ef-contact{padding-left:0;border:0}}
 @media(max-width:600px){#site-root .editorial-footer .ef-inner{padding-top:52px}#site-root .editorial-footer .ef-intro{padding-bottom:36px;gap:26px}#site-root .editorial-footer .ef-cta{font-size:14px;padding:15px 24px}#site-root .editorial-footer .ef-grid{gap:32px 20px;padding-top:34px}#site-root .editorial-footer .ef-brand{grid-column:1/-1}#site-root .editorial-footer .ef-contact{grid-column:1/-1}#site-root .editorial-footer .ef-bottom{align-items:flex-start;flex-direction:column;padding-bottom:35px}.ef-bottom a{margin-right:0}#site-root .editorial-footer .ef-signature{margin-bottom:0}}
+.ef-column-content{display:flex;flex-direction:column;align-items:flex-start;gap:13px;width:100%}
+.ef-column-toggle{display:none}
+@media(max-width:600px){
+  #site-root .editorial-footer{text-align:center}
+  #site-root .editorial-footer .ef-intro{align-items:center}
+  #site-root .editorial-footer .ef-eyebrow{justify-content:center}
+  #site-root .editorial-footer .ef-grid{grid-template-columns:1fr;gap:0}
+  #site-root .editorial-footer .ef-brand{padding-bottom:30px}
+  #site-root .editorial-footer .ef-brand img,#site-root .editorial-footer .ef-brand p{margin-inline:auto}
+  #site-root .editorial-footer .ef-grid>nav,#site-root .editorial-footer .ef-contact{align-items:center;gap:0;border-bottom:1px solid #ffffff12;width:100%}
+  #site-root .editorial-footer .ef-column-heading{margin:0!important;width:100%}
+  .ef-desktop-heading{display:none}
+  .ef-column-toggle{display:flex;align-items:center;justify-content:center;position:relative;width:100%;min-height:60px;padding:16px 44px;border:0;background:transparent;color:inherit;font:inherit;letter-spacing:inherit;text-transform:uppercase;cursor:pointer}
+  .ef-column-toggle:focus-visible{outline:2px solid #ff914d;outline-offset:-3px}
+  .ef-toggle-icon{position:absolute;right:16px;width:12px;height:12px}
+  .ef-toggle-icon::before,.ef-toggle-icon::after{content:"";position:absolute;background:currentColor;left:0;top:5px;width:12px;height:1px}
+  .ef-toggle-icon::after{transform:rotate(90deg)}
+  .ef-column-toggle[aria-expanded="true"] .ef-toggle-icon::after{display:none}
+  .ef-column-content{display:none;align-items:center;padding:0 0 24px}
+  .ef-column-content[data-open="true"]{display:flex}
+  #site-root .editorial-footer .ef-socials{justify-content:center}
+  #site-root .editorial-footer .ef-bottom{align-items:center}
+}

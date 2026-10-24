@@ -6,6 +6,8 @@ test("footer preserves a static WhatsApp alternative and balanced vector signatu
   const html = await readFile(new URL("../out/index.html", import.meta.url), "utf8");
   const footer = html.match(/<footer class="editorial-footer">([\s\S]*?)<\/footer>/)?.[1];
   assert.ok(footer);
+  assert.equal((footer.match(/class="ef-column-toggle"/g) ?? []).length, 3);
+  assert.equal((footer.match(/aria-expanded="false"/g) ?? []).length, 3);
   assert.match(footer, /Diseño web y tiendas online para impulsar tu negocio\./);
   assert.match(footer, /aria-label="Contactar a Ideamos por WhatsApp"/);
   assert.match(footer, /ideamos-wordmark-outline.svg/);
