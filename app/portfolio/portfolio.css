@@ -492,3 +492,39 @@
     transition:none;
   }
 }
+
+.dialog-label-mobile{
+  display:none;
+}
+
+@media(max-width:800px){
+  #project-dialog #dialog-image .cover-phone,
+  #project-dialog #dialog-features,
+  #project-dialog .project-stack{
+    display:none!important;
+  }
+
+  #project-dialog #dialog-image .cover-desktop{
+    width:94%;
+    left:3%;
+  }
+
+  #project-dialog .dialog-label-desktop{
+    display:none;
+  }
+
+  #project-dialog .dialog-label-mobile{
+    display:inline;
+    font-size:11px;
+  }
+
+  #project-dialog #dialog-link{
+    grid-column:1;
+    grid-row:1;
+  }
+
+  #project-dialog #dialog-contact{
+    grid-column:2;
+    grid-row:1;
+  }
+}
