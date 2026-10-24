@@ -16,7 +16,13 @@ Información oficial del estudio. Idioma principal: español de Argentina. Sitio
 - [Casos de éxito](https://ideamos.com.ar/casos-de-exito/): Selección de trabajos y resultados para clientes.
 - [Testimonios](https://ideamos.com.ar/testimonios/): Experiencias reales de clientes que trabajaron con Ideamos.
 
-## Contacto
+## Guías de diseño web y ecommerce
+
+- [Blog](https://ideamos.com.ar/blog/): Guías prácticas de Ideamos para planificar proyectos web.
+- [Diseño web para empresas](https://ideamos.com.ar/blog/diseno-web-profesional/): Alcance, renovación y velocidad del sitio.
+- [Tiendas online](https://ideamos.com.ar/blog/tiendas-online/): Plataforma, catálogo y preparación del lanzamiento.
+
+## Contacto comercial
 
 - [Contacto](https://ideamos.com.ar/contacto/): Formulario y canales oficiales.
 

@@ -81,7 +81,9 @@ export function HomeAdvisorySection({ darkGrid = false, showMarquee = true }: { 
       </div>
       <ManagedBackgroundVideo
         src={asset("/media/videollamada-final.webm")}
-        poster={asset("/media/human-poster.webp")}
+        poster={asset("/media/human-poster-square.webp")}
+        width={1254}
+        height={1254}
       />
     </section>
   </>;
@@ -139,7 +141,7 @@ export function HomeClosingSections({ showAdvisory = true, darkGrid = false }: {
           </div>
         </div>
       </div>
-      <div className="footer-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href="#inicio">VOLVER ARRIBA</a></div>
+      <div className="footer-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href={asset("/blog/")}>Blog y guías</a><a href="#inicio">VOLVER ARRIBA</a></div>
     </footer>
   </>;
 }

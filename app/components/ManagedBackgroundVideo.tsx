@@ -18,6 +18,8 @@ type ManagedBackgroundVideoProps = {
   poster?: string;
   className?: string;
   eager?: boolean;
+  width?: number;
+  height?: number;
 };
 
 const MANAGED_VIDEO_SELECTOR = "video[data-managed-background='true']";
@@ -68,6 +70,8 @@ export default function ManagedBackgroundVideo({
   poster,
   className,
   eager = false,
+  width,
+  height,
 }: ManagedBackgroundVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const sourceType = src.toLowerCase().split("?")[0].endsWith(".webm")
@@ -169,6 +173,9 @@ export default function ManagedBackgroundVideo({
     <video
       ref={videoRef}
       className={className}
+      width={width}
+      height={height}
+      style={width && height ? { aspectRatio: `${width} / ${height}` } : undefined}
       muted
       loop
       playsInline

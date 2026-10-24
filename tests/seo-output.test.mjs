@@ -43,7 +43,7 @@ test("sitemap profesional: solo páginas públicas y prioridades válidas", asyn
   assert.doesNotMatch(xml, /\/test2?\//i);
   assert.match(xml, /<priority>1<\/priority>/);
   assert.match(xml, /<priority>0\.95<\/priority>/);
-  assert.equal((xml.match(/<url>/g) ?? []).length, pagePaths.length);
+  assert.equal((xml.match(/<url>/g) ?? []).length, pagePaths.length + 8);
 });
 
 test("las guías comerciales son HTML indexable y enlazan recursos reales", async () => {
@@ -116,7 +116,7 @@ test("el sitemap enlaza archivos publicados y usa fechas de contenido", async ()
     const path = new URL(url).pathname.replace(/^\//, "");
     await access(new URL(`${path}index.html`, out));
   }
-  assert.equal((xml.match(/<lastmod>/g) ?? []).length, 5);
+  assert.equal((xml.match(/<lastmod>/g) ?? []).length, 13);
   assert.doesNotMatch(xml, /2026-10-01|portfoliotest/);
 });
 
