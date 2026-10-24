@@ -365,17 +365,18 @@
   }
 }
 
-/* Desktop pilot — ALMAT only. Keep the complete project sheet, including
-   navigation and actions, inside a 1920x1080 viewport without scrolling. */
+/* Desktop pilot — ALMAT only. The sheet is content-sized: the mockup keeps
+   its complete composition and the dialog never manufactures empty height. */
 @media(min-width:1200px){
   #project-dialog[data-project="almat"]{
-    width:min(1500px,96vw);
-    height:min(760px,calc(100dvh - 32px));
+    width:min(1500px,calc(100vw - 48px));
+    height:auto;
     max-height:calc(100dvh - 32px);
   }
 
   #project-dialog[data-project="almat"] .dialog-top{
-    padding:14px 28px;
+    flex:0 0 auto;
+    padding:16px 30px;
   }
 
   #project-dialog[data-project="almat"] .dialog-top h2{
@@ -383,25 +384,32 @@
   }
 
   #project-dialog[data-project="almat"] .dialog-scroll{
-    flex:1 1 auto;
+    flex:0 1 auto;
     min-height:0;
     overflow:hidden;
   }
 
   #project-dialog[data-project="almat"] .project-detail-layout{
-    grid-template-columns:minmax(0,1.35fr) minmax(330px,.65fr);
-    gap:36px;
-    height:100%;
+    grid-template-columns:minmax(0,1.55fr) minmax(350px,.75fr);
+    align-items:center;
+    gap:clamp(34px,3vw,56px);
+    height:auto;
     padding:18px 32px;
   }
 
   #project-dialog[data-project="almat"] #dialog-image.detail-mockup{
-    height:min(400px,100%);
+    width:min(100%,calc((100dvh - 230px)*1.45));
+    height:auto;
     min-height:0;
+    aspect-ratio:1.45;
+    margin-inline:auto;
+    overflow:visible;
   }
 
   #project-dialog[data-project="almat"] #dialog-image .cover-scene{
-    width:min(100%,580px);
+    width:100%;
+    height:100%;
+    margin:0;
   }
 
   #project-dialog[data-project="almat"] .project-story{
@@ -423,6 +431,6 @@
 
   #project-dialog[data-project="almat"] .dialog-footer{
     flex:0 0 auto;
-    padding:10px 28px;
+    padding:12px 30px;
   }
 }
