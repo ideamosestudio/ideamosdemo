@@ -473,8 +473,11 @@
 
   #project-dialog[data-project="almat"] .dialog-footer{
     align-self:stretch;
-    min-height:0;
-    padding:clamp(8px,1.25dvh,12px) 2vw;
+    box-sizing:border-box;
+    height:clamp(64px,6.3dvh,72px);
+    min-height:clamp(64px,6.3dvh,72px);
+    padding:0 2vw;
+    align-items:center;
   }
 }
 
