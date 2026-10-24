@@ -413,16 +413,27 @@
     overflow:visible;
   }
 
+  #project-dialog[data-project="almat"] #dialog-image.detail-mockup:before{
+    display:none;
+  }
+
   #project-dialog[data-project="almat"] #dialog-image .cover-scene{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:6%;
     width:100%;
     height:100%;
     margin:0;
+    padding-inline:4%;
   }
 
   #project-dialog[data-project="almat"] #dialog-image .cover-desktop{
-    width:54%;
-    left:4%;
-    top:11%;
+    position:relative;
+    inset:auto;
+    flex:0 0 auto;
+    width:auto;
+    height:79%;
     transform:none;
     transform-origin:center;
     transition:transform .38s cubic-bezier(.2,.75,.25,1);
@@ -430,9 +441,10 @@
   }
 
   #project-dialog[data-project="almat"] #dialog-image .cover-phone{
+    position:relative;
+    inset:auto;
+    flex:0 0 auto;
     height:79%;
-    right:19%;
-    bottom:10%;
     border-color:#f4f4f1;
     background:#f4f4f1;
     transform:none;
