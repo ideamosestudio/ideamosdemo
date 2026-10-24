@@ -52,7 +52,7 @@ const plans = [
     price: "$ 500.000",
     description: "Ideal para ofrecer un catálogo reducido con carrito, medios de pago y todo listo para vender desde el primer día.",
     features: [
-      "Hasta 20 categorías.",
+      "Hasta 10 categorías.",
       "Diseño 100% personalizado.",
       "Subí todos tus productos (autogestionado y sin restricciones).",
       "Carrito de compras.",

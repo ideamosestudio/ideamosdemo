@@ -8,6 +8,11 @@ test('precios queda fuera del sitemap, sin indexar y con encabezados consecutivo
   assert.doesNotMatch(await read('404.html'), /href="[^"]*\/precios\//);
   const html = await read('precios/index.html');
   assert.match(html, /name="robots" content="noindex, follow"/);
+  assert.ok(html.includes('Hasta 10 categorías'));
+  assert.ok(!html.includes('Hasta 20 categorías'));
+  for (const file of ['llms.txt', 'llms-full.txt']) {
+    assert.doesNotMatch(await read(file), /\/precios\/|página de precios/);
+  }
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   for (const name of ['Landing page', 'Web básica', 'Tienda base', 'Tienda pyme']) {
     assert.ok(html.includes(`<h2>${name}</h2>`));
