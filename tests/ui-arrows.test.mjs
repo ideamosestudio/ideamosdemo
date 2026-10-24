@@ -21,7 +21,7 @@ test("las páginas publicadas no usan caracteres de texto como flechas", async (
 test("las flechas compartidas son SVG decorativos con trazos escalables", async () => {
   const html = await readFile(new URL("index.html", out), "utf8");
   const icons = [...html.matchAll(/<svg class="site-arrow"[^>]*>[\s\S]*?<\/svg>/g)].map(match => match[0]);
-  assert.equal(icons.length, 8); // Five directory links, portfolio CTA and two carousel controls.
+  assert.equal(icons.length, 7); // Five directory links and two carousel controls.
   assert.match(html, /<svg class="site-play-icon"[^>]*aria-hidden="true"[^>]*><path d="M5 3v18l16-9Z"/);
   for (const icon of icons) {
     assert.match(icon, /viewBox="0 0 24 24"/);

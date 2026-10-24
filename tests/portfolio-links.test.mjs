@@ -23,9 +23,9 @@ test("la home ofrece el portfolio junto al contacto principal, sin duplicarlo", 
   assert.ok(actions);
   assert.equal((actions.match(/<a /g) ?? []).length, 2);
   assert.match(actions, /class="cta-glow primary" href="https:\/\/wa.me\//);
-  assert.match(actions, /class="portfolio-link portfolio-link--button" href="(?:\/[^"\s]+)?\/portfolio\/"/);
+  assert.match(actions, /class="cta-glow secondary" href="(?:\/[^"\s]+)?\/portfolio\/"/);
   assert.match(actions, /Ver portfolio completo/);
-  assert.match(actions, /<svg class="site-arrow"/);
+  assert.doesNotMatch(actions, /<svg class="site-arrow"/);
 });
 
 test("los servicios enlazan el portfolio junto a sus ejemplos, sin depender de JavaScript", async () => {
