@@ -41,7 +41,10 @@ test("las flechas compartidas son SVG decorativos con trazos escalables", async 
 
 test("el portfolio conserva SVG tanto en HTML como al generar tarjetas y abrir proyectos", async () => {
   const html = await readFile(new URL("portfolio/index.html", out), "utf8");
-  assert.ok((html.match(/class="arrow-icon inline-arrow"/g) ?? []).length >= 50);
+  assert.ok((html.match(/class="arrow-icon inline-arrow"/g) ?? []).length >= 48);
+  const dialogActions = html.match(/<div class="dialog-actions">[\s\S]*?<\/div>/)?.[0];
+  assert.ok(dialogActions);
+  assert.doesNotMatch(dialogActions, /arrow-icon/);
   const context = {};
   runInNewContext(await readFile(new URL("portfolio/project-card.js", out), "utf8"), context);
   const ui = context.PortfolioUI;
