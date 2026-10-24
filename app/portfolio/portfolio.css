@@ -371,8 +371,9 @@
   #project-dialog[data-project="almat"]{
     width:96vw;
     max-width:none;
-    height:84dvh;
-    max-height:84dvh;
+    height:calc(100dvh - 88px);
+    max-height:calc(100dvh - 88px);
+    margin:78px auto 10px;
     display:grid;
     grid-template-rows:auto minmax(0,1fr) auto;
     overflow:hidden;
