@@ -21,7 +21,6 @@ const pages: Array<{ path: string; priority: number; changeFrequency: NonNullabl
   { path: "/portfolio/", priority: 0.9, changeFrequency: "weekly" },
   { path: "/casos-de-exito/", priority: 0.8, changeFrequency: "monthly" },
   { path: "/testimonios/", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/precios/", priority: 0.75, changeFrequency: "monthly" },
   { path: "/contacto/", priority: 0.6, changeFrequency: "yearly" },
 ];
 

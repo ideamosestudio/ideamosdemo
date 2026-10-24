@@ -26,7 +26,6 @@ const MAIN_LINKS: Array<[string, string]> = [
   ["Posicionamiento web", "/posicionamiento-web/"],
   ["Diseño web autoadministrable", "/diseno-web-autoadministrable/"],
   ["Casos de éxito", "/casos-de-exito/"],
-  ["Precios", "/precios/"],
   ["Contacto", "/contacto/"],
 ];
 

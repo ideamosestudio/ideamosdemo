@@ -1979,7 +1979,7 @@ h1,h2,h3,
 .price-card:nth-child(4) .price-card-top{border-color:#333}
 .price-card-top small{color:#777;font-size:9px;font-weight:800;letter-spacing:.24em}
 .price-card-mark{width:24px;height:24px;border:6px solid #ff5a00;border-radius:50%;box-shadow:inset 0 0 0 3px currentColor}
-.price-card h3{margin:42px 0 8px;font-size:clamp(38px,4vw,61px);line-height:.95;letter-spacing:-.055em;text-transform:uppercase}
+.price-card h2{margin:42px 0 8px;font-size:clamp(38px,4vw,61px);line-height:.95;letter-spacing:-.055em;text-transform:uppercase}
 .price-detail{margin:0;color:#ff5a00;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
 .price-value{display:grid;grid-template-columns:auto 1fr;align-items:end;margin:42px 0 28px;padding-bottom:30px;border-bottom:1px solid #d8d6d0}
 .price-card:nth-child(4) .price-value{border-color:#333}
@@ -2015,7 +2015,7 @@ h1,h2,h3,
   .pricing-intro h1{margin-top:52px;font-size:17vw;line-height:.88}.pricing-intro-copy>span{font-size:15px}
   .pricing-orbit{width:100vw;right:-55vw;top:58%;opacity:.24}.pricing-index{left:30px;right:30px;justify-content:center}
   .pricing-plans{padding:85px 30px 100px}.pricing-heading{text-align:center;margin-bottom:50px}.pricing-heading>p{justify-content:center}.pricing-heading h2{font-size:13vw}
-  .price-card{padding:32px 24px;border-radius:18px}.price-card h3{font-size:12vw;margin-top:34px}
+  .price-card{padding:32px 24px;border-radius:18px}.price-card h2{font-size:12vw;margin-top:34px}
   .price-value strong{font-size:13vw}.price-features ul{grid-template-columns:1fr}.price-description{min-height:0}
 }
 
@@ -2034,7 +2034,7 @@ h1,h2,h3,
 .prices-page .price-card-top,
 .prices-page .price-card:nth-child(4) .price-card-top{padding:0 0 20px;border-bottom:2px solid #ff5a00}
 .prices-page .price-card-top small{color:#ff5a00;font-size:9px;letter-spacing:.2em}
-.prices-page .price-card h3{min-height:72px;margin:28px 0 8px;font-size:clamp(29px,2.6vw,42px);line-height:.93}
+.prices-page .price-card h2{min-height:72px;margin:28px 0 8px;font-size:clamp(29px,2.6vw,42px);line-height:.93}
 .prices-page .price-detail{min-height:32px;font-size:9px;line-height:1.4}
 .prices-page .price-value,
 .prices-page .price-card:nth-child(4) .price-value{display:block;margin:28px 0 22px;padding-bottom:23px;border-bottom:1px solid #ddd}
@@ -2055,14 +2055,14 @@ h1,h2,h3,
 
 @media(max-width:1200px){
   .prices-page .pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-  .prices-page .price-card h3{min-height:0}.prices-page .price-detail{min-height:0}.prices-page .price-description{min-height:76px}
+  .prices-page .price-card h2{min-height:0}.prices-page .price-detail{min-height:0}.prices-page .price-description{min-height:76px}
 }
 
 @media(max-width:650px){
   .prices-page .pricing-plans{padding:130px 30px 85px}
   .prices-page .pricing-heading h1{font-size:13vw}.prices-page .pricing-heading>span{font-size:14px}
   .prices-page .pricing-grid{grid-template-columns:1fr}.prices-page .price-card{padding:28px 24px}
-  .prices-page .price-card h3{font-size:42px}.prices-page .price-value strong{font-size:46px}.prices-page .price-description{min-height:0}
+  .prices-page .price-card h2{font-size:42px}.prices-page .price-value strong{font-size:46px}.prices-page .price-description{min-height:0}
 }
 
 /* Pricing legibility and navigation refinements requested from the live review. */
@@ -2074,7 +2074,7 @@ h1,h2,h3,
   font-weight:800;
 }
 .prices-page .price-card-top small{font-size:14px;font-weight:800;letter-spacing:.16em}
-.prices-page .price-card h3{
+.prices-page .price-card h2{
   min-height:72px;
   font-size:clamp(32px,2.5vw,42px);
   line-height:1;
@@ -2142,12 +2142,12 @@ h1,h2,h3,
 .prices-page .orange-cta.price-more{margin-top:34px;border-top:1px solid #ff7840}
 
 @media(max-width:1200px){
-  .prices-page .price-card h3,.prices-page .price-detail,.prices-page .price-description{min-height:0}
+  .prices-page .price-card h2,.prices-page .price-detail,.prices-page .price-description{min-height:0}
 }
 
 @media(max-width:650px){
   .prices-page .pricing-heading h1{font-size:44px}
-  .prices-page .price-card h3{min-height:0;font-size:39px}
+  .prices-page .price-card h2{min-height:0;font-size:39px}
   .prices-page .price-detail{min-height:0;font-size:13px}
   .prices-page .price-value strong{font-size:54px}
   .prices-page .price-description{min-height:0;font-size:16px}

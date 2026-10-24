@@ -114,7 +114,7 @@ export default function PricesPage() {
       <div className="pricing-grid">
         {plans.map((plan, index) => <article className="price-card" key={plan.name} data-reveal>
           <div className="price-card-top"><small>PLAN {String(index + 1).padStart(2, "0")}</small></div>
-          <h3>{plan.name}</h3>
+          <h2>{plan.name}</h2>
           <p className="price-detail">{plan.detail}</p>
           <div className="price-value"><small>{plan.priceLabel}</small><strong>{plan.price}</strong><span>FINAL</span></div>
           <p className="price-description">{plan.description}</p>
