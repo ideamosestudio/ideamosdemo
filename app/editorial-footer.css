@@ -20,10 +20,10 @@
 #site-root .editorial-footer .ef-socials{display:flex;gap:10px;margin-top:8px}
 #site-root .editorial-footer .ef-socials a{display:grid;place-items:center;width:38px;height:38px;border:1px solid #ffffff30;border-radius:50%}
 .ef-socials svg{width:17px;height:17px}
-#site-root .editorial-footer .ef-signature{width:100%;margin:12px auto -12px;opacity:.5;pointer-events:none;overflow:hidden}
-.ef-signature svg{display:block;width:100%;height:auto}
+#site-root .editorial-footer .ef-signature{width:100%;max-width:1440px;padding:0 max(6vw,24px);margin:24px auto 12px;opacity:.65;pointer-events:none}
+.ef-signature img{display:block;width:100%;height:auto}
 #site-root .editorial-footer .ef-bottom{position:relative;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px max(6vw,24px);background:#101010;color:#aaa;font:400 11px/1.5 Arial,sans-serif;letter-spacing:.06em}
 .ef-bottom a{display:inline-flex;align-items:center;gap:14px;margin-right:60px}
 #site-root .editorial-footer a:focus-visible{outline:2px solid #ff914d;outline-offset:6px}
 @media(max-width:1000px){#site-root .editorial-footer .ef-intro{align-items:flex-start;flex-direction:column}#site-root .editorial-footer .ef-grid{grid-template-columns:1fr 1fr;gap:32px}#site-root .editorial-footer .ef-grid>nav,#site-root .editorial-footer .ef-contact{padding-left:0;border:0}}
-@media(max-width:600px){#site-root .editorial-footer .ef-inner{padding-top:52px}#site-root .editorial-footer .ef-intro{padding-bottom:36px;gap:26px}#site-root .editorial-footer .ef-cta{font-size:14px;padding:15px 24px}#site-root .editorial-footer .ef-grid{gap:32px 20px;padding-top:34px}#site-root .editorial-footer .ef-brand{grid-column:1/-1}#site-root .editorial-footer .ef-contact{grid-column:1/-1}#site-root .editorial-footer .ef-bottom{align-items:flex-start;flex-direction:column;padding-bottom:35px}.ef-bottom a{margin-right:0}#site-root .editorial-footer .ef-signature{margin-bottom:0}.ef-signature svg{width:110%;max-width:none;margin-left:-5%}}
+@media(max-width:600px){#site-root .editorial-footer .ef-inner{padding-top:52px}#site-root .editorial-footer .ef-intro{padding-bottom:36px;gap:26px}#site-root .editorial-footer .ef-cta{font-size:14px;padding:15px 24px}#site-root .editorial-footer .ef-grid{gap:32px 20px;padding-top:34px}#site-root .editorial-footer .ef-brand{grid-column:1/-1}#site-root .editorial-footer .ef-contact{grid-column:1/-1}#site-root .editorial-footer .ef-bottom{align-items:flex-start;flex-direction:column;padding-bottom:35px}.ef-bottom a{margin-right:0}#site-root .editorial-footer .ef-signature{margin-bottom:0}}

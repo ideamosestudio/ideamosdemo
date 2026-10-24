@@ -19,17 +19,9 @@ export default function EditorialFooter({ socials }: { socials: ReactNode }) {
         <div className="ef-contact"><h3>Contacto</h3><a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar</a><a href="tel:+5491168758285">+54 9 11 6875-8285</a><p>Buenos Aires, Argentina</p><div className="ef-socials">{socials}</div></div>
       </div>
     </div>
-    {/* Outline is derived from the ORIGINAL logo alpha; no substitute font. */}
+    {/* Vector paths traced from the original logo, never a substitute font. */}
     <div className="ef-signature" aria-hidden="true">
-      <svg viewBox="180 30 690 165" focusable="false">
-        <defs><filter id="ideamos-footer-outline" x="-5%" y="-10%" width="110%" height="120%" colorInterpolationFilters="sRGB">
-          <feMorphology in="SourceAlpha" operator="dilate" radius=".6" result="outer" />
-          <feMorphology in="SourceAlpha" operator="erode" radius=".6" result="inner" />
-          <feComposite in="outer" in2="inner" operator="out" result="edge" />
-          <feFlood floodColor="#7b7b7b" /><feComposite in2="edge" operator="in" />
-        </filter></defs>
-        <image href={asset("/logos/ideamos-light.webp")} width="870" height="213" filter="url(#ideamos-footer-outline)" />
-      </svg>
+      <img src={asset("/logos/ideamos-wordmark-outline.svg")} width="660" height="121" alt="" loading="lazy" decoding="async" />
     </div>
     <div className="ef-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href="#inicio">Volver arriba <ArrowIcon direction="up" /></a></div>
   </footer>;
