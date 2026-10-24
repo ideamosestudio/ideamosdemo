@@ -403,13 +403,13 @@
   }
 
   #project-dialog[data-project="almat"] #dialog-image.detail-mockup{
-    justify-self:center;
-    width:auto;
+    justify-self:stretch;
+    width:100%;
     max-width:100%;
     height:100%;
     max-height:none;
     min-height:0;
-    aspect-ratio:1.45;
+    aspect-ratio:auto;
     overflow:visible;
   }
 
@@ -420,9 +420,9 @@
   }
 
   #project-dialog[data-project="almat"] #dialog-image .cover-desktop{
-    width:72%;
-    left:0;
-    top:14%;
+    width:54%;
+    left:4%;
+    top:11%;
     transform:none;
     transform-origin:center;
     transition:transform .38s cubic-bezier(.2,.75,.25,1);
@@ -430,9 +430,11 @@
   }
 
   #project-dialog[data-project="almat"] #dialog-image .cover-phone{
-    height:72%;
-    right:0;
-    bottom:14%;
+    height:79%;
+    right:19%;
+    bottom:10%;
+    border-color:#f4f4f1;
+    background:#f4f4f1;
     transform:none;
     transform-origin:center;
     transition:transform .38s cubic-bezier(.2,.75,.25,1);
