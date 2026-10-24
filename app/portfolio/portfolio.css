@@ -15,6 +15,18 @@
 }
 
 /* Neutralize obsolete catalogue rules outside the catalogue itself. */
+.portfolio-page .work .result-count,
+.portfolio-page .work .empty,
+.portfolio-page .work .noscript-note{color:#535660}
+.portfolio-page .work .search{background:#fff;border-color:#737680;color:#3f424a}
+.portfolio-page .work .search input{color:#252730}
+.portfolio-page .work .search input::placeholder{color:#5c5f68;opacity:1}
+.portfolio-page .cover-heading>small,
+.portfolio-page .cover-caption{color:var(--cover-ink)}
+.portfolio-page .browser-bar{color:#50535b}
+.portfolio-page .extension-product div>span{color:#645470}
+.portfolio-page .work .project-link span{white-space:nowrap}
+
 .portfolio-page .internal-home-hero{padding:76px 0 0}
 .portfolio-page .internal-home-hero>.hero-center{padding:120px 20px 80px}
 .portfolio-page .internal-home-hero h1{margin:26px 0 24px}
@@ -71,7 +83,7 @@
 
 .portfolio-page .work .section-heading .eyebrow{
   margin:0 0 24px;
-  color:#ff5a00;
+  color:#b83d00;
   font-family:"Roboto",Arial,sans-serif;
   font-size:12px;
   font-weight:800;
@@ -166,7 +178,7 @@
 }
 
 .portfolio-page .work .project-link:before{
-  content:"Conocer el proyecto";
+  content:none;
   white-space:nowrap;
 }
 
@@ -178,7 +190,7 @@
 
 .portfolio-page .work .project-link:is(:hover,:focus-visible){
   border-color:#ff7d39;
-  background:#ff5a00;
+  background:#b83d00;
   box-shadow:0 10px 28px rgba(255,78,0,.34);
 }
 
@@ -327,14 +339,12 @@
   transform-origin:50% 50%;
   transition:transform .5s cubic-bezier(.2,.75,.25,1);
   filter:none;
-  will-change:transform;
 }
 
 .portfolio-page .work .preview .cover-phone{
   transform:none;
   transform-origin:50% 50%;
   transition:transform .36s cubic-bezier(.2,.75,.25,1);
-  will-change:transform;
 }
 
 .portfolio-page .work .preview:is(:hover,:focus-visible) .cover-desktop{
@@ -570,7 +580,7 @@
     padding:0 20px;
     justify-self:center;
     font-family:"Poppins",Arial,sans-serif;
-    font-size:0;
+    font-size:10px;
     font-weight:700;
     line-height:1;
     white-space:normal;
@@ -586,11 +596,11 @@
   }
 
   #project-dialog #dialog-link::before{
-    content:"VER PROYECTO";
+    content:none;
   }
 
   #project-dialog #dialog-contact::before{
-    content:"CHARLEMOS";
+    content:none;
   }
 
   #project-dialog #dialog-link{
