@@ -416,10 +416,10 @@
   }
 }
 
-/* Desktop pilot — ALMAT only. A three-row viewport grid keeps the title,
+/* Shared desktop project dialog. A three-row viewport grid keeps the title,
    project and controls visible while the preview consumes the flexible row. */
 @media(min-width:1200px){
-  #project-dialog[data-project="almat"]{
+  #project-dialog{
     width:96vw;
     max-width:none;
     height:calc(100dvh - 88px);
@@ -430,22 +430,22 @@
     overflow:hidden;
   }
 
-  #project-dialog[data-project="almat"] .dialog-top{
+  #project-dialog .dialog-top{
     flex:0 0 auto;
     padding:clamp(10px,1.5dvh,16px) 2vw clamp(10px,1.5dvh,16px) 5.5vw;
   }
 
-  #project-dialog[data-project="almat"] .dialog-top h2{
+  #project-dialog .dialog-top h2{
     font-size:24px;
   }
 
-  #project-dialog[data-project="almat"] .dialog-scroll{
+  #project-dialog .dialog-scroll{
     min-width:0;
     min-height:0;
     overflow:hidden;
   }
 
-  #project-dialog[data-project="almat"] .project-detail-layout{
+  #project-dialog .project-detail-layout{
     grid-template-columns:minmax(0,62fr) minmax(320px,38fr);
     align-items:center;
     gap:3vw;
@@ -454,7 +454,7 @@
     padding:clamp(10px,1.5dvh,16px) 2vw;
   }
 
-  #project-dialog[data-project="almat"] #dialog-image.detail-mockup{
+  #project-dialog #dialog-image.detail-mockup{
     justify-self:stretch;
     width:100%;
     max-width:100%;
@@ -465,11 +465,11 @@
     overflow:visible;
   }
 
-  #project-dialog[data-project="almat"] #dialog-image.detail-mockup:before{
+  #project-dialog #dialog-image.detail-mockup:before{
     display:none;
   }
 
-  #project-dialog[data-project="almat"] #dialog-image .cover-scene{
+  #project-dialog #dialog-image .cover-scene{
     display:flex;
     align-items:center;
     justify-content:flex-start;
@@ -480,7 +480,7 @@
     padding-inline:4%;
   }
 
-  #project-dialog[data-project="almat"] #dialog-image .cover-desktop{
+  #project-dialog #dialog-image .cover-desktop{
     position:relative;
     inset:auto;
     flex:0 0 auto;
@@ -492,7 +492,7 @@
     will-change:transform;
   }
 
-  #project-dialog[data-project="almat"] #dialog-image .cover-phone{
+  #project-dialog #dialog-image .cover-phone{
     position:relative;
     inset:auto;
     flex:0 0 auto;
@@ -505,24 +505,24 @@
     will-change:transform;
   }
 
-  #project-dialog[data-project="almat"] .project-story{
+  #project-dialog .project-story{
     gap:16px;
   }
 
-  #project-dialog[data-project="almat"] .project-stack{
+  #project-dialog .project-stack{
     padding-top:14px;
   }
 
-  #project-dialog[data-project="almat"] #dialog-description{
+  #project-dialog #dialog-description{
     font-size:14px;
     line-height:1.6;
   }
 
-  #project-dialog[data-project="almat"] #dialog-features{
+  #project-dialog #dialog-features{
     margin-top:12px;
   }
 
-  #project-dialog[data-project="almat"] .dialog-footer{
+  #project-dialog .dialog-footer{
     align-self:end;
     box-sizing:border-box;
     height:max-content;
@@ -533,16 +533,16 @@
 }
 
 @media(min-width:1200px) and (hover:hover) and (prefers-reduced-motion:no-preference){
-  #project-dialog[data-project="almat"] #dialog-image .cover-desktop:hover,
-  #project-dialog[data-project="almat"] #dialog-image .cover-phone:hover{
+  #project-dialog #dialog-image .cover-desktop:hover,
+  #project-dialog #dialog-image .cover-phone:hover{
     z-index:6;
     transform:scale(1.05);
   }
 }
 
 @media(min-width:1200px) and (prefers-reduced-motion:reduce){
-  #project-dialog[data-project="almat"] #dialog-image .cover-desktop,
-  #project-dialog[data-project="almat"] #dialog-image .cover-phone{
+  #project-dialog #dialog-image .cover-desktop,
+  #project-dialog #dialog-image .cover-phone{
     transition:none;
   }
 }
