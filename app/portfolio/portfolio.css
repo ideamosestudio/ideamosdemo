@@ -365,12 +365,12 @@
   }
 }
 
-/* Desktop pilot — ALMAT only. Reserve the exact viewport height across three
-   rows so browser/OS scaling cannot create a second vertical scroll area. */
+/* Desktop pilot — ALMAT only. Let the content define the sheet height while
+   sizing the preview from the usable viewport, so no empty lower band remains. */
 @media(min-width:1200px){
   #project-dialog[data-project="almat"]{
     width:min(1500px,calc(100vw - 48px));
-    height:min(720px,calc(100dvh - 32px));
+    height:auto;
     max-height:calc(100dvh - 32px);
     overflow:hidden;
   }
@@ -385,7 +385,7 @@
   }
 
   #project-dialog[data-project="almat"] .dialog-scroll{
-    flex:1 1 0;
+    flex:0 0 auto;
     min-height:0;
     overflow:hidden;
   }
@@ -394,7 +394,7 @@
     grid-template-columns:minmax(0,1.55fr) minmax(350px,.75fr);
     align-items:center;
     gap:clamp(34px,3vw,56px);
-    height:100%;
+    height:auto;
     min-height:0;
     padding:14px 32px;
   }
@@ -403,8 +403,8 @@
     justify-self:center;
     width:auto;
     max-width:100%;
-    height:min(100%,calc((100vw - 520px)/1.45));
-    max-height:100%;
+    height:clamp(280px,45dvh,420px);
+    max-height:calc(100dvh - 250px);
     min-height:0;
     aspect-ratio:1.45;
     overflow:visible;
