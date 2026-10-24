@@ -375,13 +375,13 @@
     max-height:calc(100dvh - 88px);
     margin:78px auto 10px;
     display:grid;
-    grid-template-rows:auto minmax(0,1fr) auto;
+    grid-template-rows:auto minmax(0,1fr) max-content;
     overflow:hidden;
   }
 
   #project-dialog[data-project="almat"] .dialog-top{
     flex:0 0 auto;
-    padding:clamp(10px,1.5dvh,16px) 2vw clamp(10px,1.5dvh,16px) 4.2vw;
+    padding:clamp(10px,1.5dvh,16px) 2vw clamp(10px,1.5dvh,16px) 5.5vw;
   }
 
   #project-dialog[data-project="almat"] .dialog-top h2{
@@ -472,11 +472,11 @@
   }
 
   #project-dialog[data-project="almat"] .dialog-footer{
-    align-self:stretch;
+    align-self:end;
     box-sizing:border-box;
-    height:auto;
+    height:max-content;
     min-height:0;
-    padding:12px 2vw 12px 4.2vw;
+    padding:12px 2vw 12px 5.5vw;
     align-items:center;
   }
 }
