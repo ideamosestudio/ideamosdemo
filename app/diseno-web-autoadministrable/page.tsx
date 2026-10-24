@@ -4,7 +4,7 @@ import { createPageMetadata } from "../../lib/seo";
 
 export const metadata = createPageMetadata({
   title: "Diseño web profesional para empresas | Ideamos",
-  description: "Diseño y desarrollo web para empresas: sitios a medida, adaptados a celulares y con administración según tu proyecto. Consultá tu presupuesto con Ideamos.",
+  description: "Diseño web profesional para empresas. Sitios adaptados a celulares y administración según tu proyecto. Mirá el portfolio y pedí una asesoría sin cargo.",
   path: "/diseno-web-autoadministrable/",
 });
 
