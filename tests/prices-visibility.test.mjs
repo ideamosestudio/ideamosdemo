@@ -11,6 +11,7 @@ test('precios queda fuera del sitemap, sin indexar y con encabezados consecutivo
   assert.ok(html.includes('Hasta 10 categorías'));
   assert.ok(!html.includes('Hasta 20 categorías'));
   for (const file of ['llms.txt', 'llms-full.txt']) {
+    assert.ok((await read(file)).includes('https://ideamos.com.ar/portfolio/'));
     assert.doesNotMatch(await read(file), /\/precios\/|página de precios/);
   }
   assert.equal((html.match(/<h1\b/g) || []).length, 1);

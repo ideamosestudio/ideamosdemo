@@ -8,6 +8,7 @@ Información oficial del estudio. Idioma principal: español de Argentina. Sitio
 
 - [Resumen completo para agentes](https://ideamos.com.ar/llms-full.txt): Servicios, propuesta de valor, cobertura y datos de contacto verificables.
 - [Inicio](https://ideamos.com.ar/): Presentación del estudio, experiencia, servicios y proyectos.
+- [Portfolio](https://ideamos.com.ar/portfolio/): Proyectos de diseño web y tiendas online realizados por Ideamos.
 - [Diseño web](https://ideamos.com.ar/diseno-web-autoadministrable/): Sitios web profesionales orientados a confianza, consultas y ventas.
 - [Tiendas online](https://ideamos.com.ar/tiendas-online/): Ecommerce profesional, administrable y sin comisiones de Ideamos por venta.
 - [Marketing digital](https://ideamos.com.ar/marketing-digital/): Estrategias digitales para generar leads y ventas.
