@@ -1,29 +1,29 @@
 /* Isolated from legacy footer rules; keep the blog's compact footer unchanged. */
 #site-root footer.editorial-footer{min-height:0!important;padding:0!important;border-radius:0!important;background:#101010!important;color:#f5f5f5;overflow:hidden}
-#site-root .editorial-footer .ef-inner{max-width:1440px;margin:auto;padding:76px max(6vw,24px) 0}
-#site-root .editorial-footer .ef-intro{display:flex;align-items:center;justify-content:space-between;gap:36px;padding-bottom:52px;border-bottom:1px solid #ffffff26}
+#site-root .editorial-footer .ef-inner{max-width:1440px;margin:auto;padding:64px max(6vw,24px) 0}
+#site-root .editorial-footer .ef-intro{display:flex;align-items:center;justify-content:space-between;gap:36px;padding-bottom:40px;border-bottom:1px solid #ffffff26}
 #site-root .editorial-footer .ef-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 24px;font:600 11px/1.5 Arial,sans-serif;letter-spacing:.24em;color:#c1c1c1}
 .ef-eyebrow span{width:8px;height:8px;border-radius:50%;background:#ff6500}
 #site-root .editorial-footer h2{font-family:"Gilroy ExtraBold",Arial,sans-serif!important;font-size:clamp(38px,5.5vw,80px)!important;line-height:1.04!important;letter-spacing:-.035em;margin:0!important;color:#fafafa}
 #site-root .editorial-footer h2 em{font:inherit!important;color:#ff6a15!important;background:none!important}
-#site-root .editorial-footer .ef-cta{display:inline-flex;align-items:center;justify-content:center;gap:28px;border:1px solid #aaaaaa;border-radius:999px;padding:19px 28px;white-space:nowrap;font:600 16px/1.4 Arial,sans-serif;color:#fff;transition:background .2s,border-color .2s}
+#site-root .editorial-footer .ef-cta{display:inline-flex;align-items:center;justify-content:center;gap:20px;border:1px solid #ff6500;border-radius:999px;padding:19px 28px;white-space:nowrap;font:700 13px/1.4 "Roboto Condensed",Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em;color:#fff;transition:background .2s,border-color .2s}
 #site-root .editorial-footer .ef-cta:hover{background:#ff6500;border-color:#ff6500;color:#0a0a0a}
 .ef-cta .site-arrow{width:24px;height:24px}
-#site-root .editorial-footer .ef-grid{display:grid;grid-template-columns:1.1fr 1fr .8fr 1.25fr;gap:30px;padding:48px 0 36px}
+#site-root .editorial-footer .ef-grid{display:grid;grid-template-columns:1.1fr 1fr .8fr 1.25fr;gap:30px;padding:36px 0 20px}
 #site-root .editorial-footer .ef-grid>nav,#site-root .editorial-footer .ef-contact{display:flex;flex-direction:column;align-items:flex-start;gap:13px;padding-left:26px;border-left:1px solid #ffffff20}
 #site-root .editorial-footer .ef-brand img{display:block;width:170px;height:auto;max-width:100%}
 #site-root .editorial-footer .ef-brand p{font:400 13px/1.7 Arial,sans-serif;color:#aaa;margin:22px 0 0}
-#site-root .editorial-footer h3{font:500 11px/1.5 Arial,sans-serif!important;text-transform:uppercase;letter-spacing:.2em;color:#aaa;margin:0 0 12px!important}
-#site-root .editorial-footer .ef-grid a,#site-root .editorial-footer .ef-contact p{font:400 14px/1.5 Arial,sans-serif;color:#e0e0e0;margin:0}
+#site-root .editorial-footer h3{font:600 12px/1.5 Arial,sans-serif!important;text-transform:uppercase;letter-spacing:.18em;color:#c4c4c4;margin:0 0 12px!important}
+#site-root .editorial-footer .ef-grid a,#site-root .editorial-footer .ef-contact p{font:400 15px/1.5 Arial,sans-serif;color:#e0e0e0;margin:0}
 #site-root .editorial-footer .ef-grid a:hover{color:#ff914d}
 #site-root .editorial-footer .ef-grid .footer-blog-link{color:#aaa;font-size:13px}
 #site-root .editorial-footer .ef-socials{display:flex;gap:10px;margin-top:8px}
-#site-root .editorial-footer .ef-socials a{display:grid;place-items:center;width:38px;height:38px;border:1px solid #ffffff30;border-radius:50%}
+#site-root .editorial-footer .ef-socials a{display:grid;place-items:center;width:44px;height:44px;border:1px solid #ffffff30;border-radius:50%}
 .ef-socials svg{width:17px;height:17px}
-#site-root .editorial-footer .ef-signature{width:100%;max-width:1440px;padding:0 max(6vw,24px);margin:24px auto 12px;opacity:.65;pointer-events:none}
-.ef-signature img{display:block;width:100%;height:auto}
+#site-root .editorial-footer .ef-signature{width:100%;max-width:1440px;padding:0 max(6vw,24px);margin:8px auto 8px;opacity:.85;pointer-events:none}
+.ef-signature img{display:block;width:88%;height:auto;margin-inline:auto}
 #site-root .editorial-footer .ef-bottom{position:relative;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px max(6vw,24px);background:#101010;color:#aaa;font:400 11px/1.5 Arial,sans-serif;letter-spacing:.06em}
-.ef-bottom a{display:inline-flex;align-items:center;gap:14px;margin-right:60px}
+.ef-bottom a{display:inline-flex;align-items:center;gap:14px;margin-right:0}
 #site-root .editorial-footer a:focus-visible{outline:2px solid #ff914d;outline-offset:6px}
 @media(max-width:1000px){#site-root .editorial-footer .ef-intro{align-items:flex-start;flex-direction:column}#site-root .editorial-footer .ef-grid{grid-template-columns:1fr 1fr;gap:32px}#site-root .editorial-footer .ef-grid>nav,#site-root .editorial-footer .ef-contact{padding-left:0;border:0}}
 @media(max-width:600px){#site-root .editorial-footer .ef-inner{padding-top:52px}#site-root .editorial-footer .ef-intro{padding-bottom:36px;gap:26px}#site-root .editorial-footer .ef-cta{font-size:14px;padding:15px 24px}#site-root .editorial-footer .ef-grid{gap:32px 20px;padding-top:34px}#site-root .editorial-footer .ef-brand{grid-column:1/-1}#site-root .editorial-footer .ef-contact{grid-column:1/-1}#site-root .editorial-footer .ef-bottom{align-items:flex-start;flex-direction:column;padding-bottom:35px}.ef-bottom a{margin-right:0}#site-root .editorial-footer .ef-signature{margin-bottom:0}}

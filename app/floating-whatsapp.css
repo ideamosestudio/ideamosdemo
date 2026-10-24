@@ -1,3 +1,4 @@
+.floating-whatsapp[hidden]{display:none!important}
 .floating-whatsapp{
   position:fixed;
   z-index:90;

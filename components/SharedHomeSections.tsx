@@ -120,6 +120,7 @@ export function HomeClosingSections({ showAdvisory = true, darkGrid = false }: {
     </section>
 
     <EditorialFooter socials={<>
+      <a href={WHATSAPP_URL} aria-label="Contactar a Ideamos por WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer"><ContactIcon name="whatsapp" /></a>
       <a href={socialLinks.instagram} aria-label="Ideamos en Instagram" target="_blank" rel="noopener noreferrer"><ContactIcon name="instagram" /></a>
       <a href={socialLinks.linkedin} aria-label="Ideamos en LinkedIn" target="_blank" rel="noopener noreferrer"><ContactIcon name="linkedin" /></a>
       <a href={socialLinks.facebook} aria-label="Ideamos en Facebook" target="_blank" rel="noopener noreferrer"><ContactIcon name="facebook" /></a>
