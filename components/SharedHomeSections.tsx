@@ -132,6 +132,7 @@ export function HomeClosingSections({ showAdvisory = true, darkGrid = false }: {
             <a href={asset("/tiendas-online/")}>Tiendas Online</a>
             <a href={asset("/marketing-digital/")}>Marketing Digital</a>
             <a href={asset("/posicionamiento-web/")}>Posicionamiento Web</a>
+            <a className="footer-blog-link" href={asset("/blog/")}>Blog</a>
           </div>
           <div>
             <b>Contacto</b>
@@ -141,7 +142,7 @@ export function HomeClosingSections({ showAdvisory = true, darkGrid = false }: {
           </div>
         </div>
       </div>
-      <div className="footer-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href={asset("/blog/")}>Blog y guías</a><a href="#inicio">VOLVER ARRIBA</a></div>
+      <div className="footer-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href="#inicio">VOLVER ARRIBA</a></div>
     </footer>
   </>;
 }
