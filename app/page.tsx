@@ -50,7 +50,7 @@ export default function Home() {
           <span className="hero-title-mobile">
             <span>Diseño web y</span>
             <span>tiendas online</span>
-            <span className="hero-title-accent">para hacer crecer</span>
+            <span>para <span className="hero-title-accent">hacer crecer</span></span>
             <span className="hero-title-accent">tu negocio.</span>
           </span>
         </h1>
@@ -71,7 +71,6 @@ export default function Home() {
               <img src={asset("/media/hero-concept-fashion.webp")} width="420" height="887" alt="Concepto visual de tienda de moda ÉLAN" loading="lazy" decoding="async" />
             </div>
           </a>
-          <a className="hero-work-link" href={asset("/portfolio/")}>Ver portfolio <ArrowIcon /></a>
         </div>
         <div className="hero-clients"><HeroLogoTrack /></div>
       </div>
@@ -97,7 +96,7 @@ export default function Home() {
           </span>
           <span className="happy-clients-label">MÁS DE 2000 CLIENTES FELICES</span>
         </div>
-        <h2><span>Webs de alto impacto</span><em>ideadas para generar<br className="statement-title-desktop-break"/><b>confianza y resultados</b></em></h2>
+        <h2><span>Webs de alto impacto</span><em>ideadas para generar{" "}<br className="statement-title-desktop-break"/><b>confianza y resultados</b></em></h2>
         <h3><b>Más confianza. Más consultas. Más ventas.</b></h3>
         <p className="statement-copy">
           <span className="statement-copy-line"><b>Creamos sitios web diseñados para transmitir autoridad, generar</b></span>

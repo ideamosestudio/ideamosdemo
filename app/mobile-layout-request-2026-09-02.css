@@ -11,7 +11,7 @@
   #site-root main.home-page>section.hero>.hero-center{
     height:auto!important;
     min-height:0!important;
-    padding:104px 24px 44px!important;
+    padding:104px 24px 40px!important;
     justify-content:flex-start!important;
     gap:0!important;
   }
@@ -27,25 +27,24 @@
     -webkit-text-fill-color:#fff!important;
   }
   #site-root .home-page .hero-title-mobile>span{white-space:normal;background:none;color:#fff;-webkit-text-fill-color:#fff}
-  #site-root .home-page .hero-title-mobile>.hero-title-accent{color:#ff741f;-webkit-text-fill-color:#ff741f}
+  #site-root .home-page .hero-title-mobile .hero-title-accent{color:#ff741f;-webkit-text-fill-color:#ff741f}
   #site-root main.home-page>section.hero .availability{font-size:9px!important;letter-spacing:.13em!important;line-height:1.5!important}
   #site-root main.home-page>section.hero .hero-copy{max-width:330px!important;font-size:15px!important;color:#c4c4c6!important}
   #site-root main.home-page>section.hero .hero-actions{margin-top:26px!important}
+  #site-root .home-page .hero-actions .cta-glow.primary{box-shadow:0 5px 18px #ff62001a!important}
+  #site-root .home-page .hero-actions .cta-glow.primary::before{content:none!important;animation:none!important}
   #site-root .home-page .hero-assurance{display:block;margin:12px 0 0;color:#bdbdc1;font:400 12px/1.5 "Roboto",Arial,sans-serif;letter-spacing:.04em}
-  #site-root .home-page .hero-work-mobile{display:block;width:calc(100% + 32px);max-width:492px;margin:18px -16px 0}
-  #site-root .home-page .hero-work-scene{display:block;position:relative;width:100%;aspect-ratio:1.12;isolation:isolate;perspective:1000px}
+  #site-root .home-page .hero-work-mobile{display:block;width:calc(100% + 32px);max-width:492px;margin:10px -16px 0}
+  #site-root .home-page .hero-work-scene{display:block;position:relative;width:100%;aspect-ratio:1.16;isolation:isolate;perspective:1000px}
   #site-root .home-page .hero-work-scene::before{content:"";position:absolute;inset:0 -20px;background:radial-gradient(ellipse at 55% 65%,#ff650025,transparent 70%);z-index:-1;pointer-events:none}
   /* Transform the complete devices, never the image independently: screen,
      content and border share precisely the same perspective plane. */
-  #site-root .home-page .hero-work-laptop{position:absolute;left:2%;top:12%;width:88%;transform:rotateY(8deg) rotateZ(-5deg);transform-origin:center;filter:drop-shadow(0 12px 18px #0008)}
+  #site-root .home-page .hero-work-laptop{position:absolute;left:2%;top:8%;width:88%;transform:rotateY(5deg) rotateZ(-3deg);transform-origin:center;filter:drop-shadow(0 12px 18px #0008)}
   #site-root .home-page .hero-work-screen{overflow:hidden;border:6px solid #171719;border-radius:12px 12px 5px 5px;background:#111;box-shadow:0 0 0 1px #777,0 0 0 2px #242426}
   #site-root .home-page .hero-work-laptop::after{content:"";display:block;height:7px;margin:0 -5%;background:linear-gradient(#8b8b8e,#29292c);border-radius:1px 1px 50% 50%}
-  #site-root .home-page .hero-work-phone{position:absolute;width:34%;right:3%;top:16%;overflow:hidden;border:4px solid #19191b;border-radius:15px;transform:rotateY(-8deg) rotateZ(7deg);box-shadow:0 0 0 1px #89898b,0 10px 24px #0009;background:#111}
+  #site-root .home-page .hero-work-phone{position:absolute;width:34%;right:0;top:16%;overflow:hidden;border:4px solid #19191b;border-radius:15px;transform:rotateY(-5deg) rotateZ(3deg);box-shadow:0 0 0 1px #89898b,0 10px 24px #0009;background:#111}
   #site-root .home-page .hero-work-scene img{display:block;width:100%;height:auto;max-width:100%;transform:none;border-radius:0}
-  #site-root .home-page .hero-work-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:8px 0;border-bottom:1px solid #777;color:#eee;font:600 13px/1.4 "Roboto",Arial,sans-serif}
-  #site-root .home-page .hero-work-link .site-arrow{width:17px;height:17px;color:#ff741f}
-  #site-root .home-page .hero-work-scene:focus-visible,
-  #site-root .home-page .hero-work-link:focus-visible{outline:2px solid #ff741f;outline-offset:6px}
+  #site-root .home-page .hero-work-scene:focus-visible{outline:2px solid #ff741f;outline-offset:6px}
 }
 @media (max-width:700px){
   /* Portadas: una pantalla completa y contenido centrado en el espacio bajo el header. */
@@ -86,9 +85,20 @@
     margin-bottom:0!important;
   }
 
-  /* La marquesina de clientes no forma parte de la portada mobile. */
-  #site-root .home-page .hero-clients{
-    display:none!important;
+  /* Same client track as desktop, following the mobile device composition. */
+  #site-root main.home-page>section.hero .hero-clients{
+    display:block!important;
+    width:100%!important;
+    height:44px;
+    margin:14px 0 0!important;
+    overflow:hidden;
+    mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  }
+  #site-root .home-page .hero-clients .logo-track{gap:34px;height:44px;animation-duration:28s}
+  #site-root .home-page .hero-clients img{width:90px!important;max-width:90px!important;height:30px;max-height:30px;object-fit:contain;opacity:.72}
+  @media(prefers-reduced-motion:reduce){
+    #site-root .home-page .hero-clients{overflow-x:auto;mask-image:none}
+    #site-root .home-page .hero-clients .logo-track{animation:none!important}
   }
 
   /* Home: conservar el texto del sello y retirar solamente los avatares. */
