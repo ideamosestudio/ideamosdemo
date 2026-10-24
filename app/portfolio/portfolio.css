@@ -419,6 +419,26 @@
     margin:0;
   }
 
+  #project-dialog[data-project="almat"] #dialog-image .cover-desktop{
+    width:72%;
+    left:0;
+    top:14%;
+    transform:none;
+    transform-origin:center;
+    transition:transform .38s cubic-bezier(.2,.75,.25,1);
+    will-change:transform;
+  }
+
+  #project-dialog[data-project="almat"] #dialog-image .cover-phone{
+    height:72%;
+    right:0;
+    bottom:14%;
+    transform:none;
+    transform-origin:center;
+    transition:transform .38s cubic-bezier(.2,.75,.25,1);
+    will-change:transform;
+  }
+
   #project-dialog[data-project="almat"] .project-story{
     gap:16px;
   }
@@ -440,5 +460,20 @@
     align-self:stretch;
     min-height:0;
     padding:clamp(8px,1.25dvh,12px) 2vw;
+  }
+}
+
+@media(min-width:1200px) and (hover:hover) and (prefers-reduced-motion:no-preference){
+  #project-dialog[data-project="almat"] #dialog-image .cover-desktop:hover,
+  #project-dialog[data-project="almat"] #dialog-image .cover-phone:hover{
+    z-index:6;
+    transform:scale(1.05);
+  }
+}
+
+@media(min-width:1200px) and (prefers-reduced-motion:reduce){
+  #project-dialog[data-project="almat"] #dialog-image .cover-desktop,
+  #project-dialog[data-project="almat"] #dialog-image .cover-phone{
+    transition:none;
   }
 }
