@@ -494,12 +494,74 @@
 }
 
 #project-dialog .dialog-actions .contact{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  box-sizing:border-box;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:fit-content;
+  min-width:0;
+  max-width:100%;
+  height:52px;
+  min-height:52px;
+  padding:0 35px;
+  gap:0;
+  border:1px solid rgba(255,125,55,.7);
+  border-radius:999px;
+  background:linear-gradient(105deg,#ff6200,#c82400);
+  color:#fff;
   font-family:"Poppins CTA",Arial,sans-serif;
   font-size:11px;
   font-weight:600;
   line-height:1;
   letter-spacing:1px;
   text-transform:uppercase;
+  text-align:center;
+  white-space:nowrap;
+  box-shadow:0 0 25px rgba(255,78,0,.28);
+  transform:none;
+  transition:letter-spacing .28s ease,background .28s ease,box-shadow .28s ease;
+}
+
+#project-dialog .dialog-actions .contact>span{
+  position:relative;
+  z-index:1;
+  display:inline-flex;
+  margin-left:24px;
+  font-size:18px;
+}
+
+#project-dialog #dialog-link,
+#project-dialog #dialog-link:is(:hover,:focus-visible){
+  border:2px solid #ff5a00;
+  background:transparent;
+}
+
+#project-dialog #dialog-contact::after{
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:linear-gradient(110deg,transparent 20%,rgba(255,230,205,.14) 42%,rgba(255,255,255,.2) 50%,rgba(255,230,205,.12) 58%,transparent 80%);
+  background-position:125% 0;
+  background-size:220% 100%;
+  content:"";
+  opacity:.35;
+  pointer-events:none;
+  animation:cover-cta-light-drift 7s ease-in-out infinite;
+}
+
+#project-dialog .dialog-actions .contact:is(:hover,:focus-visible){
+  letter-spacing:3px;
+  background:radial-gradient(circle at 50% 125%,rgba(255,190,120,.3),transparent 58%),linear-gradient(105deg,#ff6b08,#d72c00);
+  box-shadow:0 0 18px rgba(255,78,0,.35),0 0 42px rgba(255,78,0,.18),inset 0 0 18px rgba(255,190,120,.12);
+  transform:none;
+}
+
+#project-dialog .dialog-actions .contact:focus-visible{
+  outline:2px solid #ff6200;
+  outline-offset:4px;
 }
 
 @media(max-width:800px){
@@ -515,7 +577,18 @@
   }
 
   #project-dialog .dialog-actions .contact{
+    width:fit-content;
+    min-width:0;
+    max-width:calc(100vw - 40px);
+    height:auto;
+    min-height:0;
+    padding:15px 20px;
+    justify-self:center;
+    font-family:"Poppins",Arial,sans-serif;
     font-size:0;
+    font-weight:700;
+    line-height:1;
+    white-space:normal;
   }
 
   #project-dialog .dialog-actions .contact::before{
@@ -525,6 +598,10 @@
     line-height:1;
     letter-spacing:inherit;
     text-transform:inherit;
+  }
+
+  #project-dialog .dialog-actions .contact>span{
+    margin-left:16px;
   }
 
   #project-dialog #dialog-link::before{
@@ -543,5 +620,13 @@
   #project-dialog #dialog-contact{
     grid-column:2;
     grid-row:1;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  #project-dialog #dialog-contact::after{
+    background-position:50% 0;
+    opacity:.25;
+    animation:none;
   }
 }
