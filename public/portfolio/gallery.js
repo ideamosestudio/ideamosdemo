@@ -23,6 +23,7 @@
     const opening = !dialog.open;
     if (opening) lastFocus = document.activeElement;
     currentProjectId = id;
+    dialog.dataset.project = project.id;
     document.querySelector("#dialog-title").textContent = project.name;
     document.querySelector("#dialog-category").textContent = project.sector;
     document.querySelector("#dialog-description").textContent = project.description;

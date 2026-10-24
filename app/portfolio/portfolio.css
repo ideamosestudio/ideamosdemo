@@ -364,3 +364,65 @@
     transform:scale(1.1);
   }
 }
+
+/* Desktop pilot — ALMAT only. Keep the complete project sheet, including
+   navigation and actions, inside a 1920x1080 viewport without scrolling. */
+@media(min-width:1200px){
+  #project-dialog[data-project="almat"]{
+    width:min(1500px,96vw);
+    height:min(760px,calc(100dvh - 32px));
+    max-height:calc(100dvh - 32px);
+  }
+
+  #project-dialog[data-project="almat"] .dialog-top{
+    padding:14px 28px;
+  }
+
+  #project-dialog[data-project="almat"] .dialog-top h2{
+    font-size:24px;
+  }
+
+  #project-dialog[data-project="almat"] .dialog-scroll{
+    flex:1 1 auto;
+    min-height:0;
+    overflow:hidden;
+  }
+
+  #project-dialog[data-project="almat"] .project-detail-layout{
+    grid-template-columns:minmax(0,1.35fr) minmax(330px,.65fr);
+    gap:36px;
+    height:100%;
+    padding:18px 32px;
+  }
+
+  #project-dialog[data-project="almat"] #dialog-image.detail-mockup{
+    height:min(400px,100%);
+    min-height:0;
+  }
+
+  #project-dialog[data-project="almat"] #dialog-image .cover-scene{
+    width:min(100%,580px);
+  }
+
+  #project-dialog[data-project="almat"] .project-story{
+    gap:16px;
+  }
+
+  #project-dialog[data-project="almat"] .project-stack{
+    padding-top:14px;
+  }
+
+  #project-dialog[data-project="almat"] #dialog-description{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  #project-dialog[data-project="almat"] #dialog-features{
+    margin-top:12px;
+  }
+
+  #project-dialog[data-project="almat"] .dialog-footer{
+    flex:0 0 auto;
+    padding:10px 28px;
+  }
+}
