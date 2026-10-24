@@ -48,7 +48,9 @@ export default function ServiceGuide({ service }: { service: ServiceGuideKey }) 
           </details>)}
         </div>
       </div>
-      <div className={`service-faq__resources${reading.length ? " service-faq__resources--with-guides" : ""}`}>
+      <details className="service-faq__resource-toggle">
+      <summary>Seguí explorando<span aria-hidden="true" /></summary>
+      <div className="service-faq__resources">
       <nav className="service-faq__related" aria-label="Servicios y recursos relacionados">
         <p>EXPLORÁ IDEAMOS</p>
         <div>
@@ -63,6 +65,7 @@ export default function ServiceGuide({ service }: { service: ServiceGuideKey }) 
         <ul>{reading.map(post => <li key={post.slug}><a href={href(`/blog/${post.slug}/`)}>{post.title}</a></li>)}</ul>
       </nav>}
       </div>
+      </details>
     </div>
   </section>;
 }
