@@ -64,7 +64,7 @@ export default function ShopPage() {
     <section className="shops-intro shops-grid-bg">
       <header className="shops-heading">
         <p>ECOMMERCE PROFESIONAL</p>
-        <h2>Tiendas con todo lo que necesitas para<br/>escalar tu negocio</h2>
+        <h2>Tiendas con todo lo que necesitas para <br/>escalar tu negocio</h2>
         <span>Nuestras tiendas online están llenas de funcionalidades que te ayudarán mucho en tu día a día.<br/>Hacemos uso de las últimas tecnologías disponibles para facilitarte el trabajo.</span>
       </header>
       <div className="shops-intro-layout">
