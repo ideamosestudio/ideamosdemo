@@ -47,17 +47,31 @@ export default function Home() {
         <h1>
           <span className="hero-title-desktop">Expertos en crear webs</span>
           <em className="hero-title-desktop">que atraen clientes y ventas</em>
-          <span className="hero-title-mobile" aria-label="Expertos en crear webs que atraen clientes y ventas">
-            <span>Expertos en</span>
-            <span>crear webs</span>
-            <span>que atraen</span>
-            <span>clientes y ventas</span>
+          <span className="hero-title-mobile">
+            <span>Diseño web y</span>
+            <span>tiendas online</span>
+            <span className="hero-title-accent">para hacer crecer</span>
+            <span className="hero-title-accent">tu negocio.</span>
           </span>
         </h1>
-        <p className="hero-copy"><b>Sitios web, tiendas online y marketing digital</b> para que tu empresa venda más y más fácil.</p>
+        <p className="hero-copy"><span className="desktop-only"><b>Sitios web, tiendas online y marketing digital</b> para que tu empresa venda más y más fácil.</span><span className="mobile-only">Combinamos diseño y estrategia para convertir visitas en consultas y ventas.</span></p>
         <div className="hero-actions">
-          <a className="cta-glow primary" href={WHATSAPP_URL}><span className="desktop-only">Quiero una asesoría sin cargo</span><span className="mobile-only">Contactanos</span></a>
+          <a className="cta-glow primary" href={WHATSAPP_URL}><span className="desktop-only">Quiero una asesoría sin cargo</span><span className="mobile-only">Quiero una asesoría</span></a>
           <a className="cta-glow secondary" href={WHATSAPP_URL}><span>Quiero contactar un experto</span></a>
+        </div>
+        <p className="hero-assurance mobile-only">Sin cargo</p>
+        <div className="hero-work-mobile">
+          <a className="hero-work-scene" href={asset("/portfolio/")} aria-label="Ver nuestro portfolio de diseño web y tiendas online">
+            <div className="hero-work-laptop">
+              <div className="hero-work-screen">
+                <img src={asset("/media/hero-concept-architecture.webp")} width="1000" height="667" alt="Concepto visual de un sitio de arquitectura premium" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div className="hero-work-phone">
+              <img src={asset("/media/hero-concept-fashion.webp")} width="420" height="887" alt="Concepto visual de tienda de moda ÉLAN" loading="lazy" decoding="async" />
+            </div>
+          </a>
+          <a className="hero-work-link" href={asset("/portfolio/")}>Ver portfolio <ArrowIcon /></a>
         </div>
         <div className="hero-clients"><HeroLogoTrack /></div>
       </div>
