@@ -56,7 +56,8 @@ test("las guías comerciales son HTML indexable y enlazan recursos reales", asyn
     assert.equal((html.match(/<h1(?:\s|>)/g) ?? []).length, 1, file);
     assert.match(html, /aria-label="(?:Servicios y recursos relacionados|Explorar servicios de Ideamos)"/, file);
     if (file !== "index.html") {
-      assert.equal((html.match(/<details\b/g) ?? []).length, 4, file);
+      assert.equal((html.match(/<details class="service-faq__item"/g) ?? []).length, 4, file);
+      assert.equal((html.match(/<details class="service-faq__resource-toggle"/g) ?? []).length, 1, file);
       assert.equal((html.match(/<details\b[^>]*\bopen=""/g) ?? []).length, 1, file);
       assert.equal((html.match(/name="faq-(?:web|shop|seo|marketing)"/g) ?? []).length, 4, file);
       const schemas = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].map((match) => JSON.parse(match[1]));
