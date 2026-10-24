@@ -511,7 +511,7 @@
   background:transparent;
   color:#fff;
   font-family:"Poppins CTA",Arial,sans-serif;
-  font-size:11px;
+  font-size:9px;
   font-weight:600;
   line-height:1;
   letter-spacing:1px;
@@ -569,7 +569,7 @@
 
   #project-dialog .dialog-actions .contact::before{
     font-family:inherit;
-    font-size:11px;
+    font-size:9px;
     font-weight:inherit;
     line-height:1;
     letter-spacing:inherit;
