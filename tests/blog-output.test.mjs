@@ -13,6 +13,13 @@ test("el blog es discreto, estático, indexable y enlaza artículos válidos", a
     const html = await readFile(new URL(new URL(url).pathname.slice(1) + "index.html", out), "utf8");
     assert.ok(html.includes(`<link rel="canonical" href="${url}"`));
     assert.equal((html.match(/<h1(?:\s|>)/g) ?? []).length, 1);
+    assert.equal((html.match(/<footer class="editorial-footer">/g) ?? []).length, 1);
+    assert.doesNotMatch(html, /class="blog-footer"/);
+    assert.equal((html.match(/class="ef-column-toggle"/g) ?? []).length, 3);
+    const footer = html.match(/<footer class="editorial-footer">([\s\S]*?)<\/footer>/)?.[1] ?? "";
+    assert.equal((footer.match(/aria-expanded="false"/g) ?? []).length, 3);
+    assert.match(html, /class="contact-icon-whatsapp"/);
+    assert.match(html, /ideamos-wordmark-outline\.svg/);
     assert.doesNotMatch(html, /name="robots" content="[^"]*noindex/);
     const title = html.match(/<title>(.*?)<\/title>/)?.[1];
     assert.ok(title && !titles.has(title)); titles.add(title);

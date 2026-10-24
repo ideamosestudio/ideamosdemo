@@ -1,4 +1,5 @@
 import SiteHeader from "./SiteHeader";
+import { SharedFooter } from "./SharedHomeSections";
 import { BLOG_DATE, blogCategories, blogPosts, type BlogPost } from "../lib/blog";
 import { SITE_URL } from "../lib/seo";
 
@@ -42,6 +43,6 @@ export default function BlogView({ post, category }: { post?: BlogPost; category
         <img className="blog-card-image" src={href(p.image)} srcSet={imageSet(p)} sizes="(max-width:800px) calc(100vw - 96px), 500px" alt={p.imageAlt} width="1200" height="686" loading="lazy" decoding="async" />
         <p className="blog-eyebrow">{p.category === "tiendas-online" ? "TIENDAS ONLINE" : "DISEÑO WEB"}</p><h3><a href={href(`/blog/${p.slug}/`)}>{p.title}</a></h3><p>{p.description}</p></article>)}</div></section>
     </main>
-    <footer className="blog-footer"><div className="footer-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href={href("/blog/")}>Blog y guías</a><a href={href("/contacto/")}>Contacto</a></div></footer>
+    <SharedFooter />
   </div>;
 }

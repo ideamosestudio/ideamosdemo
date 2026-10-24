@@ -1,4 +1,4 @@
-/* Isolated from legacy footer rules; keep the blog's compact footer unchanged. */
+/* Shared by service pages, the blog index, categories and articles. */
 #site-root footer.editorial-footer{min-height:0!important;padding:0!important;border-radius:0!important;background:#101010!important;color:#f5f5f5;overflow:hidden}
 #site-root .editorial-footer .ef-inner{max-width:1440px;margin:auto;padding:64px max(6vw,24px) 0}
 #site-root .editorial-footer .ef-intro{display:flex;align-items:center;justify-content:space-between;gap:36px;padding-bottom:40px;border-bottom:1px solid #ffffff26}
@@ -21,7 +21,8 @@
 #site-root .editorial-footer .ef-socials{display:flex;gap:10px;margin-top:8px}
 #site-root .editorial-footer .ef-socials a{display:grid;place-items:center;width:44px;height:44px;border:1px solid #ffffff30;border-radius:50%}
 #site-root .editorial-footer .ef-socials a:is(:hover,:focus-visible){border-color:#ff914d;color:#ff914d}
-.ef-socials svg{width:17px;height:17px}
+.ef-socials svg{display:block;width:17px;height:17px}
+.ef-socials svg.contact-icon-whatsapp{width:20px;height:20px}
 #site-root .editorial-footer .ef-signature{width:100%;max-width:1440px;padding:0 max(6vw,24px);margin:8px auto 8px;opacity:.85;pointer-events:none}
 .ef-wordmark{position:relative;display:block;width:88%;height:auto;margin-inline:auto;pointer-events:auto}
 .ef-signature img{display:block;width:100%;height:auto}
