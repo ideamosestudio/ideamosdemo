@@ -46,20 +46,31 @@
   #site-root .editorial-footer{text-align:center}
   #site-root .editorial-footer .ef-intro{align-items:center}
   #site-root .editorial-footer .ef-eyebrow{justify-content:center}
-  #site-root .editorial-footer .ef-grid{grid-template-columns:1fr;gap:0}
-  #site-root .editorial-footer .ef-brand{padding-bottom:30px}
+  #site-root .editorial-footer .ef-grid{grid-template-columns:1fr;gap:12px;padding-top:32px;padding-bottom:28px}
+  #site-root .editorial-footer .ef-brand{padding:0 0 20px}
   #site-root .editorial-footer .ef-brand img,#site-root .editorial-footer .ef-brand p{margin-inline:auto}
-  #site-root .editorial-footer .ef-grid>nav,#site-root .editorial-footer .ef-contact{align-items:center;gap:0;border-bottom:1px solid #ffffff12;width:100%}
+  #site-root .editorial-footer .ef-grid>nav,#site-root .editorial-footer .ef-contact{align-items:center;gap:0;border:1px solid #ffffff14;border-radius:16px;background:linear-gradient(145deg,#191919,#131313);width:100%;padding:0;box-shadow:0 8px 24px #00000012}
+  #site-root .editorial-footer .ef-grid>nav:has([aria-expanded="true"]),#site-root .editorial-footer .ef-contact:has([aria-expanded="true"]){border-color:#ff914d55}
   #site-root .editorial-footer .ef-column-heading{margin:0!important;width:100%}
   .ef-desktop-heading{display:none}
-  .ef-column-toggle{display:flex;align-items:center;justify-content:center;position:relative;width:100%;min-height:60px;padding:16px 44px;border:0;background:transparent;color:inherit;font:inherit;letter-spacing:inherit;text-transform:uppercase;cursor:pointer}
+  .ef-column-toggle{display:flex;align-items:center;justify-content:center;position:relative;width:100%;min-height:64px;padding:18px 52px;border:0;border-radius:16px;background:transparent;color:#dedede;font:inherit;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+  .ef-column-toggle[aria-expanded="true"]{color:#ffad78}
   .ef-column-toggle:focus-visible{outline:2px solid #ff914d;outline-offset:-3px}
-  .ef-toggle-icon{position:absolute;right:16px;width:12px;height:12px}
-  .ef-toggle-icon::before,.ef-toggle-icon::after{content:"";position:absolute;background:currentColor;left:0;top:5px;width:12px;height:1px}
+  .ef-toggle-icon{position:absolute;right:16px;width:26px;height:26px;border:1px solid #ffffff26;border-radius:50%;color:#aaa}
+  .ef-toggle-icon::before,.ef-toggle-icon::after{content:"";position:absolute;background:currentColor;left:7px;top:12px;width:10px;height:1px}
+  .ef-column-toggle[aria-expanded="true"] .ef-toggle-icon{color:#ffad78;border-color:#ff914d66;background:#ff65000a}
   .ef-toggle-icon::after{transform:rotate(90deg)}
   .ef-column-toggle[aria-expanded="true"] .ef-toggle-icon::after{display:none}
-  .ef-column-content{display:none;align-items:center;padding:0 0 24px}
+  .ef-column-content{display:none;align-items:center;padding:0 18px 18px;gap:0}
   .ef-column-content[data-open="true"]{display:flex}
-  #site-root .editorial-footer .ef-socials{justify-content:center}
-  #site-root .editorial-footer .ef-bottom{align-items:center}
+  #site-root .editorial-footer .ef-column-content>a{display:flex;flex-direction:column;justify-content:center;width:100%;min-height:48px;padding:12px 8px;border-top:1px solid #ffffff0d;font-size:14px;line-height:1.5;text-decoration:none}
+  #site-root .editorial-footer .ef-column-content>a:is(:hover,:focus-visible){background:#ffffff04;color:#ffad78;border-radius:6px}
+  #site-root .editorial-footer .ef-contact .ef-column-content>a{padding:14px 8px;gap:5px}
+  #site-root .editorial-footer .ef-contact .ef-column-content>a[href^="mailto:"]::before{content:"EMAIL"}
+  #site-root .editorial-footer .ef-contact .ef-column-content>a[href^="tel:"]::before{content:"TELÉFONO"}
+  #site-root .editorial-footer .ef-contact .ef-column-content>a::before{font-size:10px;letter-spacing:.14em;color:#999}
+  #site-root .editorial-footer .ef-contact .ef-column-content>p{width:100%;padding:14px 8px;border-top:1px solid #ffffff0d;font-size:13px;color:#aaa}
+  #site-root .editorial-footer .ef-socials{justify-content:center;width:100%;padding-top:16px;border-top:1px solid #ffffff0d;margin-top:0;gap:12px}
+  #site-root .editorial-footer .ef-socials a{background:#ffffff03}
+  #site-root .editorial-footer .ef-bottom{align-items:center;gap:20px;font-size:10px;letter-spacing:.08em}
 }

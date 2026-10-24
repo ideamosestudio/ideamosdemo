@@ -19,6 +19,9 @@ test("footer preserves a static WhatsApp alternative and balanced vector signatu
   const fill = await readFile(new URL("../public/logos/ideamos-wordmark-fill.svg", import.meta.url), "utf8");
   assert.match(fill, /fill-rule="evenodd"/);
   assert.match(css, /border-left:1px solid #ffffff12/);
+  assert.match(css, /min-height:48px;padding:12px 8px/);
+  assert.match(css, /content:"EMAIL"/);
+  assert.match(css, /content:"TELÉFONO"/);
   assert.match(css, /\.ef-bottom a\{[^}]*text-transform:uppercase/);
   assert.match(css, /text-decoration-color:#ff914d/);
   assert.match(css, /\.ef-socials a:is\(:hover,:focus-visible\)/);
