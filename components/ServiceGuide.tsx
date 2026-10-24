@@ -1,12 +1,19 @@
 import { serviceGuides, serviceLinks, type ServiceGuideKey } from "../lib/service-guides";
 import { SITE_URL } from "../lib/seo";
 import ArrowIcon from "./ArrowIcon";
+import { blogPosts } from "../lib/blog";
 
 const href = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
 // Visible, server-rendered answers: no hidden keyword blocks or extra animation dependencies.
 export default function ServiceGuide({ service }: { service: ServiceGuideKey }) {
   const guide = serviceGuides[service];
+  const readingSlugs = service === "web"
+    ? ["diseno-web-profesional/diseno-web-profesional", "seo/renovacion-de-sitio-web-2026-seo-conversiones"]
+    : service === "shop"
+      ? ["tiendas-online/tienda-online-a-medida-o-plataforma", "tiendas-online/que-necesitas-para-lanzar-tienda-online"]
+      : [];
+  const reading = readingSlugs.map(slug => blogPosts.find(post => post.slug === slug)).filter(post => post !== undefined);
   const faq = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -50,6 +57,10 @@ export default function ServiceGuide({ service }: { service: ServiceGuideKey }) 
           <a href={href("/testimonios/")}>Testimonios de clientes<span aria-hidden="true"><ArrowIcon /></span></a>
         </div>
       </nav>
+      {reading.length > 0 && <nav className="service-faq__reading" aria-label="Guías para preparar tu proyecto">
+        <p>PARA PREPARAR TU PROYECTO</p>
+        <ul>{reading.map(post => <li key={post.slug}><a href={href(`/blog/${post.slug}/`)}>{post.title}</a></li>)}</ul>
+      </nav>}
     </div>
   </section>;
 }
