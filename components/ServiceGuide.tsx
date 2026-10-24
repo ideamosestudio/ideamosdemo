@@ -45,6 +45,7 @@ export default function ServiceGuide({ service }: { service: ServiceGuideKey }) 
         <p>SEGUÍ EXPLORANDO</p>
         <div>
           {guide.related.map((key) => <a key={key} href={href(serviceLinks[key].href)}>{serviceLinks[key].label}<span aria-hidden="true"><ArrowIcon /></span></a>)}
+          <a href={href("/portfolio/")}>Portfolio<span aria-hidden="true"><ArrowIcon /></span></a>
           <a href={href("/casos-de-exito/")}>Casos de éxito<span aria-hidden="true"><ArrowIcon /></span></a>
           <a href={href("/testimonios/")}>Testimonios de clientes<span aria-hidden="true"><ArrowIcon /></span></a>
         </div>

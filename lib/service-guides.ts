@@ -41,7 +41,7 @@ export const serviceGuides = {
       ["¿Cómo sé si mi inversión está dando resultados?", "Relacioná el gasto con consultas calificadas, presupuestos y ventas, además de revisar clics y visitas. Para calcular rentabilidad también hacen falta los costos y márgenes del negocio; una conversión registrada no equivale necesariamente a una venta."],
       ["¿Qué información necesitan para una primera asesoría?", "Contanos qué vende tu empresa, a quién, en qué zonas y qué canales usás actualmente. Si ya tenés una web o campañas, compartí sus objetivos y resultados disponibles para identificar prioridades y preparar una propuesta acorde."],
     ],
-    related: ["web", "seo"],
+    related: ["web", "shop", "seo"],
   },
 } as const;
 

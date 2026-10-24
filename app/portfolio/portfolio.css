@@ -49,15 +49,16 @@
     clamp(80px,7vw,120px);
   background-color:#f5f6f9;
   background-image:
-    linear-gradient(rgba(91,103,130,.09) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(91,103,130,.09) 1px,transparent 1px);
+    linear-gradient(rgba(91,103,130,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(91,103,130,.035) 1px,transparent 1px);
   background-size:clamp(72px,8vw,116px) clamp(72px,8vw,116px);
 }
 
 .portfolio-page .work>.section-heading{
   position:relative;
   width:min(100%,1500px);
-  margin:0 auto clamp(64px,5vw,88px);
+  max-width:1500px;
+  margin:0 auto 36px;
   padding:0 0 clamp(52px,4vw,72px);
   display:grid;
   grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
@@ -117,9 +118,11 @@
 .portfolio-page .work>.toolbar{
   width:min(100%,1500px);
   margin:0 auto;
-  padding:0 0 28px;
-  border-top:0;
-  border-bottom:1px solid rgba(24,27,35,.15);
+  padding:10px;
+  border:1px solid #dfe0e4;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 4px 20px #20253604;
 }
 
 .portfolio-page .work .filters button{
@@ -135,9 +138,9 @@
 
 .portfolio-page .work .filters button.active,
 .portfolio-page .work .filters button.active:is(:hover,:focus-visible){
-  color:#111217;
-  border-color:rgba(17,18,23,.08);
-  background:#f1f0eb;
+  color:#fff;
+  border-color:#17191e;
+  background:#17191e;
 }
 
 .portfolio-page .work>.result-count,
@@ -148,26 +151,40 @@
   margin-right:auto;
 }
 
+.portfolio-page .work .filters{gap:4px}
+.portfolio-page .work .filters button{min-height:44px;border-radius:11px;padding:12px 16px}
+.portfolio-page .work .filters sup{opacity:1;color:inherit}
+.portfolio-page .work .search{width:220px;min-height:46px;padding:10px 14px;border:1px solid #dedfe4;border-radius:11px;background:#f7f7f9}
+.portfolio-page .work .search:focus-within{border-color:#b83d00;outline:2px solid #ff620020}
+.portfolio-page .work>.result-count{margin-top:24px;margin-bottom:20px;font-size:12px;letter-spacing:0}
+.portfolio-page .work>.projects{gap:28px}
+.portfolio-page .work .project:focus-within{border-color:#b83d00}
+.portfolio-page .work .project-summary{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+@media(hover:hover){
+  .portfolio-page .work .project:hover{border-color:#c8c8ce;box-shadow:0 16px 36px #2025360d}
+}
+
 .portfolio-page .work .project-link{
-  grid-column:2;
-  grid-row:4;
+  grid-column:1/-1;
+  grid-row:5;
   align-self:center;
-  justify-self:end;
+  justify-self:stretch;
   display:inline-flex;
   align-items:center;
-  justify-content:center;
+  justify-content:space-between;
   width:auto;
   height:46px;
   min-width:0;
-  margin:18px 24px 0 16px;
-  padding:0 18px;
+  margin:22px 24px 0;
+  padding:18px 0 0;
   gap:12px;
-  border:1px solid #17191e;
-  border-radius:999px;
-  background:#17191e;
-  color:#fff;
+  border:0;
+  border-top:1px solid #e5e5e8;
+  border-radius:0;
+  background:transparent;
+  color:#17191e;
   font-family:"Poppins CTA",Arial,sans-serif;
-  font-size:10px;
+  font-size:11px;
   font-weight:600;
   line-height:1;
   letter-spacing:.06em;
@@ -183,15 +200,19 @@
 }
 
 .portfolio-page .work .project-link svg{
-  width:18px;
-  height:18px;
+  width:30px;
+  height:30px;
+  padding:6px;
+  border-radius:50%;
+  background:#f2f2f4;
   stroke:currentColor;
 }
 
 .portfolio-page .work .project-link:is(:hover,:focus-visible){
-  border-color:#ff7d39;
-  background:#b83d00;
-  box-shadow:0 10px 28px rgba(255,78,0,.34);
+  border-color:#e5e5e8;
+  background:transparent;
+  color:#a63800;
+  box-shadow:none;
 }
 
 .portfolio-page .work .preview-label{
@@ -201,21 +222,24 @@
 .portfolio-page .work .project{
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
-  grid-template-rows:auto auto auto auto;
-  align-content:start;
+  grid-template-rows:auto auto auto 1fr auto;
+  align-content:stretch;
   padding:0 0 24px;
   overflow:hidden;
   border:1px solid rgba(24,27,35,.12);
-  border-radius:14px;
+  border-radius:22px;
   background:#fff;
-  box-shadow:0 14px 34px rgba(26,31,43,.07);
+  box-shadow:0 6px 20px rgba(26,31,43,.035);
+  transition:border-color .2s,box-shadow .2s;
 }
 
 .portfolio-page .work .project>.preview{
   grid-column:1/-1;
   grid-row:1;
   border:0;
-  border-radius:13px 13px 0 0;
+  width:calc(100% - 16px);
+  margin:8px 8px 0;
+  border-radius:16px;
 }
 
 .portfolio-page .work .project>.project-meta{
@@ -224,8 +248,8 @@
 
 .portfolio-page .work .project>.project-meta>div{
   grid-column:1/-1;
-  grid-row:2;
-  padding:24px 24px 0;
+  grid-row:3;
+  padding:10px 24px 0;
 }
 
 .portfolio-page .work .project-meta h3{
@@ -248,23 +272,26 @@
 
 .portfolio-page .work .project-summary{
   grid-column:1/-1;
-  grid-row:3;
-  margin:18px 0 0;
+  grid-row:4;
+  margin:14px 0 0;
   padding:0 24px;
   line-height:1.7;
 }
 
 .portfolio-page .work .project-type{
-  grid-column:1;
-  grid-row:4;
+  grid-column:1/-1;
+  grid-row:2;
   align-self:center;
   width:max-content;
-  margin:18px 0 0 24px;
+  margin:24px 24px 0;
   padding:0;
   border:0;
   line-height:1.4;
-  letter-spacing:0;
-  text-transform:none;
+  color:#96502b;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
 }
 
 @media(max-width:980px){
@@ -281,9 +308,12 @@
   .portfolio-page .work .project-link{
     grid-column:1/-1;
     grid-row:5;
-    justify-self:start;
-    margin:18px 24px 0;
+    justify-self:stretch;
+    margin:22px 24px 0;
   }
+  .portfolio-page .work>.projects{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .portfolio-page .work .toolbar{gap:12px}
+  .portfolio-page .work .search{width:100%}
 }
 
 @media(max-width:600px){
@@ -315,7 +345,7 @@
   }
 
   .portfolio-page .work .project>.project-meta>div{
-    padding:20px 20px 0;
+    padding:10px 20px 0;
   }
 
   .portfolio-page .work .project-summary{
@@ -330,6 +360,17 @@
     margin-left:20px;
     margin-right:20px;
   }
+  .portfolio-page .work>.projects{grid-template-columns:1fr;gap:24px}
+  .portfolio-page .work .filters{display:grid;grid-template-columns:1fr 1fr;width:100%;gap:6px}
+  .portfolio-page .work .filters button{padding:12px 8px;font-size:12px;text-align:center;background:#f7f7f9}
+  .portfolio-page .work .filters button.active{background:#17191e}
+  .portfolio-page .work .project-type{margin-top:20px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .portfolio-page .work .project{animation:none;transition:none}
+  .portfolio-page .work .preview .cover-desktop,
+  .portfolio-page .work .preview .cover-phone{transition:none!important;transform:none!important}
 }
 
 /* Two controlled depth planes: the desktop advances slightly and the phone

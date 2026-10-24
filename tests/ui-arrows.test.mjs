@@ -38,7 +38,7 @@ test("las flechas compartidas son SVG decorativos con trazos escalables", async 
     const page = await readFile(new URL(`${slug}/index.html`, out), "utf8");
     const faq = page.match(/<section class="service-guide service-faq"[\s\S]*?<\/section>/)?.[0];
     assert.ok(faq, slug);
-    assert.equal((faq.match(/class="site-arrow"/g) ?? []).length, 5, slug);
+    assert.equal((faq.match(/class="site-arrow"/g) ?? []).length, slug === "marketing-digital" ? 7 : 6, slug);
   }
 });
 
