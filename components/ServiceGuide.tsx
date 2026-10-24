@@ -48,8 +48,9 @@ export default function ServiceGuide({ service }: { service: ServiceGuideKey }) 
           </details>)}
         </div>
       </div>
+      <div className={`service-faq__resources${reading.length ? " service-faq__resources--with-guides" : ""}`}>
       <nav className="service-faq__related" aria-label="Servicios y recursos relacionados">
-        <p>SEGUÍ EXPLORANDO</p>
+        <p>EXPLORÁ IDEAMOS</p>
         <div>
           {guide.related.map((key) => <a key={key} href={href(serviceLinks[key].href)}>{serviceLinks[key].label}<span aria-hidden="true"><ArrowIcon /></span></a>)}
           <a href={href("/portfolio/")}>Portfolio<span aria-hidden="true"><ArrowIcon /></span></a>
@@ -58,9 +59,10 @@ export default function ServiceGuide({ service }: { service: ServiceGuideKey }) 
         </div>
       </nav>
       {reading.length > 0 && <nav className="service-faq__reading" aria-label="Guías para preparar tu proyecto">
-        <p>PARA PREPARAR TU PROYECTO</p>
+        <p>GUÍAS ÚTILES</p>
         <ul>{reading.map(post => <li key={post.slug}><a href={href(`/blog/${post.slug}/`)}>{post.title}</a></li>)}</ul>
       </nav>}
+      </div>
     </div>
   </section>;
 }
