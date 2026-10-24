@@ -1,4 +1,12 @@
 /* Ajustes exclusivamente mobile solicitados el 02/09/2026. */
+@media(max-width:700px){
+  /* Never reserve invisible benefit cards while waiting for scroll hydration. */
+  #site-root .home-page .ecommerce [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+  #site-root .home-page .ecommerce .section-heading{margin-bottom:32px!important}
+  /* Center the actual icon width; keep transform free for its animation. */
+  #site-root .service-benefits .benefit-motion{position:relative!important;display:flex;top:auto!important;left:auto!important;right:auto!important;margin:0 auto 28px!important;translate:none!important;flex-shrink:0}
+  #site-root .service-benefits .service-benefits-grid article h3{margin-top:0!important}
+}
 .home-page .hero-assurance{display:none}
 .home-page .hero-work-mobile{display:none}
 @media(max-width:700px){
