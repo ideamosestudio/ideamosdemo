@@ -527,7 +527,7 @@
     box-sizing:border-box;
     height:max-content;
     min-height:0;
-    padding:12px 2vw 12px 5.5vw;
+    padding:22px 2vw 2px 5.5vw;
     align-items:center;
   }
 }
