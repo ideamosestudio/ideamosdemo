@@ -31,6 +31,7 @@ import "./desktop-button-typography.css";
 import "./service-guide.css";
 import "./icons.css";
 import "./portfolio-links.css";
+import "./editorial-footer.css";
 
 const homeMetadata = createPageMetadata({
   title: "Diseño web para empresas en Argentina | Ideamos",

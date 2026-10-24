@@ -1,4 +1,5 @@
 import ManagedBackgroundVideo from "../app/components/ManagedBackgroundVideo";
+import EditorialFooter from "./EditorialFooter";
 import ContactLeadForm from "./ContactLeadForm";
 import LightGridFrame from "./LightGridFrame";
 import { WHATSAPP_URL } from "../lib/whatsapp";
@@ -118,31 +119,10 @@ export function HomeClosingSections({ showAdvisory = true, darkGrid = false }: {
       </aside>
     </section>
 
-    <footer className={darkGrid ? "shared-dark-footer" : undefined}>
-      <div className="footer-main">
-        {darkGrid && <DarkGridBackground />}
-        <div className="footer-top">
-          <div className="footer-brand">
-            <img src={asset("/logos/ideamos-light.webp")} alt="Ideamos" width="870" height="213" loading="lazy" decoding="async" />
-            <h3>Más estrategia.<br/><em>Más resultados.</em></h3>
-          </div>
-          <div>
-            <b>Servicios</b>
-            <a href={asset("/diseno-web-autoadministrable/")}>Diseño Web</a>
-            <a href={asset("/tiendas-online/")}>Tiendas Online</a>
-            <a href={asset("/marketing-digital/")}>Marketing Digital</a>
-            <a href={asset("/posicionamiento-web/")}>Posicionamiento Web</a>
-            <a className="footer-blog-link" href={asset("/blog/")}>Blog</a>
-          </div>
-          <div>
-            <b>Contacto</b>
-            <a href={WHATSAPP_URL}>+54 9 11 6875-8285</a>
-            <a href="mailto:hola@ideamos.com.ar">hola@ideamos.com.ar</a>
-            <p>Buenos Aires, Argentina</p>
-          </div>
-        </div>
-      </div>
-      <div className="footer-bottom"><span>© 2026 ESTUDIO IDEAMOS</span><a href="#inicio">VOLVER ARRIBA</a></div>
-    </footer>
+    <EditorialFooter socials={<>
+      <a href={socialLinks.instagram} aria-label="Ideamos en Instagram" target="_blank" rel="noopener noreferrer"><ContactIcon name="instagram" /></a>
+      <a href={socialLinks.linkedin} aria-label="Ideamos en LinkedIn" target="_blank" rel="noopener noreferrer"><ContactIcon name="linkedin" /></a>
+      <a href={socialLinks.facebook} aria-label="Ideamos en Facebook" target="_blank" rel="noopener noreferrer"><ContactIcon name="facebook" /></a>
+    </>} />
   </>;
 }

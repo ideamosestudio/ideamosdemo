@@ -50,6 +50,9 @@ test("el blog es discreto, estático, indexable y enlaza artículos válidos", a
   const home = await readFile(new URL("index.html", out), "utf8");
   assert.match(home, /<footer[\s\S]*href="\/blog\/"/);
   assert.match(home, /class="footer-blog-link" href="\/blog\/">Blog<\/a>/);
+  assert.match(home, /class="editorial-footer"/);
+  assert.match(home, /ideamos-footer-outline/);
+  assert.match(home, /Hagamos algo/);
   assert.doesNotMatch(home.match(/<div class="footer-bottom">[\s\S]*?<\/div>/)?.[0] ?? "", /\/blog\//);
   const header = await readFile(new URL("../components/SiteHeader.tsx", import.meta.url), "utf8");
   assert.doesNotMatch(header, /\/blog\//);

@@ -1,0 +1,89 @@
+/* Separate the footer content from the plain-black credits strip. */
+#site-root footer{
+  padding:0!important;
+}
+
+#site-root footer .footer-main{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:0 max(6vw,40px) 110px;
+  background:#0b0b0b;
+}
+
+#site-root footer .footer-main>.dark-grid-background{
+  z-index:0;
+}
+
+#site-root footer .footer-top{
+  position:relative;
+  z-index:1;
+  background:transparent!important;
+}
+
+#site-root footer .footer-bottom{
+  position:relative!important;
+  z-index:1;
+  inset:auto!important;
+  margin:0!important;
+  padding:28px max(6vw,40px)!important;
+  border-top:1px solid rgba(255,255,255,.22)!important;
+  background:#000!important;
+}
+
+@media(max-width:700px){
+  #site-root footer .footer-main{
+    padding:0 30px 80px;
+  }
+
+  #site-root footer .footer-bottom{
+    padding:26px 30px 30px!important;
+  }
+}
+
+/* Letra chica del footer: mismo diseño, más legible sobre fondo oscuro. */
+#site-root footer .footer-top .footer-blog-link{
+  align-self:flex-start;
+  margin-top:4px;
+  padding-top:16px;
+  border-top:1px solid #ffffff26;
+  font-size:13px;
+}
+
+#site-root footer .footer-top .footer-blog-link:hover{
+  color:#ff914d!important;
+}
+
+#site-root footer .footer-top .footer-blog-link:focus-visible{
+  outline:2px solid #ff914d;
+  outline-offset:5px;
+}
+
+#site-root footer .footer-brand>p{
+  font-size:14px!important;
+  color:#a8adb5!important;
+}
+
+#site-root footer .footer-top>div:not(:first-child){
+  font-size:15px!important;
+}
+
+#site-root footer .footer-top>div>b{
+  font-size:13px!important;
+  color:#9aa0aa!important;
+  letter-spacing:.04em;
+}
+
+#site-root footer .footer-top a,
+#site-root footer .footer-top p{
+  color:#c7cad0!important;
+}
+
+#site-root footer .footer-bottom{
+  font-size:12px!important;
+  color:#8a8f98!important;
+}
+
+#site-root footer .footer-bottom a{
+  color:#c7cad0!important;
+}
