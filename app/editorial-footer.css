@@ -10,15 +10,17 @@
 #site-root .editorial-footer .ef-cta:hover{background:#ff6500;border-color:#ff6500;color:#0a0a0a}
 .ef-cta .site-arrow{width:24px;height:24px}
 #site-root .editorial-footer .ef-grid{display:grid;grid-template-columns:1.1fr 1fr .8fr 1.25fr;gap:30px;padding:36px 0 20px}
-#site-root .editorial-footer .ef-grid>nav,#site-root .editorial-footer .ef-contact{display:flex;flex-direction:column;align-items:flex-start;gap:13px;padding-left:26px;border-left:1px solid #ffffff20}
+#site-root .editorial-footer .ef-grid>nav,#site-root .editorial-footer .ef-contact{display:flex;flex-direction:column;align-items:flex-start;gap:13px;padding-left:26px;border-left:1px solid #ffffff12}
 #site-root .editorial-footer .ef-brand img{display:block;width:170px;height:auto;max-width:100%}
-#site-root .editorial-footer .ef-brand p{font:400 13px/1.7 Arial,sans-serif;color:#aaa;margin:22px 0 0}
+#site-root .editorial-footer .ef-brand p{font:400 13px/1.7 Arial,sans-serif;color:#aaa;margin:22px 0 0;max-width:230px;text-wrap:pretty}
 #site-root .editorial-footer h3{font:600 12px/1.5 Arial,sans-serif!important;text-transform:uppercase;letter-spacing:.18em;color:#c4c4c4;margin:0 0 12px!important}
 #site-root .editorial-footer .ef-grid a,#site-root .editorial-footer .ef-contact p{font:400 15px/1.5 Arial,sans-serif;color:#e0e0e0;margin:0}
-#site-root .editorial-footer .ef-grid a:hover{color:#ff914d}
+#site-root .editorial-footer .ef-grid>nav a,#site-root .editorial-footer .ef-contact>a,#site-root .editorial-footer .ef-bottom a{text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:5px}
+#site-root .editorial-footer .ef-grid>nav a:is(:hover,:focus-visible),#site-root .editorial-footer .ef-contact>a:is(:hover,:focus-visible),#site-root .editorial-footer .ef-bottom a:is(:hover,:focus-visible){color:#ff914d;text-decoration-color:#ff914d}
 #site-root .editorial-footer .ef-grid .footer-blog-link{color:#aaa;font-size:13px}
 #site-root .editorial-footer .ef-socials{display:flex;gap:10px;margin-top:8px}
 #site-root .editorial-footer .ef-socials a{display:grid;place-items:center;width:44px;height:44px;border:1px solid #ffffff30;border-radius:50%}
+#site-root .editorial-footer .ef-socials a:is(:hover,:focus-visible){border-color:#ff914d;color:#ff914d}
 .ef-socials svg{width:17px;height:17px}
 #site-root .editorial-footer .ef-signature{width:100%;max-width:1440px;padding:0 max(6vw,24px);margin:8px auto 8px;opacity:.85;pointer-events:none}
 .ef-signature img{display:block;width:88%;height:auto;margin-inline:auto}
