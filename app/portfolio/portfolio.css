@@ -381,7 +381,7 @@
 
   #project-dialog[data-project="almat"] .dialog-top{
     flex:0 0 auto;
-    padding:clamp(10px,1.5dvh,16px) 2vw;
+    padding:clamp(10px,1.5dvh,16px) 2vw clamp(10px,1.5dvh,16px) 4.2vw;
   }
 
   #project-dialog[data-project="almat"] .dialog-top h2{
@@ -474,9 +474,9 @@
   #project-dialog[data-project="almat"] .dialog-footer{
     align-self:stretch;
     box-sizing:border-box;
-    height:clamp(64px,6.3dvh,72px);
-    min-height:clamp(64px,6.3dvh,72px);
-    padding:0 2vw;
+    height:auto;
+    min-height:0;
+    padding:12px 2vw 12px 4.2vw;
     align-items:center;
   }
 }
