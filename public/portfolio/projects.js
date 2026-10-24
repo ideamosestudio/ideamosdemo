@@ -16,7 +16,7 @@ window.PROJECTS = [
       "TypeScript",
       "CSS3"
     ],
-    "url": "https://ideamosestudio.github.io/almat/",
+    "url": "https://almatcerramientos.com.ar/",
     "isNew": true,
     "repositoryCreatedAt": "2026-10-11T07:24:46Z",
     "cover": "assets/cover-almat.webp",
