@@ -365,15 +365,16 @@
   }
 }
 
-/* Desktop pilot — ALMAT only. Let the content define the sheet height while
-   sizing the preview from the usable viewport, so no empty lower band remains. */
+/* Desktop pilot — ALMAT only. A three-row viewport grid keeps the title,
+   project and controls visible while the preview consumes the flexible row. */
 @media(min-width:1200px){
   #project-dialog[data-project="almat"]{
-    --almat-preview-height:clamp(260px,43dvh,420px);
     width:96vw;
     max-width:none;
-    height:calc(var(--almat-preview-height) + clamp(164px,20dvh,184px));
-    max-height:96dvh;
+    height:84dvh;
+    max-height:84dvh;
+    display:grid;
+    grid-template-rows:auto minmax(0,1fr) auto;
     overflow:hidden;
   }
 
@@ -387,7 +388,7 @@
   }
 
   #project-dialog[data-project="almat"] .dialog-scroll{
-    flex:0 0 auto;
+    min-width:0;
     min-height:0;
     overflow:hidden;
   }
@@ -396,7 +397,7 @@
     grid-template-columns:minmax(0,62fr) minmax(320px,38fr);
     align-items:center;
     gap:3vw;
-    height:auto;
+    height:100%;
     min-height:0;
     padding:clamp(10px,1.5dvh,16px) 2vw;
   }
@@ -405,7 +406,7 @@
     justify-self:center;
     width:auto;
     max-width:100%;
-    height:var(--almat-preview-height);
+    height:100%;
     max-height:none;
     min-height:0;
     aspect-ratio:1.45;
@@ -436,7 +437,7 @@
   }
 
   #project-dialog[data-project="almat"] .dialog-footer{
-    flex:0 0 auto;
+    align-self:stretch;
     min-height:0;
     padding:clamp(8px,1.25dvh,12px) 2vw;
   }
