@@ -5,8 +5,8 @@ import s from "./additions.module.css";
 const scope = [
   ["Estructura y contenido", "Las páginas, las secciones y los materiales que necesita tu web. Definimos quién aporta textos, imágenes y traducciones."],
   ["Diseño y versión móvil", "La propuesta visual de tu marca y su adaptación a celulares, tablets y escritorio, con instancias de revisión acordadas."],
-  ["Contacto y funcionalidades", "Formularios, WhatsApp y las integraciones necesarias. Si necesitás administración, detallamos qué vas a poder editar."],
-  ["Preparación y entrega", "Pruebas de navegación y contacto, base técnica de SEO según el alcance y condiciones de publicación, acceso y soporte."],
+  ["Contacto y administración", "Formularios, WhatsApp e integraciones según tu operación. En una web autoadministrable acordamos qué textos, imágenes, novedades o proyectos podrás editar sin modificar el diseño."],
+  ["Preparación y entrega", "Pruebas de navegación y contacto, títulos y estructura de contenido. Definimos los accesos, las pautas de uso y el soporte: publicar la web y mantenerla son etapas distintas."],
 ];
 const steps = [
   ["Nos contás", "Conocemos tu empresa, tu público y lo que querés resolver. Revisamos tu web actual si ya tenés una."],
@@ -22,7 +22,7 @@ export default function ProposalAdditions() {
         <div className={s.scopeLayout}>
           <header className={s.intro}>
             <p className={s.eyebrow}>QUÉ INCLUYE EL PROYECTO</p>
-            <h2 id="proposal-scope">Una web a medida.<br /><em>Un alcance claro.</em></h2>
+            <h2 id="proposal-scope">Diseño web a medida.<br /><em>Un alcance claro.</em></h2>
             <p>Tu proyecto de diseño web empieza con una propuesta concreta. Estos son los puntos que definimos juntos para que sepas qué recibís y cómo vamos a trabajar.</p>
             <a className={s.link} href={WHATSAPP_URL}>Hablemos de tu proyecto <ArrowIcon /></a>
           </header>

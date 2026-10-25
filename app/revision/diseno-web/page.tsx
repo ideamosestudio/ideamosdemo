@@ -3,8 +3,8 @@ import InternalPage, { type ServicePage } from "./ReviewInternalPage";
 import s from "./propuesta.module.css";
 
 export const metadata: Metadata = {
-  title: "Diseño web para empresas · Propuesta en revisión | Ideamos",
-  description: "Propuesta de revisión de diseño web profesional: sitios a medida, adaptación móvil, contenido y consultas. Conserva el diseño de la página actual.",
+  title: "Diseño web profesional para empresas | Ideamos",
+  description: "Diseño web a medida para empresas de Argentina. Sitios adaptados a celulares, contenido claro y opciones autoadministrables. Pedí una asesoría sin cargo.",
   robots: { index: false, follow: false, googleBot: { index: false, follow: false, noimageindex: true } },
   alternates: { canonical: "/diseno-web-autoadministrable/" },
 };
@@ -59,7 +59,7 @@ const page: ServicePage = {
 
 export default function DesignWebProposal() {
   return <>
-    <aside className={s.review} aria-label="Estado de la propuesta">PROPUESTA EN REVISIÓN · V3</aside>
+    <aside className={s.review} aria-label="Estado de la propuesta">PROPUESTA EN REVISIÓN · V4</aside>
     <InternalPage page={page} />
   </>;
 }

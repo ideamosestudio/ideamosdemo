@@ -1,7 +1,8 @@
 "use client";
 
 import ProposalAdditions from "./ProposalAdditions";
-import { Fragment, useEffect, useState } from "react";
+import ProjectEvidence from "./ProjectEvidence";
+import { Fragment, useEffect, useRef, useState } from "react";
 import ManagedBackgroundVideo from "../../../app/components/ManagedBackgroundVideo";
 import { DarkGridBackground, HeroChrome, HomeClosingSections } from "../../../components/SharedHomeSections";
 import SiteHeader from "../../../components/SiteHeader";
@@ -60,6 +61,7 @@ function Actions() {
 
 export default function ReviewInternalPage({ page }: { page: ServicePage }) {
   const [wildeFrame, setWildeFrame] = useState(0);
+  const phoneRef = useRef<HTMLDivElement>(null);
   const sections = page.sections ?? [
     { eyebrow: "ESTRATEGIA + DISEÑO + TECNOLOGÍA", title: page.sectionTitle ?? "", paragraphs: [page.sectionCopy ?? ""], items: page.items?.map(([title, copy]) => ({ title, copy })) },
     { eyebrow: "SOLUCIONES A TU MEDIDA", title: page.darkTitle ?? "", paragraphs: [page.darkCopy ?? ""], dark: true, contact: true },
@@ -67,11 +69,22 @@ export default function ReviewInternalPage({ page }: { page: ServicePage }) {
   const hasWildeSequence = sections.some((section) => section.visual === "wilde");
 
   useEffect(() => {
-    if (!hasWildeSequence) return;
-    const timer = window.setInterval(() => {
-      setWildeFrame((current) => (current + 1) % wildeFrames.length);
-    }, 2000);
-    return () => window.clearInterval(timer);
+    const phone = phoneRef.current;
+    if (!hasWildeSequence || !phone) return;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let visible = false;
+    let timer: number | undefined;
+    const update = () => {
+      window.clearInterval(timer);
+      if (visible && !document.hidden && !motion.matches) {
+        timer = window.setInterval(() => setWildeFrame(current => (current + 1) % wildeFrames.length), 2000);
+      }
+    };
+    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; update(); });
+    observer.observe(phone);
+    document.addEventListener("visibilitychange", update);
+    motion.addEventListener("change", update);
+    return () => { observer.disconnect(); window.clearInterval(timer); document.removeEventListener("visibilitychange", update); motion.removeEventListener("change", update); };
   }, [hasWildeSequence]);
   useEffect(() => {
     const onScroll = () => {
@@ -166,7 +179,7 @@ export default function ReviewInternalPage({ page }: { page: ServicePage }) {
                 </div>
               </article>)}
             </div>}
-            <div className="design-phone-video design-phone-sequence">
+            <div className="design-phone-video design-phone-sequence" ref={phoneRef}>
               <img src={asset(wildeFrames[wildeFrame])} alt="Tienda online Wilde visualizada en un teléfono" width="525" height="1080" loading="lazy" decoding="async" />
             </div>
           </div>
@@ -198,6 +211,7 @@ export default function ReviewInternalPage({ page }: { page: ServicePage }) {
     })}
     <ProposalAdditions />
     {page.homeTestimonials && <HomeTestimonials />}
+    <ProjectEvidence />
     </LightGridFrame>
     {page.guide && <ServiceGuide service={page.guide} />}
     <HomeClosingSections darkGrid />

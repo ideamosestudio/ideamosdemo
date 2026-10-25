@@ -10,6 +10,17 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
   assert.match(html, /rel="canonical" href="https:\/\/ideamos.com.ar\/diseno-web-autoadministrable\/"/);
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   assert.match(html, /PROPUESTA EN REVISIÓN/);
+  assert.match(html, /PROPUESTA EN REVISIÓN · V4/);
+  assert.match(html, /Diseño web profesional para empresas \| Ideamos/);
+  assert.match(html, /Una web autoadministrable te permite editar contenido/);
+  assert.match(html, /¿Qué materiales necesito para empezar el diseño de mi web\?/);
+  assert.match(html, /id="project-evidence-title"/);
+  assert.match(html, /Sphere Design/);
+  assert.match(html, /CYL Neumáticos/);
+  const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
+  const faq = schemas.find(s => s['@type'] === 'FAQPage');
+  assert.equal(faq.mainEntity.length, 8);
+  for (const item of faq.mainEntity) assert.ok(html.includes(item.acceptedAnswer.text));
   assert.match(html, /¿Cuánto cuesta y cuánto tarda una página web\?/);
   // La copia conserva la gráfica y los componentes de la página actual.
   for (const asset of ['hero.mp4', 'hero-poster.webp', 'xtreme-service.webp', 'tablet-animated-final.webm', 'wilde-cell-002.png']) {
@@ -19,7 +30,7 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
     assert.ok(html.includes(className), `Falta estructura original: ${className}`);
   }
   assert.doesNotMatch(await read('sitemap.xml'), /\/revision\//);
-  for (const id of ['alcance-proyecto', 'proceso-diseno-web']) {
+  for (const id of ['alcance-proyecto', 'proceso-diseno-web', 'project-evidence-title']) {
     assert.ok(html.includes(`id="${id}"`));
     assert.ok(!(await read('diseno-web-autoadministrable/index.html')).includes(`id="${id}"`));
   }
