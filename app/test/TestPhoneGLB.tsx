@@ -56,8 +56,7 @@ export default function TestPhoneGLB() {
   const [active, setActive] = useState(0);
   const mountRef = useRef<HTMLDivElement>(null);
   const activeRef = useRef(0);
-  const targetRotation = useRef({ x: -0.035, y: 0, z: 0.012 });
-  const targetOffset = useRef({ x: 0, y: 0 });
+  const targetRotation = useRef({ x: 0, y: 0, z: 0 });
   const spinImpulse = useRef(0);
 
   useEffect(() => {
@@ -112,7 +111,7 @@ export default function TestPhoneGLB() {
     scene.environment = environment;
 
     const phoneRig = new THREE.Group();
-    phoneRig.rotation.set(-0.035, -0.32, 0.012);
+    phoneRig.rotation.set(0, Math.PI, 0);
     scene.add(phoneRig);
 
     const phonePair = new THREE.Group();
@@ -283,29 +282,34 @@ export default function TestPhoneGLB() {
     window.addEventListener("scroll", accelerateFromScroll, { passive: true });
 
     let lastTime = performance.now();
-    let elapsedTime = 0;
-    let spinAngle = -0.1;
+    let introElapsed = 0;
+    let spinAngle = 0;
     let spinVelocity = 0;
     let pointerYaw = 0;
     let frame = 0;
     const render = (now: number) => {
       const delta = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
-      elapsedTime += delta;
       const damping = 1 - Math.pow(0.0005, delta);
-      spinVelocity += spinImpulse.current;
-      spinImpulse.current *= Math.pow(0.00008, delta);
-      const idleSpeed = isPhoneVisible ? 0.045 : 0;
-      spinVelocity += (idleSpeed - spinVelocity) * (1 - Math.pow(0.12, delta));
-      spinVelocity = THREE.MathUtils.clamp(spinVelocity, -1.9, 1.9);
-      spinAngle += spinVelocity * delta;
-      pointerYaw += (targetRotation.current.y - pointerYaw) * damping;
-      phoneRig.rotation.x += (targetRotation.current.x - phoneRig.rotation.x) * damping;
-      phoneRig.rotation.y = spinAngle + pointerYaw;
-      phoneRig.rotation.z += (targetRotation.current.z - phoneRig.rotation.z) * damping;
-      phoneRig.position.x += (targetOffset.current.x - phoneRig.position.x) * damping;
-      const targetY = Math.sin(elapsedTime * 0.62) * 0.035 + targetOffset.current.y;
-      phoneRig.position.y += (targetY - phoneRig.position.y) * damping;
+      if (introElapsed < 1.15) {
+        if (isPhoneVisible) introElapsed += delta;
+        const progress = THREE.MathUtils.clamp(introElapsed / 1.15, 0, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        phoneRig.rotation.y = Math.PI * (1 - eased);
+        spinImpulse.current = 0;
+      } else {
+        spinVelocity += spinImpulse.current;
+        spinImpulse.current *= Math.pow(0.00008, delta);
+        const idleSpeed = isPhoneVisible ? 0.045 : 0;
+        spinVelocity += (idleSpeed - spinVelocity) * (1 - Math.pow(0.12, delta));
+        spinVelocity = THREE.MathUtils.clamp(spinVelocity, -1.9, 1.9);
+        spinAngle += spinVelocity * delta;
+        pointerYaw += (targetRotation.current.y - pointerYaw) * damping;
+        phoneRig.rotation.y = spinAngle + pointerYaw;
+      }
+      phoneRig.rotation.x = 0;
+      phoneRig.rotation.z = 0;
+      phoneRig.position.set(0, 0, 0);
       screenMaterials.forEach((material, index) => {
         const targetOpacity = activeRef.current === index ? 1 : 0;
         material.opacity += (targetOpacity - material.opacity) * Math.min(1, delta * 5.2);
@@ -336,14 +340,12 @@ export default function TestPhoneGLB() {
     if (window.matchMedia("(pointer: coarse), (prefers-reduced-motion: reduce)").matches) return;
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
-    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
     targetRotation.current = {
-      x: -0.035 - y * 0.24,
+      x: 0,
       y: x * 0.18,
-      z: 0.012 - x * 0.055,
+      z: 0,
     };
     spinImpulse.current += THREE.MathUtils.clamp(event.movementX / Math.max(bounds.width, 1), -0.16, 0.16) * 0.55;
-    targetOffset.current = { x: x * 0.11, y: -y * 0.07 };
   };
 
   if (!host) return null;
@@ -353,8 +355,7 @@ export default function TestPhoneGLB() {
       className="test-phone-3d test-phone-3d--webgl"
       onPointerMove={handlePointerMove}
       onPointerLeave={() => {
-        targetRotation.current = { x: -0.035, y: 0, z: 0.012 };
-        targetOffset.current = { x: 0, y: 0 };
+        targetRotation.current = { x: 0, y: 0, z: 0 };
       }}
       aria-label="Vista tridimensional interactiva de una tienda online"
     >
