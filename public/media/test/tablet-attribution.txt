@@ -1,0 +1,4 @@
+Tablet GLB model from Polyfork
+Source: https://polyfork.dev/asset/tablet-fe3f76
+License: CC0 1.0 Universal (public domain)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/

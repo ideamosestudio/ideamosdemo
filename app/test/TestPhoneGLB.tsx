@@ -58,6 +58,7 @@ export default function TestPhoneGLB() {
   const activeRef = useRef(0);
   const targetRotation = useRef({ x: -0.035, y: -0.07, z: 0.012 });
   const targetOffset = useRef({ x: 0, y: 0 });
+  const spinImpulse = useRef(0);
 
   useEffect(() => {
     const stage = document.querySelector<HTMLElement>(".test-experiment-page .phone-stage");
@@ -93,7 +94,7 @@ export default function TestPhoneGLB() {
     let cancelled = false;
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(27, 1, 0.1, 100);
-    camera.position.set(0, 0.05, 10.2);
+    camera.position.set(0, 0.05, 14.4);
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
     renderer.setClearColor(0x000000, 0);
@@ -111,19 +112,25 @@ export default function TestPhoneGLB() {
     scene.environment = environment;
 
     const phoneRig = new THREE.Group();
-    phoneRig.rotation.set(-0.035, -0.07, 0.012);
+    phoneRig.rotation.set(-0.035, -0.32, 0.012);
     scene.add(phoneRig);
 
-    scene.add(new THREE.HemisphereLight(0xffffff, 0x33222b, 1.3));
+    const phonePair = new THREE.Group();
+    phoneRig.add(phonePair);
+
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x211017, 1.65));
     const keyLight = new THREE.DirectionalLight(0xffffff, 4.2);
     keyLight.position.set(-3.5, 5.5, 6);
     scene.add(keyLight);
-    const edgeLight = new THREE.DirectionalLight(0xff6a2b, 3.4);
+    const edgeLight = new THREE.DirectionalLight(0xff6a2b, 5.2);
     edgeLight.position.set(5, 1.5, 2.5);
     scene.add(edgeLight);
-    const coolFill = new THREE.DirectionalLight(0xbccfff, 2.1);
+    const coolFill = new THREE.DirectionalLight(0xbccfff, 3.1);
     coolFill.position.set(-4, -2, 1);
     scene.add(coolFill);
+    const backLight = new THREE.PointLight(0xffd0aa, 18, 16, 1.5);
+    backLight.position.set(0.8, 1.2, -4.5);
+    scene.add(backLight);
 
     const maxAnisotropy = renderer.capabilities.getMaxAnisotropy();
     const textureLoader = new THREE.TextureLoader();
@@ -156,7 +163,6 @@ export default function TestPhoneGLB() {
           return;
         }
 
-        const modelRoot = new THREE.Group();
         const originalBounds = new THREE.Box3().setFromObject(gltf.scene);
         const center = originalBounds.getCenter(new THREE.Vector3());
         const size = originalBounds.getSize(new THREE.Vector3());
@@ -179,21 +185,18 @@ export default function TestPhoneGLB() {
             }
             if (material instanceof THREE.MeshStandardMaterial) {
               if (key.includes("metalframe")) {
-                material.color.set(0x4d4744);
-                material.metalness = 0.92;
-                material.roughness = 0.2;
+                material.color.set(0x6b5140);
+                material.metalness = 0.96;
+                material.roughness = 0.15;
               } else if (key.includes("backpanel")) {
-                material.color.set(0x746b62);
-                material.metalness = 0.25;
-                material.roughness = 0.32;
+                material.color.set(0x8a705c);
+                material.metalness = 0.34;
+                material.roughness = 0.25;
               }
-              material.envMapIntensity = 1.35;
+              material.envMapIntensity = 1.65;
             }
           });
         });
-
-        gltf.scene.position.sub(center);
-        modelRoot.add(gltf.scene);
 
         const surface = screenBounds ?? new THREE.Box3(
           new THREE.Vector3(0.125, -1.765, -0.82),
@@ -204,30 +207,49 @@ export default function TestPhoneGLB() {
         const screenWidth = surfaceSize.x || 1.64;
         const screenHeight = surfaceSize.y || 3.53;
 
-        screenMaterials.forEach((material, index) => {
-          const screen = new THREE.Mesh(flatRoundedGeometry(screenWidth * 1.002, screenHeight * 1.002, 0.19), material);
-          screen.position.set(surfaceCenter.x, surfaceCenter.y, surfaceCenter.z + 0.029 + index * 0.0007);
-          screen.renderOrder = 20 + index;
-          modelRoot.add(screen);
-        });
+        const addPhone = (position: THREE.Vector3, yaw: number, scale: number) => {
+          const modelRoot = new THREE.Group();
+          const chassis = gltf.scene.clone(true);
+          chassis.position.sub(center);
+          chassis.traverse((object) => {
+            if (!(object instanceof THREE.Mesh)) return;
+            object.material = Array.isArray(object.material)
+              ? object.material.map((material) => material.clone())
+              : object.material.clone();
+          });
+          modelRoot.add(chassis);
 
-        const island = new THREE.Mesh(
-          flatRoundedGeometry(screenWidth * 0.31, screenWidth * 0.092, screenWidth * 0.046),
-          new THREE.MeshPhysicalMaterial({
-            color: 0x020203,
-            roughness: 0.22,
-            clearcoat: 1,
-            depthTest: false,
-            depthWrite: false,
-            side: THREE.DoubleSide,
-          }),
-        );
-        island.position.set(surfaceCenter.x, surfaceCenter.y + screenHeight * 0.424, surfaceCenter.z + 0.034);
-        island.renderOrder = 40;
-        modelRoot.add(island);
+          screenMaterials.forEach((material, index) => {
+            const screen = new THREE.Mesh(flatRoundedGeometry(screenWidth * 1.002, screenHeight * 1.002, 0.19), material);
+            screen.position.set(surfaceCenter.x, surfaceCenter.y, surfaceCenter.z + 0.029 + index * 0.0007);
+            screen.renderOrder = 20 + index;
+            modelRoot.add(screen);
+          });
 
-        modelRoot.scale.setScalar(4.65 / size.y);
-        phoneRig.add(modelRoot);
+          const island = new THREE.Mesh(
+            flatRoundedGeometry(screenWidth * 0.31, screenWidth * 0.092, screenWidth * 0.046),
+            new THREE.MeshPhysicalMaterial({
+              color: 0x020203,
+              roughness: 0.16,
+              clearcoat: 1,
+              depthTest: true,
+              depthWrite: false,
+              side: THREE.DoubleSide,
+            }),
+          );
+          island.position.set(surfaceCenter.x, surfaceCenter.y + screenHeight * 0.424, surfaceCenter.z + 0.034);
+          island.renderOrder = 40;
+          modelRoot.add(island);
+
+          const fittedScale = (4.18 / size.y) * scale;
+          modelRoot.scale.set(fittedScale, fittedScale, fittedScale * 1.42);
+          modelRoot.position.copy(position);
+          modelRoot.rotation.y = yaw;
+          phonePair.add(modelRoot);
+        };
+
+        addPhone(new THREE.Vector3(-0.72, 0.16, 0.34), -0.1, 1);
+        addPhone(new THREE.Vector3(0.88, -0.16, -0.46), 0.24, 0.97);
         host.classList.add("is-test-3d-ready");
       },
       undefined,
@@ -245,16 +267,33 @@ export default function TestPhoneGLB() {
     resizeObserver.observe(mount);
     resize();
 
+    let lastScrollY = window.scrollY;
+    const accelerateFromScroll = () => {
+      const delta = window.scrollY - lastScrollY;
+      lastScrollY = window.scrollY;
+      spinImpulse.current += THREE.MathUtils.clamp(delta * 0.0018, -0.75, 0.75);
+    };
+    window.addEventListener("scroll", accelerateFromScroll, { passive: true });
+
     let lastTime = performance.now();
     let elapsedTime = 0;
+    let spinAngle = -0.32;
+    let spinVelocity = 0.23;
+    let pointerYaw = 0;
     let frame = 0;
     const render = (now: number) => {
       const delta = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
       elapsedTime += delta;
       const damping = 1 - Math.pow(0.0005, delta);
+      spinVelocity += spinImpulse.current;
+      spinImpulse.current *= Math.pow(0.00008, delta);
+      spinVelocity += (0.23 - spinVelocity) * (1 - Math.pow(0.12, delta));
+      spinVelocity = THREE.MathUtils.clamp(spinVelocity, -2.8, 2.8);
+      spinAngle += spinVelocity * delta;
+      pointerYaw += (targetRotation.current.y - pointerYaw) * damping;
       phoneRig.rotation.x += (targetRotation.current.x - phoneRig.rotation.x) * damping;
-      phoneRig.rotation.y += (targetRotation.current.y - phoneRig.rotation.y) * damping;
+      phoneRig.rotation.y = spinAngle + pointerYaw;
       phoneRig.rotation.z += (targetRotation.current.z - phoneRig.rotation.z) * damping;
       phoneRig.position.x += (targetOffset.current.x - phoneRig.position.x) * damping;
       const targetY = Math.sin(elapsedTime * 0.62) * 0.035 + targetOffset.current.y;
@@ -271,6 +310,7 @@ export default function TestPhoneGLB() {
     return () => {
       cancelled = true;
       window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", accelerateFromScroll);
       resizeObserver.disconnect();
       host.classList.remove("is-test-3d-ready");
       textures.forEach((texture) => texture.dispose());
@@ -290,9 +330,10 @@ export default function TestPhoneGLB() {
     const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
     targetRotation.current = {
       x: -0.035 - y * 0.24,
-      y: -0.07 + x * 0.48,
+      y: x * 0.34,
       z: 0.012 - x * 0.055,
     };
+    spinImpulse.current += THREE.MathUtils.clamp(event.movementX / Math.max(bounds.width, 1), -0.2, 0.2) * 0.85;
     targetOffset.current = { x: x * 0.11, y: -y * 0.07 };
   };
 
@@ -303,7 +344,7 @@ export default function TestPhoneGLB() {
       className="test-phone-3d test-phone-3d--webgl"
       onPointerMove={handlePointerMove}
       onPointerLeave={() => {
-        targetRotation.current = { x: -0.035, y: -0.07, z: 0.012 };
+        targetRotation.current = { x: -0.035, y: 0, z: 0.012 };
         targetOffset.current = { x: 0, y: 0 };
       }}
       aria-label="Vista tridimensional interactiva de una tienda online"

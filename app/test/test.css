@@ -3,6 +3,45 @@
   display: none;
 }
 
+.test-experiment-page .statement .screen-swap.is-test-tablet-ready > .screen-frame,
+.test-experiment-page .statement .screen-swap.is-test-tablet-ready > .screen-dots {
+  display: none !important;
+}
+
+.test-tablet-3d {
+  position: absolute;
+  inset: -4% -8%;
+  z-index: 4;
+  isolation: isolate;
+  touch-action: pan-y;
+}
+
+.test-tablet-3d::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 70%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(255 90 0 / 32%), rgb(255 90 0 / 7%) 48%, transparent 70%);
+  filter: blur(8px);
+  z-index: -1;
+}
+
+.test-tablet-webgl {
+  position: absolute;
+  inset: 0;
+}
+
+.test-tablet-webgl canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 42px 34px rgb(0 0 0 / 55%));
+}
+
 #site-root .test-experiment-page .home-page .phone-stage.is-test-3d-ready {
   height: 850px !important;
   min-height: 850px !important;
@@ -186,7 +225,7 @@
 }
 
 .test-phone-3d--webgl {
-  width: min(100%, 500px);
+  width: min(118%, 650px);
   height: 100%;
   display: block;
   perspective: none;
