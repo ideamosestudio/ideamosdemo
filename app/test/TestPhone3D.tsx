@@ -83,17 +83,18 @@ export default function TestPhone3D() {
               <img
                 key={number}
                 className={active === index ? "is-active" : ""}
-                src={asset(`/media/shop-screen-${number}.webp`)}
+                src={asset(`/media/test/shop-screen-clean-${number}.webp`)}
                 alt={active === index ? `Pantalla ${number} de la tienda online` : ""}
                 aria-hidden={active !== index}
-                width="460"
-                height="927"
+                width="1200"
+                height="2514"
                 loading="lazy"
                 decoding="async"
               />
             ))}
             <span className="test-phone-glare" aria-hidden="true" />
           </div>
+          <span className="test-phone-speaker" aria-hidden="true" />
         </div>
       </div>
       <div className="test-phone-controls" aria-label="Elegir pantalla de la tienda">

@@ -4,8 +4,8 @@
 }
 
 #site-root .test-experiment-page .home-page .phone-stage.is-test-3d-ready {
-  height: 820px !important;
-  min-height: 820px !important;
+  height: 850px !important;
+  min-height: 850px !important;
   perspective: none;
   overflow: visible;
 }
@@ -26,7 +26,7 @@
   --phone-rotate-y: 0deg;
   position: relative;
   width: min(86%, 390px);
-  aspect-ratio: 460 / 927;
+  aspect-ratio: 1200 / 2514;
   transform-style: preserve-3d;
   transform: rotateX(var(--phone-rotate-x)) rotateY(var(--phone-rotate-y)) translateZ(24px);
   transition: filter 300ms ease;
@@ -53,7 +53,7 @@
 
 .test-phone-front {
   transform: translateZ(2px);
-  padding: 2.25%;
+  padding: 5% 2.25%;
   background:
     linear-gradient(112deg, #2b222d 0%, #c0a4b9 5%, #3b2939 10%, #09070a 18%, #181218 82%, #9f8398 94%, #2d202b 100%);
   box-shadow:
@@ -68,8 +68,8 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border: 5px solid #09080a;
-  border-radius: 13% / 6.5%;
+  border: 4px solid #09080a;
+  border-radius: 10.5% / 4.8%;
   background: #d30000;
   box-shadow:
     inset 0 0 18px rgb(0 0 0 / 32%),
@@ -78,11 +78,11 @@
 
 .test-experiment-page .test-phone-screen img {
   position: absolute;
-  inset: -2.45% -5.65%;
-  width: 111.3%;
-  height: 105.2%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   max-width: none;
-  object-fit: fill;
+  object-fit: cover;
   opacity: 0;
   transform: scale(1.012);
   transition: opacity 650ms ease, transform 1200ms cubic-bezier(.2,.7,.2,1);
@@ -104,6 +104,33 @@
     radial-gradient(circle at 18% 8%, rgb(255 255 255 / 15%), transparent 25%);
   mix-blend-mode: screen;
   z-index: 4;
+}
+
+.test-phone-speaker {
+  position: absolute;
+  top: 5.7%;
+  left: 50%;
+  width: 25%;
+  height: 3.35%;
+  translate: -50% 0;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #020203, #171318 82%, #050406);
+  box-shadow: inset 0 1px 1px rgb(255 255 255 / 12%), 0 1px 5px rgb(0 0 0 / 58%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.test-phone-speaker::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  width: 12%;
+  aspect-ratio: 1;
+  translate: 0 -50%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #265780, #07111b 42%, #010204 70%);
+  box-shadow: 0 0 0 1px #201b22, inset 0 0 3px #183c5b;
 }
 
 .test-phone-side {

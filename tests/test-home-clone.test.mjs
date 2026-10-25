@@ -36,4 +36,10 @@ test("el teléfono 3D se mantiene encapsulado en la página de prueba", async ()
   assert.match(clone, /test-experiment-page/);
   const component = await readFile(new URL("../app/test/TestPhone3D.tsx", import.meta.url), "utf8");
   assert.match(component, /matchMedia\("\(min-width: 1000px\)"\)/);
+  assert.match(component, /\/media\/test\/shop-screen-clean-/);
+
+  for (const number of [1, 2, 3]) {
+    const screen = await readFile(new URL(`../public/media/test/shop-screen-clean-${number}.webp`, import.meta.url));
+    assert.ok(screen.byteLength < 250_000, `la pantalla ${number} debe permanecer optimizada`);
+  }
 });
