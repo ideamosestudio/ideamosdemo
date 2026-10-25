@@ -1,11 +1,11 @@
 import Home from "../page";
-import TestPhone3D from "./TestPhone3D";
+import TestPhoneWebGL from "./TestPhoneWebGL";
 
 export default function TestHome() {
   return (
     <div className="test-experiment-page">
       <Home />
-      <TestPhone3D />
+      <TestPhoneWebGL />
     </div>
   );
 }

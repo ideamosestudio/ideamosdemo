@@ -34,12 +34,14 @@ test("el teléfono 3D se mantiene encapsulado en la página de prueba", async ()
 
   assert.doesNotMatch(home, /test-experiment-page|test-phone-3d/);
   assert.match(clone, /test-experiment-page/);
-  const component = await readFile(new URL("../app/test/TestPhone3D.tsx", import.meta.url), "utf8");
+  const component = await readFile(new URL("../app/test/TestPhoneWebGL.tsx", import.meta.url), "utf8");
   assert.match(component, /matchMedia\("\(min-width: 1000px\)"\)/);
-  assert.match(component, /\/media\/test\/shop-screen-clean-/);
+  assert.match(component, /new THREE\.WebGLRenderer/);
+  assert.match(component, /new THREE\.ExtrudeGeometry/);
+  assert.match(component, /\/media\/test\/shop-screen-hq-/);
 
   for (const number of [1, 2, 3]) {
-    const screen = await readFile(new URL(`../public/media/test/shop-screen-clean-${number}.webp`, import.meta.url));
-    assert.ok(screen.byteLength < 250_000, `la pantalla ${number} debe permanecer optimizada`);
+    const screen = await readFile(new URL(`../public/media/test/shop-screen-hq-${number}.jpg`, import.meta.url));
+    assert.ok(screen.byteLength > 1_500_000, `la pantalla ${number} debe conservar la resolución original`);
   }
 });
