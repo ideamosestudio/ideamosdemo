@@ -19,6 +19,13 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
     assert.ok(html.includes(className), `Falta estructura original: ${className}`);
   }
   assert.doesNotMatch(await read('sitemap.xml'), /\/revision\//);
+  for (const id of ['alcance-proyecto', 'proceso-diseno-web']) {
+    assert.ok(html.includes(`id="${id}"`));
+    assert.ok(!(await read('diseno-web-autoadministrable/index.html')).includes(`id="${id}"`));
+  }
+  assert.match(html, /¿El dominio y el hosting están incluidos\?/);
+  assert.match(html, /¿Cómo se organiza el mantenimiento después de publicar\?/);
+  assert.match(html, /¿Pueden rediseñar mi web conservando el contenido útil\?/);
   for (const path of ['index.html','diseno-web-autoadministrable/index.html','tiendas-online/index.html','blog/index.html','llms.txt','llms-full.txt']) {
     assert.doesNotMatch(await read(path), /href="[^"]*\/revision\/diseno-web/);
   }

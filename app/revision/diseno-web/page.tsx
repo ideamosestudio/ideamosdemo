@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import InternalPage, { type ServicePage } from "../../../components/InternalPage";
+import InternalPage, { type ServicePage } from "./ReviewInternalPage";
 import s from "./propuesta.module.css";
 
 export const metadata: Metadata = {
@@ -59,7 +59,7 @@ const page: ServicePage = {
 
 export default function DesignWebProposal() {
   return <>
-    <aside className={s.review} aria-label="Estado de la propuesta">PROPUESTA EN REVISIÓN · V2</aside>
+    <aside className={s.review} aria-label="Estado de la propuesta">PROPUESTA EN REVISIÓN · V3</aside>
     <InternalPage page={page} />
   </>;
 }
