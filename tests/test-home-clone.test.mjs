@@ -1,0 +1,27 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+
+const out = new URL("../out/", import.meta.url);
+
+test("la home de prueba existe, replica la home y permanece oculta", async () => {
+  const [home, clone, sitemap] = await Promise.all([
+    readFile(new URL("index.html", out), "utf8"),
+    readFile(new URL("test/index.html", out), "utf8"),
+    readFile(new URL("sitemap.xml", out), "utf8"),
+  ]);
+
+  for (const marker of [
+    'class="hero" id="inicio"',
+    'class="statement white-section shared-section-bg" id="web"',
+    'class="ecommerce white-section shared-section-bg" id="tiendas"',
+    'class="google-scene white-section shared-section-bg" id="google"',
+  ]) {
+    assert.ok(home.includes(marker), `la home debe contener ${marker}`);
+    assert.ok(clone.includes(marker), `el clon debe contener ${marker}`);
+  }
+
+  assert.match(clone, /<meta name="robots" content="noindex, nofollow"\/>/);
+  assert.doesNotMatch(sitemap, /\/test\//i);
+  assert.doesNotMatch(home, /href="[^"]*\/test\/?"/i);
+});
