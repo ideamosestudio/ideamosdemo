@@ -56,7 +56,8 @@ export default function TestPhoneGLB() {
   const [active, setActive] = useState(0);
   const mountRef = useRef<HTMLDivElement>(null);
   const activeRef = useRef(0);
-  const targetRotation = useRef({ x: -0.035, y: -0.07 });
+  const targetRotation = useRef({ x: -0.035, y: -0.07, z: 0.012 });
+  const targetOffset = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const stage = document.querySelector<HTMLElement>(".test-experiment-page .phone-stage");
@@ -254,7 +255,10 @@ export default function TestPhoneGLB() {
       const damping = 1 - Math.pow(0.0005, delta);
       phoneRig.rotation.x += (targetRotation.current.x - phoneRig.rotation.x) * damping;
       phoneRig.rotation.y += (targetRotation.current.y - phoneRig.rotation.y) * damping;
-      phoneRig.position.y = Math.sin(elapsedTime * 0.62) * 0.025;
+      phoneRig.rotation.z += (targetRotation.current.z - phoneRig.rotation.z) * damping;
+      phoneRig.position.x += (targetOffset.current.x - phoneRig.position.x) * damping;
+      const targetY = Math.sin(elapsedTime * 0.62) * 0.035 + targetOffset.current.y;
+      phoneRig.position.y += (targetY - phoneRig.position.y) * damping;
       screenMaterials.forEach((material, index) => {
         const targetOpacity = activeRef.current === index ? 1 : 0;
         material.opacity += (targetOpacity - material.opacity) * Math.min(1, delta * 5.2);
@@ -284,7 +288,12 @@ export default function TestPhoneGLB() {
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
     const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
-    targetRotation.current = { x: -0.035 - y * 0.13, y: -0.07 + x * 0.3 };
+    targetRotation.current = {
+      x: -0.035 - y * 0.24,
+      y: -0.07 + x * 0.48,
+      z: 0.012 - x * 0.055,
+    };
+    targetOffset.current = { x: x * 0.11, y: -y * 0.07 };
   };
 
   if (!host) return null;
@@ -293,23 +302,14 @@ export default function TestPhoneGLB() {
     <div
       className="test-phone-3d test-phone-3d--webgl"
       onPointerMove={handlePointerMove}
-      onPointerLeave={() => { targetRotation.current = { x: -0.035, y: -0.07 }; }}
+      onPointerLeave={() => {
+        targetRotation.current = { x: -0.035, y: -0.07, z: 0.012 };
+        targetOffset.current = { x: 0, y: 0 };
+      }}
       aria-label="Vista tridimensional interactiva de una tienda online"
     >
       <div className="test-phone-webgl" ref={mountRef} />
       <span className="test-phone-accessible-screen">Pantalla {active + 1} de la tienda online</span>
-      <div className="test-phone-controls" aria-label="Elegir pantalla de la tienda">
-        {screens.map((number, index) => (
-          <button
-            key={number}
-            type="button"
-            className={active === index ? "is-active" : ""}
-            onClick={() => setActive(index)}
-            aria-label={`Ver pantalla ${number}`}
-            aria-pressed={active === index}
-          />
-        ))}
-      </div>
     </div>,
     host,
   );

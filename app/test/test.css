@@ -168,39 +168,6 @@
   z-index: 0;
 }
 
-.test-phone-controls {
-  position: absolute;
-  left: 50%;
-  bottom: -6px;
-  translate: -50% 0;
-  display: flex;
-  gap: 10px;
-  z-index: 4;
-}
-
-.test-phone-controls button {
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: #bbb;
-  box-shadow: 0 0 0 5px transparent;
-  cursor: pointer;
-  transition: width 250ms ease, border-radius 250ms ease, background 250ms ease;
-}
-
-.test-phone-controls button.is-active {
-  width: 26px;
-  border-radius: 999px;
-  background: #ff5a00;
-}
-
-.test-phone-controls button:focus-visible {
-  outline: 2px solid #111;
-  outline-offset: 5px;
-}
-
 @media (min-width: 1000px) and (max-width: 1400px) {
   #site-root .test-experiment-page .home-page .phone-stage.is-test-3d-ready {
     height: 560px !important;
@@ -241,7 +208,7 @@
 
 .test-phone-webgl {
   position: absolute;
-  inset: 0 0 28px;
+  inset: 0;
 }
 
 .test-phone-webgl canvas {
@@ -281,5 +248,59 @@
 
   .test-phone-3d--webgl {
     min-height: 520px;
+  }
+}
+
+@media (min-width: 1000px) {
+  #site-root .test-experiment-page,
+  #site-root .test-experiment-page .home-page,
+  #site-root .test-experiment-page .home-page > section,
+  #site-root .test-experiment-page .light-grid-frame,
+  #site-root .test-experiment-page .white-section,
+  #site-root .test-experiment-page .shared-section-bg,
+  #site-root .test-experiment-page .service-guide,
+  #site-root .test-experiment-page .service-directory,
+  #site-root .test-experiment-page .cases-work,
+  #site-root .test-experiment-page .home-testimonials,
+  #site-root .test-experiment-page .human-cta,
+  #site-root .test-experiment-page .human-copy,
+  #site-root .test-experiment-page .contact-form,
+  #site-root .test-experiment-page article {
+    background-color: #050505 !important;
+  }
+
+  #site-root .test-experiment-page .shared-section-bg,
+  #site-root .test-experiment-page .light-grid-frame,
+  #site-root .test-experiment-page .service-guide,
+  #site-root .test-experiment-page .cases-work,
+  #site-root .test-experiment-page .home-testimonials {
+    background-image:
+      linear-gradient(rgb(255 255 255 / 5%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 5%) 1px, transparent 1px) !important;
+    background-size: 48px 48px !important;
+  }
+
+  #site-root#site-root .test-experiment-page :where(h1, h2, h3, h4, h5, h6, p, span, strong, b, em, small, li, label, a) {
+    color: #fff !important;
+  }
+
+  #site-root .test-experiment-page :where(input, textarea, select) {
+    color: #fff !important;
+    background: #0d0d0d !important;
+    border-color: rgb(255 255 255 / 22%) !important;
+  }
+
+  #site-root .test-experiment-page :where(input, textarea)::placeholder {
+    color: rgb(255 255 255 / 55%) !important;
+  }
+
+  #site-root .test-experiment-page .shop-column article,
+  #site-root .test-experiment-page .service-directory__item,
+  #site-root .test-experiment-page .home-testimonials article {
+    border-color: rgb(255 255 255 / 16%) !important;
+  }
+
+  #site-root .test-experiment-page .phone-stage.is-test-3d-ready {
+    background: radial-gradient(circle at 50% 48%, rgb(255 90 0 / 13%), transparent 58%) !important;
   }
 }
