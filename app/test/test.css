@@ -174,34 +174,6 @@
   outline-offset: 5px;
 }
 
-@media (max-width: 700px) {
-  #site-root .test-experiment-page .home-page .phone-stage.is-test-3d-ready {
-    height: clamp(650px, 150vw, 720px) !important;
-    min-height: clamp(650px, 150vw, 720px) !important;
-    margin-bottom: 36px !important;
-  }
-
-  .test-phone-3d {
-    min-height: 100%;
-  }
-
-  .test-phone-object {
-    width: min(76vw, 330px);
-    filter: drop-shadow(0 30px 26px rgb(20 16 28 / 25%));
-  }
-}
-
-@media (min-width: 701px) and (max-width: 999px) {
-  #site-root .test-experiment-page .home-page .phone-stage.is-test-3d-ready {
-    height: 660px !important;
-    min-height: 660px !important;
-  }
-
-  .test-phone-object {
-    width: min(70%, 310px);
-  }
-}
-
 @media (min-width: 1000px) and (max-width: 1400px) {
   #site-root .test-experiment-page .home-page .phone-stage.is-test-3d-ready {
     height: 560px !important;

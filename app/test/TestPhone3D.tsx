@@ -17,12 +17,16 @@ export default function TestPhone3D() {
   useEffect(() => {
     const stage = document.querySelector<HTMLElement>(".test-experiment-page .phone-stage");
     if (!stage) return;
-    const animationFrame = window.requestAnimationFrame(() => {
-      stage.classList.add("is-test-3d-ready");
-      setHost(stage);
-    });
+    const desktop = window.matchMedia("(min-width: 1000px)");
+    const syncToViewport = () => {
+      stage.classList.toggle("is-test-3d-ready", desktop.matches);
+      setHost(desktop.matches ? stage : null);
+    };
+    const animationFrame = window.requestAnimationFrame(syncToViewport);
+    desktop.addEventListener("change", syncToViewport);
     return () => {
       window.cancelAnimationFrame(animationFrame);
+      desktop.removeEventListener("change", syncToViewport);
       stage.classList.remove("is-test-3d-ready");
     };
   }, []);

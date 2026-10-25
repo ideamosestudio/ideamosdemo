@@ -34,4 +34,6 @@ test("el teléfono 3D se mantiene encapsulado en la página de prueba", async ()
 
   assert.doesNotMatch(home, /test-experiment-page|test-phone-3d/);
   assert.match(clone, /test-experiment-page/);
+  const component = await readFile(new URL("../app/test/TestPhone3D.tsx", import.meta.url), "utf8");
+  assert.match(component, /matchMedia\("\(min-width: 1000px\)"\)/);
 });
