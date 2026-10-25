@@ -56,7 +56,7 @@ export default function TestPhoneGLB() {
   const [active, setActive] = useState(0);
   const mountRef = useRef<HTMLDivElement>(null);
   const activeRef = useRef(0);
-  const targetRotation = useRef({ x: -0.035, y: -0.07, z: 0.012 });
+  const targetRotation = useRef({ x: -0.035, y: 0, z: 0.012 });
   const targetOffset = useRef({ x: 0, y: 0 });
   const spinImpulse = useRef(0);
 
@@ -94,7 +94,7 @@ export default function TestPhoneGLB() {
     let cancelled = false;
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(27, 1, 0.1, 100);
-    camera.position.set(0, 0.05, 14.4);
+    camera.position.set(0, 0.05, 13.5);
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
     renderer.setClearColor(0x000000, 0);
@@ -241,15 +241,14 @@ export default function TestPhoneGLB() {
           island.renderOrder = 40;
           modelRoot.add(island);
 
-          const fittedScale = (4.18 / size.y) * scale;
+          const fittedScale = (5.3 / size.y) * scale;
           modelRoot.scale.set(fittedScale, fittedScale, fittedScale * 1.42);
           modelRoot.position.copy(position);
           modelRoot.rotation.y = yaw;
           phonePair.add(modelRoot);
         };
 
-        addPhone(new THREE.Vector3(-0.72, 0.16, 0.34), -0.1, 1);
-        addPhone(new THREE.Vector3(0.88, -0.16, -0.46), 0.24, 0.97);
+        addPhone(new THREE.Vector3(0, 0.04, 0), 0, 1);
         host.classList.add("is-test-3d-ready");
       },
       undefined,
@@ -267,18 +266,26 @@ export default function TestPhoneGLB() {
     resizeObserver.observe(mount);
     resize();
 
+    let isPhoneVisible = false;
+    const visibility = new IntersectionObserver((entries) => {
+      isPhoneVisible = Boolean(entries[0]?.isIntersecting);
+    }, { threshold: 0.12 });
+    visibility.observe(host);
+
     let lastScrollY = window.scrollY;
     const accelerateFromScroll = () => {
       const delta = window.scrollY - lastScrollY;
       lastScrollY = window.scrollY;
-      spinImpulse.current += THREE.MathUtils.clamp(delta * 0.0018, -0.75, 0.75);
+      const bounds = host.getBoundingClientRect();
+      const isNearPhone = bounds.top < window.innerHeight * 1.15 && bounds.bottom > -window.innerHeight * 0.15;
+      if (isNearPhone) spinImpulse.current += THREE.MathUtils.clamp(delta * 0.00085, -0.34, 0.34);
     };
     window.addEventListener("scroll", accelerateFromScroll, { passive: true });
 
     let lastTime = performance.now();
     let elapsedTime = 0;
-    let spinAngle = -0.32;
-    let spinVelocity = 0.23;
+    let spinAngle = -0.1;
+    let spinVelocity = 0;
     let pointerYaw = 0;
     let frame = 0;
     const render = (now: number) => {
@@ -288,8 +295,9 @@ export default function TestPhoneGLB() {
       const damping = 1 - Math.pow(0.0005, delta);
       spinVelocity += spinImpulse.current;
       spinImpulse.current *= Math.pow(0.00008, delta);
-      spinVelocity += (0.23 - spinVelocity) * (1 - Math.pow(0.12, delta));
-      spinVelocity = THREE.MathUtils.clamp(spinVelocity, -2.8, 2.8);
+      const idleSpeed = isPhoneVisible ? 0.045 : 0;
+      spinVelocity += (idleSpeed - spinVelocity) * (1 - Math.pow(0.12, delta));
+      spinVelocity = THREE.MathUtils.clamp(spinVelocity, -1.9, 1.9);
       spinAngle += spinVelocity * delta;
       pointerYaw += (targetRotation.current.y - pointerYaw) * damping;
       phoneRig.rotation.x += (targetRotation.current.x - phoneRig.rotation.x) * damping;
@@ -311,6 +319,7 @@ export default function TestPhoneGLB() {
       cancelled = true;
       window.cancelAnimationFrame(frame);
       window.removeEventListener("scroll", accelerateFromScroll);
+      visibility.disconnect();
       resizeObserver.disconnect();
       host.classList.remove("is-test-3d-ready");
       textures.forEach((texture) => texture.dispose());
@@ -330,10 +339,10 @@ export default function TestPhoneGLB() {
     const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
     targetRotation.current = {
       x: -0.035 - y * 0.24,
-      y: x * 0.34,
+      y: x * 0.18,
       z: 0.012 - x * 0.055,
     };
-    spinImpulse.current += THREE.MathUtils.clamp(event.movementX / Math.max(bounds.width, 1), -0.2, 0.2) * 0.85;
+    spinImpulse.current += THREE.MathUtils.clamp(event.movementX / Math.max(bounds.width, 1), -0.16, 0.16) * 0.55;
     targetOffset.current = { x: x * 0.11, y: -y * 0.07 };
   };
 
