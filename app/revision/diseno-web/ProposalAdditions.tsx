@@ -33,6 +33,15 @@ export default function ProposalAdditions() {
           </article>)}</div>
         </div>
         <p className={s.note}>El alcance final queda por escrito. Dominio, hosting, mantenimiento, producción de contenido y campañas de SEO o publicidad se detallan por separado cuando correspondan.</p>
+        <details className={s.delivery}>
+          <summary>Qué dejamos acordado para la entrega<span aria-hidden="true">+</span></summary>
+          <dl>
+            <div><dt>Accesos y titularidad</dt><dd>Quién administra el dominio y el alojamiento, qué cuentas se entregan y qué permisos necesita tu equipo. Revisamos los servicios existentes antes de hacer cambios.</dd></div>
+            <div><dt>Uso del administrador</dt><dd>Si la web es autoadministrable, detallamos qué contenido vas a poder editar y qué orientación o documentación incluye la propuesta para hacerlo.</dd></div>
+            <div><dt>Soporte después del lanzamiento</dt><dd>Dejamos por escrito el canal de contacto, la cobertura y las condiciones del soporte contratado. Nuevas funciones, actualizaciones y mantenimiento se acuerdan según cada proyecto.</dd></div>
+          </dl>
+          <p>Para preparar tu consulta, leé <a href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/blog/diseno-web-profesional/diseno-web-profesional/`}>qué incluye un diseño web profesional para empresas</a>.</p>
+        </details>
       </div>
     </section>
     <section className={`${s.process} dark`} aria-labelledby="proposal-process" id="proceso-diseno-web">

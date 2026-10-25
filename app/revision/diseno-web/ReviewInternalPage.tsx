@@ -1,15 +1,12 @@
 "use client";
 
-import ProposalAdditions from "./ProposalAdditions";
-import ProjectEvidence from "./ProjectEvidence";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
 import ManagedBackgroundVideo from "../../../app/components/ManagedBackgroundVideo";
 import { DarkGridBackground, HeroChrome, HomeClosingSections } from "../../../components/SharedHomeSections";
 import SiteHeader from "../../../components/SiteHeader";
 import LightGridFrame from "../../../components/LightGridFrame";
 import HomeTestimonials from "../../../components/HomeTestimonials";
 import { WHATSAPP_URL } from "../../../lib/whatsapp";
-import ServiceGuide from "./ReviewServiceGuide";
 import PortfolioLink from "../../../components/PortfolioLink";
 import type { ServiceGuideKey } from "../../../lib/service-guides";
 
@@ -59,7 +56,7 @@ function Actions() {
   </div>;
 }
 
-export default function ReviewInternalPage({ page }: { page: ServicePage }) {
+export default function ReviewInternalPage({ page, additions, evidence, guideContent }: { page: ServicePage; additions: ReactNode; evidence: ReactNode; guideContent: ReactNode }) {
   const [wildeFrame, setWildeFrame] = useState(0);
   const phoneRef = useRef<HTMLDivElement>(null);
   const sections = page.sections ?? [
@@ -150,7 +147,7 @@ export default function ReviewInternalPage({ page }: { page: ServicePage }) {
             {page.guide === "web" && <PortfolioLink>Ver proyectos de diseño web</PortfolioLink>}
           </header>
           <div className="service-visual-media">
-            <img src={asset("/media/xtreme-service.webp")} alt="Sitio web Xtreme desarrollado por Ideamos" width="1300" height="987" loading="lazy" decoding="async" />
+            <img src={asset("/media/xtreme-service.webp")} srcSet={`${asset("/revision/diseno-web-assets/xtreme-service-480.webp")} 480w, ${asset("/revision/diseno-web-assets/xtreme-service-800.webp")} 800w, ${asset("/media/xtreme-service.webp")} 1300w`} sizes="(max-width: 980px) 80vw, 45vw" alt="Sitio web Xtreme desarrollado por Ideamos" width="1300" height="987" loading="lazy" decoding="async" />
           </div>
         </section>
         {section.afterVideo && <section className="service-showcase-video" aria-label="Proyecto web desarrollado por Ideamos">
@@ -180,7 +177,7 @@ export default function ReviewInternalPage({ page }: { page: ServicePage }) {
               </article>)}
             </div>}
             <div className="design-phone-video design-phone-sequence" ref={phoneRef}>
-              <img src={asset(wildeFrames[wildeFrame])} alt="Tienda online Wilde visualizada en un teléfono" width="525" height="1080" loading="lazy" decoding="async" />
+              <img src={asset(wildeFrames[wildeFrame])} srcSet={`${asset(wildeFrames[wildeFrame].replace('/media/', '/revision/diseno-web-assets/').replace('.png', '-360.webp'))} 360w, ${asset(wildeFrames[wildeFrame].replace('/media/', '/revision/diseno-web-assets/').replace('.png', '-525.webp'))} 525w`} sizes="(max-width: 600px) 80vw, 360px" alt="Tienda online Wilde visualizada en un teléfono" width="525" height="1080" loading="lazy" decoding="async" />
             </div>
           </div>
           {section.actions && <Actions />}
@@ -209,11 +206,11 @@ export default function ReviewInternalPage({ page }: { page: ServicePage }) {
           {(section.contact || section.actions) && <Actions />}
         </section>;
     })}
-    <ProposalAdditions />
+    {additions}
     {page.homeTestimonials && <HomeTestimonials />}
-    <ProjectEvidence />
+    {evidence}
     </LightGridFrame>
-    {page.guide && <ServiceGuide service={page.guide} />}
+    {guideContent}
     <HomeClosingSections darkGrid />
   </main>;
 }

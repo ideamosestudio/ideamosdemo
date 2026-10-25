@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import InternalPage, { type ServicePage } from "./ReviewInternalPage";
 import s from "./propuesta.module.css";
+import ProposalAdditions from "./ProposalAdditions";
+import ProjectEvidence from "./ProjectEvidence";
+import ReviewServiceGuide from "./ReviewServiceGuide";
 
 export const metadata: Metadata = {
   title: "Diseño web profesional para empresas | Ideamos",
@@ -59,7 +62,7 @@ const page: ServicePage = {
 
 export default function DesignWebProposal() {
   return <>
-    <aside className={s.review} aria-label="Estado de la propuesta">PROPUESTA EN REVISIÓN · V4</aside>
-    <InternalPage page={page} />
+    <aside className={s.review} aria-label="Estado de la propuesta">PROPUESTA EN REVISIÓN · V5</aside>
+    <InternalPage page={page} additions={<ProposalAdditions />} evidence={<ProjectEvidence />} guideContent={<ReviewServiceGuide service="web" />} />
   </>;
 }
