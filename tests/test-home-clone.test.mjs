@@ -25,3 +25,13 @@ test("la home de prueba existe, replica la home y permanece oculta", async () =>
   assert.doesNotMatch(sitemap, /\/test\//i);
   assert.doesNotMatch(home, /href="[^"]*\/test\/?"/i);
 });
+
+test("el teléfono 3D se mantiene encapsulado en la página de prueba", async () => {
+  const [home, clone] = await Promise.all([
+    readFile(new URL("index.html", out), "utf8"),
+    readFile(new URL("test/index.html", out), "utf8"),
+  ]);
+
+  assert.doesNotMatch(home, /test-experiment-page|test-phone-3d/);
+  assert.match(clone, /test-experiment-page/);
+});
