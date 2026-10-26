@@ -10,7 +10,9 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
   assert.match(html, /rel="canonical" href="https:\/\/ideamos.com.ar\/diseno-web-autoadministrable\/"/);
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   assert.match(html, /PROPUESTA EN REVISIÓN/);
-  assert.match(html, /PROPUESTA EN REVISIÓN · V9/);
+  assert.match(html, /PROPUESTA EN REVISIÓN · V10/);
+  assert.match(html, /Visitar el sitio de CYL Neumáticos/);
+  assert.match(html, /<strong>conecta proyectos y servicios<\/strong>/);
   assert.match(html, /Ver testimonio de Pablo/);
   assert.match(html, /Ver testimonio de Vanesa/);
   for (const video of ['cylsa', 'sphere-design']) {

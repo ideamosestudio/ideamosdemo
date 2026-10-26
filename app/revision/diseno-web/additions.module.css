@@ -108,6 +108,17 @@
 .evidence .caseMore p{font-family:"Gilroy ExtraBold",Arial,sans-serif;font-size:21px;color:#292b32}
 .evidence .caseMore a{display:inline-flex;align-items:center;gap:16px;font-size:14px;font-weight:600;text-decoration:none;line-height:1.5}
 .evidence .caseMore a:hover{text-decoration:underline;text-underline-offset:4px}
+.caseImageLink{display:block;position:relative;border-radius:inherit;overflow:hidden}
+.caseImageLink img{transition:transform .35s ease}
+.caseImageArrow{position:absolute;right:14px;bottom:14px;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#111113e8;color:#fff;border:1px solid #ffffff60}
+.caseImageArrow svg{width:19px;height:19px}
+.evidence .caseImageLink:focus-visible{outline:3px solid #ff792e;outline-offset:-4px}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.caseImageLink:hover img{transform:scale(1.025)}}
+@media(prefers-reduced-motion:reduce){.caseImageLink img{transition:none}}
+.evidence .caseFacts strong{font-weight:600;color:#292b32}
+.caseTags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:10px 0 0;padding:0}
+.caseTags li{font-size:12px;line-height:1.4;padding:6px 10px;border-radius:5px;background:#e9ebf2;color:#45474f}
+@media(min-width:601px){.evidence .caseGrid{row-gap:20px}.evidence .caseGrid article{display:grid;grid-template-rows:subgrid;grid-row:span 6;row-gap:20px}.evidence .caseHeading,.evidence .caseImage{margin:0}.evidence .caseFacts{display:grid;grid-template-rows:subgrid;grid-row:span 2;row-gap:20px}.evidence .caseFacts>div{align-content:start}.evidence .caseFeatures{margin:0;padding-top:16px}.evidence .caseActions{margin-top:0}}
 @media(min-width:601px) and (max-width:900px){.evidence .caseGrid{gap:24px}}
 @media(max-width:600px){.evidence .caseGrid{gap:32px}.evidence .caseHeading h3{font-size:25px}.evidence .caseImage{margin-bottom:20px}.evidence .caseMore{flex-direction:column;align-items:flex-start;text-align:left;gap:12px}.evidence .caseMore p{font-size:20px}}
 @media(max-width:600px){.scope .deliverables p,.scope .intro>p:not(.eyebrow){font-size:15px;line-height:1.7}}
