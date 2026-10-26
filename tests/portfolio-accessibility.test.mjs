@@ -15,6 +15,12 @@ test('portfolio colored covers do not repeat project names or category labels', 
   const html = await readFile(new URL('../out/portfolio/index.html', import.meta.url), 'utf8');
   assert.doesNotMatch(html, /class="cover-heading"/);
 });
+
+test('portfolio mockups keep balanced vertical spacing after removing cover headings', async () => {
+  const css = await readFile(new URL('../app/portfolio/catalogue.css', import.meta.url), 'utf8');
+  assert.match(css, /\.cover-desktop\{[^}]*top:16%[^}]*height:68%/);
+  assert.match(css, /\.desktop-only-cover \.cover-desktop\{[^}]*height:68%;top:16%/);
+});
 test('portfolio keeps dark text on light surfaces and removes obsolete hero CSS', async () => {
   const css = await readFile(new URL('../app/portfolio/portfolio.css', import.meta.url), 'utf8');
   assert.match(css, /result-count,[\s\S]*?color:#535660/);
