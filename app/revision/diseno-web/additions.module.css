@@ -46,7 +46,8 @@
 .scope .link{margin-top:26px;padding-bottom:11px}.scope .link svg{color:#c44700}
 .scope .deliverables article{grid-template-columns:48px minmax(0,1fr);gap:18px;padding:22px 0;border-color:#dcdde3}
 .scope .deliverables article:first-child{padding-top:0}.scope .deliverables h3{font-size:23px;margin-bottom:10px;line-height:1.2}
-.scope .deliverables p{font-size:14px;line-height:1.75;color:#50535b}
+.scope .deliverables p{font-size:15px;line-height:1.75;color:#45474f}
+.scope .deliverables p strong{font-weight:600;color:#272930}
 .scopeIcon{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#ff650010;color:#c44700;border:1px solid #f0d8ca}
 .scopeIcon svg{width:25px;height:25px}
 .scope .delivery{margin-top:32px;border:1px solid #dcdde3;border-radius:12px;background:#ffffff70;padding:0 24px}
@@ -76,4 +77,12 @@
 .scope .deliveryGuide{display:inline-flex;align-items:center;gap:12px;justify-self:start;font-size:13px;font-weight:600;line-height:1.5;text-decoration:none}
 .deliveryGuide svg{width:18px;height:18px;flex-shrink:0;color:#b94300}
 .scope .deliveryGuide:hover{text-decoration:underline;text-underline-offset:4px}
+.scope .delivery dt{flex-direction:row;align-items:center;gap:12px;min-height:30px}
+.scope .delivery dd{font-size:14px;line-height:1.75;color:#45474f}
+.scope .delivery .deliveryToggle{width:30px;height:30px;padding:5px;border:1px solid #e7d4c8;border-radius:50%;background:#fff8f2}
+.scope .delivery summary:hover .deliveryToggle{border-color:#b94300}
+.scope .deliveryFoot .deliveryNote{font-size:13px;line-height:1.7;color:#575960;max-width:100ch}
+.scope .deliveryGuide{font-size:14px}
+.scope .intro>p:not(.eyebrow){color:#45474f}
+@media(max-width:600px){.scope .deliverables p,.scope .intro>p:not(.eyebrow){font-size:15px;line-height:1.7}}
 @media(max-width:900px){.scope .delivery dl{gap:20px}.scope .delivery dl>div{padding:0}.scope .delivery dl>div+div{border-left:0;padding:20px 0 0}.scope .delivery dt{flex-direction:row;align-items:center;gap:12px}.scope .delivery summary{font-size:18px}.scope .deliveryLead{font-size:13px}}

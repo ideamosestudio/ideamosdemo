@@ -8,6 +8,7 @@ const scope = [
   ["Contacto y administración", "Formularios, WhatsApp e integraciones según tu operación. En una web autoadministrable acordamos qué textos, imágenes, novedades o proyectos podrás editar sin modificar el diseño."],
   ["Preparación y entrega", "Pruebas de navegación y contacto, títulos y estructura de contenido. Definimos los accesos, las pautas de uso y el soporte: publicar la web y mantenerla son etapas distintas."],
 ];
+const scopeHighlights = ["Las páginas, las secciones y los materiales", "adaptación a celulares, tablets y escritorio", "qué textos, imágenes, novedades o proyectos podrás editar", "Pruebas de navegación y contacto"];
 const steps = [
   ["Nos contás", "Conocemos tu empresa, tu público y lo que querés resolver. Revisamos tu web actual si ya tenés una."],
   ["Lo definimos", "Acordamos alcance, materiales, presupuesto y etapas. Sabés qué se va a entregar antes de empezar."],
@@ -32,12 +33,12 @@ export default function ProposalAdditions() {
           <header className={s.intro}>
             <p className={s.eyebrow}>QUÉ INCLUYE EL PROYECTO</p>
             <h2 id="proposal-scope">Diseño web a medida.<br /><em>Un alcance claro.</em></h2>
-            <p>Tu proyecto de diseño web empieza con una propuesta concreta. Estos son los puntos que definimos juntos para que sepas qué recibís y cómo vamos a trabajar.</p>
-            <a className={s.link} href={WHATSAPP_URL}>Hablemos de tu proyecto <ArrowIcon /></a>
+            <p>Definimos qué necesita tu web, qué vas a recibir y cómo vamos a trabajar. Todo acordado antes de empezar.</p>
+            <a className={s.link} href={WHATSAPP_URL}>Definamos tu próxima web <ArrowIcon /></a>
           </header>
           <div className={s.deliverables}>{scope.map(([title, copy], i) => <article key={title}>
             <span className={s.scopeIcon}><ScopeIcon index={i} /></span>
-            <div><h3>{title}</h3><p>{copy}</p></div>
+            <div><h3>{title}</h3><p>{copy.split(scopeHighlights[i])[0]}<strong>{scopeHighlights[i]}</strong>{copy.split(scopeHighlights[i])[1]}</p></div>
           </article>)}</div>
         </div>
         <details className={s.delivery}>
