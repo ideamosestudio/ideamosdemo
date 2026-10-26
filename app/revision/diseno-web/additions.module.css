@@ -36,3 +36,28 @@
 .delivery{border-block:1px solid #d1d2da;margin-top:24px}.delivery summary{display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;padding:20px 0;font-size:14px;font-weight:700;list-style:none}.delivery summary::-webkit-details-marker{display:none}.delivery summary span{font-size:20px;color:#b13e04;transition:transform .2s}.delivery[open] summary span{transform:rotate(45deg)}.delivery summary:focus-visible{outline:3px solid #b13e04;outline-offset:4px}.delivery dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin:0 0 24px}.delivery dt{font-weight:700;font-size:14px;margin-bottom:10px}.delivery dd{margin:0;font-size:13px;line-height:1.75;color:#575960}.delivery>p{font-size:12px;margin-bottom:24px;color:#575960}.delivery a{text-decoration:underline;text-underline-offset:3px;color:#141419}
 @media(max-width:600px){.caseFacts>div{grid-template-columns:1fr;gap:4px}.caseImage{margin-bottom:20px}.delivery dl{grid-template-columns:1fr;gap:20px}.delivery dl>div+div{border-top:1px solid #d1d2da;padding-top:18px}.caseMore{text-align:center}}
 @media(prefers-reduced-motion:reduce){.delivery summary span{transition:none}}
+.reviewPage.reviewPage,.reviewCanvas.reviewCanvas{overflow:clip}
+.scope.scope{padding-block:72px 56px;isolation:isolate}
+.scope::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(247,248,252,.86);pointer-events:none}
+.scope .scopeLayout{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(40px,5vw,72px)}
+.scope .intro{position:sticky;top:104px;align-self:start}
+.scope em{color:#c44700}.scope .eyebrow{font-size:11px!important;color:#a83c00;letter-spacing:.15em}
+.scope .intro>p:not(.eyebrow){font-size:15px;line-height:1.75;margin-top:22px}
+.scope .link{margin-top:26px;padding-bottom:11px}.scope .link svg{color:#c44700}
+.scope .deliverables article{grid-template-columns:48px minmax(0,1fr);gap:18px;padding:22px 0;border-color:#dcdde3}
+.scope .deliverables article:first-child{padding-top:0}.scope .deliverables h3{font-size:23px;margin-bottom:10px;line-height:1.2}
+.scope .deliverables p{font-size:14px;line-height:1.75;color:#50535b}
+.scopeIcon{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#ff650010;color:#c44700;border:1px solid #f0d8ca}
+.scopeIcon svg{width:25px;height:25px}
+.scope .delivery{margin-top:32px;border:1px solid #dcdde3;border-radius:12px;background:#ffffff70;padding:0 24px}
+.scope .delivery summary{min-height:72px;padding:18px 0;font-size:14px;line-height:1.5;color:#23252b;gap:20px}
+.scope .delivery summary span{font-size:inherit;color:inherit;transform:none;transition:none}
+.deliveryToggle{width:26px;height:26px;flex-shrink:0;color:#c44700}.toggleVertical{transform-origin:12px 12px;transition:transform .2s}
+.delivery[open] .toggleVertical{transform:scaleY(0)}
+.scope .deliveryNote{border-top:1px solid #dcdde3;padding-top:22px;margin:0 0 24px;font-size:13px;line-height:1.75;color:#50535b}
+.scope .delivery dl{gap:28px}.scope .delivery dt{font-size:14px}.scope .delivery dd{font-size:13px;color:#50535b}
+.scope .delivery>p:last-child{padding-top:18px;border-top:1px solid #dcdde3;font-size:13px;line-height:1.75}
+@media(max-width:900px){.scope .scopeLayout{grid-template-columns:1fr;gap:34px}.scope .intro{position:static;text-align:center;max-width:600px;margin:0 auto}.scope .intro>p:not(.eyebrow){max-width:none}.scope .delivery dl{grid-template-columns:1fr;gap:20px}.scope .delivery dl>div+div{border-top:1px solid #dcdde3;padding-top:18px}}
+@media(max-width:600px){.scope.scope{padding-block:48px 40px}.scope h2{font-size:32px;line-height:1.1}.scope .eyebrow{font-size:10px!important}.scope .intro>p:not(.eyebrow){font-size:14px;margin-top:18px}.scope .deliverables article{grid-template-columns:40px minmax(0,1fr);gap:14px;padding:20px 0}.scopeIcon{width:40px;height:40px;border-radius:12px}.scopeIcon svg{width:23px;height:23px}.scope .deliverables h3{font-size:20px;margin-bottom:9px}.scope .deliverables p{font-size:14px;line-height:1.7}.scope .delivery{margin-top:20px;padding:0 18px}.scope .delivery summary{font-size:14px;gap:14px;min-height:76px}.scope .deliveryNote{font-size:13px;text-align:left}.scope .delivery dd{font-size:13px}.scope .delivery>p:last-child{font-size:12px}}
+@media(max-height:580px){.scope .intro{position:static}}
+@media(prefers-reduced-motion:reduce){.toggleVertical{transition:none}}

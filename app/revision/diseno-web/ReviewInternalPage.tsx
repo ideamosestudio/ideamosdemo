@@ -1,4 +1,5 @@
 "use client";
+import s from "./additions.module.css";
 
 import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
 import ManagedBackgroundVideo from "../../../app/components/ManagedBackgroundVideo";
@@ -100,7 +101,7 @@ export default function ReviewInternalPage({ page, additions, evidence, guideCon
     return () => observer.disconnect();
   }, []);
 
-  return <main className="internal-page">
+  return <main className={`internal-page ${s.reviewPage}`}>
     <SiteHeader />
 
     <section className="hero internal-home-hero matches-home-hero" id="inicio">
@@ -120,7 +121,7 @@ export default function ReviewInternalPage({ page, additions, evidence, guideCon
       </div>
     </section>
 
-    <LightGridFrame className="internal-light-grid">
+    <LightGridFrame className={`internal-light-grid ${s.reviewCanvas}`}>
     {sections.map((section, sectionIndex) => {
       if (section.visual === "human") {
         return <section key={`${section.title}-${sectionIndex}`} className="human-cta internal-human-cta">
