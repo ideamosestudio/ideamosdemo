@@ -24,7 +24,7 @@
 .cover-desktop{position:absolute;top:16%;left:6%;width:81%;height:68%;background:#eee;border:3px solid #f8f8f5;border-radius:6px;overflow:hidden;box-shadow:0 20px 35px #0004;transform:rotate(-3deg);transition:transform .6s cubic-bezier(.22,1,.36,1)}
 .cover-desktop>.browser-bar{height:14px;font-size:5px;border-bottom:1px solid #ddd;background:#f8f8f5}
 .cover-desktop>img{display:block;width:100%;height:calc(100% - 14px);object-fit:cover;object-position:top}
-.cover-phone{position:absolute;right:5%;bottom:8%;width:23%;height:58%;border:3px solid #24252a;background:#24252a;border-radius:12px;overflow:hidden;box-shadow:0 14px 25px #0006;transform:rotate(6deg);transition:transform .6s cubic-bezier(.22,1,.36,1);z-index:4}
+.cover-phone{position:absolute;right:5%;bottom:16%;width:23%;height:58%;border:3px solid #24252a;background:#24252a;border-radius:12px;overflow:hidden;box-shadow:0 14px 25px #0006;transform:rotate(6deg);transition:transform .6s cubic-bezier(.22,1,.36,1);z-index:4}
 .cover-phone>img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;border-radius:8px}
 .phone-camera{position:absolute;width:31%;height:5px;background:#24252a;border-radius:0 0 5px 5px;left:34.5%;top:-1px;z-index:2}
 .cover-caption{position:absolute;bottom:4%;left:7%;color:#fff;font-size:6px;letter-spacing:1.4px;opacity:1}
