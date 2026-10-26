@@ -24,7 +24,7 @@ function legacyFragment(pattern: RegExp) {
   const source = readFileSync(join(process.cwd(), "content", "portfolio-catalogue.html"), "utf8");
   const match = source.match(pattern);
   if (!match) throw new Error("No se encontró el contenido del portfolio.");
-  return match[0].replace(/(<div class="cover-heading">)<span>.*?<\/span>/g, "$1");
+  return match[0].replace(/<div class="cover-heading">.*?<\/div>/g, "");
 }
 
 export default function PortfolioPage() {

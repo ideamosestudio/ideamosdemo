@@ -11,9 +11,9 @@ test('portfolio project links use matching visible and accessible labels', async
   }
 });
 
-test('portfolio project names only appear in the card details, not over the colored cover', async () => {
+test('portfolio colored covers do not repeat project names or category labels', async () => {
   const html = await readFile(new URL('../out/portfolio/index.html', import.meta.url), 'utf8');
-  assert.doesNotMatch(html, /<div class="cover-heading"><span>/);
+  assert.doesNotMatch(html, /class="cover-heading"/);
 });
 test('portfolio keeps dark text on light surfaces and removes obsolete hero CSS', async () => {
   const css = await readFile(new URL('../app/portfolio/portfolio.css', import.meta.url), 'utf8');
