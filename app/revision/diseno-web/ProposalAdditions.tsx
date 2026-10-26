@@ -41,14 +41,17 @@ export default function ProposalAdditions() {
           </article>)}</div>
         </div>
         <details className={s.delivery}>
-          <summary><span>Entrega, accesos y servicios adicionales</span><svg className={s.deliveryToggle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M5 12h14"/><path className={s.toggleVertical} d="M12 5v14"/></svg></summary>
-          <p className={s.deliveryNote}>El alcance final queda por escrito. Dominio, hosting, mantenimiento, producción de contenido y campañas de SEO o publicidad se detallan por separado cuando correspondan.</p>
+          <summary><span>Tu web, lista para seguir creciendo</span><svg className={s.deliveryToggle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M5 12h14"/><path className={s.toggleVertical} d="M12 5v14"/></svg></summary>
+          <p className={s.deliveryLead}>Definimos los accesos, la administración y el soporte antes de entregar.</p>
           <dl>
-            <div><dt>Accesos y titularidad</dt><dd>Quién administra el dominio y el alojamiento, qué cuentas se entregan y qué permisos necesita tu equipo. Revisamos los servicios existentes antes de hacer cambios.</dd></div>
-            <div><dt>Uso del administrador</dt><dd>Si la web es autoadministrable, detallamos qué contenido vas a poder editar y qué orientación o documentación incluye la propuesta para hacerlo.</dd></div>
-            <div><dt>Soporte después del lanzamiento</dt><dd>Dejamos por escrito el canal de contacto, la cobertura y las condiciones del soporte contratado. Nuevas funciones, actualizaciones y mantenimiento se acuerdan según cada proyecto.</dd></div>
+            <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="5"/><path d="m12 12 9 9m-4-4 3-3m-6 0 3-3"/></svg><span>Accesos y titularidad</span></dt><dd>Acordamos <strong>qué cuentas y permisos recibe tu equipo</strong> y quién administra el dominio y el hosting. Revisamos los servicios existentes antes de hacer cambios.</dd></div>
+            <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 9v12M13 13h4M13 17h3"/></svg><span>Administrá tu contenido</span></dt><dd>Si tu web es autoadministrable, definimos <strong>qué contenido vas a poder editar</strong> y qué orientación o documentación incluye la propuesta para hacerlo.</dd></div>
+            <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1M20 17v1a3 3 0 0 1-3 3h-3"/><rect x="2" y="12" width="4" height="7" rx="2"/><rect x="18" y="12" width="4" height="7" rx="2"/></svg><span>Acompañamiento y soporte</span></dt><dd>Dejamos por escrito <strong>el canal de contacto, la cobertura y las condiciones</strong> del soporte contratado. Nuevas funciones, actualizaciones y mantenimiento se acuerdan según cada proyecto.</dd></div>
           </dl>
-          <p>Para preparar tu consulta, leé <a href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/blog/diseno-web-profesional/diseno-web-profesional/`}>qué incluye un diseño web profesional para empresas</a>.</p>
+          <div className={s.deliveryFoot}>
+            <p className={s.deliveryNote}>El alcance final queda por escrito. Dominio, hosting, mantenimiento, producción de contenido y campañas de SEO o publicidad se detallan por separado cuando correspondan.</p>
+            <a className={s.deliveryGuide} href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/blog/diseno-web-profesional/diseno-web-profesional/`}>Guía: qué incluye una web profesional <ArrowIcon /></a>
+          </div>
         </details>
       </div>
     </section>

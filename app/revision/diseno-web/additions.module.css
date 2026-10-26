@@ -61,3 +61,19 @@
 @media(max-width:600px){.scope.scope{padding-block:48px 40px}.scope h2{font-size:32px;line-height:1.1}.scope .eyebrow{font-size:10px!important}.scope .intro>p:not(.eyebrow){font-size:14px;margin-top:18px}.scope .deliverables article{grid-template-columns:40px minmax(0,1fr);gap:14px;padding:20px 0}.scopeIcon{width:40px;height:40px;border-radius:12px}.scopeIcon svg{width:23px;height:23px}.scope .deliverables h3{font-size:20px;margin-bottom:9px}.scope .deliverables p{font-size:14px;line-height:1.7}.scope .delivery{margin-top:20px;padding:0 18px}.scope .delivery summary{font-size:14px;gap:14px;min-height:76px}.scope .deliveryNote{font-size:13px;text-align:left}.scope .delivery dd{font-size:13px}.scope .delivery>p:last-child{font-size:12px}}
 @media(max-height:580px){.scope .intro{position:static}}
 @media(prefers-reduced-motion:reduce){.toggleVertical{transition:none}}
+.scope .delivery summary{font-family:"Gilroy ExtraBold",Arial,sans-serif;font-size:19px;letter-spacing:-.015em}
+.scope .deliveryLead{margin:0 0 24px;font-size:14px;line-height:1.6;color:#575960}
+.scope .delivery dl{gap:0;margin-bottom:24px}
+.scope .delivery dl>div{min-width:0;padding:0 24px}
+.scope .delivery dl>div:first-child{padding-left:0}
+.scope .delivery dl>div:last-child{padding-right:0}
+.scope .delivery dl>div+div{border-left:1px solid #dcdde3}
+.scope .delivery dt{display:flex;flex-direction:column;gap:12px;font-family:"Gilroy ExtraBold",Arial,sans-serif;font-size:17px;line-height:1.25;margin-bottom:12px}
+.scope .delivery dt svg{width:25px;height:25px;color:#b94300;flex-shrink:0}
+.scope .delivery dd strong{font-weight:600;color:#30323a}
+.deliveryFoot{border-top:1px solid #dcdde3;padding:18px 0 22px;display:grid;gap:14px}
+.scope .deliveryFoot .deliveryNote{border:0;padding:0;margin:0;font-size:12px;line-height:1.7;color:#62646c}
+.scope .deliveryGuide{display:inline-flex;align-items:center;gap:12px;justify-self:start;font-size:13px;font-weight:600;line-height:1.5;text-decoration:none}
+.deliveryGuide svg{width:18px;height:18px;flex-shrink:0;color:#b94300}
+.scope .deliveryGuide:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:900px){.scope .delivery dl{gap:20px}.scope .delivery dl>div{padding:0}.scope .delivery dl>div+div{border-left:0;padding:20px 0 0}.scope .delivery dt{flex-direction:row;align-items:center;gap:12px}.scope .delivery summary{font-size:18px}.scope .deliveryLead{font-size:13px}}

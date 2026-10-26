@@ -10,12 +10,15 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
   assert.match(html, /rel="canonical" href="https:\/\/ideamos.com.ar\/diseno-web-autoadministrable\/"/);
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   assert.match(html, /PROPUESTA EN REVISIÓN/);
-  assert.match(html, /PROPUESTA EN REVISIÓN · V6/);
+  assert.match(html, /PROPUESTA EN REVISIÓN · V7/);
   for (const id of ['cylsa','sphere-design']) {
     assert.ok(html.includes(`thumbLarge-${id}.webp`));
     assert.ok(html.includes(`thumb-${id}.webp`));
   }
-  assert.match(html, /Entrega, accesos y servicios adicionales/);
+  assert.match(html, /Tu web, lista para seguir creciendo/);
+  assert.match(html, /Administrá tu contenido/);
+  assert.match(html, /Acompañamiento y soporte/);
+  assert.ok(html.indexOf('Acompañamiento y soporte') < html.indexOf('El alcance final queda por escrito.'));
   assert.match(html, /Accesos y titularidad/);
   assert.match(html, /Diseño web profesional para empresas \| Ideamos/);
   assert.match(html, /Una web autoadministrable te permite editar contenido/);
