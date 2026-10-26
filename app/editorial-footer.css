@@ -2,9 +2,9 @@
 #site-root footer.editorial-footer{min-height:0!important;padding:0!important;border-radius:0!important;background:#101010!important;color:#f5f5f5;overflow:hidden}
 #site-root .editorial-footer .ef-inner{max-width:1440px;margin:auto;padding:64px max(6vw,24px) 0}
 #site-root .editorial-footer .ef-intro{display:flex;align-items:center;justify-content:space-between;gap:36px;padding-bottom:40px;border-bottom:1px solid #ffffff26}
-#site-root .editorial-footer .ef-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 24px;font:600 11px/1.5 Arial,sans-serif;letter-spacing:.24em;color:#c1c1c1}
-.ef-eyebrow span{width:8px;height:8px;border-radius:50%;background:#ff6500}
-#site-root .editorial-footer h2{font-family:"Gilroy ExtraBold",Arial,sans-serif!important;font-size:clamp(38px,5.5vw,80px)!important;line-height:1.04!important;letter-spacing:-.035em;margin:0!important;color:#fafafa}
+#site-root .editorial-footer .ef-eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 24px;font-family:"Poppins",Arial,sans-serif;font-size:11px;font-weight:700;line-height:1.5;letter-spacing:.16em;text-transform:uppercase;color:#aab0bc}
+.ef-eyebrow span{width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#ff6500;box-shadow:0 0 16px #ff650088}
+#site-root .editorial-footer h2{font-family:"Gilroy ExtraBold",Arial,sans-serif!important;font-size:clamp(36px,3.2vw,52px)!important;line-height:1.06!important;letter-spacing:-.035em;margin:0!important;color:#fafafa}
 #site-root .editorial-footer h2 em{font:inherit!important;color:#ff6a15!important;background:none!important}
 #site-root .editorial-footer .ef-cta{display:inline-flex;align-items:center;justify-content:center;gap:16px;border:1px solid #ff6500;border-radius:999px;min-height:52px;padding:15px 28px;white-space:nowrap;font:600 11px/1 "Poppins CTA",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;color:#fff;transition:background .2s,border-color .2s}
 #site-root .editorial-footer .ef-cta:hover{background:#ff6500;border-color:#ff6500;color:#0a0a0a}

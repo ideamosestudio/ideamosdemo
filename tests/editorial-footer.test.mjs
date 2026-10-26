@@ -23,6 +23,9 @@ test("footer preserves a static WhatsApp alternative and balanced vector signatu
   assert.match(css, /content:"EMAIL"/);
   assert.match(css, /font:600 11px\/1 "Poppins CTA"/);
   assert.doesNotMatch(css, /\.ef-cta\{font-size:14px/);
+  assert.match(css, /\.ef-eyebrow\{[^}]*font-family:"Poppins"[^}]*letter-spacing:\.16em/);
+  assert.match(css, /editorial-footer h2\{[^}]*font-size:clamp\(36px,3\.2vw,52px\)!important/);
+  assert.doesNotMatch(css, /editorial-footer h2\{[^}]*80px/);
   assert.match(css, /content:"TELÉFONO"/);
   assert.match(css, /\.ef-bottom a\{[^}]*text-transform:uppercase/);
   assert.match(css, /text-decoration-color:#ff914d/);
