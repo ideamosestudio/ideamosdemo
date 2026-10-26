@@ -1,4 +1,5 @@
 import ArrowIcon from "../../../components/ArrowIcon";
+import { testimonials } from "../../../lib/testimonials";
 import s from "./additions.module.css";
 
 // Descripciones respaldadas por public/portfolio/projects.js y lib/testimonials.ts.
@@ -13,19 +14,27 @@ export default function ProjectEvidence() {
   return <section className={s.evidence} aria-labelledby="project-evidence-title">
     <div className={s.inner}>
       <header><p className={s.eyebrow}>DISEÑO APLICADO A NEGOCIOS REALES</p><h2 id="project-evidence-title">Cada empresa, <em>una solución propia.</em></h2></header>
-      <div className={s.caseGrid}>{cases.map(item => <article key={item.name}>
+      <div className={s.caseGrid}>{cases.map(item => {
+        const testimonial = testimonials.find(person => person.site === item.url);
+        return <article key={item.name}>
+        <div className={s.caseHeading}><p className={s.caseSector}>{item.sector}</p><h3>{item.name}</h3></div>
         <figure className={s.caseImage}>
           <img src={href(`/portfolio/assets/thumbLarge-${item.id}.webp`)} srcSet={`${href(`/portfolio/assets/thumb-${item.id}.webp`)} 480w, ${href(`/portfolio/assets/thumbLarge-${item.id}.webp`)} 1200w`} sizes="(max-width: 600px) calc(100vw - 48px), (max-width: 1340px) 42vw, 569px" width="1200" height="833" loading="lazy" decoding="async" alt={`Captura del proyecto de diseño web de ${item.name}`} />
         </figure>
-        <p className={s.caseSector}>{item.sector}</p><h3>{item.name}</h3>
         <dl className={s.caseFacts}>
-          <div><dt>Necesidad</dt><dd>{item.need}</dd></div>
-          <div><dt>Solución</dt><dd>{item.solution}</dd></div>
-          <div><dt>Funciones</dt><dd>{item.features}</dd></div>
-        </dl><p className={s.casePerson}>{item.person}</p>
-        <a className={s.link} href={item.url} target="_blank" rel="noopener noreferrer">Ver sitio de {item.name}<ArrowIcon /></a>
-      </article>)}</div>
-      <p className={s.caseMore}>¿Tu empresa tiene otro desafío? <a href={href("/portfolio/")}>Explorá más proyectos de diseño web en nuestro portfolio <ArrowIcon /></a></p>
+          <div><dt>El desafío</dt><dd>{item.need}</dd></div>
+          <div><dt>La solución</dt><dd>{item.solution}</dd></div>
+        </dl>
+        <p className={s.caseFeatures}><span>Funcionalidades</span>{item.features}</p>
+        <div className={s.caseActions}>
+          {testimonial && <div className={s.caseTestimonial}>
+            <a href={href(testimonial.video)} target="_blank" rel="noopener noreferrer" aria-label={`Ver testimonio de ${testimonial.name} (video en una pestaña nueva)`}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4Z" strokeLinejoin="round"/></svg>Ver testimonio de {testimonial.name.split(" ")[0]}</a>
+            <p>{testimonial.name} · {testimonial.role}</p>
+          </div>}
+          <a className={s.link} href={item.url} target="_blank" rel="noopener noreferrer">Ver sitio de {item.name}<ArrowIcon /></a>
+        </div>
+      </article>})}</div>
+      <div className={s.caseMore}><p>Otros desafíos. Más proyectos.</p><a href={href("/portfolio/")}>Explorar portfolio <ArrowIcon /></a></div>
     </div>
   </section>;
 }
