@@ -352,6 +352,31 @@
   display:block;
 }
 
+/* Acento animado exclusivo del título principal del primer módulo. */
+:global(#site-root#site-root#site-root) .reviewPage :global(.service-xtreme .review-title-accent){
+  display:inline-block;
+  color:#e64a00!important;
+  background-image:linear-gradient(105deg,#d94100 0%,#e64a00 25%,#ff7a18 48%,#ffad66 56%,#f05a00 72%,#d94100 100%);
+  background-position:0 50%;
+  background-size:260% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:review-title-orange-flow 4.5s ease-in-out infinite;
+}
+
+@keyframes review-title-orange-flow{
+  0%,100%{background-position:0 50%}
+  50%{background-position:100% 50%}
+}
+
+@media(prefers-reduced-motion:reduce){
+  :global(#site-root#site-root#site-root) .reviewPage :global(.service-xtreme .review-title-accent){
+    animation:none;
+    background-position:50% 50%;
+  }
+}
+
 @media(max-width:980px){
   :global(#site-root#site-root#site-root) .reviewPage :global(.design-problems .service-heading>h3){
     width:100%!important;
