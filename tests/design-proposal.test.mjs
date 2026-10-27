@@ -71,6 +71,7 @@ test('REVISION usa Roboto Light a 15 px en sus párrafos sin afectar módulos co
   assert.match(css, /font-weight:300!important/);
   assert.match(css, /line-height:1\.65!important/);
   assert.match(css, /letter-spacing:normal!important/);
+  assert.match(css, /color:#000!important/);
   assert.match(css, /\.reviewPage/);
   assert.doesNotMatch(css, /\.reviewPage[^}]*home-testimonials/s);
 });

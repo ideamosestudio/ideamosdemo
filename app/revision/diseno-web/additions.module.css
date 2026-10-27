@@ -217,7 +217,7 @@
 :global(#site-root#site-root) .reviewPage :global(.design-problems-list p),
 :global(#site-root#site-root) .reviewPage .scope :is(.intro>p:not(.eyebrow),.deliverables p,.deliveryNote,.delivery dd,.delivery>p),
 :global(#site-root#site-root) .reviewPage .evidence :is(.caseGrid p,.caseFacts dd){
-  color:#333!important;
+  color:#000!important;
 }
 
 :global(#site-root#site-root) .reviewPage :global(.service-copy){
