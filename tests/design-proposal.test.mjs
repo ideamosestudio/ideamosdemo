@@ -117,4 +117,8 @@ test('REVISION usa Roboto Light a 15 px en sus párrafos sin afectar módulos co
   assert.match(css, /animation:review-title-orange-flow 18s ease-in-out infinite/);
   assert.match(css, /0%,78%\{background-position:100% 50%\}/);
   assert.match(css, /@media\(prefers-reduced-motion:reduce\)/);
+  assert.match(
+    css,
+    /service-xtreme \.service-copy strong\)\{[^}]*font-family:"Poppins",Arial,sans-serif!important;[^}]*font-weight:800!important/s,
+  );
 });
