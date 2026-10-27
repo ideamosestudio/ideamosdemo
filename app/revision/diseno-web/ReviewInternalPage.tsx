@@ -161,7 +161,7 @@ export default function ReviewInternalPage({ page, additions, evidence, guideCon
           <header className="service-heading">
             <p>{section.eyebrow}</p>
             <h2>{section.title === "Creamos webs que generan\nconfianza y oportunidades"
-              ? <>Creamos <span className="review-title-accent">webs que generan<br />confianza</span> y oportunidades</>
+              ? <>Creamos <span className="review-title-accent">webs que generan</span><br /><span className="review-title-accent">confianza</span> y oportunidades</>
               : section.title.split("\n").map((line, index) => (
                 <Fragment key={`${line}-${index}`}>{index > 0 && <br />}{line}</Fragment>
               ))}</h2>

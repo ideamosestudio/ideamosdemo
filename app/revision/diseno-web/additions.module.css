@@ -242,9 +242,10 @@
 /* Énfasis editorial del primer módulo: una cara realmente pesada y más ancha. */
 :global(#site-root#site-root#site-root) .reviewPage :global(.service-xtreme .service-copy strong){
   color:#000!important;
-  font-family:"Poppins",Arial,sans-serif!important;
-  font-weight:800!important;
-  letter-spacing:-.01em!important;
+  font-family:"Roboto Light","Roboto",Arial,sans-serif!important;
+  font-weight:900!important;
+  letter-spacing:normal!important;
+  -webkit-text-stroke:.18px currentColor;
 }
 
 @media(min-width:981px){
@@ -362,7 +363,7 @@
 
 /* Acento animado exclusivo del título principal del primer módulo. */
 :global(#site-root#site-root#site-root) .reviewPage :global(.service-xtreme .review-title-accent){
-  display:inline-block;
+  display:inline;
   color:#e64a00!important;
   background-image:linear-gradient(105deg,#e64a00 0%,#e64a00 44%,#ed6422 49%,#f08445 50%,#ed6422 51%,#e64a00 56%,#e64a00 100%);
   background-position:100% 50%;
