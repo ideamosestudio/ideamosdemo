@@ -6,7 +6,6 @@ import ManagedBackgroundVideo from "../../../app/components/ManagedBackgroundVid
 import { DarkGridBackground, HeroChrome, HomeClosingSections } from "../../../components/SharedHomeSections";
 import SiteHeader from "../../../components/SiteHeader";
 import LightGridFrame from "../../../components/LightGridFrame";
-import ReviewTestimonials from "./ReviewTestimonials";
 import { WHATSAPP_URL } from "../../../lib/whatsapp";
 import PortfolioLink from "../../../components/PortfolioLink";
 import type { ServiceGuideKey } from "../../../lib/service-guides";
@@ -40,7 +39,6 @@ type ServicePage = {
   matchHomeHero?: boolean;
   hideSectionIndexes?: boolean;
   sharedSectionBackground?: boolean;
-  homeTestimonials?: boolean;
 };
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -214,7 +212,6 @@ export default function ReviewInternalPage({ page, additions, evidence, guideCon
         </section>;
     })}
     {additions}
-    {page.homeTestimonials && <ReviewTestimonials />}
     {evidence}
     </LightGridFrame>
     {guideContent}

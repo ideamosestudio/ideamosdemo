@@ -11,8 +11,6 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   assert.match(html, /PROPUESTA EN REVISIÓN/);
   assert.match(html, /PROPUESTA EN REVISIÓN · V11/);
-  assert.match(html, /cylsa-clean.webp/);
-  assert.doesNotMatch(await read('diseno-web-autoadministrable/index.html'), /cylsa-clean.webp/);
   assert.match(html, /Visitar el sitio de CYL Neumáticos/);
   assert.match(html, /<strong>conecta proyectos y servicios<\/strong>/);
   assert.match(html, /Ver testimonio de Pablo/);
@@ -36,6 +34,7 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
   assert.match(html, /Una web autoadministrable te permite editar contenido/);
   assert.match(html, /¿Qué materiales necesito para empezar el diseño de mi web\?/);
   assert.match(html, /id="project-evidence-title"/);
+  assert.doesNotMatch(html, /home-testimonials/);
   assert.match(html, /Sphere Design/);
   assert.match(html, /CYL Neumáticos/);
   const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));

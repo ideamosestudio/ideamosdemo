@@ -19,7 +19,6 @@ const page: ServicePage = {
   matchHomeHero: true,
   hideSectionIndexes: true,
   sharedSectionBackground: true,
-  homeTestimonials: true,
   eyebrow: "MÁS ESTRATEGIA, MÁS RESULTADOS",
   title: "Diseño web para empresas\nenfocado en resultados",
   intro: "Diseño y desarrollo web profesional para empresas de Argentina. Creamos sitios a medida que presentan tu negocio, generan confianza y facilitan las consultas. Charlemos de tu proyecto.",
