@@ -38,9 +38,9 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
   assert.match(html, /Una web autoadministrable te permite editar contenido/);
   assert.match(
     html,
-    /Creamos <span class="review-title-accent">webs que generan<\/span><br\/><span class="review-title-accent">confianza<\/span> y oportunidades/,
+    /<span class="review-title-accent">Creamos<\/span> webs que generan<br\/>confianza <span class="review-title-accent">y oportunidades<\/span>/,
   );
-  assert.match(html, /Diseño con identidad\. Un camino al contacto\./);
+  assert.match(html, /<strong>Diseño con identidad\.<\/strong> Un camino al contacto\./);
   assert.doesNotMatch(html, /Diseño con identidad\. Contenido claro\./);
   for (const emphasis of [
     'mostrar qué hacés, por qué elegirte y cómo dar el próximo paso',

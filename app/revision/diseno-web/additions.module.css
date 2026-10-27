@@ -248,6 +248,11 @@
   -webkit-text-stroke:.18px currentColor;
 }
 
+:global(#site-root#site-root#site-root) .reviewPage :global(.service-xtreme .service-heading>h3 strong){
+  font-family:inherit!important;
+  font-weight:700!important;
+}
+
 @media(min-width:981px){
   :global(#site-root#site-root) .reviewPage :global(.service-heading>p:first-child),
   :global(#site-root#site-root) .reviewPage .eyebrow,
