@@ -34,6 +34,17 @@ const page: ServicePage = {
       visual: "xtreme", actions: true,
     },
     {
+      eyebrow: "DISEÑO WEB A MEDIDA",
+      title: "Con nuestras páginas web vas a tener:",
+      variant: "benefits", actions: true, hideItemNumbers: true,
+      items: [
+        { title: "Tu marca proyectando confianza", copy: "Una identidad visual consistente y contenido que explica tu propuesta. Tus servicios, proyectos y testimonios, organizados para que conozcan mejor tu empresa." },
+        { title: "Un nuevo canal comercial", copy: "Un lugar propio para mostrar lo que ofrecés y recibir consultas por formulario o WhatsApp, con llamados a la acción claros y fáciles de encontrar." },
+        { title: "Una base para crecer", copy: "Estructura y contenido preparados para trabajar el posicionamiento. Definimos qué podés administrar y cómo ampliar el sitio según las necesidades de tu negocio." },
+        { title: "Contacto desde cualquier pantalla", copy: "Una experiencia adaptada a celulares y computadoras, para que tus visitantes puedan recorrer los servicios y enviarte una consulta en cualquier momento." },
+      ],
+    },
+    {
       eyebrow: "DISEÑO WEB A TU MEDIDA",
       title: "¿Qué problemas resuelve\nun sitio web para tu empresa?",
       lead: "Una presencia profesional para mostrar tu valor, resolver dudas y abrir nuevas oportunidades.\nEmpezamos por lo que necesita tu negocio.",
@@ -43,17 +54,6 @@ const page: ServicePage = {
         { title: "“Quiero que encuentren mi empresa en Google”", copy: "Definimos una base de SEO con títulos, encabezados, contenido y enlaces claros. Para competir por búsquedas específicas, evaluamos un trabajo continuo de posicionamiento: publicar una web no garantiza el primer puesto." },
         { title: "“Necesitamos funcionalidades específicas”", copy: "Evaluamos formularios, áreas administrables e integraciones según tu operación. Acordamos qué incluye el desarrollo, cómo se va a gestionar y qué necesita mantenimiento antes de elegir la tecnología." },
         { title: "“No sé cómo arrancar con mi nueva web”", copy: "Contanos qué hace tu empresa, a quién querés llegar y qué necesitás mejorar. Definimos estructura y materiales, revisamos el diseño con vos y probamos navegación, versión móvil y contacto antes de publicar." },
-      ],
-    },
-    {
-      eyebrow: "DISEÑO WEB A MEDIDA",
-      title: "Con nuestras páginas web vas a tener:",
-      variant: "benefits", actions: true, hideItemNumbers: true,
-      items: [
-        { title: "Tu marca proyectando confianza", copy: "Una identidad visual consistente y contenido que explica tu propuesta. Tus servicios, proyectos y testimonios, organizados para que conozcan mejor tu empresa." },
-        { title: "Un nuevo canal comercial", copy: "Un lugar propio para mostrar lo que ofrecés y recibir consultas por formulario o WhatsApp, con llamados a la acción claros y fáciles de encontrar." },
-        { title: "Una base para crecer", copy: "Estructura y contenido preparados para trabajar el posicionamiento. Definimos qué podés administrar y cómo ampliar el sitio según las necesidades de tu negocio." },
-        { title: "Contacto desde cualquier pantalla", copy: "Una experiencia adaptada a celulares y computadoras, para que tus visitantes puedan recorrer los servicios y enviarte una consulta en cualquier momento." },
       ],
     },
   ],

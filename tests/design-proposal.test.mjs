@@ -26,6 +26,10 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
     assert.ok(html.includes(`thumb-${id}.webp`));
   }
   assert.match(html, /Tu web, lista para seguir creciendo/);
+  assert.ok(
+    html.indexOf('Con nuestras páginas web vas a tener:') < html.indexOf('¿Qué problemas resuelve'),
+    'El módulo de beneficios debe aparecer inmediatamente después de “Creamos webs”.',
+  );
   assert.match(html, /Administrá tu contenido/);
   assert.match(html, /Acompañamiento y soporte/);
   assert.ok(html.indexOf('Acompañamiento y soporte') < html.indexOf('El alcance final queda por escrito.'));
