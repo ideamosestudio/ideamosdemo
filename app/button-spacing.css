@@ -1,3 +1,11 @@
+@font-face{
+  font-family:"Roboto Light";
+  src:url("/fonts/Roboto-Light.ttf") format("truetype");
+  font-style:normal;
+  font-weight:300;
+  font-display:swap;
+}
+
 /* Keep every text CTA proportional to its label across desktop and mobile. */
 #site-root :is(
   .nav-contact,
@@ -18,7 +26,11 @@
   padding-right:35px!important;
 }
 
-/* Descriptive copy follows one quieter, darker hierarchy across light sections. */
+/*
+ * Regla global de legibilidad: todo texto descriptivo Roboto Light de 15 px
+ * sobre superficies claras usa negro pleno. Títulos y subtítulos mantienen
+ * su propia tinta editorial para conservar la jerarquía.
+ */
 #site-root :is(
   .statement-copy,
   .section-heading>span,
@@ -33,9 +45,9 @@
   .cases-intro-copy>p:last-of-type,
   .pricing-intro-copy>span
 ){
-  color:#333!important;
-  font-family:"Roboto",Arial,sans-serif!important;
-  font-size:11.5pt!important;
+  color:#000!important;
+  font-family:"Roboto Light","Roboto",Arial,sans-serif!important;
+  font-size:15px!important;
   font-weight:300!important;
   opacity:1!important;
 }

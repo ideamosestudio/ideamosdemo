@@ -113,10 +113,12 @@ test('REVISION usa Roboto Light a 15 px en sus párrafos sin afectar módulos co
   assert.match(css, /font-size:clamp\(38px,2\.8vw,53px\)!important/);
   assert.match(css, /width:min\(50vw,900px\)!important/);
   assert.match(css, /\.service-xtreme \.review-title-accent/);
-  assert.match(css, /linear-gradient\(105deg,#e64a00 0%,#e64a00 44%,#ed6422 49%/);
-  assert.match(css, /animation:review-title-orange-flow 18s ease-in-out infinite/);
-  assert.match(css, /0%,78%\{background-position:100% 50%\}/);
-  assert.match(css, /@media\(prefers-reduced-motion:reduce\)/);
+  assert.match(
+    css,
+    /service-xtreme \.review-title-accent\)\{[^}]*color:#111!important;[^}]*background:none!important;[^}]*animation:none!important/s,
+  );
+  assert.match(css, /service-xtreme \.service-heading>h3\)/);
+  assert.match(css, /service-xtreme \.service-copy\)[\s\S]*?color:#000!important/);
   assert.match(
     css,
     /service-xtreme \.service-copy strong\)\{[^}]*font-family:"Roboto Light","Roboto",Arial,sans-serif!important;[^}]*font-weight:900!important/s,
