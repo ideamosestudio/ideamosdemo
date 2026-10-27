@@ -68,6 +68,14 @@ function CenteredLead({ copy }: { copy: string }) {
   ))}</h3>;
 }
 
+function EmphasizedCopy({ copy }: { copy: string }) {
+  return <>{copy.split(/(\*\*[^*]+\*\*)/g).map((part, index) => (
+    part.startsWith("**") && part.endsWith("**")
+      ? <strong key={`${part}-${index}`}>{part.slice(2, -2)}</strong>
+      : part
+  ))}</>;
+}
+
 export default function ReviewInternalPage({ page, additions, evidence, guideContent }: { page: ServicePage; additions: ReactNode; evidence: ReactNode; guideContent: ReactNode }) {
   const [wildeFrame, setWildeFrame] = useState(0);
   const phoneRef = useRef<HTMLDivElement>(null);
@@ -162,7 +170,7 @@ export default function ReviewInternalPage({ page, additions, evidence, guideCon
               </Fragment>;
             })}</h2>
             {section.lead && <h3>{section.lead}</h3>}
-            {section.paragraphs?.map((copy, index) => <div className="service-copy" key={index}>{copy}</div>)}
+            {section.paragraphs?.map((copy, index) => <div className="service-copy" key={index}><EmphasizedCopy copy={copy} /></div>)}
             {section.actions && (page.guide === "web" ? <ProjectActions /> : <Actions />)}
           </header>
           <div className="service-visual-media">

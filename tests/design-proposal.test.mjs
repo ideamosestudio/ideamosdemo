@@ -42,6 +42,15 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
   );
   assert.match(html, /Diseño con identidad\. Un camino al contacto\./);
   assert.doesNotMatch(html, /Diseño con identidad\. Contenido claro\./);
+  for (const emphasis of [
+    'mostrar qué hacés, por qué elegirte y cómo dar el próximo paso',
+    'presentar tus servicios, destacar tus proyectos y facilitar las consultas',
+    'las páginas, los contenidos, los formularios y las integraciones',
+    'qué partes serán autoadministrables',
+    'una propuesta a tu medida',
+  ]) {
+    assert.match(html, new RegExp(`<strong>${emphasis}<\\/strong>`));
+  }
   assert.match(
     html,
     /centered-lead-line[^>]*>Una presencia profesional para mostrar tu valor, resolver dudas y abrir nuevas oportunidades\.<\/span><span class="centered-lead-line"[^>]*>Empezamos por lo que necesita tu negocio\.<\/span>/,
