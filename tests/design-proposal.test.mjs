@@ -32,6 +32,9 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
   assert.match(html, /Accesos y titularidad/);
   assert.match(html, /Diseño web profesional para empresas \| Ideamos/);
   assert.match(html, /Una web autoadministrable te permite editar contenido/);
+  assert.match(html, /Creamos webs que generan<br\/>confianza y oportunidades/);
+  assert.match(html, /Diseño con identidad\. Un camino al contacto\./);
+  assert.doesNotMatch(html, /Diseño con identidad\. Contenido claro\./);
   assert.match(
     html,
     /centered-lead-line[^>]*>Una presencia profesional para mostrar tu valor, resolver dudas y abrir nuevas oportunidades\.<\/span><span class="centered-lead-line"[^>]*>Empezamos por lo que necesita tu negocio\.<\/span>/,

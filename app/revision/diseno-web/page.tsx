@@ -25,8 +25,8 @@ const page: ServicePage = {
   sections: [
     {
       eyebrow: "DISEÑO WEB PROFESIONAL",
-      title: "Creamos sitios web que generan confianza y oportunidades",
-      lead: "Diseño con identidad. Contenido claro. Un camino al contacto.",
+      title: "Creamos webs que generan\nconfianza y oportunidades",
+      lead: "Diseño con identidad. Un camino al contacto.",
       paragraphs: [
         "Tu web tiene que mostrar qué hacés, por qué elegirte y cómo dar el próximo paso. Diseñamos sitios a medida para presentar tus servicios, destacar tus proyectos y facilitar las consultas desde computadoras y celulares.",
         "Antes de empezar, definimos las páginas, los contenidos, los formularios y las integraciones que necesita tu empresa. Si vas a actualizar información, acordamos qué partes serán autoadministrables. Coordinemos una asesoría sin cargo para ordenar prioridades y preparar una propuesta a tu medida.",

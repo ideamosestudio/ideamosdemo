@@ -152,7 +152,9 @@ export default function ReviewInternalPage({ page, additions, evidence, guideCon
           {!page.hideSectionIndexes && <div className="service-index">0{sectionIndex + 2} — IDEAMOS <i /></div>}
           <header className="service-heading">
             <p>{section.eyebrow}</p>
-            <h2>{section.title}</h2>
+            <h2>{section.title.split("\n").map((line, index) => (
+              <Fragment key={`${line}-${index}`}>{index > 0 && <br />}{line}</Fragment>
+            ))}</h2>
             {section.lead && <h3>{section.lead}</h3>}
             {section.paragraphs?.map((copy, index) => <div className="service-copy" key={index}>{copy}</div>)}
             {section.actions && (page.guide === "web" ? <ProjectActions /> : <Actions />)}
