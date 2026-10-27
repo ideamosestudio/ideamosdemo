@@ -62,6 +62,12 @@ function ProjectActions() {
   </div>;
 }
 
+function CenteredLead({ copy }: { copy: string }) {
+  return <h3>{copy.split("\n").map((sentence, index) => (
+    <span className="centered-lead-line" key={`${sentence}-${index}`}>{sentence}</span>
+  ))}</h3>;
+}
+
 export default function ReviewInternalPage({ page, additions, evidence, guideContent }: { page: ServicePage; additions: ReactNode; evidence: ReactNode; guideContent: ReactNode }) {
   const [wildeFrame, setWildeFrame] = useState(0);
   const phoneRef = useRef<HTMLDivElement>(null);
@@ -168,7 +174,7 @@ export default function ReviewInternalPage({ page, additions, evidence, guideCon
           <header className="service-heading">
             <p>{section.eyebrow}</p>
             <h2>{section.title}</h2>
-            {section.lead && <h3>{section.lead}</h3>}
+            {section.lead && <CenteredLead copy={section.lead} />}
           </header>
           <div className="design-problems-layout">
             {section.items && <div className="design-problems-list">
@@ -196,7 +202,7 @@ export default function ReviewInternalPage({ page, additions, evidence, guideCon
           <header className="service-heading">
             <p>{section.eyebrow}</p>
             <h2>{section.title}</h2>
-            {section.lead && <h3>{section.lead}</h3>}
+            {section.lead && (section.variant === "benefits" ? <CenteredLead copy={section.lead} /> : <h3>{section.lead}</h3>)}
             {section.paragraphs?.map((copy, index) => <div className="service-copy" key={index}>{copy}</div>)}
           </header>
           {section.items && <div className={`service-items ${section.variant === "benefits" ? "service-benefits-grid" : ""}`}>

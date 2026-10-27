@@ -32,6 +32,10 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
   assert.match(html, /Accesos y titularidad/);
   assert.match(html, /Diseño web profesional para empresas \| Ideamos/);
   assert.match(html, /Una web autoadministrable te permite editar contenido/);
+  assert.match(
+    html,
+    /centered-lead-line[^>]*>Una presencia profesional para mostrar tu valor, resolver dudas y abrir nuevas oportunidades\.<\/span><span class="centered-lead-line"[^>]*>Empezamos por lo que necesita tu negocio\.<\/span>/,
+  );
   assert.match(html, /¿Qué materiales necesito para empezar el diseño de mi web\?/);
   assert.match(html, /id="project-evidence-title"/);
   assert.doesNotMatch(html, /home-testimonials/);
@@ -82,6 +86,10 @@ test('REVISION usa Roboto Light a 15 px en sus párrafos sin afectar módulos co
   assert.match(css, /\.service-benefits \.service-heading>p:first-child/);
   assert.match(css, /font-size:13px!important/);
   assert.match(css, /letter-spacing:\.42em!important/);
+  assert.match(
+    css,
+    /design-problems \.service-heading>p:first-child\)\{[^}]*margin-bottom:17px!important/s,
+  );
   assert.match(css, /font-size:clamp\(38px,2\.8vw,53px\)!important/);
   assert.match(css, /width:min\(50vw,900px\)!important/);
 });

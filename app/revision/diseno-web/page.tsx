@@ -36,7 +36,7 @@ const page: ServicePage = {
     {
       eyebrow: "DISEÑO WEB A TU MEDIDA",
       title: "¿Qué problemas resuelve\nun sitio web para tu empresa?",
-      lead: "Una presencia profesional para mostrar tu valor, resolver dudas y abrir nuevas oportunidades. Empezamos por lo que necesita tu negocio.",
+      lead: "Una presencia profesional para mostrar tu valor, resolver dudas y abrir nuevas oportunidades.\nEmpezamos por lo que necesita tu negocio.",
       visual: "wilde", actions: true, hideItemNumbers: true,
       items: [
         { title: "“Mi web ya no representa a mi empresa”", copy: "Renovamos el diseño y organizamos tus servicios, proyectos y diferenciales. Si ya tenés una web, revisamos qué contenido conservar y qué URLs redirigir para evitar perder información útil o dejar enlaces rotos." },
