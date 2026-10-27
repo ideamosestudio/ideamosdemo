@@ -174,3 +174,89 @@
  .process .steps h3{font-size:21px}
  .process .start{gap:18px}
 }
+
+/*
+ * Sistema tipográfico exclusivo de la propuesta REVISION.
+ * Los selectores quedan anclados a reviewPage para no alterar testimonios,
+ * asesoría, formulario, footer ni ningún módulo compartido con otras páginas.
+ */
+@font-face{
+  font-family:"Roboto Revision";
+  src:url("/fonts/Roboto-Light.ttf") format("truetype");
+  font-style:normal;
+  font-weight:300;
+  font-display:swap;
+}
+
+:global(#site-root#site-root) .reviewPage :global(.service-copy),
+:global(#site-root#site-root) .reviewPage :global(.design-problems-list p),
+:global(#site-root#site-root) .reviewPage :global(.service-items p),
+:global(#site-root#site-root) .reviewPage .scope .intro>p:not(.eyebrow),
+:global(#site-root#site-root) .reviewPage .scope .deliverables p,
+:global(#site-root#site-root) .reviewPage .scope .deliveryNote,
+:global(#site-root#site-root) .reviewPage .scope .delivery dd,
+:global(#site-root#site-root) .reviewPage .scope .delivery>p,
+:global(#site-root#site-root) .reviewPage .process .processHead>p,
+:global(#site-root#site-root) .reviewPage .process .steps p,
+:global(#site-root#site-root) .reviewPage .process .start p,
+:global(#site-root#site-root) .reviewPage .evidence .caseGrid p,
+:global(#site-root#site-root) .reviewPage .evidence .caseFacts dd,
+:global(#site-root#site-root) .reviewPage .evidence .caseMore,
+:global(#site-root#site-root) .reviewPage :global(.service-faq__description),
+:global(#site-root#site-root) .reviewPage :global(.service-faq__answer p){
+  font-family:"Roboto Revision","Roboto",Arial,sans-serif!important;
+  font-size:15px!important;
+  font-style:normal!important;
+  font-weight:300!important;
+  line-height:1.65!important;
+  letter-spacing:normal!important;
+}
+
+@media(min-width:981px){
+  :global(#site-root#site-root) .reviewPage :global(.service-heading>p:first-child),
+  :global(#site-root#site-root) .reviewPage .eyebrow,
+  :global(#site-root#site-root) .reviewPage :global(.service-faq__eyebrow){
+    margin:0 0 24px!important;
+    font-family:"Poppins",Arial,sans-serif!important;
+    font-size:11px!important;
+    font-weight:700!important;
+    line-height:1.5!important;
+    letter-spacing:.34em!important;
+  }
+
+  :global(#site-root#site-root) .reviewPage :global(.service-heading h2),
+  :global(#site-root#site-root) .reviewPage .scope h2,
+  :global(#site-root#site-root) .reviewPage .process h2,
+  :global(#site-root#site-root) .reviewPage .evidence h2,
+  :global(#site-root#site-root) .reviewPage :global(.service-faq h2){
+    margin:0 0 20px!important;
+    font-family:"Gilroy ExtraBold",Arial,sans-serif!important;
+    font-size:clamp(38px,2.8vw,53px)!important;
+    font-style:normal!important;
+    font-weight:800!important;
+    line-height:1.02!important;
+    letter-spacing:-.045em!important;
+  }
+
+  :global(#site-root#site-root) .reviewPage :global(.service-heading>h3){
+    margin:0 0 16px!important;
+    font-family:"Roboto",Arial,sans-serif!important;
+    font-size:21px!important;
+    font-style:normal!important;
+    font-weight:400!important;
+    line-height:1.45!important;
+    letter-spacing:normal!important;
+  }
+
+  :global(#site-root#site-root) .reviewPage :global(.design-problems-list h3),
+  :global(#site-root#site-root) .reviewPage :global(.service-items h3),
+  :global(#site-root#site-root) .reviewPage .scope h3,
+  :global(#site-root#site-root) .reviewPage .process h3,
+  :global(#site-root#site-root) .reviewPage .evidence .caseGrid h3,
+  :global(#site-root#site-root) .reviewPage :global(.service-faq__question){
+    font-family:"Gilroy ExtraBold",Arial,sans-serif!important;
+    font-style:normal!important;
+    font-weight:800!important;
+    letter-spacing:-.02em!important;
+  }
+}
