@@ -2,12 +2,12 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-const cssUrl = new URL("../app/button-interactions.css", import.meta.url);
+const cssUrl = new URL("../app/editorial-footer.css", import.meta.url);
 const layoutUrl = new URL("../app/layout.tsx", import.meta.url);
 
 test("the global CTA interaction layer is loaded last", async () => {
   const layout = await readFile(layoutUrl, "utf8");
-  assert.match(layout, /import "\.\/editorial-footer\.css";\s*import "\.\/button-interactions\.css";/);
+  assert.match(layout, /import "\.\/portfolio-links\.css";\s*import "\.\/editorial-footer\.css";/);
 });
 
 test("CTA hover states keep tracking fixed and only change their visual treatment", async () => {

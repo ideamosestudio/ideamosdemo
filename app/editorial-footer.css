@@ -76,3 +76,48 @@
   #site-root .editorial-footer .ef-bottom{align-items:center;gap:20px;font-size:10px;letter-spacing:.08em}
 }
 @media(max-width:700px){#site-root .editorial-footer .ef-cta{font-family:"Poppins",Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.04em;min-height:46px;padding:15px 20px}}
+
+/* Site-wide CTA interaction contract: hover/focus never changes type spacing. */
+#site-root#site-root#site-root :is(
+  .nav-contact,.cta-glow,.orange-cta,.cases-action,.shops-red-cta,
+  .md-action,.pw-action,.price-cta,.price-more,.contact-main button,
+  .contact-submit,.ideamos-footer__whatsapp,.editorial-footer .ef-cta,
+  footer .footer-brand > a
+){
+  letter-spacing:1px!important;
+  transition:background .28s ease,background-color .28s ease,border-color .28s ease,color .28s ease,box-shadow .28s ease!important;
+}
+
+#site-root#site-root#site-root :is(
+  .nav-contact,.cta-glow,.orange-cta,.cases-action,.shops-red-cta,
+  .md-action,.pw-action,.price-cta,.price-more,.contact-main button,
+  .contact-submit,.ideamos-footer__whatsapp,.editorial-footer .ef-cta,
+  footer .footer-brand > a
+) :is(span,strong){color:inherit!important;letter-spacing:inherit!important}
+
+/* Orange-filled buttons become darker. */
+#site-root#site-root#site-root :is(
+  .cta-glow,.orange-cta,.cases-action,.shops-red-cta,.md-action,.pw-action,
+  .price-cta,.price-more,.contact-main button,.contact-submit,.ideamos-footer__whatsapp
+):is(:hover,:focus-visible):not(:disabled){
+  background:linear-gradient(105deg,#d84400,#8f1900)!important;
+  border-color:#d84400!important;
+  color:#fff!important;
+  letter-spacing:1px!important;
+  box-shadow:0 0 18px rgba(196,55,0,.34),0 0 38px rgba(143,25,0,.18)!important;
+  transform:none!important;
+}
+
+/* Outlined buttons gain the regular brand-orange fill and white type. */
+#site-root#site-root#site-root :is(
+  .nav .nav-contact,.hero .hero-actions .cta-glow.secondary,
+  .review-project-actions .cta-glow.secondary,.editorial-footer .ef-cta,
+  footer .footer-brand > a
+):is(:hover,:focus-visible):not(:disabled){
+  background:linear-gradient(105deg,#ff6200,#c82400)!important;
+  border-color:#ff6200!important;
+  color:#fff!important;
+  letter-spacing:1px!important;
+  box-shadow:0 0 18px rgba(255,78,0,.35),0 0 38px rgba(255,78,0,.18)!important;
+  transform:none!important;
+}

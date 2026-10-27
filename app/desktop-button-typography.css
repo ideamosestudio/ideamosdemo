@@ -61,7 +61,7 @@
     transform:none!important;
     filter:none!important;
     animation:none!important;
-    transition:letter-spacing .28s ease,background .28s ease,box-shadow .28s ease!important;
+    transition:background .28s ease,border-color .28s ease,color .28s ease,box-shadow .28s ease!important;
     cursor:pointer;
   }
 
@@ -104,10 +104,8 @@
     .shops-red-cta,.md-action,.pw-action,.price-cta,.price-more,
     .contact-submit,.ideamos-footer__whatsapp,footer .footer-brand>a
   ):is(:hover,:focus-visible):not(:disabled){
-    letter-spacing:3px!important;
-    background:
-      radial-gradient(circle at 50% 125%,rgba(255,190,120,.3),transparent 58%),
-      linear-gradient(105deg,#ff6b08,#d72c00)!important;
+    letter-spacing:1px!important;
+    background:linear-gradient(105deg,#d84400,#8f1900)!important;
     box-shadow:
       0 0 18px rgba(255,78,0,.35),
       0 0 42px rgba(255,78,0,.18),
@@ -116,7 +114,8 @@
   }
 
   #site-root#site-root .nav .nav-contact:is(:hover,:focus-visible){
-    background:rgba(255,90,0,.08)!important;
+    background:linear-gradient(105deg,#ff6200,#c82400)!important;
+    color:#fff!important;
     box-shadow:
       0 0 18px rgba(255,78,0,.28),
       0 0 38px rgba(255,78,0,.14),
@@ -175,13 +174,11 @@
     z-index:1;
   }
 
-  #site-root#site-root .hero .hero-actions .cta-glow.secondary,
-  #site-root#site-root .hero .hero-actions .cta-glow.secondary:is(:hover,:focus-visible){
+  #site-root#site-root .hero .hero-actions .cta-glow.secondary{
     border:2px solid #ff5a00!important;
     background:transparent!important;
   }
 }
-
 @keyframes cover-cta-light-drift{
   0%,18%{background-position:125% 0;opacity:.22}
   50%{opacity:.48}
@@ -195,4 +192,3 @@
     animation:none!important;
   }
 }
-
