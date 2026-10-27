@@ -53,9 +53,10 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
   for (const item of faq.mainEntity) assert.ok(html.includes(item.acceptedAnswer.text));
   assert.match(html, /¿Cuánto cuesta y cuánto tarda una página web\?/);
   // La copia conserva la gráfica y los componentes de la página actual.
-  for (const asset of ['hero.mp4', 'hero-poster.webp', 'xtreme-service.webp', 'tablet-animated-final.webm', 'wilde-cell-002.png']) {
+  for (const asset of ['hero.mp4', 'hero-poster.webp', 'xtreme-service.webp', 'wilde-cell-002.png']) {
     assert.ok(html.includes(asset), `Falta recurso visual original: ${asset}`);
   }
+  assert.doesNotMatch(html, /tablet-animated-final\.webm/);
   for (const className of ['internal-home-hero', 'design-problems-layout', 'service-benefits-grid', 'service-faq']) {
     assert.ok(html.includes(className), `Falta estructura original: ${className}`);
   }
