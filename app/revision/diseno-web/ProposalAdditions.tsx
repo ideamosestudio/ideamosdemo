@@ -10,10 +10,10 @@ const scope = [
 ];
 const scopeHighlights = ["Las páginas, las secciones y los materiales", "adaptación a celulares, tablets y escritorio", "qué textos, imágenes, novedades o proyectos podrás editar", "Pruebas de navegación y contacto"];
 const steps = [
-  ["Nos contás", "Conocemos tu empresa, tu público y lo que querés resolver. Revisamos tu web actual si ya tenés una."],
-  ["Lo definimos", "Acordamos alcance, materiales, presupuesto y etapas. Sabés qué se va a entregar antes de empezar."],
-  ["Le damos forma", "Diseñamos y desarrollamos la experiencia. Revisamos la propuesta con vos y ajustamos los detalles acordados."],
-  ["Lo ponemos online", "Probamos el sitio, coordinamos la publicación y entregamos los accesos y pautas de uso que correspondan."],
+  ["Conocemos tu negocio", "Conversamos sobre tu empresa, tu público y lo que querés resolver. Revisamos tu web actual si ya tenés una.", "Objetivos claros"],
+  ["Definimos el proyecto", "Acordamos alcance, materiales, presupuesto y etapas. Sabés qué vas a recibir antes de empezar.", "Alcance acordado"],
+  ["Diseñamos tu web", "Diseñamos y desarrollamos la experiencia. Revisamos la propuesta con vos y ajustamos los detalles acordados.", "Diseño aprobado"],
+  ["Publicamos y entregamos", "Probamos el sitio, coordinamos la publicación y entregamos los accesos y pautas de uso correspondientes.", "Sitio publicado"],
 ];
 
 function ScopeIcon({ index }: { index: number }) {
@@ -62,9 +62,9 @@ export default function ProposalAdditions() {
           <div><p className={s.eyebrow}>CÓMO TRABAJAMOS</p><h2 id="proposal-process">De la primera charla<br /><em>a tu próxima web.</em></h2></div>
           <p>Cuatro etapas para avanzar con claridad.<br />Sin necesitar que tengas todo resuelto desde el principio.</p>
         </header>
-        <ol className={s.steps}>{steps.map(([title, copy], i) => <li key={title}>
-          <div className={s.stepTop}><span>0{i + 1}</span><ArrowIcon direction="right" /></div>
-          <h3>{title}</h3><p>{copy}</p>
+        <ol className={s.steps}>{steps.map(([title, copy, outcome], i) => <li key={title}>
+          <div className={s.stepTop}><span>0{i + 1}</span></div>
+          <h3>{title}</h3><p>{copy}</p><span className={s.stepOutcome}>{outcome}</span>
         </li>)}</ol>
         <div className={s.start}><p><strong>¿Por dónde arrancamos?</strong> Contanos qué hace tu empresa y qué querés mejorar. Con eso podemos empezar.</p><a href={WHATSAPP_URL} className="cta-glow primary"><span>Quiero una asesoría sin cargo</span></a></div>
       </div>

@@ -62,7 +62,7 @@ const page: ServicePage = {
 
 export default function DesignWebProposal() {
   return <>
-    <aside className={s.review} aria-label="Estado de la propuesta">PROPUESTA EN REVISIÓN · V10</aside>
+    <aside className={s.review} aria-label="Estado de la propuesta">PROPUESTA EN REVISIÓN · V11</aside>
     <InternalPage page={page} additions={<ProposalAdditions />} evidence={<ProjectEvidence />} guideContent={<ReviewServiceGuide service="web" />} />
   </>;
 }

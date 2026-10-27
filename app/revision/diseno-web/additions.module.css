@@ -18,7 +18,7 @@
 .process em,.process .eyebrow{color:#ff792e}
 .processHead{display:grid;grid-template-columns:1.3fr 1fr;gap:70px;align-items:end;margin-bottom:46px}.processHead>p{color:#b6b6bc}
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:25px;list-style:none;padding:0;margin:0}
-.steps li{border-top:1px solid #5a4438;padding-top:22px;min-width:0}
+.steps li{border-top:0;padding-top:0;min-width:0;position:relative}
 .stepTop{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}.stepTop span{font:800 34px/1 "Gilroy ExtraBold",Arial,sans-serif;color:#ff792e}.stepTop svg{width:20px;height:20px;color:#a06a49}.steps li:last-child .stepTop svg{visibility:hidden}
 .steps p{font-size:14px;color:#b6b6bc}.steps h3{font-size:23px}
 .start{display:flex;align-items:center;justify-content:space-between;gap:40px;margin-top:42px;padding-top:30px;border-top:1px solid #ffffff20}.start p{max-width:600px;color:#b6b6bc;font-size:14px}.start strong{color:#fff;display:block;font-weight:700;margin-bottom:4px}.start a{flex-shrink:0}
@@ -86,6 +86,25 @@
 .scope .intro>p:not(.eyebrow){color:#45474f}
 .evidence{position:relative;isolation:isolate}
 .evidence::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(247,248,252,.86);pointer-events:none}
+.evidence::after{background:#fff}
+.evidence> .inner>header{padding-top:48px;margin-bottom:44px;border-top:0}
+.reviewTestimonials :global(.home-testimonials__media){border-radius:12px;overflow:hidden;box-shadow:0 12px 28px #14141912}
+.reviewTestimonials :global(.home-testimonials__media)>img{object-fit:contain;background:#101013}
+:global(#site-root) .reviewTestimonials :global(.home-testimonials__controls){display:flex!important;position:static;margin-top:24px}
+@media(max-width:980px){:global(#site-root) .reviewTestimonials :global(.home-testimonials__controls){order:4;margin:18px auto 0;justify-content:center}:global(#site-root) .reviewTestimonials .testimonialSite{display:inline-flex!important;width:auto!important;margin:0!important}}
+.testimonialActions{flex-wrap:wrap}
+.reviewTestimonials .testimonialSite{display:inline-flex;align-items:center;gap:12px;background:none;border:0;border-radius:0;box-shadow:none;color:#24262d;font:600 14px/1.5 Arial,sans-serif;text-decoration:none;padding:12px 0;white-space:nowrap}
+.testimonialSite svg{width:19px;height:19px;color:#b94300}
+.testimonialSite:hover{text-decoration:underline;text-underline-offset:4px}
+.reviewTestimonials a:focus-visible,.reviewTestimonials button:focus-visible{outline:3px solid #b94300;outline-offset:4px}
+.testimonialDialog{position:fixed;inset:0;margin:auto;border:0;border-radius:12px;padding:48px 12px 12px;background:#111;color:#fff;width:min(900px,calc(100vw - 32px));max-height:90dvh;box-shadow:0 20px 80px #0006}
+.testimonialDialog::backdrop{background:#000b}
+.testimonialDialog video{display:block;width:100%;max-height:calc(90dvh - 72px);object-fit:contain}
+.dialogClose{position:absolute;right:12px;top:8px;width:32px;height:32px;display:grid;place-items:center;border:1px solid #ffffff60;border-radius:50%;background:#222;color:#fff;cursor:pointer}
+.dialogClose svg{width:18px;height:18px}
+.evidence .caseActions{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.evidence .caseActions>.link{order:-1;margin-top:0;padding-bottom:8px;font-size:14px}
+@media(max-width:600px){.evidence> .inner>header{padding-top:32px;margin-bottom:32px}.evidence .caseActions{align-items:flex-start;flex-direction:column;gap:14px}.reviewTestimonials .testimonialActions{gap:12px}}
 .evidence .caseGrid{gap:40px;align-items:stretch}
 .evidence .caseGrid article{display:flex;flex-direction:column}
 .caseHeading{margin-bottom:20px}
@@ -123,3 +142,35 @@
 @media(max-width:600px){.evidence .caseGrid{gap:32px}.evidence .caseHeading h3{font-size:25px}.evidence .caseImage{margin-bottom:20px}.evidence .caseMore{flex-direction:column;align-items:flex-start;text-align:left;gap:12px}.evidence .caseMore p{font-size:20px}}
 @media(max-width:600px){.scope .deliverables p,.scope .intro>p:not(.eyebrow){font-size:15px;line-height:1.7}}
 @media(max-width:900px){.scope .delivery dl{gap:20px}.scope .delivery dl>div{padding:0}.scope .delivery dl>div+div{border-left:0;padding:20px 0 0}.scope .delivery dt{flex-direction:row;align-items:center;gap:12px}.scope .delivery summary{font-size:18px}.scope .deliveryLead{font-size:13px}}
+
+/* Connected process, isolated to the review proposal. */
+.process{padding-bottom:64px}
+.processHead{grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;margin-bottom:44px}
+.processHead>p{max-width:380px}
+.process .steps{gap:28px}
+.process .steps li{padding-top:0;border:0}
+.process .steps li:not(:last-child)::after{content:"";position:absolute;top:25px;left:62px;right:-28px;height:1px;background:linear-gradient(90deg,#ff792e66,#ffffff25)}
+.process .stepTop{margin-bottom:24px;position:relative;z-index:1}
+.process .stepTop span{display:grid;place-items:center;width:50px;height:50px;border:1px solid #ff792e55;border-radius:50%;font-size:21px;background:#191615}
+.process .steps h3{font-size:22px;min-height:53px;margin-bottom:10px}
+.process .stepOutcome{display:block;margin-top:18px;font-size:12px;font-weight:700;color:#f0bd9e;letter-spacing:.02em}
+.process .start{margin-top:34px;padding-top:24px;gap:24px}
+.process .start a{box-shadow:0 4px 16px #ff6a0015}
+@media(max-width:900px){
+ .process .steps{grid-template-columns:1fr;gap:0}
+ .process .steps li{display:grid;grid-template-columns:50px minmax(0,1fr);column-gap:22px;padding:0 0 30px}
+ .process .steps li:last-child{padding-bottom:0}
+ .process .steps li:not(:last-child)::after{top:58px;bottom:8px;left:24px;right:auto;width:1px;height:auto;background:#ff792e45}
+ .process .stepTop{grid-column:1;grid-row:1 / span 3;margin:0}
+ .process .steps h3{min-height:0;margin:4px 0 10px;text-align:left}
+ .process .steps p,.process .stepOutcome{grid-column:2;text-align:left}
+ .process .stepOutcome{margin-top:12px}
+}
+@media(max-width:600px){
+ .process{padding-bottom:44px}
+ .processHead{grid-template-columns:1fr;gap:18px;margin-bottom:32px}
+ .processHead>p{max-width:none}
+ .process .steps li{column-gap:16px}
+ .process .steps h3{font-size:21px}
+ .process .start{gap:18px}
+}

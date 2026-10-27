@@ -6,7 +6,7 @@ import ManagedBackgroundVideo from "../../../app/components/ManagedBackgroundVid
 import { DarkGridBackground, HeroChrome, HomeClosingSections } from "../../../components/SharedHomeSections";
 import SiteHeader from "../../../components/SiteHeader";
 import LightGridFrame from "../../../components/LightGridFrame";
-import HomeTestimonials from "../../../components/HomeTestimonials";
+import ReviewTestimonials from "./ReviewTestimonials";
 import { WHATSAPP_URL } from "../../../lib/whatsapp";
 import PortfolioLink from "../../../components/PortfolioLink";
 import type { ServiceGuideKey } from "../../../lib/service-guides";
@@ -208,7 +208,7 @@ export default function ReviewInternalPage({ page, additions, evidence, guideCon
         </section>;
     })}
     {additions}
-    {page.homeTestimonials && <HomeTestimonials />}
+    {page.homeTestimonials && <ReviewTestimonials />}
     {evidence}
     </LightGridFrame>
     {guideContent}

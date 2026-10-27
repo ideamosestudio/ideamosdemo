@@ -10,7 +10,9 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
   assert.match(html, /rel="canonical" href="https:\/\/ideamos.com.ar\/diseno-web-autoadministrable\/"/);
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   assert.match(html, /PROPUESTA EN REVISIÓN/);
-  assert.match(html, /PROPUESTA EN REVISIÓN · V10/);
+  assert.match(html, /PROPUESTA EN REVISIÓN · V11/);
+  assert.match(html, /cylsa-clean.webp/);
+  assert.doesNotMatch(await read('diseno-web-autoadministrable/index.html'), /cylsa-clean.webp/);
   assert.match(html, /Visitar el sitio de CYL Neumáticos/);
   assert.match(html, /<strong>conecta proyectos y servicios<\/strong>/);
   assert.match(html, /Ver testimonio de Pablo/);
