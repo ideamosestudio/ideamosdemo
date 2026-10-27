@@ -326,18 +326,27 @@
     color:#fff!important;
   }
 
-  :global(#site-root#site-root) .reviewPage :global(.design-problems .service-heading>h3){
-    display:block!important;
-    width:min(50vw,900px)!important;
-    max-width:none!important;
-    margin:0 auto!important;
-    color:#000!important;
-    font-family:"Roboto Light","Roboto",Arial,sans-serif!important;
-    font-size:15px!important;
-    font-weight:300!important;
-    line-height:1.65!important;
-    letter-spacing:normal!important;
-    text-align:center!important;
+}
+
+/* Bajada de “¿Qué problemas resuelve...?”: 15 px en todos los breakpoints. */
+:global(#site-root#site-root#site-root) .reviewPage :global(.design-problems .service-heading>h3){
+  display:block!important;
+  width:min(50vw,900px)!important;
+  max-width:none!important;
+  margin:0 auto!important;
+  color:#000!important;
+  font-family:"Roboto Light","Roboto",Arial,sans-serif!important;
+  font-size:15px!important;
+  font-style:normal!important;
+  font-weight:300!important;
+  line-height:1.65!important;
+  letter-spacing:normal!important;
+  text-align:center!important;
+}
+
+@media(max-width:980px){
+  :global(#site-root#site-root#site-root) .reviewPage :global(.design-problems .service-heading>h3){
+    width:100%!important;
   }
 }
 

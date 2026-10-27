@@ -68,6 +68,10 @@ test('REVISION usa Roboto Light a 15 px en sus párrafos sin afectar módulos co
   assert.match(css, /font-family:"Roboto Light"/);
   assert.match(css, /src:url\("\/fonts\/Roboto-Light\.ttf"\)/);
   assert.match(css, /font-size:15px!important/);
+  assert.match(
+    css,
+    /design-problems \.service-heading>h3\)\{[^}]*font-size:15px!important/s,
+  );
   assert.match(css, /font-weight:300!important/);
   assert.match(css, /line-height:1\.65!important/);
   assert.match(css, /letter-spacing:normal!important/);
