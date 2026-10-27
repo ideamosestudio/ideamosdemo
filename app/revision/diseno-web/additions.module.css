@@ -286,6 +286,59 @@
     font-weight:800!important;
     letter-spacing:-.02em!important;
   }
+
+  /* Cabeceras señaladas: misma jerarquía editorial que Ecommerce en la Home. */
+  :global(#site-root#site-root) .reviewPage :global(.design-problems .service-heading),
+  :global(#site-root#site-root) .reviewPage :global(.service-benefits .service-heading){
+    margin-right:auto!important;
+    margin-left:auto!important;
+    text-align:center!important;
+  }
+
+  :global(#site-root#site-root) .reviewPage :global(.design-problems .service-heading>p:first-child),
+  :global(#site-root#site-root) .reviewPage :global(.service-benefits .service-heading>p:first-child){
+    margin:0 0 24px!important;
+    color:#e64a00!important;
+    font-family:"Poppins",Arial,sans-serif!important;
+    font-size:13px!important;
+    font-weight:700!important;
+    line-height:1.5!important;
+    letter-spacing:.42em!important;
+  }
+
+  :global(#site-root#site-root) .reviewPage :global(.design-problems .service-heading h2),
+  :global(#site-root#site-root) .reviewPage :global(.service-benefits .service-heading h2){
+    max-width:850px!important;
+    margin:0 auto 20px!important;
+    font-family:"Gilroy ExtraBold",Arial,sans-serif!important;
+    font-size:clamp(38px,2.8vw,53px)!important;
+    font-weight:800!important;
+    line-height:1.02!important;
+    letter-spacing:-.045em!important;
+    text-align:center!important;
+  }
+
+  :global(#site-root#site-root) .reviewPage :global(.design-problems .service-heading h2){
+    color:#111!important;
+  }
+
+  :global(#site-root#site-root) .reviewPage :global(.service-benefits .service-heading h2){
+    color:#fff!important;
+  }
+
+  :global(#site-root#site-root) .reviewPage :global(.design-problems .service-heading>h3){
+    display:block!important;
+    width:min(50vw,900px)!important;
+    max-width:none!important;
+    margin:0 auto!important;
+    color:#000!important;
+    font-family:"Roboto Light","Roboto",Arial,sans-serif!important;
+    font-size:15px!important;
+    font-weight:300!important;
+    line-height:1.65!important;
+    letter-spacing:normal!important;
+    text-align:center!important;
+  }
 }
 
 /* CTA secundario exclusivo del primer módulo de REVISION. */
