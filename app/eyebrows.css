@@ -14,26 +14,27 @@
   font-display:swap;
 }
 
+/* Regla tipográfica global para todos los eyebrows del sitio. */
+#site-root#site-root#site-root :is(
+  .availability,[class*="eyebrow"],[class*="kicker"],.happy-clients-label,
+  :is(.service-heading,.section-heading,.google-content,.home-testimonials__copy,
+  .human-copy,.md-copy,.pw-intro,.pw-copy,.pw-benefits-copy,.shops-heading,
+  .cases-work-heading,.pricing-intro-copy,.pricing-heading,.testimonial-copy)>p:first-child,
+  .md-section>header>p:first-child
+){
+  font:700 13px/1.5 "Poppins",Arial,sans-serif!important;
+  letter-spacing:.42em!important;
+}
+
 /* Poppins y el color del título solo en módulos de contenido.
    Portadas, formulario y footer quedan excluidos. */
-#site-root .happy-clients-label,
-#site-root .section-heading>p:first-child,
-#site-root .google-content>p:first-child,
-#site-root .home-testimonials__copy>p:first-child,
-#site-root .human-copy>p:first-child,
-#site-root .service-heading>p:first-child,
-#site-root .md-section>header>p:first-child,
-#site-root .md-copy>p:first-child,
-#site-root .pw-intro>p:first-child,
-#site-root .pw-copy>p:first-child,
-#site-root .pw-benefits-copy>p:first-child,
-#site-root .shops-heading>p:first-child,
-#site-root .cases-kicker,
-#site-root .cases-work-heading>p:first-child,
-#site-root .pricing-intro-copy>p:first-child,
-#site-root .pricing-heading>p:first-child,
-#site-root .testimonial-copy>p:first-child{
-  font-family:"Poppins",Arial,sans-serif!important;
+#site-root :is(
+  .happy-clients-label,.cases-kicker,
+  :is(.section-heading,.google-content,.home-testimonials__copy,.human-copy,
+  .service-heading,.md-copy,.pw-intro,.pw-copy,.pw-benefits-copy,.shops-heading,
+  .cases-work-heading,.pricing-intro-copy,.pricing-heading,.testimonial-copy)>p:first-child,
+  .md-section>header>p:first-child
+){
   color:#e64a00!important;
 }
 

@@ -356,18 +356,18 @@
 :global(#site-root#site-root#site-root) .reviewPage :global(.service-xtreme .review-title-accent){
   display:inline-block;
   color:#e64a00!important;
-  background-image:linear-gradient(105deg,#d94100 0%,#e64a00 25%,#ff7a18 48%,#ffad66 56%,#f05a00 72%,#d94100 100%);
-  background-position:0 50%;
-  background-size:260% 100%;
+  background-image:linear-gradient(105deg,#e64a00 0%,#e64a00 44%,#ed6422 49%,#f08445 50%,#ed6422 51%,#e64a00 56%,#e64a00 100%);
+  background-position:100% 50%;
+  background-size:240% 100%;
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color:transparent;
-  animation:review-title-orange-flow 4.5s ease-in-out infinite;
+  animation:review-title-orange-flow 18s ease-in-out infinite;
 }
 
 @keyframes review-title-orange-flow{
-  0%,100%{background-position:0 50%}
-  50%{background-position:100% 50%}
+  0%,78%{background-position:100% 50%}
+  90%,100%{background-position:0 50%}
 }
 
 @media(prefers-reduced-motion:reduce){

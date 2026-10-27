@@ -38,7 +38,7 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
   assert.match(html, /Una web autoadministrable te permite editar contenido/);
   assert.match(
     html,
-    /<span class="review-title-accent">Creamos webs<\/span> que generan<br\/>confianza y oportunidades/,
+    /Creamos <span class="review-title-accent">webs que generan<br\/>confianza<\/span> y oportunidades/,
   );
   assert.match(html, /Diseño con identidad\. Un camino al contacto\./);
   assert.doesNotMatch(html, /Diseño con identidad\. Contenido claro\./);
@@ -113,7 +113,8 @@ test('REVISION usa Roboto Light a 15 px en sus párrafos sin afectar módulos co
   assert.match(css, /font-size:clamp\(38px,2\.8vw,53px\)!important/);
   assert.match(css, /width:min\(50vw,900px\)!important/);
   assert.match(css, /\.service-xtreme \.review-title-accent/);
-  assert.match(css, /linear-gradient\(105deg,#d94100 0%,#e64a00 25%,#ff7a18 48%/);
-  assert.match(css, /animation:review-title-orange-flow 4\.5s ease-in-out infinite/);
+  assert.match(css, /linear-gradient\(105deg,#e64a00 0%,#e64a00 44%,#ed6422 49%/);
+  assert.match(css, /animation:review-title-orange-flow 18s ease-in-out infinite/);
+  assert.match(css, /0%,78%\{background-position:100% 50%\}/);
   assert.match(css, /@media\(prefers-reduced-motion:reduce\)/);
 });
