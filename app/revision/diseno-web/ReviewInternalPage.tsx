@@ -57,6 +57,13 @@ function Actions() {
   </div>;
 }
 
+function ProjectActions() {
+  return <div className="hero-actions internal-actions review-project-actions">
+    <a className="cta-glow primary" href={WHATSAPP_URL}><span>Quiero una asesoría sin cargo</span></a>
+    <PortfolioLink button>Ver proyectos realizados</PortfolioLink>
+  </div>;
+}
+
 export default function ReviewInternalPage({ page, additions, evidence, guideContent }: { page: ServicePage; additions: ReactNode; evidence: ReactNode; guideContent: ReactNode }) {
   const [wildeFrame, setWildeFrame] = useState(0);
   const phoneRef = useRef<HTMLDivElement>(null);
@@ -144,8 +151,7 @@ export default function ReviewInternalPage({ page, additions, evidence, guideCon
             <h2>{section.title}</h2>
             {section.lead && <h3>{section.lead}</h3>}
             {section.paragraphs?.map((copy, index) => <div className="service-copy" key={index}>{copy}</div>)}
-            {section.actions && <Actions />}
-            {page.guide === "web" && <PortfolioLink>Ver proyectos de diseño web</PortfolioLink>}
+            {section.actions && (page.guide === "web" ? <ProjectActions /> : <Actions />)}
           </header>
           <div className="service-visual-media">
             <img src={asset("/media/xtreme-service.webp")} srcSet={`${asset("/revision/diseno-web-assets/xtreme-service-480.webp")} 480w, ${asset("/revision/diseno-web-assets/xtreme-service-800.webp")} 800w, ${asset("/media/xtreme-service.webp")} 1300w`} sizes="(max-width: 980px) 80vw, 45vw" alt="Sitio web Xtreme desarrollado por Ideamos" width="1300" height="987" loading="lazy" decoding="async" />

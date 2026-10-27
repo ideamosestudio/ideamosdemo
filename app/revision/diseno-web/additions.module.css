@@ -260,3 +260,21 @@
     letter-spacing:-.02em!important;
   }
 }
+
+/* CTA secundario exclusivo del primer módulo de REVISION. */
+:global(#site-root#site-root) .reviewPage :global(.service-xtreme .review-project-actions .cta-glow.secondary){
+  display:inline-flex!important;
+  border:2px solid #e64a00!important;
+  background:transparent!important;
+  color:#111!important;
+  letter-spacing:1px!important;
+  box-shadow:none!important;
+}
+
+:global(#site-root#site-root) .reviewPage :global(.service-xtreme .review-project-actions .cta-glow.secondary:is(:hover,:focus-visible)){
+  border-color:#e64a00!important;
+  background:rgba(230,74,0,.08)!important;
+  color:#111!important;
+  letter-spacing:1px!important;
+  box-shadow:0 0 0 4px rgba(230,74,0,.1)!important;
+}
