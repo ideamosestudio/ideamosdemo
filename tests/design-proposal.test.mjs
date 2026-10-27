@@ -61,3 +61,16 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
     assert.doesNotMatch(await read(path), /href="[^"]*\/revision\/diseno-web/);
   }
 });
+
+test('REVISION usa Roboto Light a 15 px en sus párrafos sin afectar módulos compartidos', async () => {
+  const css = await readFile(new URL('../app/revision/diseno-web/additions.module.css', import.meta.url), 'utf8');
+
+  assert.match(css, /font-family:"Roboto Light"/);
+  assert.match(css, /src:url\("\/fonts\/Roboto-Light\.ttf"\)/);
+  assert.match(css, /font-size:15px!important/);
+  assert.match(css, /font-weight:300!important/);
+  assert.match(css, /line-height:1\.65!important/);
+  assert.match(css, /letter-spacing:normal!important/);
+  assert.match(css, /\.reviewPage/);
+  assert.doesNotMatch(css, /\.reviewPage[^}]*home-testimonials/s);
+});

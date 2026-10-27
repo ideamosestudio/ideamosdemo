@@ -181,7 +181,7 @@
  * asesoría, formulario, footer ni ningún módulo compartido con otras páginas.
  */
 @font-face{
-  font-family:"Roboto Revision";
+  font-family:"Roboto Light";
   src:url("/fonts/Roboto-Light.ttf") format("truetype");
   font-style:normal;
   font-weight:300;
@@ -204,12 +204,39 @@
 :global(#site-root#site-root) .reviewPage .evidence .caseMore,
 :global(#site-root#site-root) .reviewPage :global(.service-faq__description),
 :global(#site-root#site-root) .reviewPage :global(.service-faq__answer p){
-  font-family:"Roboto Revision","Roboto",Arial,sans-serif!important;
+  margin:0!important;
+  font-family:"Roboto Light","Roboto",Arial,sans-serif!important;
   font-size:15px!important;
   font-style:normal!important;
   font-weight:300!important;
   line-height:1.65!important;
   letter-spacing:normal!important;
+}
+
+:global(#site-root#site-root) .reviewPage :global(.service-section:not(.dark):not(.service-benefits) .service-copy),
+:global(#site-root#site-root) .reviewPage :global(.design-problems-list p),
+:global(#site-root#site-root) .reviewPage .scope :is(.intro>p:not(.eyebrow),.deliverables p,.deliveryNote,.delivery dd,.delivery>p),
+:global(#site-root#site-root) .reviewPage .evidence :is(.caseGrid p,.caseFacts dd){
+  color:#333!important;
+}
+
+:global(#site-root#site-root) .reviewPage :global(.service-copy){
+  max-width:650px!important;
+}
+
+:global(#site-root#site-root) .reviewPage :is(
+  :global(.service-copy),
+  :global(.design-problems-list p),
+  :global(.service-items p),
+  .scope p,
+  .scope dd,
+  .process p,
+  .evidence .caseGrid p,
+  .evidence .caseFacts dd,
+  :global(.service-faq__description),
+  :global(.service-faq__answer p)
+) :is(b,strong){
+  font-weight:700!important;
 }
 
 @media(min-width:981px){
