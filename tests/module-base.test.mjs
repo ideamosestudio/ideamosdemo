@@ -15,7 +15,7 @@ const moduleLines = [
 
 test('los dos módulos base de Home respetan cuatro líneas editoriales', async () => {
   const source = await readFile(new URL('../app/page.tsx', import.meta.url), 'utf8');
-  const css = await readFile(new URL('../app/module-base.css', import.meta.url), 'utf8');
+  const css = await readFile(new URL('../app/split-module-consistency.css', import.meta.url), 'utf8');
 
   assert.equal((source.match(/module-base-copy__group/g) ?? []).length, 4);
   assert.equal((source.match(/module-base-copy__line/g) ?? []).length, 8);

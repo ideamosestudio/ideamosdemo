@@ -77,8 +77,8 @@ export default function Home() {
     </section>
 
     <LightGridFrame className="home-services-grid">
-    <section className="statement module-base white-section shared-section-bg" id="web">
-      <div className="statement-copyblock" data-reveal>
+    <section className="statement white-section shared-section-bg" id="web" data-module-base>
+      <div className="statement-copyblock module-base" data-reveal>
         <div className="happy-clients" aria-label="Más de 2000 clientes felices">
           <span className="happy-clients-avatars" aria-hidden="true">
             {["003", "002", "001"].map((name, index) => (
@@ -123,8 +123,8 @@ export default function Home() {
       <div className="ecommerce-actions"><a className="cta-glow primary" href={WHATSAPP_URL}><span className="desktop-only">Quiero una tienda online</span><span className="mobile-only">Contactanos</span></a><a className="cta-glow secondary" href={WHATSAPP_URL}><span className="desktop-only">Quiero hablar con un experto</span><span className="mobile-only">Contacta un experto</span></a></div>
     </section>
 
-    <section className="google-scene module-base white-section shared-section-bg" id="google">
-      <div className="google-content" data-reveal>
+    <section className="google-scene white-section shared-section-bg" id="google" data-module-base>
+      <div className="google-content module-base" data-reveal>
         <p>POSICIONAMIENTO EN GOOGLE</p>
         <h2>Convertimos tu web en una máquina de generar tráfico, leads y ventas</h2>
         <h3><b>Liderá Google</b> con estrategias de <b>SEO y Google Ads</b></h3>
