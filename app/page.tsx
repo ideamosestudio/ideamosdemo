@@ -29,6 +29,34 @@ const moduleBaseStyles = `
 @media(min-width:981px){#site-root .home-page [data-module-base] .module-base h2{margin:0 0 30px!important;font-size:clamp(46px,2.8vw,53px)!important;line-height:1!important}#site-root .home-page [data-module-base] .module-base h3{margin:0 0 26px!important;font-size:clamp(22px,1.3vw,24px)!important;line-height:1.35!important;letter-spacing:normal!important}}
 @media(min-width:1101px){#site-root .home-page [data-module-base]{padding-block:118px!important}#site-root .home-page :is([data-module-base].statement .happy-clients,[data-module-base].google-scene .google-content>p:first-child){margin-bottom:26px!important}}
 @media(min-width:1401px){#site-root .home-page [data-module-base] .module-base-copy__line{white-space:nowrap}}
+#site-root .home-page .service-directory__description{max-width:610px;margin:28px 0 34px;color:#d0d0d0;font:300 15px/1.65 "Roboto Light","Roboto",Arial,sans-serif}
+#site-root .home-page .service-directory__description>span{display:block}
+#site-root .home-page .service-directory__description>span:nth-child(3){margin-top:1.65em}
+#site-root .home-page .service-directory__description strong{color:#f5f5f5;font-weight:900}
+#site-root .home-page .service-directory__experience,#site-root .home-page .service-directory__services,#site-root .home-page .service-directory__panels{min-width:0}
+#site-root .home-page .service-directory__progress{display:flex;align-items:center;gap:20px;margin-bottom:44px;color:#8f8f8f;font:500 11px/1.2 monospace;letter-spacing:.08em}
+#site-root .home-page .service-directory__progress>span{flex:0 0 auto}
+#site-root .home-page .service-directory__progress b{color:#ff7830;font-weight:500}
+#site-root .home-page .service-directory__progress>i{position:relative;display:block;width:100%;height:1px;overflow:hidden;background:#494949}
+#site-root .home-page .service-directory__progress>i>span{position:absolute;inset:0 auto 0 0;width:25%;background:#ff6000;transition:width .55s cubic-bezier(.16,1,.3,1)}
+#site-root .home-page .service-directory__copy{gap:12px}
+#site-root .home-page .service-directory__title{font-size:clamp(28px,2.5vw,36px)}
+#site-root .home-page .service-directory__detail{max-width:430px;color:#d0d0d0;font:300 15px/1.65 "Roboto Light","Roboto",Arial,sans-serif}
+#site-root .home-page .service-directory__link{width:max-content;margin-top:8px;color:#ff8b4b;font-size:10px;font-weight:800;letter-spacing:.16em;line-height:1.4}
+@media(hover:hover){#site-root .home-page .service-directory__item:hover .service-directory__link{color:#ffb083}}
+@media(min-width:901px) and (min-height:560px){
+#site-root .home-page .service-directory__intro{top:clamp(150px,18vh,210px)}
+#site-root .home-page .service-directory__experience{display:grid;grid-template-areas:"stage"}
+#site-root .home-page .service-directory__services{position:sticky;top:108px;z-index:2;grid-area:stage;align-self:start;display:flex;min-height:calc(100svh - 108px);flex-direction:column;justify-content:center;border-top:0}
+#site-root .home-page .service-directory__panels{position:relative;min-height:280px}
+#site-root#site-root .home-page .service-directory__item{position:absolute;inset:0;min-height:0;padding:10px 4px;border:0;grid-template-columns:minmax(0,1fr) 52px;opacity:0;pointer-events:none;transform:translateY(26px);transition:opacity .45s ease,transform .6s cubic-bezier(.16,1,.3,1)}
+#site-root#site-root .home-page .service-directory__item[data-active]{opacity:1;pointer-events:auto;transform:none}
+#site-root .home-page .service-directory__number{display:none}
+#site-root .home-page .service-directory__arrow{width:52px;height:52px}
+#site-root .home-page .service-directory__steps{grid-area:stage;z-index:1}
+#site-root .home-page .service-directory__steps>span{display:block;min-height:calc(100svh - 108px)}
+}
+@media(max-width:900px){#site-root .home-page .service-directory__services{border-top:0}#site-root .home-page .service-directory__progress,#site-root .home-page .service-directory__steps{display:none}#site-root .home-page .service-directory__panels{border-top:1px solid #494949}#site-root .home-page .service-directory__item{border-bottom:1px solid #494949}}
 `;
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
