@@ -15,6 +15,7 @@ import { WHATSAPP_URL } from "../lib/whatsapp";
 import ArrowIcon from "../components/ArrowIcon";
 
 const moduleBaseStyles = `
+#site-root .home-page .hero h1>.hero-title-desktop{padding:.05em .1em .11em;margin:-.05em -.1em -.11em;overflow:visible}
 #site-root .home-page [data-module-base] .module-base-copy{margin:0!important;color:#000!important;font:300 15px/1.65 "Roboto Light","Roboto",Arial,sans-serif!important;letter-spacing:normal!important;overflow-wrap:normal;word-break:normal;hyphens:none}
 #site-root .home-page [data-module-base] :is(.module-base-copy__group,.module-base-copy__line){display:block}
 #site-root .home-page [data-module-base] .module-base-copy__group+.module-base-copy__group{margin-top:1.65em}

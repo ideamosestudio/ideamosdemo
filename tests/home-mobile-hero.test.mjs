@@ -15,6 +15,7 @@ test('mobile home promotes web and ecommerce with illustrative concepts', async 
   assert.match(source, /hero-title-desktop">Experiencias digitales/);
   assert.match(source, /desktop-only">DISEÑO WEB Y MARKETING DIGITAL/);
   assert.match(source, /mobile-only">DISEÑO WEB Y MKT DIGITAL/);
+  assert.match(source, /hero h1>\.hero-title-desktop\{padding:/);
   assert.match(hero, /hero-work-scene/);
   assert.match(hero, /hero-concept-architecture.webp/);
   assert.match(hero, /hero-concept-fashion.webp/);
