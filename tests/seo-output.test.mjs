@@ -79,9 +79,12 @@ test("el directorio de servicios conserva enlaces y contenido en HTML sin script
   const section = html.match(/<section class="service-guide service-directory"[\s\S]*?<\/section>/)?.[0];
   assert.ok(section);
   assert.equal((section.match(/class="service-directory__item"/g) ?? []).length, 4);
-  for (const path of ["diseno-web-autoadministrable", "tiendas-online", "posicionamiento-web", "marketing-digital", "casos-de-exito"]) {
+  for (const path of ["diseno-web-autoadministrable", "tiendas-online", "posicionamiento-web", "marketing-digital"]) {
     assert.ok(section.includes(`/${path}/`), path);
   }
+  assert.match(section, /href="https:\/\/wa\.me\/5491168758285\?/);
+  assert.match(section, /QUIERO ASESORAMIENTO PARA MI PROYECTO/);
+  assert.match(section, /QUIERO CONTACTARME/);
   assert.doesNotMatch(section, /<script|<img|<video/);
 });
 
