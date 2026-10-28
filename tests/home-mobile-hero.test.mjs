@@ -35,6 +35,5 @@ test('mobile home promotes web and ecommerce with illustrative concepts', async 
   assert.match(source, /Contanos tu proyecto y definamos el próximo paso/);
   assert.match(source, /data-service-panel/);
   assert.match(source, /data-service-step/);
-  const serviceGuideCss = await readFile(new URL('../app/service-guide.css', import.meta.url), 'utf8');
-  assert.match(serviceGuideCss, /service-directory__services\s*\{[\s\S]{0,180}position:\s*sticky/);
+  assert.match(source, /service-directory__services\{position:sticky/);
 });
