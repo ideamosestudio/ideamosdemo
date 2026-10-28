@@ -33,31 +33,6 @@ const moduleBaseStyles = `
 #site-root .home-page .service-directory__description>span{display:block}
 #site-root .home-page .service-directory__description>span:nth-child(3){margin-top:1.65em}
 #site-root .home-page .service-directory__description strong{color:#f5f5f5;font-weight:900}
-#site-root .home-page .service-directory__experience,#site-root .home-page .service-directory__services,#site-root .home-page .service-directory__panels{min-width:0}
-#site-root .home-page .service-directory__progress{display:flex;align-items:center;gap:20px;width:min(100%,580px);margin-bottom:0;color:#a7a7a7;font:500 11px/1.2 monospace;letter-spacing:.08em}
-#site-root .home-page .service-directory__progress>span{flex:0 0 auto}
-#site-root .home-page .service-directory__progress b{color:#ff7830;font-weight:500}
-#site-root .home-page .service-directory__progress>i{position:relative;display:block;width:100%;height:1px;overflow:hidden;background:#494949}
-#site-root .home-page .service-directory__progress>i>span{position:absolute;inset:0 auto 0 0;width:25%;background:#ff6000;transition:width .55s cubic-bezier(.16,1,.3,1)}
-#site-root .home-page .service-directory__copy{position:relative;z-index:2;display:grid;gap:16px;max-width:480px}
-#site-root .home-page .service-directory__title{color:#f7f7f7;font:900 clamp(38px,3.3vw,50px)/1.02 "Poppins",Arial,sans-serif;letter-spacing:-.035em}
-#site-root .home-page .service-directory__detail{max-width:460px;color:#d0d0d0;font:300 15px/1.65 "Roboto Light","Roboto",Arial,sans-serif}
-#site-root#site-root .home-page .service-directory__link{display:inline-flex;align-items:center;justify-self:start;gap:12px;width:fit-content;margin-top:12px;padding:0 0 9px;border:0;border-bottom:1px solid #e64a00;background:transparent;color:#ff8a4a;font:700 10px/1.2 "Poppins",Arial,sans-serif;letter-spacing:1.4px;text-align:left;text-transform:uppercase;white-space:nowrap;transition:color .28s ease,border-color .28s ease,letter-spacing .28s ease}
-#site-root .home-page .service-directory__link svg{width:17px;height:17px;transition:transform .28s ease}
-@media(hover:hover){#site-root#site-root .home-page .service-directory__item:hover .service-directory__link{border-color:#ff9b65;color:#fff;letter-spacing:2px}#site-root .home-page .service-directory__item:hover .service-directory__link svg{transform:translate(3px,-3px)}}
-@media(min-width:901px) and (min-height:560px){
-#site-root .home-page .service-directory__intro{top:clamp(150px,18vh,210px)}
-#site-root .home-page .service-directory__experience{display:grid;grid-template-areas:"stage"}
-#site-root .home-page .service-directory__services{position:sticky;top:108px;z-index:2;grid-area:stage;align-self:start;display:flex;min-height:calc(100svh - 108px);padding-top:clamp(150px,18vh,210px);flex-direction:column;justify-content:flex-start;border-top:0}
-#site-root .home-page .service-directory__panels{position:relative;width:min(100%,580px);min-height:330px;isolation:isolate}
-#site-root .home-page .service-directory__panels:before{content:"";position:absolute;z-index:-1;inset:26px -30px 0 -34px;background:radial-gradient(circle at 76% 35%,rgba(255,96,0,.1),transparent 42%);pointer-events:none}
-#site-root#site-root .home-page .service-directory__item{position:absolute;inset:0;display:block;min-height:0;padding:56px 4px 12px;border:0;overflow:hidden;opacity:0;pointer-events:none;transform:translateY(28px);transition:opacity .45s ease,transform .65s cubic-bezier(.16,1,.3,1)}
-#site-root#site-root .home-page .service-directory__item[data-active]{opacity:1;pointer-events:auto;transform:none}
-#site-root .home-page .service-directory__number{position:absolute;z-index:0;top:16px;right:4px;display:block;color:transparent;font:900 clamp(132px,11vw,184px)/.8 "Poppins",Arial,sans-serif;letter-spacing:-.08em;-webkit-text-stroke:1px rgba(255,255,255,.085);user-select:none}
-#site-root .home-page .service-directory__steps{grid-area:stage;z-index:1}
-#site-root .home-page .service-directory__steps>span{display:block;min-height:calc(100svh - 108px)}
-}
-@media(max-width:900px){#site-root .home-page .service-directory__services{border-top:0}#site-root .home-page .service-directory__progress,#site-root .home-page .service-directory__steps{display:none}#site-root .home-page .service-directory__panels{border-top:1px solid #494949}#site-root .home-page .service-directory__item{grid-template-columns:24px minmax(0,1fr);border-bottom:1px solid #494949}#site-root .home-page .service-directory__title{font-size:clamp(25px,7vw,32px)}#site-root .home-page .service-directory__link{margin-top:4px}}
 `;
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -142,40 +117,29 @@ export default function Home() {
             <span>HABLEMOS DE TU PROYECTO</span>
           </a>
         </div>
-        <div className="service-directory__experience" data-service-directory>
-          <nav className="service-directory__services" aria-label="Explorar servicios de Ideamos">
-            <div className="service-directory__progress" aria-hidden="true">
-              <span><b data-service-current>01</b> / 04</span>
-              <i><span data-service-progress /></i>
-            </div>
-            <div className="service-directory__panels">
-              {[
-                { path: "/diseno-web-autoadministrable/", title: "Diseño web", description: "Una web clara, profesional y preparada para convertir visitas en consultas." },
-                { path: "/tiendas-online/", title: "Tiendas online", description: "Una tienda simple de gestionar, diseñada para vender y acompañar tu crecimiento." },
-                { path: "/posicionamiento-web/", title: "SEO y Google Ads", description: "Estrategias para que te encuentren quienes ya están buscando lo que ofrecés." },
-                { path: "/marketing-digital/", title: "Marketing digital", description: "Contenido y campañas orientados a objetivos concretos para hacer crecer tu marca." },
-              ].map((service, index) => (
-                <a
-                  className="service-directory__item"
-                  href={asset(service.path)}
-                  key={service.path}
-                  data-service-panel
-                  data-active={index === 0 ? "true" : undefined}
-                >
-                  <span className="service-directory__number" aria-hidden="true">0{index + 1}</span>
-                  <span className="service-directory__copy">
-                    <span className="service-directory__title">{service.title}</span>
-                    <span className="service-directory__detail">{service.description}</span>
-                    <span className="service-directory__link">CONOCER {service.title}<ArrowIcon /></span>
-                  </span>
-                </a>
-              ))}
-            </div>
-          </nav>
-          <div className="service-directory__steps" aria-hidden="true">
-            {[0, 1, 2, 3].map((index) => <span data-service-step key={index} />)}
-          </div>
-        </div>
+        <nav className="service-directory__services" aria-label="Explorar servicios de Ideamos">
+          {[
+            { path: "/diseno-web-autoadministrable/", title: "Diseño web", description: "Una web clara, profesional y preparada para convertir visitas en consultas." },
+            { path: "/tiendas-online/", title: "Tiendas online", description: "Una tienda simple de gestionar, diseñada para vender y acompañar tu crecimiento." },
+            { path: "/posicionamiento-web/", title: "SEO y Google Ads", description: "Estrategias para que te encuentren quienes ya están buscando lo que ofrecés." },
+            { path: "/marketing-digital/", title: "Marketing digital", description: "Contenido y campañas orientados a objetivos concretos para hacer crecer tu marca." },
+          ].map((service, index) => (
+            <a
+              className="service-directory__item"
+              href={asset(service.path)}
+              key={service.path}
+              data-reveal
+              style={{ transitionDelay: `${index * 180}ms` }}
+            >
+              <span className="service-directory__number" aria-hidden="true">0{index + 1}</span>
+              <span className="service-directory__copy">
+                <span className="service-directory__title">{service.title}</span>
+                <span className="service-directory__detail">{service.description}</span>
+              </span>
+              <span className="service-directory__arrow" aria-hidden="true"><ArrowIcon /></span>
+            </a>
+          ))}
+        </nav>
       </div>
     </section>
 

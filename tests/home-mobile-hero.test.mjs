@@ -33,11 +33,7 @@ test('mobile home promotes web and ecommerce with illustrative concepts', async 
   assert.match(source, /service-directory__contact\{[^}]*width:322px/);
   assert.match(source, /HABLEMOS DE TU PROYECTO/);
   assert.match(source, /Contanos tu proyecto y definamos el próximo paso/);
-  assert.match(source, /data-service-panel/);
-  assert.match(source, /data-service-step/);
-  assert.match(source, /service-directory__services\{position:sticky/);
-  assert.match(source, /service-directory__link\{[^}]*width:fit-content[^}]*border-bottom:1px solid #e64a00/);
-  assert.match(source, /service-directory__progress\{[^}]*width:min\(100%,580px\)[^}]*margin-bottom:0/);
-  assert.match(source, /service-directory__number\{[^}]*font:900 clamp\(132px,11vw,184px\)/);
-  assert.match(source, /CONOCER \{service\.title\}/);
+  assert.match(source, /service-directory__item[\s\S]*data-reveal/);
+  assert.doesNotMatch(source, /data-service-(?:panel|step|progress|current)/);
+  assert.doesNotMatch(source, /service-directory__progress/);
 });
