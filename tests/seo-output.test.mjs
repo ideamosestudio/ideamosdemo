@@ -84,7 +84,7 @@ test("el directorio de servicios conserva enlaces y contenido en HTML sin script
   }
   assert.match(section, /href="https:\/\/wa\.me\/5491168758285\?/);
   assert.match(section, /HABLEMOS DE TU PROYECTO/);
-  assert.match(section, /VER SERVICIO/);
+  assert.match(section, /CONOCER/);
   assert.doesNotMatch(section, /<script|<img|<video/);
 });
 

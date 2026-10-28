@@ -36,6 +36,8 @@ test('mobile home promotes web and ecommerce with illustrative concepts', async 
   assert.match(source, /data-service-panel/);
   assert.match(source, /data-service-step/);
   assert.match(source, /service-directory__services\{position:sticky/);
-  assert.match(source, /service-directory__link\{[^}]*width:322px[^}]*min-height:58px/);
-  assert.match(source, /service-directory__progress\{[^}]*margin-bottom:24px/);
+  assert.match(source, /service-directory__link\{[^}]*width:fit-content[^}]*border-bottom:1px solid #e64a00/);
+  assert.match(source, /service-directory__progress\{[^}]*width:min\(100%,580px\)[^}]*margin-bottom:0/);
+  assert.match(source, /service-directory__number\{[^}]*font:900 clamp\(132px,11vw,184px\)/);
+  assert.match(source, /CONOCER \{service\.title\}/);
 });
