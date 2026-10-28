@@ -30,6 +30,7 @@ test('mobile home promotes web and ecommerce with illustrative concepts', async 
   assert.ok(heroStart !== -1 && heroStart < serviceDirectory);
   assert.ok(serviceDirectory < servicesGrid, 'The service directory should be immediately after the hero');
   assert.match(source, /service-directory__contact cta-glow secondary" href=\{WHATSAPP_URL\}/);
+  assert.match(source, /service-directory__contact\{[^}]*width:322px/);
   assert.match(source, /QUIERO ASESORAMIENTO PARA MI PROYECTO/);
   assert.match(source, /QUIERO CONTACTARME/);
 });
