@@ -38,6 +38,11 @@
   color:#e64a00!important;
 }
 
+/* La portada usa un eyebrow claro para conservar contraste sobre el video. */
+#site-root .home-page .hero .availability{
+  color:#dedee2!important;
+}
+
 /* Una sola voz tipográfica para todos los botones y CTAs del sitio. */
 #site-root :is(
   button,

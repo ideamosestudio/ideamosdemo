@@ -57,7 +57,7 @@ export default function Home() {
       <div className="hero-center">
         <p className="availability">
           <i/>
-          <span className="desktop-only">DISEÑO WEB DE ALTO IMPACTO Y MARKETING DIGITAL</span>
+          <span className="desktop-only">DISEÑO WEB Y MARKETING DIGITAL</span>
           <span className="mobile-only">DISEÑO WEB Y MKT DIGITAL</span>
         </p>
         <h1>
