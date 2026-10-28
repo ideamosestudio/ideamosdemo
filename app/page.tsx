@@ -55,7 +55,7 @@ export default function Home() {
       <div className="hero-overlay" /><div className="hero-aurora" />
       <HeroChrome />
       <div className="hero-center">
-        <p className="availability">
+        <p className="availability" style={{ color: "#dedee2" }}>
           <i/>
           <span className="desktop-only">DISEÑO WEB Y MARKETING DIGITAL</span>
           <span className="mobile-only">DISEÑO WEB Y MKT DIGITAL</span>
