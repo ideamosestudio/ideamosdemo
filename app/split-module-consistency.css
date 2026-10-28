@@ -127,19 +127,3 @@
     padding:90px clamp(52px,6vw,84px)!important;
   }
 }
-
-/* MÓDULO BASE: cuatro líneas, en dos pares, sin superar el ancho del título. */
-#site-root .home-page [data-module-base] .module-base-copy{margin:0!important;color:#000!important;font:300 15px/1.65 "Roboto Light","Roboto",Arial,sans-serif!important;letter-spacing:normal!important;overflow-wrap:normal;word-break:normal;hyphens:none}
-#site-root .home-page [data-module-base] :is(.module-base-copy__group,.module-base-copy__line){display:block}
-#site-root .home-page [data-module-base] .module-base-copy__group+.module-base-copy__group{margin-top:1.65em}
-#site-root .home-page [data-module-base] .module-base-copy b{color:#000!important;font:900 15px/1.65 "Roboto Light","Roboto",Arial,sans-serif!important;-webkit-text-stroke:.18px currentColor}
-#site-root .home-page [data-module-base] .module-base-copy+.orange-cta{min-height:58px!important;margin-top:40px!important;padding-inline:35px!important}
-@media(min-width:981px){
-  #site-root .home-page [data-module-base] .module-base h2{margin:0 0 30px!important;font-size:clamp(46px,2.8vw,53px)!important;line-height:1!important}
-  #site-root .home-page [data-module-base] .module-base h3{margin:0 0 26px!important;font-size:clamp(22px,1.3vw,24px)!important;line-height:1.35!important;letter-spacing:normal!important}
-}
-@media(min-width:1101px){
-  #site-root .home-page [data-module-base]{padding-block:118px!important}
-  #site-root .home-page :is([data-module-base].statement .happy-clients,[data-module-base].google-scene .google-content>p:first-child){margin-bottom:26px!important}
-}
-@media(min-width:1401px){#site-root .home-page [data-module-base] .module-base-copy__line{white-space:nowrap}}
