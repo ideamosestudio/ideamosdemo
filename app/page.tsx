@@ -29,10 +29,6 @@ const moduleBaseStyles = `
 @media(min-width:981px){#site-root .home-page [data-module-base] .module-base h2{margin:0 0 30px!important;font-size:clamp(46px,2.8vw,53px)!important;line-height:1!important}#site-root .home-page [data-module-base] .module-base h3{margin:0 0 26px!important;font-size:clamp(22px,1.3vw,24px)!important;line-height:1.35!important;letter-spacing:normal!important}}
 @media(min-width:1101px){#site-root .home-page [data-module-base]{padding-block:118px!important}#site-root .home-page :is([data-module-base].statement .happy-clients,[data-module-base].google-scene .google-content>p:first-child){margin-bottom:26px!important}}
 @media(min-width:1401px){#site-root .home-page [data-module-base] .module-base-copy__line{white-space:nowrap}}
-#site-root .home-page .service-directory__description{max-width:610px;margin:28px 0 34px;color:#d0d0d0;font:300 15px/1.65 "Roboto Light","Roboto",Arial,sans-serif}
-#site-root .home-page .service-directory__description>span{display:block}
-#site-root .home-page .service-directory__description>span:nth-child(3){margin-top:1.65em}
-#site-root .home-page .service-directory__description strong{color:#f5f5f5;font-weight:900}
 `;
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -106,23 +102,19 @@ export default function Home() {
       <div className="service-directory__inner">
         <div className="service-directory__intro">
           <p className="service-directory__eyebrow">SOLUCIONES DIGITALES</p>
-          <h2 id="explorar-servicios">Soluciones digitales para <span>hacer crecer tu negocio.</span></h2>
-          <p className="service-directory__description">
-            <span>Unimos <strong>diseño, estrategia y tecnología</strong> para convertir tu presencia</span>
-            <span>digital en una herramienta que genere consultas y ventas.</span>
-            <span>Elegí el servicio que necesitás o armemos una solución a medida.</span>
-            <span><strong>Contanos tu proyecto y definamos el próximo paso.</strong></span>
-          </p>
+          <h2 id="explorar-servicios">Diseño web y marketing digital para <span>tu empresa.</span></h2>
+          <p className="service-directory__description">Desde Buenos Aires, acompañamos a empresas de Argentina con diseño, estrategia y tecnología. Encontrá la solución para el próximo paso de tu negocio.</p>
           <a className="service-directory__contact cta-glow secondary" href={WHATSAPP_URL}>
-            <span>HABLEMOS DE TU PROYECTO</span>
+            <span className="desktop-only">QUIERO ASESORAMIENTO PARA MI PROYECTO</span>
+            <span className="mobile-only">QUIERO CONTACTARME</span>
           </a>
         </div>
         <nav className="service-directory__services" aria-label="Explorar servicios de Ideamos">
           {[
-            { path: "/diseno-web-autoadministrable/", title: "Diseño web", description: "Una web clara, profesional y preparada para convertir visitas en consultas." },
-            { path: "/tiendas-online/", title: "Tiendas online", description: "Una tienda simple de gestionar, diseñada para vender y acompañar tu crecimiento." },
-            { path: "/posicionamiento-web/", title: "SEO y Google Ads", description: "Estrategias para que te encuentren quienes ya están buscando lo que ofrecés." },
-            { path: "/marketing-digital/", title: "Marketing digital", description: "Contenido y campañas orientados a objetivos concretos para hacer crecer tu marca." },
+            { path: "/diseno-web-autoadministrable/", title: "Diseño web", description: "Sitios profesionales que presentan tu empresa y facilitan las consultas." },
+            { path: "/tiendas-online/", title: "Tiendas online", description: "Diseño y desarrollo de ecommerce para llevar tu negocio más lejos." },
+            { path: "/posicionamiento-web/", title: "SEO y Google Ads", description: "Posicionamiento web para conectar con quienes buscan lo que ofrecés." },
+            { path: "/marketing-digital/", title: "Marketing digital", description: "Estrategia, contenido y campañas con objetivos claros." },
           ].map((service, index) => (
             <a
               className="service-directory__item"
