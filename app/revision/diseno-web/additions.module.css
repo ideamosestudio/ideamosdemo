@@ -388,8 +388,8 @@
 /* Ritmo editorial y balance visual del primer módulo de REVISION. */
 @media(min-width:981px){
   :global(#site-root#site-root#site-root) .reviewPage :global(.service-section.service-xtreme){
-    padding-top:clamp(78px,6.2vw,118px)!important;
-    padding-bottom:clamp(78px,6.2vw,118px)!important;
+    padding-top:118px!important;
+    padding-bottom:118px!important;
   }
 
   :global(#site-root#site-root#site-root) .reviewPage :global(.service-xtreme .service-heading){
