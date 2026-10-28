@@ -16,6 +16,11 @@ import ArrowIcon from "../components/ArrowIcon";
 
 const moduleBaseStyles = `
 #site-root .home-page .hero h1>.hero-title-desktop{padding:.05em .1em .11em;margin:-.05em -.1em -.11em;overflow:visible}
+#site-root#site-root .home-page .service-directory__contact{display:inline-flex!important;align-items:center;justify-content:center;min-height:58px;padding:0 35px!important;border:2px solid #e64a00!important;border-radius:999px!important;background:transparent!important;color:#f7f7f7!important;font:700 13px/1.2 "Poppins",Arial,sans-serif!important;letter-spacing:1px!important;text-align:center!important;text-transform:uppercase;box-shadow:none!important}
+#site-root#site-root .home-page .service-directory__contact:after{display:none!important}
+#site-root#site-root .home-page .service-directory__contact>span{text-align:center!important}
+#site-root#site-root .home-page .service-directory__contact:is(:hover,:focus-visible){border-color:#ff5a00!important;background:linear-gradient(105deg,#ff6200,#c82400)!important;color:#fff!important;letter-spacing:2px!important;box-shadow:0 0 18px rgba(255,78,0,.35),0 0 38px rgba(255,78,0,.18)!important;transform:none!important}
+@media(max-width:600px){#site-root#site-root .home-page .service-directory__contact{width:100%;max-width:360px;padding-inline:24px!important}}
 #site-root .home-page [data-module-base] .module-base-copy{margin:0!important;color:#000!important;font:300 15px/1.65 "Roboto Light","Roboto",Arial,sans-serif!important;letter-spacing:normal!important;overflow-wrap:normal;word-break:normal;hyphens:none}
 #site-root .home-page [data-module-base] :is(.module-base-copy__group,.module-base-copy__line){display:block}
 #site-root .home-page [data-module-base] .module-base-copy__group+.module-base-copy__group{margin-top:1.65em}
@@ -99,10 +104,9 @@ export default function Home() {
           <p className="service-directory__eyebrow">SOLUCIONES DIGITALES</p>
           <h2 id="explorar-servicios">Diseño web y marketing digital para <span>tu empresa.</span></h2>
           <p className="service-directory__description">Desde Buenos Aires, acompañamos a empresas de Argentina con diseño, estrategia y tecnología. Encontrá la solución para el próximo paso de tu negocio.</p>
-          <a className="service-directory__cases" href={WHATSAPP_URL}>
-            <b className="desktop-only">QUIERO ASESORAMIENTO PARA MI PROYECTO</b>
-            <b className="mobile-only">QUIERO CONTACTARME</b>
-            <span aria-hidden="true"><ArrowIcon /></span>
+          <a className="service-directory__contact cta-glow secondary" href={WHATSAPP_URL}>
+            <span className="desktop-only">QUIERO ASESORAMIENTO PARA MI PROYECTO</span>
+            <span className="mobile-only">QUIERO CONTACTARME</span>
           </a>
         </div>
         <nav className="service-directory__services" aria-label="Explorar servicios de Ideamos">
