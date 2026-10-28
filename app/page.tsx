@@ -34,7 +34,7 @@ const moduleBaseStyles = `
 #site-root .home-page .service-directory__description>span:nth-child(3){margin-top:1.65em}
 #site-root .home-page .service-directory__description strong{color:#f5f5f5;font-weight:900}
 #site-root .home-page .service-directory__experience,#site-root .home-page .service-directory__services,#site-root .home-page .service-directory__panels{min-width:0}
-#site-root .home-page .service-directory__progress{display:flex;align-items:center;gap:20px;margin-bottom:44px;color:#8f8f8f;font:500 11px/1.2 monospace;letter-spacing:.08em}
+#site-root .home-page .service-directory__progress{display:flex;align-items:center;gap:20px;margin-bottom:24px;color:#8f8f8f;font:500 11px/1.2 monospace;letter-spacing:.08em}
 #site-root .home-page .service-directory__progress>span{flex:0 0 auto}
 #site-root .home-page .service-directory__progress b{color:#ff7830;font-weight:500}
 #site-root .home-page .service-directory__progress>i{position:relative;display:block;width:100%;height:1px;overflow:hidden;background:#494949}
@@ -42,17 +42,17 @@ const moduleBaseStyles = `
 #site-root .home-page .service-directory__copy{gap:12px}
 #site-root .home-page .service-directory__title{font-size:clamp(28px,2.5vw,36px)}
 #site-root .home-page .service-directory__detail{max-width:430px;color:#d0d0d0;font:300 15px/1.65 "Roboto Light","Roboto",Arial,sans-serif}
-#site-root .home-page .service-directory__link{width:max-content;margin-top:8px;color:#ff8b4b;font-size:10px;font-weight:800;letter-spacing:.16em;line-height:1.4}
-@media(hover:hover){#site-root .home-page .service-directory__item:hover .service-directory__link{color:#ffb083}}
+#site-root#site-root .home-page .service-directory__link{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;width:322px;max-width:100%;min-height:58px;margin-top:18px;padding:0 35px;border:2px solid #e64a00;border-radius:999px;background:transparent;color:#f7f7f7;font:700 10px/1.2 "Poppins",Arial,sans-serif;letter-spacing:1px;text-align:center;text-transform:uppercase;white-space:nowrap;transition:background .28s ease,border-color .28s ease,color .28s ease,letter-spacing .28s ease,box-shadow .28s ease}
+@media(hover:hover){#site-root#site-root .home-page .service-directory__item:hover .service-directory__link{border-color:#ff5a00;background:linear-gradient(105deg,#ff6200,#c82400);color:#fff;letter-spacing:2px;box-shadow:0 0 18px rgba(255,78,0,.35),0 0 38px rgba(255,78,0,.18)}}
 @media(min-width:901px) and (min-height:560px){
 #site-root .home-page .service-directory__intro{top:clamp(150px,18vh,210px)}
 #site-root .home-page .service-directory__experience{display:grid;grid-template-areas:"stage"}
 #site-root .home-page .service-directory__services{position:sticky;top:108px;z-index:2;grid-area:stage;align-self:start;display:flex;min-height:calc(100svh - 108px);flex-direction:column;justify-content:center;border-top:0}
-#site-root .home-page .service-directory__panels{position:relative;min-height:280px}
-#site-root#site-root .home-page .service-directory__item{position:absolute;inset:0;min-height:0;padding:10px 4px;border:0;grid-template-columns:minmax(0,1fr) 52px;opacity:0;pointer-events:none;transform:translateY(26px);transition:opacity .45s ease,transform .6s cubic-bezier(.16,1,.3,1)}
+#site-root .home-page .service-directory__panels{position:relative;min-height:245px}
+#site-root#site-root .home-page .service-directory__item{position:absolute;inset:0;min-height:0;padding:6px 4px;border:0;grid-template-columns:minmax(0,1fr) 52px;align-items:start;opacity:0;pointer-events:none;transform:translateY(26px);transition:opacity .45s ease,transform .6s cubic-bezier(.16,1,.3,1)}
 #site-root#site-root .home-page .service-directory__item[data-active]{opacity:1;pointer-events:auto;transform:none}
 #site-root .home-page .service-directory__number{display:none}
-#site-root .home-page .service-directory__arrow{width:52px;height:52px}
+#site-root .home-page .service-directory__arrow{align-self:center;width:52px;height:52px}
 #site-root .home-page .service-directory__steps{grid-area:stage;z-index:1}
 #site-root .home-page .service-directory__steps>span{display:block;min-height:calc(100svh - 108px)}
 }

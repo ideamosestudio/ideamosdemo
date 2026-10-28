@@ -36,4 +36,6 @@ test('mobile home promotes web and ecommerce with illustrative concepts', async 
   assert.match(source, /data-service-panel/);
   assert.match(source, /data-service-step/);
   assert.match(source, /service-directory__services\{position:sticky/);
+  assert.match(source, /service-directory__link\{[^}]*width:322px[^}]*min-height:58px/);
+  assert.match(source, /service-directory__progress\{[^}]*margin-bottom:24px/);
 });
