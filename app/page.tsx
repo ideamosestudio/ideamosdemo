@@ -55,7 +55,11 @@ export default function Home() {
       <div className="hero-overlay" /><div className="hero-aurora" />
       <HeroChrome />
       <div className="hero-center">
-        <p className="availability"><i/> Más estrategia, más resultados</p>
+        <p className="availability">
+          <i/>
+          <span className="desktop-only">DISEÑO WEB DE ALTO IMPACTO Y MARKETING DIGITAL</span>
+          <span className="mobile-only">DISEÑO WEB Y MKT DIGITAL</span>
+        </p>
         <h1>
           <span className="hero-title-desktop">Experiencias digitales</span>
           <em className="hero-title-desktop">que atraen clientes y ventas</em>
