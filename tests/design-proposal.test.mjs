@@ -124,7 +124,7 @@ test('REVISION usa Roboto Light a 15 px en sus párrafos sin afectar módulos co
     /service-xtreme \.service-copy strong\)\{[^}]*font-family:"Roboto Light","Roboto",Arial,sans-serif!important;[^}]*font-weight:900!important/s,
   );
   assert.match(css, /-webkit-text-stroke:\.18px currentColor/);
-  assert.match(css, /service-section\.service-xtreme\)\{[^}]*padding-top:clamp\(72px,4\.6vw,88px\)!important;[^}]*padding-bottom:clamp\(72px,4\.6vw,88px\)!important/s);
+  assert.match(css, /service-section\.service-xtreme\)\{[^}]*padding-top:clamp\(78px,6\.2vw,118px\)!important;[^}]*padding-bottom:clamp\(78px,6\.2vw,118px\)!important/s);
   assert.match(css, /service-xtreme \.service-heading>p:first-child\)\{[^}]*margin:0 0 26px!important;[^}]*font-size:12px!important;[^}]*letter-spacing:\.32em!important/s);
   assert.match(css, /service-xtreme \.service-heading h2\)\{[^}]*margin:0 0 30px!important;[^}]*font-size:clamp\(46px,2\.8vw,53px\)!important/s);
   assert.match(css, /service-xtreme \.review-project-actions\)\{[^}]*margin-top:40px!important/s);
