@@ -33,4 +33,6 @@ test('mobile home promotes web and ecommerce with illustrative concepts', async 
   assert.match(source, /service-directory__contact\{[^}]*width:322px/);
   assert.match(source, /QUIERO ASESORAMIENTO PARA MI PROYECTO/);
   assert.match(source, /QUIERO CONTACTARME/);
+  assert.match(source, /className="service-directory__item"[\s\S]{0,220}data-reveal/);
+  assert.match(source, /transitionDelay: `\$\{index \* 180\}ms`/);
 });

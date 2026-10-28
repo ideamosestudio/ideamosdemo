@@ -116,7 +116,13 @@ export default function Home() {
             { path: "/posicionamiento-web/", title: "SEO y Google Ads", description: "Posicionamiento web para conectar con quienes buscan lo que ofrecés." },
             { path: "/marketing-digital/", title: "Marketing digital", description: "Estrategia, contenido y campañas con objetivos claros." },
           ].map((service, index) => (
-            <a className="service-directory__item" href={asset(service.path)} key={service.path}>
+            <a
+              className="service-directory__item"
+              href={asset(service.path)}
+              key={service.path}
+              data-reveal
+              style={{ transitionDelay: `${index * 180}ms` }}
+            >
               <span className="service-directory__number" aria-hidden="true">0{index + 1}</span>
               <span className="service-directory__copy">
                 <span className="service-directory__title">{service.title}</span>
