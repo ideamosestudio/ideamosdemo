@@ -201,12 +201,18 @@
 @media(max-width:600px){#site-root .service-faq{padding-bottom:20px}#site-root .service-faq__resource-toggle{margin-top:24px}#site-root .service-faq__resources{padding:20px;gap:20px}#site-root .service-faq__resources .service-faq__related>div{grid-template-columns:1fr;gap:0}#site-root .service-faq__resources a{font-size:14px}}
 /* Native sticky stays within this section; no scroll handlers or fixed overlays. */
 @media (min-width: 901px) and (min-height: 560px) {
+  .service-directory__inner { align-items: start; }
   .service-directory__intro {
     position: sticky;
     top: 108px;
     align-self: start;
   }
-  #site-root .service-directory__item { min-height: 156px; }
+  /* Give every service its own viewport-length scroll step so the reveal
+     observer introduces one item at a time instead of all visible rows. */
+  #site-root .service-directory__item {
+    min-height: calc(100svh - 108px);
+    padding-block: clamp(52px, 8vh, 88px);
+  }
 }
 @media (max-width: 900px) {
   .service-directory__inner { grid-template-columns: 1fr; gap: 40px; width: min(640px, calc(100% - 60px)); }

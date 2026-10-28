@@ -34,5 +34,6 @@ test('mobile home promotes web and ecommerce with illustrative concepts', async 
   assert.match(source, /QUIERO ASESORAMIENTO PARA MI PROYECTO/);
   assert.match(source, /QUIERO CONTACTARME/);
   assert.match(source, /className="service-directory__item"[\s\S]{0,220}data-reveal/);
-  assert.match(source, /transitionDelay: `\$\{index \* 180\}ms`/);
+  const serviceGuideCss = await readFile(new URL('../app/service-guide.css', import.meta.url), 'utf8');
+  assert.match(serviceGuideCss, /service-directory__item\s*\{[\s\S]{0,180}min-height:\s*calc\(100svh - 108px\)/);
 });
