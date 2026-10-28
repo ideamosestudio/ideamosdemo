@@ -69,10 +69,15 @@ function CenteredLead({ copy }: { copy: string }) {
 }
 
 function EmphasizedCopy({ copy }: { copy: string }) {
-  return <>{copy.split(/(\*\*[^*]+\*\*)/g).map((part, index) => (
-    part.startsWith("**") && part.endsWith("**")
-      ? <strong key={`${part}-${index}`}>{part.slice(2, -2)}</strong>
-      : part
+  return <>{copy.split("\n").map((line, lineIndex) => (
+    <Fragment key={`${line}-${lineIndex}`}>
+      {lineIndex > 0 && <br />}
+      {line.split(/(\*\*[^*]+\*\*)/g).map((part, partIndex) => (
+        part.startsWith("**") && part.endsWith("**")
+          ? <strong key={`${part}-${partIndex}`}>{part.slice(2, -2)}</strong>
+          : part
+      ))}
+    </Fragment>
   ))}</>;
 }
 

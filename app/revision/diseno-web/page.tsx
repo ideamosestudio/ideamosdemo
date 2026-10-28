@@ -28,8 +28,8 @@ const page: ServicePage = {
       title: "Creamos webs que generan\nconfianza y oportunidades",
       lead: "**Diseño con identidad.** Un camino al contacto.",
       paragraphs: [
-        "Tu web debe **mostrar qué hacés** y guiar al próximo paso. Diseñamos a medida para **presentar tus servicios** y facilitar consultas.",
-        "Definimos contenidos y acordamos **qué partes serán autoadministrables**. Coordinemos una asesoría para preparar **una propuesta a tu medida**.",
+        "Tu web debe **mostrar qué hacés** y guiar al próximo paso.\nDiseñamos a medida para **presentar tus servicios** y facilitar consultas.",
+        "Definimos contenidos y acordamos **qué partes serán autoadministrables**.\nCoordinemos una asesoría para preparar **una propuesta a tu medida**.",
       ],
       visual: "xtreme", actions: true,
     },

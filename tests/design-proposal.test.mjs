@@ -134,4 +134,8 @@ test('REVISION usa Roboto Light a 15 px en sus párrafos sin afectar módulos co
   assert.match(css, /service-xtreme \.service-visual-media>img\)\{[^}]*transform:scale\(\.96\)!important/s);
   assert.match(css, /service-heading>h2\),[\s\S]*?service-heading>\.service-copy\)\{[^}]*width:100%!important;[^}]*max-width:100%!important/s);
   assert.match(css, /service-xtreme \.service-heading\)\{[^}]*max-width:600px!important/s);
+  assert.match(
+    await readFile(new URL('../app/revision/diseno-web/page.tsx', import.meta.url), 'utf8'),
+    /próximo paso\.\\nDiseñamos a medida[\s\S]*autoadministrables\*\*\.\\nCoordinemos una asesoría/,
+  );
 });
