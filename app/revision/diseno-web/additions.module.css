@@ -224,6 +224,13 @@
   max-width:650px!important;
 }
 
+/* En REVISION, ningún párrafo de cabecera puede superar el ancho de su título. */
+:global(#site-root#site-root#site-root) .reviewPage :global(.service-heading>h2),
+:global(#site-root#site-root#site-root) .reviewPage :global(.service-heading>.service-copy){
+  width:100%!important;
+  max-width:100%!important;
+}
+
 :global(#site-root#site-root) .reviewPage :is(
   :global(.service-copy),
   :global(.design-problems-list p),
@@ -394,7 +401,7 @@
 
   :global(#site-root#site-root#site-root) .reviewPage :global(.service-xtreme .service-heading){
     width:100%!important;
-    max-width:650px!important;
+    max-width:600px!important;
   }
 
   :global(#site-root#site-root#site-root) .reviewPage :global(.service-xtreme .service-heading>p:first-child){
@@ -418,7 +425,7 @@
 
   :global(#site-root#site-root#site-root) .reviewPage :global(.service-xtreme .service-copy){
     width:100%!important;
-    max-width:650px!important;
+    max-width:100%!important;
     line-height:1.65!important;
   }
 

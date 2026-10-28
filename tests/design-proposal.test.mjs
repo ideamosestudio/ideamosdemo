@@ -51,6 +51,9 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
     assert.match(html, new RegExp(`<strong>${emphasis}<\\/strong>`));
   }
   assert.doesNotMatch(html, /<strong>las páginas, los contenidos, los formularios y las integraciones<\/strong>/);
+  assert.match(html, /Tu web debe <strong>mostrar qué hacés<\/strong> y guiar al próximo paso\./);
+  assert.match(html, /Definimos contenidos y acordamos/);
+  assert.doesNotMatch(html, /por qué elegirte y cómo dar el próximo paso/);
   assert.match(
     html,
     /centered-lead-line[^>]*>Una presencia profesional para mostrar tu valor, resolver dudas y abrir nuevas oportunidades\.<\/span><span class="centered-lead-line"[^>]*>Empezamos por lo que necesita tu negocio\.<\/span>/,
@@ -129,4 +132,6 @@ test('REVISION usa Roboto Light a 15 px en sus párrafos sin afectar módulos co
   assert.match(css, /service-xtreme \.service-heading h2\)\{[^}]*margin:0 0 30px!important;[^}]*font-size:clamp\(46px,2\.8vw,53px\)!important/s);
   assert.match(css, /service-xtreme \.review-project-actions\)\{[^}]*margin-top:40px!important/s);
   assert.match(css, /service-xtreme \.service-visual-media>img\)\{[^}]*transform:scale\(\.96\)!important/s);
+  assert.match(css, /service-heading>h2\),[\s\S]*?service-heading>\.service-copy\)\{[^}]*width:100%!important;[^}]*max-width:100%!important/s);
+  assert.match(css, /service-xtreme \.service-heading\)\{[^}]*max-width:600px!important/s);
 });
