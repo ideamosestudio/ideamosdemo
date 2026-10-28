@@ -16,6 +16,10 @@ import ArrowIcon from "../components/ArrowIcon";
 
 const moduleBaseStyles = `
 #site-root .home-page .hero h1>.hero-title-desktop{padding:.05em .1em .11em;margin:-.05em -.1em -.11em;overflow:visible}
+#site-root .home-page .service-directory__contact{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 34px;border:2px solid #ff5a00;border-radius:999px;background:transparent;color:#f7f7f7;font:700 13px/1.2 "Poppins",Arial,sans-serif;letter-spacing:.08em;text-align:center!important;text-transform:uppercase;transition:background-color .25s,color .25s,letter-spacing .25s}
+#site-root .home-page .service-directory__contact>span{text-align:center!important}
+#site-root .home-page .service-directory__contact:is(:hover,:focus-visible){background:#ff5a00;color:#fff;letter-spacing:calc(.08em + 1px)}
+@media(max-width:600px){#site-root .home-page .service-directory__contact{width:100%;max-width:360px;padding-inline:24px}}
 #site-root .home-page [data-module-base] .module-base-copy{margin:0!important;color:#000!important;font:300 15px/1.65 "Roboto Light","Roboto",Arial,sans-serif!important;letter-spacing:normal!important;overflow-wrap:normal;word-break:normal;hyphens:none}
 #site-root .home-page [data-module-base] :is(.module-base-copy__group,.module-base-copy__line){display:block}
 #site-root .home-page [data-module-base] .module-base-copy__group+.module-base-copy__group{margin-top:1.65em}
@@ -99,7 +103,10 @@ export default function Home() {
           <p className="service-directory__eyebrow">SOLUCIONES DIGITALES</p>
           <h2 id="explorar-servicios">Diseño web y marketing digital para <span>tu empresa.</span></h2>
           <p className="service-directory__description">Desde Buenos Aires, acompañamos a empresas de Argentina con diseño, estrategia y tecnología. Encontrá la solución para el próximo paso de tu negocio.</p>
-          <a className="service-directory__cases" href={asset("/casos-de-exito/")}>Conocé nuestros casos de éxito <span aria-hidden="true"><ArrowIcon /></span></a>
+          <a className="service-directory__contact" href={WHATSAPP_URL}>
+            <span className="desktop-only">QUIERO ASESORAMIENTO PARA MI PROYECTO</span>
+            <span className="mobile-only">QUIERO CONTACTARME</span>
+          </a>
         </div>
         <nav className="service-directory__services" aria-label="Explorar servicios de Ideamos">
           {[
