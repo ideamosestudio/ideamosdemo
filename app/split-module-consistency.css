@@ -128,115 +128,18 @@
   }
 }
 
-/*
- * MÓDULO BASE
- * Regla editorial para módulos de texto + visual aprobados por el cliente.
- * En esta primera aplicación se limita a Web y Google en la Home.
- */
-#site-root .home-page [data-module-base] .module-base{
-  width:100%;
-  max-width:600px;
+/* MÓDULO BASE: cuatro líneas, en dos pares, sin superar el ancho del título. */
+#site-root .home-page [data-module-base] .module-base-copy{margin:0!important;color:#000!important;font:300 15px/1.65 "Roboto Light","Roboto",Arial,sans-serif!important;letter-spacing:normal!important;overflow-wrap:normal;word-break:normal;hyphens:none}
+#site-root .home-page [data-module-base] :is(.module-base-copy__group,.module-base-copy__line){display:block}
+#site-root .home-page [data-module-base] .module-base-copy__group+.module-base-copy__group{margin-top:1.65em}
+#site-root .home-page [data-module-base] .module-base-copy b{color:#000!important;font:900 15px/1.65 "Roboto Light","Roboto",Arial,sans-serif!important;-webkit-text-stroke:.18px currentColor}
+#site-root .home-page [data-module-base] .module-base-copy+.orange-cta{min-height:58px!important;margin-top:40px!important;padding-inline:35px!important}
+@media(min-width:981px){
+  #site-root .home-page [data-module-base] .module-base h2{margin:0 0 30px!important;font-size:clamp(46px,2.8vw,53px)!important;line-height:1!important}
+  #site-root .home-page [data-module-base] .module-base h3{margin:0 0 26px!important;font-size:clamp(22px,1.3vw,24px)!important;line-height:1.35!important;letter-spacing:normal!important}
 }
-
-#site-root .home-page [data-module-base] .module-base :is(h2,.module-base-copy){
-  width:100%;
-  max-width:600px;
-}
-
-#site-root .home-page [data-module-base] .module-base h2{
-  margin:0 0 30px!important;
-  color:#111!important;
-  font-family:"Gilroy ExtraBold",Arial,sans-serif!important;
-  font-size:clamp(46px,2.8vw,53px)!important;
-  font-weight:800!important;
-  line-height:1!important;
-  letter-spacing:-.045em!important;
-}
-
-#site-root .home-page [data-module-base] .module-base h3{
-  max-width:600px;
-  margin:0 0 26px!important;
-  color:#111!important;
-  font-family:"Roboto",Arial,sans-serif!important;
-  font-size:clamp(22px,1.3vw,24px)!important;
-  font-weight:400!important;
-  line-height:1.35!important;
-  letter-spacing:normal!important;
-}
-
-#site-root .home-page [data-module-base] .module-base h3 b{
-  font-family:inherit!important;
-  font-weight:700!important;
-}
-
-#site-root .home-page [data-module-base] .module-base-copy{
-  margin:0!important;
-  color:#000!important;
-  font-family:"Roboto Light","Roboto",Arial,sans-serif!important;
-  font-size:15px!important;
-  font-weight:300!important;
-  line-height:1.65!important;
-  letter-spacing:normal!important;
-  overflow-wrap:normal;
-  word-break:normal;
-  hyphens:none;
-}
-
-#site-root .home-page [data-module-base] :is(.module-base-copy__group,.module-base-copy__line){
-  display:block;
-}
-
-/* Una línea vacía separa los dos pares de líneas. */
-#site-root .home-page [data-module-base] .module-base-copy__group + .module-base-copy__group{
-  margin-top:1.65em;
-}
-
-#site-root .home-page [data-module-base] .module-base-copy b{
-  color:#000!important;
-  font-family:inherit!important;
-  font-weight:900!important;
-  -webkit-text-stroke:.18px currentColor;
-}
-
-#site-root .home-page [data-module-base] .module-base-copy + .orange-cta{
-  min-height:58px!important;
-  margin-top:40px!important;
-  padding-right:35px!important;
-  padding-left:35px!important;
-}
-
 @media(min-width:1101px){
-  #site-root .home-page [data-module-base]{
-    padding-top:118px!important;
-    padding-bottom:118px!important;
-  }
-
-  #site-root .home-page :is(
-    [data-module-base].statement .happy-clients,
-    [data-module-base].google-scene .google-content>p:first-child
-  ){
-    margin-bottom:26px!important;
-  }
+  #site-root .home-page [data-module-base]{padding-block:118px!important}
+  #site-root .home-page :is([data-module-base].statement .happy-clients,[data-module-base].google-scene .google-content>p:first-child){margin-bottom:26px!important}
 }
-
-/* En escritorio amplio, cada unidad editorial ocupa exactamente un renglón. */
-@media(min-width:1401px){
-  #site-root .home-page [data-module-base] .module-base-copy__line{
-    white-space:nowrap;
-  }
-}
-
-@media(max-width:700px){
-  #site-root .home-page [data-module-base] .module-base h2{
-    font-size:31px!important;
-    line-height:1.04!important;
-  }
-
-  #site-root .home-page [data-module-base] .module-base h3{
-    font-size:20px!important;
-  }
-
-  #site-root .home-page [data-module-base] .module-base-copy__line{
-    white-space:normal;
-  }
-}
+@media(min-width:1401px){#site-root .home-page [data-module-base] .module-base-copy__line{white-space:nowrap}}

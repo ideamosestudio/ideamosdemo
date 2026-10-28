@@ -22,7 +22,7 @@ test('los dos módulos base de Home respetan cuatro líneas editoriales', async 
   assert.ok(moduleLines.every((line) => line.length <= 80));
   assert.match(source, /Charlemos de tu proyecto/);
   assert.match(source, /Hablemos de tu negocio/);
-  assert.match(css, /font-size:15px!important/);
+  assert.match(css, /font:300 15px\/1\.65/);
   assert.match(css, /max-width:600px/);
   assert.match(css, /margin-top:1\.65em/);
   assert.match(css, /hyphens:none/);
