@@ -43,14 +43,14 @@ test('propuesta de diseño aislada, no indexable y sin enlaces de promoción', a
   assert.match(html, /<strong>Diseño con identidad\.<\/strong> Un camino al contacto\./);
   assert.doesNotMatch(html, /Diseño con identidad\. Contenido claro\./);
   for (const emphasis of [
-    'mostrar qué hacés, por qué elegirte y cómo dar el próximo paso',
-    'presentar tus servicios, destacar tus proyectos y facilitar las consultas',
-    'las páginas, los contenidos, los formularios y las integraciones',
+    'mostrar qué hacés',
+    'presentar tus servicios',
     'qué partes serán autoadministrables',
     'una propuesta a tu medida',
   ]) {
     assert.match(html, new RegExp(`<strong>${emphasis}<\\/strong>`));
   }
+  assert.doesNotMatch(html, /<strong>las páginas, los contenidos, los formularios y las integraciones<\/strong>/);
   assert.match(
     html,
     /centered-lead-line[^>]*>Una presencia profesional para mostrar tu valor, resolver dudas y abrir nuevas oportunidades\.<\/span><span class="centered-lead-line"[^>]*>Empezamos por lo que necesita tu negocio\.<\/span>/,
@@ -124,4 +124,9 @@ test('REVISION usa Roboto Light a 15 px en sus párrafos sin afectar módulos co
     /service-xtreme \.service-copy strong\)\{[^}]*font-family:"Roboto Light","Roboto",Arial,sans-serif!important;[^}]*font-weight:900!important/s,
   );
   assert.match(css, /-webkit-text-stroke:\.18px currentColor/);
+  assert.match(css, /service-section\.service-xtreme\)\{[^}]*padding-top:clamp\(72px,4\.6vw,88px\)!important;[^}]*padding-bottom:clamp\(72px,4\.6vw,88px\)!important/s);
+  assert.match(css, /service-xtreme \.service-heading>p:first-child\)\{[^}]*margin:0 0 26px!important;[^}]*font-size:12px!important;[^}]*letter-spacing:\.32em!important/s);
+  assert.match(css, /service-xtreme \.service-heading h2\)\{[^}]*margin:0 0 30px!important;[^}]*font-size:clamp\(46px,2\.8vw,53px\)!important/s);
+  assert.match(css, /service-xtreme \.review-project-actions\)\{[^}]*margin-top:40px!important/s);
+  assert.match(css, /service-xtreme \.service-visual-media>img\)\{[^}]*transform:scale\(\.96\)!important/s);
 });
