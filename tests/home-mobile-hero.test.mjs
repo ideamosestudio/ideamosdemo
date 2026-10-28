@@ -31,9 +31,10 @@ test('mobile home promotes web and ecommerce with illustrative concepts', async 
   assert.ok(serviceDirectory < servicesGrid, 'The service directory should be immediately after the hero');
   assert.match(source, /service-directory__contact cta-glow secondary" href=\{WHATSAPP_URL\}/);
   assert.match(source, /service-directory__contact\{[^}]*width:322px/);
-  assert.match(source, /QUIERO ASESORAMIENTO PARA MI PROYECTO/);
-  assert.match(source, /QUIERO CONTACTARME/);
-  assert.match(source, /className="service-directory__item"[\s\S]{0,220}data-reveal/);
+  assert.match(source, /HABLEMOS DE TU PROYECTO/);
+  assert.match(source, /Contanos tu proyecto y definamos el próximo paso/);
+  assert.match(source, /data-service-panel/);
+  assert.match(source, /data-service-step/);
   const serviceGuideCss = await readFile(new URL('../app/service-guide.css', import.meta.url), 'utf8');
-  assert.match(serviceGuideCss, /service-directory__item\s*\{[\s\S]{0,180}min-height:\s*calc\(100svh - 108px\)/);
+  assert.match(serviceGuideCss, /service-directory__services\s*\{[\s\S]{0,180}position:\s*sticky/);
 });

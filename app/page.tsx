@@ -102,35 +102,52 @@ export default function Home() {
       <div className="service-directory__inner">
         <div className="service-directory__intro">
           <p className="service-directory__eyebrow">SOLUCIONES DIGITALES</p>
-          <h2 id="explorar-servicios">Diseño web y marketing digital para <span>tu empresa.</span></h2>
-          <p className="service-directory__description">Desde Buenos Aires, acompañamos a empresas de Argentina con diseño, estrategia y tecnología. Encontrá la solución para el próximo paso de tu negocio.</p>
+          <h2 id="explorar-servicios">Soluciones digitales para <span>hacer crecer tu negocio.</span></h2>
+          <p className="service-directory__description">
+            <span>Unimos <strong>diseño, estrategia y tecnología</strong> para convertir tu presencia</span>
+            <span>digital en una herramienta que genere consultas y ventas.</span>
+            <span>Elegí el servicio que necesitás o armemos una solución a medida.</span>
+            <span><strong>Contanos tu proyecto y definamos el próximo paso.</strong></span>
+          </p>
           <a className="service-directory__contact cta-glow secondary" href={WHATSAPP_URL}>
-            <span className="desktop-only">QUIERO ASESORAMIENTO PARA MI PROYECTO</span>
-            <span className="mobile-only">QUIERO CONTACTARME</span>
+            <span>HABLEMOS DE TU PROYECTO</span>
           </a>
         </div>
-        <nav className="service-directory__services" aria-label="Explorar servicios de Ideamos">
-          {[
-            { path: "/diseno-web-autoadministrable/", title: "Diseño web", description: "Sitios profesionales que presentan tu empresa y facilitan las consultas." },
-            { path: "/tiendas-online/", title: "Tiendas online", description: "Diseño y desarrollo de ecommerce para llevar tu negocio más lejos." },
-            { path: "/posicionamiento-web/", title: "SEO y Google Ads", description: "Posicionamiento web para conectar con quienes buscan lo que ofrecés." },
-            { path: "/marketing-digital/", title: "Marketing digital", description: "Estrategia, contenido y campañas con objetivos claros." },
-          ].map((service, index) => (
-            <a
-              className="service-directory__item"
-              href={asset(service.path)}
-              key={service.path}
-              data-reveal
-            >
-              <span className="service-directory__number" aria-hidden="true">0{index + 1}</span>
-              <span className="service-directory__copy">
-                <span className="service-directory__title">{service.title}</span>
-                <span className="service-directory__detail">{service.description}</span>
-              </span>
-              <span className="service-directory__arrow" aria-hidden="true"><ArrowIcon /></span>
-            </a>
-          ))}
-        </nav>
+        <div className="service-directory__experience" data-service-directory>
+          <nav className="service-directory__services" aria-label="Explorar servicios de Ideamos">
+            <div className="service-directory__progress" aria-hidden="true">
+              <span><b data-service-current>01</b> / 04</span>
+              <i><span data-service-progress /></i>
+            </div>
+            <div className="service-directory__panels">
+              {[
+                { path: "/diseno-web-autoadministrable/", title: "Diseño web", description: "Una web clara, profesional y preparada para convertir visitas en consultas." },
+                { path: "/tiendas-online/", title: "Tiendas online", description: "Una tienda simple de gestionar, diseñada para vender y acompañar tu crecimiento." },
+                { path: "/posicionamiento-web/", title: "SEO y Google Ads", description: "Estrategias para que te encuentren quienes ya están buscando lo que ofrecés." },
+                { path: "/marketing-digital/", title: "Marketing digital", description: "Contenido y campañas orientados a objetivos concretos para hacer crecer tu marca." },
+              ].map((service, index) => (
+                <a
+                  className="service-directory__item"
+                  href={asset(service.path)}
+                  key={service.path}
+                  data-service-panel
+                  data-active={index === 0 ? "true" : undefined}
+                >
+                  <span className="service-directory__number" aria-hidden="true">0{index + 1}</span>
+                  <span className="service-directory__copy">
+                    <span className="service-directory__title">{service.title}</span>
+                    <span className="service-directory__detail">{service.description}</span>
+                    <span className="service-directory__link">VER SERVICIO</span>
+                  </span>
+                  <span className="service-directory__arrow" aria-hidden="true"><ArrowIcon /></span>
+                </a>
+              ))}
+            </div>
+          </nav>
+          <div className="service-directory__steps" aria-hidden="true">
+            {[0, 1, 2, 3].map((index) => <span data-service-step key={index} />)}
+          </div>
+        </div>
       </div>
     </section>
 
