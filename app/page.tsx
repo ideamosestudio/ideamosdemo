@@ -57,7 +57,7 @@ export default function Home() {
       <div className="hero-center">
         <p className="availability"><i/> Más estrategia, más resultados</p>
         <h1>
-          <span className="hero-title-desktop">Expertos en crear webs</span>
+          <span className="hero-title-desktop">Experiencias digitales</span>
           <em className="hero-title-desktop">que atraen clientes y ventas</em>
           <span className="hero-title-mobile">
             <span>Diseño web y</span>
@@ -85,6 +85,34 @@ export default function Home() {
           </a>
         </div>
         <div className="hero-clients"><HeroLogoTrack /></div>
+      </div>
+    </section>
+
+    <section className="service-guide service-directory" aria-labelledby="explorar-servicios">
+      <div className="service-directory__inner">
+        <div className="service-directory__intro">
+          <p className="service-directory__eyebrow">SOLUCIONES DIGITALES</p>
+          <h2 id="explorar-servicios">Diseño web y marketing digital para <span>tu empresa.</span></h2>
+          <p className="service-directory__description">Desde Buenos Aires, acompañamos a empresas de Argentina con diseño, estrategia y tecnología. Encontrá la solución para el próximo paso de tu negocio.</p>
+          <a className="service-directory__cases" href={asset("/casos-de-exito/")}>Conocé nuestros casos de éxito <span aria-hidden="true"><ArrowIcon /></span></a>
+        </div>
+        <nav className="service-directory__services" aria-label="Explorar servicios de Ideamos">
+          {[
+            { path: "/diseno-web-autoadministrable/", title: "Diseño web", description: "Sitios profesionales que presentan tu empresa y facilitan las consultas." },
+            { path: "/tiendas-online/", title: "Tiendas online", description: "Diseño y desarrollo de ecommerce para llevar tu negocio más lejos." },
+            { path: "/posicionamiento-web/", title: "SEO y Google Ads", description: "Posicionamiento web para conectar con quienes buscan lo que ofrecés." },
+            { path: "/marketing-digital/", title: "Marketing digital", description: "Estrategia, contenido y campañas con objetivos claros." },
+          ].map((service, index) => (
+            <a className="service-directory__item" href={asset(service.path)} key={service.path}>
+              <span className="service-directory__number" aria-hidden="true">0{index + 1}</span>
+              <span className="service-directory__copy">
+                <span className="service-directory__title">{service.title}</span>
+                <span className="service-directory__detail">{service.description}</span>
+              </span>
+              <span className="service-directory__arrow" aria-hidden="true"><ArrowIcon /></span>
+            </a>
+          ))}
+        </nav>
       </div>
     </section>
 
@@ -155,34 +183,6 @@ export default function Home() {
       <GoogleScreenRotator />
     </section>
     </LightGridFrame>
-
-    <section className="service-guide service-directory" aria-labelledby="explorar-servicios">
-      <div className="service-directory__inner">
-        <div className="service-directory__intro">
-          <p className="service-directory__eyebrow">SOLUCIONES DIGITALES</p>
-          <h2 id="explorar-servicios">Diseño web y marketing digital para <span>tu empresa.</span></h2>
-          <p className="service-directory__description">Desde Buenos Aires, acompañamos a empresas de Argentina con diseño, estrategia y tecnología. Encontrá la solución para el próximo paso de tu negocio.</p>
-          <a className="service-directory__cases" href={asset("/casos-de-exito/")}>Conocé nuestros casos de éxito <span aria-hidden="true"><ArrowIcon /></span></a>
-        </div>
-        <nav className="service-directory__services" aria-label="Explorar servicios de Ideamos">
-          {[
-            { path: "/diseno-web-autoadministrable/", title: "Diseño web", description: "Sitios profesionales que presentan tu empresa y facilitan las consultas." },
-            { path: "/tiendas-online/", title: "Tiendas online", description: "Diseño y desarrollo de ecommerce para llevar tu negocio más lejos." },
-            { path: "/posicionamiento-web/", title: "SEO y Google Ads", description: "Posicionamiento web para conectar con quienes buscan lo que ofrecés." },
-            { path: "/marketing-digital/", title: "Marketing digital", description: "Estrategia, contenido y campañas con objetivos claros." },
-          ].map((service, index) => (
-            <a className="service-directory__item" href={asset(service.path)} key={service.path}>
-              <span className="service-directory__number" aria-hidden="true">0{index + 1}</span>
-              <span className="service-directory__copy">
-                <span className="service-directory__title">{service.title}</span>
-                <span className="service-directory__detail">{service.description}</span>
-              </span>
-              <span className="service-directory__arrow" aria-hidden="true"><ArrowIcon /></span>
-            </a>
-          ))}
-        </nav>
-      </div>
-    </section>
 
     <PortfolioDriftWall />
 

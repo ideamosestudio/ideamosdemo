@@ -4,6 +4,7 @@ import test from 'node:test';
 
 test('mobile home promotes web and ecommerce with illustrative concepts', async () => {
   const html = await readFile(new URL('../out/index.html', import.meta.url), 'utf8');
+  const source = await readFile(new URL('../app/page.tsx', import.meta.url), 'utf8');
   const hero = html.match(/<section class="hero"[\s\S]*?<\/section>/)?.[0];
   assert.ok(hero);
   assert.match(hero, /Diseño web y/);
@@ -11,7 +12,7 @@ test('mobile home promotes web and ecommerce with illustrative concepts', async 
   assert.match(hero, /para <span class="hero-title-accent">hacer crecer/);
   assert.match(hero, /Quiero una asesoría<\/span>/);
   assert.match(hero, /hero-assurance mobile-only">Sin cargo/);
-  assert.match(hero, /Expertos en crear webs/); // Desktop copy remains unchanged.
+  assert.match(source, /hero-title-desktop">Experiencias digitales/);
   assert.match(hero, /hero-work-scene/);
   assert.match(hero, /hero-concept-architecture.webp/);
   assert.match(hero, /hero-concept-fashion.webp/);
@@ -20,4 +21,9 @@ test('mobile home promotes web and ecommerce with illustrative concepts', async 
   assert.match(hero, /hero-clients"><div class="logo-track"/);
   assert.equal((html.match(/<h1[ >]/g) ?? []).length, 1);
   assert.match(html.replace(/<!--[\s\S]*?-->/g, ''), /generar <br class="statement-title-desktop-break"/);
+  const heroStart = source.indexOf('<section className="hero"');
+  const serviceDirectory = source.indexOf('<section className="service-guide service-directory"');
+  const servicesGrid = source.indexOf('<LightGridFrame className="home-services-grid">');
+  assert.ok(heroStart !== -1 && heroStart < serviceDirectory);
+  assert.ok(serviceDirectory < servicesGrid, 'The service directory should be immediately after the hero');
 });
