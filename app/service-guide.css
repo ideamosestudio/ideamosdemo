@@ -199,13 +199,7 @@
 #site-root .service-faq__resources a:focus-visible{outline:2px solid #ff914d;outline-offset:4px}
 @media(max-width:980px){#site-root .service-faq__resources{grid-template-columns:1fr;gap:24px}#site-root .service-faq__resources nav+nav{border-left:0;border-top:1px solid #ffffff14;padding:20px 0 0}}
 @media(max-width:600px){#site-root .service-faq{padding-bottom:20px}#site-root .service-faq__resource-toggle{margin-top:24px}#site-root .service-faq__resources{padding:20px;gap:20px}#site-root .service-faq__resources .service-faq__related>div{grid-template-columns:1fr;gap:0}#site-root .service-faq__resources a{font-size:14px}}
-/* Native sticky stays within this section; no scroll handlers or fixed overlays. */
 @media (min-width: 901px) and (min-height: 560px) {
-  .service-directory__intro {
-    position: sticky;
-    top: 108px;
-    align-self: start;
-  }
   #site-root .service-directory__item { min-height: 156px; }
 }
 @media (max-width: 900px) {

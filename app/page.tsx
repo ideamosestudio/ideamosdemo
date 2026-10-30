@@ -120,8 +120,6 @@ export default function Home() {
               className="service-directory__item"
               href={asset(service.path)}
               key={service.path}
-              data-reveal
-              style={{ transitionDelay: `${index * 180}ms` }}
             >
               <span className="service-directory__number" aria-hidden="true">0{index + 1}</span>
               <span className="service-directory__copy">

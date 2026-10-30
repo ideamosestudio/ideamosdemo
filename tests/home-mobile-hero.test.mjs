@@ -34,7 +34,9 @@ test('mobile home promotes web and ecommerce with illustrative concepts', async 
   assert.match(source, /QUIERO ASESORAMIENTO PARA MI PROYECTO/);
   assert.match(source, /Desde Buenos Aires, acompañamos a empresas de Argentina/);
   assert.match(source, /Diseño web y marketing digital para <span>tu empresa\.<\/span>/);
-  assert.match(source, /service-directory__item[\s\S]*data-reveal/);
+  const directorySource = source.match(/<section className="service-guide service-directory"[\s\S]*?<\/section>/)?.[0];
+  assert.ok(directorySource);
+  assert.doesNotMatch(directorySource, /data-reveal|transitionDelay/);
   assert.doesNotMatch(source, /data-service-(?:panel|step|progress|current)/);
   assert.doesNotMatch(source, /service-directory__progress/);
 });
