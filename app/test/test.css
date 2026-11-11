@@ -9,6 +9,39 @@
   --test-body-leading: 1.75;
   --test-muted-light: #66686d;
   --test-muted-dark: #aaa;
+  --test-dark-surface: #181818;
+}
+
+/* Shared charcoal surface for the two dark modules that remain editable in TEST. */
+#site-root .test-page .service-directory,
+#site-root .test-page .pdw-section {
+  background: var(--test-dark-surface) !important;
+}
+
+/* Let the portfolio wall emerge from, and disappear into, its own background. */
+#site-root .test-page .pdw-section .drift-wall-stage::before,
+#site-root .test-page .pdw-section .drift-wall-stage::after {
+  content: "";
+  position: absolute;
+  z-index: 6;
+  right: 0;
+  left: 0;
+  height: clamp(96px, 12vw, 170px);
+  pointer-events: none;
+}
+
+#site-root .test-page .pdw-section .drift-wall-stage::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--test-dark-surface) 0%, rgba(24, 24, 24, .92) 24%, rgba(24, 24, 24, 0) 100%);
+}
+
+#site-root .test-page .pdw-section .drift-wall-stage::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--test-dark-surface) 0%, rgba(24, 24, 24, .92) 24%, rgba(24, 24, 24, 0) 100%);
+}
+
+#site-root .test-page .pdw-section .drift-wall-vignette {
+  background: radial-gradient(ellipse 82% 78% at 50% 50%, transparent 52%, var(--test-dark-surface) 100%);
 }
 
 #site-root .test-page :is(

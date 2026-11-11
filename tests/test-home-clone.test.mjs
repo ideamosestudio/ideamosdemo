@@ -44,6 +44,9 @@ test("la página de prueba aplica su sistema visual sin cargar componentes 3D", 
   assert.doesNotMatch(page, /TestPhone|TestTablet/);
   assert.match(layout, /test\.css/);
   assert.match(styles, /--test-content-width:\s*1180px/);
+  assert.match(styles, /--test-dark-surface:\s*#181818/);
+  assert.match(styles, /\.service-directory,\s*\n#site-root \.test-page \.pdw-section\s*\{[^}]*background:\s*var\(--test-dark-surface\)\s*!important/s);
+  assert.match(styles, /\.drift-wall-stage::before,\s*\n#site-root \.test-page \.pdw-section \.drift-wall-stage::after\s*\{[^}]*height:\s*clamp\(96px, 12vw, 170px\)/s);
   assert.match(styles, /--test-title-size:/);
   assert.match(styles, /\.happy-clients-avatars\s*\{[^}]*display:\s*none\s*!important/s);
   assert.match(styles, /\.statement \.module-base-copy__group \+ \.module-base-copy__group\s*\{[^}]*margin-top:\s*0\s*!important/s);
