@@ -26,22 +26,20 @@ test("la home de prueba existe, replica la home y permanece oculta", async () =>
   assert.doesNotMatch(home, /href="[^"]*\/test\/?"/i);
 });
 
-test("el teléfono 3D se mantiene encapsulado en la página de prueba", async () => {
+test("la página de prueba no carga componentes ni estilos experimentales", async () => {
   const [home, clone] = await Promise.all([
     readFile(new URL("index.html", out), "utf8"),
     readFile(new URL("test/index.html", out), "utf8"),
   ]);
 
   assert.doesNotMatch(home, /test-experiment-page|test-phone-3d/);
-  assert.match(clone, /test-experiment-page/);
-  const component = await readFile(new URL("../app/test/TestPhoneWebGL.tsx", import.meta.url), "utf8");
-  assert.match(component, /matchMedia\("\(min-width: 1000px\)"\)/);
-  assert.match(component, /new THREE\.WebGLRenderer/);
-  assert.match(component, /new THREE\.ExtrudeGeometry/);
-  assert.match(component, /\/media\/test\/shop-screen-hq-/);
+  assert.doesNotMatch(clone, /test-experiment-page|test-phone-3d|test-tablet-3d/);
 
-  for (const number of [1, 2, 3]) {
-    const screen = await readFile(new URL(`../public/media/test/shop-screen-hq-${number}.jpg`, import.meta.url));
-    assert.ok(screen.byteLength > 1_500_000, `la pantalla ${number} debe conservar la resolución original`);
-  }
+  const [page, layout] = await Promise.all([
+    readFile(new URL("../app/test/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/test/layout.tsx", import.meta.url), "utf8"),
+  ]);
+  assert.match(page, /return <Home\s*\/>/);
+  assert.doesNotMatch(page, /TestPhone|TestTablet/);
+  assert.doesNotMatch(layout, /test\.css/);
 });
