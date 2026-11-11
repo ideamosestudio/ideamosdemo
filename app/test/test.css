@@ -15,10 +15,7 @@
   .home-services-grid > .statement,
   .home-services-grid > .ecommerce,
   .home-services-grid > .google-scene,
-  .pdw-section,
-  .home-testimonials,
-  .home-advisory,
-  .contact-form
+  .pdw-section
 ) {
   min-height: 0 !important;
   padding-top: var(--test-section-space) !important;
@@ -28,9 +25,7 @@
 #site-root .test-page :is(
   .home-services-grid > .statement,
   .home-services-grid > .ecommerce,
-  .home-services-grid > .google-scene,
-  .home-testimonials,
-  .contact-form
+  .home-services-grid > .google-scene
 ) {
   padding-inline: var(--test-inline) !important;
 }
@@ -38,10 +33,7 @@
 #site-root .test-page :is(
   .happy-clients-label,
   .section-heading > p:first-child,
-  .google-content > p:first-child,
-  .home-testimonials__copy > p:first-child,
-  .human-copy > p:first-child,
-  .contact-main > p:first-child
+  .google-content > p:first-child
 ) {
   margin-bottom: 28px !important;
   font: 700 13px/1.5 "Poppins", Arial, sans-serif !important;
@@ -51,10 +43,7 @@
 #site-root .test-page :is(
   .statement h2,
   .section-heading h2,
-  .google-content h2,
-  .home-testimonials__copy h2,
-  .human-copy h2,
-  .contact-main h2
+  .google-content h2
 ) {
   margin-top: 0 !important;
   margin-bottom: 28px !important;
@@ -70,9 +59,7 @@
   .statement .module-base-copy,
   .section-heading > span,
   .shop-column p,
-  .google-content .module-base-copy,
-  .human-copy > span,
-  .contact-main > span
+  .google-content .module-base-copy
 ) {
   font-family: "Roboto", Arial, sans-serif !important;
   font-size: var(--test-body-size) !important;
@@ -85,8 +72,7 @@
   .statement .module-base-copy,
   .section-heading > span,
   .shop-column p,
-  .google-content .module-base-copy,
-  .human-copy > span
+  .google-content .module-base-copy
 ) b {
   font-family: inherit !important;
   font-size: inherit !important;
@@ -118,9 +104,7 @@
   .statement,
   .ecommerce,
   .google-scene,
-  .pdw-section,
-  .home-testimonials,
-  .home-advisory
+  .pdw-section
 ) :is(.orange-cta, .cta-glow) {
   display: inline-flex !important;
   width: auto !important;
@@ -142,9 +126,7 @@
 #site-root .test-page :is(
   .statement,
   .ecommerce,
-  .google-scene,
-  .home-testimonials,
-  .home-advisory
+  .google-scene
 ) :is(.orange-cta, .cta-glow) {
   color: #202124 !important;
 }
@@ -158,9 +140,7 @@
     .statement,
     .ecommerce,
     .google-scene,
-    .pdw-section,
-    .home-testimonials,
-    .home-advisory
+    .pdw-section
   ) :is(.orange-cta, .cta-glow):hover {
     border-color: #ff5a00 !important;
     background: #ff5a00 !important;
@@ -276,73 +256,10 @@
   line-height: var(--test-body-leading) !important;
 }
 
-#site-root .test-page .home-testimonials__slide {
-  width: min(100%, var(--test-content-width)) !important;
-  max-width: var(--test-content-width) !important;
-  gap: clamp(48px, 6vw, 82px) !important;
-  grid-template-columns: minmax(0, 1fr) minmax(420px, .9fr) !important;
-}
-
-#site-root .test-page .home-testimonials__copy h2 {
-  max-width: 620px !important;
-}
-
-#site-root .test-page .home-testimonials__person strong {
-  font-family: "Gilroy ExtraBold", "Poppins", Arial, sans-serif !important;
-  font-size: 18px !important;
-}
-
-#site-root .test-page .home-testimonials__person span {
-  color: var(--test-muted-light) !important;
-  font: 300 14px/1.5 "Roboto Light", "Roboto", Arial, sans-serif !important;
-}
-
-#site-root .test-page .home-advisory {
-  padding: 0 !important;
-}
-
-#site-root .test-page .home-advisory .human-copy {
-  padding: var(--test-section-space) var(--test-inline) !important;
-}
-
-#site-root .test-page .home-advisory .human-copy > span {
-  max-width: 560px;
-  color: var(--test-muted-light) !important;
-}
-
-#site-root .test-page .home-advisory .orange-cta {
-  margin-top: 38px !important;
-}
-
-#site-root .test-page .contact-form {
-  gap: clamp(36px, 4vw, 64px) !important;
-  grid-template-columns: minmax(0, 1.2fr) minmax(310px, .8fr) !important;
-}
-
-#site-root .test-page .contact-main,
-#site-root .test-page .contact-card {
-  border-radius: 0 !important;
-}
-
-#site-root .test-page .contact-main h2 {
-  max-width: 620px !important;
-  color: #fff !important;
-}
-
-#site-root .test-page .contact-main > span {
-  max-width: 590px;
-  color: var(--test-muted-dark) !important;
-}
-
-#site-root .test-page .contact-card h3 {
-  font: 800 28px/1.15 "Gilroy ExtraBold", "Poppins", Arial, sans-serif !important;
-  letter-spacing: -.02em !important;
-}
-
 @media (max-width: 1100px) {
   .test-page { --test-inline: clamp(36px, 6vw, 64px); }
 
-  #site-root .test-page :is(.statement, .google-scene, .home-testimonials__slide) {
+  #site-root .test-page :is(.statement, .google-scene) {
     grid-template-columns: 1fr !important;
   }
 
@@ -350,8 +267,6 @@
     max-width: 680px !important;
   }
 
-  #site-root .test-page .home-testimonials__visual { justify-self: start; }
-  #site-root .test-page .contact-form { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 700px) {
@@ -365,10 +280,7 @@
   #site-root .test-page :is(
     .happy-clients-label,
     .section-heading > p:first-child,
-    .google-content > p:first-child,
-    .home-testimonials__copy > p:first-child,
-    .human-copy > p:first-child,
-    .contact-main > p:first-child
+    .google-content > p:first-child
   ) {
     margin-bottom: 22px !important;
     font-size: 11px !important;
@@ -378,14 +290,11 @@
   #site-root .test-page :is(
     .home-services-grid > .statement,
     .home-services-grid > .ecommerce,
-    .home-services-grid > .google-scene,
-    .home-testimonials,
-    .contact-form
+    .home-services-grid > .google-scene
   ) {
     padding-inline: var(--test-inline) !important;
   }
 
-  #site-root .test-page .home-advisory .human-copy,
   #site-root .test-page .pdw-heading {
     padding-inline: var(--test-inline) !important;
   }
@@ -398,9 +307,7 @@
     .statement,
     .ecommerce,
     .google-scene,
-    .pdw-section,
-    .home-testimonials,
-    .home-advisory
+    .pdw-section
   ) :is(.orange-cta, .cta-glow) {
     width: 100% !important;
     min-width: 0 !important;
@@ -415,16 +322,12 @@
   }
 
   #site-root .test-page .section-heading :is(h2, p, span) { text-align: left !important; }
-  #site-root .test-page .home-testimonials__copy { text-align: left !important; }
+}
 
-  #site-root .test-page .home-testimonials__person,
-  #site-root .test-page .home-testimonials__actions {
-    justify-content: flex-start !important;
-  }
-
-  #site-root .test-page .contact-main,
-  #site-root .test-page .contact-card {
-    padding: 28px 22px !important;
+/* Match the service directory's 1180px centered container on every desktop width. */
+@media (min-width: 901px) {
+  #site-root .test-page {
+    --test-inline: max(48px, calc((100vw - var(--test-content-width)) / 2));
   }
 }
 

@@ -49,11 +49,13 @@ test("la página de prueba aplica su sistema visual sin cargar componentes 3D", 
   assert.match(styles, /\.statement \.module-base-copy__group \+ \.module-base-copy__group\s*\{[^}]*margin-top:\s*0\s*!important/s);
   assert.match(styles, /font-family:\s*"Roboto", Arial, sans-serif\s*!important/);
   assert.match(styles, /TYPO 01 — web-impact module, desktop only/);
+  assert.match(styles, /@media \(min-width:\s*901px\)\s*\{[\s\S]*--test-inline:\s*max\(48px, calc\(\(100vw - var\(--test-content-width\)\) \/ 2\)\)/);
   assert.match(styles, /@media \(min-width:\s*981px\)[\s\S]*\.home-services-grid > \.statement/);
   assert.match(styles, /\.home-services-grid > \.statement\s*\{[^}]*align-items:\s*center\s*!important/s);
   assert.match(styles, /\.home-page \.statement \.happy-clients\s*\{[^}]*height:\s*19\.5px[^}]*margin:\s*0 0 24px/s);
   assert.match(styles, /\.statement h2\s*\{[^}]*font-size:\s*clamp\(32px, 3\.4vw, 46px\)[^}]*line-height:\s*1\.07/s);
   assert.match(styles, /\.statement \.orange-cta\s*\{[^}]*width:\s*322px[^}]*min-height:\s*58px/s);
+  assert.doesNotMatch(styles, /\.(?:home-testimonials|home-advisory|contact-form|human-copy|contact-main|contact-card)\b/);
   assert.doesNotMatch(styles, /\.test-page\s+\.hero\b/);
   assert.doesNotMatch(styles, /\.test-page\s+(?:\.editorial-footer|footer)\b/);
 });
