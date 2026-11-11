@@ -9,7 +9,7 @@
   --test-body-leading: 1.75;
   --test-muted-light: #66686d;
   --test-muted-dark: #aaa;
-  --test-dark-surface: #181818;
+  --test-dark-surface: #000;
 }
 
 /* Shared charcoal surface for the two dark modules that remain editable in TEST. */
@@ -32,12 +32,12 @@
 
 #site-root .test-page .pdw-section .drift-wall-stage::before {
   top: 0;
-  background: linear-gradient(to bottom, var(--test-dark-surface) 0%, rgba(24, 24, 24, .92) 24%, rgba(24, 24, 24, 0) 100%);
+  background: linear-gradient(to bottom, var(--test-dark-surface) 0%, rgba(0, 0, 0, .92) 24%, rgba(0, 0, 0, 0) 100%);
 }
 
 #site-root .test-page .pdw-section .drift-wall-stage::after {
   bottom: 0;
-  background: linear-gradient(to top, var(--test-dark-surface) 0%, rgba(24, 24, 24, .92) 24%, rgba(24, 24, 24, 0) 100%);
+  background: linear-gradient(to top, var(--test-dark-surface) 0%, rgba(0, 0, 0, .92) 24%, rgba(0, 0, 0, 0) 100%);
 }
 
 #site-root .test-page .pdw-section .drift-wall-vignette {
