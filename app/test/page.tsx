@@ -1,5 +1,5 @@
 import Home from "../page";
 
 export default function TestHome() {
-  return <Home />;
+  return <div className="test-page"><Home /></div>;
 }

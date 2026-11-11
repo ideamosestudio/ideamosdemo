@@ -26,7 +26,7 @@ test("la home de prueba existe, replica la home y permanece oculta", async () =>
   assert.doesNotMatch(home, /href="[^"]*\/test\/?"/i);
 });
 
-test("la página de prueba no carga componentes ni estilos experimentales", async () => {
+test("la página de prueba aplica su sistema visual sin cargar componentes 3D", async () => {
   const [home, clone] = await Promise.all([
     readFile(new URL("index.html", out), "utf8"),
     readFile(new URL("test/index.html", out), "utf8"),
@@ -35,11 +35,16 @@ test("la página de prueba no carga componentes ni estilos experimentales", asyn
   assert.doesNotMatch(home, /test-experiment-page|test-phone-3d/);
   assert.doesNotMatch(clone, /test-experiment-page|test-phone-3d|test-tablet-3d/);
 
-  const [page, layout] = await Promise.all([
+  const [page, layout, styles] = await Promise.all([
     readFile(new URL("../app/test/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/test/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/test/test.css", import.meta.url), "utf8"),
   ]);
-  assert.match(page, /return <Home\s*\/>/);
+  assert.match(page, /className="test-page"/);
   assert.doesNotMatch(page, /TestPhone|TestTablet/);
-  assert.doesNotMatch(layout, /test\.css/);
+  assert.match(layout, /test\.css/);
+  assert.match(styles, /--test-content-width:\s*1180px/);
+  assert.match(styles, /--test-title-size:/);
+  assert.doesNotMatch(styles, /\.test-page\s+\.hero\b/);
+  assert.doesNotMatch(styles, /\.test-page\s+(?:\.editorial-footer|footer)\b/);
 });
