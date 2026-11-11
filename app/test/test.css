@@ -272,7 +272,20 @@
 }
 
 #site-root .test-page .pdw-heading {
+  display: flex;
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: auto !important;
   padding-inline: var(--test-inline);
+  flex-direction: column;
+  align-items: center;
+  text-align: center !important;
+}
+
+#site-root .test-page .pdw-heading > :is(p, h2, span) {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  text-align: center !important;
 }
 
 #site-root .test-page .pdw-heading h2 {

@@ -47,6 +47,8 @@ test("la página de prueba aplica su sistema visual sin cargar componentes 3D", 
   assert.match(styles, /--test-dark-surface:\s*#000/);
   assert.match(styles, /\.service-directory,\s*\n#site-root \.test-page \.pdw-section\s*\{[^}]*background:\s*var\(--test-dark-surface\)\s*!important/s);
   assert.match(styles, /\.drift-wall-stage::before,\s*\n#site-root \.test-page \.pdw-section \.drift-wall-stage::after\s*\{[^}]*height:\s*clamp\(96px, 12vw, 170px\)/s);
+  assert.match(styles, /\.pdw-heading\s*\{[^}]*width:\s*100%\s*!important[^}]*align-items:\s*center[^}]*text-align:\s*center\s*!important/s);
+  assert.match(styles, /\.pdw-heading > :is\(p, h2, span\)\s*\{[^}]*margin-right:\s*auto\s*!important[^}]*margin-left:\s*auto\s*!important[^}]*text-align:\s*center\s*!important/s);
   assert.match(styles, /--test-title-size:/);
   assert.match(styles, /\.happy-clients-avatars\s*\{[^}]*display:\s*none\s*!important/s);
   assert.match(styles, /\.statement \.module-base-copy__group \+ \.module-base-copy__group\s*\{[^}]*margin-top:\s*0\s*!important/s);
