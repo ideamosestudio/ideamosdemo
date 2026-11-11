@@ -47,7 +47,7 @@ test("la página de prueba aplica su sistema visual sin cargar componentes 3D", 
   assert.match(styles, /--test-title-size:/);
   assert.match(styles, /\.happy-clients-avatars\s*\{[^}]*display:\s*none\s*!important/s);
   assert.match(styles, /\.statement \.module-base-copy__group \+ \.module-base-copy__group\s*\{[^}]*margin-top:\s*0\s*!important/s);
-  assert.match(styles, /font-family:\s*Arial, Helvetica, sans-serif\s*!important/);
+  assert.match(styles, /font-family:\s*"Roboto", Arial, sans-serif\s*!important/);
   assert.doesNotMatch(styles, /\.test-page\s+\.hero\b/);
   assert.doesNotMatch(styles, /\.test-page\s+(?:\.editorial-footer|footer)\b/);
 });
