@@ -10,10 +10,14 @@
   --test-muted-light: #66686d;
   --test-muted-dark: #aaa;
   --test-dark-surface: #000;
+  --test-directory-surface: #242424;
 }
 
-/* Shared charcoal surface for the two dark modules that remain editable in TEST. */
-#site-root .test-page .service-directory,
+/* Pure black is reserved for the portfolio fade; the directory stays softer. */
+#site-root .test-page .service-directory {
+  background: var(--test-directory-surface) !important;
+}
+
 #site-root .test-page .pdw-section {
   background: var(--test-dark-surface) !important;
 }

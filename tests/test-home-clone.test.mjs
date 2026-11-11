@@ -45,7 +45,9 @@ test("la página de prueba aplica su sistema visual sin cargar componentes 3D", 
   assert.match(layout, /test\.css/);
   assert.match(styles, /--test-content-width:\s*1180px/);
   assert.match(styles, /--test-dark-surface:\s*#000/);
-  assert.match(styles, /\.service-directory,\s*\n#site-root \.test-page \.pdw-section\s*\{[^}]*background:\s*var\(--test-dark-surface\)\s*!important/s);
+  assert.match(styles, /--test-directory-surface:\s*#242424/);
+  assert.match(styles, /\.service-directory\s*\{[^}]*background:\s*var\(--test-directory-surface\)\s*!important/s);
+  assert.match(styles, /\.pdw-section\s*\{[^}]*background:\s*var\(--test-dark-surface\)\s*!important/s);
   assert.match(styles, /\.drift-wall-stage::before,\s*\n#site-root \.test-page \.pdw-section \.drift-wall-stage::after\s*\{[^}]*height:\s*clamp\(96px, 12vw, 170px\)/s);
   assert.match(styles, /\.pdw-section > \.pdw-heading\s*\{[^}]*left:\s*50%\s*!important[^}]*width:\s*100vw\s*!important[^}]*justify-items:\s*center\s*!important[^}]*transform:\s*translateX\(-50%\)\s*!important/s);
   assert.match(styles, /\.pdw-heading > :is\(p, h2, span\)\s*\{[^}]*width:\s*fit-content\s*!important[^}]*justify-self:\s*center\s*!important[^}]*text-align:\s*center\s*!important/s);
