@@ -48,6 +48,10 @@ test("la página de prueba aplica su sistema visual sin cargar componentes 3D", 
   assert.match(styles, /\.happy-clients-avatars\s*\{[^}]*display:\s*none\s*!important/s);
   assert.match(styles, /\.statement \.module-base-copy__group \+ \.module-base-copy__group\s*\{[^}]*margin-top:\s*0\s*!important/s);
   assert.match(styles, /font-family:\s*"Roboto", Arial, sans-serif\s*!important/);
+  assert.match(styles, /TYPO 01 — web-impact module, desktop only/);
+  assert.match(styles, /@media \(min-width:\s*981px\)[\s\S]*\.home-services-grid > \.statement/);
+  assert.match(styles, /\.statement h2\s*\{[^}]*font-size:\s*clamp\(32px, 3\.4vw, 46px\)[^}]*line-height:\s*1\.07/s);
+  assert.match(styles, /\.statement \.orange-cta\s*\{[^}]*width:\s*322px[^}]*min-height:\s*58px/s);
   assert.doesNotMatch(styles, /\.test-page\s+\.hero\b/);
   assert.doesNotMatch(styles, /\.test-page\s+(?:\.editorial-footer|footer)\b/);
 });

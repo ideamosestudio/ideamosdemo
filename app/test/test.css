@@ -427,3 +427,81 @@
     padding: 28px 22px !important;
   }
 }
+
+/* TYPO 01 — web-impact module, desktop only. */
+@media (min-width: 981px) {
+  #site-root .test-page .home-services-grid > .statement {
+    grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr) !important;
+    gap: clamp(48px, 6vw, 90px) !important;
+    align-items: center !important;
+    min-height: 0 !important;
+    padding-block: clamp(64px, 7vw, 104px) !important;
+    padding-inline: var(--test-inline) !important;
+  }
+
+  #site-root .test-page .statement-copyblock {
+    width: 100% !important;
+    max-width: 470px !important;
+  }
+
+  #site-root .test-page .statement .happy-clients {
+    width: max-content !important;
+    max-width: 100% !important;
+    margin: 0 0 24px !important;
+  }
+
+  #site-root .test-page .statement .happy-clients-label {
+    margin: 0 !important;
+    font: 700 13px/1.5 "Poppins", Arial, sans-serif !important;
+    letter-spacing: .42em !important;
+  }
+
+  #site-root .test-page .statement h2 {
+    max-width: 470px !important;
+    margin: 0 0 24px !important;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif !important;
+    font-size: clamp(32px, 3.4vw, 46px) !important;
+    font-weight: 800 !important;
+    line-height: 1.07 !important;
+    letter-spacing: -.025em !important;
+    text-wrap: balance;
+  }
+
+  #site-root .test-page .statement h3 {
+    max-width: 470px !important;
+    margin: 0 0 9px !important;
+    font-family: "Gilroy ExtraBold", Arial, sans-serif !important;
+    font-size: clamp(22px, 2vw, 28px) !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -.02em !important;
+  }
+
+  #site-root .test-page .statement .module-base-copy {
+    max-width: 400px !important;
+    margin: 0 0 28px !important;
+    font-family: "Roboto", Arial, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 300 !important;
+    line-height: 1.75 !important;
+    letter-spacing: 0 !important;
+  }
+
+  #site-root .test-page .statement .module-base-copy b {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: 700 !important;
+    line-height: inherit !important;
+  }
+
+  #site-root .test-page .statement .orange-cta {
+    width: 322px !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 58px !important;
+    margin: 0 !important;
+    padding: 0 35px !important;
+    font: 700 10px/1.2 "Poppins", Arial, sans-serif !important;
+    letter-spacing: 1px !important;
+  }
+}
