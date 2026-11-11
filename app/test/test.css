@@ -74,9 +74,9 @@
   .human-copy > span,
   .contact-main > span
 ) {
-  font-family: "Roboto Light", "Roboto", Arial, sans-serif !important;
+  font-family: Arial, Helvetica, sans-serif !important;
   font-size: var(--test-body-size) !important;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   line-height: var(--test-body-leading) !important;
   letter-spacing: 0 !important;
 }
@@ -92,6 +92,26 @@
   font-size: inherit !important;
   font-weight: 700 !important;
   line-height: inherit !important;
+}
+
+/* The reference paragraph uses the site's Arial body face, not Roboto Light. */
+#site-root .test-page .service-directory__description {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-weight: 400 !important;
+}
+
+/* Keep the eyebrow text, but remove the testimonial thumbnails in TEST. */
+#site-root .test-page .happy-clients-avatars {
+  display: none !important;
+}
+
+#site-root .test-page .statement .happy-clients {
+  gap: 0 !important;
+}
+
+/* The two lines of copy read as one continuous paragraph block. */
+#site-root .test-page .statement .module-base-copy__group + .module-base-copy__group {
+  margin-top: 0 !important;
 }
 
 #site-root .test-page :is(
@@ -250,9 +270,9 @@
 #site-root .test-page .pdw-heading > span {
   max-width: 660px !important;
   color: var(--test-muted-dark) !important;
-  font-family: "Roboto Light", "Roboto", Arial, sans-serif !important;
+  font-family: Arial, Helvetica, sans-serif !important;
   font-size: var(--test-body-size) !important;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   line-height: var(--test-body-leading) !important;
 }
 
