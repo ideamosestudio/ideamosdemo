@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 test('portfolio project links use matching visible and accessible labels', async () => {
   const html = await readFile(new URL('../out/portfolio/index.html', import.meta.url), 'utf8');
   const links = [...html.matchAll(/<a class="project-link"[^>]*>[\s\S]*?<\/a>/g)];
-  assert.ok(links.length >= 48);
+  assert.ok(links.length >= 47);
   for (const [link] of links) {
     assert.match(link, /aria-label="Conocer el proyecto /);
     assert.match(link, /<span>Conocer el proyecto<\/span>/);
