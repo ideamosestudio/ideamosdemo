@@ -1,0 +1,26 @@
+.notice{position:relative;z-index:2;background:#171717;color:#ffc296;text-align:center;font-size:11px;letter-spacing:.12em;padding:10px 20px}
+.scope{background:#f5f5fb;color:#17181c;padding:clamp(48px,6vw,88px) 24px}
+.inner{max-width:1180px;margin:auto}
+.heading{max-width:730px;margin-bottom:36px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.16em;color:#ad3900;margin:0 0 18px}
+.heading h2{font-size:clamp(30px,3.4vw,48px);line-height:1.12;letter-spacing:-.035em;margin:0 0 20px}
+.heading em{font-style:normal;color:#b63d00}
+.heading>p:last-child,.cards p,.choice p,.next p{font-size:16px;line-height:1.7;color:#50515b;margin:0}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.cards article{background:#fff;border:1px solid #dedee7;border-radius:18px;padding:28px}
+.number{font-size:12px;color:#ad3900;letter-spacing:.12em}
+.cards h3{font-size:23px;line-height:1.2;margin:16px 0 12px}
+.choice{margin-top:24px;border-block:1px solid #d6d6df}
+.choice summary{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;font-size:16px;font-weight:700;list-style:none}
+.choice summary::-webkit-details-marker{display:none}
+.choice summary span{color:#ad3900;font-size:24px;transition:transform .2s}
+.choice[open] summary span{transform:rotate(45deg)}
+.choice>div{padding:0 0 24px;max-width:850px}
+.choice a,.resources a{display:inline-flex;align-items:center;gap:12px;color:#24252b;font-size:14px;line-height:1.5;text-decoration:underline;text-underline-offset:5px;padding:12px 0}
+.choice a svg,.resources a svg{width:18px;height:18px;flex:none;color:#b63d00}
+.next{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:32px 0 18px}
+.next>div{max-width:650px}.next h3{font-size:24px;margin:0 0 10px}.next>a{flex-shrink:0}
+.resources{display:flex;flex-wrap:wrap;gap:12px 32px}
+.inner a:focus-visible,.choice summary:focus-visible{outline:2px solid #b63d00;outline-offset:5px}
+@media(max-width:700px){.cards{grid-template-columns:1fr;gap:14px}.cards article{padding:24px}.next{flex-direction:column;align-items:flex-start;gap:22px}.resources{flex-direction:column;align-items:flex-start;gap:0}.scope{padding-inline:22px}.cards h3{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.choice summary span{transition:none}}

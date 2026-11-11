@@ -4,10 +4,14 @@ import s from "./propuesta.module.css";
 import ProposalAdditions from "./ProposalAdditions";
 import ProjectEvidence from "./ProjectEvidence";
 import ReviewServiceGuide from "./ReviewServiceGuide";
+import { createPageMetadata } from "../../../lib/seo";
 
 export const metadata: Metadata = {
-  title: "Diseño web profesional para empresas | Ideamos",
-  description: "Diseño web a medida para empresas de Argentina. Sitios adaptados a celulares, contenido claro y opciones autoadministrables. Pedí una asesoría sin cargo.",
+  ...createPageMetadata({
+    title: "Diseño web profesional para empresas | Ideamos",
+    description: "Diseño web a medida para empresas de Argentina. Sitios adaptados a celulares, contenido claro y opciones autoadministrables. Pedí una asesoría sin cargo.",
+    path: "/diseno-web-autoadministrable/",
+  }),
   robots: { index: false, follow: false, googleBot: { index: false, follow: false, noimageindex: true } },
   alternates: { canonical: "/diseno-web-autoadministrable/" },
 };
