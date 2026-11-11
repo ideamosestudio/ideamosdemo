@@ -433,7 +433,7 @@
   #site-root .test-page .home-services-grid > .statement {
     grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr) !important;
     gap: clamp(48px, 6vw, 90px) !important;
-    align-items: center !important;
+    align-items: start !important;
     min-height: 0 !important;
     padding-block: clamp(64px, 7vw, 104px) !important;
     padding-inline: var(--test-inline) !important;
