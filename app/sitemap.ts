@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "../lib/seo";
-import { BLOG_DATE, blogPaths } from "../lib/blog";
+import { blogLastModified, blogPaths } from "../lib/blog";
 
 export const dynamic = "force-static";
 
@@ -31,5 +31,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(lastModified[path] ? { lastModified: lastModified[path] } : {}),
     changeFrequency,
     priority,
-  })), ...blogPaths.map(path => ({ url: `${SITE_URL}${path}`, lastModified: BLOG_DATE, priority: 0.5, changeFrequency: "monthly" as const }))];
+  })), ...blogPaths.map(path => ({ url: `${SITE_URL}${path}`, lastModified: blogLastModified(path), priority: 0.5, changeFrequency: "monthly" as const }))];
 }

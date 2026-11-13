@@ -1,6 +1,6 @@
 import SiteHeader from "./SiteHeader";
 import { SharedFooter } from "./SharedHomeSections";
-import { BLOG_DATE, blogCategories, blogPosts, type BlogPost } from "../lib/blog";
+import { publishedDate, modifiedDate, formatBlogDate, blogCategories, blogPosts, type BlogPost } from "../lib/blog";
 import { SITE_URL } from "../lib/seo";
 
 const href = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
@@ -16,7 +16,7 @@ export default function BlogView({ post, category }: { post?: BlogPost; category
   if (post) crumbs.push({ name: post.title, path });
   const schema = { "@context": "https://schema.org", "@graph": [
     { "@type": "BreadcrumbList", itemListElement: crumbs.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name, item: SITE_URL + c.path })) },
-    post ? { "@type": "BlogPosting", "@id": SITE_URL + path + "#article", headline: title, description: post.description, mainEntityOfPage: SITE_URL + path, url: SITE_URL + path, inLanguage: "es-AR", datePublished: BLOG_DATE, dateModified: BLOG_DATE, author: { "@type": "Organization", name: "Ideamos", url: SITE_URL, "@id": SITE_URL + "/#organization" }, publisher: { "@id": SITE_URL + "/#organization" }, image: SITE_URL + post.image, articleSection: topic?.title } : { "@type": "CollectionPage", name: title, description, url: SITE_URL + path, inLanguage: "es-AR", mainEntity: { "@type": "ItemList", itemListElement: posts.map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.title, url: SITE_URL + `/blog/${p.slug}/` })) } },
+    post ? { "@type": "BlogPosting", "@id": SITE_URL + path + "#article", headline: title, description: post.description, mainEntityOfPage: SITE_URL + path, url: SITE_URL + path, inLanguage: "es-AR", datePublished: publishedDate(post), dateModified: modifiedDate(post), author: { "@type": "Organization", name: "Ideamos", url: SITE_URL, "@id": SITE_URL + "/#organization" }, publisher: { "@id": SITE_URL + "/#organization" }, image: SITE_URL + post.image, articleSection: topic?.title } : { "@type": "CollectionPage", name: title, description, url: SITE_URL + path, inLanguage: "es-AR", mainEntity: { "@type": "ItemList", itemListElement: posts.map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.title, url: SITE_URL + `/blog/${p.slug}/` })) } },
   ] };
   return <div className="blog-shell">
     <SiteHeader solid />
@@ -27,7 +27,7 @@ export default function BlogView({ post, category }: { post?: BlogPost; category
         <p className="blog-eyebrow">{post ? "GUÍA PRÁCTICA" : "BLOG · IDEAMOS"}</p>
         <h1>{post || category ? title : <>Ideas para tu<br/><em>próxima web.</em></>}</h1>
         <p className="blog-intro">{description}</p>
-        {post && <p className="blog-byline">Por Ideamos · Publicado el <time dateTime={BLOG_DATE}>24 de octubre de 2026</time></p>}
+        {post && <p className="blog-byline">Por Ideamos · Publicado el <time dateTime={publishedDate(post)}>{formatBlogDate(publishedDate(post))}</time>{modifiedDate(post) !== publishedDate(post) && <> · Actualizado el <time dateTime={modifiedDate(post)}>{formatBlogDate(modifiedDate(post))}</time></>}</p>}
         {!post && <nav className="blog-topics" aria-label="Temas del blog">{blogCategories.map(c => <a key={c.slug} href={href(`/blog/${c.slug}/`)} aria-current={category === c ? "page" : undefined}>{c.slug === "tiendas-online" ? "Tiendas online" : "Diseño web"}</a>)}</nav>}
       </header>
       {post && <div className="blog-reading">

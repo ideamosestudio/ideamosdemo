@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogView from "../../../components/BlogView";
-import { BLOG_DATE, blogCategories, blogPosts } from "../../../lib/blog";
+import { publishedDate, modifiedDate, blogCategories, blogPosts } from "../../../lib/blog";
 import { createPageMetadata } from "../../../lib/seo";
 export const dynamicParams = false;
 export function generateStaticParams() { return [...blogCategories, ...blogPosts].map(p => ({ slug: p.slug.split("/") })); }
@@ -12,6 +12,6 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const content = post ?? category;
   if (!content) notFound();
   const metadata = createPageMetadata({ title: content.title, description: content.description, path: `/blog/${slug}/`, ...(post ? { image: post.image } : {}) });
-  return post ? { ...metadata, openGraph: { ...metadata.openGraph, type: "article", images: [{ url: post.image, width: 1200, height: 686, alt: post.imageAlt }], publishedTime: BLOG_DATE, modifiedTime: BLOG_DATE, authors: ["Ideamos"] } } : metadata;
+  return post ? { ...metadata, openGraph: { ...metadata.openGraph, type: "article", images: [{ url: post.image, width: 1200, height: 686, alt: post.imageAlt }], publishedTime: publishedDate(post), modifiedTime: modifiedDate(post), authors: ["Ideamos"] } } : metadata;
 }
 export default async function BlogContentPage(props: Props) { const { post, category } = await find(props); if (!post && !category) notFound(); return <BlogView post={post} category={category} />; }
