@@ -1,3 +1,4 @@
+import { novemberBlogPosts } from "./blog-november";
 export const BLOG_DATE = "2026-10-24";
 export const blogCategories = [
   { slug: "diseno-web-profesional", title: "Guías de diseño web para empresas", description: "Decisiones prácticas para crear o renovar la web de tu empresa: alcance, contenido, velocidad y consultas comerciales.", service: "/diseno-web-autoadministrable/" },
@@ -9,6 +10,7 @@ export const publishedDate = (post: BlogPost) => post.publishedAt ?? BLOG_DATE;
 export const modifiedDate = (post: BlogPost) => post.updatedAt ?? publishedDate(post);
 export const formatBlogDate = (date: string) => new Intl.DateTimeFormat("es-AR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T12:00:00Z`));
 export const blogPosts: BlogPost[] = [
+  ...novemberBlogPosts,
   {
     slug: "diseno-web-profesional/diseno-web-profesional", category: "diseno-web-profesional",
     image: "/media/blog/diseno-web-profesional.webp", imageAlt: "Ilustración de una web profesional organizada en pantallas de escritorio, tablet y celular",

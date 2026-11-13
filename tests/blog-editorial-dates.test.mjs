@@ -17,7 +17,21 @@ test('la actualización editorial conserva publicación y cambia solo las fechas
   const xml = await readFile(new URL('sitemap.xml', out), 'utf8');
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(m => m[1]);
   assert.match(entries.find(e => e.includes('/' + updated + '</loc>')), /<lastmod>2026-11-13<\/lastmod>/);
-  for (const entry of entries.filter(e => /\/blog\//.test(e) && !e.includes(updated) && !e.includes('/blog/</loc>') && !e.includes('/blog/tiendas-online/</loc>'))) {
+  const originalSlugs = ['diseno-web-profesional/diseno-web-profesional/', 'seo/renovacion-de-sitio-web-2026-seo-conversiones/', 'diseno-web-profesional/mejorar-velocidad-sitio-web/', 'tiendas-online/que-necesitas-para-lanzar-tienda-online/'];
+  for (const entry of entries.filter(e => originalSlugs.some(slug => e.includes('/blog/' + slug + '</loc>')))) {
     assert.match(entry, /<lastmod>2026-10-24<\/lastmod>/);
+  }
+});
+
+test('las tres entregas recuperadas tienen fecha real, imagen propia y aparecen en el listado', async () => {
+  const index = await readFile(new URL('blog/index.html', out), 'utf8');
+  for (const slug of ['diseno-web-profesional/preparar-contenido-web-empresa', 'tiendas-online/como-crear-fichas-de-producto', 'diseno-web-profesional/formulario-contacto-consultas-comerciales']) {
+    assert.ok(index.includes(`/blog/${slug}/`));
+    const html = await readFile(new URL(`blog/${slug}/index.html`, out), 'utf8');
+    const graphs = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)].flatMap(m => { const s = JSON.parse(m[1]); return s['@graph'] ?? [s]; });
+    const article = graphs.find(s => s['@type'] === 'BlogPosting');
+    assert.equal(article.datePublished, '2026-11-13');
+    assert.equal(article.dateModified, '2026-11-13');
+    assert.equal((html.match(/<h2/g) ?? []).length >= 6, true);
   }
 });

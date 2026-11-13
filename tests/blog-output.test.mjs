@@ -5,7 +5,7 @@ const out = new URL("../out/", import.meta.url);
 test("el blog es discreto, estático, indexable y enlaza artículos válidos", async () => {
   const xml = await readFile(new URL("sitemap.xml", out), "utf8");
   const urls = [...xml.matchAll(/<loc>(https:\/\/ideamos\.com\.ar\/blog\/.*?)<\/loc>/g)].map(m => m[1]);
-  assert.equal(urls.length, 8);
+  assert.equal(urls.length, 11);
   const titles = new Set();
   const images = new Set();
   let articles = 0;
@@ -52,8 +52,8 @@ test("el blog es discreto, estático, indexable y enlaza artículos válidos", a
     for (const [, path] of html.matchAll(/href="(\/blog\/[^"#]*)"/g)) await access(new URL(path.slice(1) + "index.html", out));
     assert.doesNotMatch(html, /href="[^"\s]*\/precios\//);
   }
-  assert.equal(articles, 5);
-  assert.equal(images.size, 5);
+  assert.equal(articles, 8);
+  assert.equal(images.size, 8);
   const home = await readFile(new URL("index.html", out), "utf8");
   assert.match(home, /<footer[\s\S]*href="\/blog\/"/);
   assert.match(home, /class="footer-blog-link" href="\/blog\/">Blog<\/a>/);
