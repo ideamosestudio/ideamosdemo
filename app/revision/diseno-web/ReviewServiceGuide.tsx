@@ -1,4 +1,5 @@
 import { serviceGuides, serviceLinks, type ServiceGuideKey } from "../../../lib/service-guides";
+import "../../service-guide.css";
 import { SITE_URL } from "../../../lib/seo";
 import ArrowIcon from "../../../components/ArrowIcon";
 import { blogPosts } from "../../../lib/blog";

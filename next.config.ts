@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
   assetPrefix: basePath || undefined,
   images: { unoptimized: true },
   turbopack: { root: process.cwd() },
+  experimental: {
+    cssChunking: { type: "graph", requestCost: 1000, weightDistribution: 0 },
+  },
 };
 
 export default nextConfig;

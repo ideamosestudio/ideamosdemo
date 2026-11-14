@@ -67,7 +67,11 @@ export default function CasesGallery({
     if (!stageRef.current) return;
     const tracks = stageRef.current.querySelectorAll<HTMLElement>(".cases-marquee-track");
     return observeVisibleActivity(stageRef.current, active => {
-      tracks.forEach(track => { track.style.animationPlayState = active && !selected ? "running" : "paused"; });
+      tracks.forEach(track => {
+        // Let CSS retain hover/focus pauses when the gallery is visible.
+        if (active && !selected) track.style.removeProperty("animation-play-state");
+        else track.style.animationPlayState = "paused";
+      });
     });
   }, [selected]);
 

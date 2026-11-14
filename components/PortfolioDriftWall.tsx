@@ -5,6 +5,7 @@ import DriftWall, { type DriftWallItem } from "./DriftWall";
 import CasesGallery, { type GalleryWork } from "../app/casos-de-exito/CasesGallery";
 import { WHATSAPP_URL } from "../lib/whatsapp";
 import PortfolioLink from "./PortfolioLink";
+import "./DriftWall.css";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 

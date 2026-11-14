@@ -167,7 +167,11 @@ test("la portada conserva las optimizaciones críticas de rendimiento", async ()
     assert.match(image, /\bwidth=/, image);
     assert.match(image, /\bheight=/, image);
   }
-  assert.ok(stylesheets.length <= 2, `La portada carga ${stylesheets.length} hojas de estilo`);
+  assert.ok(stylesheets.length <= 4, `La portada carga ${stylesheets.length} hojas de estilo`);
+  const cssFiles = [...html.matchAll(/<link[^>]*rel="stylesheet"[^>]*href="([^"]+)"/g)].map(match => match[1]);
+  let cssBytes = 0;
+  for (const file of cssFiles) cssBytes += (await stat(new URL(file.replace(/^\//, ""), out))).size;
+  assert.ok(cssBytes <= 256_000, `El CSS inicial ocupa ${cssBytes} bytes`);
 });
 
 test("el contacto publica las redes oficiales con iconos accesibles", async () => {
@@ -197,8 +201,9 @@ test("el presupuesto de rendimiento evita regresiones pesadas", async () => {
   assert.equal(packageJson.dependencies?.tailwindcss, undefined);
   assert.equal(packageJson.devDependencies?.tailwindcss, undefined);
   assert.equal(packageJson.devDependencies?.["@tailwindcss/postcss"], undefined);
+  assert.doesNotMatch(rootLayout, /DriftWall\.css|service-guide\.css/);
+  assert.match(await readFile(new URL("components/PortfolioDriftWall.tsx", root), "utf8"), /import "\.\/DriftWall\.css"/);
   assert.match(rootLayout, /casos-de-exito\/casos\.css/);
-  assert.match(rootLayout, /DriftWall\.css/);
 
   for (const [file, maximumBytes] of Object.entries(videoLimits)) {
     const details = await stat(new URL(file, root));
