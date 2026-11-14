@@ -39,8 +39,8 @@ export default function BlogView({ post, category }: { post?: BlogPost; category
           <aside className="blog-cta"><h2>{post.category === "tiendas-online" ? "Preparemos tu tienda online" : "Pensemos la web de tu empresa"}</h2><p>Contanos qué necesitás y qué tenés preparado. Podemos ayudarte a definir el alcance y los próximos pasos.</p><a href={href(topic!.service)}>Conocé nuestro servicio de {post.category === "tiendas-online" ? "tiendas online" : "diseño web"}</a><a href={href("/portfolio/")}>Explorá proyectos de nuestro portfolio</a><a href={href("/contacto/")}>Hablemos de tu proyecto</a></aside>
         </article>
       </div>}
-      <section className="blog-list" aria-labelledby="blog-list-title"><h2 id="blog-list-title">{post ? "Seguí leyendo" : "Guías para decidir con claridad"}</h2><div className="blog-cards">{posts.map(p => <article key={p.slug}>
-        <img className="blog-card-image" src={href(p.image)} srcSet={imageSet(p)} sizes="(max-width:800px) calc(100vw - 96px), 500px" alt={p.imageAlt} width="1200" height="686" loading="lazy" decoding="async" />
+      <section className="blog-list" aria-labelledby="blog-list-title"><h2 id="blog-list-title">{post ? "Seguí leyendo" : "Guías para decidir con claridad"}</h2><div className="blog-cards">{posts.map((p, i) => <article key={p.slug}>
+        <img className="blog-card-image" src={href(p.image)} srcSet={imageSet(p)} sizes="(max-width:800px) calc(100vw - 96px), 500px" alt={p.imageAlt} width="1200" height="686" loading={!post && i === 0 ? "eager" : "lazy"} decoding="async" />
         <p className="blog-eyebrow">{p.category === "tiendas-online" ? "TIENDAS ONLINE" : "DISEÑO WEB"}</p><h3><a href={href(`/blog/${p.slug}/`)}>{p.title}</a></h3><p>{p.description}</p></article>)}</div></section>
     </main>
     <SharedFooter />

@@ -47,6 +47,7 @@ const ecommerceRight = [
 
 export default function Home() {
   return <main className="home-page">
+    <link rel="preload" href={asset("/media/hero-poster.webp")} as="image" type="image/webp" fetchPriority="high" />
     <style data-module-base-rules>{moduleBaseStyles}</style>
     <HomeEnhancements />
     <SiteHeader />
