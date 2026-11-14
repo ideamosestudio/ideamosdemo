@@ -21,7 +21,23 @@ test("analytics initializes promptly and only once across remounts", async () =>
   const source = await readFile(new URL("../components/DeferredAnalytics.tsx", import.meta.url), "utf8");
   const body = source.split("useEffect(() => {")[1].split("}, [containerId])")[0];
   const nodes = [];
-  const window = {};
+  const scheduled = [];
+  const window = {
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    requestIdleCallback: (callback, options) => {
+      assert.equal(options.timeout, 1500);
+      scheduled.push(callback);
+      return 1;
+    },
+    cancelIdleCallback: () => {},
+    setTimeout: (callback, delay) => {
+      assert.equal(delay, 1500);
+      scheduled.push(callback);
+      return 2;
+    },
+    clearTimeout: () => {},
+  };
   const document = {
     getElementById: id => nodes.find(node => node.id === id),
     createElement: () => ({}),
@@ -30,6 +46,8 @@ test("analytics initializes promptly and only once across remounts", async () =>
   const initialize = new Function("window", "document", "containerId", body);
   initialize(window, document, "GTM-TEST");
   initialize(window, document, "GTM-TEST");
+  assert.equal(nodes.length, 0);
+  for (const callback of scheduled) callback();
   assert.equal(nodes.length, 1);
   assert.equal(nodes[0].async, true);
   assert.equal(window.dataLayer.length, 1);

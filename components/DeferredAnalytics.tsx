@@ -29,9 +29,21 @@ export default function DeferredAnalytics({ containerId }: DeferredAnalyticsProp
 
     };
 
-    // Initialize after hydration, without losing visits that leave before 15s.
-    loadGTM();
+    // Avoid competing with the first render; never wait 15 seconds for a visit.
+    const onInteraction = () => loadGTM();
+    window.addEventListener("pointerdown", onInteraction, { once: true, passive: true });
+    window.addEventListener("keydown", onInteraction, { once: true });
+    const idle = "requestIdleCallback" in window
+      ? window.requestIdleCallback(loadGTM, { timeout: 1500 })
+      : undefined;
+    const fallback = window.setTimeout(loadGTM, 1500);
 
+    return () => {
+      if (idle !== undefined) window.cancelIdleCallback(idle);
+      window.clearTimeout(fallback);
+      window.removeEventListener("pointerdown", onInteraction);
+      window.removeEventListener("keydown", onInteraction);
+    };
   }, [containerId]);
 
   return null;
