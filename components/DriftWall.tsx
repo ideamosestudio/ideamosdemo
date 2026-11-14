@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useSyncExternalStore } from "react";
+import { observeVisibleActivity } from "../lib/visible-activity";
 
 export type DriftWallItem = { image: string; fullImage?: string; title?: string; href?: string; height?: number };
 
@@ -162,11 +163,22 @@ export default function DriftWall({
       rafRef.current = requestAnimationFrame(animate);
     };
 
-    rafRef.current = requestAnimationFrame(animate);
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    // Set a static pose before starting. Hidden/mobile walls do not run a RAF loop.
+    applyPlaneTransform(0, 0);
+    const stop = () => {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
       lastTsRef.current = null;
+    };
+    const disconnect = containerRef.current
+      ? observeVisibleActivity(containerRef.current, active => {
+          if (active && rafRef.current === null) rafRef.current = requestAnimationFrame(animate);
+          else if (!active) stop();
+        })
+      : () => {};
+    return () => {
+      disconnect();
+      stop();
     };
   }, [baseVelocities, columnMeta, parallax, reduced, applyPlaneTransform]);
 

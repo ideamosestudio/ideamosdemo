@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Lenis from "lenis";
+import type Lenis from "lenis";
 
 export default function SmoothScroll() {
   const pathname = usePathname();
@@ -11,13 +11,17 @@ export default function SmoothScroll() {
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const pointer = window.matchMedia("(any-pointer: fine)");
     let lenis: Lenis | undefined;
+    let generation = 0;
 
-    const configure = () => {
+    const configure = async () => {
+      const currentGeneration = ++generation;
       lenis?.destroy();
       lenis = undefined;
       if (motion.matches || !pointer.matches) return;
 
-      lenis = new Lenis({
+      const { default: LenisConstructor } = await import("lenis");
+      if (currentGeneration !== generation) return;
+      lenis = new LenisConstructor({
         autoRaf: true,
         smoothWheel: true,
         wheelMultiplier: 0.4,
@@ -30,12 +34,15 @@ export default function SmoothScroll() {
       });
     };
 
-    configure();
-    motion.addEventListener("change", configure);
-    pointer.addEventListener("change", configure);
+    // Native scrolling remains usable if the optional enhancement cannot load.
+    const safelyConfigure = () => { void configure().catch(() => {}); };
+    safelyConfigure();
+    motion.addEventListener("change", safelyConfigure);
+    pointer.addEventListener("change", safelyConfigure);
     return () => {
-      motion.removeEventListener("change", configure);
-      pointer.removeEventListener("change", configure);
+      generation++;
+      motion.removeEventListener("change", safelyConfigure);
+      pointer.removeEventListener("change", safelyConfigure);
       lenis?.destroy();
     };
   }, [pathname]);

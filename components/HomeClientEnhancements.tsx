@@ -1,20 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { observeVisibleActivity } from "../lib/visible-activity";
 
 const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 const dots = [0, 1, 2];
 
 function useRotatingIndex() {
   const [active, setActive] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const timer = window.setInterval(() => setActive((value) => (value + 1) % 3), 2200);
-    return () => window.clearInterval(timer);
+    if (!ref.current) return;
+    let timer: number | undefined;
+    return observeVisibleActivity(ref.current, visible => {
+      if (timer !== undefined) window.clearInterval(timer);
+      timer = visible ? window.setInterval(() => setActive(value => (value + 1) % 3), 2200) : undefined;
+    });
   }, []);
 
-  return [active, setActive] as const;
+  return [active, setActive, ref] as const;
 }
 
 export function HomeEnhancements() {
@@ -46,10 +51,10 @@ export function HomeEnhancements() {
 }
 
 export function WebScreenRotator() {
-  const [active, setActive] = useRotatingIndex();
+  const [active, setActive, ref] = useRotatingIndex();
 
   return (
-    <div className="screen-swap" data-reveal>
+    <div ref={ref} className="screen-swap" data-reveal>
       {[1, 2, 3].map((number, index) => (
         <div key={number} className={`screen-frame ${active === index ? "active" : ""}`}>
           <img
@@ -78,10 +83,10 @@ export function WebScreenRotator() {
 }
 
 export function ShopScreenRotator() {
-  const [active, setActive] = useRotatingIndex();
+  const [active, setActive, ref] = useRotatingIndex();
 
   return (
-    <div className="phone-stage phone-swap">
+    <div ref={ref} className="phone-stage phone-swap">
       {[1, 2, 3].map((number, index) => (
         <img
           key={number}
@@ -110,10 +115,10 @@ export function ShopScreenRotator() {
 }
 
 export function GoogleScreenRotator() {
-  const [active, setActive] = useRotatingIndex();
+  const [active, setActive, ref] = useRotatingIndex();
 
   return (
-    <div className="google-visual google-swap" aria-label="Proyecto web FroSZ">
+    <div ref={ref} className="google-visual google-swap" aria-label="Proyecto web FroSZ">
       {[1, 2, 3].map((number, index) => (
         <img
           key={number}

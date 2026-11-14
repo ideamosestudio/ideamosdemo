@@ -72,6 +72,11 @@ const items: DriftWallItem[] = [
   { image: drift("sphere-design.jpg"), fullImage: full("sphere-design.jpg"), title: "Sphere Design", height: SPHERE_H },
 ];
 
+// Reuse existing small thumbnails; retain the original for the enlarged view.
+function withPreview(work: GalleryWork): GalleryWork {
+  return { ...work, previewSrc: items.find(item => item.fullImage === asset(work.src))?.image };
+}
+
 export default function PortfolioDriftWall() {
   const [lightbox, setLightbox] = useState<DriftWallItem | null>(null);
 
@@ -111,7 +116,7 @@ export default function PortfolioDriftWall() {
       />
     </div>
     <div className="pdw-mobile-only">
-      <CasesGallery firstRow={mobileFirstRow} secondRow={mobileSecondRow} />
+      <CasesGallery firstRow={mobileFirstRow.map(withPreview)} secondRow={mobileSecondRow.map(withPreview)} />
     </div>
     <div className="pdw-actions">
       <a className="cta-glow primary" href={WHATSAPP_URL}><span className="desktop-only">Solicitá asesoramiento</span><span className="mobile-only">Contactanos</span></a>

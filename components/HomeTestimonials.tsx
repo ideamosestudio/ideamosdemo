@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { observeVisibleActivity } from "../lib/visible-activity";
 import { pauseManagedBackgroundVideos } from "../app/components/ManagedBackgroundVideo";
 import { testimonials } from "../lib/testimonials";
 import TestimonialCard from "./TestimonialCard";
@@ -12,11 +13,16 @@ export default function HomeTestimonials() {
   const [active, setActive] = useState(0);
   const [openVideo, setOpenVideo] = useState<number | null>(null);
   const testimonial = testimonials[active];
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const timer = window.setInterval(() => setActive((current) => (current + 1) % testimonials.length), 3000);
-    return () => window.clearInterval(timer);
-  }, []);
+    if (!sectionRef.current || openVideo !== null) return;
+    let timer: number | undefined;
+    return observeVisibleActivity(sectionRef.current, visible => {
+      if (timer !== undefined) window.clearInterval(timer);
+      timer = visible ? window.setInterval(() => setActive(current => (current + 1) % testimonials.length), 3000) : undefined;
+    });
+  }, [openVideo]);
 
   useEffect(() => {
     if (openVideo === null) return;
@@ -37,7 +43,7 @@ export default function HomeTestimonials() {
     setActive((current) => (current + direction + testimonials.length) % testimonials.length);
   };
 
-  return <section className="home-testimonials" aria-labelledby="home-testimonials-title">
+  return <section ref={sectionRef} className="home-testimonials" aria-labelledby="home-testimonials-title">
     <TestimonialCard
       key={testimonial.name}
       testimonial={testimonial}

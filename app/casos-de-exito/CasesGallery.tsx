@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { observeVisibleActivity } from "../../lib/visible-activity";
 
 export type GalleryWork = {
   src: string;
+  previewSrc?: string;
   alt: string;
   format: "wide" | "phone";
 };
@@ -28,7 +30,7 @@ function WorkGroup({
       aria-label={`Ampliar ${work.alt}`}
       onClick={() => onOpen(work)}
     >
-      <img src={asset(work.src)} alt={work.alt} width={work.format === "phone" ? 582 : 1324} height="1000" loading="lazy" decoding="async" />
+      <img src={work.previewSrc ?? asset(work.src)} alt={work.alt} width={work.format === "phone" ? 582 : 1324} height="1000" loading="lazy" decoding="async" />
       <span className="case-card-zoom" aria-hidden="true">Ampliar</span>
     </button>)}
   </div>;
@@ -59,6 +61,15 @@ export default function CasesGallery({
   secondRow: GalleryWork[];
 }) {
   const [selected, setSelected] = useState<GalleryWork | null>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!stageRef.current) return;
+    const tracks = stageRef.current.querySelectorAll<HTMLElement>(".cases-marquee-track");
+    return observeVisibleActivity(stageRef.current, active => {
+      tracks.forEach(track => { track.style.animationPlayState = active && !selected ? "running" : "paused"; });
+    });
+  }, [selected]);
 
   useEffect(() => {
     if (!selected) return;
@@ -75,7 +86,7 @@ export default function CasesGallery({
   }, [selected]);
 
   return <>
-    <div className="cases-marquee-stage">
+    <div ref={stageRef} className="cases-marquee-stage">
       <WorkRow works={firstRow} onOpen={setSelected} />
       <WorkRow works={secondRow} reverse onOpen={setSelected} />
     </div>
