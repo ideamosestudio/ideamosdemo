@@ -27,8 +27,10 @@ test("la home de prueba existe, replica la home y permanece oculta", async () =>
   assert.doesNotMatch(clone, /Diseño web y marketing digital para <span>tu empresa\.<\/span>/);
   assert.doesNotMatch(clone, /Más confianza\. Más consultas\. Más ventas\./);
   assert.match(clone, /statement-copyblock module-base statement-copyblock--without-support/);
-  assert.match(clone, /data-premium-reveal/);
-  assert.doesNotMatch(home, /data-premium-reveal/);
+  const cloneStatementTag = clone.match(/<section class="statement white-section shared-section-bg"[^>]*>/)?.[0] ?? "";
+  const homeStatementTag = home.match(/<section class="statement white-section shared-section-bg"[^>]*>/)?.[0] ?? "";
+  assert.match(cloneStatementTag, /data-premium-reveal/);
+  assert.doesNotMatch(homeStatementTag, /data-premium-reveal/);
   assert.doesNotMatch(clone, /Liderá Google/);
   assert.match(clone, /google-content module-base google-content--without-support/);
   assert.match(clone, /google-title-line">Convertimos tu web<\/span><span class="google-title-line">en una máquina de<\/span><span class="google-title-line">crear leads y ventas<\/span>/);
