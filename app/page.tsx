@@ -194,7 +194,7 @@ export function HomePage({ testCopy = false }: { testCopy?: boolean } = {}) {
         <p className="body-copy module-base-copy">
           <span className="module-base-copy__group">
             <span className="module-base-copy__line">{testCopy
-              ? <>Llegamos en Google a <b>quienes ya buscan lo que ofrecés.</b></>
+              ? <>Llegamos a <b>quienes ya buscan lo que ofrecés en Google.</b></>
               : <>Atraemos personas que ya buscan <b>lo que ofrecés</b> y generamos consultas.</>}</span>
             <span className="module-base-copy__line">{testCopy
               ? <>Atraemos <b>clientes que ya están decididos a comprar.</b></>
@@ -202,10 +202,10 @@ export function HomePage({ testCopy = false }: { testCopy?: boolean } = {}) {
           </span>
           <span className="module-base-copy__group">
             <span className="module-base-copy__line">{testCopy
-              ? <>Convertimos esas búsquedas en <b>consultas y nuevas ventas.</b></>
+              ? <>Convertimos búsquedas en Google en <b>consultas y ventas.</b></>
               : <>Medimos llamadas y mensajes para invertir <b>donde realmente rinde</b>.</>}</span>
             <span className="module-base-copy__line">{testCopy
-              ? <><b>Contactanos y te asesoramos en todo</b> para vender más.</>
+              ? <><b>Contactanos hoy y te asesoramos.</b></>
               : <><b>Hablemos de tu negocio</b> y armemos una estrategia para crecer.</>}</span>
           </span>
         </p>
