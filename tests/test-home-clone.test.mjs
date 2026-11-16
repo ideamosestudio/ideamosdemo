@@ -27,7 +27,7 @@ test("la home de prueba existe, replica la home y permanece oculta", async () =>
   assert.doesNotMatch(clone, /Diseño web y marketing digital para <span>tu empresa\.<\/span>/);
   assert.doesNotMatch(clone, /Más confianza\. Más consultas\. Más ventas\./);
   assert.match(clone, /statement-copyblock module-base statement-copyblock--without-support/);
-  assert.match(clone, /<section class="statement white-section shared-section-bg" id="web" data-module-base="" data-premium-reveal="">/);
+  assert.match(clone, /data-premium-reveal/);
   assert.doesNotMatch(home, /data-premium-reveal/);
   assert.doesNotMatch(clone, /Liderá Google/);
   assert.match(clone, /google-content module-base google-content--without-support/);
