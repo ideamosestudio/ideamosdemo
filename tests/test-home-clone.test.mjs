@@ -29,6 +29,8 @@ test("la home de prueba existe, replica la home y permanece oculta", async () =>
   assert.match(clone, /statement-copyblock module-base statement-copyblock--without-support/);
   assert.doesNotMatch(clone, /Liderá Google/);
   assert.match(clone, /google-content module-base google-content--without-support/);
+  assert.match(clone, /Convertimos tu web<br\/>en una máquina de crear<br\/>tráfico, leads y ventas/);
+  assert.doesNotMatch(clone, /máquina de generar tráfico/);
   assert.match(clone, /Captamos <b>clientes que ya buscan lo que ofrecés\.<\/b>/);
   assert.match(clone, /Combinamos SEO y Google Ads <b>para potenciar tus resultados\.<\/b>/);
   assert.match(clone, /<b>Medimos<\/b> llamadas y mensajes <b>para invertir donde realmente rinde\.<\/b>/);
@@ -38,6 +40,7 @@ test("la home de prueba existe, replica la home y permanece oculta", async () =>
   assert.match(home, /Creamos webs que <b>transmiten autoridad<\/b> y convierten visitas en consultas\./);
   assert.match(home, /Más confianza\. Más consultas\. Más ventas\./);
   assert.match(home, /Liderá Google/);
+  assert.match(home, /Convertimos tu web en una máquina de generar tráfico, leads y ventas/);
   assert.doesNotMatch(home, /Captamos <b>clientes que ya buscan/);
   assert.doesNotMatch(sitemap, /\/test\//i);
   assert.doesNotMatch(home, /href="[^"]*\/test\/?"/i);

@@ -187,7 +187,9 @@ export function HomePage({ testCopy = false }: { testCopy?: boolean } = {}) {
     <section className="google-scene white-section shared-section-bg" id="google" data-module-base>
       <div className={`google-content module-base${testCopy ? " google-content--without-support" : ""}`} data-reveal>
         <p>POSICIONAMIENTO EN GOOGLE</p>
-        <h2>Convertimos tu web en una máquina de generar tráfico, leads y ventas</h2>
+        <h2>{testCopy
+          ? <>Convertimos tu web<br />en una máquina de crear<br />tráfico, leads y ventas</>
+          : <>Convertimos tu web en una máquina de generar tráfico, leads y ventas</>}</h2>
         {!testCopy && <h3><b>Liderá Google</b> con estrategias de <b>SEO y Google Ads</b></h3>}
         <p className="body-copy module-base-copy">
           <span className="module-base-copy__group">
