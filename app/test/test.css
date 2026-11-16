@@ -269,6 +269,19 @@
   padding-block: 30px !important;
 }
 
+/* Desktop: compact the complete benefit blocks by 35%, without resizing the mockup. */
+@media (min-width: 1101px) {
+  #site-root .test-page .shop-column {
+    grid-template-rows: repeat(4, max-content) !important;
+    row-gap: 20.8px !important;
+    align-content: center !important;
+  }
+
+  #site-root .test-page .shop-column article {
+    padding-block: 19.5px !important;
+  }
+}
+
 #site-root .test-page .shop-column h3 {
   margin: 10px 0 12px !important;
   font: 800 22px/1.22 "Gilroy ExtraBold", "Poppins", Arial, sans-serif !important;
