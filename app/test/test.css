@@ -488,6 +488,16 @@
   letter-spacing: 0 !important;
 }
 
+/* Strong body copy on TEST's white service modules only. */
+#site-root#site-root .test-page :is(
+  .statement .module-base-copy,
+  .ecommerce .section-heading > span,
+  .ecommerce .shop-column p,
+  .google-content .module-base-copy
+) {
+  color: #292b2f !important;
+}
+
 #site-root#site-root .test-page :is(
   .statement .module-base-copy,
   .ecommerce .section-heading > span,
