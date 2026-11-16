@@ -206,6 +206,15 @@
   margin-bottom: 28px !important;
 }
 
+/* TEST uses the same eyebrow-title-copy rhythm in the Google module. */
+#site-root#site-root .test-page .google-content--without-support h2 {
+  margin-bottom: 28px !important;
+}
+
+#site-root#site-root .test-page .google-content--without-support .module-base-copy__group + .module-base-copy__group {
+  margin-top: 0 !important;
+}
+
 #site-root .test-page .statement h3,
 #site-root .test-page .google-content h3 {
   margin: 0 0 24px !important;

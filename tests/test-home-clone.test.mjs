@@ -25,9 +25,12 @@ test("la home de prueba existe, replica la home y permanece oculta", async () =>
   assert.match(clone, /Creamos sitios webs<\/b> que convierten <b>visitas en consultas y ventas\.<\/b>/);
   assert.doesNotMatch(clone, /Más confianza\. Más consultas\. Más ventas\./);
   assert.match(clone, /statement-copyblock module-base statement-copyblock--without-support/);
+  assert.doesNotMatch(clone, /Liderá Google/);
+  assert.match(clone, /google-content module-base google-content--without-support/);
   assert.doesNotMatch(home, /Creamos sitios webs/);
   assert.match(home, /Creamos webs que <b>transmiten autoridad<\/b> y convierten visitas en consultas\./);
   assert.match(home, /Más confianza\. Más consultas\. Más ventas\./);
+  assert.match(home, /Liderá Google/);
   assert.doesNotMatch(sitemap, /\/test\//i);
   assert.doesNotMatch(home, /href="[^"]*\/test\/?"/i);
 });
@@ -69,6 +72,8 @@ test("la página de prueba aplica su sistema visual sin cargar componentes 3D", 
   assert.match(styles, /\.statement h2\s*\{[^}]*font-size:\s*clamp\(32px, 3\.4vw, 46px\)[^}]*line-height:\s*1\.07/s);
   assert.match(styles, /\.statement \.orange-cta\s*\{[^}]*width:\s*322px[^}]*min-height:\s*58px/s);
   assert.match(styles, /\.statement-copyblock--without-support h2\s*\{[^}]*margin-bottom:\s*28px\s*!important/s);
+  assert.match(styles, /\.google-content--without-support h2\s*\{[^}]*margin-bottom:\s*28px\s*!important/s);
+  assert.match(styles, /\.google-content--without-support \.module-base-copy__group \+ \.module-base-copy__group\s*\{[^}]*margin-top:\s*0\s*!important/s);
   assert.match(styles, /@media \(min-width: 981px\)[\s\S]*\.statement-copyblock\s*\{[^}]*top:\s*-12px\s*!important/s);
   assert.match(styles, /TYPO 02 — requested TEST typography/);
   assert.match(styles, /\.service-directory__description,[\s\S]*\.home-advisory \.human-copy > span,[\s\S]*font-size:\s*16px\s*!important[\s\S]*line-height:\s*26\.5px\s*!important/);
