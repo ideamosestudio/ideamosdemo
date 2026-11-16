@@ -137,7 +137,7 @@ export function HomePage({ testCopy = false }: { testCopy?: boolean } = {}) {
 
     <LightGridFrame className="home-services-grid">
     <section className="statement white-section shared-section-bg" id="web" data-module-base>
-      <div className="statement-copyblock module-base" data-reveal>
+      <div className={`statement-copyblock module-base${testCopy ? " statement-copyblock--without-support" : ""}`} data-reveal>
         <div className="happy-clients" aria-label="Más de 2000 clientes felices">
           <span className="happy-clients-avatars" aria-hidden="true">
             {["003", "002", "001"].map((name, index) => (
@@ -156,7 +156,7 @@ export function HomePage({ testCopy = false }: { testCopy?: boolean } = {}) {
           <span className="happy-clients-label">MÁS DE 2000 CLIENTES FELICES</span>
         </div>
         <h2><span>Webs de alto impacto</span><em>ideadas para generar{" "}<br className="statement-title-desktop-break"/><b>confianza y resultados</b></em></h2>
-        <h3><b>Más confianza. Más consultas. Más ventas.</b></h3>
+        {!testCopy && <h3><b>Más confianza. Más consultas. Más ventas.</b></h3>}
         <p className="statement-copy module-base-copy">
           <span className="module-base-copy__group">
             <span className="module-base-copy__line">{testCopy

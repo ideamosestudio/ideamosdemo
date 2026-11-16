@@ -201,6 +201,11 @@
   max-width: 520px !important;
 }
 
+/* TEST removes the support heading, so the title now connects directly to the body copy. */
+#site-root#site-root .test-page .statement-copyblock--without-support h2 {
+  margin-bottom: 28px !important;
+}
+
 #site-root .test-page .statement h3,
 #site-root .test-page .google-content h3 {
   margin: 0 0 24px !important;
