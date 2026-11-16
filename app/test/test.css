@@ -473,3 +473,54 @@
     letter-spacing: 1px !important;
   }
 }
+
+/* TYPO 02 — requested TEST typography, strong enough to win the shared cascade. */
+#site-root#site-root .test-page :is(
+  .statement .module-base-copy,
+  .ecommerce .section-heading > span,
+  .google-content .module-base-copy,
+  .pdw-heading > span,
+  .contact-main > span
+) {
+  font-family: "Roboto", Arial, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  letter-spacing: 0 !important;
+}
+
+#site-root#site-root .test-page :is(
+  .statement .module-base-copy,
+  .ecommerce .section-heading > span,
+  .google-content .module-base-copy,
+  .pdw-heading > span,
+  .contact-main > span
+) b {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+#site-root#site-root .test-page :is(
+  .contact-main > p:first-child,
+  .editorial-footer .ef-eyebrow
+) {
+  font-family: "Poppins", Arial, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 5.46px !important;
+}
+
+@media (min-width: 701px) {
+  #site-root#site-root .test-page :is(
+    .ecommerce .section-heading h2,
+    .pdw-heading h2,
+    .contact-main h2,
+    .editorial-footer h2
+  ) {
+    font-family: "Gilroy ExtraBold", Arial, sans-serif !important;
+    font-size: 46px !important;
+    font-weight: 800 !important;
+    letter-spacing: -1.15px !important;
+  }
+}
