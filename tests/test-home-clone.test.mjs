@@ -22,6 +22,9 @@ test("la home de prueba existe, replica la home y permanece oculta", async () =>
   }
 
   assert.match(clone, /<meta name="robots" content="noindex, nofollow"\/>/);
+  assert.match(clone, /Creamos sitios webs<\/b> que convierten <b>visitas en consultas y ventas\.<\/b>/);
+  assert.doesNotMatch(home, /Creamos sitios webs/);
+  assert.match(home, /Creamos webs que <b>transmiten autoridad<\/b> y convierten visitas en consultas\./);
   assert.doesNotMatch(sitemap, /\/test\//i);
   assert.doesNotMatch(home, /href="[^"]*\/test\/?"/i);
 });

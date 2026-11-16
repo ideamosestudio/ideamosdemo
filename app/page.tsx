@@ -46,7 +46,7 @@ const ecommerceRight = [
   ["Mejor atención en menos tiempo", "El cliente puede ver precios, stock, tiempos y medios de pago sin preguntarte nada. Respondés menos mensajes y vendés más."],
 ];
 
-export default function Home() {
+export function HomePage({ testCopy = false }: { testCopy?: boolean } = {}) {
   return <main className="home-page">
     <link rel="preload" href={asset("/media/hero-poster.webp")} as="image" type="image/webp" fetchPriority="high" />
     <style data-module-base-rules>{moduleBaseStyles}</style>
@@ -159,7 +159,9 @@ export default function Home() {
         <h3><b>Más confianza. Más consultas. Más ventas.</b></h3>
         <p className="statement-copy module-base-copy">
           <span className="module-base-copy__group">
-            <span className="module-base-copy__line">Creamos webs que <b>transmiten autoridad</b> y convierten visitas en consultas.</span>
+            <span className="module-base-copy__line">{testCopy
+              ? <><b>Creamos sitios webs</b> que convierten <b>visitas en consultas y ventas.</b></>
+              : <>Creamos webs que <b>transmiten autoridad</b> y convierten visitas en consultas.</>}</span>
             <span className="module-base-copy__line"><b>Diseño y contenido</b> trabajan juntos para potenciar tu negocio.</span>
           </span>
           <span className="module-base-copy__group">
@@ -212,4 +214,8 @@ export default function Home() {
 
     <HomeClosingSections showAdvisory={false} darkGrid />
   </main>;
+}
+
+export default function Home() {
+  return <HomePage />;
 }
