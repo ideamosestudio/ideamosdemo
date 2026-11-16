@@ -82,6 +82,9 @@ test("la página de prueba aplica su sistema visual sin cargar componentes 3D", 
   assert.match(styles, /\.home-page \.statement \.happy-clients\s*\{[^}]*height:\s*19\.5px[^}]*margin:\s*0 0 24px/s);
   assert.match(styles, /\.statement h2\s*\{[^}]*font-size:\s*clamp\(32px, 3\.4vw, 46px\)[^}]*line-height:\s*1\.07/s);
   assert.match(styles, /\.statement \.orange-cta\s*\{[^}]*width:\s*322px[^}]*min-height:\s*58px/s);
+  assert.match(styles, /TEST web-impact reveal:[\s\S]*@media \(min-width: 701px\) and \(prefers-reduced-motion: no-preference\)[\s\S]*\.statement \.statement-copyblock\[data-reveal\] > \*\s*\{[^}]*translate3d\(0, 18px, 0\)[^}]*cubic-bezier\(\.16, 1, \.3, 1\)/s);
+  assert.match(styles, /\.statement \.screen-swap\[data-reveal\]\s*\{[^}]*translate3d\(24px, 12px, 0\) scale\(\.985\)[^}]*1\.05s cubic-bezier\(\.16, 1, \.3, 1\) 100ms/s);
+  assert.match(styles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.statement \.statement-copyblock\[data-reveal\] > \*,[\s\S]*\.statement \.screen-swap\[data-reveal\][\s\S]*transition:\s*none\s*!important/s);
   assert.match(styles, /Desktop: compact the complete benefit blocks by 35%[\s\S]*@media \(min-width: 1101px\)[\s\S]*\.shop-column\s*\{[^}]*grid-template-rows:\s*repeat\(4, max-content\)\s*!important[^}]*row-gap:\s*20\.8px\s*!important[^}]*align-content:\s*center\s*!important/s);
   assert.match(styles, /@media \(min-width: 1101px\)[\s\S]*\.shop-column article\s*\{[^}]*padding-block:\s*19\.5px\s*!important/s);
   assert.match(styles, /\.statement-copyblock--without-support h2\s*\{[^}]*margin-bottom:\s*28px\s*!important/s);
