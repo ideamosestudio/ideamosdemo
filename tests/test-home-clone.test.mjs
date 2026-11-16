@@ -63,10 +63,11 @@ test("la página de prueba aplica su sistema visual sin cargar componentes 3D", 
   assert.match(styles, /\.statement h2\s*\{[^}]*font-size:\s*clamp\(32px, 3\.4vw, 46px\)[^}]*line-height:\s*1\.07/s);
   assert.match(styles, /\.statement \.orange-cta\s*\{[^}]*width:\s*322px[^}]*min-height:\s*58px/s);
   assert.match(styles, /TYPO 02 — requested TEST typography/);
+  assert.match(styles, /\.service-directory__description,[\s\S]*\.home-advisory \.human-copy > span,[\s\S]*font-size:\s*16px\s*!important[\s\S]*line-height:\s*26\.5px\s*!important/);
   assert.match(styles, /Strong body copy on TEST's white service modules only[\s\S]*\.ecommerce \.shop-column p,[\s\S]*color:\s*#292b2f\s*!important/);
   assert.match(styles, /\.contact-main > p:first-child,[\s\S]*\.editorial-footer \.ef-eyebrow[\s\S]*font-size:\s*13px\s*!important[\s\S]*letter-spacing:\s*5\.46px\s*!important/);
   assert.match(styles, /@media \(min-width:\s*701px\)[\s\S]*\.ecommerce \.section-heading h2,[\s\S]*\.pdw-heading h2,[\s\S]*\.contact-main h2,[\s\S]*\.editorial-footer h2[\s\S]*font-size:\s*46px\s*!important[\s\S]*letter-spacing:\s*-1\.15px\s*!important/);
-  assert.doesNotMatch(styles, /\.(?:home-testimonials|home-advisory|human-copy|contact-card)\b/);
+  assert.doesNotMatch(styles, /\.(?:home-testimonials|contact-card)\b/);
   assert.doesNotMatch(styles, /\.test-page\s+\.hero\b/);
   assert.doesNotMatch(styles, /\.test-page\s+footer\b/);
 });

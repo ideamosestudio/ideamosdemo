@@ -476,15 +476,19 @@
 
 /* TYPO 02 — requested TEST typography, strong enough to win the shared cascade. */
 #site-root#site-root .test-page :is(
+  .service-directory__description,
   .statement .module-base-copy,
   .ecommerce .section-heading > span,
+  .ecommerce .shop-column p,
   .google-content .module-base-copy,
   .pdw-heading > span,
+  .home-advisory .human-copy > span,
   .contact-main > span
 ) {
   font-family: "Roboto", Arial, sans-serif !important;
-  font-size: 15px !important;
+  font-size: 16px !important;
   font-weight: 300 !important;
+  line-height: 26.5px !important;
   letter-spacing: 0 !important;
 }
 
@@ -499,10 +503,13 @@
 }
 
 #site-root#site-root .test-page :is(
+  .service-directory__description,
   .statement .module-base-copy,
   .ecommerce .section-heading > span,
+  .ecommerce .shop-column p,
   .google-content .module-base-copy,
   .pdw-heading > span,
+  .home-advisory .human-copy > span,
   .contact-main > span
 ) b {
   font-family: inherit !important;
