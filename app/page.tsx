@@ -104,7 +104,7 @@ export function HomePage({ testCopy = false }: { testCopy?: boolean } = {}) {
       <div className="service-directory__inner">
         <div className="service-directory__intro">
           <p className="service-directory__eyebrow">SOLUCIONES DIGITALES</p>
-          <h2 id="explorar-servicios">Diseño web y marketing digital para <span>tu empresa.</span></h2>
+          <h2 id="explorar-servicios">Diseño web y marketing digital para <span>tu empresa{testCopy ? "" : "."}</span></h2>
           <p className="service-directory__description">Desde Buenos Aires, acompañamos a empresas de Argentina con diseño, estrategia y tecnología. Encontrá la solución para el próximo paso de tu negocio.</p>
           <a className="service-directory__contact cta-glow secondary" href={WHATSAPP_URL}>
             <span className="desktop-only">QUIERO ASESORAMIENTO PARA MI PROYECTO</span>

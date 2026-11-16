@@ -33,7 +33,7 @@ test('mobile home promotes web and ecommerce with illustrative concepts', async 
   assert.match(source, /service-directory__contact\{[^}]*width:322px/);
   assert.match(source, /QUIERO ASESORAMIENTO PARA MI PROYECTO/);
   assert.match(source, /Desde Buenos Aires, acompañamos a empresas de Argentina/);
-  assert.match(source, /Diseño web y marketing digital para <span>tu empresa\.<\/span>/);
+  assert.match(source, /Diseño web y marketing digital para <span>tu empresa\{testCopy \? "" : "\."\}<\/span>/);
   const directorySource = source.match(/<section className="service-guide service-directory"[\s\S]*?<\/section>/)?.[0];
   assert.ok(directorySource);
   assert.doesNotMatch(directorySource, /data-reveal|transitionDelay/);

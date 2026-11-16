@@ -23,11 +23,14 @@ test("la home de prueba existe, replica la home y permanece oculta", async () =>
 
   assert.match(clone, /<meta name="robots" content="noindex, nofollow"\/>/);
   assert.match(clone, /Creamos sitios webs<\/b> que convierten <b>visitas en consultas y ventas\.<\/b>/);
+  assert.match(clone, /Diseño web y marketing digital para <span>tu empresa<\/span>/);
+  assert.doesNotMatch(clone, /Diseño web y marketing digital para <span>tu empresa\.<\/span>/);
   assert.doesNotMatch(clone, /Más confianza\. Más consultas\. Más ventas\./);
   assert.match(clone, /statement-copyblock module-base statement-copyblock--without-support/);
   assert.doesNotMatch(clone, /Liderá Google/);
   assert.match(clone, /google-content module-base google-content--without-support/);
   assert.doesNotMatch(home, /Creamos sitios webs/);
+  assert.match(home, /Diseño web y marketing digital para <span>tu empresa(?:<!-- -->)?\.<\/span>/);
   assert.match(home, /Creamos webs que <b>transmiten autoridad<\/b> y convierten visitas en consultas\./);
   assert.match(home, /Más confianza\. Más consultas\. Más ventas\./);
   assert.match(home, /Liderá Google/);
