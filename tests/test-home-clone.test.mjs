@@ -29,7 +29,7 @@ test("la home de prueba existe, replica la home y permanece oculta", async () =>
   assert.match(clone, /statement-copyblock module-base statement-copyblock--without-support/);
   assert.doesNotMatch(clone, /Liderá Google/);
   assert.match(clone, /google-content module-base google-content--without-support/);
-  assert.match(clone, /Convertimos tu web<br\/>en una máquina de crear<br\/>tráfico, leads y ventas/);
+  assert.match(clone, /google-title-line">Convertimos tu web<\/span><span class="google-title-line">en una máquina de<\/span><span class="google-title-line">crear leads y ventas<\/span>/);
   assert.doesNotMatch(clone, /máquina de generar tráfico/);
   assert.match(clone, /Captamos <b>clientes que ya buscan lo que ofrecés\.<\/b>/);
   assert.match(clone, /Combinamos SEO y Google Ads <b>para potenciar tus resultados\.<\/b>/);
@@ -84,6 +84,7 @@ test("la página de prueba aplica su sistema visual sin cargar componentes 3D", 
   assert.match(styles, /\.statement \.orange-cta\s*\{[^}]*width:\s*322px[^}]*min-height:\s*58px/s);
   assert.match(styles, /\.statement-copyblock--without-support h2\s*\{[^}]*margin-bottom:\s*28px\s*!important/s);
   assert.match(styles, /\.google-content--without-support h2\s*\{[^}]*margin-bottom:\s*28px\s*!important/s);
+  assert.match(styles, /@media \(min-width: 901px\)[\s\S]*\.google-title-line\s*\{[^}]*white-space:\s*nowrap/s);
   assert.match(styles, /\.google-content--without-support \.module-base-copy__group \+ \.module-base-copy__group\s*\{[^}]*margin-top:\s*0\s*!important/s);
   assert.match(styles, /@media \(min-width: 981px\)[\s\S]*\.statement-copyblock\s*\{[^}]*top:\s*-12px\s*!important/s);
   assert.match(styles, /TYPO 02 — requested TEST typography/);

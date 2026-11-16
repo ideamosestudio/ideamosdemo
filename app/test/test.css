@@ -211,6 +211,16 @@
   margin-bottom: 28px !important;
 }
 
+#site-root .test-page .google-title-line {
+  display: block;
+}
+
+@media (min-width: 901px) {
+  #site-root .test-page .google-title-line {
+    white-space: nowrap;
+  }
+}
+
 #site-root#site-root .test-page .google-content--without-support .module-base-copy__group + .module-base-copy__group {
   margin-top: 0 !important;
 }
