@@ -136,7 +136,12 @@ export function HomePage({ testCopy = false }: { testCopy?: boolean } = {}) {
     </section>
 
     <LightGridFrame className="home-services-grid">
-    <section className="statement white-section shared-section-bg" id="web" data-module-base>
+    <section
+      className="statement white-section shared-section-bg"
+      id="web"
+      data-module-base
+      data-premium-reveal={testCopy ? "" : undefined}
+    >
       <div className={`statement-copyblock module-base${testCopy ? " statement-copyblock--without-support" : ""}`} data-reveal>
         <div className="happy-clients" aria-label="Más de 2000 clientes felices">
           <span className="happy-clients-avatars" aria-hidden="true">

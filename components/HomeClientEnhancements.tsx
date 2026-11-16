@@ -27,23 +27,53 @@ export function HomeEnhancements() {
     const root = document.documentElement;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const revealItems = document.querySelectorAll("[data-reveal]");
-    const onScroll = () => root.style.setProperty("--scroll", String(window.scrollY));
+    const premiumSection = document.querySelector<HTMLElement>(".test-page .statement[data-premium-reveal]");
+    let parallaxFrame = 0;
+
+    const updatePremiumParallax = () => {
+      parallaxFrame = 0;
+      if (!premiumSection || reduceMotion) return;
+      const bounds = premiumSection.getBoundingClientRect();
+      const viewportCenter = window.innerHeight / 2;
+      const sectionCenter = bounds.top + bounds.height / 2;
+      const offset = Math.max(-10, Math.min(10, (viewportCenter - sectionCenter) * .018));
+      premiumSection.style.setProperty("--premium-parallax", `${offset.toFixed(2)}px`);
+    };
+
+    const onScroll = () => {
+      root.style.setProperty("--scroll", String(window.scrollY));
+      if (premiumSection && !reduceMotion && parallaxFrame === 0) {
+        parallaxFrame = window.requestAnimationFrame(updatePremiumParallax);
+      }
+    };
     const observer = reduceMotion ? null : new IntersectionObserver(
       (entries) => entries.forEach((entry) => {
         if (entry.isIntersecting) entry.target.classList.add("in-view");
       }),
       { threshold: 0.12 },
     );
+    const premiumObserver = !premiumSection || reduceMotion ? null : new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+        premiumSection.classList.add("is-premium-visible");
+        premiumObserver?.disconnect();
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -10%" },
+    );
 
     if (reduceMotion) revealItems.forEach((element) => element.classList.add("in-view"));
+    if (premiumSection && reduceMotion) premiumSection.classList.add("is-premium-visible");
 
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     if (observer) revealItems.forEach((element) => observer.observe(element));
+    if (premiumObserver && premiumSection) premiumObserver.observe(premiumSection);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
+      if (parallaxFrame !== 0) window.cancelAnimationFrame(parallaxFrame);
       observer?.disconnect();
+      premiumObserver?.disconnect();
     };
   }, []);
 
