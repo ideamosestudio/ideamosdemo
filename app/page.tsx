@@ -194,18 +194,18 @@ export function HomePage({ testCopy = false }: { testCopy?: boolean } = {}) {
         <p className="body-copy module-base-copy">
           <span className="module-base-copy__group">
             <span className="module-base-copy__line">{testCopy
-              ? <>Captamos <b>clientes que ya buscan lo que ofrecés.</b></>
+              ? <>Llegamos en Google a <b>quienes ya buscan lo que ofrecés.</b></>
               : <>Atraemos personas que ya buscan <b>lo que ofrecés</b> y generamos consultas.</>}</span>
             <span className="module-base-copy__line">{testCopy
-              ? <>Combinamos SEO y Google Ads <b>para potenciar tus resultados.</b></>
+              ? <>Atraemos <b>clientes que ya están decididos a comprar.</b></>
               : <>Combinamos <b>SEO y Google Ads</b> para darte visibilidad y mejores resultados.</>}</span>
           </span>
           <span className="module-base-copy__group">
             <span className="module-base-copy__line">{testCopy
-              ? <><b>Medimos</b> llamadas y mensajes <b>para invertir donde realmente rinde.</b></>
+              ? <>Convertimos esas búsquedas en <b>consultas y nuevas ventas.</b></>
               : <>Medimos llamadas y mensajes para invertir <b>donde realmente rinde</b>.</>}</span>
             <span className="module-base-copy__line">{testCopy
-              ? <><b>Contactanos</b> hoy y armemos una estrategia para crecer.</>
+              ? <><b>Contactanos y te asesoramos en todo</b> para vender más.</>
               : <><b>Hablemos de tu negocio</b> y armemos una estrategia para crecer.</>}</span>
           </span>
         </p>
