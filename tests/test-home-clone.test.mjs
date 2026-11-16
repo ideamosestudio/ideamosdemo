@@ -69,6 +69,7 @@ test("la página de prueba aplica su sistema visual sin cargar componentes 3D", 
   assert.match(styles, /\.statement h2\s*\{[^}]*font-size:\s*clamp\(32px, 3\.4vw, 46px\)[^}]*line-height:\s*1\.07/s);
   assert.match(styles, /\.statement \.orange-cta\s*\{[^}]*width:\s*322px[^}]*min-height:\s*58px/s);
   assert.match(styles, /\.statement-copyblock--without-support h2\s*\{[^}]*margin-bottom:\s*28px\s*!important/s);
+  assert.match(styles, /@media \(min-width: 981px\)[\s\S]*\.statement-copyblock\s*\{[^}]*top:\s*-12px\s*!important/s);
   assert.match(styles, /TYPO 02 — requested TEST typography/);
   assert.match(styles, /\.service-directory__description,[\s\S]*\.home-advisory \.human-copy > span,[\s\S]*font-size:\s*16px\s*!important[\s\S]*line-height:\s*26\.5px\s*!important/);
   assert.match(styles, /Match every white-module paragraph to the advisory section[\s\S]*\.ecommerce \.shop-column p,[\s\S]*\.home-advisory \.human-copy > span[\s\S]*color:\s*#333\s*!important/);
