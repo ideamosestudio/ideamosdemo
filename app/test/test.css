@@ -492,14 +492,31 @@
   letter-spacing: 0 !important;
 }
 
-/* Strong body copy on TEST's white service modules only. */
+/* Match every white-module paragraph to the advisory section. */
 #site-root#site-root .test-page :is(
   .statement .module-base-copy,
   .ecommerce .section-heading > span,
   .ecommerce .shop-column p,
-  .google-content .module-base-copy
+  .google-content .module-base-copy,
+  .home-advisory .human-copy > span
 ) {
-  color: #292b2f !important;
+  color: #333 !important;
+}
+
+#site-root#site-root .test-page :is(
+  .statement .module-base-copy,
+  .ecommerce .section-heading > span,
+  .ecommerce .shop-column p,
+  .google-content .module-base-copy,
+  .home-advisory .human-copy > span
+) :is(b, strong) {
+  color: #111 !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: 700 !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  -webkit-text-stroke: 0 !important;
 }
 
 #site-root#site-root .test-page :is(
