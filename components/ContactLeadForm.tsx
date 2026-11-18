@@ -1,6 +1,5 @@
 "use client";
 
-import { hashedLeadData } from "../lib/analytics";
 import { getRecaptchaToken, loadRecaptcha } from "../lib/recaptcha";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
@@ -137,12 +136,10 @@ export default function ContactLeadForm() {
       startedAt.current = Date.now();
       setStatus("success");
       setFeedback("Recibimos tu mensaje y te responderemos a la brevedad.");
-      const userData = await hashedLeadData(String(formData.get("email") ?? ""), String(formData.get("telefono") ?? ""));
       window.dataLayer?.push({
         event: "generate_lead",
         event_category: "engagement",
         event_label: "contact_form",
-        ...(userData ? { user_data: userData } : {}),
       });
     } catch {
       setStatus("error");
