@@ -23,7 +23,9 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npm audit --audit-level=high
+      - run: node scripts/security-audit.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
       - run: npm run typecheck
       - run: npm run lint
       - run: npm test

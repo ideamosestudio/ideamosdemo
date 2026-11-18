@@ -1,5 +1,17 @@
 # Registro editorial del blog
 
+## 2026-11-18 · Tiendas online · Entrega regular de la semana del 17/11
+
+- URL: https://ideamos.com.ar/blog/tiendas-online/que-necesitas-para-lanzar-tienda-online/
+- Preview: https://ideamosestudio.github.io/ideamosdemo/blog/tiendas-online/que-necesitas-para-lanzar-tienda-online/
+- Actualización sustancial de la guía existente: estados de pedido/pago/entrega, ejemplo ilustrativo de retiro, planilla de aceptación con siete casos y criterios para resolver bloqueos antes del lanzamiento. Evita duplicar la intención con otra guía de pruebas.
+- Fuente primaria: documentación de Mercado Pago sobre compras de prueba con Checkout Pro, consultada el 18/11/2026. El procedimiento debe corresponder a la integración elegida; no se publican credenciales ni datos de compradores.
+- Se conserva portada temática optimizada y diseño editorial responsive. Sin nuevas dependencias, scripts ni imágenes adicionales. Publicación original 24/10/2026; únicamente este artículo cambia su actualización al 18/11/2026.
+- Alcance limitado a contenido del blog y prueba de fechas. No se modifican servicios, versiones de revisión, navegación, precios ni sitio internacional.
+- Validación local: Next.js y eslint-config-next actualizados a 16.4.6; compilación y 56 pruebas aprobadas, más dos pruebas nuevas de auditoría. QA en Chrome a 390 y 1366 px: sin desbordes, imágenes rotas, botones sin nombre ni errores JavaScript; una H1 y fecha correcta. Se conservan metadatos, canonical, schema, enlaces y fechas de los demás artículos. Confirmar workflow y contenido público en el chat antes de considerar publicada esta entrega.
+- Seguridad: npm aún devuelve GHSA-fc5q-39xc-vjpf propagado a 12 paquetes. API oficial de GitHub confirmó withdrawn_at=2026-11-18T15:38:56Z. El nuevo control consulta el retiro en cada ejecución, sin lista de excepciones fija: bloquea avisos altos/críticos activos, fallos de red y datos no verificables. No se deshabilita la auditoría. Fuente: https://github.com/advisories/GHSA-fc5q-39xc-vjpf.
+- Próxima prioridad: diseño web para empresas; revisar main antes de elegir para evitar duplicados.
+
 Este registro documenta cambios reales, no ejecuciones del programador. La publicación se confirma con un workflow exitoso y comprobación HTTP del contenido. Revisar siempre main remoto antes de la siguiente entrega.
 
 ## 2026-11-13 · Tiendas online · Actualización sustancial
