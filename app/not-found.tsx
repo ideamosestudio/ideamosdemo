@@ -32,9 +32,9 @@ const MAIN_LINKS: Array<[string, string]> = [
 export default function NotFound() {
   useEffect(() => {
     const path = window.location.pathname;
-    const target = OLD_URL_REDIRECTS[path] ?? (path.startsWith("/blog") ? "/" : null);
+    const target = OLD_URL_REDIRECTS[path] ?? (path.startsWith("/blog") ? "/blog/" : null);
     if (target) {
-      window.location.replace(target);
+      window.location.replace(`${target}${window.location.search}${window.location.hash}`);
       return;
     }
   }, []);
