@@ -11,12 +11,16 @@ const OLD_URL_REDIRECTS: Record<string, string> = {
   "/home": "/",
   "/aviso-legal/": "/",
   "/aviso-legal": "/",
+  "/aviso-legal-estudio-ideamos/": "/",
+  "/aviso-legal-estudio-ideamos": "/",
   "/politica-de-privacidad/": "/",
   "/politica-de-privacidad": "/",
   "/la-empresa-estudio-ideamos/": "/",
   "/la-empresa-estudio-ideamos": "/",
   "/promos/": "/",
   "/promos": "/",
+  "/portfoliotest/": "/portfolio/",
+  "/portfoliotest": "/portfolio/",
 };
 
 const MAIN_LINKS: Array<[string, string]> = [
