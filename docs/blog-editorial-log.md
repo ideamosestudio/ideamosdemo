@@ -1,5 +1,15 @@
 # Registro editorial del blog
 
+## 2026-11-24 · Diseño web para empresas · Actualización sustancial
+
+- URL: https://ideamos.com.ar/blog/diseno-web-profesional/diseno-web-profesional/
+- Preview: https://ideamosestudio.github.io/ideamosdemo/blog/diseno-web-profesional/diseno-web-profesional/
+- Se amplía la guía de alcance con entregables verificables, un ejemplo ilustrativo de empresa de mantenimiento, revisión previa a publicación y separación entre entrega, mantenimiento y funciones nuevas. Mejora una decisión comercial existente sin abrir otra URL que compita con ella.
+- Fuente primaria: W3C WAI Easy Checks, consultada el 24/11/2026. Se aclara que las comprobaciones iniciales no acreditan conformidad completa. Se mantiene el español argentino y el estilo de las guías existentes.
+- Portada temática WebP y variantes conservadas, sin scripts, dependencias ni peso de imágenes nuevo. Publicación original 24/10/2026; actualización únicamente de este artículo al 24/11/2026. Sin cambios a servicios, revisiones o sitio internacional.
+- Validaciones: build y 59 pruebas aprobadas; canonical, metadatos, schema, H1, sitemap, fechas y enlaces cubiertos. QA Chrome a 390 y 1366 px sin desbordes, imágenes rotas, botones sin nombre ni errores JavaScript. Confirmación del workflow y comprobación HTTP pública en el chat antes de considerar finalizada la entrega.
+- Próxima prioridad: tiendas online. No recuperar semanas ya entregadas ni crear duplicados.
+
 ## 2026-11-18 · Tiendas online · Entrega regular de la semana del 17/11
 
 - URL: https://ideamos.com.ar/blog/tiendas-online/que-necesitas-para-lanzar-tienda-online/

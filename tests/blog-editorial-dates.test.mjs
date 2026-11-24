@@ -17,7 +17,7 @@ test('la actualización editorial conserva publicación y cambia solo las fechas
   const xml = await readFile(new URL('sitemap.xml', out), 'utf8');
   const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(m => m[1]);
   assert.match(entries.find(e => e.includes('/' + updated + '</loc>')), /<lastmod>2026-11-13<\/lastmod>/);
-  const originalSlugs = ['diseno-web-profesional/diseno-web-profesional/', 'seo/renovacion-de-sitio-web-2026-seo-conversiones/', 'diseno-web-profesional/mejorar-velocidad-sitio-web/'];
+  const originalSlugs = ['seo/renovacion-de-sitio-web-2026-seo-conversiones/', 'diseno-web-profesional/mejorar-velocidad-sitio-web/'];
   for (const entry of entries.filter(e => originalSlugs.some(slug => e.includes('/blog/' + slug + '</loc>')))) {
     assert.match(entry, /<lastmod>2026-10-24<\/lastmod>/);
   }
